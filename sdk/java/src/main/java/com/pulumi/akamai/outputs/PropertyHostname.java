@@ -19,14 +19,37 @@ import javax.annotation.Nullable;
 @CustomType
 public final class PropertyHostname {
     /**
+     * @return The certificate lineage ID of the Cloud Certificate Manager (CCM) certificate to bind to the hostname. It cannot be used together with `ccmCertificates`.
+     * 
+     */
+    private @Nullable String ccmCertId;
+    /**
+     * @return The link to the Cloud Certificate Manager (CCM) certificate lineage bound to the hostname.
+     * 
+     */
+    private @Nullable String ccmCertLink;
+    /**
      * @return Deployment status for the RSA and ECDSA certificates created with Cloud Certificate Manager (CCM).
+     * 
+     * @deprecated
+     * Will be replaced by ccm_cert_statuses.
+     * 
+     */
+    @Deprecated /* Will be replaced by ccm_cert_statuses. */
+    private @Nullable List<PropertyHostnameCcmCertStatus> ccmCertStatus;
+    /**
+     * @return The deployment statuses of the Cloud Certificate Manager (CCM) certificate lineage bound to the hostname, organized by key type and network.
      * 
      */
     private @Nullable List<PropertyHostnameCcmCertStatus> ccmCertStatuses;
     /**
      * @return Certificate identifiers and links for the CCM-managed certificates.
      * 
+     * @deprecated
+     * Use ccmCertId instead.
+     * 
      */
+    @Deprecated /* Use ccmCertId instead. */
     private @Nullable PropertyHostnameCcmCertificates ccmCertificates;
     private String certProvisioningType;
     private @Nullable List<PropertyHostnameCertStatus> certStatuses;
@@ -47,7 +70,32 @@ public final class PropertyHostname {
 
     private PropertyHostname() {}
     /**
+     * @return The certificate lineage ID of the Cloud Certificate Manager (CCM) certificate to bind to the hostname. It cannot be used together with `ccmCertificates`.
+     * 
+     */
+    public Optional<String> ccmCertId() {
+        return Optional.ofNullable(this.ccmCertId);
+    }
+    /**
+     * @return The link to the Cloud Certificate Manager (CCM) certificate lineage bound to the hostname.
+     * 
+     */
+    public Optional<String> ccmCertLink() {
+        return Optional.ofNullable(this.ccmCertLink);
+    }
+    /**
      * @return Deployment status for the RSA and ECDSA certificates created with Cloud Certificate Manager (CCM).
+     * 
+     * @deprecated
+     * Will be replaced by ccm_cert_statuses.
+     * 
+     */
+    @Deprecated /* Will be replaced by ccm_cert_statuses. */
+    public List<PropertyHostnameCcmCertStatus> ccmCertStatus() {
+        return this.ccmCertStatus == null ? List.of() : this.ccmCertStatus;
+    }
+    /**
+     * @return The deployment statuses of the Cloud Certificate Manager (CCM) certificate lineage bound to the hostname, organized by key type and network.
      * 
      */
     public List<PropertyHostnameCcmCertStatus> ccmCertStatuses() {
@@ -56,7 +104,11 @@ public final class PropertyHostname {
     /**
      * @return Certificate identifiers and links for the CCM-managed certificates.
      * 
+     * @deprecated
+     * Use ccmCertId instead.
+     * 
      */
+    @Deprecated /* Use ccmCertId instead. */
     public Optional<PropertyHostnameCcmCertificates> ccmCertificates() {
         return Optional.ofNullable(this.ccmCertificates);
     }
@@ -102,6 +154,9 @@ public final class PropertyHostname {
     }
     @CustomType.Builder
     public static final class Builder {
+        private @Nullable String ccmCertId;
+        private @Nullable String ccmCertLink;
+        private @Nullable List<PropertyHostnameCcmCertStatus> ccmCertStatus;
         private @Nullable List<PropertyHostnameCcmCertStatus> ccmCertStatuses;
         private @Nullable PropertyHostnameCcmCertificates ccmCertificates;
         private String certProvisioningType;
@@ -115,6 +170,9 @@ public final class PropertyHostname {
         public Builder() {}
         public Builder(PropertyHostname defaults) {
     	      Objects.requireNonNull(defaults);
+    	      this.ccmCertId = defaults.ccmCertId;
+    	      this.ccmCertLink = defaults.ccmCertLink;
+    	      this.ccmCertStatus = defaults.ccmCertStatus;
     	      this.ccmCertStatuses = defaults.ccmCertStatuses;
     	      this.ccmCertificates = defaults.ccmCertificates;
     	      this.certProvisioningType = defaults.certProvisioningType;
@@ -127,6 +185,27 @@ public final class PropertyHostname {
     	      this.tlsConfiguration = defaults.tlsConfiguration;
         }
 
+        @CustomType.Setter
+        public Builder ccmCertId(@Nullable String ccmCertId) {
+
+            this.ccmCertId = ccmCertId;
+            return this;
+        }
+        @CustomType.Setter
+        public Builder ccmCertLink(@Nullable String ccmCertLink) {
+
+            this.ccmCertLink = ccmCertLink;
+            return this;
+        }
+        @CustomType.Setter
+        public Builder ccmCertStatus(@Nullable List<PropertyHostnameCcmCertStatus> ccmCertStatus) {
+
+            this.ccmCertStatus = ccmCertStatus;
+            return this;
+        }
+        public Builder ccmCertStatus(PropertyHostnameCcmCertStatus... ccmCertStatus) {
+            return ccmCertStatus(List.of(ccmCertStatus));
+        }
         @CustomType.Setter
         public Builder ccmCertStatuses(@Nullable List<PropertyHostnameCcmCertStatus> ccmCertStatuses) {
 
@@ -201,6 +280,9 @@ public final class PropertyHostname {
         }
         public PropertyHostname build() {
             final var _resultValue = new PropertyHostname();
+            _resultValue.ccmCertId = ccmCertId;
+            _resultValue.ccmCertLink = ccmCertLink;
+            _resultValue.ccmCertStatus = ccmCertStatus;
             _resultValue.ccmCertStatuses = ccmCertStatuses;
             _resultValue.ccmCertificates = ccmCertificates;
             _resultValue.certProvisioningType = certProvisioningType;

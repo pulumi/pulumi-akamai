@@ -222,12 +222,22 @@ import com.pulumi.akamai.inputs.GetCloudaccessKeyPropertiesArgs;
 import com.pulumi.akamai.inputs.GetCloudaccessKeyPropertiesPlainArgs;
 import com.pulumi.akamai.inputs.GetCloudaccessKeyVersionsArgs;
 import com.pulumi.akamai.inputs.GetCloudaccessKeyVersionsPlainArgs;
-import com.pulumi.akamai.inputs.GetCloudcertificatesCertificateArgs;
-import com.pulumi.akamai.inputs.GetCloudcertificatesCertificatePlainArgs;
-import com.pulumi.akamai.inputs.GetCloudcertificatesCertificatesArgs;
-import com.pulumi.akamai.inputs.GetCloudcertificatesCertificatesPlainArgs;
-import com.pulumi.akamai.inputs.GetCloudcertificatesHostnameBindingsArgs;
-import com.pulumi.akamai.inputs.GetCloudcertificatesHostnameBindingsPlainArgs;
+import com.pulumi.akamai.inputs.GetCloudcertificatesActivationStatusArgs;
+import com.pulumi.akamai.inputs.GetCloudcertificatesActivationStatusPlainArgs;
+import com.pulumi.akamai.inputs.GetCloudcertificatesActivationsArgs;
+import com.pulumi.akamai.inputs.GetCloudcertificatesActivationsPlainArgs;
+import com.pulumi.akamai.inputs.GetCloudcertificatesActivityArgs;
+import com.pulumi.akamai.inputs.GetCloudcertificatesActivityPlainArgs;
+import com.pulumi.akamai.inputs.GetCloudcertificatesArchivedGenerationsArgs;
+import com.pulumi.akamai.inputs.GetCloudcertificatesArchivedGenerationsPlainArgs;
+import com.pulumi.akamai.inputs.GetCloudcertificatesBindingsArgs;
+import com.pulumi.akamai.inputs.GetCloudcertificatesBindingsPlainArgs;
+import com.pulumi.akamai.inputs.GetCloudcertificatesGenerationArgs;
+import com.pulumi.akamai.inputs.GetCloudcertificatesGenerationPlainArgs;
+import com.pulumi.akamai.inputs.GetCloudcertificatesLineageArgs;
+import com.pulumi.akamai.inputs.GetCloudcertificatesLineagePlainArgs;
+import com.pulumi.akamai.inputs.GetCloudcertificatesLineagesArgs;
+import com.pulumi.akamai.inputs.GetCloudcertificatesLineagesPlainArgs;
 import com.pulumi.akamai.inputs.GetCloudletsApiPrioritizationMatchRuleArgs;
 import com.pulumi.akamai.inputs.GetCloudletsApiPrioritizationMatchRulePlainArgs;
 import com.pulumi.akamai.inputs.GetCloudletsApplicationLoadBalancerArgs;
@@ -533,9 +543,14 @@ import com.pulumi.akamai.outputs.GetCloudaccessKeyPropertiesResult;
 import com.pulumi.akamai.outputs.GetCloudaccessKeyResult;
 import com.pulumi.akamai.outputs.GetCloudaccessKeyVersionsResult;
 import com.pulumi.akamai.outputs.GetCloudaccessKeysResult;
-import com.pulumi.akamai.outputs.GetCloudcertificatesCertificateResult;
-import com.pulumi.akamai.outputs.GetCloudcertificatesCertificatesResult;
-import com.pulumi.akamai.outputs.GetCloudcertificatesHostnameBindingsResult;
+import com.pulumi.akamai.outputs.GetCloudcertificatesActivationStatusResult;
+import com.pulumi.akamai.outputs.GetCloudcertificatesActivationsResult;
+import com.pulumi.akamai.outputs.GetCloudcertificatesActivityResult;
+import com.pulumi.akamai.outputs.GetCloudcertificatesArchivedGenerationsResult;
+import com.pulumi.akamai.outputs.GetCloudcertificatesBindingsResult;
+import com.pulumi.akamai.outputs.GetCloudcertificatesGenerationResult;
+import com.pulumi.akamai.outputs.GetCloudcertificatesLineageResult;
+import com.pulumi.akamai.outputs.GetCloudcertificatesLineagesResult;
 import com.pulumi.akamai.outputs.GetCloudletsApiPrioritizationMatchRuleResult;
 import com.pulumi.akamai.outputs.GetCloudletsApplicationLoadBalancerMatchRuleResult;
 import com.pulumi.akamai.outputs.GetCloudletsApplicationLoadBalancerResult;
@@ -2436,62 +2451,131 @@ public final class AkamaiFunctions {
     public static CompletableFuture<GetCloudaccessKeysResult> getCloudaccessKeysPlain(InvokeArgs args, InvokeOptions options) {
         return Deployment.getInstance().invokeAsync("akamai:index/getCloudaccessKeys:getCloudaccessKeys", TypeShape.of(GetCloudaccessKeysResult.class), args, Utilities.withVersion(options));
     }
-    public static Output<GetCloudcertificatesCertificateResult> getCloudcertificatesCertificate(GetCloudcertificatesCertificateArgs args) {
-        return getCloudcertificatesCertificate(args, InvokeOptions.Empty);
+    public static Output<GetCloudcertificatesActivationStatusResult> getCloudcertificatesActivationStatus(GetCloudcertificatesActivationStatusArgs args) {
+        return getCloudcertificatesActivationStatus(args, InvokeOptions.Empty);
     }
-    public static CompletableFuture<GetCloudcertificatesCertificateResult> getCloudcertificatesCertificatePlain(GetCloudcertificatesCertificatePlainArgs args) {
-        return getCloudcertificatesCertificatePlain(args, InvokeOptions.Empty);
+    public static CompletableFuture<GetCloudcertificatesActivationStatusResult> getCloudcertificatesActivationStatusPlain(GetCloudcertificatesActivationStatusPlainArgs args) {
+        return getCloudcertificatesActivationStatusPlain(args, InvokeOptions.Empty);
     }
-    public static Output<GetCloudcertificatesCertificateResult> getCloudcertificatesCertificate(GetCloudcertificatesCertificateArgs args, InvokeOptions options) {
-        return Deployment.getInstance().invoke("akamai:index/getCloudcertificatesCertificate:getCloudcertificatesCertificate", TypeShape.of(GetCloudcertificatesCertificateResult.class), args, Utilities.withVersion(options));
+    public static Output<GetCloudcertificatesActivationStatusResult> getCloudcertificatesActivationStatus(GetCloudcertificatesActivationStatusArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("akamai:index/getCloudcertificatesActivationStatus:getCloudcertificatesActivationStatus", TypeShape.of(GetCloudcertificatesActivationStatusResult.class), args, Utilities.withVersion(options));
     }
-    public static Output<GetCloudcertificatesCertificateResult> getCloudcertificatesCertificate(GetCloudcertificatesCertificateArgs args, InvokeOutputOptions options) {
-        return Deployment.getInstance().invoke("akamai:index/getCloudcertificatesCertificate:getCloudcertificatesCertificate", TypeShape.of(GetCloudcertificatesCertificateResult.class), args, Utilities.withVersion(options));
+    public static Output<GetCloudcertificatesActivationStatusResult> getCloudcertificatesActivationStatus(GetCloudcertificatesActivationStatusArgs args, InvokeOutputOptions options) {
+        return Deployment.getInstance().invoke("akamai:index/getCloudcertificatesActivationStatus:getCloudcertificatesActivationStatus", TypeShape.of(GetCloudcertificatesActivationStatusResult.class), args, Utilities.withVersion(options));
     }
-    public static CompletableFuture<GetCloudcertificatesCertificateResult> getCloudcertificatesCertificatePlain(GetCloudcertificatesCertificatePlainArgs args, InvokeOptions options) {
-        return Deployment.getInstance().invokeAsync("akamai:index/getCloudcertificatesCertificate:getCloudcertificatesCertificate", TypeShape.of(GetCloudcertificatesCertificateResult.class), args, Utilities.withVersion(options));
+    public static CompletableFuture<GetCloudcertificatesActivationStatusResult> getCloudcertificatesActivationStatusPlain(GetCloudcertificatesActivationStatusPlainArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invokeAsync("akamai:index/getCloudcertificatesActivationStatus:getCloudcertificatesActivationStatus", TypeShape.of(GetCloudcertificatesActivationStatusResult.class), args, Utilities.withVersion(options));
     }
-    public static Output<GetCloudcertificatesCertificatesResult> getCloudcertificatesCertificates() {
-        return getCloudcertificatesCertificates(GetCloudcertificatesCertificatesArgs.Empty, InvokeOptions.Empty);
+    public static Output<GetCloudcertificatesActivationsResult> getCloudcertificatesActivations(GetCloudcertificatesActivationsArgs args) {
+        return getCloudcertificatesActivations(args, InvokeOptions.Empty);
     }
-    public static CompletableFuture<GetCloudcertificatesCertificatesResult> getCloudcertificatesCertificatesPlain() {
-        return getCloudcertificatesCertificatesPlain(GetCloudcertificatesCertificatesPlainArgs.Empty, InvokeOptions.Empty);
+    public static CompletableFuture<GetCloudcertificatesActivationsResult> getCloudcertificatesActivationsPlain(GetCloudcertificatesActivationsPlainArgs args) {
+        return getCloudcertificatesActivationsPlain(args, InvokeOptions.Empty);
     }
-    public static Output<GetCloudcertificatesCertificatesResult> getCloudcertificatesCertificates(GetCloudcertificatesCertificatesArgs args) {
-        return getCloudcertificatesCertificates(args, InvokeOptions.Empty);
+    public static Output<GetCloudcertificatesActivationsResult> getCloudcertificatesActivations(GetCloudcertificatesActivationsArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("akamai:index/getCloudcertificatesActivations:getCloudcertificatesActivations", TypeShape.of(GetCloudcertificatesActivationsResult.class), args, Utilities.withVersion(options));
     }
-    public static CompletableFuture<GetCloudcertificatesCertificatesResult> getCloudcertificatesCertificatesPlain(GetCloudcertificatesCertificatesPlainArgs args) {
-        return getCloudcertificatesCertificatesPlain(args, InvokeOptions.Empty);
+    public static Output<GetCloudcertificatesActivationsResult> getCloudcertificatesActivations(GetCloudcertificatesActivationsArgs args, InvokeOutputOptions options) {
+        return Deployment.getInstance().invoke("akamai:index/getCloudcertificatesActivations:getCloudcertificatesActivations", TypeShape.of(GetCloudcertificatesActivationsResult.class), args, Utilities.withVersion(options));
     }
-    public static Output<GetCloudcertificatesCertificatesResult> getCloudcertificatesCertificates(GetCloudcertificatesCertificatesArgs args, InvokeOptions options) {
-        return Deployment.getInstance().invoke("akamai:index/getCloudcertificatesCertificates:getCloudcertificatesCertificates", TypeShape.of(GetCloudcertificatesCertificatesResult.class), args, Utilities.withVersion(options));
+    public static CompletableFuture<GetCloudcertificatesActivationsResult> getCloudcertificatesActivationsPlain(GetCloudcertificatesActivationsPlainArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invokeAsync("akamai:index/getCloudcertificatesActivations:getCloudcertificatesActivations", TypeShape.of(GetCloudcertificatesActivationsResult.class), args, Utilities.withVersion(options));
     }
-    public static Output<GetCloudcertificatesCertificatesResult> getCloudcertificatesCertificates(GetCloudcertificatesCertificatesArgs args, InvokeOutputOptions options) {
-        return Deployment.getInstance().invoke("akamai:index/getCloudcertificatesCertificates:getCloudcertificatesCertificates", TypeShape.of(GetCloudcertificatesCertificatesResult.class), args, Utilities.withVersion(options));
+    public static Output<GetCloudcertificatesActivityResult> getCloudcertificatesActivity(GetCloudcertificatesActivityArgs args) {
+        return getCloudcertificatesActivity(args, InvokeOptions.Empty);
     }
-    public static CompletableFuture<GetCloudcertificatesCertificatesResult> getCloudcertificatesCertificatesPlain(GetCloudcertificatesCertificatesPlainArgs args, InvokeOptions options) {
-        return Deployment.getInstance().invokeAsync("akamai:index/getCloudcertificatesCertificates:getCloudcertificatesCertificates", TypeShape.of(GetCloudcertificatesCertificatesResult.class), args, Utilities.withVersion(options));
+    public static CompletableFuture<GetCloudcertificatesActivityResult> getCloudcertificatesActivityPlain(GetCloudcertificatesActivityPlainArgs args) {
+        return getCloudcertificatesActivityPlain(args, InvokeOptions.Empty);
     }
-    public static Output<GetCloudcertificatesHostnameBindingsResult> getCloudcertificatesHostnameBindings() {
-        return getCloudcertificatesHostnameBindings(GetCloudcertificatesHostnameBindingsArgs.Empty, InvokeOptions.Empty);
+    public static Output<GetCloudcertificatesActivityResult> getCloudcertificatesActivity(GetCloudcertificatesActivityArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("akamai:index/getCloudcertificatesActivity:getCloudcertificatesActivity", TypeShape.of(GetCloudcertificatesActivityResult.class), args, Utilities.withVersion(options));
     }
-    public static CompletableFuture<GetCloudcertificatesHostnameBindingsResult> getCloudcertificatesHostnameBindingsPlain() {
-        return getCloudcertificatesHostnameBindingsPlain(GetCloudcertificatesHostnameBindingsPlainArgs.Empty, InvokeOptions.Empty);
+    public static Output<GetCloudcertificatesActivityResult> getCloudcertificatesActivity(GetCloudcertificatesActivityArgs args, InvokeOutputOptions options) {
+        return Deployment.getInstance().invoke("akamai:index/getCloudcertificatesActivity:getCloudcertificatesActivity", TypeShape.of(GetCloudcertificatesActivityResult.class), args, Utilities.withVersion(options));
     }
-    public static Output<GetCloudcertificatesHostnameBindingsResult> getCloudcertificatesHostnameBindings(GetCloudcertificatesHostnameBindingsArgs args) {
-        return getCloudcertificatesHostnameBindings(args, InvokeOptions.Empty);
+    public static CompletableFuture<GetCloudcertificatesActivityResult> getCloudcertificatesActivityPlain(GetCloudcertificatesActivityPlainArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invokeAsync("akamai:index/getCloudcertificatesActivity:getCloudcertificatesActivity", TypeShape.of(GetCloudcertificatesActivityResult.class), args, Utilities.withVersion(options));
     }
-    public static CompletableFuture<GetCloudcertificatesHostnameBindingsResult> getCloudcertificatesHostnameBindingsPlain(GetCloudcertificatesHostnameBindingsPlainArgs args) {
-        return getCloudcertificatesHostnameBindingsPlain(args, InvokeOptions.Empty);
+    public static Output<GetCloudcertificatesArchivedGenerationsResult> getCloudcertificatesArchivedGenerations(GetCloudcertificatesArchivedGenerationsArgs args) {
+        return getCloudcertificatesArchivedGenerations(args, InvokeOptions.Empty);
     }
-    public static Output<GetCloudcertificatesHostnameBindingsResult> getCloudcertificatesHostnameBindings(GetCloudcertificatesHostnameBindingsArgs args, InvokeOptions options) {
-        return Deployment.getInstance().invoke("akamai:index/getCloudcertificatesHostnameBindings:getCloudcertificatesHostnameBindings", TypeShape.of(GetCloudcertificatesHostnameBindingsResult.class), args, Utilities.withVersion(options));
+    public static CompletableFuture<GetCloudcertificatesArchivedGenerationsResult> getCloudcertificatesArchivedGenerationsPlain(GetCloudcertificatesArchivedGenerationsPlainArgs args) {
+        return getCloudcertificatesArchivedGenerationsPlain(args, InvokeOptions.Empty);
     }
-    public static Output<GetCloudcertificatesHostnameBindingsResult> getCloudcertificatesHostnameBindings(GetCloudcertificatesHostnameBindingsArgs args, InvokeOutputOptions options) {
-        return Deployment.getInstance().invoke("akamai:index/getCloudcertificatesHostnameBindings:getCloudcertificatesHostnameBindings", TypeShape.of(GetCloudcertificatesHostnameBindingsResult.class), args, Utilities.withVersion(options));
+    public static Output<GetCloudcertificatesArchivedGenerationsResult> getCloudcertificatesArchivedGenerations(GetCloudcertificatesArchivedGenerationsArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("akamai:index/getCloudcertificatesArchivedGenerations:getCloudcertificatesArchivedGenerations", TypeShape.of(GetCloudcertificatesArchivedGenerationsResult.class), args, Utilities.withVersion(options));
     }
-    public static CompletableFuture<GetCloudcertificatesHostnameBindingsResult> getCloudcertificatesHostnameBindingsPlain(GetCloudcertificatesHostnameBindingsPlainArgs args, InvokeOptions options) {
-        return Deployment.getInstance().invokeAsync("akamai:index/getCloudcertificatesHostnameBindings:getCloudcertificatesHostnameBindings", TypeShape.of(GetCloudcertificatesHostnameBindingsResult.class), args, Utilities.withVersion(options));
+    public static Output<GetCloudcertificatesArchivedGenerationsResult> getCloudcertificatesArchivedGenerations(GetCloudcertificatesArchivedGenerationsArgs args, InvokeOutputOptions options) {
+        return Deployment.getInstance().invoke("akamai:index/getCloudcertificatesArchivedGenerations:getCloudcertificatesArchivedGenerations", TypeShape.of(GetCloudcertificatesArchivedGenerationsResult.class), args, Utilities.withVersion(options));
+    }
+    public static CompletableFuture<GetCloudcertificatesArchivedGenerationsResult> getCloudcertificatesArchivedGenerationsPlain(GetCloudcertificatesArchivedGenerationsPlainArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invokeAsync("akamai:index/getCloudcertificatesArchivedGenerations:getCloudcertificatesArchivedGenerations", TypeShape.of(GetCloudcertificatesArchivedGenerationsResult.class), args, Utilities.withVersion(options));
+    }
+    public static Output<GetCloudcertificatesBindingsResult> getCloudcertificatesBindings(GetCloudcertificatesBindingsArgs args) {
+        return getCloudcertificatesBindings(args, InvokeOptions.Empty);
+    }
+    public static CompletableFuture<GetCloudcertificatesBindingsResult> getCloudcertificatesBindingsPlain(GetCloudcertificatesBindingsPlainArgs args) {
+        return getCloudcertificatesBindingsPlain(args, InvokeOptions.Empty);
+    }
+    public static Output<GetCloudcertificatesBindingsResult> getCloudcertificatesBindings(GetCloudcertificatesBindingsArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("akamai:index/getCloudcertificatesBindings:getCloudcertificatesBindings", TypeShape.of(GetCloudcertificatesBindingsResult.class), args, Utilities.withVersion(options));
+    }
+    public static Output<GetCloudcertificatesBindingsResult> getCloudcertificatesBindings(GetCloudcertificatesBindingsArgs args, InvokeOutputOptions options) {
+        return Deployment.getInstance().invoke("akamai:index/getCloudcertificatesBindings:getCloudcertificatesBindings", TypeShape.of(GetCloudcertificatesBindingsResult.class), args, Utilities.withVersion(options));
+    }
+    public static CompletableFuture<GetCloudcertificatesBindingsResult> getCloudcertificatesBindingsPlain(GetCloudcertificatesBindingsPlainArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invokeAsync("akamai:index/getCloudcertificatesBindings:getCloudcertificatesBindings", TypeShape.of(GetCloudcertificatesBindingsResult.class), args, Utilities.withVersion(options));
+    }
+    public static Output<GetCloudcertificatesGenerationResult> getCloudcertificatesGeneration(GetCloudcertificatesGenerationArgs args) {
+        return getCloudcertificatesGeneration(args, InvokeOptions.Empty);
+    }
+    public static CompletableFuture<GetCloudcertificatesGenerationResult> getCloudcertificatesGenerationPlain(GetCloudcertificatesGenerationPlainArgs args) {
+        return getCloudcertificatesGenerationPlain(args, InvokeOptions.Empty);
+    }
+    public static Output<GetCloudcertificatesGenerationResult> getCloudcertificatesGeneration(GetCloudcertificatesGenerationArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("akamai:index/getCloudcertificatesGeneration:getCloudcertificatesGeneration", TypeShape.of(GetCloudcertificatesGenerationResult.class), args, Utilities.withVersion(options));
+    }
+    public static Output<GetCloudcertificatesGenerationResult> getCloudcertificatesGeneration(GetCloudcertificatesGenerationArgs args, InvokeOutputOptions options) {
+        return Deployment.getInstance().invoke("akamai:index/getCloudcertificatesGeneration:getCloudcertificatesGeneration", TypeShape.of(GetCloudcertificatesGenerationResult.class), args, Utilities.withVersion(options));
+    }
+    public static CompletableFuture<GetCloudcertificatesGenerationResult> getCloudcertificatesGenerationPlain(GetCloudcertificatesGenerationPlainArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invokeAsync("akamai:index/getCloudcertificatesGeneration:getCloudcertificatesGeneration", TypeShape.of(GetCloudcertificatesGenerationResult.class), args, Utilities.withVersion(options));
+    }
+    public static Output<GetCloudcertificatesLineageResult> getCloudcertificatesLineage(GetCloudcertificatesLineageArgs args) {
+        return getCloudcertificatesLineage(args, InvokeOptions.Empty);
+    }
+    public static CompletableFuture<GetCloudcertificatesLineageResult> getCloudcertificatesLineagePlain(GetCloudcertificatesLineagePlainArgs args) {
+        return getCloudcertificatesLineagePlain(args, InvokeOptions.Empty);
+    }
+    public static Output<GetCloudcertificatesLineageResult> getCloudcertificatesLineage(GetCloudcertificatesLineageArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("akamai:index/getCloudcertificatesLineage:getCloudcertificatesLineage", TypeShape.of(GetCloudcertificatesLineageResult.class), args, Utilities.withVersion(options));
+    }
+    public static Output<GetCloudcertificatesLineageResult> getCloudcertificatesLineage(GetCloudcertificatesLineageArgs args, InvokeOutputOptions options) {
+        return Deployment.getInstance().invoke("akamai:index/getCloudcertificatesLineage:getCloudcertificatesLineage", TypeShape.of(GetCloudcertificatesLineageResult.class), args, Utilities.withVersion(options));
+    }
+    public static CompletableFuture<GetCloudcertificatesLineageResult> getCloudcertificatesLineagePlain(GetCloudcertificatesLineagePlainArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invokeAsync("akamai:index/getCloudcertificatesLineage:getCloudcertificatesLineage", TypeShape.of(GetCloudcertificatesLineageResult.class), args, Utilities.withVersion(options));
+    }
+    public static Output<GetCloudcertificatesLineagesResult> getCloudcertificatesLineages() {
+        return getCloudcertificatesLineages(GetCloudcertificatesLineagesArgs.Empty, InvokeOptions.Empty);
+    }
+    public static CompletableFuture<GetCloudcertificatesLineagesResult> getCloudcertificatesLineagesPlain() {
+        return getCloudcertificatesLineagesPlain(GetCloudcertificatesLineagesPlainArgs.Empty, InvokeOptions.Empty);
+    }
+    public static Output<GetCloudcertificatesLineagesResult> getCloudcertificatesLineages(GetCloudcertificatesLineagesArgs args) {
+        return getCloudcertificatesLineages(args, InvokeOptions.Empty);
+    }
+    public static CompletableFuture<GetCloudcertificatesLineagesResult> getCloudcertificatesLineagesPlain(GetCloudcertificatesLineagesPlainArgs args) {
+        return getCloudcertificatesLineagesPlain(args, InvokeOptions.Empty);
+    }
+    public static Output<GetCloudcertificatesLineagesResult> getCloudcertificatesLineages(GetCloudcertificatesLineagesArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("akamai:index/getCloudcertificatesLineages:getCloudcertificatesLineages", TypeShape.of(GetCloudcertificatesLineagesResult.class), args, Utilities.withVersion(options));
+    }
+    public static Output<GetCloudcertificatesLineagesResult> getCloudcertificatesLineages(GetCloudcertificatesLineagesArgs args, InvokeOutputOptions options) {
+        return Deployment.getInstance().invoke("akamai:index/getCloudcertificatesLineages:getCloudcertificatesLineages", TypeShape.of(GetCloudcertificatesLineagesResult.class), args, Utilities.withVersion(options));
+    }
+    public static CompletableFuture<GetCloudcertificatesLineagesResult> getCloudcertificatesLineagesPlain(GetCloudcertificatesLineagesPlainArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invokeAsync("akamai:index/getCloudcertificatesLineages:getCloudcertificatesLineages", TypeShape.of(GetCloudcertificatesLineagesResult.class), args, Utilities.withVersion(options));
     }
     public static Output<GetCloudletsApiPrioritizationMatchRuleResult> getCloudletsApiPrioritizationMatchRule() {
         return getCloudletsApiPrioritizationMatchRule(GetCloudletsApiPrioritizationMatchRuleArgs.Empty, InvokeOptions.Empty);

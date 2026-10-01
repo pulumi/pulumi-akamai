@@ -11,54 +11,42 @@ import java.util.Objects;
 @CustomType
 public final class GetPropertyHostnamesHostnameCcmCertStatus {
     /**
-     * @return Status of the ECDSA certificate on production network.
+     * @return The key algorithm type of the certificate, either `RSA` or `ECDSA`.
      * 
      */
-    private String ecdsaProductionStatus;
+    private String keyType;
     /**
-     * @return Status of the ECDSA certificate on staging network.
+     * @return The network the status applies to, either `STAGING` or `PRODUCTION`.
      * 
      */
-    private String ecdsaStagingStatus;
+    private String network;
     /**
-     * @return Status of the RSA certificate on production network.
+     * @return The deployment status of the certificate on the given network.
      * 
      */
-    private String rsaProductionStatus;
-    /**
-     * @return Status of the RSA certificate on staging network.
-     * 
-     */
-    private String rsaStagingStatus;
+    private String status;
 
     private GetPropertyHostnamesHostnameCcmCertStatus() {}
     /**
-     * @return Status of the ECDSA certificate on production network.
+     * @return The key algorithm type of the certificate, either `RSA` or `ECDSA`.
      * 
      */
-    public String ecdsaProductionStatus() {
-        return this.ecdsaProductionStatus;
+    public String keyType() {
+        return this.keyType;
     }
     /**
-     * @return Status of the ECDSA certificate on staging network.
+     * @return The network the status applies to, either `STAGING` or `PRODUCTION`.
      * 
      */
-    public String ecdsaStagingStatus() {
-        return this.ecdsaStagingStatus;
+    public String network() {
+        return this.network;
     }
     /**
-     * @return Status of the RSA certificate on production network.
+     * @return The deployment status of the certificate on the given network.
      * 
      */
-    public String rsaProductionStatus() {
-        return this.rsaProductionStatus;
-    }
-    /**
-     * @return Status of the RSA certificate on staging network.
-     * 
-     */
-    public String rsaStagingStatus() {
-        return this.rsaStagingStatus;
+    public String status() {
+        return this.status;
     }
 
     public static Builder builder() {
@@ -70,57 +58,46 @@ public final class GetPropertyHostnamesHostnameCcmCertStatus {
     }
     @CustomType.Builder
     public static final class Builder {
-        private String ecdsaProductionStatus;
-        private String ecdsaStagingStatus;
-        private String rsaProductionStatus;
-        private String rsaStagingStatus;
+        private String keyType;
+        private String network;
+        private String status;
         public Builder() {}
         public Builder(GetPropertyHostnamesHostnameCcmCertStatus defaults) {
     	      Objects.requireNonNull(defaults);
-    	      this.ecdsaProductionStatus = defaults.ecdsaProductionStatus;
-    	      this.ecdsaStagingStatus = defaults.ecdsaStagingStatus;
-    	      this.rsaProductionStatus = defaults.rsaProductionStatus;
-    	      this.rsaStagingStatus = defaults.rsaStagingStatus;
+    	      this.keyType = defaults.keyType;
+    	      this.network = defaults.network;
+    	      this.status = defaults.status;
         }
 
         @CustomType.Setter
-        public Builder ecdsaProductionStatus(String ecdsaProductionStatus) {
-            if (ecdsaProductionStatus == null) {
-              throw new MissingRequiredPropertyException("GetPropertyHostnamesHostnameCcmCertStatus", "ecdsaProductionStatus");
+        public Builder keyType(String keyType) {
+            if (keyType == null) {
+              throw new MissingRequiredPropertyException("GetPropertyHostnamesHostnameCcmCertStatus", "keyType");
             }
-            this.ecdsaProductionStatus = ecdsaProductionStatus;
+            this.keyType = keyType;
             return this;
         }
         @CustomType.Setter
-        public Builder ecdsaStagingStatus(String ecdsaStagingStatus) {
-            if (ecdsaStagingStatus == null) {
-              throw new MissingRequiredPropertyException("GetPropertyHostnamesHostnameCcmCertStatus", "ecdsaStagingStatus");
+        public Builder network(String network) {
+            if (network == null) {
+              throw new MissingRequiredPropertyException("GetPropertyHostnamesHostnameCcmCertStatus", "network");
             }
-            this.ecdsaStagingStatus = ecdsaStagingStatus;
+            this.network = network;
             return this;
         }
         @CustomType.Setter
-        public Builder rsaProductionStatus(String rsaProductionStatus) {
-            if (rsaProductionStatus == null) {
-              throw new MissingRequiredPropertyException("GetPropertyHostnamesHostnameCcmCertStatus", "rsaProductionStatus");
+        public Builder status(String status) {
+            if (status == null) {
+              throw new MissingRequiredPropertyException("GetPropertyHostnamesHostnameCcmCertStatus", "status");
             }
-            this.rsaProductionStatus = rsaProductionStatus;
-            return this;
-        }
-        @CustomType.Setter
-        public Builder rsaStagingStatus(String rsaStagingStatus) {
-            if (rsaStagingStatus == null) {
-              throw new MissingRequiredPropertyException("GetPropertyHostnamesHostnameCcmCertStatus", "rsaStagingStatus");
-            }
-            this.rsaStagingStatus = rsaStagingStatus;
+            this.status = status;
             return this;
         }
         public GetPropertyHostnamesHostnameCcmCertStatus build() {
             final var _resultValue = new GetPropertyHostnamesHostnameCcmCertStatus();
-            _resultValue.ecdsaProductionStatus = ecdsaProductionStatus;
-            _resultValue.ecdsaStagingStatus = ecdsaStagingStatus;
-            _resultValue.rsaProductionStatus = rsaProductionStatus;
-            _resultValue.rsaStagingStatus = rsaStagingStatus;
+            _resultValue.keyType = keyType;
+            _resultValue.network = network;
+            _resultValue.status = status;
             return _resultValue;
         }
     }

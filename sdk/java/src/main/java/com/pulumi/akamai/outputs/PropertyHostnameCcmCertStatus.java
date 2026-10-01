@@ -12,54 +12,42 @@ import javax.annotation.Nullable;
 @CustomType
 public final class PropertyHostnameCcmCertStatus {
     /**
-     * @return Status of the ECDSA certificate on production network.
+     * @return The key algorithm type of the certificate, either `RSA` or `ECDSA`.
      * 
      */
-    private @Nullable String ecdsaProductionStatus;
+    private @Nullable String keyType;
     /**
-     * @return Status of the ECDSA certificate on staging network.
+     * @return The network the status applies to, either `STAGING` or `PRODUCTION`.
      * 
      */
-    private @Nullable String ecdsaStagingStatus;
+    private @Nullable String network;
     /**
-     * @return Status of the RSA certificate on production network.
+     * @return The deployment status of the certificate on the given network.
      * 
      */
-    private @Nullable String rsaProductionStatus;
-    /**
-     * @return Status of the RSA certificate on staging network.
-     * 
-     */
-    private @Nullable String rsaStagingStatus;
+    private @Nullable String status;
 
     private PropertyHostnameCcmCertStatus() {}
     /**
-     * @return Status of the ECDSA certificate on production network.
+     * @return The key algorithm type of the certificate, either `RSA` or `ECDSA`.
      * 
      */
-    public Optional<String> ecdsaProductionStatus() {
-        return Optional.ofNullable(this.ecdsaProductionStatus);
+    public Optional<String> keyType() {
+        return Optional.ofNullable(this.keyType);
     }
     /**
-     * @return Status of the ECDSA certificate on staging network.
+     * @return The network the status applies to, either `STAGING` or `PRODUCTION`.
      * 
      */
-    public Optional<String> ecdsaStagingStatus() {
-        return Optional.ofNullable(this.ecdsaStagingStatus);
+    public Optional<String> network() {
+        return Optional.ofNullable(this.network);
     }
     /**
-     * @return Status of the RSA certificate on production network.
+     * @return The deployment status of the certificate on the given network.
      * 
      */
-    public Optional<String> rsaProductionStatus() {
-        return Optional.ofNullable(this.rsaProductionStatus);
-    }
-    /**
-     * @return Status of the RSA certificate on staging network.
-     * 
-     */
-    public Optional<String> rsaStagingStatus() {
-        return Optional.ofNullable(this.rsaStagingStatus);
+    public Optional<String> status() {
+        return Optional.ofNullable(this.status);
     }
 
     public static Builder builder() {
@@ -71,49 +59,40 @@ public final class PropertyHostnameCcmCertStatus {
     }
     @CustomType.Builder
     public static final class Builder {
-        private @Nullable String ecdsaProductionStatus;
-        private @Nullable String ecdsaStagingStatus;
-        private @Nullable String rsaProductionStatus;
-        private @Nullable String rsaStagingStatus;
+        private @Nullable String keyType;
+        private @Nullable String network;
+        private @Nullable String status;
         public Builder() {}
         public Builder(PropertyHostnameCcmCertStatus defaults) {
     	      Objects.requireNonNull(defaults);
-    	      this.ecdsaProductionStatus = defaults.ecdsaProductionStatus;
-    	      this.ecdsaStagingStatus = defaults.ecdsaStagingStatus;
-    	      this.rsaProductionStatus = defaults.rsaProductionStatus;
-    	      this.rsaStagingStatus = defaults.rsaStagingStatus;
+    	      this.keyType = defaults.keyType;
+    	      this.network = defaults.network;
+    	      this.status = defaults.status;
         }
 
         @CustomType.Setter
-        public Builder ecdsaProductionStatus(@Nullable String ecdsaProductionStatus) {
+        public Builder keyType(@Nullable String keyType) {
 
-            this.ecdsaProductionStatus = ecdsaProductionStatus;
+            this.keyType = keyType;
             return this;
         }
         @CustomType.Setter
-        public Builder ecdsaStagingStatus(@Nullable String ecdsaStagingStatus) {
+        public Builder network(@Nullable String network) {
 
-            this.ecdsaStagingStatus = ecdsaStagingStatus;
+            this.network = network;
             return this;
         }
         @CustomType.Setter
-        public Builder rsaProductionStatus(@Nullable String rsaProductionStatus) {
+        public Builder status(@Nullable String status) {
 
-            this.rsaProductionStatus = rsaProductionStatus;
-            return this;
-        }
-        @CustomType.Setter
-        public Builder rsaStagingStatus(@Nullable String rsaStagingStatus) {
-
-            this.rsaStagingStatus = rsaStagingStatus;
+            this.status = status;
             return this;
         }
         public PropertyHostnameCcmCertStatus build() {
             final var _resultValue = new PropertyHostnameCcmCertStatus();
-            _resultValue.ecdsaProductionStatus = ecdsaProductionStatus;
-            _resultValue.ecdsaStagingStatus = ecdsaStagingStatus;
-            _resultValue.rsaProductionStatus = rsaProductionStatus;
-            _resultValue.rsaStagingStatus = rsaStagingStatus;
+            _resultValue.keyType = keyType;
+            _resultValue.network = network;
+            _resultValue.status = status;
             return _resultValue;
         }
     }

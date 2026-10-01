@@ -35,7 +35,22 @@ __all__ = [
     'CloudAccessKeyCredentialsB',
     'CloudAccessKeyNetworkConfiguration',
     'CloudAccessKeyTimeouts',
-    'CloudcertificatesCertificateSubject',
+    'CloudcertificatesActivationProduction',
+    'CloudcertificatesActivationStaging',
+    'CloudcertificatesActivationTimeouts',
+    'CloudcertificatesLineageCurrentProduction',
+    'CloudcertificatesLineageCurrentProductionAlgorithms',
+    'CloudcertificatesLineageCurrentStaging',
+    'CloudcertificatesLineageCurrentStagingAlgorithms',
+    'CloudcertificatesLineageHead',
+    'CloudcertificatesLineageHeadAlgorithms',
+    'CloudcertificatesLineagePreviousProduction',
+    'CloudcertificatesLineagePreviousProductionAlgorithms',
+    'CloudcertificatesLineageSigningTarget',
+    'CloudcertificatesLineageSigningTargetAlgorithms',
+    'CloudcertificatesLineageSubject',
+    'CloudcertificatesUploadAlgorithms',
+    'CloudcertificatesUploadTimeouts',
     'CloudletsApplicationLoadBalancerActivationTimeouts',
     'CloudletsApplicationLoadBalancerDataCenter',
     'CloudletsApplicationLoadBalancerLivenessSettings',
@@ -211,11 +226,35 @@ __all__ = [
     'GetCloudaccessKeysAccessKeyResult',
     'GetCloudaccessKeysAccessKeyGroupResult',
     'GetCloudaccessKeysAccessKeyNetworkConfigurationResult',
-    'GetCloudcertificatesCertificateBindingResult',
-    'GetCloudcertificatesCertificateSubjectResult',
-    'GetCloudcertificatesCertificatesCertificateResult',
-    'GetCloudcertificatesCertificatesCertificateSubjectResult',
-    'GetCloudcertificatesHostnameBindingsBindingResult',
+    'GetCloudcertificatesActivationsActivationResult',
+    'GetCloudcertificatesActivityActivityResult',
+    'GetCloudcertificatesArchivedGenerationsGenerationResult',
+    'GetCloudcertificatesArchivedGenerationsGenerationAlgorithmsResult',
+    'GetCloudcertificatesBindingsBindingResult',
+    'GetCloudcertificatesGenerationAlgorithmsResult',
+    'GetCloudcertificatesLineageCurrentProductionResult',
+    'GetCloudcertificatesLineageCurrentProductionAlgorithmsResult',
+    'GetCloudcertificatesLineageCurrentStagingResult',
+    'GetCloudcertificatesLineageCurrentStagingAlgorithmsResult',
+    'GetCloudcertificatesLineageHeadResult',
+    'GetCloudcertificatesLineageHeadAlgorithmsResult',
+    'GetCloudcertificatesLineagePreviousProductionResult',
+    'GetCloudcertificatesLineagePreviousProductionAlgorithmsResult',
+    'GetCloudcertificatesLineageSigningTargetResult',
+    'GetCloudcertificatesLineageSigningTargetAlgorithmsResult',
+    'GetCloudcertificatesLineageSubjectResult',
+    'GetCloudcertificatesLineagesLineageResult',
+    'GetCloudcertificatesLineagesLineageCurrentProductionResult',
+    'GetCloudcertificatesLineagesLineageCurrentProductionAlgorithmsResult',
+    'GetCloudcertificatesLineagesLineageCurrentStagingResult',
+    'GetCloudcertificatesLineagesLineageCurrentStagingAlgorithmsResult',
+    'GetCloudcertificatesLineagesLineageHeadResult',
+    'GetCloudcertificatesLineagesLineageHeadAlgorithmsResult',
+    'GetCloudcertificatesLineagesLineagePreviousProductionResult',
+    'GetCloudcertificatesLineagesLineagePreviousProductionAlgorithmsResult',
+    'GetCloudcertificatesLineagesLineageSigningTargetResult',
+    'GetCloudcertificatesLineagesLineageSigningTargetAlgorithmsResult',
+    'GetCloudcertificatesLineagesLineageSubjectResult',
     'GetCloudletsApiPrioritizationMatchRuleMatchRuleResult',
     'GetCloudletsApiPrioritizationMatchRuleMatchRuleMatchResult',
     'GetCloudletsApiPrioritizationMatchRuleMatchRuleMatchObjectMatchValueResult',
@@ -2086,22 +2125,2255 @@ class CloudAccessKeyTimeouts(dict):
 
 
 @pulumi.output_type
-class CloudcertificatesCertificateSubject(dict):
+class CloudcertificatesActivationProduction(dict):
+    @staticmethod
+    def __key_warning(key: str):
+        suggest = None
+        if key == "activationCreatedTime":
+            suggest = "activation_created_time"
+        elif key == "activationId":
+            suggest = "activation_id"
+        elif key == "activationModifiedTime":
+            suggest = "activation_modified_time"
+        elif key == "activationStatus":
+            suggest = "activation_status"
+        elif key == "activationType":
+            suggest = "activation_type"
+        elif key == "createdBy":
+            suggest = "created_by"
+        elif key == "errorTypes":
+            suggest = "error_types"
+        elif key == "generationId":
+            suggest = "generation_id"
+        elif key == "inProgressHostnameCount":
+            suggest = "in_progress_hostname_count"
+        elif key == "modifiedBy":
+            suggest = "modified_by"
+        elif key == "preEmptedBy":
+            suggest = "pre_empted_by"
+        elif key == "totalHostnameCount":
+            suggest = "total_hostname_count"
+
+        if suggest:
+            pulumi.log.warn(f"Key '{key}' not found in CloudcertificatesActivationProduction. Access the value via the '{suggest}' property getter instead.")
+
+    def __getitem__(self, key: str) -> Any:
+        CloudcertificatesActivationProduction.__key_warning(key)
+        return super().__getitem__(key)
+
+    def get(self, key: str, default = None) -> Any:
+        CloudcertificatesActivationProduction.__key_warning(key)
+        return super().get(key, default)
+
+    def __init__(__self__, *,
+                 activation_created_time: Optional[_builtins.str] = None,
+                 activation_id: Optional[_builtins.int] = None,
+                 activation_modified_time: Optional[_builtins.str] = None,
+                 activation_status: Optional[_builtins.str] = None,
+                 activation_type: Optional[_builtins.str] = None,
+                 created_by: Optional[_builtins.str] = None,
+                 error_types: Optional[_builtins.str] = None,
+                 generation_id: Optional[_builtins.int] = None,
+                 in_progress_hostname_count: Optional[_builtins.int] = None,
+                 modified_by: Optional[_builtins.str] = None,
+                 pre_empted_by: Optional[_builtins.int] = None,
+                 total_hostname_count: Optional[_builtins.int] = None):
+        """
+        :param _builtins.str activation_created_time: The time the activation request was created.
+        :param _builtins.int activation_id: Unique identifier of the activation request.
+        :param _builtins.str activation_modified_time: The time the activation request was last modified.
+        :param _builtins.str activation_status: The status of the activation request: `INIT`, `PENDING`, `IN_PROGRESS`, `COMPLETE`, `PARTIAL_SUCCESS`, `FAILED`, or `ABORTED`.
+        :param _builtins.str activation_type: The type of the activation operation. Always `PROMOTE` for this resource.
+        :param _builtins.str created_by: The user who created the activation request.
+        :param _builtins.str error_types: Error type information when the activation failed, or null otherwise.
+        :param _builtins.int generation_id: Unique identifier of the generation actually tracked as active on the PRODUCTION network.
+        :param _builtins.int in_progress_hostname_count: The number of hostnames still in progress for this activation, or null if not yet known.
+        :param _builtins.str modified_by: The user who last modified the activation request.
+        :param _builtins.int pre_empted_by: The activation request that pre-empted (superseded) this one, or null if this activation was not pre-empted.
+        :param _builtins.int total_hostname_count: The total number of hostnames being deployed as part of this activation, or null if not yet known.
+        """
+        if activation_created_time is not None:
+            pulumi.set(__self__, "activation_created_time", activation_created_time)
+        if activation_id is not None:
+            pulumi.set(__self__, "activation_id", activation_id)
+        if activation_modified_time is not None:
+            pulumi.set(__self__, "activation_modified_time", activation_modified_time)
+        if activation_status is not None:
+            pulumi.set(__self__, "activation_status", activation_status)
+        if activation_type is not None:
+            pulumi.set(__self__, "activation_type", activation_type)
+        if created_by is not None:
+            pulumi.set(__self__, "created_by", created_by)
+        if error_types is not None:
+            pulumi.set(__self__, "error_types", error_types)
+        if generation_id is not None:
+            pulumi.set(__self__, "generation_id", generation_id)
+        if in_progress_hostname_count is not None:
+            pulumi.set(__self__, "in_progress_hostname_count", in_progress_hostname_count)
+        if modified_by is not None:
+            pulumi.set(__self__, "modified_by", modified_by)
+        if pre_empted_by is not None:
+            pulumi.set(__self__, "pre_empted_by", pre_empted_by)
+        if total_hostname_count is not None:
+            pulumi.set(__self__, "total_hostname_count", total_hostname_count)
+
+    @_builtins.property
+    @pulumi.getter(name="activationCreatedTime")
+    def activation_created_time(self) -> Optional[_builtins.str]:
+        """
+        The time the activation request was created.
+        """
+        return pulumi.get(self, "activation_created_time")
+
+    @_builtins.property
+    @pulumi.getter(name="activationId")
+    def activation_id(self) -> Optional[_builtins.int]:
+        """
+        Unique identifier of the activation request.
+        """
+        return pulumi.get(self, "activation_id")
+
+    @_builtins.property
+    @pulumi.getter(name="activationModifiedTime")
+    def activation_modified_time(self) -> Optional[_builtins.str]:
+        """
+        The time the activation request was last modified.
+        """
+        return pulumi.get(self, "activation_modified_time")
+
+    @_builtins.property
+    @pulumi.getter(name="activationStatus")
+    def activation_status(self) -> Optional[_builtins.str]:
+        """
+        The status of the activation request: `INIT`, `PENDING`, `IN_PROGRESS`, `COMPLETE`, `PARTIAL_SUCCESS`, `FAILED`, or `ABORTED`.
+        """
+        return pulumi.get(self, "activation_status")
+
+    @_builtins.property
+    @pulumi.getter(name="activationType")
+    def activation_type(self) -> Optional[_builtins.str]:
+        """
+        The type of the activation operation. Always `PROMOTE` for this resource.
+        """
+        return pulumi.get(self, "activation_type")
+
+    @_builtins.property
+    @pulumi.getter(name="createdBy")
+    def created_by(self) -> Optional[_builtins.str]:
+        """
+        The user who created the activation request.
+        """
+        return pulumi.get(self, "created_by")
+
+    @_builtins.property
+    @pulumi.getter(name="errorTypes")
+    def error_types(self) -> Optional[_builtins.str]:
+        """
+        Error type information when the activation failed, or null otherwise.
+        """
+        return pulumi.get(self, "error_types")
+
+    @_builtins.property
+    @pulumi.getter(name="generationId")
+    def generation_id(self) -> Optional[_builtins.int]:
+        """
+        Unique identifier of the generation actually tracked as active on the PRODUCTION network.
+        """
+        return pulumi.get(self, "generation_id")
+
+    @_builtins.property
+    @pulumi.getter(name="inProgressHostnameCount")
+    def in_progress_hostname_count(self) -> Optional[_builtins.int]:
+        """
+        The number of hostnames still in progress for this activation, or null if not yet known.
+        """
+        return pulumi.get(self, "in_progress_hostname_count")
+
+    @_builtins.property
+    @pulumi.getter(name="modifiedBy")
+    def modified_by(self) -> Optional[_builtins.str]:
+        """
+        The user who last modified the activation request.
+        """
+        return pulumi.get(self, "modified_by")
+
+    @_builtins.property
+    @pulumi.getter(name="preEmptedBy")
+    def pre_empted_by(self) -> Optional[_builtins.int]:
+        """
+        The activation request that pre-empted (superseded) this one, or null if this activation was not pre-empted.
+        """
+        return pulumi.get(self, "pre_empted_by")
+
+    @_builtins.property
+    @pulumi.getter(name="totalHostnameCount")
+    def total_hostname_count(self) -> Optional[_builtins.int]:
+        """
+        The total number of hostnames being deployed as part of this activation, or null if not yet known.
+        """
+        return pulumi.get(self, "total_hostname_count")
+
+
+@pulumi.output_type
+class CloudcertificatesActivationStaging(dict):
+    @staticmethod
+    def __key_warning(key: str):
+        suggest = None
+        if key == "activationCreatedTime":
+            suggest = "activation_created_time"
+        elif key == "activationId":
+            suggest = "activation_id"
+        elif key == "activationModifiedTime":
+            suggest = "activation_modified_time"
+        elif key == "activationStatus":
+            suggest = "activation_status"
+        elif key == "activationType":
+            suggest = "activation_type"
+        elif key == "createdBy":
+            suggest = "created_by"
+        elif key == "errorTypes":
+            suggest = "error_types"
+        elif key == "generationId":
+            suggest = "generation_id"
+        elif key == "inProgressHostnameCount":
+            suggest = "in_progress_hostname_count"
+        elif key == "modifiedBy":
+            suggest = "modified_by"
+        elif key == "preEmptedBy":
+            suggest = "pre_empted_by"
+        elif key == "totalHostnameCount":
+            suggest = "total_hostname_count"
+
+        if suggest:
+            pulumi.log.warn(f"Key '{key}' not found in CloudcertificatesActivationStaging. Access the value via the '{suggest}' property getter instead.")
+
+    def __getitem__(self, key: str) -> Any:
+        CloudcertificatesActivationStaging.__key_warning(key)
+        return super().__getitem__(key)
+
+    def get(self, key: str, default = None) -> Any:
+        CloudcertificatesActivationStaging.__key_warning(key)
+        return super().get(key, default)
+
+    def __init__(__self__, *,
+                 activation_created_time: Optional[_builtins.str] = None,
+                 activation_id: Optional[_builtins.int] = None,
+                 activation_modified_time: Optional[_builtins.str] = None,
+                 activation_status: Optional[_builtins.str] = None,
+                 activation_type: Optional[_builtins.str] = None,
+                 created_by: Optional[_builtins.str] = None,
+                 error_types: Optional[_builtins.str] = None,
+                 generation_id: Optional[_builtins.int] = None,
+                 in_progress_hostname_count: Optional[_builtins.int] = None,
+                 modified_by: Optional[_builtins.str] = None,
+                 pre_empted_by: Optional[_builtins.int] = None,
+                 total_hostname_count: Optional[_builtins.int] = None):
+        """
+        :param _builtins.str activation_created_time: The time the activation request was created.
+        :param _builtins.int activation_id: Unique identifier of the activation request.
+        :param _builtins.str activation_modified_time: The time the activation request was last modified.
+        :param _builtins.str activation_status: The status of the activation request: `INIT`, `PENDING`, `IN_PROGRESS`, `COMPLETE`, `PARTIAL_SUCCESS`, `FAILED`, or `ABORTED`.
+        :param _builtins.str activation_type: The type of the activation operation. Always `PROMOTE` for this resource.
+        :param _builtins.str created_by: The user who created the activation request.
+        :param _builtins.str error_types: Error type information when the activation failed, or null otherwise.
+        :param _builtins.int generation_id: Unique identifier of the generation actually tracked as active on the STAGING network.
+        :param _builtins.int in_progress_hostname_count: The number of hostnames still in progress for this activation, or null if not yet known.
+        :param _builtins.str modified_by: The user who last modified the activation request.
+        :param _builtins.int pre_empted_by: The activation request that pre-empted (superseded) this one, or null if this activation was not pre-empted.
+        :param _builtins.int total_hostname_count: The total number of hostnames being deployed as part of this activation, or null if not yet known.
+        """
+        if activation_created_time is not None:
+            pulumi.set(__self__, "activation_created_time", activation_created_time)
+        if activation_id is not None:
+            pulumi.set(__self__, "activation_id", activation_id)
+        if activation_modified_time is not None:
+            pulumi.set(__self__, "activation_modified_time", activation_modified_time)
+        if activation_status is not None:
+            pulumi.set(__self__, "activation_status", activation_status)
+        if activation_type is not None:
+            pulumi.set(__self__, "activation_type", activation_type)
+        if created_by is not None:
+            pulumi.set(__self__, "created_by", created_by)
+        if error_types is not None:
+            pulumi.set(__self__, "error_types", error_types)
+        if generation_id is not None:
+            pulumi.set(__self__, "generation_id", generation_id)
+        if in_progress_hostname_count is not None:
+            pulumi.set(__self__, "in_progress_hostname_count", in_progress_hostname_count)
+        if modified_by is not None:
+            pulumi.set(__self__, "modified_by", modified_by)
+        if pre_empted_by is not None:
+            pulumi.set(__self__, "pre_empted_by", pre_empted_by)
+        if total_hostname_count is not None:
+            pulumi.set(__self__, "total_hostname_count", total_hostname_count)
+
+    @_builtins.property
+    @pulumi.getter(name="activationCreatedTime")
+    def activation_created_time(self) -> Optional[_builtins.str]:
+        """
+        The time the activation request was created.
+        """
+        return pulumi.get(self, "activation_created_time")
+
+    @_builtins.property
+    @pulumi.getter(name="activationId")
+    def activation_id(self) -> Optional[_builtins.int]:
+        """
+        Unique identifier of the activation request.
+        """
+        return pulumi.get(self, "activation_id")
+
+    @_builtins.property
+    @pulumi.getter(name="activationModifiedTime")
+    def activation_modified_time(self) -> Optional[_builtins.str]:
+        """
+        The time the activation request was last modified.
+        """
+        return pulumi.get(self, "activation_modified_time")
+
+    @_builtins.property
+    @pulumi.getter(name="activationStatus")
+    def activation_status(self) -> Optional[_builtins.str]:
+        """
+        The status of the activation request: `INIT`, `PENDING`, `IN_PROGRESS`, `COMPLETE`, `PARTIAL_SUCCESS`, `FAILED`, or `ABORTED`.
+        """
+        return pulumi.get(self, "activation_status")
+
+    @_builtins.property
+    @pulumi.getter(name="activationType")
+    def activation_type(self) -> Optional[_builtins.str]:
+        """
+        The type of the activation operation. Always `PROMOTE` for this resource.
+        """
+        return pulumi.get(self, "activation_type")
+
+    @_builtins.property
+    @pulumi.getter(name="createdBy")
+    def created_by(self) -> Optional[_builtins.str]:
+        """
+        The user who created the activation request.
+        """
+        return pulumi.get(self, "created_by")
+
+    @_builtins.property
+    @pulumi.getter(name="errorTypes")
+    def error_types(self) -> Optional[_builtins.str]:
+        """
+        Error type information when the activation failed, or null otherwise.
+        """
+        return pulumi.get(self, "error_types")
+
+    @_builtins.property
+    @pulumi.getter(name="generationId")
+    def generation_id(self) -> Optional[_builtins.int]:
+        """
+        Unique identifier of the generation actually tracked as active on the STAGING network.
+        """
+        return pulumi.get(self, "generation_id")
+
+    @_builtins.property
+    @pulumi.getter(name="inProgressHostnameCount")
+    def in_progress_hostname_count(self) -> Optional[_builtins.int]:
+        """
+        The number of hostnames still in progress for this activation, or null if not yet known.
+        """
+        return pulumi.get(self, "in_progress_hostname_count")
+
+    @_builtins.property
+    @pulumi.getter(name="modifiedBy")
+    def modified_by(self) -> Optional[_builtins.str]:
+        """
+        The user who last modified the activation request.
+        """
+        return pulumi.get(self, "modified_by")
+
+    @_builtins.property
+    @pulumi.getter(name="preEmptedBy")
+    def pre_empted_by(self) -> Optional[_builtins.int]:
+        """
+        The activation request that pre-empted (superseded) this one, or null if this activation was not pre-empted.
+        """
+        return pulumi.get(self, "pre_empted_by")
+
+    @_builtins.property
+    @pulumi.getter(name="totalHostnameCount")
+    def total_hostname_count(self) -> Optional[_builtins.int]:
+        """
+        The total number of hostnames being deployed as part of this activation, or null if not yet known.
+        """
+        return pulumi.get(self, "total_hostname_count")
+
+
+@pulumi.output_type
+class CloudcertificatesActivationTimeouts(dict):
+    def __init__(__self__, *,
+                 create: Optional[_builtins.str] = None,
+                 update: Optional[_builtins.str] = None):
+        """
+        :param _builtins.str create: Optional configurable timeout for waiting for a newly created activation to reach a terminal status. By default it's 30m with a 15s polling interval.
+        :param _builtins.str update: Optional configurable timeout for waiting for a network's changed activation to reach a terminal status. By default it's 30m with a 15s polling interval.
+        """
+        if create is not None:
+            pulumi.set(__self__, "create", create)
+        if update is not None:
+            pulumi.set(__self__, "update", update)
+
+    @_builtins.property
+    @pulumi.getter
+    def create(self) -> Optional[_builtins.str]:
+        """
+        Optional configurable timeout for waiting for a newly created activation to reach a terminal status. By default it's 30m with a 15s polling interval.
+        """
+        return pulumi.get(self, "create")
+
+    @_builtins.property
+    @pulumi.getter
+    def update(self) -> Optional[_builtins.str]:
+        """
+        Optional configurable timeout for waiting for a network's changed activation to reach a terminal status. By default it's 30m with a 15s polling interval.
+        """
+        return pulumi.get(self, "update")
+
+
+@pulumi.output_type
+class CloudcertificatesLineageCurrentProduction(dict):
+    @staticmethod
+    def __key_warning(key: str):
+        suggest = None
+        if key == "firstPromotedToProductionTime":
+            suggest = "first_promoted_to_production_time"
+        elif key == "generationCreatedBy":
+            suggest = "generation_created_by"
+        elif key == "generationCreatedTime":
+            suggest = "generation_created_time"
+        elif key == "generationId":
+            suggest = "generation_id"
+        elif key == "generationModifiedBy":
+            suggest = "generation_modified_by"
+        elif key == "generationModifiedTime":
+            suggest = "generation_modified_time"
+        elif key == "generationStatus":
+            suggest = "generation_status"
+
+        if suggest:
+            pulumi.log.warn(f"Key '{key}' not found in CloudcertificatesLineageCurrentProduction. Access the value via the '{suggest}' property getter instead.")
+
+    def __getitem__(self, key: str) -> Any:
+        CloudcertificatesLineageCurrentProduction.__key_warning(key)
+        return super().__getitem__(key)
+
+    def get(self, key: str, default = None) -> Any:
+        CloudcertificatesLineageCurrentProduction.__key_warning(key)
+        return super().get(key, default)
+
+    def __init__(__self__, *,
+                 algorithms: Optional[Mapping[str, 'outputs.CloudcertificatesLineageCurrentProductionAlgorithms']] = None,
+                 first_promoted_to_production_time: Optional[_builtins.str] = None,
+                 generation_created_by: Optional[_builtins.str] = None,
+                 generation_created_time: Optional[_builtins.str] = None,
+                 generation_id: Optional[_builtins.int] = None,
+                 generation_modified_by: Optional[_builtins.str] = None,
+                 generation_modified_time: Optional[_builtins.str] = None,
+                 generation_status: Optional[_builtins.str] = None):
+        """
+        :param Mapping[str, 'CloudcertificatesLineageCurrentProductionAlgorithmsArgs'] algorithms: Per key-type (RSA or ECDSA) certificate details for this generation, keyed by key_type.
+        :param _builtins.str first_promoted_to_production_time: Time the generation was first promoted to production, in RFC3339 format. Null if never promoted.
+        :param _builtins.str generation_created_by: Username of the person who created this generation.
+        :param _builtins.str generation_created_time: Time the generation was created, in RFC3339 format.
+        :param _builtins.int generation_id: Unique identifier of this generation.
+        :param _builtins.str generation_modified_by: Username of the person who last modified this generation.
+        :param _builtins.str generation_modified_time: Time the generation was last modified, in RFC3339 format. Null if never modified since creation.
+        :param _builtins.str generation_status: Status of this generation.
+        """
+        if algorithms is not None:
+            pulumi.set(__self__, "algorithms", algorithms)
+        if first_promoted_to_production_time is not None:
+            pulumi.set(__self__, "first_promoted_to_production_time", first_promoted_to_production_time)
+        if generation_created_by is not None:
+            pulumi.set(__self__, "generation_created_by", generation_created_by)
+        if generation_created_time is not None:
+            pulumi.set(__self__, "generation_created_time", generation_created_time)
+        if generation_id is not None:
+            pulumi.set(__self__, "generation_id", generation_id)
+        if generation_modified_by is not None:
+            pulumi.set(__self__, "generation_modified_by", generation_modified_by)
+        if generation_modified_time is not None:
+            pulumi.set(__self__, "generation_modified_time", generation_modified_time)
+        if generation_status is not None:
+            pulumi.set(__self__, "generation_status", generation_status)
+
+    @_builtins.property
+    @pulumi.getter
+    def algorithms(self) -> Optional[Mapping[str, 'outputs.CloudcertificatesLineageCurrentProductionAlgorithms']]:
+        """
+        Per key-type (RSA or ECDSA) certificate details for this generation, keyed by key_type.
+        """
+        return pulumi.get(self, "algorithms")
+
+    @_builtins.property
+    @pulumi.getter(name="firstPromotedToProductionTime")
+    def first_promoted_to_production_time(self) -> Optional[_builtins.str]:
+        """
+        Time the generation was first promoted to production, in RFC3339 format. Null if never promoted.
+        """
+        return pulumi.get(self, "first_promoted_to_production_time")
+
+    @_builtins.property
+    @pulumi.getter(name="generationCreatedBy")
+    def generation_created_by(self) -> Optional[_builtins.str]:
+        """
+        Username of the person who created this generation.
+        """
+        return pulumi.get(self, "generation_created_by")
+
+    @_builtins.property
+    @pulumi.getter(name="generationCreatedTime")
+    def generation_created_time(self) -> Optional[_builtins.str]:
+        """
+        Time the generation was created, in RFC3339 format.
+        """
+        return pulumi.get(self, "generation_created_time")
+
+    @_builtins.property
+    @pulumi.getter(name="generationId")
+    def generation_id(self) -> Optional[_builtins.int]:
+        """
+        Unique identifier of this generation.
+        """
+        return pulumi.get(self, "generation_id")
+
+    @_builtins.property
+    @pulumi.getter(name="generationModifiedBy")
+    def generation_modified_by(self) -> Optional[_builtins.str]:
+        """
+        Username of the person who last modified this generation.
+        """
+        return pulumi.get(self, "generation_modified_by")
+
+    @_builtins.property
+    @pulumi.getter(name="generationModifiedTime")
+    def generation_modified_time(self) -> Optional[_builtins.str]:
+        """
+        Time the generation was last modified, in RFC3339 format. Null if never modified since creation.
+        """
+        return pulumi.get(self, "generation_modified_time")
+
+    @_builtins.property
+    @pulumi.getter(name="generationStatus")
+    def generation_status(self) -> Optional[_builtins.str]:
+        """
+        Status of this generation.
+        """
+        return pulumi.get(self, "generation_status")
+
+
+@pulumi.output_type
+class CloudcertificatesLineageCurrentProductionAlgorithms(dict):
+    @staticmethod
+    def __key_warning(key: str):
+        suggest = None
+        if key == "algorithmInstanceCreatedBy":
+            suggest = "algorithm_instance_created_by"
+        elif key == "algorithmInstanceCreatedTime":
+            suggest = "algorithm_instance_created_time"
+        elif key == "algorithmInstanceId":
+            suggest = "algorithm_instance_id"
+        elif key == "algorithmInstanceModifiedBy":
+            suggest = "algorithm_instance_modified_by"
+        elif key == "algorithmInstanceModifiedTime":
+            suggest = "algorithm_instance_modified_time"
+        elif key == "certificateStatus":
+            suggest = "certificate_status"
+        elif key == "csrExpirationDate":
+            suggest = "csr_expiration_date"
+        elif key == "csrPem":
+            suggest = "csr_pem"
+        elif key == "signedCertificateIssuer":
+            suggest = "signed_certificate_issuer"
+        elif key == "signedCertificateNotValidAfterDate":
+            suggest = "signed_certificate_not_valid_after_date"
+        elif key == "signedCertificateNotValidBeforeDate":
+            suggest = "signed_certificate_not_valid_before_date"
+        elif key == "signedCertificatePem":
+            suggest = "signed_certificate_pem"
+        elif key == "signedCertificateSerialNumber":
+            suggest = "signed_certificate_serial_number"
+        elif key == "signedCertificateSha256Fingerprint":
+            suggest = "signed_certificate_sha256_fingerprint"
+        elif key == "trustChainPem":
+            suggest = "trust_chain_pem"
+
+        if suggest:
+            pulumi.log.warn(f"Key '{key}' not found in CloudcertificatesLineageCurrentProductionAlgorithms. Access the value via the '{suggest}' property getter instead.")
+
+    def __getitem__(self, key: str) -> Any:
+        CloudcertificatesLineageCurrentProductionAlgorithms.__key_warning(key)
+        return super().__getitem__(key)
+
+    def get(self, key: str, default = None) -> Any:
+        CloudcertificatesLineageCurrentProductionAlgorithms.__key_warning(key)
+        return super().get(key, default)
+
+    def __init__(__self__, *,
+                 algorithm_instance_created_by: Optional[_builtins.str] = None,
+                 algorithm_instance_created_time: Optional[_builtins.str] = None,
+                 algorithm_instance_id: Optional[_builtins.int] = None,
+                 algorithm_instance_modified_by: Optional[_builtins.str] = None,
+                 algorithm_instance_modified_time: Optional[_builtins.str] = None,
+                 certificate_status: Optional[_builtins.str] = None,
+                 csr_expiration_date: Optional[_builtins.str] = None,
+                 csr_pem: Optional[_builtins.str] = None,
+                 signed_certificate_issuer: Optional[_builtins.str] = None,
+                 signed_certificate_not_valid_after_date: Optional[_builtins.str] = None,
+                 signed_certificate_not_valid_before_date: Optional[_builtins.str] = None,
+                 signed_certificate_pem: Optional[_builtins.str] = None,
+                 signed_certificate_serial_number: Optional[_builtins.str] = None,
+                 signed_certificate_sha256_fingerprint: Optional[_builtins.str] = None,
+                 trust_chain_pem: Optional[_builtins.str] = None):
+        """
+        :param _builtins.str algorithm_instance_created_by: Username of the person who created the algorithm instance.
+        :param _builtins.str algorithm_instance_created_time: Time the algorithm instance was created, in RFC3339 format.
+        :param _builtins.int algorithm_instance_id: Unique identifier of the algorithm instance.
+        :param _builtins.str algorithm_instance_modified_by: Username of the person who last modified the algorithm instance. Null if never modified.
+        :param _builtins.str algorithm_instance_modified_time: Time the algorithm instance was last modified, in RFC3339 format. Null if never modified.
+        :param _builtins.str certificate_status: Status of the certificate for this key type: `CSR_READY`, `CERT_UPLOAD_PROCESSING`, `READY_FOR_USE`, or `ABANDONED`.
+        :param _builtins.str csr_expiration_date: Date when the CSR expires, in RFC3339 format.
+        :param _builtins.str csr_pem: PEM-encoded certificate signing request.
+        :param _builtins.str signed_certificate_issuer: Issuer field of the signed certificate. Null until a certificate is uploaded.
+        :param _builtins.str signed_certificate_not_valid_after_date: Expiration date of the signed certificate, in RFC3339 format. Null until a certificate is uploaded.
+        :param _builtins.str signed_certificate_not_valid_before_date: Start of validity of the signed certificate, in RFC3339 format. Null until a certificate is uploaded.
+        :param _builtins.str signed_certificate_pem: PEM-encoded signed certificate. Null until a certificate is uploaded.
+        :param _builtins.str signed_certificate_serial_number: Serial number of the signed certificate in hex format. Null until a certificate is uploaded.
+        :param _builtins.str signed_certificate_sha256_fingerprint: SHA-256 fingerprint of the signed certificate. Null until a certificate is uploaded.
+        :param _builtins.str trust_chain_pem: PEM-encoded trust chain uploaded alongside the signed certificate. Null if none was uploaded.
+        """
+        if algorithm_instance_created_by is not None:
+            pulumi.set(__self__, "algorithm_instance_created_by", algorithm_instance_created_by)
+        if algorithm_instance_created_time is not None:
+            pulumi.set(__self__, "algorithm_instance_created_time", algorithm_instance_created_time)
+        if algorithm_instance_id is not None:
+            pulumi.set(__self__, "algorithm_instance_id", algorithm_instance_id)
+        if algorithm_instance_modified_by is not None:
+            pulumi.set(__self__, "algorithm_instance_modified_by", algorithm_instance_modified_by)
+        if algorithm_instance_modified_time is not None:
+            pulumi.set(__self__, "algorithm_instance_modified_time", algorithm_instance_modified_time)
+        if certificate_status is not None:
+            pulumi.set(__self__, "certificate_status", certificate_status)
+        if csr_expiration_date is not None:
+            pulumi.set(__self__, "csr_expiration_date", csr_expiration_date)
+        if csr_pem is not None:
+            pulumi.set(__self__, "csr_pem", csr_pem)
+        if signed_certificate_issuer is not None:
+            pulumi.set(__self__, "signed_certificate_issuer", signed_certificate_issuer)
+        if signed_certificate_not_valid_after_date is not None:
+            pulumi.set(__self__, "signed_certificate_not_valid_after_date", signed_certificate_not_valid_after_date)
+        if signed_certificate_not_valid_before_date is not None:
+            pulumi.set(__self__, "signed_certificate_not_valid_before_date", signed_certificate_not_valid_before_date)
+        if signed_certificate_pem is not None:
+            pulumi.set(__self__, "signed_certificate_pem", signed_certificate_pem)
+        if signed_certificate_serial_number is not None:
+            pulumi.set(__self__, "signed_certificate_serial_number", signed_certificate_serial_number)
+        if signed_certificate_sha256_fingerprint is not None:
+            pulumi.set(__self__, "signed_certificate_sha256_fingerprint", signed_certificate_sha256_fingerprint)
+        if trust_chain_pem is not None:
+            pulumi.set(__self__, "trust_chain_pem", trust_chain_pem)
+
+    @_builtins.property
+    @pulumi.getter(name="algorithmInstanceCreatedBy")
+    def algorithm_instance_created_by(self) -> Optional[_builtins.str]:
+        """
+        Username of the person who created the algorithm instance.
+        """
+        return pulumi.get(self, "algorithm_instance_created_by")
+
+    @_builtins.property
+    @pulumi.getter(name="algorithmInstanceCreatedTime")
+    def algorithm_instance_created_time(self) -> Optional[_builtins.str]:
+        """
+        Time the algorithm instance was created, in RFC3339 format.
+        """
+        return pulumi.get(self, "algorithm_instance_created_time")
+
+    @_builtins.property
+    @pulumi.getter(name="algorithmInstanceId")
+    def algorithm_instance_id(self) -> Optional[_builtins.int]:
+        """
+        Unique identifier of the algorithm instance.
+        """
+        return pulumi.get(self, "algorithm_instance_id")
+
+    @_builtins.property
+    @pulumi.getter(name="algorithmInstanceModifiedBy")
+    def algorithm_instance_modified_by(self) -> Optional[_builtins.str]:
+        """
+        Username of the person who last modified the algorithm instance. Null if never modified.
+        """
+        return pulumi.get(self, "algorithm_instance_modified_by")
+
+    @_builtins.property
+    @pulumi.getter(name="algorithmInstanceModifiedTime")
+    def algorithm_instance_modified_time(self) -> Optional[_builtins.str]:
+        """
+        Time the algorithm instance was last modified, in RFC3339 format. Null if never modified.
+        """
+        return pulumi.get(self, "algorithm_instance_modified_time")
+
+    @_builtins.property
+    @pulumi.getter(name="certificateStatus")
+    def certificate_status(self) -> Optional[_builtins.str]:
+        """
+        Status of the certificate for this key type: `CSR_READY`, `CERT_UPLOAD_PROCESSING`, `READY_FOR_USE`, or `ABANDONED`.
+        """
+        return pulumi.get(self, "certificate_status")
+
+    @_builtins.property
+    @pulumi.getter(name="csrExpirationDate")
+    def csr_expiration_date(self) -> Optional[_builtins.str]:
+        """
+        Date when the CSR expires, in RFC3339 format.
+        """
+        return pulumi.get(self, "csr_expiration_date")
+
+    @_builtins.property
+    @pulumi.getter(name="csrPem")
+    def csr_pem(self) -> Optional[_builtins.str]:
+        """
+        PEM-encoded certificate signing request.
+        """
+        return pulumi.get(self, "csr_pem")
+
+    @_builtins.property
+    @pulumi.getter(name="signedCertificateIssuer")
+    def signed_certificate_issuer(self) -> Optional[_builtins.str]:
+        """
+        Issuer field of the signed certificate. Null until a certificate is uploaded.
+        """
+        return pulumi.get(self, "signed_certificate_issuer")
+
+    @_builtins.property
+    @pulumi.getter(name="signedCertificateNotValidAfterDate")
+    def signed_certificate_not_valid_after_date(self) -> Optional[_builtins.str]:
+        """
+        Expiration date of the signed certificate, in RFC3339 format. Null until a certificate is uploaded.
+        """
+        return pulumi.get(self, "signed_certificate_not_valid_after_date")
+
+    @_builtins.property
+    @pulumi.getter(name="signedCertificateNotValidBeforeDate")
+    def signed_certificate_not_valid_before_date(self) -> Optional[_builtins.str]:
+        """
+        Start of validity of the signed certificate, in RFC3339 format. Null until a certificate is uploaded.
+        """
+        return pulumi.get(self, "signed_certificate_not_valid_before_date")
+
+    @_builtins.property
+    @pulumi.getter(name="signedCertificatePem")
+    def signed_certificate_pem(self) -> Optional[_builtins.str]:
+        """
+        PEM-encoded signed certificate. Null until a certificate is uploaded.
+        """
+        return pulumi.get(self, "signed_certificate_pem")
+
+    @_builtins.property
+    @pulumi.getter(name="signedCertificateSerialNumber")
+    def signed_certificate_serial_number(self) -> Optional[_builtins.str]:
+        """
+        Serial number of the signed certificate in hex format. Null until a certificate is uploaded.
+        """
+        return pulumi.get(self, "signed_certificate_serial_number")
+
+    @_builtins.property
+    @pulumi.getter(name="signedCertificateSha256Fingerprint")
+    def signed_certificate_sha256_fingerprint(self) -> Optional[_builtins.str]:
+        """
+        SHA-256 fingerprint of the signed certificate. Null until a certificate is uploaded.
+        """
+        return pulumi.get(self, "signed_certificate_sha256_fingerprint")
+
+    @_builtins.property
+    @pulumi.getter(name="trustChainPem")
+    def trust_chain_pem(self) -> Optional[_builtins.str]:
+        """
+        PEM-encoded trust chain uploaded alongside the signed certificate. Null if none was uploaded.
+        """
+        return pulumi.get(self, "trust_chain_pem")
+
+
+@pulumi.output_type
+class CloudcertificatesLineageCurrentStaging(dict):
+    @staticmethod
+    def __key_warning(key: str):
+        suggest = None
+        if key == "firstPromotedToProductionTime":
+            suggest = "first_promoted_to_production_time"
+        elif key == "generationCreatedBy":
+            suggest = "generation_created_by"
+        elif key == "generationCreatedTime":
+            suggest = "generation_created_time"
+        elif key == "generationId":
+            suggest = "generation_id"
+        elif key == "generationModifiedBy":
+            suggest = "generation_modified_by"
+        elif key == "generationModifiedTime":
+            suggest = "generation_modified_time"
+        elif key == "generationStatus":
+            suggest = "generation_status"
+
+        if suggest:
+            pulumi.log.warn(f"Key '{key}' not found in CloudcertificatesLineageCurrentStaging. Access the value via the '{suggest}' property getter instead.")
+
+    def __getitem__(self, key: str) -> Any:
+        CloudcertificatesLineageCurrentStaging.__key_warning(key)
+        return super().__getitem__(key)
+
+    def get(self, key: str, default = None) -> Any:
+        CloudcertificatesLineageCurrentStaging.__key_warning(key)
+        return super().get(key, default)
+
+    def __init__(__self__, *,
+                 algorithms: Optional[Mapping[str, 'outputs.CloudcertificatesLineageCurrentStagingAlgorithms']] = None,
+                 first_promoted_to_production_time: Optional[_builtins.str] = None,
+                 generation_created_by: Optional[_builtins.str] = None,
+                 generation_created_time: Optional[_builtins.str] = None,
+                 generation_id: Optional[_builtins.int] = None,
+                 generation_modified_by: Optional[_builtins.str] = None,
+                 generation_modified_time: Optional[_builtins.str] = None,
+                 generation_status: Optional[_builtins.str] = None):
+        """
+        :param Mapping[str, 'CloudcertificatesLineageCurrentStagingAlgorithmsArgs'] algorithms: Per key-type (RSA or ECDSA) certificate details for this generation, keyed by key_type.
+        :param _builtins.str first_promoted_to_production_time: Time the generation was first promoted to production, in RFC3339 format. Null if never promoted.
+        :param _builtins.str generation_created_by: Username of the person who created this generation.
+        :param _builtins.str generation_created_time: Time the generation was created, in RFC3339 format.
+        :param _builtins.int generation_id: Unique identifier of this generation.
+        :param _builtins.str generation_modified_by: Username of the person who last modified this generation.
+        :param _builtins.str generation_modified_time: Time the generation was last modified, in RFC3339 format. Null if never modified since creation.
+        :param _builtins.str generation_status: Status of this generation.
+        """
+        if algorithms is not None:
+            pulumi.set(__self__, "algorithms", algorithms)
+        if first_promoted_to_production_time is not None:
+            pulumi.set(__self__, "first_promoted_to_production_time", first_promoted_to_production_time)
+        if generation_created_by is not None:
+            pulumi.set(__self__, "generation_created_by", generation_created_by)
+        if generation_created_time is not None:
+            pulumi.set(__self__, "generation_created_time", generation_created_time)
+        if generation_id is not None:
+            pulumi.set(__self__, "generation_id", generation_id)
+        if generation_modified_by is not None:
+            pulumi.set(__self__, "generation_modified_by", generation_modified_by)
+        if generation_modified_time is not None:
+            pulumi.set(__self__, "generation_modified_time", generation_modified_time)
+        if generation_status is not None:
+            pulumi.set(__self__, "generation_status", generation_status)
+
+    @_builtins.property
+    @pulumi.getter
+    def algorithms(self) -> Optional[Mapping[str, 'outputs.CloudcertificatesLineageCurrentStagingAlgorithms']]:
+        """
+        Per key-type (RSA or ECDSA) certificate details for this generation, keyed by key_type.
+        """
+        return pulumi.get(self, "algorithms")
+
+    @_builtins.property
+    @pulumi.getter(name="firstPromotedToProductionTime")
+    def first_promoted_to_production_time(self) -> Optional[_builtins.str]:
+        """
+        Time the generation was first promoted to production, in RFC3339 format. Null if never promoted.
+        """
+        return pulumi.get(self, "first_promoted_to_production_time")
+
+    @_builtins.property
+    @pulumi.getter(name="generationCreatedBy")
+    def generation_created_by(self) -> Optional[_builtins.str]:
+        """
+        Username of the person who created this generation.
+        """
+        return pulumi.get(self, "generation_created_by")
+
+    @_builtins.property
+    @pulumi.getter(name="generationCreatedTime")
+    def generation_created_time(self) -> Optional[_builtins.str]:
+        """
+        Time the generation was created, in RFC3339 format.
+        """
+        return pulumi.get(self, "generation_created_time")
+
+    @_builtins.property
+    @pulumi.getter(name="generationId")
+    def generation_id(self) -> Optional[_builtins.int]:
+        """
+        Unique identifier of this generation.
+        """
+        return pulumi.get(self, "generation_id")
+
+    @_builtins.property
+    @pulumi.getter(name="generationModifiedBy")
+    def generation_modified_by(self) -> Optional[_builtins.str]:
+        """
+        Username of the person who last modified this generation.
+        """
+        return pulumi.get(self, "generation_modified_by")
+
+    @_builtins.property
+    @pulumi.getter(name="generationModifiedTime")
+    def generation_modified_time(self) -> Optional[_builtins.str]:
+        """
+        Time the generation was last modified, in RFC3339 format. Null if never modified since creation.
+        """
+        return pulumi.get(self, "generation_modified_time")
+
+    @_builtins.property
+    @pulumi.getter(name="generationStatus")
+    def generation_status(self) -> Optional[_builtins.str]:
+        """
+        Status of this generation.
+        """
+        return pulumi.get(self, "generation_status")
+
+
+@pulumi.output_type
+class CloudcertificatesLineageCurrentStagingAlgorithms(dict):
+    @staticmethod
+    def __key_warning(key: str):
+        suggest = None
+        if key == "algorithmInstanceCreatedBy":
+            suggest = "algorithm_instance_created_by"
+        elif key == "algorithmInstanceCreatedTime":
+            suggest = "algorithm_instance_created_time"
+        elif key == "algorithmInstanceId":
+            suggest = "algorithm_instance_id"
+        elif key == "algorithmInstanceModifiedBy":
+            suggest = "algorithm_instance_modified_by"
+        elif key == "algorithmInstanceModifiedTime":
+            suggest = "algorithm_instance_modified_time"
+        elif key == "certificateStatus":
+            suggest = "certificate_status"
+        elif key == "csrExpirationDate":
+            suggest = "csr_expiration_date"
+        elif key == "csrPem":
+            suggest = "csr_pem"
+        elif key == "signedCertificateIssuer":
+            suggest = "signed_certificate_issuer"
+        elif key == "signedCertificateNotValidAfterDate":
+            suggest = "signed_certificate_not_valid_after_date"
+        elif key == "signedCertificateNotValidBeforeDate":
+            suggest = "signed_certificate_not_valid_before_date"
+        elif key == "signedCertificatePem":
+            suggest = "signed_certificate_pem"
+        elif key == "signedCertificateSerialNumber":
+            suggest = "signed_certificate_serial_number"
+        elif key == "signedCertificateSha256Fingerprint":
+            suggest = "signed_certificate_sha256_fingerprint"
+        elif key == "trustChainPem":
+            suggest = "trust_chain_pem"
+
+        if suggest:
+            pulumi.log.warn(f"Key '{key}' not found in CloudcertificatesLineageCurrentStagingAlgorithms. Access the value via the '{suggest}' property getter instead.")
+
+    def __getitem__(self, key: str) -> Any:
+        CloudcertificatesLineageCurrentStagingAlgorithms.__key_warning(key)
+        return super().__getitem__(key)
+
+    def get(self, key: str, default = None) -> Any:
+        CloudcertificatesLineageCurrentStagingAlgorithms.__key_warning(key)
+        return super().get(key, default)
+
+    def __init__(__self__, *,
+                 algorithm_instance_created_by: Optional[_builtins.str] = None,
+                 algorithm_instance_created_time: Optional[_builtins.str] = None,
+                 algorithm_instance_id: Optional[_builtins.int] = None,
+                 algorithm_instance_modified_by: Optional[_builtins.str] = None,
+                 algorithm_instance_modified_time: Optional[_builtins.str] = None,
+                 certificate_status: Optional[_builtins.str] = None,
+                 csr_expiration_date: Optional[_builtins.str] = None,
+                 csr_pem: Optional[_builtins.str] = None,
+                 signed_certificate_issuer: Optional[_builtins.str] = None,
+                 signed_certificate_not_valid_after_date: Optional[_builtins.str] = None,
+                 signed_certificate_not_valid_before_date: Optional[_builtins.str] = None,
+                 signed_certificate_pem: Optional[_builtins.str] = None,
+                 signed_certificate_serial_number: Optional[_builtins.str] = None,
+                 signed_certificate_sha256_fingerprint: Optional[_builtins.str] = None,
+                 trust_chain_pem: Optional[_builtins.str] = None):
+        """
+        :param _builtins.str algorithm_instance_created_by: Username of the person who created the algorithm instance.
+        :param _builtins.str algorithm_instance_created_time: Time the algorithm instance was created, in RFC3339 format.
+        :param _builtins.int algorithm_instance_id: Unique identifier of the algorithm instance.
+        :param _builtins.str algorithm_instance_modified_by: Username of the person who last modified the algorithm instance. Null if never modified.
+        :param _builtins.str algorithm_instance_modified_time: Time the algorithm instance was last modified, in RFC3339 format. Null if never modified.
+        :param _builtins.str certificate_status: Status of the certificate for this key type: `CSR_READY`, `CERT_UPLOAD_PROCESSING`, `READY_FOR_USE`, or `ABANDONED`.
+        :param _builtins.str csr_expiration_date: Date when the CSR expires, in RFC3339 format.
+        :param _builtins.str csr_pem: PEM-encoded certificate signing request.
+        :param _builtins.str signed_certificate_issuer: Issuer field of the signed certificate. Null until a certificate is uploaded.
+        :param _builtins.str signed_certificate_not_valid_after_date: Expiration date of the signed certificate, in RFC3339 format. Null until a certificate is uploaded.
+        :param _builtins.str signed_certificate_not_valid_before_date: Start of validity of the signed certificate, in RFC3339 format. Null until a certificate is uploaded.
+        :param _builtins.str signed_certificate_pem: PEM-encoded signed certificate. Null until a certificate is uploaded.
+        :param _builtins.str signed_certificate_serial_number: Serial number of the signed certificate in hex format. Null until a certificate is uploaded.
+        :param _builtins.str signed_certificate_sha256_fingerprint: SHA-256 fingerprint of the signed certificate. Null until a certificate is uploaded.
+        :param _builtins.str trust_chain_pem: PEM-encoded trust chain uploaded alongside the signed certificate. Null if none was uploaded.
+        """
+        if algorithm_instance_created_by is not None:
+            pulumi.set(__self__, "algorithm_instance_created_by", algorithm_instance_created_by)
+        if algorithm_instance_created_time is not None:
+            pulumi.set(__self__, "algorithm_instance_created_time", algorithm_instance_created_time)
+        if algorithm_instance_id is not None:
+            pulumi.set(__self__, "algorithm_instance_id", algorithm_instance_id)
+        if algorithm_instance_modified_by is not None:
+            pulumi.set(__self__, "algorithm_instance_modified_by", algorithm_instance_modified_by)
+        if algorithm_instance_modified_time is not None:
+            pulumi.set(__self__, "algorithm_instance_modified_time", algorithm_instance_modified_time)
+        if certificate_status is not None:
+            pulumi.set(__self__, "certificate_status", certificate_status)
+        if csr_expiration_date is not None:
+            pulumi.set(__self__, "csr_expiration_date", csr_expiration_date)
+        if csr_pem is not None:
+            pulumi.set(__self__, "csr_pem", csr_pem)
+        if signed_certificate_issuer is not None:
+            pulumi.set(__self__, "signed_certificate_issuer", signed_certificate_issuer)
+        if signed_certificate_not_valid_after_date is not None:
+            pulumi.set(__self__, "signed_certificate_not_valid_after_date", signed_certificate_not_valid_after_date)
+        if signed_certificate_not_valid_before_date is not None:
+            pulumi.set(__self__, "signed_certificate_not_valid_before_date", signed_certificate_not_valid_before_date)
+        if signed_certificate_pem is not None:
+            pulumi.set(__self__, "signed_certificate_pem", signed_certificate_pem)
+        if signed_certificate_serial_number is not None:
+            pulumi.set(__self__, "signed_certificate_serial_number", signed_certificate_serial_number)
+        if signed_certificate_sha256_fingerprint is not None:
+            pulumi.set(__self__, "signed_certificate_sha256_fingerprint", signed_certificate_sha256_fingerprint)
+        if trust_chain_pem is not None:
+            pulumi.set(__self__, "trust_chain_pem", trust_chain_pem)
+
+    @_builtins.property
+    @pulumi.getter(name="algorithmInstanceCreatedBy")
+    def algorithm_instance_created_by(self) -> Optional[_builtins.str]:
+        """
+        Username of the person who created the algorithm instance.
+        """
+        return pulumi.get(self, "algorithm_instance_created_by")
+
+    @_builtins.property
+    @pulumi.getter(name="algorithmInstanceCreatedTime")
+    def algorithm_instance_created_time(self) -> Optional[_builtins.str]:
+        """
+        Time the algorithm instance was created, in RFC3339 format.
+        """
+        return pulumi.get(self, "algorithm_instance_created_time")
+
+    @_builtins.property
+    @pulumi.getter(name="algorithmInstanceId")
+    def algorithm_instance_id(self) -> Optional[_builtins.int]:
+        """
+        Unique identifier of the algorithm instance.
+        """
+        return pulumi.get(self, "algorithm_instance_id")
+
+    @_builtins.property
+    @pulumi.getter(name="algorithmInstanceModifiedBy")
+    def algorithm_instance_modified_by(self) -> Optional[_builtins.str]:
+        """
+        Username of the person who last modified the algorithm instance. Null if never modified.
+        """
+        return pulumi.get(self, "algorithm_instance_modified_by")
+
+    @_builtins.property
+    @pulumi.getter(name="algorithmInstanceModifiedTime")
+    def algorithm_instance_modified_time(self) -> Optional[_builtins.str]:
+        """
+        Time the algorithm instance was last modified, in RFC3339 format. Null if never modified.
+        """
+        return pulumi.get(self, "algorithm_instance_modified_time")
+
+    @_builtins.property
+    @pulumi.getter(name="certificateStatus")
+    def certificate_status(self) -> Optional[_builtins.str]:
+        """
+        Status of the certificate for this key type: `CSR_READY`, `CERT_UPLOAD_PROCESSING`, `READY_FOR_USE`, or `ABANDONED`.
+        """
+        return pulumi.get(self, "certificate_status")
+
+    @_builtins.property
+    @pulumi.getter(name="csrExpirationDate")
+    def csr_expiration_date(self) -> Optional[_builtins.str]:
+        """
+        Date when the CSR expires, in RFC3339 format.
+        """
+        return pulumi.get(self, "csr_expiration_date")
+
+    @_builtins.property
+    @pulumi.getter(name="csrPem")
+    def csr_pem(self) -> Optional[_builtins.str]:
+        """
+        PEM-encoded certificate signing request.
+        """
+        return pulumi.get(self, "csr_pem")
+
+    @_builtins.property
+    @pulumi.getter(name="signedCertificateIssuer")
+    def signed_certificate_issuer(self) -> Optional[_builtins.str]:
+        """
+        Issuer field of the signed certificate. Null until a certificate is uploaded.
+        """
+        return pulumi.get(self, "signed_certificate_issuer")
+
+    @_builtins.property
+    @pulumi.getter(name="signedCertificateNotValidAfterDate")
+    def signed_certificate_not_valid_after_date(self) -> Optional[_builtins.str]:
+        """
+        Expiration date of the signed certificate, in RFC3339 format. Null until a certificate is uploaded.
+        """
+        return pulumi.get(self, "signed_certificate_not_valid_after_date")
+
+    @_builtins.property
+    @pulumi.getter(name="signedCertificateNotValidBeforeDate")
+    def signed_certificate_not_valid_before_date(self) -> Optional[_builtins.str]:
+        """
+        Start of validity of the signed certificate, in RFC3339 format. Null until a certificate is uploaded.
+        """
+        return pulumi.get(self, "signed_certificate_not_valid_before_date")
+
+    @_builtins.property
+    @pulumi.getter(name="signedCertificatePem")
+    def signed_certificate_pem(self) -> Optional[_builtins.str]:
+        """
+        PEM-encoded signed certificate. Null until a certificate is uploaded.
+        """
+        return pulumi.get(self, "signed_certificate_pem")
+
+    @_builtins.property
+    @pulumi.getter(name="signedCertificateSerialNumber")
+    def signed_certificate_serial_number(self) -> Optional[_builtins.str]:
+        """
+        Serial number of the signed certificate in hex format. Null until a certificate is uploaded.
+        """
+        return pulumi.get(self, "signed_certificate_serial_number")
+
+    @_builtins.property
+    @pulumi.getter(name="signedCertificateSha256Fingerprint")
+    def signed_certificate_sha256_fingerprint(self) -> Optional[_builtins.str]:
+        """
+        SHA-256 fingerprint of the signed certificate. Null until a certificate is uploaded.
+        """
+        return pulumi.get(self, "signed_certificate_sha256_fingerprint")
+
+    @_builtins.property
+    @pulumi.getter(name="trustChainPem")
+    def trust_chain_pem(self) -> Optional[_builtins.str]:
+        """
+        PEM-encoded trust chain uploaded alongside the signed certificate. Null if none was uploaded.
+        """
+        return pulumi.get(self, "trust_chain_pem")
+
+
+@pulumi.output_type
+class CloudcertificatesLineageHead(dict):
+    @staticmethod
+    def __key_warning(key: str):
+        suggest = None
+        if key == "firstPromotedToProductionTime":
+            suggest = "first_promoted_to_production_time"
+        elif key == "generationCreatedBy":
+            suggest = "generation_created_by"
+        elif key == "generationCreatedTime":
+            suggest = "generation_created_time"
+        elif key == "generationId":
+            suggest = "generation_id"
+        elif key == "generationModifiedBy":
+            suggest = "generation_modified_by"
+        elif key == "generationModifiedTime":
+            suggest = "generation_modified_time"
+        elif key == "generationStatus":
+            suggest = "generation_status"
+
+        if suggest:
+            pulumi.log.warn(f"Key '{key}' not found in CloudcertificatesLineageHead. Access the value via the '{suggest}' property getter instead.")
+
+    def __getitem__(self, key: str) -> Any:
+        CloudcertificatesLineageHead.__key_warning(key)
+        return super().__getitem__(key)
+
+    def get(self, key: str, default = None) -> Any:
+        CloudcertificatesLineageHead.__key_warning(key)
+        return super().get(key, default)
+
+    def __init__(__self__, *,
+                 algorithms: Optional[Mapping[str, 'outputs.CloudcertificatesLineageHeadAlgorithms']] = None,
+                 first_promoted_to_production_time: Optional[_builtins.str] = None,
+                 generation_created_by: Optional[_builtins.str] = None,
+                 generation_created_time: Optional[_builtins.str] = None,
+                 generation_id: Optional[_builtins.int] = None,
+                 generation_modified_by: Optional[_builtins.str] = None,
+                 generation_modified_time: Optional[_builtins.str] = None,
+                 generation_status: Optional[_builtins.str] = None):
+        """
+        :param Mapping[str, 'CloudcertificatesLineageHeadAlgorithmsArgs'] algorithms: Per key-type (RSA or ECDSA) certificate details for this generation, keyed by key_type.
+        :param _builtins.str first_promoted_to_production_time: Time the generation was first promoted to production, in RFC3339 format. Null if never promoted.
+        :param _builtins.str generation_created_by: Username of the person who created this generation.
+        :param _builtins.str generation_created_time: Time the generation was created, in RFC3339 format.
+        :param _builtins.int generation_id: Unique identifier of this generation.
+        :param _builtins.str generation_modified_by: Username of the person who last modified this generation.
+        :param _builtins.str generation_modified_time: Time the generation was last modified, in RFC3339 format. Null if never modified since creation.
+        :param _builtins.str generation_status: Status of this generation.
+        """
+        if algorithms is not None:
+            pulumi.set(__self__, "algorithms", algorithms)
+        if first_promoted_to_production_time is not None:
+            pulumi.set(__self__, "first_promoted_to_production_time", first_promoted_to_production_time)
+        if generation_created_by is not None:
+            pulumi.set(__self__, "generation_created_by", generation_created_by)
+        if generation_created_time is not None:
+            pulumi.set(__self__, "generation_created_time", generation_created_time)
+        if generation_id is not None:
+            pulumi.set(__self__, "generation_id", generation_id)
+        if generation_modified_by is not None:
+            pulumi.set(__self__, "generation_modified_by", generation_modified_by)
+        if generation_modified_time is not None:
+            pulumi.set(__self__, "generation_modified_time", generation_modified_time)
+        if generation_status is not None:
+            pulumi.set(__self__, "generation_status", generation_status)
+
+    @_builtins.property
+    @pulumi.getter
+    def algorithms(self) -> Optional[Mapping[str, 'outputs.CloudcertificatesLineageHeadAlgorithms']]:
+        """
+        Per key-type (RSA or ECDSA) certificate details for this generation, keyed by key_type.
+        """
+        return pulumi.get(self, "algorithms")
+
+    @_builtins.property
+    @pulumi.getter(name="firstPromotedToProductionTime")
+    def first_promoted_to_production_time(self) -> Optional[_builtins.str]:
+        """
+        Time the generation was first promoted to production, in RFC3339 format. Null if never promoted.
+        """
+        return pulumi.get(self, "first_promoted_to_production_time")
+
+    @_builtins.property
+    @pulumi.getter(name="generationCreatedBy")
+    def generation_created_by(self) -> Optional[_builtins.str]:
+        """
+        Username of the person who created this generation.
+        """
+        return pulumi.get(self, "generation_created_by")
+
+    @_builtins.property
+    @pulumi.getter(name="generationCreatedTime")
+    def generation_created_time(self) -> Optional[_builtins.str]:
+        """
+        Time the generation was created, in RFC3339 format.
+        """
+        return pulumi.get(self, "generation_created_time")
+
+    @_builtins.property
+    @pulumi.getter(name="generationId")
+    def generation_id(self) -> Optional[_builtins.int]:
+        """
+        Unique identifier of this generation.
+        """
+        return pulumi.get(self, "generation_id")
+
+    @_builtins.property
+    @pulumi.getter(name="generationModifiedBy")
+    def generation_modified_by(self) -> Optional[_builtins.str]:
+        """
+        Username of the person who last modified this generation.
+        """
+        return pulumi.get(self, "generation_modified_by")
+
+    @_builtins.property
+    @pulumi.getter(name="generationModifiedTime")
+    def generation_modified_time(self) -> Optional[_builtins.str]:
+        """
+        Time the generation was last modified, in RFC3339 format. Null if never modified since creation.
+        """
+        return pulumi.get(self, "generation_modified_time")
+
+    @_builtins.property
+    @pulumi.getter(name="generationStatus")
+    def generation_status(self) -> Optional[_builtins.str]:
+        """
+        Status of this generation.
+        """
+        return pulumi.get(self, "generation_status")
+
+
+@pulumi.output_type
+class CloudcertificatesLineageHeadAlgorithms(dict):
+    @staticmethod
+    def __key_warning(key: str):
+        suggest = None
+        if key == "algorithmInstanceCreatedBy":
+            suggest = "algorithm_instance_created_by"
+        elif key == "algorithmInstanceCreatedTime":
+            suggest = "algorithm_instance_created_time"
+        elif key == "algorithmInstanceId":
+            suggest = "algorithm_instance_id"
+        elif key == "algorithmInstanceModifiedBy":
+            suggest = "algorithm_instance_modified_by"
+        elif key == "algorithmInstanceModifiedTime":
+            suggest = "algorithm_instance_modified_time"
+        elif key == "certificateStatus":
+            suggest = "certificate_status"
+        elif key == "csrExpirationDate":
+            suggest = "csr_expiration_date"
+        elif key == "csrPem":
+            suggest = "csr_pem"
+        elif key == "signedCertificateIssuer":
+            suggest = "signed_certificate_issuer"
+        elif key == "signedCertificateNotValidAfterDate":
+            suggest = "signed_certificate_not_valid_after_date"
+        elif key == "signedCertificateNotValidBeforeDate":
+            suggest = "signed_certificate_not_valid_before_date"
+        elif key == "signedCertificatePem":
+            suggest = "signed_certificate_pem"
+        elif key == "signedCertificateSerialNumber":
+            suggest = "signed_certificate_serial_number"
+        elif key == "signedCertificateSha256Fingerprint":
+            suggest = "signed_certificate_sha256_fingerprint"
+        elif key == "trustChainPem":
+            suggest = "trust_chain_pem"
+
+        if suggest:
+            pulumi.log.warn(f"Key '{key}' not found in CloudcertificatesLineageHeadAlgorithms. Access the value via the '{suggest}' property getter instead.")
+
+    def __getitem__(self, key: str) -> Any:
+        CloudcertificatesLineageHeadAlgorithms.__key_warning(key)
+        return super().__getitem__(key)
+
+    def get(self, key: str, default = None) -> Any:
+        CloudcertificatesLineageHeadAlgorithms.__key_warning(key)
+        return super().get(key, default)
+
+    def __init__(__self__, *,
+                 algorithm_instance_created_by: Optional[_builtins.str] = None,
+                 algorithm_instance_created_time: Optional[_builtins.str] = None,
+                 algorithm_instance_id: Optional[_builtins.int] = None,
+                 algorithm_instance_modified_by: Optional[_builtins.str] = None,
+                 algorithm_instance_modified_time: Optional[_builtins.str] = None,
+                 certificate_status: Optional[_builtins.str] = None,
+                 csr_expiration_date: Optional[_builtins.str] = None,
+                 csr_pem: Optional[_builtins.str] = None,
+                 signed_certificate_issuer: Optional[_builtins.str] = None,
+                 signed_certificate_not_valid_after_date: Optional[_builtins.str] = None,
+                 signed_certificate_not_valid_before_date: Optional[_builtins.str] = None,
+                 signed_certificate_pem: Optional[_builtins.str] = None,
+                 signed_certificate_serial_number: Optional[_builtins.str] = None,
+                 signed_certificate_sha256_fingerprint: Optional[_builtins.str] = None,
+                 trust_chain_pem: Optional[_builtins.str] = None):
+        """
+        :param _builtins.str algorithm_instance_created_by: Username of the person who created the algorithm instance.
+        :param _builtins.str algorithm_instance_created_time: Time the algorithm instance was created, in RFC3339 format.
+        :param _builtins.int algorithm_instance_id: Unique identifier of the algorithm instance.
+        :param _builtins.str algorithm_instance_modified_by: Username of the person who last modified the algorithm instance. Null if never modified.
+        :param _builtins.str algorithm_instance_modified_time: Time the algorithm instance was last modified, in RFC3339 format. Null if never modified.
+        :param _builtins.str certificate_status: Status of the certificate for this key type: `CSR_READY`, `CERT_UPLOAD_PROCESSING`, `READY_FOR_USE`, or `ABANDONED`.
+        :param _builtins.str csr_expiration_date: Date when the CSR expires, in RFC3339 format.
+        :param _builtins.str csr_pem: PEM-encoded certificate signing request.
+        :param _builtins.str signed_certificate_issuer: Issuer field of the signed certificate. Null until a certificate is uploaded.
+        :param _builtins.str signed_certificate_not_valid_after_date: Expiration date of the signed certificate, in RFC3339 format. Null until a certificate is uploaded.
+        :param _builtins.str signed_certificate_not_valid_before_date: Start of validity of the signed certificate, in RFC3339 format. Null until a certificate is uploaded.
+        :param _builtins.str signed_certificate_pem: PEM-encoded signed certificate. Null until a certificate is uploaded.
+        :param _builtins.str signed_certificate_serial_number: Serial number of the signed certificate in hex format. Null until a certificate is uploaded.
+        :param _builtins.str signed_certificate_sha256_fingerprint: SHA-256 fingerprint of the signed certificate. Null until a certificate is uploaded.
+        :param _builtins.str trust_chain_pem: PEM-encoded trust chain uploaded alongside the signed certificate. Null if none was uploaded.
+        """
+        if algorithm_instance_created_by is not None:
+            pulumi.set(__self__, "algorithm_instance_created_by", algorithm_instance_created_by)
+        if algorithm_instance_created_time is not None:
+            pulumi.set(__self__, "algorithm_instance_created_time", algorithm_instance_created_time)
+        if algorithm_instance_id is not None:
+            pulumi.set(__self__, "algorithm_instance_id", algorithm_instance_id)
+        if algorithm_instance_modified_by is not None:
+            pulumi.set(__self__, "algorithm_instance_modified_by", algorithm_instance_modified_by)
+        if algorithm_instance_modified_time is not None:
+            pulumi.set(__self__, "algorithm_instance_modified_time", algorithm_instance_modified_time)
+        if certificate_status is not None:
+            pulumi.set(__self__, "certificate_status", certificate_status)
+        if csr_expiration_date is not None:
+            pulumi.set(__self__, "csr_expiration_date", csr_expiration_date)
+        if csr_pem is not None:
+            pulumi.set(__self__, "csr_pem", csr_pem)
+        if signed_certificate_issuer is not None:
+            pulumi.set(__self__, "signed_certificate_issuer", signed_certificate_issuer)
+        if signed_certificate_not_valid_after_date is not None:
+            pulumi.set(__self__, "signed_certificate_not_valid_after_date", signed_certificate_not_valid_after_date)
+        if signed_certificate_not_valid_before_date is not None:
+            pulumi.set(__self__, "signed_certificate_not_valid_before_date", signed_certificate_not_valid_before_date)
+        if signed_certificate_pem is not None:
+            pulumi.set(__self__, "signed_certificate_pem", signed_certificate_pem)
+        if signed_certificate_serial_number is not None:
+            pulumi.set(__self__, "signed_certificate_serial_number", signed_certificate_serial_number)
+        if signed_certificate_sha256_fingerprint is not None:
+            pulumi.set(__self__, "signed_certificate_sha256_fingerprint", signed_certificate_sha256_fingerprint)
+        if trust_chain_pem is not None:
+            pulumi.set(__self__, "trust_chain_pem", trust_chain_pem)
+
+    @_builtins.property
+    @pulumi.getter(name="algorithmInstanceCreatedBy")
+    def algorithm_instance_created_by(self) -> Optional[_builtins.str]:
+        """
+        Username of the person who created the algorithm instance.
+        """
+        return pulumi.get(self, "algorithm_instance_created_by")
+
+    @_builtins.property
+    @pulumi.getter(name="algorithmInstanceCreatedTime")
+    def algorithm_instance_created_time(self) -> Optional[_builtins.str]:
+        """
+        Time the algorithm instance was created, in RFC3339 format.
+        """
+        return pulumi.get(self, "algorithm_instance_created_time")
+
+    @_builtins.property
+    @pulumi.getter(name="algorithmInstanceId")
+    def algorithm_instance_id(self) -> Optional[_builtins.int]:
+        """
+        Unique identifier of the algorithm instance.
+        """
+        return pulumi.get(self, "algorithm_instance_id")
+
+    @_builtins.property
+    @pulumi.getter(name="algorithmInstanceModifiedBy")
+    def algorithm_instance_modified_by(self) -> Optional[_builtins.str]:
+        """
+        Username of the person who last modified the algorithm instance. Null if never modified.
+        """
+        return pulumi.get(self, "algorithm_instance_modified_by")
+
+    @_builtins.property
+    @pulumi.getter(name="algorithmInstanceModifiedTime")
+    def algorithm_instance_modified_time(self) -> Optional[_builtins.str]:
+        """
+        Time the algorithm instance was last modified, in RFC3339 format. Null if never modified.
+        """
+        return pulumi.get(self, "algorithm_instance_modified_time")
+
+    @_builtins.property
+    @pulumi.getter(name="certificateStatus")
+    def certificate_status(self) -> Optional[_builtins.str]:
+        """
+        Status of the certificate for this key type: `CSR_READY`, `CERT_UPLOAD_PROCESSING`, `READY_FOR_USE`, or `ABANDONED`.
+        """
+        return pulumi.get(self, "certificate_status")
+
+    @_builtins.property
+    @pulumi.getter(name="csrExpirationDate")
+    def csr_expiration_date(self) -> Optional[_builtins.str]:
+        """
+        Date when the CSR expires, in RFC3339 format.
+        """
+        return pulumi.get(self, "csr_expiration_date")
+
+    @_builtins.property
+    @pulumi.getter(name="csrPem")
+    def csr_pem(self) -> Optional[_builtins.str]:
+        """
+        PEM-encoded certificate signing request.
+        """
+        return pulumi.get(self, "csr_pem")
+
+    @_builtins.property
+    @pulumi.getter(name="signedCertificateIssuer")
+    def signed_certificate_issuer(self) -> Optional[_builtins.str]:
+        """
+        Issuer field of the signed certificate. Null until a certificate is uploaded.
+        """
+        return pulumi.get(self, "signed_certificate_issuer")
+
+    @_builtins.property
+    @pulumi.getter(name="signedCertificateNotValidAfterDate")
+    def signed_certificate_not_valid_after_date(self) -> Optional[_builtins.str]:
+        """
+        Expiration date of the signed certificate, in RFC3339 format. Null until a certificate is uploaded.
+        """
+        return pulumi.get(self, "signed_certificate_not_valid_after_date")
+
+    @_builtins.property
+    @pulumi.getter(name="signedCertificateNotValidBeforeDate")
+    def signed_certificate_not_valid_before_date(self) -> Optional[_builtins.str]:
+        """
+        Start of validity of the signed certificate, in RFC3339 format. Null until a certificate is uploaded.
+        """
+        return pulumi.get(self, "signed_certificate_not_valid_before_date")
+
+    @_builtins.property
+    @pulumi.getter(name="signedCertificatePem")
+    def signed_certificate_pem(self) -> Optional[_builtins.str]:
+        """
+        PEM-encoded signed certificate. Null until a certificate is uploaded.
+        """
+        return pulumi.get(self, "signed_certificate_pem")
+
+    @_builtins.property
+    @pulumi.getter(name="signedCertificateSerialNumber")
+    def signed_certificate_serial_number(self) -> Optional[_builtins.str]:
+        """
+        Serial number of the signed certificate in hex format. Null until a certificate is uploaded.
+        """
+        return pulumi.get(self, "signed_certificate_serial_number")
+
+    @_builtins.property
+    @pulumi.getter(name="signedCertificateSha256Fingerprint")
+    def signed_certificate_sha256_fingerprint(self) -> Optional[_builtins.str]:
+        """
+        SHA-256 fingerprint of the signed certificate. Null until a certificate is uploaded.
+        """
+        return pulumi.get(self, "signed_certificate_sha256_fingerprint")
+
+    @_builtins.property
+    @pulumi.getter(name="trustChainPem")
+    def trust_chain_pem(self) -> Optional[_builtins.str]:
+        """
+        PEM-encoded trust chain uploaded alongside the signed certificate. Null if none was uploaded.
+        """
+        return pulumi.get(self, "trust_chain_pem")
+
+
+@pulumi.output_type
+class CloudcertificatesLineagePreviousProduction(dict):
+    @staticmethod
+    def __key_warning(key: str):
+        suggest = None
+        if key == "firstPromotedToProductionTime":
+            suggest = "first_promoted_to_production_time"
+        elif key == "generationCreatedBy":
+            suggest = "generation_created_by"
+        elif key == "generationCreatedTime":
+            suggest = "generation_created_time"
+        elif key == "generationId":
+            suggest = "generation_id"
+        elif key == "generationModifiedBy":
+            suggest = "generation_modified_by"
+        elif key == "generationModifiedTime":
+            suggest = "generation_modified_time"
+        elif key == "generationStatus":
+            suggest = "generation_status"
+
+        if suggest:
+            pulumi.log.warn(f"Key '{key}' not found in CloudcertificatesLineagePreviousProduction. Access the value via the '{suggest}' property getter instead.")
+
+    def __getitem__(self, key: str) -> Any:
+        CloudcertificatesLineagePreviousProduction.__key_warning(key)
+        return super().__getitem__(key)
+
+    def get(self, key: str, default = None) -> Any:
+        CloudcertificatesLineagePreviousProduction.__key_warning(key)
+        return super().get(key, default)
+
+    def __init__(__self__, *,
+                 algorithms: Optional[Mapping[str, 'outputs.CloudcertificatesLineagePreviousProductionAlgorithms']] = None,
+                 first_promoted_to_production_time: Optional[_builtins.str] = None,
+                 generation_created_by: Optional[_builtins.str] = None,
+                 generation_created_time: Optional[_builtins.str] = None,
+                 generation_id: Optional[_builtins.int] = None,
+                 generation_modified_by: Optional[_builtins.str] = None,
+                 generation_modified_time: Optional[_builtins.str] = None,
+                 generation_status: Optional[_builtins.str] = None):
+        """
+        :param Mapping[str, 'CloudcertificatesLineagePreviousProductionAlgorithmsArgs'] algorithms: Per key-type (RSA or ECDSA) certificate details for this generation, keyed by key_type.
+        :param _builtins.str first_promoted_to_production_time: Time the generation was first promoted to production, in RFC3339 format. Null if never promoted.
+        :param _builtins.str generation_created_by: Username of the person who created this generation.
+        :param _builtins.str generation_created_time: Time the generation was created, in RFC3339 format.
+        :param _builtins.int generation_id: Unique identifier of this generation.
+        :param _builtins.str generation_modified_by: Username of the person who last modified this generation.
+        :param _builtins.str generation_modified_time: Time the generation was last modified, in RFC3339 format. Null if never modified since creation.
+        :param _builtins.str generation_status: Status of this generation.
+        """
+        if algorithms is not None:
+            pulumi.set(__self__, "algorithms", algorithms)
+        if first_promoted_to_production_time is not None:
+            pulumi.set(__self__, "first_promoted_to_production_time", first_promoted_to_production_time)
+        if generation_created_by is not None:
+            pulumi.set(__self__, "generation_created_by", generation_created_by)
+        if generation_created_time is not None:
+            pulumi.set(__self__, "generation_created_time", generation_created_time)
+        if generation_id is not None:
+            pulumi.set(__self__, "generation_id", generation_id)
+        if generation_modified_by is not None:
+            pulumi.set(__self__, "generation_modified_by", generation_modified_by)
+        if generation_modified_time is not None:
+            pulumi.set(__self__, "generation_modified_time", generation_modified_time)
+        if generation_status is not None:
+            pulumi.set(__self__, "generation_status", generation_status)
+
+    @_builtins.property
+    @pulumi.getter
+    def algorithms(self) -> Optional[Mapping[str, 'outputs.CloudcertificatesLineagePreviousProductionAlgorithms']]:
+        """
+        Per key-type (RSA or ECDSA) certificate details for this generation, keyed by key_type.
+        """
+        return pulumi.get(self, "algorithms")
+
+    @_builtins.property
+    @pulumi.getter(name="firstPromotedToProductionTime")
+    def first_promoted_to_production_time(self) -> Optional[_builtins.str]:
+        """
+        Time the generation was first promoted to production, in RFC3339 format. Null if never promoted.
+        """
+        return pulumi.get(self, "first_promoted_to_production_time")
+
+    @_builtins.property
+    @pulumi.getter(name="generationCreatedBy")
+    def generation_created_by(self) -> Optional[_builtins.str]:
+        """
+        Username of the person who created this generation.
+        """
+        return pulumi.get(self, "generation_created_by")
+
+    @_builtins.property
+    @pulumi.getter(name="generationCreatedTime")
+    def generation_created_time(self) -> Optional[_builtins.str]:
+        """
+        Time the generation was created, in RFC3339 format.
+        """
+        return pulumi.get(self, "generation_created_time")
+
+    @_builtins.property
+    @pulumi.getter(name="generationId")
+    def generation_id(self) -> Optional[_builtins.int]:
+        """
+        Unique identifier of this generation.
+        """
+        return pulumi.get(self, "generation_id")
+
+    @_builtins.property
+    @pulumi.getter(name="generationModifiedBy")
+    def generation_modified_by(self) -> Optional[_builtins.str]:
+        """
+        Username of the person who last modified this generation.
+        """
+        return pulumi.get(self, "generation_modified_by")
+
+    @_builtins.property
+    @pulumi.getter(name="generationModifiedTime")
+    def generation_modified_time(self) -> Optional[_builtins.str]:
+        """
+        Time the generation was last modified, in RFC3339 format. Null if never modified since creation.
+        """
+        return pulumi.get(self, "generation_modified_time")
+
+    @_builtins.property
+    @pulumi.getter(name="generationStatus")
+    def generation_status(self) -> Optional[_builtins.str]:
+        """
+        Status of this generation.
+        """
+        return pulumi.get(self, "generation_status")
+
+
+@pulumi.output_type
+class CloudcertificatesLineagePreviousProductionAlgorithms(dict):
+    @staticmethod
+    def __key_warning(key: str):
+        suggest = None
+        if key == "algorithmInstanceCreatedBy":
+            suggest = "algorithm_instance_created_by"
+        elif key == "algorithmInstanceCreatedTime":
+            suggest = "algorithm_instance_created_time"
+        elif key == "algorithmInstanceId":
+            suggest = "algorithm_instance_id"
+        elif key == "algorithmInstanceModifiedBy":
+            suggest = "algorithm_instance_modified_by"
+        elif key == "algorithmInstanceModifiedTime":
+            suggest = "algorithm_instance_modified_time"
+        elif key == "certificateStatus":
+            suggest = "certificate_status"
+        elif key == "csrExpirationDate":
+            suggest = "csr_expiration_date"
+        elif key == "csrPem":
+            suggest = "csr_pem"
+        elif key == "signedCertificateIssuer":
+            suggest = "signed_certificate_issuer"
+        elif key == "signedCertificateNotValidAfterDate":
+            suggest = "signed_certificate_not_valid_after_date"
+        elif key == "signedCertificateNotValidBeforeDate":
+            suggest = "signed_certificate_not_valid_before_date"
+        elif key == "signedCertificatePem":
+            suggest = "signed_certificate_pem"
+        elif key == "signedCertificateSerialNumber":
+            suggest = "signed_certificate_serial_number"
+        elif key == "signedCertificateSha256Fingerprint":
+            suggest = "signed_certificate_sha256_fingerprint"
+        elif key == "trustChainPem":
+            suggest = "trust_chain_pem"
+
+        if suggest:
+            pulumi.log.warn(f"Key '{key}' not found in CloudcertificatesLineagePreviousProductionAlgorithms. Access the value via the '{suggest}' property getter instead.")
+
+    def __getitem__(self, key: str) -> Any:
+        CloudcertificatesLineagePreviousProductionAlgorithms.__key_warning(key)
+        return super().__getitem__(key)
+
+    def get(self, key: str, default = None) -> Any:
+        CloudcertificatesLineagePreviousProductionAlgorithms.__key_warning(key)
+        return super().get(key, default)
+
+    def __init__(__self__, *,
+                 algorithm_instance_created_by: Optional[_builtins.str] = None,
+                 algorithm_instance_created_time: Optional[_builtins.str] = None,
+                 algorithm_instance_id: Optional[_builtins.int] = None,
+                 algorithm_instance_modified_by: Optional[_builtins.str] = None,
+                 algorithm_instance_modified_time: Optional[_builtins.str] = None,
+                 certificate_status: Optional[_builtins.str] = None,
+                 csr_expiration_date: Optional[_builtins.str] = None,
+                 csr_pem: Optional[_builtins.str] = None,
+                 signed_certificate_issuer: Optional[_builtins.str] = None,
+                 signed_certificate_not_valid_after_date: Optional[_builtins.str] = None,
+                 signed_certificate_not_valid_before_date: Optional[_builtins.str] = None,
+                 signed_certificate_pem: Optional[_builtins.str] = None,
+                 signed_certificate_serial_number: Optional[_builtins.str] = None,
+                 signed_certificate_sha256_fingerprint: Optional[_builtins.str] = None,
+                 trust_chain_pem: Optional[_builtins.str] = None):
+        """
+        :param _builtins.str algorithm_instance_created_by: Username of the person who created the algorithm instance.
+        :param _builtins.str algorithm_instance_created_time: Time the algorithm instance was created, in RFC3339 format.
+        :param _builtins.int algorithm_instance_id: Unique identifier of the algorithm instance.
+        :param _builtins.str algorithm_instance_modified_by: Username of the person who last modified the algorithm instance. Null if never modified.
+        :param _builtins.str algorithm_instance_modified_time: Time the algorithm instance was last modified, in RFC3339 format. Null if never modified.
+        :param _builtins.str certificate_status: Status of the certificate for this key type: `CSR_READY`, `CERT_UPLOAD_PROCESSING`, `READY_FOR_USE`, or `ABANDONED`.
+        :param _builtins.str csr_expiration_date: Date when the CSR expires, in RFC3339 format.
+        :param _builtins.str csr_pem: PEM-encoded certificate signing request.
+        :param _builtins.str signed_certificate_issuer: Issuer field of the signed certificate. Null until a certificate is uploaded.
+        :param _builtins.str signed_certificate_not_valid_after_date: Expiration date of the signed certificate, in RFC3339 format. Null until a certificate is uploaded.
+        :param _builtins.str signed_certificate_not_valid_before_date: Start of validity of the signed certificate, in RFC3339 format. Null until a certificate is uploaded.
+        :param _builtins.str signed_certificate_pem: PEM-encoded signed certificate. Null until a certificate is uploaded.
+        :param _builtins.str signed_certificate_serial_number: Serial number of the signed certificate in hex format. Null until a certificate is uploaded.
+        :param _builtins.str signed_certificate_sha256_fingerprint: SHA-256 fingerprint of the signed certificate. Null until a certificate is uploaded.
+        :param _builtins.str trust_chain_pem: PEM-encoded trust chain uploaded alongside the signed certificate. Null if none was uploaded.
+        """
+        if algorithm_instance_created_by is not None:
+            pulumi.set(__self__, "algorithm_instance_created_by", algorithm_instance_created_by)
+        if algorithm_instance_created_time is not None:
+            pulumi.set(__self__, "algorithm_instance_created_time", algorithm_instance_created_time)
+        if algorithm_instance_id is not None:
+            pulumi.set(__self__, "algorithm_instance_id", algorithm_instance_id)
+        if algorithm_instance_modified_by is not None:
+            pulumi.set(__self__, "algorithm_instance_modified_by", algorithm_instance_modified_by)
+        if algorithm_instance_modified_time is not None:
+            pulumi.set(__self__, "algorithm_instance_modified_time", algorithm_instance_modified_time)
+        if certificate_status is not None:
+            pulumi.set(__self__, "certificate_status", certificate_status)
+        if csr_expiration_date is not None:
+            pulumi.set(__self__, "csr_expiration_date", csr_expiration_date)
+        if csr_pem is not None:
+            pulumi.set(__self__, "csr_pem", csr_pem)
+        if signed_certificate_issuer is not None:
+            pulumi.set(__self__, "signed_certificate_issuer", signed_certificate_issuer)
+        if signed_certificate_not_valid_after_date is not None:
+            pulumi.set(__self__, "signed_certificate_not_valid_after_date", signed_certificate_not_valid_after_date)
+        if signed_certificate_not_valid_before_date is not None:
+            pulumi.set(__self__, "signed_certificate_not_valid_before_date", signed_certificate_not_valid_before_date)
+        if signed_certificate_pem is not None:
+            pulumi.set(__self__, "signed_certificate_pem", signed_certificate_pem)
+        if signed_certificate_serial_number is not None:
+            pulumi.set(__self__, "signed_certificate_serial_number", signed_certificate_serial_number)
+        if signed_certificate_sha256_fingerprint is not None:
+            pulumi.set(__self__, "signed_certificate_sha256_fingerprint", signed_certificate_sha256_fingerprint)
+        if trust_chain_pem is not None:
+            pulumi.set(__self__, "trust_chain_pem", trust_chain_pem)
+
+    @_builtins.property
+    @pulumi.getter(name="algorithmInstanceCreatedBy")
+    def algorithm_instance_created_by(self) -> Optional[_builtins.str]:
+        """
+        Username of the person who created the algorithm instance.
+        """
+        return pulumi.get(self, "algorithm_instance_created_by")
+
+    @_builtins.property
+    @pulumi.getter(name="algorithmInstanceCreatedTime")
+    def algorithm_instance_created_time(self) -> Optional[_builtins.str]:
+        """
+        Time the algorithm instance was created, in RFC3339 format.
+        """
+        return pulumi.get(self, "algorithm_instance_created_time")
+
+    @_builtins.property
+    @pulumi.getter(name="algorithmInstanceId")
+    def algorithm_instance_id(self) -> Optional[_builtins.int]:
+        """
+        Unique identifier of the algorithm instance.
+        """
+        return pulumi.get(self, "algorithm_instance_id")
+
+    @_builtins.property
+    @pulumi.getter(name="algorithmInstanceModifiedBy")
+    def algorithm_instance_modified_by(self) -> Optional[_builtins.str]:
+        """
+        Username of the person who last modified the algorithm instance. Null if never modified.
+        """
+        return pulumi.get(self, "algorithm_instance_modified_by")
+
+    @_builtins.property
+    @pulumi.getter(name="algorithmInstanceModifiedTime")
+    def algorithm_instance_modified_time(self) -> Optional[_builtins.str]:
+        """
+        Time the algorithm instance was last modified, in RFC3339 format. Null if never modified.
+        """
+        return pulumi.get(self, "algorithm_instance_modified_time")
+
+    @_builtins.property
+    @pulumi.getter(name="certificateStatus")
+    def certificate_status(self) -> Optional[_builtins.str]:
+        """
+        Status of the certificate for this key type: `CSR_READY`, `CERT_UPLOAD_PROCESSING`, `READY_FOR_USE`, or `ABANDONED`.
+        """
+        return pulumi.get(self, "certificate_status")
+
+    @_builtins.property
+    @pulumi.getter(name="csrExpirationDate")
+    def csr_expiration_date(self) -> Optional[_builtins.str]:
+        """
+        Date when the CSR expires, in RFC3339 format.
+        """
+        return pulumi.get(self, "csr_expiration_date")
+
+    @_builtins.property
+    @pulumi.getter(name="csrPem")
+    def csr_pem(self) -> Optional[_builtins.str]:
+        """
+        PEM-encoded certificate signing request.
+        """
+        return pulumi.get(self, "csr_pem")
+
+    @_builtins.property
+    @pulumi.getter(name="signedCertificateIssuer")
+    def signed_certificate_issuer(self) -> Optional[_builtins.str]:
+        """
+        Issuer field of the signed certificate. Null until a certificate is uploaded.
+        """
+        return pulumi.get(self, "signed_certificate_issuer")
+
+    @_builtins.property
+    @pulumi.getter(name="signedCertificateNotValidAfterDate")
+    def signed_certificate_not_valid_after_date(self) -> Optional[_builtins.str]:
+        """
+        Expiration date of the signed certificate, in RFC3339 format. Null until a certificate is uploaded.
+        """
+        return pulumi.get(self, "signed_certificate_not_valid_after_date")
+
+    @_builtins.property
+    @pulumi.getter(name="signedCertificateNotValidBeforeDate")
+    def signed_certificate_not_valid_before_date(self) -> Optional[_builtins.str]:
+        """
+        Start of validity of the signed certificate, in RFC3339 format. Null until a certificate is uploaded.
+        """
+        return pulumi.get(self, "signed_certificate_not_valid_before_date")
+
+    @_builtins.property
+    @pulumi.getter(name="signedCertificatePem")
+    def signed_certificate_pem(self) -> Optional[_builtins.str]:
+        """
+        PEM-encoded signed certificate. Null until a certificate is uploaded.
+        """
+        return pulumi.get(self, "signed_certificate_pem")
+
+    @_builtins.property
+    @pulumi.getter(name="signedCertificateSerialNumber")
+    def signed_certificate_serial_number(self) -> Optional[_builtins.str]:
+        """
+        Serial number of the signed certificate in hex format. Null until a certificate is uploaded.
+        """
+        return pulumi.get(self, "signed_certificate_serial_number")
+
+    @_builtins.property
+    @pulumi.getter(name="signedCertificateSha256Fingerprint")
+    def signed_certificate_sha256_fingerprint(self) -> Optional[_builtins.str]:
+        """
+        SHA-256 fingerprint of the signed certificate. Null until a certificate is uploaded.
+        """
+        return pulumi.get(self, "signed_certificate_sha256_fingerprint")
+
+    @_builtins.property
+    @pulumi.getter(name="trustChainPem")
+    def trust_chain_pem(self) -> Optional[_builtins.str]:
+        """
+        PEM-encoded trust chain uploaded alongside the signed certificate. Null if none was uploaded.
+        """
+        return pulumi.get(self, "trust_chain_pem")
+
+
+@pulumi.output_type
+class CloudcertificatesLineageSigningTarget(dict):
+    @staticmethod
+    def __key_warning(key: str):
+        suggest = None
+        if key == "firstPromotedToProductionTime":
+            suggest = "first_promoted_to_production_time"
+        elif key == "generationCreatedBy":
+            suggest = "generation_created_by"
+        elif key == "generationCreatedTime":
+            suggest = "generation_created_time"
+        elif key == "generationId":
+            suggest = "generation_id"
+        elif key == "generationModifiedBy":
+            suggest = "generation_modified_by"
+        elif key == "generationModifiedTime":
+            suggest = "generation_modified_time"
+        elif key == "generationStatus":
+            suggest = "generation_status"
+
+        if suggest:
+            pulumi.log.warn(f"Key '{key}' not found in CloudcertificatesLineageSigningTarget. Access the value via the '{suggest}' property getter instead.")
+
+    def __getitem__(self, key: str) -> Any:
+        CloudcertificatesLineageSigningTarget.__key_warning(key)
+        return super().__getitem__(key)
+
+    def get(self, key: str, default = None) -> Any:
+        CloudcertificatesLineageSigningTarget.__key_warning(key)
+        return super().get(key, default)
+
+    def __init__(__self__, *,
+                 algorithms: Optional[Mapping[str, 'outputs.CloudcertificatesLineageSigningTargetAlgorithms']] = None,
+                 first_promoted_to_production_time: Optional[_builtins.str] = None,
+                 generation_created_by: Optional[_builtins.str] = None,
+                 generation_created_time: Optional[_builtins.str] = None,
+                 generation_id: Optional[_builtins.int] = None,
+                 generation_modified_by: Optional[_builtins.str] = None,
+                 generation_modified_time: Optional[_builtins.str] = None,
+                 generation_status: Optional[_builtins.str] = None):
+        """
+        :param Mapping[str, 'CloudcertificatesLineageSigningTargetAlgorithmsArgs'] algorithms: Per key-type (RSA or ECDSA) certificate details for this generation, keyed by key_type.
+        :param _builtins.str first_promoted_to_production_time: Time the generation was first promoted to production, in RFC3339 format. Null if never promoted.
+        :param _builtins.str generation_created_by: Username of the person who created this generation.
+        :param _builtins.str generation_created_time: Time the generation was created, in RFC3339 format.
+        :param _builtins.int generation_id: Unique identifier of this generation.
+        :param _builtins.str generation_modified_by: Username of the person who last modified this generation.
+        :param _builtins.str generation_modified_time: Time the generation was last modified, in RFC3339 format. Null if never modified since creation.
+        :param _builtins.str generation_status: Status of this generation.
+        """
+        if algorithms is not None:
+            pulumi.set(__self__, "algorithms", algorithms)
+        if first_promoted_to_production_time is not None:
+            pulumi.set(__self__, "first_promoted_to_production_time", first_promoted_to_production_time)
+        if generation_created_by is not None:
+            pulumi.set(__self__, "generation_created_by", generation_created_by)
+        if generation_created_time is not None:
+            pulumi.set(__self__, "generation_created_time", generation_created_time)
+        if generation_id is not None:
+            pulumi.set(__self__, "generation_id", generation_id)
+        if generation_modified_by is not None:
+            pulumi.set(__self__, "generation_modified_by", generation_modified_by)
+        if generation_modified_time is not None:
+            pulumi.set(__self__, "generation_modified_time", generation_modified_time)
+        if generation_status is not None:
+            pulumi.set(__self__, "generation_status", generation_status)
+
+    @_builtins.property
+    @pulumi.getter
+    def algorithms(self) -> Optional[Mapping[str, 'outputs.CloudcertificatesLineageSigningTargetAlgorithms']]:
+        """
+        Per key-type (RSA or ECDSA) certificate details for this generation, keyed by key_type.
+        """
+        return pulumi.get(self, "algorithms")
+
+    @_builtins.property
+    @pulumi.getter(name="firstPromotedToProductionTime")
+    def first_promoted_to_production_time(self) -> Optional[_builtins.str]:
+        """
+        Time the generation was first promoted to production, in RFC3339 format. Null if never promoted.
+        """
+        return pulumi.get(self, "first_promoted_to_production_time")
+
+    @_builtins.property
+    @pulumi.getter(name="generationCreatedBy")
+    def generation_created_by(self) -> Optional[_builtins.str]:
+        """
+        Username of the person who created this generation.
+        """
+        return pulumi.get(self, "generation_created_by")
+
+    @_builtins.property
+    @pulumi.getter(name="generationCreatedTime")
+    def generation_created_time(self) -> Optional[_builtins.str]:
+        """
+        Time the generation was created, in RFC3339 format.
+        """
+        return pulumi.get(self, "generation_created_time")
+
+    @_builtins.property
+    @pulumi.getter(name="generationId")
+    def generation_id(self) -> Optional[_builtins.int]:
+        """
+        Unique identifier of this generation.
+        """
+        return pulumi.get(self, "generation_id")
+
+    @_builtins.property
+    @pulumi.getter(name="generationModifiedBy")
+    def generation_modified_by(self) -> Optional[_builtins.str]:
+        """
+        Username of the person who last modified this generation.
+        """
+        return pulumi.get(self, "generation_modified_by")
+
+    @_builtins.property
+    @pulumi.getter(name="generationModifiedTime")
+    def generation_modified_time(self) -> Optional[_builtins.str]:
+        """
+        Time the generation was last modified, in RFC3339 format. Null if never modified since creation.
+        """
+        return pulumi.get(self, "generation_modified_time")
+
+    @_builtins.property
+    @pulumi.getter(name="generationStatus")
+    def generation_status(self) -> Optional[_builtins.str]:
+        """
+        Status of this generation.
+        """
+        return pulumi.get(self, "generation_status")
+
+
+@pulumi.output_type
+class CloudcertificatesLineageSigningTargetAlgorithms(dict):
+    @staticmethod
+    def __key_warning(key: str):
+        suggest = None
+        if key == "algorithmInstanceCreatedBy":
+            suggest = "algorithm_instance_created_by"
+        elif key == "algorithmInstanceCreatedTime":
+            suggest = "algorithm_instance_created_time"
+        elif key == "algorithmInstanceId":
+            suggest = "algorithm_instance_id"
+        elif key == "algorithmInstanceModifiedBy":
+            suggest = "algorithm_instance_modified_by"
+        elif key == "algorithmInstanceModifiedTime":
+            suggest = "algorithm_instance_modified_time"
+        elif key == "certificateStatus":
+            suggest = "certificate_status"
+        elif key == "csrExpirationDate":
+            suggest = "csr_expiration_date"
+        elif key == "csrPem":
+            suggest = "csr_pem"
+        elif key == "signedCertificateIssuer":
+            suggest = "signed_certificate_issuer"
+        elif key == "signedCertificateNotValidAfterDate":
+            suggest = "signed_certificate_not_valid_after_date"
+        elif key == "signedCertificateNotValidBeforeDate":
+            suggest = "signed_certificate_not_valid_before_date"
+        elif key == "signedCertificatePem":
+            suggest = "signed_certificate_pem"
+        elif key == "signedCertificateSerialNumber":
+            suggest = "signed_certificate_serial_number"
+        elif key == "signedCertificateSha256Fingerprint":
+            suggest = "signed_certificate_sha256_fingerprint"
+        elif key == "trustChainPem":
+            suggest = "trust_chain_pem"
+
+        if suggest:
+            pulumi.log.warn(f"Key '{key}' not found in CloudcertificatesLineageSigningTargetAlgorithms. Access the value via the '{suggest}' property getter instead.")
+
+    def __getitem__(self, key: str) -> Any:
+        CloudcertificatesLineageSigningTargetAlgorithms.__key_warning(key)
+        return super().__getitem__(key)
+
+    def get(self, key: str, default = None) -> Any:
+        CloudcertificatesLineageSigningTargetAlgorithms.__key_warning(key)
+        return super().get(key, default)
+
+    def __init__(__self__, *,
+                 algorithm_instance_created_by: Optional[_builtins.str] = None,
+                 algorithm_instance_created_time: Optional[_builtins.str] = None,
+                 algorithm_instance_id: Optional[_builtins.int] = None,
+                 algorithm_instance_modified_by: Optional[_builtins.str] = None,
+                 algorithm_instance_modified_time: Optional[_builtins.str] = None,
+                 certificate_status: Optional[_builtins.str] = None,
+                 csr_expiration_date: Optional[_builtins.str] = None,
+                 csr_pem: Optional[_builtins.str] = None,
+                 signed_certificate_issuer: Optional[_builtins.str] = None,
+                 signed_certificate_not_valid_after_date: Optional[_builtins.str] = None,
+                 signed_certificate_not_valid_before_date: Optional[_builtins.str] = None,
+                 signed_certificate_pem: Optional[_builtins.str] = None,
+                 signed_certificate_serial_number: Optional[_builtins.str] = None,
+                 signed_certificate_sha256_fingerprint: Optional[_builtins.str] = None,
+                 trust_chain_pem: Optional[_builtins.str] = None):
+        """
+        :param _builtins.str algorithm_instance_created_by: Username of the person who created the algorithm instance.
+        :param _builtins.str algorithm_instance_created_time: Time the algorithm instance was created, in RFC3339 format.
+        :param _builtins.int algorithm_instance_id: Unique identifier of the algorithm instance.
+        :param _builtins.str algorithm_instance_modified_by: Username of the person who last modified the algorithm instance. Null if never modified.
+        :param _builtins.str algorithm_instance_modified_time: Time the algorithm instance was last modified, in RFC3339 format. Null if never modified.
+        :param _builtins.str certificate_status: Status of the certificate for this key type: `CSR_READY`, `CERT_UPLOAD_PROCESSING`, `READY_FOR_USE`, or `ABANDONED`.
+        :param _builtins.str csr_expiration_date: Date when the CSR expires, in RFC3339 format.
+        :param _builtins.str csr_pem: PEM-encoded certificate signing request.
+        :param _builtins.str signed_certificate_issuer: Issuer field of the signed certificate. Null until a certificate is uploaded.
+        :param _builtins.str signed_certificate_not_valid_after_date: Expiration date of the signed certificate, in RFC3339 format. Null until a certificate is uploaded.
+        :param _builtins.str signed_certificate_not_valid_before_date: Start of validity of the signed certificate, in RFC3339 format. Null until a certificate is uploaded.
+        :param _builtins.str signed_certificate_pem: PEM-encoded signed certificate. Null until a certificate is uploaded.
+        :param _builtins.str signed_certificate_serial_number: Serial number of the signed certificate in hex format. Null until a certificate is uploaded.
+        :param _builtins.str signed_certificate_sha256_fingerprint: SHA-256 fingerprint of the signed certificate. Null until a certificate is uploaded.
+        :param _builtins.str trust_chain_pem: PEM-encoded trust chain uploaded alongside the signed certificate. Null if none was uploaded.
+        """
+        if algorithm_instance_created_by is not None:
+            pulumi.set(__self__, "algorithm_instance_created_by", algorithm_instance_created_by)
+        if algorithm_instance_created_time is not None:
+            pulumi.set(__self__, "algorithm_instance_created_time", algorithm_instance_created_time)
+        if algorithm_instance_id is not None:
+            pulumi.set(__self__, "algorithm_instance_id", algorithm_instance_id)
+        if algorithm_instance_modified_by is not None:
+            pulumi.set(__self__, "algorithm_instance_modified_by", algorithm_instance_modified_by)
+        if algorithm_instance_modified_time is not None:
+            pulumi.set(__self__, "algorithm_instance_modified_time", algorithm_instance_modified_time)
+        if certificate_status is not None:
+            pulumi.set(__self__, "certificate_status", certificate_status)
+        if csr_expiration_date is not None:
+            pulumi.set(__self__, "csr_expiration_date", csr_expiration_date)
+        if csr_pem is not None:
+            pulumi.set(__self__, "csr_pem", csr_pem)
+        if signed_certificate_issuer is not None:
+            pulumi.set(__self__, "signed_certificate_issuer", signed_certificate_issuer)
+        if signed_certificate_not_valid_after_date is not None:
+            pulumi.set(__self__, "signed_certificate_not_valid_after_date", signed_certificate_not_valid_after_date)
+        if signed_certificate_not_valid_before_date is not None:
+            pulumi.set(__self__, "signed_certificate_not_valid_before_date", signed_certificate_not_valid_before_date)
+        if signed_certificate_pem is not None:
+            pulumi.set(__self__, "signed_certificate_pem", signed_certificate_pem)
+        if signed_certificate_serial_number is not None:
+            pulumi.set(__self__, "signed_certificate_serial_number", signed_certificate_serial_number)
+        if signed_certificate_sha256_fingerprint is not None:
+            pulumi.set(__self__, "signed_certificate_sha256_fingerprint", signed_certificate_sha256_fingerprint)
+        if trust_chain_pem is not None:
+            pulumi.set(__self__, "trust_chain_pem", trust_chain_pem)
+
+    @_builtins.property
+    @pulumi.getter(name="algorithmInstanceCreatedBy")
+    def algorithm_instance_created_by(self) -> Optional[_builtins.str]:
+        """
+        Username of the person who created the algorithm instance.
+        """
+        return pulumi.get(self, "algorithm_instance_created_by")
+
+    @_builtins.property
+    @pulumi.getter(name="algorithmInstanceCreatedTime")
+    def algorithm_instance_created_time(self) -> Optional[_builtins.str]:
+        """
+        Time the algorithm instance was created, in RFC3339 format.
+        """
+        return pulumi.get(self, "algorithm_instance_created_time")
+
+    @_builtins.property
+    @pulumi.getter(name="algorithmInstanceId")
+    def algorithm_instance_id(self) -> Optional[_builtins.int]:
+        """
+        Unique identifier of the algorithm instance.
+        """
+        return pulumi.get(self, "algorithm_instance_id")
+
+    @_builtins.property
+    @pulumi.getter(name="algorithmInstanceModifiedBy")
+    def algorithm_instance_modified_by(self) -> Optional[_builtins.str]:
+        """
+        Username of the person who last modified the algorithm instance. Null if never modified.
+        """
+        return pulumi.get(self, "algorithm_instance_modified_by")
+
+    @_builtins.property
+    @pulumi.getter(name="algorithmInstanceModifiedTime")
+    def algorithm_instance_modified_time(self) -> Optional[_builtins.str]:
+        """
+        Time the algorithm instance was last modified, in RFC3339 format. Null if never modified.
+        """
+        return pulumi.get(self, "algorithm_instance_modified_time")
+
+    @_builtins.property
+    @pulumi.getter(name="certificateStatus")
+    def certificate_status(self) -> Optional[_builtins.str]:
+        """
+        Status of the certificate for this key type: `CSR_READY`, `CERT_UPLOAD_PROCESSING`, `READY_FOR_USE`, or `ABANDONED`.
+        """
+        return pulumi.get(self, "certificate_status")
+
+    @_builtins.property
+    @pulumi.getter(name="csrExpirationDate")
+    def csr_expiration_date(self) -> Optional[_builtins.str]:
+        """
+        Date when the CSR expires, in RFC3339 format.
+        """
+        return pulumi.get(self, "csr_expiration_date")
+
+    @_builtins.property
+    @pulumi.getter(name="csrPem")
+    def csr_pem(self) -> Optional[_builtins.str]:
+        """
+        PEM-encoded certificate signing request.
+        """
+        return pulumi.get(self, "csr_pem")
+
+    @_builtins.property
+    @pulumi.getter(name="signedCertificateIssuer")
+    def signed_certificate_issuer(self) -> Optional[_builtins.str]:
+        """
+        Issuer field of the signed certificate. Null until a certificate is uploaded.
+        """
+        return pulumi.get(self, "signed_certificate_issuer")
+
+    @_builtins.property
+    @pulumi.getter(name="signedCertificateNotValidAfterDate")
+    def signed_certificate_not_valid_after_date(self) -> Optional[_builtins.str]:
+        """
+        Expiration date of the signed certificate, in RFC3339 format. Null until a certificate is uploaded.
+        """
+        return pulumi.get(self, "signed_certificate_not_valid_after_date")
+
+    @_builtins.property
+    @pulumi.getter(name="signedCertificateNotValidBeforeDate")
+    def signed_certificate_not_valid_before_date(self) -> Optional[_builtins.str]:
+        """
+        Start of validity of the signed certificate, in RFC3339 format. Null until a certificate is uploaded.
+        """
+        return pulumi.get(self, "signed_certificate_not_valid_before_date")
+
+    @_builtins.property
+    @pulumi.getter(name="signedCertificatePem")
+    def signed_certificate_pem(self) -> Optional[_builtins.str]:
+        """
+        PEM-encoded signed certificate. Null until a certificate is uploaded.
+        """
+        return pulumi.get(self, "signed_certificate_pem")
+
+    @_builtins.property
+    @pulumi.getter(name="signedCertificateSerialNumber")
+    def signed_certificate_serial_number(self) -> Optional[_builtins.str]:
+        """
+        Serial number of the signed certificate in hex format. Null until a certificate is uploaded.
+        """
+        return pulumi.get(self, "signed_certificate_serial_number")
+
+    @_builtins.property
+    @pulumi.getter(name="signedCertificateSha256Fingerprint")
+    def signed_certificate_sha256_fingerprint(self) -> Optional[_builtins.str]:
+        """
+        SHA-256 fingerprint of the signed certificate. Null until a certificate is uploaded.
+        """
+        return pulumi.get(self, "signed_certificate_sha256_fingerprint")
+
+    @_builtins.property
+    @pulumi.getter(name="trustChainPem")
+    def trust_chain_pem(self) -> Optional[_builtins.str]:
+        """
+        PEM-encoded trust chain uploaded alongside the signed certificate. Null if none was uploaded.
+        """
+        return pulumi.get(self, "trust_chain_pem")
+
+
+@pulumi.output_type
+class CloudcertificatesLineageSubject(dict):
     @staticmethod
     def __key_warning(key: str):
         suggest = None
         if key == "commonName":
             suggest = "common_name"
+        elif key == "organizationalUnit":
+            suggest = "organizational_unit"
 
         if suggest:
-            pulumi.log.warn(f"Key '{key}' not found in CloudcertificatesCertificateSubject. Access the value via the '{suggest}' property getter instead.")
+            pulumi.log.warn(f"Key '{key}' not found in CloudcertificatesLineageSubject. Access the value via the '{suggest}' property getter instead.")
 
     def __getitem__(self, key: str) -> Any:
-        CloudcertificatesCertificateSubject.__key_warning(key)
+        CloudcertificatesLineageSubject.__key_warning(key)
         return super().__getitem__(key)
 
     def get(self, key: str, default = None) -> Any:
-        CloudcertificatesCertificateSubject.__key_warning(key)
+        CloudcertificatesLineageSubject.__key_warning(key)
         return super().get(key, default)
 
     def __init__(__self__, *,
@@ -2109,13 +4381,15 @@ class CloudcertificatesCertificateSubject(dict):
                  country: Optional[_builtins.str] = None,
                  locality: Optional[_builtins.str] = None,
                  organization: Optional[_builtins.str] = None,
+                 organizational_unit: Optional[_builtins.str] = None,
                  state: Optional[_builtins.str] = None):
         """
-        :param _builtins.str common_name: Fully qualified domain name (FQDN) or other name associated with the subject. If specified, this value must also be included in the SANs list.
-        :param _builtins.str country: Two-letter ISO 3166 country code.
-        :param _builtins.str locality: City or locality name.
-        :param _builtins.str organization: Legal name of the organization.
-        :param _builtins.str state: Full name of the state or province.
+        :param _builtins.str common_name: Common name (CN).
+        :param _builtins.str country: Two-letter ISO 3166 country code (C).
+        :param _builtins.str locality: Locality or city name (L).
+        :param _builtins.str organization: Organization (O).
+        :param _builtins.str organizational_unit: Organizational unit (OU).
+        :param _builtins.str state: State or province name (ST).
         """
         if common_name is not None:
             pulumi.set(__self__, "common_name", common_name)
@@ -2125,6 +4399,8 @@ class CloudcertificatesCertificateSubject(dict):
             pulumi.set(__self__, "locality", locality)
         if organization is not None:
             pulumi.set(__self__, "organization", organization)
+        if organizational_unit is not None:
+            pulumi.set(__self__, "organizational_unit", organizational_unit)
         if state is not None:
             pulumi.set(__self__, "state", state)
 
@@ -2132,7 +4408,7 @@ class CloudcertificatesCertificateSubject(dict):
     @pulumi.getter(name="commonName")
     def common_name(self) -> Optional[_builtins.str]:
         """
-        Fully qualified domain name (FQDN) or other name associated with the subject. If specified, this value must also be included in the SANs list.
+        Common name (CN).
         """
         return pulumi.get(self, "common_name")
 
@@ -2140,7 +4416,7 @@ class CloudcertificatesCertificateSubject(dict):
     @pulumi.getter
     def country(self) -> Optional[_builtins.str]:
         """
-        Two-letter ISO 3166 country code.
+        Two-letter ISO 3166 country code (C).
         """
         return pulumi.get(self, "country")
 
@@ -2148,7 +4424,7 @@ class CloudcertificatesCertificateSubject(dict):
     @pulumi.getter
     def locality(self) -> Optional[_builtins.str]:
         """
-        City or locality name.
+        Locality or city name (L).
         """
         return pulumi.get(self, "locality")
 
@@ -2156,17 +4432,287 @@ class CloudcertificatesCertificateSubject(dict):
     @pulumi.getter
     def organization(self) -> Optional[_builtins.str]:
         """
-        Legal name of the organization.
+        Organization (O).
         """
         return pulumi.get(self, "organization")
+
+    @_builtins.property
+    @pulumi.getter(name="organizationalUnit")
+    def organizational_unit(self) -> Optional[_builtins.str]:
+        """
+        Organizational unit (OU).
+        """
+        return pulumi.get(self, "organizational_unit")
 
     @_builtins.property
     @pulumi.getter
     def state(self) -> Optional[_builtins.str]:
         """
-        Full name of the state or province.
+        State or province name (ST).
         """
         return pulumi.get(self, "state")
+
+
+@pulumi.output_type
+class CloudcertificatesUploadAlgorithms(dict):
+    @staticmethod
+    def __key_warning(key: str):
+        suggest = None
+        if key == "signedCertificatePem":
+            suggest = "signed_certificate_pem"
+        elif key == "algorithmInstanceCreatedBy":
+            suggest = "algorithm_instance_created_by"
+        elif key == "algorithmInstanceCreatedTime":
+            suggest = "algorithm_instance_created_time"
+        elif key == "algorithmInstanceId":
+            suggest = "algorithm_instance_id"
+        elif key == "algorithmInstanceModifiedBy":
+            suggest = "algorithm_instance_modified_by"
+        elif key == "algorithmInstanceModifiedTime":
+            suggest = "algorithm_instance_modified_time"
+        elif key == "certificateStatus":
+            suggest = "certificate_status"
+        elif key == "csrExpirationDate":
+            suggest = "csr_expiration_date"
+        elif key == "csrPem":
+            suggest = "csr_pem"
+        elif key == "signedCertificateIssuer":
+            suggest = "signed_certificate_issuer"
+        elif key == "signedCertificateNotValidAfterDate":
+            suggest = "signed_certificate_not_valid_after_date"
+        elif key == "signedCertificateNotValidBeforeDate":
+            suggest = "signed_certificate_not_valid_before_date"
+        elif key == "signedCertificateSerialNumber":
+            suggest = "signed_certificate_serial_number"
+        elif key == "signedCertificateSha256Fingerprint":
+            suggest = "signed_certificate_sha256_fingerprint"
+        elif key == "trustChainPem":
+            suggest = "trust_chain_pem"
+
+        if suggest:
+            pulumi.log.warn(f"Key '{key}' not found in CloudcertificatesUploadAlgorithms. Access the value via the '{suggest}' property getter instead.")
+
+    def __getitem__(self, key: str) -> Any:
+        CloudcertificatesUploadAlgorithms.__key_warning(key)
+        return super().__getitem__(key)
+
+    def get(self, key: str, default = None) -> Any:
+        CloudcertificatesUploadAlgorithms.__key_warning(key)
+        return super().get(key, default)
+
+    def __init__(__self__, *,
+                 signed_certificate_pem: _builtins.str,
+                 algorithm_instance_created_by: Optional[_builtins.str] = None,
+                 algorithm_instance_created_time: Optional[_builtins.str] = None,
+                 algorithm_instance_id: Optional[_builtins.int] = None,
+                 algorithm_instance_modified_by: Optional[_builtins.str] = None,
+                 algorithm_instance_modified_time: Optional[_builtins.str] = None,
+                 certificate_status: Optional[_builtins.str] = None,
+                 csr_expiration_date: Optional[_builtins.str] = None,
+                 csr_pem: Optional[_builtins.str] = None,
+                 signed_certificate_issuer: Optional[_builtins.str] = None,
+                 signed_certificate_not_valid_after_date: Optional[_builtins.str] = None,
+                 signed_certificate_not_valid_before_date: Optional[_builtins.str] = None,
+                 signed_certificate_serial_number: Optional[_builtins.str] = None,
+                 signed_certificate_sha256_fingerprint: Optional[_builtins.str] = None,
+                 trust_chain_pem: Optional[_builtins.str] = None):
+        """
+        :param _builtins.str signed_certificate_pem: PEM-encoded signed certificate to upload for this key type.
+        :param _builtins.str algorithm_instance_created_by: Username of the person who created the algorithm instance.
+        :param _builtins.str algorithm_instance_created_time: Time the algorithm instance was created, in RFC3339 format.
+        :param _builtins.int algorithm_instance_id: Unique identifier of the algorithm instance.
+        :param _builtins.str algorithm_instance_modified_by: Username of the person who last modified the algorithm instance. Null if never modified.
+        :param _builtins.str algorithm_instance_modified_time: Time the algorithm instance was last modified, in RFC3339 format. Null if never modified.
+        :param _builtins.str certificate_status: Status of the certificate for this key type: `CSR_READY`, `CERT_UPLOAD_PROCESSING`, `READY_FOR_USE`, or `ABANDONED`.
+        :param _builtins.str csr_expiration_date: Date when the CSR expires, in RFC3339 format.
+        :param _builtins.str csr_pem: PEM-encoded certificate signing request.
+        :param _builtins.str signed_certificate_issuer: Issuer field of the signed certificate. Null until a certificate is uploaded.
+        :param _builtins.str signed_certificate_not_valid_after_date: Expiration date of the signed certificate, in RFC3339 format. Null until a certificate is uploaded.
+        :param _builtins.str signed_certificate_not_valid_before_date: Start of validity of the signed certificate, in RFC3339 format. Null until a certificate is uploaded.
+        :param _builtins.str signed_certificate_serial_number: Serial number of the signed certificate in hex format. Null until a certificate is uploaded.
+        :param _builtins.str signed_certificate_sha256_fingerprint: SHA-256 fingerprint of the signed certificate. Null until a certificate is uploaded.
+        :param _builtins.str trust_chain_pem: Optional PEM-encoded trust chain to upload alongside the signed certificate.
+        """
+        pulumi.set(__self__, "signed_certificate_pem", signed_certificate_pem)
+        if algorithm_instance_created_by is not None:
+            pulumi.set(__self__, "algorithm_instance_created_by", algorithm_instance_created_by)
+        if algorithm_instance_created_time is not None:
+            pulumi.set(__self__, "algorithm_instance_created_time", algorithm_instance_created_time)
+        if algorithm_instance_id is not None:
+            pulumi.set(__self__, "algorithm_instance_id", algorithm_instance_id)
+        if algorithm_instance_modified_by is not None:
+            pulumi.set(__self__, "algorithm_instance_modified_by", algorithm_instance_modified_by)
+        if algorithm_instance_modified_time is not None:
+            pulumi.set(__self__, "algorithm_instance_modified_time", algorithm_instance_modified_time)
+        if certificate_status is not None:
+            pulumi.set(__self__, "certificate_status", certificate_status)
+        if csr_expiration_date is not None:
+            pulumi.set(__self__, "csr_expiration_date", csr_expiration_date)
+        if csr_pem is not None:
+            pulumi.set(__self__, "csr_pem", csr_pem)
+        if signed_certificate_issuer is not None:
+            pulumi.set(__self__, "signed_certificate_issuer", signed_certificate_issuer)
+        if signed_certificate_not_valid_after_date is not None:
+            pulumi.set(__self__, "signed_certificate_not_valid_after_date", signed_certificate_not_valid_after_date)
+        if signed_certificate_not_valid_before_date is not None:
+            pulumi.set(__self__, "signed_certificate_not_valid_before_date", signed_certificate_not_valid_before_date)
+        if signed_certificate_serial_number is not None:
+            pulumi.set(__self__, "signed_certificate_serial_number", signed_certificate_serial_number)
+        if signed_certificate_sha256_fingerprint is not None:
+            pulumi.set(__self__, "signed_certificate_sha256_fingerprint", signed_certificate_sha256_fingerprint)
+        if trust_chain_pem is not None:
+            pulumi.set(__self__, "trust_chain_pem", trust_chain_pem)
+
+    @_builtins.property
+    @pulumi.getter(name="signedCertificatePem")
+    def signed_certificate_pem(self) -> _builtins.str:
+        """
+        PEM-encoded signed certificate to upload for this key type.
+        """
+        return pulumi.get(self, "signed_certificate_pem")
+
+    @_builtins.property
+    @pulumi.getter(name="algorithmInstanceCreatedBy")
+    def algorithm_instance_created_by(self) -> Optional[_builtins.str]:
+        """
+        Username of the person who created the algorithm instance.
+        """
+        return pulumi.get(self, "algorithm_instance_created_by")
+
+    @_builtins.property
+    @pulumi.getter(name="algorithmInstanceCreatedTime")
+    def algorithm_instance_created_time(self) -> Optional[_builtins.str]:
+        """
+        Time the algorithm instance was created, in RFC3339 format.
+        """
+        return pulumi.get(self, "algorithm_instance_created_time")
+
+    @_builtins.property
+    @pulumi.getter(name="algorithmInstanceId")
+    def algorithm_instance_id(self) -> Optional[_builtins.int]:
+        """
+        Unique identifier of the algorithm instance.
+        """
+        return pulumi.get(self, "algorithm_instance_id")
+
+    @_builtins.property
+    @pulumi.getter(name="algorithmInstanceModifiedBy")
+    def algorithm_instance_modified_by(self) -> Optional[_builtins.str]:
+        """
+        Username of the person who last modified the algorithm instance. Null if never modified.
+        """
+        return pulumi.get(self, "algorithm_instance_modified_by")
+
+    @_builtins.property
+    @pulumi.getter(name="algorithmInstanceModifiedTime")
+    def algorithm_instance_modified_time(self) -> Optional[_builtins.str]:
+        """
+        Time the algorithm instance was last modified, in RFC3339 format. Null if never modified.
+        """
+        return pulumi.get(self, "algorithm_instance_modified_time")
+
+    @_builtins.property
+    @pulumi.getter(name="certificateStatus")
+    def certificate_status(self) -> Optional[_builtins.str]:
+        """
+        Status of the certificate for this key type: `CSR_READY`, `CERT_UPLOAD_PROCESSING`, `READY_FOR_USE`, or `ABANDONED`.
+        """
+        return pulumi.get(self, "certificate_status")
+
+    @_builtins.property
+    @pulumi.getter(name="csrExpirationDate")
+    def csr_expiration_date(self) -> Optional[_builtins.str]:
+        """
+        Date when the CSR expires, in RFC3339 format.
+        """
+        return pulumi.get(self, "csr_expiration_date")
+
+    @_builtins.property
+    @pulumi.getter(name="csrPem")
+    def csr_pem(self) -> Optional[_builtins.str]:
+        """
+        PEM-encoded certificate signing request.
+        """
+        return pulumi.get(self, "csr_pem")
+
+    @_builtins.property
+    @pulumi.getter(name="signedCertificateIssuer")
+    def signed_certificate_issuer(self) -> Optional[_builtins.str]:
+        """
+        Issuer field of the signed certificate. Null until a certificate is uploaded.
+        """
+        return pulumi.get(self, "signed_certificate_issuer")
+
+    @_builtins.property
+    @pulumi.getter(name="signedCertificateNotValidAfterDate")
+    def signed_certificate_not_valid_after_date(self) -> Optional[_builtins.str]:
+        """
+        Expiration date of the signed certificate, in RFC3339 format. Null until a certificate is uploaded.
+        """
+        return pulumi.get(self, "signed_certificate_not_valid_after_date")
+
+    @_builtins.property
+    @pulumi.getter(name="signedCertificateNotValidBeforeDate")
+    def signed_certificate_not_valid_before_date(self) -> Optional[_builtins.str]:
+        """
+        Start of validity of the signed certificate, in RFC3339 format. Null until a certificate is uploaded.
+        """
+        return pulumi.get(self, "signed_certificate_not_valid_before_date")
+
+    @_builtins.property
+    @pulumi.getter(name="signedCertificateSerialNumber")
+    def signed_certificate_serial_number(self) -> Optional[_builtins.str]:
+        """
+        Serial number of the signed certificate in hex format. Null until a certificate is uploaded.
+        """
+        return pulumi.get(self, "signed_certificate_serial_number")
+
+    @_builtins.property
+    @pulumi.getter(name="signedCertificateSha256Fingerprint")
+    def signed_certificate_sha256_fingerprint(self) -> Optional[_builtins.str]:
+        """
+        SHA-256 fingerprint of the signed certificate. Null until a certificate is uploaded.
+        """
+        return pulumi.get(self, "signed_certificate_sha256_fingerprint")
+
+    @_builtins.property
+    @pulumi.getter(name="trustChainPem")
+    def trust_chain_pem(self) -> Optional[_builtins.str]:
+        """
+        Optional PEM-encoded trust chain to upload alongside the signed certificate.
+        """
+        return pulumi.get(self, "trust_chain_pem")
+
+
+@pulumi.output_type
+class CloudcertificatesUploadTimeouts(dict):
+    def __init__(__self__, *,
+                 create: Optional[_builtins.str] = None,
+                 update: Optional[_builtins.str] = None):
+        """
+        :param _builtins.str create: Optional configurable timeout for polling until the uploaded certificate(s) finish processing server-side. By default it's 2m.
+        :param _builtins.str update: Optional configurable timeout for polling until the uploaded certificate(s) finish processing server-side. By default it's 2m.
+        """
+        if create is not None:
+            pulumi.set(__self__, "create", create)
+        if update is not None:
+            pulumi.set(__self__, "update", update)
+
+    @_builtins.property
+    @pulumi.getter
+    def create(self) -> Optional[_builtins.str]:
+        """
+        Optional configurable timeout for polling until the uploaded certificate(s) finish processing server-side. By default it's 2m.
+        """
+        return pulumi.get(self, "create")
+
+    @_builtins.property
+    @pulumi.getter
+    def update(self) -> Optional[_builtins.str]:
+        """
+        Optional configurable timeout for polling until the uploaded certificate(s) finish processing server-side. By default it's 2m.
+        """
+        return pulumi.get(self, "update")
 
 
 @pulumi.output_type
@@ -10432,6 +12978,12 @@ class PropertyHostname(dict):
             suggest = "cname_from"
         elif key == "cnameTo":
             suggest = "cname_to"
+        elif key == "ccmCertId":
+            suggest = "ccm_cert_id"
+        elif key == "ccmCertLink":
+            suggest = "ccm_cert_link"
+        elif key == "ccmCertStatus":
+            suggest = "ccm_cert_status"
         elif key == "ccmCertStatuses":
             suggest = "ccm_cert_statuses"
         elif key == "ccmCertificates":
@@ -10460,6 +13012,9 @@ class PropertyHostname(dict):
                  cert_provisioning_type: _builtins.str,
                  cname_from: _builtins.str,
                  cname_to: _builtins.str,
+                 ccm_cert_id: Optional[_builtins.str] = None,
+                 ccm_cert_link: Optional[_builtins.str] = None,
+                 ccm_cert_status: Optional[Sequence['outputs.PropertyHostnameCcmCertStatus']] = None,
                  ccm_cert_statuses: Optional[Sequence['outputs.PropertyHostnameCcmCertStatus']] = None,
                  ccm_certificates: Optional['outputs.PropertyHostnameCcmCertificates'] = None,
                  cert_statuses: Optional[Sequence['outputs.PropertyHostnameCertStatus']] = None,
@@ -10468,7 +13023,10 @@ class PropertyHostname(dict):
                  mtls: Optional['outputs.PropertyHostnameMtls'] = None,
                  tls_configuration: Optional['outputs.PropertyHostnameTlsConfiguration'] = None):
         """
-        :param Sequence['PropertyHostnameCcmCertStatusArgs'] ccm_cert_statuses: Deployment status for the RSA and ECDSA certificates created with Cloud Certificate Manager (CCM).
+        :param _builtins.str ccm_cert_id: The certificate lineage ID of the Cloud Certificate Manager (CCM) certificate to bind to the hostname. It cannot be used together with `ccm_certificates`.
+        :param _builtins.str ccm_cert_link: The link to the Cloud Certificate Manager (CCM) certificate lineage bound to the hostname.
+        :param Sequence['PropertyHostnameCcmCertStatusArgs'] ccm_cert_status: Deployment status for the RSA and ECDSA certificates created with Cloud Certificate Manager (CCM).
+        :param Sequence['PropertyHostnameCcmCertStatusArgs'] ccm_cert_statuses: The deployment statuses of the Cloud Certificate Manager (CCM) certificate lineage bound to the hostname, organized by key type and network.
         :param 'PropertyHostnameCcmCertificatesArgs' ccm_certificates: Certificate identifiers and links for the CCM-managed certificates.
         :param 'PropertyHostnameMtlsArgs' mtls: Optional mutual TLS settings for the CCM hostnames.
         :param 'PropertyHostnameTlsConfigurationArgs' tls_configuration: Optional TLS configuration settings applicable to the Cloud Certificate Manager (CCM) hostnames.
@@ -10476,6 +13034,12 @@ class PropertyHostname(dict):
         pulumi.set(__self__, "cert_provisioning_type", cert_provisioning_type)
         pulumi.set(__self__, "cname_from", cname_from)
         pulumi.set(__self__, "cname_to", cname_to)
+        if ccm_cert_id is not None:
+            pulumi.set(__self__, "ccm_cert_id", ccm_cert_id)
+        if ccm_cert_link is not None:
+            pulumi.set(__self__, "ccm_cert_link", ccm_cert_link)
+        if ccm_cert_status is not None:
+            pulumi.set(__self__, "ccm_cert_status", ccm_cert_status)
         if ccm_cert_statuses is not None:
             pulumi.set(__self__, "ccm_cert_statuses", ccm_cert_statuses)
         if ccm_certificates is not None:
@@ -10507,15 +13071,41 @@ class PropertyHostname(dict):
         return pulumi.get(self, "cname_to")
 
     @_builtins.property
+    @pulumi.getter(name="ccmCertId")
+    def ccm_cert_id(self) -> Optional[_builtins.str]:
+        """
+        The certificate lineage ID of the Cloud Certificate Manager (CCM) certificate to bind to the hostname. It cannot be used together with `ccm_certificates`.
+        """
+        return pulumi.get(self, "ccm_cert_id")
+
+    @_builtins.property
+    @pulumi.getter(name="ccmCertLink")
+    def ccm_cert_link(self) -> Optional[_builtins.str]:
+        """
+        The link to the Cloud Certificate Manager (CCM) certificate lineage bound to the hostname.
+        """
+        return pulumi.get(self, "ccm_cert_link")
+
+    @_builtins.property
+    @pulumi.getter(name="ccmCertStatus")
+    @_utilities.deprecated("""Will be replaced by ccm_cert_statuses.""")
+    def ccm_cert_status(self) -> Optional[Sequence['outputs.PropertyHostnameCcmCertStatus']]:
+        """
+        Deployment status for the RSA and ECDSA certificates created with Cloud Certificate Manager (CCM).
+        """
+        return pulumi.get(self, "ccm_cert_status")
+
+    @_builtins.property
     @pulumi.getter(name="ccmCertStatuses")
     def ccm_cert_statuses(self) -> Optional[Sequence['outputs.PropertyHostnameCcmCertStatus']]:
         """
-        Deployment status for the RSA and ECDSA certificates created with Cloud Certificate Manager (CCM).
+        The deployment statuses of the Cloud Certificate Manager (CCM) certificate lineage bound to the hostname, organized by key type and network.
         """
         return pulumi.get(self, "ccm_cert_statuses")
 
     @_builtins.property
     @pulumi.getter(name="ccmCertificates")
+    @_utilities.deprecated("""Use ccm_cert_id instead.""")
     def ccm_certificates(self) -> Optional['outputs.PropertyHostnameCcmCertificates']:
         """
         Certificate identifiers and links for the CCM-managed certificates.
@@ -10621,14 +13211,8 @@ class PropertyHostnameCcmCertStatus(dict):
     @staticmethod
     def __key_warning(key: str):
         suggest = None
-        if key == "ecdsaProductionStatus":
-            suggest = "ecdsa_production_status"
-        elif key == "ecdsaStagingStatus":
-            suggest = "ecdsa_staging_status"
-        elif key == "rsaProductionStatus":
-            suggest = "rsa_production_status"
-        elif key == "rsaStagingStatus":
-            suggest = "rsa_staging_status"
+        if key == "keyType":
+            suggest = "key_type"
 
         if suggest:
             pulumi.log.warn(f"Key '{key}' not found in PropertyHostnameCcmCertStatus. Access the value via the '{suggest}' property getter instead.")
@@ -10642,56 +13226,44 @@ class PropertyHostnameCcmCertStatus(dict):
         return super().get(key, default)
 
     def __init__(__self__, *,
-                 ecdsa_production_status: Optional[_builtins.str] = None,
-                 ecdsa_staging_status: Optional[_builtins.str] = None,
-                 rsa_production_status: Optional[_builtins.str] = None,
-                 rsa_staging_status: Optional[_builtins.str] = None):
+                 key_type: Optional[_builtins.str] = None,
+                 network: Optional[_builtins.str] = None,
+                 status: Optional[_builtins.str] = None):
         """
-        :param _builtins.str ecdsa_production_status: Status of the ECDSA certificate on production network.
-        :param _builtins.str ecdsa_staging_status: Status of the ECDSA certificate on staging network.
-        :param _builtins.str rsa_production_status: Status of the RSA certificate on production network.
-        :param _builtins.str rsa_staging_status: Status of the RSA certificate on staging network.
+        :param _builtins.str key_type: The key algorithm type of the certificate, either `RSA` or `ECDSA`.
+        :param _builtins.str network: The network the status applies to, either `STAGING` or `PRODUCTION`.
+        :param _builtins.str status: The deployment status of the certificate on the given network.
         """
-        if ecdsa_production_status is not None:
-            pulumi.set(__self__, "ecdsa_production_status", ecdsa_production_status)
-        if ecdsa_staging_status is not None:
-            pulumi.set(__self__, "ecdsa_staging_status", ecdsa_staging_status)
-        if rsa_production_status is not None:
-            pulumi.set(__self__, "rsa_production_status", rsa_production_status)
-        if rsa_staging_status is not None:
-            pulumi.set(__self__, "rsa_staging_status", rsa_staging_status)
+        if key_type is not None:
+            pulumi.set(__self__, "key_type", key_type)
+        if network is not None:
+            pulumi.set(__self__, "network", network)
+        if status is not None:
+            pulumi.set(__self__, "status", status)
 
     @_builtins.property
-    @pulumi.getter(name="ecdsaProductionStatus")
-    def ecdsa_production_status(self) -> Optional[_builtins.str]:
+    @pulumi.getter(name="keyType")
+    def key_type(self) -> Optional[_builtins.str]:
         """
-        Status of the ECDSA certificate on production network.
+        The key algorithm type of the certificate, either `RSA` or `ECDSA`.
         """
-        return pulumi.get(self, "ecdsa_production_status")
+        return pulumi.get(self, "key_type")
 
     @_builtins.property
-    @pulumi.getter(name="ecdsaStagingStatus")
-    def ecdsa_staging_status(self) -> Optional[_builtins.str]:
+    @pulumi.getter
+    def network(self) -> Optional[_builtins.str]:
         """
-        Status of the ECDSA certificate on staging network.
+        The network the status applies to, either `STAGING` or `PRODUCTION`.
         """
-        return pulumi.get(self, "ecdsa_staging_status")
+        return pulumi.get(self, "network")
 
     @_builtins.property
-    @pulumi.getter(name="rsaProductionStatus")
-    def rsa_production_status(self) -> Optional[_builtins.str]:
+    @pulumi.getter
+    def status(self) -> Optional[_builtins.str]:
         """
-        Status of the RSA certificate on production network.
+        The deployment status of the certificate on the given network.
         """
-        return pulumi.get(self, "rsa_production_status")
-
-    @_builtins.property
-    @pulumi.getter(name="rsaStagingStatus")
-    def rsa_staging_status(self) -> Optional[_builtins.str]:
-        """
-        Status of the RSA certificate on staging network.
-        """
-        return pulumi.get(self, "rsa_staging_status")
+        return pulumi.get(self, "status")
 
 
 @pulumi.output_type
@@ -15629,268 +18201,460 @@ class GetCloudaccessKeysAccessKeyNetworkConfigurationResult(dict):
 
 
 @pulumi.output_type
-class GetCloudcertificatesCertificateBindingResult(dict):
+class GetCloudcertificatesActivationsActivationResult(dict):
     def __init__(__self__, *,
-                 certificate_id: _builtins.str,
-                 hostname: _builtins.str,
+                 activation_created_time: _builtins.str,
+                 activation_id: _builtins.int,
+                 activation_modified_time: _builtins.str,
+                 activation_status: _builtins.str,
+                 activation_type: _builtins.str,
+                 created_by: _builtins.str,
+                 error_types: _builtins.str,
+                 generation_id: _builtins.int,
+                 in_progress_hostname_count: _builtins.int,
+                 lineage_id: _builtins.int,
+                 modified_by: _builtins.str,
+                 pre_empted_by: _builtins.int,
+                 target_environment: _builtins.str,
+                 total_hostname_count: _builtins.int):
+        """
+        :param _builtins.str activation_created_time: The time the activation request was created.
+        :param _builtins.int activation_id: The unique identifier of the activation request.
+        :param _builtins.str activation_modified_time: The time the activation request was last modified.
+        :param _builtins.str activation_status: The status of the activation request: `INIT`, `PENDING`, `IN_PROGRESS`, `COMPLETE`, `PARTIAL_SUCCESS`, `FAILED`, or `ABORTED`.
+        :param _builtins.str activation_type: The type of the activation operation: `PROMOTE`, `ROLLBACK`, or `REPLACE_STAGING`.
+        :param _builtins.str created_by: The user who created the activation request.
+        :param _builtins.str error_types: Error type information when the activation failed, or null otherwise.
+        :param _builtins.int generation_id: The unique identifier of the generation being activated.
+        :param _builtins.int in_progress_hostname_count: The number of hostnames still in progress for this activation, or null if not yet known.
+        :param _builtins.int lineage_id: The unique identifier of the certificate lineage associated with the activation.
+        :param _builtins.str modified_by: The user who last modified the activation request.
+        :param _builtins.int pre_empted_by: The activation request that pre-empted (superseded) this one, or null if this activation was not pre-empted.
+        :param _builtins.str target_environment: The target network for the generation activation: `STAGING` or `PRODUCTION`.
+        :param _builtins.int total_hostname_count: The total number of hostnames being deployed as part of this activation, or null if not yet known.
+        """
+        pulumi.set(__self__, "activation_created_time", activation_created_time)
+        pulumi.set(__self__, "activation_id", activation_id)
+        pulumi.set(__self__, "activation_modified_time", activation_modified_time)
+        pulumi.set(__self__, "activation_status", activation_status)
+        pulumi.set(__self__, "activation_type", activation_type)
+        pulumi.set(__self__, "created_by", created_by)
+        pulumi.set(__self__, "error_types", error_types)
+        pulumi.set(__self__, "generation_id", generation_id)
+        pulumi.set(__self__, "in_progress_hostname_count", in_progress_hostname_count)
+        pulumi.set(__self__, "lineage_id", lineage_id)
+        pulumi.set(__self__, "modified_by", modified_by)
+        pulumi.set(__self__, "pre_empted_by", pre_empted_by)
+        pulumi.set(__self__, "target_environment", target_environment)
+        pulumi.set(__self__, "total_hostname_count", total_hostname_count)
+
+    @_builtins.property
+    @pulumi.getter(name="activationCreatedTime")
+    def activation_created_time(self) -> _builtins.str:
+        """
+        The time the activation request was created.
+        """
+        return pulumi.get(self, "activation_created_time")
+
+    @_builtins.property
+    @pulumi.getter(name="activationId")
+    def activation_id(self) -> _builtins.int:
+        """
+        The unique identifier of the activation request.
+        """
+        return pulumi.get(self, "activation_id")
+
+    @_builtins.property
+    @pulumi.getter(name="activationModifiedTime")
+    def activation_modified_time(self) -> _builtins.str:
+        """
+        The time the activation request was last modified.
+        """
+        return pulumi.get(self, "activation_modified_time")
+
+    @_builtins.property
+    @pulumi.getter(name="activationStatus")
+    def activation_status(self) -> _builtins.str:
+        """
+        The status of the activation request: `INIT`, `PENDING`, `IN_PROGRESS`, `COMPLETE`, `PARTIAL_SUCCESS`, `FAILED`, or `ABORTED`.
+        """
+        return pulumi.get(self, "activation_status")
+
+    @_builtins.property
+    @pulumi.getter(name="activationType")
+    def activation_type(self) -> _builtins.str:
+        """
+        The type of the activation operation: `PROMOTE`, `ROLLBACK`, or `REPLACE_STAGING`.
+        """
+        return pulumi.get(self, "activation_type")
+
+    @_builtins.property
+    @pulumi.getter(name="createdBy")
+    def created_by(self) -> _builtins.str:
+        """
+        The user who created the activation request.
+        """
+        return pulumi.get(self, "created_by")
+
+    @_builtins.property
+    @pulumi.getter(name="errorTypes")
+    def error_types(self) -> _builtins.str:
+        """
+        Error type information when the activation failed, or null otherwise.
+        """
+        return pulumi.get(self, "error_types")
+
+    @_builtins.property
+    @pulumi.getter(name="generationId")
+    def generation_id(self) -> _builtins.int:
+        """
+        The unique identifier of the generation being activated.
+        """
+        return pulumi.get(self, "generation_id")
+
+    @_builtins.property
+    @pulumi.getter(name="inProgressHostnameCount")
+    def in_progress_hostname_count(self) -> _builtins.int:
+        """
+        The number of hostnames still in progress for this activation, or null if not yet known.
+        """
+        return pulumi.get(self, "in_progress_hostname_count")
+
+    @_builtins.property
+    @pulumi.getter(name="lineageId")
+    def lineage_id(self) -> _builtins.int:
+        """
+        The unique identifier of the certificate lineage associated with the activation.
+        """
+        return pulumi.get(self, "lineage_id")
+
+    @_builtins.property
+    @pulumi.getter(name="modifiedBy")
+    def modified_by(self) -> _builtins.str:
+        """
+        The user who last modified the activation request.
+        """
+        return pulumi.get(self, "modified_by")
+
+    @_builtins.property
+    @pulumi.getter(name="preEmptedBy")
+    def pre_empted_by(self) -> _builtins.int:
+        """
+        The activation request that pre-empted (superseded) this one, or null if this activation was not pre-empted.
+        """
+        return pulumi.get(self, "pre_empted_by")
+
+    @_builtins.property
+    @pulumi.getter(name="targetEnvironment")
+    def target_environment(self) -> _builtins.str:
+        """
+        The target network for the generation activation: `STAGING` or `PRODUCTION`.
+        """
+        return pulumi.get(self, "target_environment")
+
+    @_builtins.property
+    @pulumi.getter(name="totalHostnameCount")
+    def total_hostname_count(self) -> _builtins.int:
+        """
+        The total number of hostnames being deployed as part of this activation, or null if not yet known.
+        """
+        return pulumi.get(self, "total_hostname_count")
+
+
+@pulumi.output_type
+class GetCloudcertificatesActivityActivityResult(dict):
+    def __init__(__self__, *,
+                 activity_id: _builtins.int,
+                 created_by: _builtins.str,
+                 created_time: _builtins.str,
+                 event_type: _builtins.str,
+                 generation_id: _builtins.int,
+                 lineage_id: _builtins.int,
                  network: _builtins.str,
-                 resource_type: _builtins.str):
+                 outcome: _builtins.str):
         """
-        :param _builtins.str certificate_id: Unique identifier for the third-party certificate.
-        :param _builtins.str hostname: Hostname on the Akamai CDN the certificate applies to.
-        :param _builtins.str network: The deployment network, either STAGING or PRODUCTION, on which the certificate is active for a property version.
-        :param _builtins.str resource_type: Resource type this binding applies to. Currently, only CDN_HOSTNAME is available.
+        :param _builtins.int activity_id: The unique identifier of the activity event.
+        :param _builtins.str created_by: The user or system that triggered the activity event.
+        :param _builtins.str created_time: The time the activity event was recorded in UTC.
+        :param _builtins.str event_type: The type of operation recorded by the activity event.
+        :param _builtins.int generation_id: The generation identifier associated with the activity event, or null for lineage-level events.
+        :param _builtins.int lineage_id: The unique identifier of the certificate lineage associated with the activity event.
+        :param _builtins.str network: The target network associated with the activity event, or null if not applicable.
+        :param _builtins.str outcome: The execution result of the activity event, or null if not applicable.
         """
-        pulumi.set(__self__, "certificate_id", certificate_id)
-        pulumi.set(__self__, "hostname", hostname)
+        pulumi.set(__self__, "activity_id", activity_id)
+        pulumi.set(__self__, "created_by", created_by)
+        pulumi.set(__self__, "created_time", created_time)
+        pulumi.set(__self__, "event_type", event_type)
+        pulumi.set(__self__, "generation_id", generation_id)
+        pulumi.set(__self__, "lineage_id", lineage_id)
         pulumi.set(__self__, "network", network)
-        pulumi.set(__self__, "resource_type", resource_type)
+        pulumi.set(__self__, "outcome", outcome)
 
     @_builtins.property
-    @pulumi.getter(name="certificateId")
-    def certificate_id(self) -> _builtins.str:
+    @pulumi.getter(name="activityId")
+    def activity_id(self) -> _builtins.int:
         """
-        Unique identifier for the third-party certificate.
+        The unique identifier of the activity event.
         """
-        return pulumi.get(self, "certificate_id")
+        return pulumi.get(self, "activity_id")
 
     @_builtins.property
-    @pulumi.getter
-    def hostname(self) -> _builtins.str:
+    @pulumi.getter(name="createdBy")
+    def created_by(self) -> _builtins.str:
         """
-        Hostname on the Akamai CDN the certificate applies to.
+        The user or system that triggered the activity event.
         """
-        return pulumi.get(self, "hostname")
+        return pulumi.get(self, "created_by")
+
+    @_builtins.property
+    @pulumi.getter(name="createdTime")
+    def created_time(self) -> _builtins.str:
+        """
+        The time the activity event was recorded in UTC.
+        """
+        return pulumi.get(self, "created_time")
+
+    @_builtins.property
+    @pulumi.getter(name="eventType")
+    def event_type(self) -> _builtins.str:
+        """
+        The type of operation recorded by the activity event.
+        """
+        return pulumi.get(self, "event_type")
+
+    @_builtins.property
+    @pulumi.getter(name="generationId")
+    def generation_id(self) -> _builtins.int:
+        """
+        The generation identifier associated with the activity event, or null for lineage-level events.
+        """
+        return pulumi.get(self, "generation_id")
+
+    @_builtins.property
+    @pulumi.getter(name="lineageId")
+    def lineage_id(self) -> _builtins.int:
+        """
+        The unique identifier of the certificate lineage associated with the activity event.
+        """
+        return pulumi.get(self, "lineage_id")
 
     @_builtins.property
     @pulumi.getter
     def network(self) -> _builtins.str:
         """
-        The deployment network, either STAGING or PRODUCTION, on which the certificate is active for a property version.
+        The target network associated with the activity event, or null if not applicable.
         """
         return pulumi.get(self, "network")
 
     @_builtins.property
-    @pulumi.getter(name="resourceType")
-    def resource_type(self) -> _builtins.str:
+    @pulumi.getter
+    def outcome(self) -> _builtins.str:
         """
-        Resource type this binding applies to. Currently, only CDN_HOSTNAME is available.
+        The execution result of the activity event, or null if not applicable.
         """
-        return pulumi.get(self, "resource_type")
+        return pulumi.get(self, "outcome")
 
 
 @pulumi.output_type
-class GetCloudcertificatesCertificateSubjectResult(dict):
+class GetCloudcertificatesArchivedGenerationsGenerationResult(dict):
     def __init__(__self__, *,
-                 common_name: _builtins.str,
-                 country: _builtins.str,
-                 locality: _builtins.str,
-                 organization: _builtins.str,
-                 state: _builtins.str):
+                 algorithms: Mapping[str, 'outputs.GetCloudcertificatesArchivedGenerationsGenerationAlgorithmsResult'],
+                 first_promoted_to_production_time: _builtins.str,
+                 generation_created_by: _builtins.str,
+                 generation_created_time: _builtins.str,
+                 generation_id: _builtins.int,
+                 generation_modified_by: _builtins.str,
+                 generation_modified_time: _builtins.str,
+                 generation_status: _builtins.str):
         """
-        :param _builtins.str common_name: Fully qualified domain name (FQDN) or other name associated with the subject. If specified, this value must also be included in the SANs list.
-        :param _builtins.str country: Two-letter ISO 3166 country code.
-        :param _builtins.str locality: City or locality name.
-        :param _builtins.str organization: Legal name of the organization.
-        :param _builtins.str state: Full name of the state or province.
+        :param Mapping[str, 'GetCloudcertificatesArchivedGenerationsGenerationAlgorithmsArgs'] algorithms: Per key-type certificate details for this generation. Sparse details are returned by default; complete details are returned when include_algorithms is true.
+        :param _builtins.str first_promoted_to_production_time: Time the generation was first promoted to production, in RFC3339 format. Null if never promoted.
+        :param _builtins.str generation_created_by: Username of the person who created this generation.
+        :param _builtins.str generation_created_time: Time the generation was created, in RFC3339 format.
+        :param _builtins.int generation_id: The unique identifier of the archived generation.
+        :param _builtins.str generation_modified_by: Username of the person who last modified this generation. Null if never modified.
+        :param _builtins.str generation_modified_time: Time the generation was last modified, in RFC3339 format. Null if the generation has never been modified since creation.
+        :param _builtins.str generation_status: The status of the archived generation.
         """
-        pulumi.set(__self__, "common_name", common_name)
-        pulumi.set(__self__, "country", country)
-        pulumi.set(__self__, "locality", locality)
-        pulumi.set(__self__, "organization", organization)
-        pulumi.set(__self__, "state", state)
-
-    @_builtins.property
-    @pulumi.getter(name="commonName")
-    def common_name(self) -> _builtins.str:
-        """
-        Fully qualified domain name (FQDN) or other name associated with the subject. If specified, this value must also be included in the SANs list.
-        """
-        return pulumi.get(self, "common_name")
-
-    @_builtins.property
-    @pulumi.getter
-    def country(self) -> _builtins.str:
-        """
-        Two-letter ISO 3166 country code.
-        """
-        return pulumi.get(self, "country")
+        pulumi.set(__self__, "algorithms", algorithms)
+        pulumi.set(__self__, "first_promoted_to_production_time", first_promoted_to_production_time)
+        pulumi.set(__self__, "generation_created_by", generation_created_by)
+        pulumi.set(__self__, "generation_created_time", generation_created_time)
+        pulumi.set(__self__, "generation_id", generation_id)
+        pulumi.set(__self__, "generation_modified_by", generation_modified_by)
+        pulumi.set(__self__, "generation_modified_time", generation_modified_time)
+        pulumi.set(__self__, "generation_status", generation_status)
 
     @_builtins.property
     @pulumi.getter
-    def locality(self) -> _builtins.str:
+    def algorithms(self) -> Mapping[str, 'outputs.GetCloudcertificatesArchivedGenerationsGenerationAlgorithmsResult']:
         """
-        City or locality name.
+        Per key-type certificate details for this generation. Sparse details are returned by default; complete details are returned when include_algorithms is true.
         """
-        return pulumi.get(self, "locality")
+        return pulumi.get(self, "algorithms")
 
     @_builtins.property
-    @pulumi.getter
-    def organization(self) -> _builtins.str:
+    @pulumi.getter(name="firstPromotedToProductionTime")
+    def first_promoted_to_production_time(self) -> _builtins.str:
         """
-        Legal name of the organization.
+        Time the generation was first promoted to production, in RFC3339 format. Null if never promoted.
         """
-        return pulumi.get(self, "organization")
+        return pulumi.get(self, "first_promoted_to_production_time")
 
     @_builtins.property
-    @pulumi.getter
-    def state(self) -> _builtins.str:
+    @pulumi.getter(name="generationCreatedBy")
+    def generation_created_by(self) -> _builtins.str:
         """
-        Full name of the state or province.
+        Username of the person who created this generation.
         """
-        return pulumi.get(self, "state")
+        return pulumi.get(self, "generation_created_by")
+
+    @_builtins.property
+    @pulumi.getter(name="generationCreatedTime")
+    def generation_created_time(self) -> _builtins.str:
+        """
+        Time the generation was created, in RFC3339 format.
+        """
+        return pulumi.get(self, "generation_created_time")
+
+    @_builtins.property
+    @pulumi.getter(name="generationId")
+    def generation_id(self) -> _builtins.int:
+        """
+        The unique identifier of the archived generation.
+        """
+        return pulumi.get(self, "generation_id")
+
+    @_builtins.property
+    @pulumi.getter(name="generationModifiedBy")
+    def generation_modified_by(self) -> _builtins.str:
+        """
+        Username of the person who last modified this generation. Null if never modified.
+        """
+        return pulumi.get(self, "generation_modified_by")
+
+    @_builtins.property
+    @pulumi.getter(name="generationModifiedTime")
+    def generation_modified_time(self) -> _builtins.str:
+        """
+        Time the generation was last modified, in RFC3339 format. Null if the generation has never been modified since creation.
+        """
+        return pulumi.get(self, "generation_modified_time")
+
+    @_builtins.property
+    @pulumi.getter(name="generationStatus")
+    def generation_status(self) -> _builtins.str:
+        """
+        The status of the archived generation.
+        """
+        return pulumi.get(self, "generation_status")
 
 
 @pulumi.output_type
-class GetCloudcertificatesCertificatesCertificateResult(dict):
+class GetCloudcertificatesArchivedGenerationsGenerationAlgorithmsResult(dict):
     def __init__(__self__, *,
-                 account_id: _builtins.str,
-                 certificate_id: _builtins.str,
-                 certificate_name: _builtins.str,
+                 algorithm_instance_created_by: _builtins.str,
+                 algorithm_instance_created_time: _builtins.str,
+                 algorithm_instance_id: _builtins.int,
+                 algorithm_instance_modified_by: _builtins.str,
+                 algorithm_instance_modified_time: _builtins.str,
                  certificate_status: _builtins.str,
-                 certificate_type: _builtins.str,
-                 contract_id: _builtins.str,
-                 created_by: _builtins.str,
-                 created_date: _builtins.str,
                  csr_expiration_date: _builtins.str,
                  csr_pem: _builtins.str,
-                 geo_class: _builtins.str,
-                 key_size: _builtins.str,
-                 key_type: _builtins.str,
-                 modified_by: _builtins.str,
-                 modified_date: _builtins.str,
-                 sans: Sequence[_builtins.str],
-                 secure_network: _builtins.str,
                  signed_certificate_issuer: _builtins.str,
                  signed_certificate_not_valid_after_date: _builtins.str,
                  signed_certificate_not_valid_before_date: _builtins.str,
                  signed_certificate_pem: _builtins.str,
                  signed_certificate_serial_number: _builtins.str,
                  signed_certificate_sha256_fingerprint: _builtins.str,
-                 subject: 'outputs.GetCloudcertificatesCertificatesCertificateSubjectResult',
                  trust_chain_pem: _builtins.str):
         """
-        :param _builtins.str account_id: The account identifier associated with the certificate.
-        :param _builtins.str certificate_id: The unique identifier for the certificate.
-        :param _builtins.str certificate_name: The name of the certificate.
-        :param _builtins.str certificate_status: The status of the certificate.
-        :param _builtins.str certificate_type: The type of the certificate.
-        :param _builtins.str contract_id: The contract identifier associated with the certificate.
-        :param _builtins.str created_by: The user who created the certificate.
-        :param _builtins.str created_date: The date when the certificate was created.
-        :param _builtins.str csr_expiration_date: The expiration date of the CSR.
-        :param _builtins.str csr_pem: PEM-encoded certificate signing request (CSR) generated by Akamai for your selected key type.
-        :param _builtins.str geo_class: The geographic network class of the certificate.
-        :param _builtins.str key_size: Size of the key used in the certificate signing request (CSR) in bits.
-        :param _builtins.str key_type: The key type of the algorithm used in the certificate signing request (CSR).
-        :param _builtins.str modified_by: The user who last modified the certificate.
-        :param _builtins.str modified_date: The date when the certificate was last modified.
-        :param Sequence[_builtins.str] sans: The list of SAN (Subject Alternative Name) domains included in the certificate.
-        :param _builtins.str secure_network: The secure network associated with the certificate.
-        :param _builtins.str signed_certificate_issuer: The issuer of the signed certificate.
-        :param _builtins.str signed_certificate_not_valid_after_date: The date after which the signed certificate is no longer valid.
-        :param _builtins.str signed_certificate_not_valid_before_date: The date before which the signed certificate is not valid.
-        :param _builtins.str signed_certificate_pem: PEM-encoded signed certificate you uploaded for your selected key type.
-        :param _builtins.str signed_certificate_serial_number: Signed certificate serial number in hex format.
-        :param _builtins.str signed_certificate_sha256_fingerprint: The SHA256 fingerprint of the signed certificate.
-        :param 'GetCloudcertificatesCertificatesCertificateSubjectArgs' subject: Subject fields as defined in X.509 certificates (RFC 5280).
-        :param _builtins.str trust_chain_pem: The trust chain PEM content uploaded by end user.
+        :param _builtins.str algorithm_instance_created_by: Username of the person who created the algorithm instance.
+        :param _builtins.str algorithm_instance_created_time: Time the algorithm instance was created, in RFC3339 format.
+        :param _builtins.int algorithm_instance_id: Unique identifier of the algorithm instance.
+        :param _builtins.str algorithm_instance_modified_by: Username of the person who last modified the algorithm instance. Null if never modified.
+        :param _builtins.str algorithm_instance_modified_time: Time the algorithm instance was last modified, in RFC3339 format. Null if never modified.
+        :param _builtins.str certificate_status: Status of the certificate for this key type: `CSR_READY`, `CERT_UPLOAD_PROCESSING`, `READY_FOR_USE`, or `ABANDONED`.
+        :param _builtins.str csr_expiration_date: Date when the CSR expires, in RFC3339 format.
+        :param _builtins.str csr_pem: PEM-encoded certificate signing request.
+        :param _builtins.str signed_certificate_issuer: Issuer field of the signed certificate. Null until a certificate is uploaded.
+        :param _builtins.str signed_certificate_not_valid_after_date: Expiration date of the signed certificate, in RFC3339 format. Null until a certificate is uploaded.
+        :param _builtins.str signed_certificate_not_valid_before_date: Start of validity of the signed certificate, in RFC3339 format. Null until a certificate is uploaded.
+        :param _builtins.str signed_certificate_pem: PEM-encoded signed certificate. Null until a certificate is uploaded.
+        :param _builtins.str signed_certificate_serial_number: Serial number of the signed certificate in hex format. Null until a certificate is uploaded.
+        :param _builtins.str signed_certificate_sha256_fingerprint: SHA-256 fingerprint of the signed certificate. Null until a certificate is uploaded.
+        :param _builtins.str trust_chain_pem: PEM-encoded trust chain uploaded alongside the signed certificate. Null if none was uploaded.
         """
-        pulumi.set(__self__, "account_id", account_id)
-        pulumi.set(__self__, "certificate_id", certificate_id)
-        pulumi.set(__self__, "certificate_name", certificate_name)
+        pulumi.set(__self__, "algorithm_instance_created_by", algorithm_instance_created_by)
+        pulumi.set(__self__, "algorithm_instance_created_time", algorithm_instance_created_time)
+        pulumi.set(__self__, "algorithm_instance_id", algorithm_instance_id)
+        pulumi.set(__self__, "algorithm_instance_modified_by", algorithm_instance_modified_by)
+        pulumi.set(__self__, "algorithm_instance_modified_time", algorithm_instance_modified_time)
         pulumi.set(__self__, "certificate_status", certificate_status)
-        pulumi.set(__self__, "certificate_type", certificate_type)
-        pulumi.set(__self__, "contract_id", contract_id)
-        pulumi.set(__self__, "created_by", created_by)
-        pulumi.set(__self__, "created_date", created_date)
         pulumi.set(__self__, "csr_expiration_date", csr_expiration_date)
         pulumi.set(__self__, "csr_pem", csr_pem)
-        pulumi.set(__self__, "geo_class", geo_class)
-        pulumi.set(__self__, "key_size", key_size)
-        pulumi.set(__self__, "key_type", key_type)
-        pulumi.set(__self__, "modified_by", modified_by)
-        pulumi.set(__self__, "modified_date", modified_date)
-        pulumi.set(__self__, "sans", sans)
-        pulumi.set(__self__, "secure_network", secure_network)
         pulumi.set(__self__, "signed_certificate_issuer", signed_certificate_issuer)
         pulumi.set(__self__, "signed_certificate_not_valid_after_date", signed_certificate_not_valid_after_date)
         pulumi.set(__self__, "signed_certificate_not_valid_before_date", signed_certificate_not_valid_before_date)
         pulumi.set(__self__, "signed_certificate_pem", signed_certificate_pem)
         pulumi.set(__self__, "signed_certificate_serial_number", signed_certificate_serial_number)
         pulumi.set(__self__, "signed_certificate_sha256_fingerprint", signed_certificate_sha256_fingerprint)
-        pulumi.set(__self__, "subject", subject)
         pulumi.set(__self__, "trust_chain_pem", trust_chain_pem)
 
     @_builtins.property
-    @pulumi.getter(name="accountId")
-    def account_id(self) -> _builtins.str:
+    @pulumi.getter(name="algorithmInstanceCreatedBy")
+    def algorithm_instance_created_by(self) -> _builtins.str:
         """
-        The account identifier associated with the certificate.
+        Username of the person who created the algorithm instance.
         """
-        return pulumi.get(self, "account_id")
+        return pulumi.get(self, "algorithm_instance_created_by")
 
     @_builtins.property
-    @pulumi.getter(name="certificateId")
-    def certificate_id(self) -> _builtins.str:
+    @pulumi.getter(name="algorithmInstanceCreatedTime")
+    def algorithm_instance_created_time(self) -> _builtins.str:
         """
-        The unique identifier for the certificate.
+        Time the algorithm instance was created, in RFC3339 format.
         """
-        return pulumi.get(self, "certificate_id")
+        return pulumi.get(self, "algorithm_instance_created_time")
 
     @_builtins.property
-    @pulumi.getter(name="certificateName")
-    def certificate_name(self) -> _builtins.str:
+    @pulumi.getter(name="algorithmInstanceId")
+    def algorithm_instance_id(self) -> _builtins.int:
         """
-        The name of the certificate.
+        Unique identifier of the algorithm instance.
         """
-        return pulumi.get(self, "certificate_name")
+        return pulumi.get(self, "algorithm_instance_id")
+
+    @_builtins.property
+    @pulumi.getter(name="algorithmInstanceModifiedBy")
+    def algorithm_instance_modified_by(self) -> _builtins.str:
+        """
+        Username of the person who last modified the algorithm instance. Null if never modified.
+        """
+        return pulumi.get(self, "algorithm_instance_modified_by")
+
+    @_builtins.property
+    @pulumi.getter(name="algorithmInstanceModifiedTime")
+    def algorithm_instance_modified_time(self) -> _builtins.str:
+        """
+        Time the algorithm instance was last modified, in RFC3339 format. Null if never modified.
+        """
+        return pulumi.get(self, "algorithm_instance_modified_time")
 
     @_builtins.property
     @pulumi.getter(name="certificateStatus")
     def certificate_status(self) -> _builtins.str:
         """
-        The status of the certificate.
+        Status of the certificate for this key type: `CSR_READY`, `CERT_UPLOAD_PROCESSING`, `READY_FOR_USE`, or `ABANDONED`.
         """
         return pulumi.get(self, "certificate_status")
-
-    @_builtins.property
-    @pulumi.getter(name="certificateType")
-    def certificate_type(self) -> _builtins.str:
-        """
-        The type of the certificate.
-        """
-        return pulumi.get(self, "certificate_type")
-
-    @_builtins.property
-    @pulumi.getter(name="contractId")
-    def contract_id(self) -> _builtins.str:
-        """
-        The contract identifier associated with the certificate.
-        """
-        return pulumi.get(self, "contract_id")
-
-    @_builtins.property
-    @pulumi.getter(name="createdBy")
-    def created_by(self) -> _builtins.str:
-        """
-        The user who created the certificate.
-        """
-        return pulumi.get(self, "created_by")
-
-    @_builtins.property
-    @pulumi.getter(name="createdDate")
-    def created_date(self) -> _builtins.str:
-        """
-        The date when the certificate was created.
-        """
-        return pulumi.get(self, "created_date")
 
     @_builtins.property
     @pulumi.getter(name="csrExpirationDate")
     def csr_expiration_date(self) -> _builtins.str:
         """
-        The expiration date of the CSR.
+        Date when the CSR expires, in RFC3339 format.
         """
         return pulumi.get(self, "csr_expiration_date")
 
@@ -15898,71 +18662,15 @@ class GetCloudcertificatesCertificatesCertificateResult(dict):
     @pulumi.getter(name="csrPem")
     def csr_pem(self) -> _builtins.str:
         """
-        PEM-encoded certificate signing request (CSR) generated by Akamai for your selected key type.
+        PEM-encoded certificate signing request.
         """
         return pulumi.get(self, "csr_pem")
-
-    @_builtins.property
-    @pulumi.getter(name="geoClass")
-    def geo_class(self) -> _builtins.str:
-        """
-        The geographic network class of the certificate.
-        """
-        return pulumi.get(self, "geo_class")
-
-    @_builtins.property
-    @pulumi.getter(name="keySize")
-    def key_size(self) -> _builtins.str:
-        """
-        Size of the key used in the certificate signing request (CSR) in bits.
-        """
-        return pulumi.get(self, "key_size")
-
-    @_builtins.property
-    @pulumi.getter(name="keyType")
-    def key_type(self) -> _builtins.str:
-        """
-        The key type of the algorithm used in the certificate signing request (CSR).
-        """
-        return pulumi.get(self, "key_type")
-
-    @_builtins.property
-    @pulumi.getter(name="modifiedBy")
-    def modified_by(self) -> _builtins.str:
-        """
-        The user who last modified the certificate.
-        """
-        return pulumi.get(self, "modified_by")
-
-    @_builtins.property
-    @pulumi.getter(name="modifiedDate")
-    def modified_date(self) -> _builtins.str:
-        """
-        The date when the certificate was last modified.
-        """
-        return pulumi.get(self, "modified_date")
-
-    @_builtins.property
-    @pulumi.getter
-    def sans(self) -> Sequence[_builtins.str]:
-        """
-        The list of SAN (Subject Alternative Name) domains included in the certificate.
-        """
-        return pulumi.get(self, "sans")
-
-    @_builtins.property
-    @pulumi.getter(name="secureNetwork")
-    def secure_network(self) -> _builtins.str:
-        """
-        The secure network associated with the certificate.
-        """
-        return pulumi.get(self, "secure_network")
 
     @_builtins.property
     @pulumi.getter(name="signedCertificateIssuer")
     def signed_certificate_issuer(self) -> _builtins.str:
         """
-        The issuer of the signed certificate.
+        Issuer field of the signed certificate. Null until a certificate is uploaded.
         """
         return pulumi.get(self, "signed_certificate_issuer")
 
@@ -15970,7 +18678,7 @@ class GetCloudcertificatesCertificatesCertificateResult(dict):
     @pulumi.getter(name="signedCertificateNotValidAfterDate")
     def signed_certificate_not_valid_after_date(self) -> _builtins.str:
         """
-        The date after which the signed certificate is no longer valid.
+        Expiration date of the signed certificate, in RFC3339 format. Null until a certificate is uploaded.
         """
         return pulumi.get(self, "signed_certificate_not_valid_after_date")
 
@@ -15978,7 +18686,7 @@ class GetCloudcertificatesCertificatesCertificateResult(dict):
     @pulumi.getter(name="signedCertificateNotValidBeforeDate")
     def signed_certificate_not_valid_before_date(self) -> _builtins.str:
         """
-        The date before which the signed certificate is not valid.
+        Start of validity of the signed certificate, in RFC3339 format. Null until a certificate is uploaded.
         """
         return pulumi.get(self, "signed_certificate_not_valid_before_date")
 
@@ -15986,7 +18694,7 @@ class GetCloudcertificatesCertificatesCertificateResult(dict):
     @pulumi.getter(name="signedCertificatePem")
     def signed_certificate_pem(self) -> _builtins.str:
         """
-        PEM-encoded signed certificate you uploaded for your selected key type.
+        PEM-encoded signed certificate. Null until a certificate is uploaded.
         """
         return pulumi.get(self, "signed_certificate_pem")
 
@@ -15994,7 +18702,7 @@ class GetCloudcertificatesCertificatesCertificateResult(dict):
     @pulumi.getter(name="signedCertificateSerialNumber")
     def signed_certificate_serial_number(self) -> _builtins.str:
         """
-        Signed certificate serial number in hex format.
+        Serial number of the signed certificate in hex format. Null until a certificate is uploaded.
         """
         return pulumi.get(self, "signed_certificate_serial_number")
 
@@ -16002,53 +18710,1595 @@ class GetCloudcertificatesCertificatesCertificateResult(dict):
     @pulumi.getter(name="signedCertificateSha256Fingerprint")
     def signed_certificate_sha256_fingerprint(self) -> _builtins.str:
         """
-        The SHA256 fingerprint of the signed certificate.
+        SHA-256 fingerprint of the signed certificate. Null until a certificate is uploaded.
         """
         return pulumi.get(self, "signed_certificate_sha256_fingerprint")
-
-    @_builtins.property
-    @pulumi.getter
-    def subject(self) -> 'outputs.GetCloudcertificatesCertificatesCertificateSubjectResult':
-        """
-        Subject fields as defined in X.509 certificates (RFC 5280).
-        """
-        return pulumi.get(self, "subject")
 
     @_builtins.property
     @pulumi.getter(name="trustChainPem")
     def trust_chain_pem(self) -> _builtins.str:
         """
-        The trust chain PEM content uploaded by end user.
+        PEM-encoded trust chain uploaded alongside the signed certificate. Null if none was uploaded.
         """
         return pulumi.get(self, "trust_chain_pem")
 
 
 @pulumi.output_type
-class GetCloudcertificatesCertificatesCertificateSubjectResult(dict):
+class GetCloudcertificatesBindingsBindingResult(dict):
+    def __init__(__self__, *,
+                 active: _builtins.bool,
+                 hostname: _builtins.str,
+                 networks: Sequence[_builtins.str]):
+        """
+        :param _builtins.bool active: Whether the binding is currently active.
+        :param _builtins.str hostname: The bound hostname.
+        :param Sequence[_builtins.str] networks: The networks to which the hostname is bound, e.g., `STAGING`, `PRODUCTION`, or both.
+        """
+        pulumi.set(__self__, "active", active)
+        pulumi.set(__self__, "hostname", hostname)
+        pulumi.set(__self__, "networks", networks)
+
+    @_builtins.property
+    @pulumi.getter
+    def active(self) -> _builtins.bool:
+        """
+        Whether the binding is currently active.
+        """
+        return pulumi.get(self, "active")
+
+    @_builtins.property
+    @pulumi.getter
+    def hostname(self) -> _builtins.str:
+        """
+        The bound hostname.
+        """
+        return pulumi.get(self, "hostname")
+
+    @_builtins.property
+    @pulumi.getter
+    def networks(self) -> Sequence[_builtins.str]:
+        """
+        The networks to which the hostname is bound, e.g., `STAGING`, `PRODUCTION`, or both.
+        """
+        return pulumi.get(self, "networks")
+
+
+@pulumi.output_type
+class GetCloudcertificatesGenerationAlgorithmsResult(dict):
+    def __init__(__self__, *,
+                 algorithm_instance_created_by: _builtins.str,
+                 algorithm_instance_created_time: _builtins.str,
+                 algorithm_instance_id: _builtins.int,
+                 algorithm_instance_modified_by: _builtins.str,
+                 algorithm_instance_modified_time: _builtins.str,
+                 certificate_status: _builtins.str,
+                 csr_expiration_date: _builtins.str,
+                 csr_pem: _builtins.str,
+                 signed_certificate_issuer: _builtins.str,
+                 signed_certificate_not_valid_after_date: _builtins.str,
+                 signed_certificate_not_valid_before_date: _builtins.str,
+                 signed_certificate_pem: _builtins.str,
+                 signed_certificate_serial_number: _builtins.str,
+                 signed_certificate_sha256_fingerprint: _builtins.str,
+                 trust_chain_pem: _builtins.str):
+        """
+        :param _builtins.str algorithm_instance_created_by: Username of the person who created the algorithm instance.
+        :param _builtins.str algorithm_instance_created_time: Time the algorithm instance was created, in RFC3339 format.
+        :param _builtins.int algorithm_instance_id: Unique identifier of the algorithm instance.
+        :param _builtins.str algorithm_instance_modified_by: Username of the person who last modified the algorithm instance. Null if never modified.
+        :param _builtins.str algorithm_instance_modified_time: Time the algorithm instance was last modified, in RFC3339 format. Null if never modified.
+        :param _builtins.str certificate_status: Status of the certificate for this key type: `CSR_READY`, `CERT_UPLOAD_PROCESSING`, `READY_FOR_USE`, or `ABANDONED`.
+        :param _builtins.str csr_expiration_date: Date when the CSR expires, in RFC3339 format.
+        :param _builtins.str csr_pem: PEM-encoded certificate signing request.
+        :param _builtins.str signed_certificate_issuer: Issuer field of the signed certificate. Null until a certificate is uploaded.
+        :param _builtins.str signed_certificate_not_valid_after_date: Expiration date of the signed certificate, in RFC3339 format. Null until a certificate is uploaded.
+        :param _builtins.str signed_certificate_not_valid_before_date: Start of validity of the signed certificate, in RFC3339 format. Null until a certificate is uploaded.
+        :param _builtins.str signed_certificate_pem: PEM-encoded signed certificate. Null until a certificate is uploaded.
+        :param _builtins.str signed_certificate_serial_number: Serial number of the signed certificate in hex format. Null until a certificate is uploaded.
+        :param _builtins.str signed_certificate_sha256_fingerprint: SHA-256 fingerprint of the signed certificate. Null until a certificate is uploaded.
+        :param _builtins.str trust_chain_pem: PEM-encoded trust chain uploaded alongside the signed certificate. Null if none was uploaded.
+        """
+        pulumi.set(__self__, "algorithm_instance_created_by", algorithm_instance_created_by)
+        pulumi.set(__self__, "algorithm_instance_created_time", algorithm_instance_created_time)
+        pulumi.set(__self__, "algorithm_instance_id", algorithm_instance_id)
+        pulumi.set(__self__, "algorithm_instance_modified_by", algorithm_instance_modified_by)
+        pulumi.set(__self__, "algorithm_instance_modified_time", algorithm_instance_modified_time)
+        pulumi.set(__self__, "certificate_status", certificate_status)
+        pulumi.set(__self__, "csr_expiration_date", csr_expiration_date)
+        pulumi.set(__self__, "csr_pem", csr_pem)
+        pulumi.set(__self__, "signed_certificate_issuer", signed_certificate_issuer)
+        pulumi.set(__self__, "signed_certificate_not_valid_after_date", signed_certificate_not_valid_after_date)
+        pulumi.set(__self__, "signed_certificate_not_valid_before_date", signed_certificate_not_valid_before_date)
+        pulumi.set(__self__, "signed_certificate_pem", signed_certificate_pem)
+        pulumi.set(__self__, "signed_certificate_serial_number", signed_certificate_serial_number)
+        pulumi.set(__self__, "signed_certificate_sha256_fingerprint", signed_certificate_sha256_fingerprint)
+        pulumi.set(__self__, "trust_chain_pem", trust_chain_pem)
+
+    @_builtins.property
+    @pulumi.getter(name="algorithmInstanceCreatedBy")
+    def algorithm_instance_created_by(self) -> _builtins.str:
+        """
+        Username of the person who created the algorithm instance.
+        """
+        return pulumi.get(self, "algorithm_instance_created_by")
+
+    @_builtins.property
+    @pulumi.getter(name="algorithmInstanceCreatedTime")
+    def algorithm_instance_created_time(self) -> _builtins.str:
+        """
+        Time the algorithm instance was created, in RFC3339 format.
+        """
+        return pulumi.get(self, "algorithm_instance_created_time")
+
+    @_builtins.property
+    @pulumi.getter(name="algorithmInstanceId")
+    def algorithm_instance_id(self) -> _builtins.int:
+        """
+        Unique identifier of the algorithm instance.
+        """
+        return pulumi.get(self, "algorithm_instance_id")
+
+    @_builtins.property
+    @pulumi.getter(name="algorithmInstanceModifiedBy")
+    def algorithm_instance_modified_by(self) -> _builtins.str:
+        """
+        Username of the person who last modified the algorithm instance. Null if never modified.
+        """
+        return pulumi.get(self, "algorithm_instance_modified_by")
+
+    @_builtins.property
+    @pulumi.getter(name="algorithmInstanceModifiedTime")
+    def algorithm_instance_modified_time(self) -> _builtins.str:
+        """
+        Time the algorithm instance was last modified, in RFC3339 format. Null if never modified.
+        """
+        return pulumi.get(self, "algorithm_instance_modified_time")
+
+    @_builtins.property
+    @pulumi.getter(name="certificateStatus")
+    def certificate_status(self) -> _builtins.str:
+        """
+        Status of the certificate for this key type: `CSR_READY`, `CERT_UPLOAD_PROCESSING`, `READY_FOR_USE`, or `ABANDONED`.
+        """
+        return pulumi.get(self, "certificate_status")
+
+    @_builtins.property
+    @pulumi.getter(name="csrExpirationDate")
+    def csr_expiration_date(self) -> _builtins.str:
+        """
+        Date when the CSR expires, in RFC3339 format.
+        """
+        return pulumi.get(self, "csr_expiration_date")
+
+    @_builtins.property
+    @pulumi.getter(name="csrPem")
+    def csr_pem(self) -> _builtins.str:
+        """
+        PEM-encoded certificate signing request.
+        """
+        return pulumi.get(self, "csr_pem")
+
+    @_builtins.property
+    @pulumi.getter(name="signedCertificateIssuer")
+    def signed_certificate_issuer(self) -> _builtins.str:
+        """
+        Issuer field of the signed certificate. Null until a certificate is uploaded.
+        """
+        return pulumi.get(self, "signed_certificate_issuer")
+
+    @_builtins.property
+    @pulumi.getter(name="signedCertificateNotValidAfterDate")
+    def signed_certificate_not_valid_after_date(self) -> _builtins.str:
+        """
+        Expiration date of the signed certificate, in RFC3339 format. Null until a certificate is uploaded.
+        """
+        return pulumi.get(self, "signed_certificate_not_valid_after_date")
+
+    @_builtins.property
+    @pulumi.getter(name="signedCertificateNotValidBeforeDate")
+    def signed_certificate_not_valid_before_date(self) -> _builtins.str:
+        """
+        Start of validity of the signed certificate, in RFC3339 format. Null until a certificate is uploaded.
+        """
+        return pulumi.get(self, "signed_certificate_not_valid_before_date")
+
+    @_builtins.property
+    @pulumi.getter(name="signedCertificatePem")
+    def signed_certificate_pem(self) -> _builtins.str:
+        """
+        PEM-encoded signed certificate. Null until a certificate is uploaded.
+        """
+        return pulumi.get(self, "signed_certificate_pem")
+
+    @_builtins.property
+    @pulumi.getter(name="signedCertificateSerialNumber")
+    def signed_certificate_serial_number(self) -> _builtins.str:
+        """
+        Serial number of the signed certificate in hex format. Null until a certificate is uploaded.
+        """
+        return pulumi.get(self, "signed_certificate_serial_number")
+
+    @_builtins.property
+    @pulumi.getter(name="signedCertificateSha256Fingerprint")
+    def signed_certificate_sha256_fingerprint(self) -> _builtins.str:
+        """
+        SHA-256 fingerprint of the signed certificate. Null until a certificate is uploaded.
+        """
+        return pulumi.get(self, "signed_certificate_sha256_fingerprint")
+
+    @_builtins.property
+    @pulumi.getter(name="trustChainPem")
+    def trust_chain_pem(self) -> _builtins.str:
+        """
+        PEM-encoded trust chain uploaded alongside the signed certificate. Null if none was uploaded.
+        """
+        return pulumi.get(self, "trust_chain_pem")
+
+
+@pulumi.output_type
+class GetCloudcertificatesLineageCurrentProductionResult(dict):
+    def __init__(__self__, *,
+                 algorithms: Mapping[str, 'outputs.GetCloudcertificatesLineageCurrentProductionAlgorithmsResult'],
+                 first_promoted_to_production_time: _builtins.str,
+                 generation_created_by: _builtins.str,
+                 generation_created_time: _builtins.str,
+                 generation_id: _builtins.int,
+                 generation_modified_by: _builtins.str,
+                 generation_modified_time: _builtins.str,
+                 generation_status: _builtins.str):
+        """
+        :param Mapping[str, 'GetCloudcertificatesLineageCurrentProductionAlgorithmsArgs'] algorithms: Per key-type (RSA or ECDSA) certificate details for this generation, keyed by key_type. Populated only when expand_generations is true.
+        :param _builtins.str first_promoted_to_production_time: Time the generation was first promoted to production, in RFC3339 format. Null if never promoted, or if not requested via expand_generations.
+        :param _builtins.str generation_created_by: Username of the person who created this generation. Populated only when expand_generations is true.
+        :param _builtins.str generation_created_time: Time the generation was created, in RFC3339 format. Populated only when expand_generations is true.
+        :param _builtins.int generation_id: Unique identifier of the generation.
+        :param _builtins.str generation_modified_by: Username of the person who last modified this generation. Populated only when expand_generations is true.
+        :param _builtins.str generation_modified_time: Time the generation was last modified, in RFC3339 format. Null if not requested via expand_generations, or if the generation has never been modified since creation.
+        :param _builtins.str generation_status: Status of the generation.
+        """
+        pulumi.set(__self__, "algorithms", algorithms)
+        pulumi.set(__self__, "first_promoted_to_production_time", first_promoted_to_production_time)
+        pulumi.set(__self__, "generation_created_by", generation_created_by)
+        pulumi.set(__self__, "generation_created_time", generation_created_time)
+        pulumi.set(__self__, "generation_id", generation_id)
+        pulumi.set(__self__, "generation_modified_by", generation_modified_by)
+        pulumi.set(__self__, "generation_modified_time", generation_modified_time)
+        pulumi.set(__self__, "generation_status", generation_status)
+
+    @_builtins.property
+    @pulumi.getter
+    def algorithms(self) -> Mapping[str, 'outputs.GetCloudcertificatesLineageCurrentProductionAlgorithmsResult']:
+        """
+        Per key-type (RSA or ECDSA) certificate details for this generation, keyed by key_type. Populated only when expand_generations is true.
+        """
+        return pulumi.get(self, "algorithms")
+
+    @_builtins.property
+    @pulumi.getter(name="firstPromotedToProductionTime")
+    def first_promoted_to_production_time(self) -> _builtins.str:
+        """
+        Time the generation was first promoted to production, in RFC3339 format. Null if never promoted, or if not requested via expand_generations.
+        """
+        return pulumi.get(self, "first_promoted_to_production_time")
+
+    @_builtins.property
+    @pulumi.getter(name="generationCreatedBy")
+    def generation_created_by(self) -> _builtins.str:
+        """
+        Username of the person who created this generation. Populated only when expand_generations is true.
+        """
+        return pulumi.get(self, "generation_created_by")
+
+    @_builtins.property
+    @pulumi.getter(name="generationCreatedTime")
+    def generation_created_time(self) -> _builtins.str:
+        """
+        Time the generation was created, in RFC3339 format. Populated only when expand_generations is true.
+        """
+        return pulumi.get(self, "generation_created_time")
+
+    @_builtins.property
+    @pulumi.getter(name="generationId")
+    def generation_id(self) -> _builtins.int:
+        """
+        Unique identifier of the generation.
+        """
+        return pulumi.get(self, "generation_id")
+
+    @_builtins.property
+    @pulumi.getter(name="generationModifiedBy")
+    def generation_modified_by(self) -> _builtins.str:
+        """
+        Username of the person who last modified this generation. Populated only when expand_generations is true.
+        """
+        return pulumi.get(self, "generation_modified_by")
+
+    @_builtins.property
+    @pulumi.getter(name="generationModifiedTime")
+    def generation_modified_time(self) -> _builtins.str:
+        """
+        Time the generation was last modified, in RFC3339 format. Null if not requested via expand_generations, or if the generation has never been modified since creation.
+        """
+        return pulumi.get(self, "generation_modified_time")
+
+    @_builtins.property
+    @pulumi.getter(name="generationStatus")
+    def generation_status(self) -> _builtins.str:
+        """
+        Status of the generation.
+        """
+        return pulumi.get(self, "generation_status")
+
+
+@pulumi.output_type
+class GetCloudcertificatesLineageCurrentProductionAlgorithmsResult(dict):
+    def __init__(__self__, *,
+                 algorithm_instance_created_by: _builtins.str,
+                 algorithm_instance_created_time: _builtins.str,
+                 algorithm_instance_id: _builtins.int,
+                 algorithm_instance_modified_by: _builtins.str,
+                 algorithm_instance_modified_time: _builtins.str,
+                 certificate_status: _builtins.str,
+                 csr_expiration_date: _builtins.str,
+                 csr_pem: _builtins.str,
+                 signed_certificate_issuer: _builtins.str,
+                 signed_certificate_not_valid_after_date: _builtins.str,
+                 signed_certificate_not_valid_before_date: _builtins.str,
+                 signed_certificate_pem: _builtins.str,
+                 signed_certificate_serial_number: _builtins.str,
+                 signed_certificate_sha256_fingerprint: _builtins.str,
+                 trust_chain_pem: _builtins.str):
+        """
+        :param _builtins.str algorithm_instance_created_by: Username of the person who created the algorithm instance.
+        :param _builtins.str algorithm_instance_created_time: Time the algorithm instance was created, in RFC3339 format.
+        :param _builtins.int algorithm_instance_id: Unique identifier of the algorithm instance.
+        :param _builtins.str algorithm_instance_modified_by: Username of the person who last modified the algorithm instance. Null if never modified.
+        :param _builtins.str algorithm_instance_modified_time: Time the algorithm instance was last modified, in RFC3339 format. Null if never modified.
+        :param _builtins.str certificate_status: Status of the certificate for this key type: `CSR_READY`, `CERT_UPLOAD_PROCESSING`, `READY_FOR_USE`, or `ABANDONED`.
+        :param _builtins.str csr_expiration_date: Date when the CSR expires, in RFC3339 format.
+        :param _builtins.str csr_pem: PEM-encoded certificate signing request.
+        :param _builtins.str signed_certificate_issuer: Issuer field of the signed certificate. Null until a certificate is uploaded.
+        :param _builtins.str signed_certificate_not_valid_after_date: Expiration date of the signed certificate, in RFC3339 format. Null until a certificate is uploaded.
+        :param _builtins.str signed_certificate_not_valid_before_date: Start of validity of the signed certificate, in RFC3339 format. Null until a certificate is uploaded.
+        :param _builtins.str signed_certificate_pem: PEM-encoded signed certificate. Null until a certificate is uploaded.
+        :param _builtins.str signed_certificate_serial_number: Serial number of the signed certificate in hex format. Null until a certificate is uploaded.
+        :param _builtins.str signed_certificate_sha256_fingerprint: SHA-256 fingerprint of the signed certificate. Null until a certificate is uploaded.
+        :param _builtins.str trust_chain_pem: PEM-encoded trust chain uploaded alongside the signed certificate. Null if none was uploaded.
+        """
+        pulumi.set(__self__, "algorithm_instance_created_by", algorithm_instance_created_by)
+        pulumi.set(__self__, "algorithm_instance_created_time", algorithm_instance_created_time)
+        pulumi.set(__self__, "algorithm_instance_id", algorithm_instance_id)
+        pulumi.set(__self__, "algorithm_instance_modified_by", algorithm_instance_modified_by)
+        pulumi.set(__self__, "algorithm_instance_modified_time", algorithm_instance_modified_time)
+        pulumi.set(__self__, "certificate_status", certificate_status)
+        pulumi.set(__self__, "csr_expiration_date", csr_expiration_date)
+        pulumi.set(__self__, "csr_pem", csr_pem)
+        pulumi.set(__self__, "signed_certificate_issuer", signed_certificate_issuer)
+        pulumi.set(__self__, "signed_certificate_not_valid_after_date", signed_certificate_not_valid_after_date)
+        pulumi.set(__self__, "signed_certificate_not_valid_before_date", signed_certificate_not_valid_before_date)
+        pulumi.set(__self__, "signed_certificate_pem", signed_certificate_pem)
+        pulumi.set(__self__, "signed_certificate_serial_number", signed_certificate_serial_number)
+        pulumi.set(__self__, "signed_certificate_sha256_fingerprint", signed_certificate_sha256_fingerprint)
+        pulumi.set(__self__, "trust_chain_pem", trust_chain_pem)
+
+    @_builtins.property
+    @pulumi.getter(name="algorithmInstanceCreatedBy")
+    def algorithm_instance_created_by(self) -> _builtins.str:
+        """
+        Username of the person who created the algorithm instance.
+        """
+        return pulumi.get(self, "algorithm_instance_created_by")
+
+    @_builtins.property
+    @pulumi.getter(name="algorithmInstanceCreatedTime")
+    def algorithm_instance_created_time(self) -> _builtins.str:
+        """
+        Time the algorithm instance was created, in RFC3339 format.
+        """
+        return pulumi.get(self, "algorithm_instance_created_time")
+
+    @_builtins.property
+    @pulumi.getter(name="algorithmInstanceId")
+    def algorithm_instance_id(self) -> _builtins.int:
+        """
+        Unique identifier of the algorithm instance.
+        """
+        return pulumi.get(self, "algorithm_instance_id")
+
+    @_builtins.property
+    @pulumi.getter(name="algorithmInstanceModifiedBy")
+    def algorithm_instance_modified_by(self) -> _builtins.str:
+        """
+        Username of the person who last modified the algorithm instance. Null if never modified.
+        """
+        return pulumi.get(self, "algorithm_instance_modified_by")
+
+    @_builtins.property
+    @pulumi.getter(name="algorithmInstanceModifiedTime")
+    def algorithm_instance_modified_time(self) -> _builtins.str:
+        """
+        Time the algorithm instance was last modified, in RFC3339 format. Null if never modified.
+        """
+        return pulumi.get(self, "algorithm_instance_modified_time")
+
+    @_builtins.property
+    @pulumi.getter(name="certificateStatus")
+    def certificate_status(self) -> _builtins.str:
+        """
+        Status of the certificate for this key type: `CSR_READY`, `CERT_UPLOAD_PROCESSING`, `READY_FOR_USE`, or `ABANDONED`.
+        """
+        return pulumi.get(self, "certificate_status")
+
+    @_builtins.property
+    @pulumi.getter(name="csrExpirationDate")
+    def csr_expiration_date(self) -> _builtins.str:
+        """
+        Date when the CSR expires, in RFC3339 format.
+        """
+        return pulumi.get(self, "csr_expiration_date")
+
+    @_builtins.property
+    @pulumi.getter(name="csrPem")
+    def csr_pem(self) -> _builtins.str:
+        """
+        PEM-encoded certificate signing request.
+        """
+        return pulumi.get(self, "csr_pem")
+
+    @_builtins.property
+    @pulumi.getter(name="signedCertificateIssuer")
+    def signed_certificate_issuer(self) -> _builtins.str:
+        """
+        Issuer field of the signed certificate. Null until a certificate is uploaded.
+        """
+        return pulumi.get(self, "signed_certificate_issuer")
+
+    @_builtins.property
+    @pulumi.getter(name="signedCertificateNotValidAfterDate")
+    def signed_certificate_not_valid_after_date(self) -> _builtins.str:
+        """
+        Expiration date of the signed certificate, in RFC3339 format. Null until a certificate is uploaded.
+        """
+        return pulumi.get(self, "signed_certificate_not_valid_after_date")
+
+    @_builtins.property
+    @pulumi.getter(name="signedCertificateNotValidBeforeDate")
+    def signed_certificate_not_valid_before_date(self) -> _builtins.str:
+        """
+        Start of validity of the signed certificate, in RFC3339 format. Null until a certificate is uploaded.
+        """
+        return pulumi.get(self, "signed_certificate_not_valid_before_date")
+
+    @_builtins.property
+    @pulumi.getter(name="signedCertificatePem")
+    def signed_certificate_pem(self) -> _builtins.str:
+        """
+        PEM-encoded signed certificate. Null until a certificate is uploaded.
+        """
+        return pulumi.get(self, "signed_certificate_pem")
+
+    @_builtins.property
+    @pulumi.getter(name="signedCertificateSerialNumber")
+    def signed_certificate_serial_number(self) -> _builtins.str:
+        """
+        Serial number of the signed certificate in hex format. Null until a certificate is uploaded.
+        """
+        return pulumi.get(self, "signed_certificate_serial_number")
+
+    @_builtins.property
+    @pulumi.getter(name="signedCertificateSha256Fingerprint")
+    def signed_certificate_sha256_fingerprint(self) -> _builtins.str:
+        """
+        SHA-256 fingerprint of the signed certificate. Null until a certificate is uploaded.
+        """
+        return pulumi.get(self, "signed_certificate_sha256_fingerprint")
+
+    @_builtins.property
+    @pulumi.getter(name="trustChainPem")
+    def trust_chain_pem(self) -> _builtins.str:
+        """
+        PEM-encoded trust chain uploaded alongside the signed certificate. Null if none was uploaded.
+        """
+        return pulumi.get(self, "trust_chain_pem")
+
+
+@pulumi.output_type
+class GetCloudcertificatesLineageCurrentStagingResult(dict):
+    def __init__(__self__, *,
+                 algorithms: Mapping[str, 'outputs.GetCloudcertificatesLineageCurrentStagingAlgorithmsResult'],
+                 first_promoted_to_production_time: _builtins.str,
+                 generation_created_by: _builtins.str,
+                 generation_created_time: _builtins.str,
+                 generation_id: _builtins.int,
+                 generation_modified_by: _builtins.str,
+                 generation_modified_time: _builtins.str,
+                 generation_status: _builtins.str):
+        """
+        :param Mapping[str, 'GetCloudcertificatesLineageCurrentStagingAlgorithmsArgs'] algorithms: Per key-type (RSA or ECDSA) certificate details for this generation, keyed by key_type. Populated only when expand_generations is true.
+        :param _builtins.str first_promoted_to_production_time: Time the generation was first promoted to production, in RFC3339 format. Null if never promoted, or if not requested via expand_generations.
+        :param _builtins.str generation_created_by: Username of the person who created this generation. Populated only when expand_generations is true.
+        :param _builtins.str generation_created_time: Time the generation was created, in RFC3339 format. Populated only when expand_generations is true.
+        :param _builtins.int generation_id: Unique identifier of the generation.
+        :param _builtins.str generation_modified_by: Username of the person who last modified this generation. Populated only when expand_generations is true.
+        :param _builtins.str generation_modified_time: Time the generation was last modified, in RFC3339 format. Null if not requested via expand_generations, or if the generation has never been modified since creation.
+        :param _builtins.str generation_status: Status of the generation.
+        """
+        pulumi.set(__self__, "algorithms", algorithms)
+        pulumi.set(__self__, "first_promoted_to_production_time", first_promoted_to_production_time)
+        pulumi.set(__self__, "generation_created_by", generation_created_by)
+        pulumi.set(__self__, "generation_created_time", generation_created_time)
+        pulumi.set(__self__, "generation_id", generation_id)
+        pulumi.set(__self__, "generation_modified_by", generation_modified_by)
+        pulumi.set(__self__, "generation_modified_time", generation_modified_time)
+        pulumi.set(__self__, "generation_status", generation_status)
+
+    @_builtins.property
+    @pulumi.getter
+    def algorithms(self) -> Mapping[str, 'outputs.GetCloudcertificatesLineageCurrentStagingAlgorithmsResult']:
+        """
+        Per key-type (RSA or ECDSA) certificate details for this generation, keyed by key_type. Populated only when expand_generations is true.
+        """
+        return pulumi.get(self, "algorithms")
+
+    @_builtins.property
+    @pulumi.getter(name="firstPromotedToProductionTime")
+    def first_promoted_to_production_time(self) -> _builtins.str:
+        """
+        Time the generation was first promoted to production, in RFC3339 format. Null if never promoted, or if not requested via expand_generations.
+        """
+        return pulumi.get(self, "first_promoted_to_production_time")
+
+    @_builtins.property
+    @pulumi.getter(name="generationCreatedBy")
+    def generation_created_by(self) -> _builtins.str:
+        """
+        Username of the person who created this generation. Populated only when expand_generations is true.
+        """
+        return pulumi.get(self, "generation_created_by")
+
+    @_builtins.property
+    @pulumi.getter(name="generationCreatedTime")
+    def generation_created_time(self) -> _builtins.str:
+        """
+        Time the generation was created, in RFC3339 format. Populated only when expand_generations is true.
+        """
+        return pulumi.get(self, "generation_created_time")
+
+    @_builtins.property
+    @pulumi.getter(name="generationId")
+    def generation_id(self) -> _builtins.int:
+        """
+        Unique identifier of the generation.
+        """
+        return pulumi.get(self, "generation_id")
+
+    @_builtins.property
+    @pulumi.getter(name="generationModifiedBy")
+    def generation_modified_by(self) -> _builtins.str:
+        """
+        Username of the person who last modified this generation. Populated only when expand_generations is true.
+        """
+        return pulumi.get(self, "generation_modified_by")
+
+    @_builtins.property
+    @pulumi.getter(name="generationModifiedTime")
+    def generation_modified_time(self) -> _builtins.str:
+        """
+        Time the generation was last modified, in RFC3339 format. Null if not requested via expand_generations, or if the generation has never been modified since creation.
+        """
+        return pulumi.get(self, "generation_modified_time")
+
+    @_builtins.property
+    @pulumi.getter(name="generationStatus")
+    def generation_status(self) -> _builtins.str:
+        """
+        Status of the generation.
+        """
+        return pulumi.get(self, "generation_status")
+
+
+@pulumi.output_type
+class GetCloudcertificatesLineageCurrentStagingAlgorithmsResult(dict):
+    def __init__(__self__, *,
+                 algorithm_instance_created_by: _builtins.str,
+                 algorithm_instance_created_time: _builtins.str,
+                 algorithm_instance_id: _builtins.int,
+                 algorithm_instance_modified_by: _builtins.str,
+                 algorithm_instance_modified_time: _builtins.str,
+                 certificate_status: _builtins.str,
+                 csr_expiration_date: _builtins.str,
+                 csr_pem: _builtins.str,
+                 signed_certificate_issuer: _builtins.str,
+                 signed_certificate_not_valid_after_date: _builtins.str,
+                 signed_certificate_not_valid_before_date: _builtins.str,
+                 signed_certificate_pem: _builtins.str,
+                 signed_certificate_serial_number: _builtins.str,
+                 signed_certificate_sha256_fingerprint: _builtins.str,
+                 trust_chain_pem: _builtins.str):
+        """
+        :param _builtins.str algorithm_instance_created_by: Username of the person who created the algorithm instance.
+        :param _builtins.str algorithm_instance_created_time: Time the algorithm instance was created, in RFC3339 format.
+        :param _builtins.int algorithm_instance_id: Unique identifier of the algorithm instance.
+        :param _builtins.str algorithm_instance_modified_by: Username of the person who last modified the algorithm instance. Null if never modified.
+        :param _builtins.str algorithm_instance_modified_time: Time the algorithm instance was last modified, in RFC3339 format. Null if never modified.
+        :param _builtins.str certificate_status: Status of the certificate for this key type: `CSR_READY`, `CERT_UPLOAD_PROCESSING`, `READY_FOR_USE`, or `ABANDONED`.
+        :param _builtins.str csr_expiration_date: Date when the CSR expires, in RFC3339 format.
+        :param _builtins.str csr_pem: PEM-encoded certificate signing request.
+        :param _builtins.str signed_certificate_issuer: Issuer field of the signed certificate. Null until a certificate is uploaded.
+        :param _builtins.str signed_certificate_not_valid_after_date: Expiration date of the signed certificate, in RFC3339 format. Null until a certificate is uploaded.
+        :param _builtins.str signed_certificate_not_valid_before_date: Start of validity of the signed certificate, in RFC3339 format. Null until a certificate is uploaded.
+        :param _builtins.str signed_certificate_pem: PEM-encoded signed certificate. Null until a certificate is uploaded.
+        :param _builtins.str signed_certificate_serial_number: Serial number of the signed certificate in hex format. Null until a certificate is uploaded.
+        :param _builtins.str signed_certificate_sha256_fingerprint: SHA-256 fingerprint of the signed certificate. Null until a certificate is uploaded.
+        :param _builtins.str trust_chain_pem: PEM-encoded trust chain uploaded alongside the signed certificate. Null if none was uploaded.
+        """
+        pulumi.set(__self__, "algorithm_instance_created_by", algorithm_instance_created_by)
+        pulumi.set(__self__, "algorithm_instance_created_time", algorithm_instance_created_time)
+        pulumi.set(__self__, "algorithm_instance_id", algorithm_instance_id)
+        pulumi.set(__self__, "algorithm_instance_modified_by", algorithm_instance_modified_by)
+        pulumi.set(__self__, "algorithm_instance_modified_time", algorithm_instance_modified_time)
+        pulumi.set(__self__, "certificate_status", certificate_status)
+        pulumi.set(__self__, "csr_expiration_date", csr_expiration_date)
+        pulumi.set(__self__, "csr_pem", csr_pem)
+        pulumi.set(__self__, "signed_certificate_issuer", signed_certificate_issuer)
+        pulumi.set(__self__, "signed_certificate_not_valid_after_date", signed_certificate_not_valid_after_date)
+        pulumi.set(__self__, "signed_certificate_not_valid_before_date", signed_certificate_not_valid_before_date)
+        pulumi.set(__self__, "signed_certificate_pem", signed_certificate_pem)
+        pulumi.set(__self__, "signed_certificate_serial_number", signed_certificate_serial_number)
+        pulumi.set(__self__, "signed_certificate_sha256_fingerprint", signed_certificate_sha256_fingerprint)
+        pulumi.set(__self__, "trust_chain_pem", trust_chain_pem)
+
+    @_builtins.property
+    @pulumi.getter(name="algorithmInstanceCreatedBy")
+    def algorithm_instance_created_by(self) -> _builtins.str:
+        """
+        Username of the person who created the algorithm instance.
+        """
+        return pulumi.get(self, "algorithm_instance_created_by")
+
+    @_builtins.property
+    @pulumi.getter(name="algorithmInstanceCreatedTime")
+    def algorithm_instance_created_time(self) -> _builtins.str:
+        """
+        Time the algorithm instance was created, in RFC3339 format.
+        """
+        return pulumi.get(self, "algorithm_instance_created_time")
+
+    @_builtins.property
+    @pulumi.getter(name="algorithmInstanceId")
+    def algorithm_instance_id(self) -> _builtins.int:
+        """
+        Unique identifier of the algorithm instance.
+        """
+        return pulumi.get(self, "algorithm_instance_id")
+
+    @_builtins.property
+    @pulumi.getter(name="algorithmInstanceModifiedBy")
+    def algorithm_instance_modified_by(self) -> _builtins.str:
+        """
+        Username of the person who last modified the algorithm instance. Null if never modified.
+        """
+        return pulumi.get(self, "algorithm_instance_modified_by")
+
+    @_builtins.property
+    @pulumi.getter(name="algorithmInstanceModifiedTime")
+    def algorithm_instance_modified_time(self) -> _builtins.str:
+        """
+        Time the algorithm instance was last modified, in RFC3339 format. Null if never modified.
+        """
+        return pulumi.get(self, "algorithm_instance_modified_time")
+
+    @_builtins.property
+    @pulumi.getter(name="certificateStatus")
+    def certificate_status(self) -> _builtins.str:
+        """
+        Status of the certificate for this key type: `CSR_READY`, `CERT_UPLOAD_PROCESSING`, `READY_FOR_USE`, or `ABANDONED`.
+        """
+        return pulumi.get(self, "certificate_status")
+
+    @_builtins.property
+    @pulumi.getter(name="csrExpirationDate")
+    def csr_expiration_date(self) -> _builtins.str:
+        """
+        Date when the CSR expires, in RFC3339 format.
+        """
+        return pulumi.get(self, "csr_expiration_date")
+
+    @_builtins.property
+    @pulumi.getter(name="csrPem")
+    def csr_pem(self) -> _builtins.str:
+        """
+        PEM-encoded certificate signing request.
+        """
+        return pulumi.get(self, "csr_pem")
+
+    @_builtins.property
+    @pulumi.getter(name="signedCertificateIssuer")
+    def signed_certificate_issuer(self) -> _builtins.str:
+        """
+        Issuer field of the signed certificate. Null until a certificate is uploaded.
+        """
+        return pulumi.get(self, "signed_certificate_issuer")
+
+    @_builtins.property
+    @pulumi.getter(name="signedCertificateNotValidAfterDate")
+    def signed_certificate_not_valid_after_date(self) -> _builtins.str:
+        """
+        Expiration date of the signed certificate, in RFC3339 format. Null until a certificate is uploaded.
+        """
+        return pulumi.get(self, "signed_certificate_not_valid_after_date")
+
+    @_builtins.property
+    @pulumi.getter(name="signedCertificateNotValidBeforeDate")
+    def signed_certificate_not_valid_before_date(self) -> _builtins.str:
+        """
+        Start of validity of the signed certificate, in RFC3339 format. Null until a certificate is uploaded.
+        """
+        return pulumi.get(self, "signed_certificate_not_valid_before_date")
+
+    @_builtins.property
+    @pulumi.getter(name="signedCertificatePem")
+    def signed_certificate_pem(self) -> _builtins.str:
+        """
+        PEM-encoded signed certificate. Null until a certificate is uploaded.
+        """
+        return pulumi.get(self, "signed_certificate_pem")
+
+    @_builtins.property
+    @pulumi.getter(name="signedCertificateSerialNumber")
+    def signed_certificate_serial_number(self) -> _builtins.str:
+        """
+        Serial number of the signed certificate in hex format. Null until a certificate is uploaded.
+        """
+        return pulumi.get(self, "signed_certificate_serial_number")
+
+    @_builtins.property
+    @pulumi.getter(name="signedCertificateSha256Fingerprint")
+    def signed_certificate_sha256_fingerprint(self) -> _builtins.str:
+        """
+        SHA-256 fingerprint of the signed certificate. Null until a certificate is uploaded.
+        """
+        return pulumi.get(self, "signed_certificate_sha256_fingerprint")
+
+    @_builtins.property
+    @pulumi.getter(name="trustChainPem")
+    def trust_chain_pem(self) -> _builtins.str:
+        """
+        PEM-encoded trust chain uploaded alongside the signed certificate. Null if none was uploaded.
+        """
+        return pulumi.get(self, "trust_chain_pem")
+
+
+@pulumi.output_type
+class GetCloudcertificatesLineageHeadResult(dict):
+    def __init__(__self__, *,
+                 algorithms: Mapping[str, 'outputs.GetCloudcertificatesLineageHeadAlgorithmsResult'],
+                 first_promoted_to_production_time: _builtins.str,
+                 generation_created_by: _builtins.str,
+                 generation_created_time: _builtins.str,
+                 generation_id: _builtins.int,
+                 generation_modified_by: _builtins.str,
+                 generation_modified_time: _builtins.str,
+                 generation_status: _builtins.str):
+        """
+        :param Mapping[str, 'GetCloudcertificatesLineageHeadAlgorithmsArgs'] algorithms: Per key-type (RSA or ECDSA) certificate details for this generation, keyed by key_type. Populated only when expand_generations is true.
+        :param _builtins.str first_promoted_to_production_time: Time the generation was first promoted to production, in RFC3339 format. Null if never promoted, or if not requested via expand_generations.
+        :param _builtins.str generation_created_by: Username of the person who created this generation. Populated only when expand_generations is true.
+        :param _builtins.str generation_created_time: Time the generation was created, in RFC3339 format. Populated only when expand_generations is true.
+        :param _builtins.int generation_id: Unique identifier of the generation.
+        :param _builtins.str generation_modified_by: Username of the person who last modified this generation. Populated only when expand_generations is true.
+        :param _builtins.str generation_modified_time: Time the generation was last modified, in RFC3339 format. Null if not requested via expand_generations, or if the generation has never been modified since creation.
+        :param _builtins.str generation_status: Status of the generation.
+        """
+        pulumi.set(__self__, "algorithms", algorithms)
+        pulumi.set(__self__, "first_promoted_to_production_time", first_promoted_to_production_time)
+        pulumi.set(__self__, "generation_created_by", generation_created_by)
+        pulumi.set(__self__, "generation_created_time", generation_created_time)
+        pulumi.set(__self__, "generation_id", generation_id)
+        pulumi.set(__self__, "generation_modified_by", generation_modified_by)
+        pulumi.set(__self__, "generation_modified_time", generation_modified_time)
+        pulumi.set(__self__, "generation_status", generation_status)
+
+    @_builtins.property
+    @pulumi.getter
+    def algorithms(self) -> Mapping[str, 'outputs.GetCloudcertificatesLineageHeadAlgorithmsResult']:
+        """
+        Per key-type (RSA or ECDSA) certificate details for this generation, keyed by key_type. Populated only when expand_generations is true.
+        """
+        return pulumi.get(self, "algorithms")
+
+    @_builtins.property
+    @pulumi.getter(name="firstPromotedToProductionTime")
+    def first_promoted_to_production_time(self) -> _builtins.str:
+        """
+        Time the generation was first promoted to production, in RFC3339 format. Null if never promoted, or if not requested via expand_generations.
+        """
+        return pulumi.get(self, "first_promoted_to_production_time")
+
+    @_builtins.property
+    @pulumi.getter(name="generationCreatedBy")
+    def generation_created_by(self) -> _builtins.str:
+        """
+        Username of the person who created this generation. Populated only when expand_generations is true.
+        """
+        return pulumi.get(self, "generation_created_by")
+
+    @_builtins.property
+    @pulumi.getter(name="generationCreatedTime")
+    def generation_created_time(self) -> _builtins.str:
+        """
+        Time the generation was created, in RFC3339 format. Populated only when expand_generations is true.
+        """
+        return pulumi.get(self, "generation_created_time")
+
+    @_builtins.property
+    @pulumi.getter(name="generationId")
+    def generation_id(self) -> _builtins.int:
+        """
+        Unique identifier of the generation.
+        """
+        return pulumi.get(self, "generation_id")
+
+    @_builtins.property
+    @pulumi.getter(name="generationModifiedBy")
+    def generation_modified_by(self) -> _builtins.str:
+        """
+        Username of the person who last modified this generation. Populated only when expand_generations is true.
+        """
+        return pulumi.get(self, "generation_modified_by")
+
+    @_builtins.property
+    @pulumi.getter(name="generationModifiedTime")
+    def generation_modified_time(self) -> _builtins.str:
+        """
+        Time the generation was last modified, in RFC3339 format. Null if not requested via expand_generations, or if the generation has never been modified since creation.
+        """
+        return pulumi.get(self, "generation_modified_time")
+
+    @_builtins.property
+    @pulumi.getter(name="generationStatus")
+    def generation_status(self) -> _builtins.str:
+        """
+        Status of the generation.
+        """
+        return pulumi.get(self, "generation_status")
+
+
+@pulumi.output_type
+class GetCloudcertificatesLineageHeadAlgorithmsResult(dict):
+    def __init__(__self__, *,
+                 algorithm_instance_created_by: _builtins.str,
+                 algorithm_instance_created_time: _builtins.str,
+                 algorithm_instance_id: _builtins.int,
+                 algorithm_instance_modified_by: _builtins.str,
+                 algorithm_instance_modified_time: _builtins.str,
+                 certificate_status: _builtins.str,
+                 csr_expiration_date: _builtins.str,
+                 csr_pem: _builtins.str,
+                 signed_certificate_issuer: _builtins.str,
+                 signed_certificate_not_valid_after_date: _builtins.str,
+                 signed_certificate_not_valid_before_date: _builtins.str,
+                 signed_certificate_pem: _builtins.str,
+                 signed_certificate_serial_number: _builtins.str,
+                 signed_certificate_sha256_fingerprint: _builtins.str,
+                 trust_chain_pem: _builtins.str):
+        """
+        :param _builtins.str algorithm_instance_created_by: Username of the person who created the algorithm instance.
+        :param _builtins.str algorithm_instance_created_time: Time the algorithm instance was created, in RFC3339 format.
+        :param _builtins.int algorithm_instance_id: Unique identifier of the algorithm instance.
+        :param _builtins.str algorithm_instance_modified_by: Username of the person who last modified the algorithm instance. Null if never modified.
+        :param _builtins.str algorithm_instance_modified_time: Time the algorithm instance was last modified, in RFC3339 format. Null if never modified.
+        :param _builtins.str certificate_status: Status of the certificate for this key type: `CSR_READY`, `CERT_UPLOAD_PROCESSING`, `READY_FOR_USE`, or `ABANDONED`.
+        :param _builtins.str csr_expiration_date: Date when the CSR expires, in RFC3339 format.
+        :param _builtins.str csr_pem: PEM-encoded certificate signing request.
+        :param _builtins.str signed_certificate_issuer: Issuer field of the signed certificate. Null until a certificate is uploaded.
+        :param _builtins.str signed_certificate_not_valid_after_date: Expiration date of the signed certificate, in RFC3339 format. Null until a certificate is uploaded.
+        :param _builtins.str signed_certificate_not_valid_before_date: Start of validity of the signed certificate, in RFC3339 format. Null until a certificate is uploaded.
+        :param _builtins.str signed_certificate_pem: PEM-encoded signed certificate. Null until a certificate is uploaded.
+        :param _builtins.str signed_certificate_serial_number: Serial number of the signed certificate in hex format. Null until a certificate is uploaded.
+        :param _builtins.str signed_certificate_sha256_fingerprint: SHA-256 fingerprint of the signed certificate. Null until a certificate is uploaded.
+        :param _builtins.str trust_chain_pem: PEM-encoded trust chain uploaded alongside the signed certificate. Null if none was uploaded.
+        """
+        pulumi.set(__self__, "algorithm_instance_created_by", algorithm_instance_created_by)
+        pulumi.set(__self__, "algorithm_instance_created_time", algorithm_instance_created_time)
+        pulumi.set(__self__, "algorithm_instance_id", algorithm_instance_id)
+        pulumi.set(__self__, "algorithm_instance_modified_by", algorithm_instance_modified_by)
+        pulumi.set(__self__, "algorithm_instance_modified_time", algorithm_instance_modified_time)
+        pulumi.set(__self__, "certificate_status", certificate_status)
+        pulumi.set(__self__, "csr_expiration_date", csr_expiration_date)
+        pulumi.set(__self__, "csr_pem", csr_pem)
+        pulumi.set(__self__, "signed_certificate_issuer", signed_certificate_issuer)
+        pulumi.set(__self__, "signed_certificate_not_valid_after_date", signed_certificate_not_valid_after_date)
+        pulumi.set(__self__, "signed_certificate_not_valid_before_date", signed_certificate_not_valid_before_date)
+        pulumi.set(__self__, "signed_certificate_pem", signed_certificate_pem)
+        pulumi.set(__self__, "signed_certificate_serial_number", signed_certificate_serial_number)
+        pulumi.set(__self__, "signed_certificate_sha256_fingerprint", signed_certificate_sha256_fingerprint)
+        pulumi.set(__self__, "trust_chain_pem", trust_chain_pem)
+
+    @_builtins.property
+    @pulumi.getter(name="algorithmInstanceCreatedBy")
+    def algorithm_instance_created_by(self) -> _builtins.str:
+        """
+        Username of the person who created the algorithm instance.
+        """
+        return pulumi.get(self, "algorithm_instance_created_by")
+
+    @_builtins.property
+    @pulumi.getter(name="algorithmInstanceCreatedTime")
+    def algorithm_instance_created_time(self) -> _builtins.str:
+        """
+        Time the algorithm instance was created, in RFC3339 format.
+        """
+        return pulumi.get(self, "algorithm_instance_created_time")
+
+    @_builtins.property
+    @pulumi.getter(name="algorithmInstanceId")
+    def algorithm_instance_id(self) -> _builtins.int:
+        """
+        Unique identifier of the algorithm instance.
+        """
+        return pulumi.get(self, "algorithm_instance_id")
+
+    @_builtins.property
+    @pulumi.getter(name="algorithmInstanceModifiedBy")
+    def algorithm_instance_modified_by(self) -> _builtins.str:
+        """
+        Username of the person who last modified the algorithm instance. Null if never modified.
+        """
+        return pulumi.get(self, "algorithm_instance_modified_by")
+
+    @_builtins.property
+    @pulumi.getter(name="algorithmInstanceModifiedTime")
+    def algorithm_instance_modified_time(self) -> _builtins.str:
+        """
+        Time the algorithm instance was last modified, in RFC3339 format. Null if never modified.
+        """
+        return pulumi.get(self, "algorithm_instance_modified_time")
+
+    @_builtins.property
+    @pulumi.getter(name="certificateStatus")
+    def certificate_status(self) -> _builtins.str:
+        """
+        Status of the certificate for this key type: `CSR_READY`, `CERT_UPLOAD_PROCESSING`, `READY_FOR_USE`, or `ABANDONED`.
+        """
+        return pulumi.get(self, "certificate_status")
+
+    @_builtins.property
+    @pulumi.getter(name="csrExpirationDate")
+    def csr_expiration_date(self) -> _builtins.str:
+        """
+        Date when the CSR expires, in RFC3339 format.
+        """
+        return pulumi.get(self, "csr_expiration_date")
+
+    @_builtins.property
+    @pulumi.getter(name="csrPem")
+    def csr_pem(self) -> _builtins.str:
+        """
+        PEM-encoded certificate signing request.
+        """
+        return pulumi.get(self, "csr_pem")
+
+    @_builtins.property
+    @pulumi.getter(name="signedCertificateIssuer")
+    def signed_certificate_issuer(self) -> _builtins.str:
+        """
+        Issuer field of the signed certificate. Null until a certificate is uploaded.
+        """
+        return pulumi.get(self, "signed_certificate_issuer")
+
+    @_builtins.property
+    @pulumi.getter(name="signedCertificateNotValidAfterDate")
+    def signed_certificate_not_valid_after_date(self) -> _builtins.str:
+        """
+        Expiration date of the signed certificate, in RFC3339 format. Null until a certificate is uploaded.
+        """
+        return pulumi.get(self, "signed_certificate_not_valid_after_date")
+
+    @_builtins.property
+    @pulumi.getter(name="signedCertificateNotValidBeforeDate")
+    def signed_certificate_not_valid_before_date(self) -> _builtins.str:
+        """
+        Start of validity of the signed certificate, in RFC3339 format. Null until a certificate is uploaded.
+        """
+        return pulumi.get(self, "signed_certificate_not_valid_before_date")
+
+    @_builtins.property
+    @pulumi.getter(name="signedCertificatePem")
+    def signed_certificate_pem(self) -> _builtins.str:
+        """
+        PEM-encoded signed certificate. Null until a certificate is uploaded.
+        """
+        return pulumi.get(self, "signed_certificate_pem")
+
+    @_builtins.property
+    @pulumi.getter(name="signedCertificateSerialNumber")
+    def signed_certificate_serial_number(self) -> _builtins.str:
+        """
+        Serial number of the signed certificate in hex format. Null until a certificate is uploaded.
+        """
+        return pulumi.get(self, "signed_certificate_serial_number")
+
+    @_builtins.property
+    @pulumi.getter(name="signedCertificateSha256Fingerprint")
+    def signed_certificate_sha256_fingerprint(self) -> _builtins.str:
+        """
+        SHA-256 fingerprint of the signed certificate. Null until a certificate is uploaded.
+        """
+        return pulumi.get(self, "signed_certificate_sha256_fingerprint")
+
+    @_builtins.property
+    @pulumi.getter(name="trustChainPem")
+    def trust_chain_pem(self) -> _builtins.str:
+        """
+        PEM-encoded trust chain uploaded alongside the signed certificate. Null if none was uploaded.
+        """
+        return pulumi.get(self, "trust_chain_pem")
+
+
+@pulumi.output_type
+class GetCloudcertificatesLineagePreviousProductionResult(dict):
+    def __init__(__self__, *,
+                 algorithms: Mapping[str, 'outputs.GetCloudcertificatesLineagePreviousProductionAlgorithmsResult'],
+                 first_promoted_to_production_time: _builtins.str,
+                 generation_created_by: _builtins.str,
+                 generation_created_time: _builtins.str,
+                 generation_id: _builtins.int,
+                 generation_modified_by: _builtins.str,
+                 generation_modified_time: _builtins.str,
+                 generation_status: _builtins.str):
+        """
+        :param Mapping[str, 'GetCloudcertificatesLineagePreviousProductionAlgorithmsArgs'] algorithms: Per key-type (RSA or ECDSA) certificate details for this generation, keyed by key_type. Populated only when expand_generations is true.
+        :param _builtins.str first_promoted_to_production_time: Time the generation was first promoted to production, in RFC3339 format. Null if never promoted, or if not requested via expand_generations.
+        :param _builtins.str generation_created_by: Username of the person who created this generation. Populated only when expand_generations is true.
+        :param _builtins.str generation_created_time: Time the generation was created, in RFC3339 format. Populated only when expand_generations is true.
+        :param _builtins.int generation_id: Unique identifier of the generation.
+        :param _builtins.str generation_modified_by: Username of the person who last modified this generation. Populated only when expand_generations is true.
+        :param _builtins.str generation_modified_time: Time the generation was last modified, in RFC3339 format. Null if not requested via expand_generations, or if the generation has never been modified since creation.
+        :param _builtins.str generation_status: Status of the generation.
+        """
+        pulumi.set(__self__, "algorithms", algorithms)
+        pulumi.set(__self__, "first_promoted_to_production_time", first_promoted_to_production_time)
+        pulumi.set(__self__, "generation_created_by", generation_created_by)
+        pulumi.set(__self__, "generation_created_time", generation_created_time)
+        pulumi.set(__self__, "generation_id", generation_id)
+        pulumi.set(__self__, "generation_modified_by", generation_modified_by)
+        pulumi.set(__self__, "generation_modified_time", generation_modified_time)
+        pulumi.set(__self__, "generation_status", generation_status)
+
+    @_builtins.property
+    @pulumi.getter
+    def algorithms(self) -> Mapping[str, 'outputs.GetCloudcertificatesLineagePreviousProductionAlgorithmsResult']:
+        """
+        Per key-type (RSA or ECDSA) certificate details for this generation, keyed by key_type. Populated only when expand_generations is true.
+        """
+        return pulumi.get(self, "algorithms")
+
+    @_builtins.property
+    @pulumi.getter(name="firstPromotedToProductionTime")
+    def first_promoted_to_production_time(self) -> _builtins.str:
+        """
+        Time the generation was first promoted to production, in RFC3339 format. Null if never promoted, or if not requested via expand_generations.
+        """
+        return pulumi.get(self, "first_promoted_to_production_time")
+
+    @_builtins.property
+    @pulumi.getter(name="generationCreatedBy")
+    def generation_created_by(self) -> _builtins.str:
+        """
+        Username of the person who created this generation. Populated only when expand_generations is true.
+        """
+        return pulumi.get(self, "generation_created_by")
+
+    @_builtins.property
+    @pulumi.getter(name="generationCreatedTime")
+    def generation_created_time(self) -> _builtins.str:
+        """
+        Time the generation was created, in RFC3339 format. Populated only when expand_generations is true.
+        """
+        return pulumi.get(self, "generation_created_time")
+
+    @_builtins.property
+    @pulumi.getter(name="generationId")
+    def generation_id(self) -> _builtins.int:
+        """
+        Unique identifier of the generation.
+        """
+        return pulumi.get(self, "generation_id")
+
+    @_builtins.property
+    @pulumi.getter(name="generationModifiedBy")
+    def generation_modified_by(self) -> _builtins.str:
+        """
+        Username of the person who last modified this generation. Populated only when expand_generations is true.
+        """
+        return pulumi.get(self, "generation_modified_by")
+
+    @_builtins.property
+    @pulumi.getter(name="generationModifiedTime")
+    def generation_modified_time(self) -> _builtins.str:
+        """
+        Time the generation was last modified, in RFC3339 format. Null if not requested via expand_generations, or if the generation has never been modified since creation.
+        """
+        return pulumi.get(self, "generation_modified_time")
+
+    @_builtins.property
+    @pulumi.getter(name="generationStatus")
+    def generation_status(self) -> _builtins.str:
+        """
+        Status of the generation.
+        """
+        return pulumi.get(self, "generation_status")
+
+
+@pulumi.output_type
+class GetCloudcertificatesLineagePreviousProductionAlgorithmsResult(dict):
+    def __init__(__self__, *,
+                 algorithm_instance_created_by: _builtins.str,
+                 algorithm_instance_created_time: _builtins.str,
+                 algorithm_instance_id: _builtins.int,
+                 algorithm_instance_modified_by: _builtins.str,
+                 algorithm_instance_modified_time: _builtins.str,
+                 certificate_status: _builtins.str,
+                 csr_expiration_date: _builtins.str,
+                 csr_pem: _builtins.str,
+                 signed_certificate_issuer: _builtins.str,
+                 signed_certificate_not_valid_after_date: _builtins.str,
+                 signed_certificate_not_valid_before_date: _builtins.str,
+                 signed_certificate_pem: _builtins.str,
+                 signed_certificate_serial_number: _builtins.str,
+                 signed_certificate_sha256_fingerprint: _builtins.str,
+                 trust_chain_pem: _builtins.str):
+        """
+        :param _builtins.str algorithm_instance_created_by: Username of the person who created the algorithm instance.
+        :param _builtins.str algorithm_instance_created_time: Time the algorithm instance was created, in RFC3339 format.
+        :param _builtins.int algorithm_instance_id: Unique identifier of the algorithm instance.
+        :param _builtins.str algorithm_instance_modified_by: Username of the person who last modified the algorithm instance. Null if never modified.
+        :param _builtins.str algorithm_instance_modified_time: Time the algorithm instance was last modified, in RFC3339 format. Null if never modified.
+        :param _builtins.str certificate_status: Status of the certificate for this key type: `CSR_READY`, `CERT_UPLOAD_PROCESSING`, `READY_FOR_USE`, or `ABANDONED`.
+        :param _builtins.str csr_expiration_date: Date when the CSR expires, in RFC3339 format.
+        :param _builtins.str csr_pem: PEM-encoded certificate signing request.
+        :param _builtins.str signed_certificate_issuer: Issuer field of the signed certificate. Null until a certificate is uploaded.
+        :param _builtins.str signed_certificate_not_valid_after_date: Expiration date of the signed certificate, in RFC3339 format. Null until a certificate is uploaded.
+        :param _builtins.str signed_certificate_not_valid_before_date: Start of validity of the signed certificate, in RFC3339 format. Null until a certificate is uploaded.
+        :param _builtins.str signed_certificate_pem: PEM-encoded signed certificate. Null until a certificate is uploaded.
+        :param _builtins.str signed_certificate_serial_number: Serial number of the signed certificate in hex format. Null until a certificate is uploaded.
+        :param _builtins.str signed_certificate_sha256_fingerprint: SHA-256 fingerprint of the signed certificate. Null until a certificate is uploaded.
+        :param _builtins.str trust_chain_pem: PEM-encoded trust chain uploaded alongside the signed certificate. Null if none was uploaded.
+        """
+        pulumi.set(__self__, "algorithm_instance_created_by", algorithm_instance_created_by)
+        pulumi.set(__self__, "algorithm_instance_created_time", algorithm_instance_created_time)
+        pulumi.set(__self__, "algorithm_instance_id", algorithm_instance_id)
+        pulumi.set(__self__, "algorithm_instance_modified_by", algorithm_instance_modified_by)
+        pulumi.set(__self__, "algorithm_instance_modified_time", algorithm_instance_modified_time)
+        pulumi.set(__self__, "certificate_status", certificate_status)
+        pulumi.set(__self__, "csr_expiration_date", csr_expiration_date)
+        pulumi.set(__self__, "csr_pem", csr_pem)
+        pulumi.set(__self__, "signed_certificate_issuer", signed_certificate_issuer)
+        pulumi.set(__self__, "signed_certificate_not_valid_after_date", signed_certificate_not_valid_after_date)
+        pulumi.set(__self__, "signed_certificate_not_valid_before_date", signed_certificate_not_valid_before_date)
+        pulumi.set(__self__, "signed_certificate_pem", signed_certificate_pem)
+        pulumi.set(__self__, "signed_certificate_serial_number", signed_certificate_serial_number)
+        pulumi.set(__self__, "signed_certificate_sha256_fingerprint", signed_certificate_sha256_fingerprint)
+        pulumi.set(__self__, "trust_chain_pem", trust_chain_pem)
+
+    @_builtins.property
+    @pulumi.getter(name="algorithmInstanceCreatedBy")
+    def algorithm_instance_created_by(self) -> _builtins.str:
+        """
+        Username of the person who created the algorithm instance.
+        """
+        return pulumi.get(self, "algorithm_instance_created_by")
+
+    @_builtins.property
+    @pulumi.getter(name="algorithmInstanceCreatedTime")
+    def algorithm_instance_created_time(self) -> _builtins.str:
+        """
+        Time the algorithm instance was created, in RFC3339 format.
+        """
+        return pulumi.get(self, "algorithm_instance_created_time")
+
+    @_builtins.property
+    @pulumi.getter(name="algorithmInstanceId")
+    def algorithm_instance_id(self) -> _builtins.int:
+        """
+        Unique identifier of the algorithm instance.
+        """
+        return pulumi.get(self, "algorithm_instance_id")
+
+    @_builtins.property
+    @pulumi.getter(name="algorithmInstanceModifiedBy")
+    def algorithm_instance_modified_by(self) -> _builtins.str:
+        """
+        Username of the person who last modified the algorithm instance. Null if never modified.
+        """
+        return pulumi.get(self, "algorithm_instance_modified_by")
+
+    @_builtins.property
+    @pulumi.getter(name="algorithmInstanceModifiedTime")
+    def algorithm_instance_modified_time(self) -> _builtins.str:
+        """
+        Time the algorithm instance was last modified, in RFC3339 format. Null if never modified.
+        """
+        return pulumi.get(self, "algorithm_instance_modified_time")
+
+    @_builtins.property
+    @pulumi.getter(name="certificateStatus")
+    def certificate_status(self) -> _builtins.str:
+        """
+        Status of the certificate for this key type: `CSR_READY`, `CERT_UPLOAD_PROCESSING`, `READY_FOR_USE`, or `ABANDONED`.
+        """
+        return pulumi.get(self, "certificate_status")
+
+    @_builtins.property
+    @pulumi.getter(name="csrExpirationDate")
+    def csr_expiration_date(self) -> _builtins.str:
+        """
+        Date when the CSR expires, in RFC3339 format.
+        """
+        return pulumi.get(self, "csr_expiration_date")
+
+    @_builtins.property
+    @pulumi.getter(name="csrPem")
+    def csr_pem(self) -> _builtins.str:
+        """
+        PEM-encoded certificate signing request.
+        """
+        return pulumi.get(self, "csr_pem")
+
+    @_builtins.property
+    @pulumi.getter(name="signedCertificateIssuer")
+    def signed_certificate_issuer(self) -> _builtins.str:
+        """
+        Issuer field of the signed certificate. Null until a certificate is uploaded.
+        """
+        return pulumi.get(self, "signed_certificate_issuer")
+
+    @_builtins.property
+    @pulumi.getter(name="signedCertificateNotValidAfterDate")
+    def signed_certificate_not_valid_after_date(self) -> _builtins.str:
+        """
+        Expiration date of the signed certificate, in RFC3339 format. Null until a certificate is uploaded.
+        """
+        return pulumi.get(self, "signed_certificate_not_valid_after_date")
+
+    @_builtins.property
+    @pulumi.getter(name="signedCertificateNotValidBeforeDate")
+    def signed_certificate_not_valid_before_date(self) -> _builtins.str:
+        """
+        Start of validity of the signed certificate, in RFC3339 format. Null until a certificate is uploaded.
+        """
+        return pulumi.get(self, "signed_certificate_not_valid_before_date")
+
+    @_builtins.property
+    @pulumi.getter(name="signedCertificatePem")
+    def signed_certificate_pem(self) -> _builtins.str:
+        """
+        PEM-encoded signed certificate. Null until a certificate is uploaded.
+        """
+        return pulumi.get(self, "signed_certificate_pem")
+
+    @_builtins.property
+    @pulumi.getter(name="signedCertificateSerialNumber")
+    def signed_certificate_serial_number(self) -> _builtins.str:
+        """
+        Serial number of the signed certificate in hex format. Null until a certificate is uploaded.
+        """
+        return pulumi.get(self, "signed_certificate_serial_number")
+
+    @_builtins.property
+    @pulumi.getter(name="signedCertificateSha256Fingerprint")
+    def signed_certificate_sha256_fingerprint(self) -> _builtins.str:
+        """
+        SHA-256 fingerprint of the signed certificate. Null until a certificate is uploaded.
+        """
+        return pulumi.get(self, "signed_certificate_sha256_fingerprint")
+
+    @_builtins.property
+    @pulumi.getter(name="trustChainPem")
+    def trust_chain_pem(self) -> _builtins.str:
+        """
+        PEM-encoded trust chain uploaded alongside the signed certificate. Null if none was uploaded.
+        """
+        return pulumi.get(self, "trust_chain_pem")
+
+
+@pulumi.output_type
+class GetCloudcertificatesLineageSigningTargetResult(dict):
+    def __init__(__self__, *,
+                 algorithms: Mapping[str, 'outputs.GetCloudcertificatesLineageSigningTargetAlgorithmsResult'],
+                 first_promoted_to_production_time: _builtins.str,
+                 generation_created_by: _builtins.str,
+                 generation_created_time: _builtins.str,
+                 generation_id: _builtins.int,
+                 generation_modified_by: _builtins.str,
+                 generation_modified_time: _builtins.str,
+                 generation_status: _builtins.str):
+        """
+        :param Mapping[str, 'GetCloudcertificatesLineageSigningTargetAlgorithmsArgs'] algorithms: Per key-type (RSA or ECDSA) certificate details for this generation, keyed by key_type. Populated only when expand_generations is true.
+        :param _builtins.str first_promoted_to_production_time: Time the generation was first promoted to production, in RFC3339 format. Null if never promoted, or if not requested via expand_generations.
+        :param _builtins.str generation_created_by: Username of the person who created this generation. Populated only when expand_generations is true.
+        :param _builtins.str generation_created_time: Time the generation was created, in RFC3339 format. Populated only when expand_generations is true.
+        :param _builtins.int generation_id: Unique identifier of the generation.
+        :param _builtins.str generation_modified_by: Username of the person who last modified this generation. Populated only when expand_generations is true.
+        :param _builtins.str generation_modified_time: Time the generation was last modified, in RFC3339 format. Null if not requested via expand_generations, or if the generation has never been modified since creation.
+        :param _builtins.str generation_status: Status of the generation.
+        """
+        pulumi.set(__self__, "algorithms", algorithms)
+        pulumi.set(__self__, "first_promoted_to_production_time", first_promoted_to_production_time)
+        pulumi.set(__self__, "generation_created_by", generation_created_by)
+        pulumi.set(__self__, "generation_created_time", generation_created_time)
+        pulumi.set(__self__, "generation_id", generation_id)
+        pulumi.set(__self__, "generation_modified_by", generation_modified_by)
+        pulumi.set(__self__, "generation_modified_time", generation_modified_time)
+        pulumi.set(__self__, "generation_status", generation_status)
+
+    @_builtins.property
+    @pulumi.getter
+    def algorithms(self) -> Mapping[str, 'outputs.GetCloudcertificatesLineageSigningTargetAlgorithmsResult']:
+        """
+        Per key-type (RSA or ECDSA) certificate details for this generation, keyed by key_type. Populated only when expand_generations is true.
+        """
+        return pulumi.get(self, "algorithms")
+
+    @_builtins.property
+    @pulumi.getter(name="firstPromotedToProductionTime")
+    def first_promoted_to_production_time(self) -> _builtins.str:
+        """
+        Time the generation was first promoted to production, in RFC3339 format. Null if never promoted, or if not requested via expand_generations.
+        """
+        return pulumi.get(self, "first_promoted_to_production_time")
+
+    @_builtins.property
+    @pulumi.getter(name="generationCreatedBy")
+    def generation_created_by(self) -> _builtins.str:
+        """
+        Username of the person who created this generation. Populated only when expand_generations is true.
+        """
+        return pulumi.get(self, "generation_created_by")
+
+    @_builtins.property
+    @pulumi.getter(name="generationCreatedTime")
+    def generation_created_time(self) -> _builtins.str:
+        """
+        Time the generation was created, in RFC3339 format. Populated only when expand_generations is true.
+        """
+        return pulumi.get(self, "generation_created_time")
+
+    @_builtins.property
+    @pulumi.getter(name="generationId")
+    def generation_id(self) -> _builtins.int:
+        """
+        Unique identifier of the generation.
+        """
+        return pulumi.get(self, "generation_id")
+
+    @_builtins.property
+    @pulumi.getter(name="generationModifiedBy")
+    def generation_modified_by(self) -> _builtins.str:
+        """
+        Username of the person who last modified this generation. Populated only when expand_generations is true.
+        """
+        return pulumi.get(self, "generation_modified_by")
+
+    @_builtins.property
+    @pulumi.getter(name="generationModifiedTime")
+    def generation_modified_time(self) -> _builtins.str:
+        """
+        Time the generation was last modified, in RFC3339 format. Null if not requested via expand_generations, or if the generation has never been modified since creation.
+        """
+        return pulumi.get(self, "generation_modified_time")
+
+    @_builtins.property
+    @pulumi.getter(name="generationStatus")
+    def generation_status(self) -> _builtins.str:
+        """
+        Status of the generation.
+        """
+        return pulumi.get(self, "generation_status")
+
+
+@pulumi.output_type
+class GetCloudcertificatesLineageSigningTargetAlgorithmsResult(dict):
+    def __init__(__self__, *,
+                 algorithm_instance_created_by: _builtins.str,
+                 algorithm_instance_created_time: _builtins.str,
+                 algorithm_instance_id: _builtins.int,
+                 algorithm_instance_modified_by: _builtins.str,
+                 algorithm_instance_modified_time: _builtins.str,
+                 certificate_status: _builtins.str,
+                 csr_expiration_date: _builtins.str,
+                 csr_pem: _builtins.str,
+                 signed_certificate_issuer: _builtins.str,
+                 signed_certificate_not_valid_after_date: _builtins.str,
+                 signed_certificate_not_valid_before_date: _builtins.str,
+                 signed_certificate_pem: _builtins.str,
+                 signed_certificate_serial_number: _builtins.str,
+                 signed_certificate_sha256_fingerprint: _builtins.str,
+                 trust_chain_pem: _builtins.str):
+        """
+        :param _builtins.str algorithm_instance_created_by: Username of the person who created the algorithm instance.
+        :param _builtins.str algorithm_instance_created_time: Time the algorithm instance was created, in RFC3339 format.
+        :param _builtins.int algorithm_instance_id: Unique identifier of the algorithm instance.
+        :param _builtins.str algorithm_instance_modified_by: Username of the person who last modified the algorithm instance. Null if never modified.
+        :param _builtins.str algorithm_instance_modified_time: Time the algorithm instance was last modified, in RFC3339 format. Null if never modified.
+        :param _builtins.str certificate_status: Status of the certificate for this key type: `CSR_READY`, `CERT_UPLOAD_PROCESSING`, `READY_FOR_USE`, or `ABANDONED`.
+        :param _builtins.str csr_expiration_date: Date when the CSR expires, in RFC3339 format.
+        :param _builtins.str csr_pem: PEM-encoded certificate signing request.
+        :param _builtins.str signed_certificate_issuer: Issuer field of the signed certificate. Null until a certificate is uploaded.
+        :param _builtins.str signed_certificate_not_valid_after_date: Expiration date of the signed certificate, in RFC3339 format. Null until a certificate is uploaded.
+        :param _builtins.str signed_certificate_not_valid_before_date: Start of validity of the signed certificate, in RFC3339 format. Null until a certificate is uploaded.
+        :param _builtins.str signed_certificate_pem: PEM-encoded signed certificate. Null until a certificate is uploaded.
+        :param _builtins.str signed_certificate_serial_number: Serial number of the signed certificate in hex format. Null until a certificate is uploaded.
+        :param _builtins.str signed_certificate_sha256_fingerprint: SHA-256 fingerprint of the signed certificate. Null until a certificate is uploaded.
+        :param _builtins.str trust_chain_pem: PEM-encoded trust chain uploaded alongside the signed certificate. Null if none was uploaded.
+        """
+        pulumi.set(__self__, "algorithm_instance_created_by", algorithm_instance_created_by)
+        pulumi.set(__self__, "algorithm_instance_created_time", algorithm_instance_created_time)
+        pulumi.set(__self__, "algorithm_instance_id", algorithm_instance_id)
+        pulumi.set(__self__, "algorithm_instance_modified_by", algorithm_instance_modified_by)
+        pulumi.set(__self__, "algorithm_instance_modified_time", algorithm_instance_modified_time)
+        pulumi.set(__self__, "certificate_status", certificate_status)
+        pulumi.set(__self__, "csr_expiration_date", csr_expiration_date)
+        pulumi.set(__self__, "csr_pem", csr_pem)
+        pulumi.set(__self__, "signed_certificate_issuer", signed_certificate_issuer)
+        pulumi.set(__self__, "signed_certificate_not_valid_after_date", signed_certificate_not_valid_after_date)
+        pulumi.set(__self__, "signed_certificate_not_valid_before_date", signed_certificate_not_valid_before_date)
+        pulumi.set(__self__, "signed_certificate_pem", signed_certificate_pem)
+        pulumi.set(__self__, "signed_certificate_serial_number", signed_certificate_serial_number)
+        pulumi.set(__self__, "signed_certificate_sha256_fingerprint", signed_certificate_sha256_fingerprint)
+        pulumi.set(__self__, "trust_chain_pem", trust_chain_pem)
+
+    @_builtins.property
+    @pulumi.getter(name="algorithmInstanceCreatedBy")
+    def algorithm_instance_created_by(self) -> _builtins.str:
+        """
+        Username of the person who created the algorithm instance.
+        """
+        return pulumi.get(self, "algorithm_instance_created_by")
+
+    @_builtins.property
+    @pulumi.getter(name="algorithmInstanceCreatedTime")
+    def algorithm_instance_created_time(self) -> _builtins.str:
+        """
+        Time the algorithm instance was created, in RFC3339 format.
+        """
+        return pulumi.get(self, "algorithm_instance_created_time")
+
+    @_builtins.property
+    @pulumi.getter(name="algorithmInstanceId")
+    def algorithm_instance_id(self) -> _builtins.int:
+        """
+        Unique identifier of the algorithm instance.
+        """
+        return pulumi.get(self, "algorithm_instance_id")
+
+    @_builtins.property
+    @pulumi.getter(name="algorithmInstanceModifiedBy")
+    def algorithm_instance_modified_by(self) -> _builtins.str:
+        """
+        Username of the person who last modified the algorithm instance. Null if never modified.
+        """
+        return pulumi.get(self, "algorithm_instance_modified_by")
+
+    @_builtins.property
+    @pulumi.getter(name="algorithmInstanceModifiedTime")
+    def algorithm_instance_modified_time(self) -> _builtins.str:
+        """
+        Time the algorithm instance was last modified, in RFC3339 format. Null if never modified.
+        """
+        return pulumi.get(self, "algorithm_instance_modified_time")
+
+    @_builtins.property
+    @pulumi.getter(name="certificateStatus")
+    def certificate_status(self) -> _builtins.str:
+        """
+        Status of the certificate for this key type: `CSR_READY`, `CERT_UPLOAD_PROCESSING`, `READY_FOR_USE`, or `ABANDONED`.
+        """
+        return pulumi.get(self, "certificate_status")
+
+    @_builtins.property
+    @pulumi.getter(name="csrExpirationDate")
+    def csr_expiration_date(self) -> _builtins.str:
+        """
+        Date when the CSR expires, in RFC3339 format.
+        """
+        return pulumi.get(self, "csr_expiration_date")
+
+    @_builtins.property
+    @pulumi.getter(name="csrPem")
+    def csr_pem(self) -> _builtins.str:
+        """
+        PEM-encoded certificate signing request.
+        """
+        return pulumi.get(self, "csr_pem")
+
+    @_builtins.property
+    @pulumi.getter(name="signedCertificateIssuer")
+    def signed_certificate_issuer(self) -> _builtins.str:
+        """
+        Issuer field of the signed certificate. Null until a certificate is uploaded.
+        """
+        return pulumi.get(self, "signed_certificate_issuer")
+
+    @_builtins.property
+    @pulumi.getter(name="signedCertificateNotValidAfterDate")
+    def signed_certificate_not_valid_after_date(self) -> _builtins.str:
+        """
+        Expiration date of the signed certificate, in RFC3339 format. Null until a certificate is uploaded.
+        """
+        return pulumi.get(self, "signed_certificate_not_valid_after_date")
+
+    @_builtins.property
+    @pulumi.getter(name="signedCertificateNotValidBeforeDate")
+    def signed_certificate_not_valid_before_date(self) -> _builtins.str:
+        """
+        Start of validity of the signed certificate, in RFC3339 format. Null until a certificate is uploaded.
+        """
+        return pulumi.get(self, "signed_certificate_not_valid_before_date")
+
+    @_builtins.property
+    @pulumi.getter(name="signedCertificatePem")
+    def signed_certificate_pem(self) -> _builtins.str:
+        """
+        PEM-encoded signed certificate. Null until a certificate is uploaded.
+        """
+        return pulumi.get(self, "signed_certificate_pem")
+
+    @_builtins.property
+    @pulumi.getter(name="signedCertificateSerialNumber")
+    def signed_certificate_serial_number(self) -> _builtins.str:
+        """
+        Serial number of the signed certificate in hex format. Null until a certificate is uploaded.
+        """
+        return pulumi.get(self, "signed_certificate_serial_number")
+
+    @_builtins.property
+    @pulumi.getter(name="signedCertificateSha256Fingerprint")
+    def signed_certificate_sha256_fingerprint(self) -> _builtins.str:
+        """
+        SHA-256 fingerprint of the signed certificate. Null until a certificate is uploaded.
+        """
+        return pulumi.get(self, "signed_certificate_sha256_fingerprint")
+
+    @_builtins.property
+    @pulumi.getter(name="trustChainPem")
+    def trust_chain_pem(self) -> _builtins.str:
+        """
+        PEM-encoded trust chain uploaded alongside the signed certificate. Null if none was uploaded.
+        """
+        return pulumi.get(self, "trust_chain_pem")
+
+
+@pulumi.output_type
+class GetCloudcertificatesLineageSubjectResult(dict):
     def __init__(__self__, *,
                  common_name: _builtins.str,
                  country: _builtins.str,
                  locality: _builtins.str,
                  organization: _builtins.str,
+                 organizational_unit: _builtins.str,
                  state: _builtins.str):
         """
-        :param _builtins.str common_name: Fully qualified domain name (FQDN) or other name associated with the subject.
-        :param _builtins.str country: Two-letter ISO 3166 country code.
-        :param _builtins.str locality: City or locality name.
-        :param _builtins.str organization: Legal name of the organization.
-        :param _builtins.str state: Full name of the state or province.
+        :param _builtins.str common_name: Common name (CN). Null if not provided.
+        :param _builtins.str country: Two-letter ISO 3166 country code (C). Null if not provided.
+        :param _builtins.str locality: Locality or city name (L). Null if not provided.
+        :param _builtins.str organization: Organization (O). Null if not provided.
+        :param _builtins.str organizational_unit: Organizational unit (OU). Null if not provided.
+        :param _builtins.str state: State or province name (ST). Null if not provided.
         """
         pulumi.set(__self__, "common_name", common_name)
         pulumi.set(__self__, "country", country)
         pulumi.set(__self__, "locality", locality)
         pulumi.set(__self__, "organization", organization)
+        pulumi.set(__self__, "organizational_unit", organizational_unit)
         pulumi.set(__self__, "state", state)
 
     @_builtins.property
     @pulumi.getter(name="commonName")
     def common_name(self) -> _builtins.str:
         """
-        Fully qualified domain name (FQDN) or other name associated with the subject.
+        Common name (CN). Null if not provided.
         """
         return pulumi.get(self, "common_name")
 
@@ -16056,7 +20306,7 @@ class GetCloudcertificatesCertificatesCertificateSubjectResult(dict):
     @pulumi.getter
     def country(self) -> _builtins.str:
         """
-        Two-letter ISO 3166 country code.
+        Two-letter ISO 3166 country code (C). Null if not provided.
         """
         return pulumi.get(self, "country")
 
@@ -16064,7 +20314,7 @@ class GetCloudcertificatesCertificatesCertificateSubjectResult(dict):
     @pulumi.getter
     def locality(self) -> _builtins.str:
         """
-        City or locality name.
+        Locality or city name (L). Null if not provided.
         """
         return pulumi.get(self, "locality")
 
@@ -16072,68 +20322,1671 @@ class GetCloudcertificatesCertificatesCertificateSubjectResult(dict):
     @pulumi.getter
     def organization(self) -> _builtins.str:
         """
-        Legal name of the organization.
+        Organization (O). Null if not provided.
         """
         return pulumi.get(self, "organization")
+
+    @_builtins.property
+    @pulumi.getter(name="organizationalUnit")
+    def organizational_unit(self) -> _builtins.str:
+        """
+        Organizational unit (OU). Null if not provided.
+        """
+        return pulumi.get(self, "organizational_unit")
 
     @_builtins.property
     @pulumi.getter
     def state(self) -> _builtins.str:
         """
-        Full name of the state or province.
+        State or province name (ST). Null if not provided.
         """
         return pulumi.get(self, "state")
 
 
 @pulumi.output_type
-class GetCloudcertificatesHostnameBindingsBindingResult(dict):
+class GetCloudcertificatesLineagesLineageResult(dict):
     def __init__(__self__, *,
-                 certificate_id: _builtins.str,
-                 hostname: _builtins.str,
-                 network: _builtins.str,
-                 resource_type: _builtins.str):
+                 account_id: _builtins.str,
+                 contract_id: _builtins.str,
+                 current_production: 'outputs.GetCloudcertificatesLineagesLineageCurrentProductionResult',
+                 current_staging: 'outputs.GetCloudcertificatesLineagesLineageCurrentStagingResult',
+                 geo_class: _builtins.str,
+                 group_id: _builtins.int,
+                 head: 'outputs.GetCloudcertificatesLineagesLineageHeadResult',
+                 key_specs: Mapping[str, _builtins.str],
+                 lineage_created_by: _builtins.str,
+                 lineage_created_time: _builtins.str,
+                 lineage_id: _builtins.int,
+                 lineage_modified_by: _builtins.str,
+                 lineage_modified_time: _builtins.str,
+                 lineage_name: _builtins.str,
+                 lineage_type: _builtins.str,
+                 previous_production: 'outputs.GetCloudcertificatesLineagesLineagePreviousProductionResult',
+                 sans: Sequence[_builtins.str],
+                 secure_network: _builtins.str,
+                 signing_target: 'outputs.GetCloudcertificatesLineagesLineageSigningTargetResult',
+                 stack_mode: _builtins.str,
+                 subject: 'outputs.GetCloudcertificatesLineagesLineageSubjectResult'):
         """
-        :param _builtins.str certificate_id: Unique identifier for the third-party certificate.
-        :param _builtins.str hostname: Hostname on the Akamai CDN the certificate applies to.
-        :param _builtins.str network: The deployment network, either 'STAGING' or 'PRODUCTION', on which the certificate is active for a property version.
-        :param _builtins.str resource_type: Resource type this binding applies to. Currently, only 'CDN_HOSTNAME' is available.
+        :param _builtins.str account_id: Account identifier associated with the contract.
+        :param _builtins.str contract_id: Contract identifier under which the lineage was created.
+        :param 'GetCloudcertificatesLineagesLineageCurrentProductionArgs' current_production: Generation currently deployed to the production network. Null when no current production generation exists. Populated only when expand_generations is true.
+        :param 'GetCloudcertificatesLineagesLineageCurrentStagingArgs' current_staging: Generation currently deployed to the staging network. Null when no current staging generation exists. Populated only when expand_generations is true.
+        :param _builtins.str geo_class: Geographic class of the certificate.
+        :param _builtins.int group_id: Unique identifier of the group.
+        :param 'GetCloudcertificatesLineagesLineageHeadArgs' head: Head generation of the lineage. Null when no head generation exists. Populated only when expand_generations is true.
+        :param Mapping[str, _builtins.str] key_specs: Key specifications declared for the lineage, mapping key_type (e.g. RSA or ECDSA) to key_size (e.g. 2048 or P-256).
+        :param _builtins.str lineage_created_by: Username of the person who created the lineage.
+        :param _builtins.str lineage_created_time: Time the lineage was created, in RFC3339 format.
+        :param _builtins.int lineage_id: Unique identifier of the lineage.
+        :param _builtins.str lineage_modified_by: Username of the person who last modified the lineage.
+        :param _builtins.str lineage_modified_time: Time the lineage was last modified, in RFC3339 format.
+        :param _builtins.str lineage_name: Name of the lineage.
+        :param _builtins.str lineage_type: Type of the lineage, e.g. MULTIPLE_GENERATION or SINGLE_GENERATION.
+        :param 'GetCloudcertificatesLineagesLineagePreviousProductionArgs' previous_production: Generation previously deployed to production (rollback candidate). Null when no previous production generation exists. Populated only when expand_generations is true.
+        :param Sequence[_builtins.str] sans: Subject Alternative Names (SANs) for the certificate.
+        :param _builtins.str secure_network: Secure network type, e.g. ENHANCED_TLS or STANDARD_TLS.
+        :param 'GetCloudcertificatesLineagesLineageSigningTargetArgs' signing_target: Derived convenience field, not a distinct API concept: the generation whose CSR currently needs to be signed and uploaded - the lineage's head generation if one exists, otherwise its current production generation (e.g. while completing a MULTIPLE_STACK lineage's second algorithm). It is null if neither exists or if expand_generations is false.
+        :param _builtins.str stack_mode: Stack mode of the lineage, e.g. SINGLE_STACK or MULTIPLE_STACK.
+        :param 'GetCloudcertificatesLineagesLineageSubjectArgs' subject: X.509 subject fields of the certificate. All fields are null if no subject was provided when the lineage was created.
         """
-        pulumi.set(__self__, "certificate_id", certificate_id)
-        pulumi.set(__self__, "hostname", hostname)
-        pulumi.set(__self__, "network", network)
-        pulumi.set(__self__, "resource_type", resource_type)
+        pulumi.set(__self__, "account_id", account_id)
+        pulumi.set(__self__, "contract_id", contract_id)
+        pulumi.set(__self__, "current_production", current_production)
+        pulumi.set(__self__, "current_staging", current_staging)
+        pulumi.set(__self__, "geo_class", geo_class)
+        pulumi.set(__self__, "group_id", group_id)
+        pulumi.set(__self__, "head", head)
+        pulumi.set(__self__, "key_specs", key_specs)
+        pulumi.set(__self__, "lineage_created_by", lineage_created_by)
+        pulumi.set(__self__, "lineage_created_time", lineage_created_time)
+        pulumi.set(__self__, "lineage_id", lineage_id)
+        pulumi.set(__self__, "lineage_modified_by", lineage_modified_by)
+        pulumi.set(__self__, "lineage_modified_time", lineage_modified_time)
+        pulumi.set(__self__, "lineage_name", lineage_name)
+        pulumi.set(__self__, "lineage_type", lineage_type)
+        pulumi.set(__self__, "previous_production", previous_production)
+        pulumi.set(__self__, "sans", sans)
+        pulumi.set(__self__, "secure_network", secure_network)
+        pulumi.set(__self__, "signing_target", signing_target)
+        pulumi.set(__self__, "stack_mode", stack_mode)
+        pulumi.set(__self__, "subject", subject)
 
     @_builtins.property
-    @pulumi.getter(name="certificateId")
-    def certificate_id(self) -> _builtins.str:
+    @pulumi.getter(name="accountId")
+    def account_id(self) -> _builtins.str:
         """
-        Unique identifier for the third-party certificate.
+        Account identifier associated with the contract.
         """
-        return pulumi.get(self, "certificate_id")
+        return pulumi.get(self, "account_id")
+
+    @_builtins.property
+    @pulumi.getter(name="contractId")
+    def contract_id(self) -> _builtins.str:
+        """
+        Contract identifier under which the lineage was created.
+        """
+        return pulumi.get(self, "contract_id")
+
+    @_builtins.property
+    @pulumi.getter(name="currentProduction")
+    def current_production(self) -> 'outputs.GetCloudcertificatesLineagesLineageCurrentProductionResult':
+        """
+        Generation currently deployed to the production network. Null when no current production generation exists. Populated only when expand_generations is true.
+        """
+        return pulumi.get(self, "current_production")
+
+    @_builtins.property
+    @pulumi.getter(name="currentStaging")
+    def current_staging(self) -> 'outputs.GetCloudcertificatesLineagesLineageCurrentStagingResult':
+        """
+        Generation currently deployed to the staging network. Null when no current staging generation exists. Populated only when expand_generations is true.
+        """
+        return pulumi.get(self, "current_staging")
+
+    @_builtins.property
+    @pulumi.getter(name="geoClass")
+    def geo_class(self) -> _builtins.str:
+        """
+        Geographic class of the certificate.
+        """
+        return pulumi.get(self, "geo_class")
+
+    @_builtins.property
+    @pulumi.getter(name="groupId")
+    def group_id(self) -> _builtins.int:
+        """
+        Unique identifier of the group.
+        """
+        return pulumi.get(self, "group_id")
 
     @_builtins.property
     @pulumi.getter
-    def hostname(self) -> _builtins.str:
+    def head(self) -> 'outputs.GetCloudcertificatesLineagesLineageHeadResult':
         """
-        Hostname on the Akamai CDN the certificate applies to.
+        Head generation of the lineage. Null when no head generation exists. Populated only when expand_generations is true.
         """
-        return pulumi.get(self, "hostname")
+        return pulumi.get(self, "head")
+
+    @_builtins.property
+    @pulumi.getter(name="keySpecs")
+    def key_specs(self) -> Mapping[str, _builtins.str]:
+        """
+        Key specifications declared for the lineage, mapping key_type (e.g. RSA or ECDSA) to key_size (e.g. 2048 or P-256).
+        """
+        return pulumi.get(self, "key_specs")
+
+    @_builtins.property
+    @pulumi.getter(name="lineageCreatedBy")
+    def lineage_created_by(self) -> _builtins.str:
+        """
+        Username of the person who created the lineage.
+        """
+        return pulumi.get(self, "lineage_created_by")
+
+    @_builtins.property
+    @pulumi.getter(name="lineageCreatedTime")
+    def lineage_created_time(self) -> _builtins.str:
+        """
+        Time the lineage was created, in RFC3339 format.
+        """
+        return pulumi.get(self, "lineage_created_time")
+
+    @_builtins.property
+    @pulumi.getter(name="lineageId")
+    def lineage_id(self) -> _builtins.int:
+        """
+        Unique identifier of the lineage.
+        """
+        return pulumi.get(self, "lineage_id")
+
+    @_builtins.property
+    @pulumi.getter(name="lineageModifiedBy")
+    def lineage_modified_by(self) -> _builtins.str:
+        """
+        Username of the person who last modified the lineage.
+        """
+        return pulumi.get(self, "lineage_modified_by")
+
+    @_builtins.property
+    @pulumi.getter(name="lineageModifiedTime")
+    def lineage_modified_time(self) -> _builtins.str:
+        """
+        Time the lineage was last modified, in RFC3339 format.
+        """
+        return pulumi.get(self, "lineage_modified_time")
+
+    @_builtins.property
+    @pulumi.getter(name="lineageName")
+    def lineage_name(self) -> _builtins.str:
+        """
+        Name of the lineage.
+        """
+        return pulumi.get(self, "lineage_name")
+
+    @_builtins.property
+    @pulumi.getter(name="lineageType")
+    def lineage_type(self) -> _builtins.str:
+        """
+        Type of the lineage, e.g. MULTIPLE_GENERATION or SINGLE_GENERATION.
+        """
+        return pulumi.get(self, "lineage_type")
+
+    @_builtins.property
+    @pulumi.getter(name="previousProduction")
+    def previous_production(self) -> 'outputs.GetCloudcertificatesLineagesLineagePreviousProductionResult':
+        """
+        Generation previously deployed to production (rollback candidate). Null when no previous production generation exists. Populated only when expand_generations is true.
+        """
+        return pulumi.get(self, "previous_production")
 
     @_builtins.property
     @pulumi.getter
-    def network(self) -> _builtins.str:
+    def sans(self) -> Sequence[_builtins.str]:
         """
-        The deployment network, either 'STAGING' or 'PRODUCTION', on which the certificate is active for a property version.
+        Subject Alternative Names (SANs) for the certificate.
         """
-        return pulumi.get(self, "network")
+        return pulumi.get(self, "sans")
 
     @_builtins.property
-    @pulumi.getter(name="resourceType")
-    def resource_type(self) -> _builtins.str:
+    @pulumi.getter(name="secureNetwork")
+    def secure_network(self) -> _builtins.str:
         """
-        Resource type this binding applies to. Currently, only 'CDN_HOSTNAME' is available.
+        Secure network type, e.g. ENHANCED_TLS or STANDARD_TLS.
         """
-        return pulumi.get(self, "resource_type")
+        return pulumi.get(self, "secure_network")
+
+    @_builtins.property
+    @pulumi.getter(name="signingTarget")
+    def signing_target(self) -> 'outputs.GetCloudcertificatesLineagesLineageSigningTargetResult':
+        """
+        Derived convenience field, not a distinct API concept: the generation whose CSR currently needs to be signed and uploaded - the lineage's head generation if one exists, otherwise its current production generation (e.g. while completing a MULTIPLE_STACK lineage's second algorithm). It is null if neither exists or if expand_generations is false.
+        """
+        return pulumi.get(self, "signing_target")
+
+    @_builtins.property
+    @pulumi.getter(name="stackMode")
+    def stack_mode(self) -> _builtins.str:
+        """
+        Stack mode of the lineage, e.g. SINGLE_STACK or MULTIPLE_STACK.
+        """
+        return pulumi.get(self, "stack_mode")
+
+    @_builtins.property
+    @pulumi.getter
+    def subject(self) -> 'outputs.GetCloudcertificatesLineagesLineageSubjectResult':
+        """
+        X.509 subject fields of the certificate. All fields are null if no subject was provided when the lineage was created.
+        """
+        return pulumi.get(self, "subject")
+
+
+@pulumi.output_type
+class GetCloudcertificatesLineagesLineageCurrentProductionResult(dict):
+    def __init__(__self__, *,
+                 algorithms: Mapping[str, 'outputs.GetCloudcertificatesLineagesLineageCurrentProductionAlgorithmsResult'],
+                 first_promoted_to_production_time: _builtins.str,
+                 generation_created_by: _builtins.str,
+                 generation_created_time: _builtins.str,
+                 generation_id: _builtins.int,
+                 generation_modified_by: _builtins.str,
+                 generation_modified_time: _builtins.str,
+                 generation_status: _builtins.str):
+        """
+        :param Mapping[str, 'GetCloudcertificatesLineagesLineageCurrentProductionAlgorithmsArgs'] algorithms: Per key-type (RSA or ECDSA) certificate details for this generation, keyed by key_type. Populated only when expand_generations is true.
+        :param _builtins.str first_promoted_to_production_time: Time the generation was first promoted to production, in RFC3339 format. Null if never promoted, or if not requested via expand_generations.
+        :param _builtins.str generation_created_by: Username of the person who created this generation. Populated only when expand_generations is true.
+        :param _builtins.str generation_created_time: Time the generation was created, in RFC3339 format. Populated only when expand_generations is true.
+        :param _builtins.int generation_id: Unique identifier of the generation.
+        :param _builtins.str generation_modified_by: Username of the person who last modified this generation. Populated only when expand_generations is true.
+        :param _builtins.str generation_modified_time: Time the generation was last modified, in RFC3339 format. Null if not requested via expand_generations, or if the generation has never been modified since creation.
+        :param _builtins.str generation_status: Status of the generation.
+        """
+        pulumi.set(__self__, "algorithms", algorithms)
+        pulumi.set(__self__, "first_promoted_to_production_time", first_promoted_to_production_time)
+        pulumi.set(__self__, "generation_created_by", generation_created_by)
+        pulumi.set(__self__, "generation_created_time", generation_created_time)
+        pulumi.set(__self__, "generation_id", generation_id)
+        pulumi.set(__self__, "generation_modified_by", generation_modified_by)
+        pulumi.set(__self__, "generation_modified_time", generation_modified_time)
+        pulumi.set(__self__, "generation_status", generation_status)
+
+    @_builtins.property
+    @pulumi.getter
+    def algorithms(self) -> Mapping[str, 'outputs.GetCloudcertificatesLineagesLineageCurrentProductionAlgorithmsResult']:
+        """
+        Per key-type (RSA or ECDSA) certificate details for this generation, keyed by key_type. Populated only when expand_generations is true.
+        """
+        return pulumi.get(self, "algorithms")
+
+    @_builtins.property
+    @pulumi.getter(name="firstPromotedToProductionTime")
+    def first_promoted_to_production_time(self) -> _builtins.str:
+        """
+        Time the generation was first promoted to production, in RFC3339 format. Null if never promoted, or if not requested via expand_generations.
+        """
+        return pulumi.get(self, "first_promoted_to_production_time")
+
+    @_builtins.property
+    @pulumi.getter(name="generationCreatedBy")
+    def generation_created_by(self) -> _builtins.str:
+        """
+        Username of the person who created this generation. Populated only when expand_generations is true.
+        """
+        return pulumi.get(self, "generation_created_by")
+
+    @_builtins.property
+    @pulumi.getter(name="generationCreatedTime")
+    def generation_created_time(self) -> _builtins.str:
+        """
+        Time the generation was created, in RFC3339 format. Populated only when expand_generations is true.
+        """
+        return pulumi.get(self, "generation_created_time")
+
+    @_builtins.property
+    @pulumi.getter(name="generationId")
+    def generation_id(self) -> _builtins.int:
+        """
+        Unique identifier of the generation.
+        """
+        return pulumi.get(self, "generation_id")
+
+    @_builtins.property
+    @pulumi.getter(name="generationModifiedBy")
+    def generation_modified_by(self) -> _builtins.str:
+        """
+        Username of the person who last modified this generation. Populated only when expand_generations is true.
+        """
+        return pulumi.get(self, "generation_modified_by")
+
+    @_builtins.property
+    @pulumi.getter(name="generationModifiedTime")
+    def generation_modified_time(self) -> _builtins.str:
+        """
+        Time the generation was last modified, in RFC3339 format. Null if not requested via expand_generations, or if the generation has never been modified since creation.
+        """
+        return pulumi.get(self, "generation_modified_time")
+
+    @_builtins.property
+    @pulumi.getter(name="generationStatus")
+    def generation_status(self) -> _builtins.str:
+        """
+        Status of the generation.
+        """
+        return pulumi.get(self, "generation_status")
+
+
+@pulumi.output_type
+class GetCloudcertificatesLineagesLineageCurrentProductionAlgorithmsResult(dict):
+    def __init__(__self__, *,
+                 algorithm_instance_created_by: _builtins.str,
+                 algorithm_instance_created_time: _builtins.str,
+                 algorithm_instance_id: _builtins.int,
+                 algorithm_instance_modified_by: _builtins.str,
+                 algorithm_instance_modified_time: _builtins.str,
+                 certificate_status: _builtins.str,
+                 csr_expiration_date: _builtins.str,
+                 csr_pem: _builtins.str,
+                 signed_certificate_issuer: _builtins.str,
+                 signed_certificate_not_valid_after_date: _builtins.str,
+                 signed_certificate_not_valid_before_date: _builtins.str,
+                 signed_certificate_pem: _builtins.str,
+                 signed_certificate_serial_number: _builtins.str,
+                 signed_certificate_sha256_fingerprint: _builtins.str,
+                 trust_chain_pem: _builtins.str):
+        """
+        :param _builtins.str algorithm_instance_created_by: Username of the person who created the algorithm instance.
+        :param _builtins.str algorithm_instance_created_time: Time the algorithm instance was created, in RFC3339 format.
+        :param _builtins.int algorithm_instance_id: Unique identifier of the algorithm instance.
+        :param _builtins.str algorithm_instance_modified_by: Username of the person who last modified the algorithm instance. Null if never modified.
+        :param _builtins.str algorithm_instance_modified_time: Time the algorithm instance was last modified, in RFC3339 format. Null if never modified.
+        :param _builtins.str certificate_status: Status of the certificate for this key type: `CSR_READY`, `CERT_UPLOAD_PROCESSING`, `READY_FOR_USE`, or `ABANDONED`.
+        :param _builtins.str csr_expiration_date: Date when the CSR expires, in RFC3339 format.
+        :param _builtins.str csr_pem: PEM-encoded certificate signing request.
+        :param _builtins.str signed_certificate_issuer: Issuer field of the signed certificate. Null until a certificate is uploaded.
+        :param _builtins.str signed_certificate_not_valid_after_date: Expiration date of the signed certificate, in RFC3339 format. Null until a certificate is uploaded.
+        :param _builtins.str signed_certificate_not_valid_before_date: Start of validity of the signed certificate, in RFC3339 format. Null until a certificate is uploaded.
+        :param _builtins.str signed_certificate_pem: PEM-encoded signed certificate. Null until a certificate is uploaded.
+        :param _builtins.str signed_certificate_serial_number: Serial number of the signed certificate in hex format. Null until a certificate is uploaded.
+        :param _builtins.str signed_certificate_sha256_fingerprint: SHA-256 fingerprint of the signed certificate. Null until a certificate is uploaded.
+        :param _builtins.str trust_chain_pem: PEM-encoded trust chain uploaded alongside the signed certificate. Null if none was uploaded.
+        """
+        pulumi.set(__self__, "algorithm_instance_created_by", algorithm_instance_created_by)
+        pulumi.set(__self__, "algorithm_instance_created_time", algorithm_instance_created_time)
+        pulumi.set(__self__, "algorithm_instance_id", algorithm_instance_id)
+        pulumi.set(__self__, "algorithm_instance_modified_by", algorithm_instance_modified_by)
+        pulumi.set(__self__, "algorithm_instance_modified_time", algorithm_instance_modified_time)
+        pulumi.set(__self__, "certificate_status", certificate_status)
+        pulumi.set(__self__, "csr_expiration_date", csr_expiration_date)
+        pulumi.set(__self__, "csr_pem", csr_pem)
+        pulumi.set(__self__, "signed_certificate_issuer", signed_certificate_issuer)
+        pulumi.set(__self__, "signed_certificate_not_valid_after_date", signed_certificate_not_valid_after_date)
+        pulumi.set(__self__, "signed_certificate_not_valid_before_date", signed_certificate_not_valid_before_date)
+        pulumi.set(__self__, "signed_certificate_pem", signed_certificate_pem)
+        pulumi.set(__self__, "signed_certificate_serial_number", signed_certificate_serial_number)
+        pulumi.set(__self__, "signed_certificate_sha256_fingerprint", signed_certificate_sha256_fingerprint)
+        pulumi.set(__self__, "trust_chain_pem", trust_chain_pem)
+
+    @_builtins.property
+    @pulumi.getter(name="algorithmInstanceCreatedBy")
+    def algorithm_instance_created_by(self) -> _builtins.str:
+        """
+        Username of the person who created the algorithm instance.
+        """
+        return pulumi.get(self, "algorithm_instance_created_by")
+
+    @_builtins.property
+    @pulumi.getter(name="algorithmInstanceCreatedTime")
+    def algorithm_instance_created_time(self) -> _builtins.str:
+        """
+        Time the algorithm instance was created, in RFC3339 format.
+        """
+        return pulumi.get(self, "algorithm_instance_created_time")
+
+    @_builtins.property
+    @pulumi.getter(name="algorithmInstanceId")
+    def algorithm_instance_id(self) -> _builtins.int:
+        """
+        Unique identifier of the algorithm instance.
+        """
+        return pulumi.get(self, "algorithm_instance_id")
+
+    @_builtins.property
+    @pulumi.getter(name="algorithmInstanceModifiedBy")
+    def algorithm_instance_modified_by(self) -> _builtins.str:
+        """
+        Username of the person who last modified the algorithm instance. Null if never modified.
+        """
+        return pulumi.get(self, "algorithm_instance_modified_by")
+
+    @_builtins.property
+    @pulumi.getter(name="algorithmInstanceModifiedTime")
+    def algorithm_instance_modified_time(self) -> _builtins.str:
+        """
+        Time the algorithm instance was last modified, in RFC3339 format. Null if never modified.
+        """
+        return pulumi.get(self, "algorithm_instance_modified_time")
+
+    @_builtins.property
+    @pulumi.getter(name="certificateStatus")
+    def certificate_status(self) -> _builtins.str:
+        """
+        Status of the certificate for this key type: `CSR_READY`, `CERT_UPLOAD_PROCESSING`, `READY_FOR_USE`, or `ABANDONED`.
+        """
+        return pulumi.get(self, "certificate_status")
+
+    @_builtins.property
+    @pulumi.getter(name="csrExpirationDate")
+    def csr_expiration_date(self) -> _builtins.str:
+        """
+        Date when the CSR expires, in RFC3339 format.
+        """
+        return pulumi.get(self, "csr_expiration_date")
+
+    @_builtins.property
+    @pulumi.getter(name="csrPem")
+    def csr_pem(self) -> _builtins.str:
+        """
+        PEM-encoded certificate signing request.
+        """
+        return pulumi.get(self, "csr_pem")
+
+    @_builtins.property
+    @pulumi.getter(name="signedCertificateIssuer")
+    def signed_certificate_issuer(self) -> _builtins.str:
+        """
+        Issuer field of the signed certificate. Null until a certificate is uploaded.
+        """
+        return pulumi.get(self, "signed_certificate_issuer")
+
+    @_builtins.property
+    @pulumi.getter(name="signedCertificateNotValidAfterDate")
+    def signed_certificate_not_valid_after_date(self) -> _builtins.str:
+        """
+        Expiration date of the signed certificate, in RFC3339 format. Null until a certificate is uploaded.
+        """
+        return pulumi.get(self, "signed_certificate_not_valid_after_date")
+
+    @_builtins.property
+    @pulumi.getter(name="signedCertificateNotValidBeforeDate")
+    def signed_certificate_not_valid_before_date(self) -> _builtins.str:
+        """
+        Start of validity of the signed certificate, in RFC3339 format. Null until a certificate is uploaded.
+        """
+        return pulumi.get(self, "signed_certificate_not_valid_before_date")
+
+    @_builtins.property
+    @pulumi.getter(name="signedCertificatePem")
+    def signed_certificate_pem(self) -> _builtins.str:
+        """
+        PEM-encoded signed certificate. Null until a certificate is uploaded.
+        """
+        return pulumi.get(self, "signed_certificate_pem")
+
+    @_builtins.property
+    @pulumi.getter(name="signedCertificateSerialNumber")
+    def signed_certificate_serial_number(self) -> _builtins.str:
+        """
+        Serial number of the signed certificate in hex format. Null until a certificate is uploaded.
+        """
+        return pulumi.get(self, "signed_certificate_serial_number")
+
+    @_builtins.property
+    @pulumi.getter(name="signedCertificateSha256Fingerprint")
+    def signed_certificate_sha256_fingerprint(self) -> _builtins.str:
+        """
+        SHA-256 fingerprint of the signed certificate. Null until a certificate is uploaded.
+        """
+        return pulumi.get(self, "signed_certificate_sha256_fingerprint")
+
+    @_builtins.property
+    @pulumi.getter(name="trustChainPem")
+    def trust_chain_pem(self) -> _builtins.str:
+        """
+        PEM-encoded trust chain uploaded alongside the signed certificate. Null if none was uploaded.
+        """
+        return pulumi.get(self, "trust_chain_pem")
+
+
+@pulumi.output_type
+class GetCloudcertificatesLineagesLineageCurrentStagingResult(dict):
+    def __init__(__self__, *,
+                 algorithms: Mapping[str, 'outputs.GetCloudcertificatesLineagesLineageCurrentStagingAlgorithmsResult'],
+                 first_promoted_to_production_time: _builtins.str,
+                 generation_created_by: _builtins.str,
+                 generation_created_time: _builtins.str,
+                 generation_id: _builtins.int,
+                 generation_modified_by: _builtins.str,
+                 generation_modified_time: _builtins.str,
+                 generation_status: _builtins.str):
+        """
+        :param Mapping[str, 'GetCloudcertificatesLineagesLineageCurrentStagingAlgorithmsArgs'] algorithms: Per key-type (RSA or ECDSA) certificate details for this generation, keyed by key_type. Populated only when expand_generations is true.
+        :param _builtins.str first_promoted_to_production_time: Time the generation was first promoted to production, in RFC3339 format. Null if never promoted, or if not requested via expand_generations.
+        :param _builtins.str generation_created_by: Username of the person who created this generation. Populated only when expand_generations is true.
+        :param _builtins.str generation_created_time: Time the generation was created, in RFC3339 format. Populated only when expand_generations is true.
+        :param _builtins.int generation_id: Unique identifier of the generation.
+        :param _builtins.str generation_modified_by: Username of the person who last modified this generation. Populated only when expand_generations is true.
+        :param _builtins.str generation_modified_time: Time the generation was last modified, in RFC3339 format. Null if not requested via expand_generations, or if the generation has never been modified since creation.
+        :param _builtins.str generation_status: Status of the generation.
+        """
+        pulumi.set(__self__, "algorithms", algorithms)
+        pulumi.set(__self__, "first_promoted_to_production_time", first_promoted_to_production_time)
+        pulumi.set(__self__, "generation_created_by", generation_created_by)
+        pulumi.set(__self__, "generation_created_time", generation_created_time)
+        pulumi.set(__self__, "generation_id", generation_id)
+        pulumi.set(__self__, "generation_modified_by", generation_modified_by)
+        pulumi.set(__self__, "generation_modified_time", generation_modified_time)
+        pulumi.set(__self__, "generation_status", generation_status)
+
+    @_builtins.property
+    @pulumi.getter
+    def algorithms(self) -> Mapping[str, 'outputs.GetCloudcertificatesLineagesLineageCurrentStagingAlgorithmsResult']:
+        """
+        Per key-type (RSA or ECDSA) certificate details for this generation, keyed by key_type. Populated only when expand_generations is true.
+        """
+        return pulumi.get(self, "algorithms")
+
+    @_builtins.property
+    @pulumi.getter(name="firstPromotedToProductionTime")
+    def first_promoted_to_production_time(self) -> _builtins.str:
+        """
+        Time the generation was first promoted to production, in RFC3339 format. Null if never promoted, or if not requested via expand_generations.
+        """
+        return pulumi.get(self, "first_promoted_to_production_time")
+
+    @_builtins.property
+    @pulumi.getter(name="generationCreatedBy")
+    def generation_created_by(self) -> _builtins.str:
+        """
+        Username of the person who created this generation. Populated only when expand_generations is true.
+        """
+        return pulumi.get(self, "generation_created_by")
+
+    @_builtins.property
+    @pulumi.getter(name="generationCreatedTime")
+    def generation_created_time(self) -> _builtins.str:
+        """
+        Time the generation was created, in RFC3339 format. Populated only when expand_generations is true.
+        """
+        return pulumi.get(self, "generation_created_time")
+
+    @_builtins.property
+    @pulumi.getter(name="generationId")
+    def generation_id(self) -> _builtins.int:
+        """
+        Unique identifier of the generation.
+        """
+        return pulumi.get(self, "generation_id")
+
+    @_builtins.property
+    @pulumi.getter(name="generationModifiedBy")
+    def generation_modified_by(self) -> _builtins.str:
+        """
+        Username of the person who last modified this generation. Populated only when expand_generations is true.
+        """
+        return pulumi.get(self, "generation_modified_by")
+
+    @_builtins.property
+    @pulumi.getter(name="generationModifiedTime")
+    def generation_modified_time(self) -> _builtins.str:
+        """
+        Time the generation was last modified, in RFC3339 format. Null if not requested via expand_generations, or if the generation has never been modified since creation.
+        """
+        return pulumi.get(self, "generation_modified_time")
+
+    @_builtins.property
+    @pulumi.getter(name="generationStatus")
+    def generation_status(self) -> _builtins.str:
+        """
+        Status of the generation.
+        """
+        return pulumi.get(self, "generation_status")
+
+
+@pulumi.output_type
+class GetCloudcertificatesLineagesLineageCurrentStagingAlgorithmsResult(dict):
+    def __init__(__self__, *,
+                 algorithm_instance_created_by: _builtins.str,
+                 algorithm_instance_created_time: _builtins.str,
+                 algorithm_instance_id: _builtins.int,
+                 algorithm_instance_modified_by: _builtins.str,
+                 algorithm_instance_modified_time: _builtins.str,
+                 certificate_status: _builtins.str,
+                 csr_expiration_date: _builtins.str,
+                 csr_pem: _builtins.str,
+                 signed_certificate_issuer: _builtins.str,
+                 signed_certificate_not_valid_after_date: _builtins.str,
+                 signed_certificate_not_valid_before_date: _builtins.str,
+                 signed_certificate_pem: _builtins.str,
+                 signed_certificate_serial_number: _builtins.str,
+                 signed_certificate_sha256_fingerprint: _builtins.str,
+                 trust_chain_pem: _builtins.str):
+        """
+        :param _builtins.str algorithm_instance_created_by: Username of the person who created the algorithm instance.
+        :param _builtins.str algorithm_instance_created_time: Time the algorithm instance was created, in RFC3339 format.
+        :param _builtins.int algorithm_instance_id: Unique identifier of the algorithm instance.
+        :param _builtins.str algorithm_instance_modified_by: Username of the person who last modified the algorithm instance. Null if never modified.
+        :param _builtins.str algorithm_instance_modified_time: Time the algorithm instance was last modified, in RFC3339 format. Null if never modified.
+        :param _builtins.str certificate_status: Status of the certificate for this key type: `CSR_READY`, `CERT_UPLOAD_PROCESSING`, `READY_FOR_USE`, or `ABANDONED`.
+        :param _builtins.str csr_expiration_date: Date when the CSR expires, in RFC3339 format.
+        :param _builtins.str csr_pem: PEM-encoded certificate signing request.
+        :param _builtins.str signed_certificate_issuer: Issuer field of the signed certificate. Null until a certificate is uploaded.
+        :param _builtins.str signed_certificate_not_valid_after_date: Expiration date of the signed certificate, in RFC3339 format. Null until a certificate is uploaded.
+        :param _builtins.str signed_certificate_not_valid_before_date: Start of validity of the signed certificate, in RFC3339 format. Null until a certificate is uploaded.
+        :param _builtins.str signed_certificate_pem: PEM-encoded signed certificate. Null until a certificate is uploaded.
+        :param _builtins.str signed_certificate_serial_number: Serial number of the signed certificate in hex format. Null until a certificate is uploaded.
+        :param _builtins.str signed_certificate_sha256_fingerprint: SHA-256 fingerprint of the signed certificate. Null until a certificate is uploaded.
+        :param _builtins.str trust_chain_pem: PEM-encoded trust chain uploaded alongside the signed certificate. Null if none was uploaded.
+        """
+        pulumi.set(__self__, "algorithm_instance_created_by", algorithm_instance_created_by)
+        pulumi.set(__self__, "algorithm_instance_created_time", algorithm_instance_created_time)
+        pulumi.set(__self__, "algorithm_instance_id", algorithm_instance_id)
+        pulumi.set(__self__, "algorithm_instance_modified_by", algorithm_instance_modified_by)
+        pulumi.set(__self__, "algorithm_instance_modified_time", algorithm_instance_modified_time)
+        pulumi.set(__self__, "certificate_status", certificate_status)
+        pulumi.set(__self__, "csr_expiration_date", csr_expiration_date)
+        pulumi.set(__self__, "csr_pem", csr_pem)
+        pulumi.set(__self__, "signed_certificate_issuer", signed_certificate_issuer)
+        pulumi.set(__self__, "signed_certificate_not_valid_after_date", signed_certificate_not_valid_after_date)
+        pulumi.set(__self__, "signed_certificate_not_valid_before_date", signed_certificate_not_valid_before_date)
+        pulumi.set(__self__, "signed_certificate_pem", signed_certificate_pem)
+        pulumi.set(__self__, "signed_certificate_serial_number", signed_certificate_serial_number)
+        pulumi.set(__self__, "signed_certificate_sha256_fingerprint", signed_certificate_sha256_fingerprint)
+        pulumi.set(__self__, "trust_chain_pem", trust_chain_pem)
+
+    @_builtins.property
+    @pulumi.getter(name="algorithmInstanceCreatedBy")
+    def algorithm_instance_created_by(self) -> _builtins.str:
+        """
+        Username of the person who created the algorithm instance.
+        """
+        return pulumi.get(self, "algorithm_instance_created_by")
+
+    @_builtins.property
+    @pulumi.getter(name="algorithmInstanceCreatedTime")
+    def algorithm_instance_created_time(self) -> _builtins.str:
+        """
+        Time the algorithm instance was created, in RFC3339 format.
+        """
+        return pulumi.get(self, "algorithm_instance_created_time")
+
+    @_builtins.property
+    @pulumi.getter(name="algorithmInstanceId")
+    def algorithm_instance_id(self) -> _builtins.int:
+        """
+        Unique identifier of the algorithm instance.
+        """
+        return pulumi.get(self, "algorithm_instance_id")
+
+    @_builtins.property
+    @pulumi.getter(name="algorithmInstanceModifiedBy")
+    def algorithm_instance_modified_by(self) -> _builtins.str:
+        """
+        Username of the person who last modified the algorithm instance. Null if never modified.
+        """
+        return pulumi.get(self, "algorithm_instance_modified_by")
+
+    @_builtins.property
+    @pulumi.getter(name="algorithmInstanceModifiedTime")
+    def algorithm_instance_modified_time(self) -> _builtins.str:
+        """
+        Time the algorithm instance was last modified, in RFC3339 format. Null if never modified.
+        """
+        return pulumi.get(self, "algorithm_instance_modified_time")
+
+    @_builtins.property
+    @pulumi.getter(name="certificateStatus")
+    def certificate_status(self) -> _builtins.str:
+        """
+        Status of the certificate for this key type: `CSR_READY`, `CERT_UPLOAD_PROCESSING`, `READY_FOR_USE`, or `ABANDONED`.
+        """
+        return pulumi.get(self, "certificate_status")
+
+    @_builtins.property
+    @pulumi.getter(name="csrExpirationDate")
+    def csr_expiration_date(self) -> _builtins.str:
+        """
+        Date when the CSR expires, in RFC3339 format.
+        """
+        return pulumi.get(self, "csr_expiration_date")
+
+    @_builtins.property
+    @pulumi.getter(name="csrPem")
+    def csr_pem(self) -> _builtins.str:
+        """
+        PEM-encoded certificate signing request.
+        """
+        return pulumi.get(self, "csr_pem")
+
+    @_builtins.property
+    @pulumi.getter(name="signedCertificateIssuer")
+    def signed_certificate_issuer(self) -> _builtins.str:
+        """
+        Issuer field of the signed certificate. Null until a certificate is uploaded.
+        """
+        return pulumi.get(self, "signed_certificate_issuer")
+
+    @_builtins.property
+    @pulumi.getter(name="signedCertificateNotValidAfterDate")
+    def signed_certificate_not_valid_after_date(self) -> _builtins.str:
+        """
+        Expiration date of the signed certificate, in RFC3339 format. Null until a certificate is uploaded.
+        """
+        return pulumi.get(self, "signed_certificate_not_valid_after_date")
+
+    @_builtins.property
+    @pulumi.getter(name="signedCertificateNotValidBeforeDate")
+    def signed_certificate_not_valid_before_date(self) -> _builtins.str:
+        """
+        Start of validity of the signed certificate, in RFC3339 format. Null until a certificate is uploaded.
+        """
+        return pulumi.get(self, "signed_certificate_not_valid_before_date")
+
+    @_builtins.property
+    @pulumi.getter(name="signedCertificatePem")
+    def signed_certificate_pem(self) -> _builtins.str:
+        """
+        PEM-encoded signed certificate. Null until a certificate is uploaded.
+        """
+        return pulumi.get(self, "signed_certificate_pem")
+
+    @_builtins.property
+    @pulumi.getter(name="signedCertificateSerialNumber")
+    def signed_certificate_serial_number(self) -> _builtins.str:
+        """
+        Serial number of the signed certificate in hex format. Null until a certificate is uploaded.
+        """
+        return pulumi.get(self, "signed_certificate_serial_number")
+
+    @_builtins.property
+    @pulumi.getter(name="signedCertificateSha256Fingerprint")
+    def signed_certificate_sha256_fingerprint(self) -> _builtins.str:
+        """
+        SHA-256 fingerprint of the signed certificate. Null until a certificate is uploaded.
+        """
+        return pulumi.get(self, "signed_certificate_sha256_fingerprint")
+
+    @_builtins.property
+    @pulumi.getter(name="trustChainPem")
+    def trust_chain_pem(self) -> _builtins.str:
+        """
+        PEM-encoded trust chain uploaded alongside the signed certificate. Null if none was uploaded.
+        """
+        return pulumi.get(self, "trust_chain_pem")
+
+
+@pulumi.output_type
+class GetCloudcertificatesLineagesLineageHeadResult(dict):
+    def __init__(__self__, *,
+                 algorithms: Mapping[str, 'outputs.GetCloudcertificatesLineagesLineageHeadAlgorithmsResult'],
+                 first_promoted_to_production_time: _builtins.str,
+                 generation_created_by: _builtins.str,
+                 generation_created_time: _builtins.str,
+                 generation_id: _builtins.int,
+                 generation_modified_by: _builtins.str,
+                 generation_modified_time: _builtins.str,
+                 generation_status: _builtins.str):
+        """
+        :param Mapping[str, 'GetCloudcertificatesLineagesLineageHeadAlgorithmsArgs'] algorithms: Per key-type (RSA or ECDSA) certificate details for this generation, keyed by key_type. Populated only when expand_generations is true.
+        :param _builtins.str first_promoted_to_production_time: Time the generation was first promoted to production, in RFC3339 format. Null if never promoted, or if not requested via expand_generations.
+        :param _builtins.str generation_created_by: Username of the person who created this generation. Populated only when expand_generations is true.
+        :param _builtins.str generation_created_time: Time the generation was created, in RFC3339 format. Populated only when expand_generations is true.
+        :param _builtins.int generation_id: Unique identifier of the generation.
+        :param _builtins.str generation_modified_by: Username of the person who last modified this generation. Populated only when expand_generations is true.
+        :param _builtins.str generation_modified_time: Time the generation was last modified, in RFC3339 format. Null if not requested via expand_generations, or if the generation has never been modified since creation.
+        :param _builtins.str generation_status: Status of the generation.
+        """
+        pulumi.set(__self__, "algorithms", algorithms)
+        pulumi.set(__self__, "first_promoted_to_production_time", first_promoted_to_production_time)
+        pulumi.set(__self__, "generation_created_by", generation_created_by)
+        pulumi.set(__self__, "generation_created_time", generation_created_time)
+        pulumi.set(__self__, "generation_id", generation_id)
+        pulumi.set(__self__, "generation_modified_by", generation_modified_by)
+        pulumi.set(__self__, "generation_modified_time", generation_modified_time)
+        pulumi.set(__self__, "generation_status", generation_status)
+
+    @_builtins.property
+    @pulumi.getter
+    def algorithms(self) -> Mapping[str, 'outputs.GetCloudcertificatesLineagesLineageHeadAlgorithmsResult']:
+        """
+        Per key-type (RSA or ECDSA) certificate details for this generation, keyed by key_type. Populated only when expand_generations is true.
+        """
+        return pulumi.get(self, "algorithms")
+
+    @_builtins.property
+    @pulumi.getter(name="firstPromotedToProductionTime")
+    def first_promoted_to_production_time(self) -> _builtins.str:
+        """
+        Time the generation was first promoted to production, in RFC3339 format. Null if never promoted, or if not requested via expand_generations.
+        """
+        return pulumi.get(self, "first_promoted_to_production_time")
+
+    @_builtins.property
+    @pulumi.getter(name="generationCreatedBy")
+    def generation_created_by(self) -> _builtins.str:
+        """
+        Username of the person who created this generation. Populated only when expand_generations is true.
+        """
+        return pulumi.get(self, "generation_created_by")
+
+    @_builtins.property
+    @pulumi.getter(name="generationCreatedTime")
+    def generation_created_time(self) -> _builtins.str:
+        """
+        Time the generation was created, in RFC3339 format. Populated only when expand_generations is true.
+        """
+        return pulumi.get(self, "generation_created_time")
+
+    @_builtins.property
+    @pulumi.getter(name="generationId")
+    def generation_id(self) -> _builtins.int:
+        """
+        Unique identifier of the generation.
+        """
+        return pulumi.get(self, "generation_id")
+
+    @_builtins.property
+    @pulumi.getter(name="generationModifiedBy")
+    def generation_modified_by(self) -> _builtins.str:
+        """
+        Username of the person who last modified this generation. Populated only when expand_generations is true.
+        """
+        return pulumi.get(self, "generation_modified_by")
+
+    @_builtins.property
+    @pulumi.getter(name="generationModifiedTime")
+    def generation_modified_time(self) -> _builtins.str:
+        """
+        Time the generation was last modified, in RFC3339 format. Null if not requested via expand_generations, or if the generation has never been modified since creation.
+        """
+        return pulumi.get(self, "generation_modified_time")
+
+    @_builtins.property
+    @pulumi.getter(name="generationStatus")
+    def generation_status(self) -> _builtins.str:
+        """
+        Status of the generation.
+        """
+        return pulumi.get(self, "generation_status")
+
+
+@pulumi.output_type
+class GetCloudcertificatesLineagesLineageHeadAlgorithmsResult(dict):
+    def __init__(__self__, *,
+                 algorithm_instance_created_by: _builtins.str,
+                 algorithm_instance_created_time: _builtins.str,
+                 algorithm_instance_id: _builtins.int,
+                 algorithm_instance_modified_by: _builtins.str,
+                 algorithm_instance_modified_time: _builtins.str,
+                 certificate_status: _builtins.str,
+                 csr_expiration_date: _builtins.str,
+                 csr_pem: _builtins.str,
+                 signed_certificate_issuer: _builtins.str,
+                 signed_certificate_not_valid_after_date: _builtins.str,
+                 signed_certificate_not_valid_before_date: _builtins.str,
+                 signed_certificate_pem: _builtins.str,
+                 signed_certificate_serial_number: _builtins.str,
+                 signed_certificate_sha256_fingerprint: _builtins.str,
+                 trust_chain_pem: _builtins.str):
+        """
+        :param _builtins.str algorithm_instance_created_by: Username of the person who created the algorithm instance.
+        :param _builtins.str algorithm_instance_created_time: Time the algorithm instance was created, in RFC3339 format.
+        :param _builtins.int algorithm_instance_id: Unique identifier of the algorithm instance.
+        :param _builtins.str algorithm_instance_modified_by: Username of the person who last modified the algorithm instance. Null if never modified.
+        :param _builtins.str algorithm_instance_modified_time: Time the algorithm instance was last modified, in RFC3339 format. Null if never modified.
+        :param _builtins.str certificate_status: Status of the certificate for this key type: `CSR_READY`, `CERT_UPLOAD_PROCESSING`, `READY_FOR_USE`, or `ABANDONED`.
+        :param _builtins.str csr_expiration_date: Date when the CSR expires, in RFC3339 format.
+        :param _builtins.str csr_pem: PEM-encoded certificate signing request.
+        :param _builtins.str signed_certificate_issuer: Issuer field of the signed certificate. Null until a certificate is uploaded.
+        :param _builtins.str signed_certificate_not_valid_after_date: Expiration date of the signed certificate, in RFC3339 format. Null until a certificate is uploaded.
+        :param _builtins.str signed_certificate_not_valid_before_date: Start of validity of the signed certificate, in RFC3339 format. Null until a certificate is uploaded.
+        :param _builtins.str signed_certificate_pem: PEM-encoded signed certificate. Null until a certificate is uploaded.
+        :param _builtins.str signed_certificate_serial_number: Serial number of the signed certificate in hex format. Null until a certificate is uploaded.
+        :param _builtins.str signed_certificate_sha256_fingerprint: SHA-256 fingerprint of the signed certificate. Null until a certificate is uploaded.
+        :param _builtins.str trust_chain_pem: PEM-encoded trust chain uploaded alongside the signed certificate. Null if none was uploaded.
+        """
+        pulumi.set(__self__, "algorithm_instance_created_by", algorithm_instance_created_by)
+        pulumi.set(__self__, "algorithm_instance_created_time", algorithm_instance_created_time)
+        pulumi.set(__self__, "algorithm_instance_id", algorithm_instance_id)
+        pulumi.set(__self__, "algorithm_instance_modified_by", algorithm_instance_modified_by)
+        pulumi.set(__self__, "algorithm_instance_modified_time", algorithm_instance_modified_time)
+        pulumi.set(__self__, "certificate_status", certificate_status)
+        pulumi.set(__self__, "csr_expiration_date", csr_expiration_date)
+        pulumi.set(__self__, "csr_pem", csr_pem)
+        pulumi.set(__self__, "signed_certificate_issuer", signed_certificate_issuer)
+        pulumi.set(__self__, "signed_certificate_not_valid_after_date", signed_certificate_not_valid_after_date)
+        pulumi.set(__self__, "signed_certificate_not_valid_before_date", signed_certificate_not_valid_before_date)
+        pulumi.set(__self__, "signed_certificate_pem", signed_certificate_pem)
+        pulumi.set(__self__, "signed_certificate_serial_number", signed_certificate_serial_number)
+        pulumi.set(__self__, "signed_certificate_sha256_fingerprint", signed_certificate_sha256_fingerprint)
+        pulumi.set(__self__, "trust_chain_pem", trust_chain_pem)
+
+    @_builtins.property
+    @pulumi.getter(name="algorithmInstanceCreatedBy")
+    def algorithm_instance_created_by(self) -> _builtins.str:
+        """
+        Username of the person who created the algorithm instance.
+        """
+        return pulumi.get(self, "algorithm_instance_created_by")
+
+    @_builtins.property
+    @pulumi.getter(name="algorithmInstanceCreatedTime")
+    def algorithm_instance_created_time(self) -> _builtins.str:
+        """
+        Time the algorithm instance was created, in RFC3339 format.
+        """
+        return pulumi.get(self, "algorithm_instance_created_time")
+
+    @_builtins.property
+    @pulumi.getter(name="algorithmInstanceId")
+    def algorithm_instance_id(self) -> _builtins.int:
+        """
+        Unique identifier of the algorithm instance.
+        """
+        return pulumi.get(self, "algorithm_instance_id")
+
+    @_builtins.property
+    @pulumi.getter(name="algorithmInstanceModifiedBy")
+    def algorithm_instance_modified_by(self) -> _builtins.str:
+        """
+        Username of the person who last modified the algorithm instance. Null if never modified.
+        """
+        return pulumi.get(self, "algorithm_instance_modified_by")
+
+    @_builtins.property
+    @pulumi.getter(name="algorithmInstanceModifiedTime")
+    def algorithm_instance_modified_time(self) -> _builtins.str:
+        """
+        Time the algorithm instance was last modified, in RFC3339 format. Null if never modified.
+        """
+        return pulumi.get(self, "algorithm_instance_modified_time")
+
+    @_builtins.property
+    @pulumi.getter(name="certificateStatus")
+    def certificate_status(self) -> _builtins.str:
+        """
+        Status of the certificate for this key type: `CSR_READY`, `CERT_UPLOAD_PROCESSING`, `READY_FOR_USE`, or `ABANDONED`.
+        """
+        return pulumi.get(self, "certificate_status")
+
+    @_builtins.property
+    @pulumi.getter(name="csrExpirationDate")
+    def csr_expiration_date(self) -> _builtins.str:
+        """
+        Date when the CSR expires, in RFC3339 format.
+        """
+        return pulumi.get(self, "csr_expiration_date")
+
+    @_builtins.property
+    @pulumi.getter(name="csrPem")
+    def csr_pem(self) -> _builtins.str:
+        """
+        PEM-encoded certificate signing request.
+        """
+        return pulumi.get(self, "csr_pem")
+
+    @_builtins.property
+    @pulumi.getter(name="signedCertificateIssuer")
+    def signed_certificate_issuer(self) -> _builtins.str:
+        """
+        Issuer field of the signed certificate. Null until a certificate is uploaded.
+        """
+        return pulumi.get(self, "signed_certificate_issuer")
+
+    @_builtins.property
+    @pulumi.getter(name="signedCertificateNotValidAfterDate")
+    def signed_certificate_not_valid_after_date(self) -> _builtins.str:
+        """
+        Expiration date of the signed certificate, in RFC3339 format. Null until a certificate is uploaded.
+        """
+        return pulumi.get(self, "signed_certificate_not_valid_after_date")
+
+    @_builtins.property
+    @pulumi.getter(name="signedCertificateNotValidBeforeDate")
+    def signed_certificate_not_valid_before_date(self) -> _builtins.str:
+        """
+        Start of validity of the signed certificate, in RFC3339 format. Null until a certificate is uploaded.
+        """
+        return pulumi.get(self, "signed_certificate_not_valid_before_date")
+
+    @_builtins.property
+    @pulumi.getter(name="signedCertificatePem")
+    def signed_certificate_pem(self) -> _builtins.str:
+        """
+        PEM-encoded signed certificate. Null until a certificate is uploaded.
+        """
+        return pulumi.get(self, "signed_certificate_pem")
+
+    @_builtins.property
+    @pulumi.getter(name="signedCertificateSerialNumber")
+    def signed_certificate_serial_number(self) -> _builtins.str:
+        """
+        Serial number of the signed certificate in hex format. Null until a certificate is uploaded.
+        """
+        return pulumi.get(self, "signed_certificate_serial_number")
+
+    @_builtins.property
+    @pulumi.getter(name="signedCertificateSha256Fingerprint")
+    def signed_certificate_sha256_fingerprint(self) -> _builtins.str:
+        """
+        SHA-256 fingerprint of the signed certificate. Null until a certificate is uploaded.
+        """
+        return pulumi.get(self, "signed_certificate_sha256_fingerprint")
+
+    @_builtins.property
+    @pulumi.getter(name="trustChainPem")
+    def trust_chain_pem(self) -> _builtins.str:
+        """
+        PEM-encoded trust chain uploaded alongside the signed certificate. Null if none was uploaded.
+        """
+        return pulumi.get(self, "trust_chain_pem")
+
+
+@pulumi.output_type
+class GetCloudcertificatesLineagesLineagePreviousProductionResult(dict):
+    def __init__(__self__, *,
+                 algorithms: Mapping[str, 'outputs.GetCloudcertificatesLineagesLineagePreviousProductionAlgorithmsResult'],
+                 first_promoted_to_production_time: _builtins.str,
+                 generation_created_by: _builtins.str,
+                 generation_created_time: _builtins.str,
+                 generation_id: _builtins.int,
+                 generation_modified_by: _builtins.str,
+                 generation_modified_time: _builtins.str,
+                 generation_status: _builtins.str):
+        """
+        :param Mapping[str, 'GetCloudcertificatesLineagesLineagePreviousProductionAlgorithmsArgs'] algorithms: Per key-type (RSA or ECDSA) certificate details for this generation, keyed by key_type. Populated only when expand_generations is true.
+        :param _builtins.str first_promoted_to_production_time: Time the generation was first promoted to production, in RFC3339 format. Null if never promoted, or if not requested via expand_generations.
+        :param _builtins.str generation_created_by: Username of the person who created this generation. Populated only when expand_generations is true.
+        :param _builtins.str generation_created_time: Time the generation was created, in RFC3339 format. Populated only when expand_generations is true.
+        :param _builtins.int generation_id: Unique identifier of the generation.
+        :param _builtins.str generation_modified_by: Username of the person who last modified this generation. Populated only when expand_generations is true.
+        :param _builtins.str generation_modified_time: Time the generation was last modified, in RFC3339 format. Null if not requested via expand_generations, or if the generation has never been modified since creation.
+        :param _builtins.str generation_status: Status of the generation.
+        """
+        pulumi.set(__self__, "algorithms", algorithms)
+        pulumi.set(__self__, "first_promoted_to_production_time", first_promoted_to_production_time)
+        pulumi.set(__self__, "generation_created_by", generation_created_by)
+        pulumi.set(__self__, "generation_created_time", generation_created_time)
+        pulumi.set(__self__, "generation_id", generation_id)
+        pulumi.set(__self__, "generation_modified_by", generation_modified_by)
+        pulumi.set(__self__, "generation_modified_time", generation_modified_time)
+        pulumi.set(__self__, "generation_status", generation_status)
+
+    @_builtins.property
+    @pulumi.getter
+    def algorithms(self) -> Mapping[str, 'outputs.GetCloudcertificatesLineagesLineagePreviousProductionAlgorithmsResult']:
+        """
+        Per key-type (RSA or ECDSA) certificate details for this generation, keyed by key_type. Populated only when expand_generations is true.
+        """
+        return pulumi.get(self, "algorithms")
+
+    @_builtins.property
+    @pulumi.getter(name="firstPromotedToProductionTime")
+    def first_promoted_to_production_time(self) -> _builtins.str:
+        """
+        Time the generation was first promoted to production, in RFC3339 format. Null if never promoted, or if not requested via expand_generations.
+        """
+        return pulumi.get(self, "first_promoted_to_production_time")
+
+    @_builtins.property
+    @pulumi.getter(name="generationCreatedBy")
+    def generation_created_by(self) -> _builtins.str:
+        """
+        Username of the person who created this generation. Populated only when expand_generations is true.
+        """
+        return pulumi.get(self, "generation_created_by")
+
+    @_builtins.property
+    @pulumi.getter(name="generationCreatedTime")
+    def generation_created_time(self) -> _builtins.str:
+        """
+        Time the generation was created, in RFC3339 format. Populated only when expand_generations is true.
+        """
+        return pulumi.get(self, "generation_created_time")
+
+    @_builtins.property
+    @pulumi.getter(name="generationId")
+    def generation_id(self) -> _builtins.int:
+        """
+        Unique identifier of the generation.
+        """
+        return pulumi.get(self, "generation_id")
+
+    @_builtins.property
+    @pulumi.getter(name="generationModifiedBy")
+    def generation_modified_by(self) -> _builtins.str:
+        """
+        Username of the person who last modified this generation. Populated only when expand_generations is true.
+        """
+        return pulumi.get(self, "generation_modified_by")
+
+    @_builtins.property
+    @pulumi.getter(name="generationModifiedTime")
+    def generation_modified_time(self) -> _builtins.str:
+        """
+        Time the generation was last modified, in RFC3339 format. Null if not requested via expand_generations, or if the generation has never been modified since creation.
+        """
+        return pulumi.get(self, "generation_modified_time")
+
+    @_builtins.property
+    @pulumi.getter(name="generationStatus")
+    def generation_status(self) -> _builtins.str:
+        """
+        Status of the generation.
+        """
+        return pulumi.get(self, "generation_status")
+
+
+@pulumi.output_type
+class GetCloudcertificatesLineagesLineagePreviousProductionAlgorithmsResult(dict):
+    def __init__(__self__, *,
+                 algorithm_instance_created_by: _builtins.str,
+                 algorithm_instance_created_time: _builtins.str,
+                 algorithm_instance_id: _builtins.int,
+                 algorithm_instance_modified_by: _builtins.str,
+                 algorithm_instance_modified_time: _builtins.str,
+                 certificate_status: _builtins.str,
+                 csr_expiration_date: _builtins.str,
+                 csr_pem: _builtins.str,
+                 signed_certificate_issuer: _builtins.str,
+                 signed_certificate_not_valid_after_date: _builtins.str,
+                 signed_certificate_not_valid_before_date: _builtins.str,
+                 signed_certificate_pem: _builtins.str,
+                 signed_certificate_serial_number: _builtins.str,
+                 signed_certificate_sha256_fingerprint: _builtins.str,
+                 trust_chain_pem: _builtins.str):
+        """
+        :param _builtins.str algorithm_instance_created_by: Username of the person who created the algorithm instance.
+        :param _builtins.str algorithm_instance_created_time: Time the algorithm instance was created, in RFC3339 format.
+        :param _builtins.int algorithm_instance_id: Unique identifier of the algorithm instance.
+        :param _builtins.str algorithm_instance_modified_by: Username of the person who last modified the algorithm instance. Null if never modified.
+        :param _builtins.str algorithm_instance_modified_time: Time the algorithm instance was last modified, in RFC3339 format. Null if never modified.
+        :param _builtins.str certificate_status: Status of the certificate for this key type: `CSR_READY`, `CERT_UPLOAD_PROCESSING`, `READY_FOR_USE`, or `ABANDONED`.
+        :param _builtins.str csr_expiration_date: Date when the CSR expires, in RFC3339 format.
+        :param _builtins.str csr_pem: PEM-encoded certificate signing request.
+        :param _builtins.str signed_certificate_issuer: Issuer field of the signed certificate. Null until a certificate is uploaded.
+        :param _builtins.str signed_certificate_not_valid_after_date: Expiration date of the signed certificate, in RFC3339 format. Null until a certificate is uploaded.
+        :param _builtins.str signed_certificate_not_valid_before_date: Start of validity of the signed certificate, in RFC3339 format. Null until a certificate is uploaded.
+        :param _builtins.str signed_certificate_pem: PEM-encoded signed certificate. Null until a certificate is uploaded.
+        :param _builtins.str signed_certificate_serial_number: Serial number of the signed certificate in hex format. Null until a certificate is uploaded.
+        :param _builtins.str signed_certificate_sha256_fingerprint: SHA-256 fingerprint of the signed certificate. Null until a certificate is uploaded.
+        :param _builtins.str trust_chain_pem: PEM-encoded trust chain uploaded alongside the signed certificate. Null if none was uploaded.
+        """
+        pulumi.set(__self__, "algorithm_instance_created_by", algorithm_instance_created_by)
+        pulumi.set(__self__, "algorithm_instance_created_time", algorithm_instance_created_time)
+        pulumi.set(__self__, "algorithm_instance_id", algorithm_instance_id)
+        pulumi.set(__self__, "algorithm_instance_modified_by", algorithm_instance_modified_by)
+        pulumi.set(__self__, "algorithm_instance_modified_time", algorithm_instance_modified_time)
+        pulumi.set(__self__, "certificate_status", certificate_status)
+        pulumi.set(__self__, "csr_expiration_date", csr_expiration_date)
+        pulumi.set(__self__, "csr_pem", csr_pem)
+        pulumi.set(__self__, "signed_certificate_issuer", signed_certificate_issuer)
+        pulumi.set(__self__, "signed_certificate_not_valid_after_date", signed_certificate_not_valid_after_date)
+        pulumi.set(__self__, "signed_certificate_not_valid_before_date", signed_certificate_not_valid_before_date)
+        pulumi.set(__self__, "signed_certificate_pem", signed_certificate_pem)
+        pulumi.set(__self__, "signed_certificate_serial_number", signed_certificate_serial_number)
+        pulumi.set(__self__, "signed_certificate_sha256_fingerprint", signed_certificate_sha256_fingerprint)
+        pulumi.set(__self__, "trust_chain_pem", trust_chain_pem)
+
+    @_builtins.property
+    @pulumi.getter(name="algorithmInstanceCreatedBy")
+    def algorithm_instance_created_by(self) -> _builtins.str:
+        """
+        Username of the person who created the algorithm instance.
+        """
+        return pulumi.get(self, "algorithm_instance_created_by")
+
+    @_builtins.property
+    @pulumi.getter(name="algorithmInstanceCreatedTime")
+    def algorithm_instance_created_time(self) -> _builtins.str:
+        """
+        Time the algorithm instance was created, in RFC3339 format.
+        """
+        return pulumi.get(self, "algorithm_instance_created_time")
+
+    @_builtins.property
+    @pulumi.getter(name="algorithmInstanceId")
+    def algorithm_instance_id(self) -> _builtins.int:
+        """
+        Unique identifier of the algorithm instance.
+        """
+        return pulumi.get(self, "algorithm_instance_id")
+
+    @_builtins.property
+    @pulumi.getter(name="algorithmInstanceModifiedBy")
+    def algorithm_instance_modified_by(self) -> _builtins.str:
+        """
+        Username of the person who last modified the algorithm instance. Null if never modified.
+        """
+        return pulumi.get(self, "algorithm_instance_modified_by")
+
+    @_builtins.property
+    @pulumi.getter(name="algorithmInstanceModifiedTime")
+    def algorithm_instance_modified_time(self) -> _builtins.str:
+        """
+        Time the algorithm instance was last modified, in RFC3339 format. Null if never modified.
+        """
+        return pulumi.get(self, "algorithm_instance_modified_time")
+
+    @_builtins.property
+    @pulumi.getter(name="certificateStatus")
+    def certificate_status(self) -> _builtins.str:
+        """
+        Status of the certificate for this key type: `CSR_READY`, `CERT_UPLOAD_PROCESSING`, `READY_FOR_USE`, or `ABANDONED`.
+        """
+        return pulumi.get(self, "certificate_status")
+
+    @_builtins.property
+    @pulumi.getter(name="csrExpirationDate")
+    def csr_expiration_date(self) -> _builtins.str:
+        """
+        Date when the CSR expires, in RFC3339 format.
+        """
+        return pulumi.get(self, "csr_expiration_date")
+
+    @_builtins.property
+    @pulumi.getter(name="csrPem")
+    def csr_pem(self) -> _builtins.str:
+        """
+        PEM-encoded certificate signing request.
+        """
+        return pulumi.get(self, "csr_pem")
+
+    @_builtins.property
+    @pulumi.getter(name="signedCertificateIssuer")
+    def signed_certificate_issuer(self) -> _builtins.str:
+        """
+        Issuer field of the signed certificate. Null until a certificate is uploaded.
+        """
+        return pulumi.get(self, "signed_certificate_issuer")
+
+    @_builtins.property
+    @pulumi.getter(name="signedCertificateNotValidAfterDate")
+    def signed_certificate_not_valid_after_date(self) -> _builtins.str:
+        """
+        Expiration date of the signed certificate, in RFC3339 format. Null until a certificate is uploaded.
+        """
+        return pulumi.get(self, "signed_certificate_not_valid_after_date")
+
+    @_builtins.property
+    @pulumi.getter(name="signedCertificateNotValidBeforeDate")
+    def signed_certificate_not_valid_before_date(self) -> _builtins.str:
+        """
+        Start of validity of the signed certificate, in RFC3339 format. Null until a certificate is uploaded.
+        """
+        return pulumi.get(self, "signed_certificate_not_valid_before_date")
+
+    @_builtins.property
+    @pulumi.getter(name="signedCertificatePem")
+    def signed_certificate_pem(self) -> _builtins.str:
+        """
+        PEM-encoded signed certificate. Null until a certificate is uploaded.
+        """
+        return pulumi.get(self, "signed_certificate_pem")
+
+    @_builtins.property
+    @pulumi.getter(name="signedCertificateSerialNumber")
+    def signed_certificate_serial_number(self) -> _builtins.str:
+        """
+        Serial number of the signed certificate in hex format. Null until a certificate is uploaded.
+        """
+        return pulumi.get(self, "signed_certificate_serial_number")
+
+    @_builtins.property
+    @pulumi.getter(name="signedCertificateSha256Fingerprint")
+    def signed_certificate_sha256_fingerprint(self) -> _builtins.str:
+        """
+        SHA-256 fingerprint of the signed certificate. Null until a certificate is uploaded.
+        """
+        return pulumi.get(self, "signed_certificate_sha256_fingerprint")
+
+    @_builtins.property
+    @pulumi.getter(name="trustChainPem")
+    def trust_chain_pem(self) -> _builtins.str:
+        """
+        PEM-encoded trust chain uploaded alongside the signed certificate. Null if none was uploaded.
+        """
+        return pulumi.get(self, "trust_chain_pem")
+
+
+@pulumi.output_type
+class GetCloudcertificatesLineagesLineageSigningTargetResult(dict):
+    def __init__(__self__, *,
+                 algorithms: Mapping[str, 'outputs.GetCloudcertificatesLineagesLineageSigningTargetAlgorithmsResult'],
+                 first_promoted_to_production_time: _builtins.str,
+                 generation_created_by: _builtins.str,
+                 generation_created_time: _builtins.str,
+                 generation_id: _builtins.int,
+                 generation_modified_by: _builtins.str,
+                 generation_modified_time: _builtins.str,
+                 generation_status: _builtins.str):
+        """
+        :param Mapping[str, 'GetCloudcertificatesLineagesLineageSigningTargetAlgorithmsArgs'] algorithms: Per key-type (RSA or ECDSA) certificate details for this generation, keyed by key_type. Populated only when expand_generations is true.
+        :param _builtins.str first_promoted_to_production_time: Time the generation was first promoted to production, in RFC3339 format. Null if never promoted, or if not requested via expand_generations.
+        :param _builtins.str generation_created_by: Username of the person who created this generation. Populated only when expand_generations is true.
+        :param _builtins.str generation_created_time: Time the generation was created, in RFC3339 format. Populated only when expand_generations is true.
+        :param _builtins.int generation_id: Unique identifier of the generation.
+        :param _builtins.str generation_modified_by: Username of the person who last modified this generation. Populated only when expand_generations is true.
+        :param _builtins.str generation_modified_time: Time the generation was last modified, in RFC3339 format. Null if not requested via expand_generations, or if the generation has never been modified since creation.
+        :param _builtins.str generation_status: Status of the generation.
+        """
+        pulumi.set(__self__, "algorithms", algorithms)
+        pulumi.set(__self__, "first_promoted_to_production_time", first_promoted_to_production_time)
+        pulumi.set(__self__, "generation_created_by", generation_created_by)
+        pulumi.set(__self__, "generation_created_time", generation_created_time)
+        pulumi.set(__self__, "generation_id", generation_id)
+        pulumi.set(__self__, "generation_modified_by", generation_modified_by)
+        pulumi.set(__self__, "generation_modified_time", generation_modified_time)
+        pulumi.set(__self__, "generation_status", generation_status)
+
+    @_builtins.property
+    @pulumi.getter
+    def algorithms(self) -> Mapping[str, 'outputs.GetCloudcertificatesLineagesLineageSigningTargetAlgorithmsResult']:
+        """
+        Per key-type (RSA or ECDSA) certificate details for this generation, keyed by key_type. Populated only when expand_generations is true.
+        """
+        return pulumi.get(self, "algorithms")
+
+    @_builtins.property
+    @pulumi.getter(name="firstPromotedToProductionTime")
+    def first_promoted_to_production_time(self) -> _builtins.str:
+        """
+        Time the generation was first promoted to production, in RFC3339 format. Null if never promoted, or if not requested via expand_generations.
+        """
+        return pulumi.get(self, "first_promoted_to_production_time")
+
+    @_builtins.property
+    @pulumi.getter(name="generationCreatedBy")
+    def generation_created_by(self) -> _builtins.str:
+        """
+        Username of the person who created this generation. Populated only when expand_generations is true.
+        """
+        return pulumi.get(self, "generation_created_by")
+
+    @_builtins.property
+    @pulumi.getter(name="generationCreatedTime")
+    def generation_created_time(self) -> _builtins.str:
+        """
+        Time the generation was created, in RFC3339 format. Populated only when expand_generations is true.
+        """
+        return pulumi.get(self, "generation_created_time")
+
+    @_builtins.property
+    @pulumi.getter(name="generationId")
+    def generation_id(self) -> _builtins.int:
+        """
+        Unique identifier of the generation.
+        """
+        return pulumi.get(self, "generation_id")
+
+    @_builtins.property
+    @pulumi.getter(name="generationModifiedBy")
+    def generation_modified_by(self) -> _builtins.str:
+        """
+        Username of the person who last modified this generation. Populated only when expand_generations is true.
+        """
+        return pulumi.get(self, "generation_modified_by")
+
+    @_builtins.property
+    @pulumi.getter(name="generationModifiedTime")
+    def generation_modified_time(self) -> _builtins.str:
+        """
+        Time the generation was last modified, in RFC3339 format. Null if not requested via expand_generations, or if the generation has never been modified since creation.
+        """
+        return pulumi.get(self, "generation_modified_time")
+
+    @_builtins.property
+    @pulumi.getter(name="generationStatus")
+    def generation_status(self) -> _builtins.str:
+        """
+        Status of the generation.
+        """
+        return pulumi.get(self, "generation_status")
+
+
+@pulumi.output_type
+class GetCloudcertificatesLineagesLineageSigningTargetAlgorithmsResult(dict):
+    def __init__(__self__, *,
+                 algorithm_instance_created_by: _builtins.str,
+                 algorithm_instance_created_time: _builtins.str,
+                 algorithm_instance_id: _builtins.int,
+                 algorithm_instance_modified_by: _builtins.str,
+                 algorithm_instance_modified_time: _builtins.str,
+                 certificate_status: _builtins.str,
+                 csr_expiration_date: _builtins.str,
+                 csr_pem: _builtins.str,
+                 signed_certificate_issuer: _builtins.str,
+                 signed_certificate_not_valid_after_date: _builtins.str,
+                 signed_certificate_not_valid_before_date: _builtins.str,
+                 signed_certificate_pem: _builtins.str,
+                 signed_certificate_serial_number: _builtins.str,
+                 signed_certificate_sha256_fingerprint: _builtins.str,
+                 trust_chain_pem: _builtins.str):
+        """
+        :param _builtins.str algorithm_instance_created_by: Username of the person who created the algorithm instance.
+        :param _builtins.str algorithm_instance_created_time: Time the algorithm instance was created, in RFC3339 format.
+        :param _builtins.int algorithm_instance_id: Unique identifier of the algorithm instance.
+        :param _builtins.str algorithm_instance_modified_by: Username of the person who last modified the algorithm instance. Null if never modified.
+        :param _builtins.str algorithm_instance_modified_time: Time the algorithm instance was last modified, in RFC3339 format. Null if never modified.
+        :param _builtins.str certificate_status: Status of the certificate for this key type: `CSR_READY`, `CERT_UPLOAD_PROCESSING`, `READY_FOR_USE`, or `ABANDONED`.
+        :param _builtins.str csr_expiration_date: Date when the CSR expires, in RFC3339 format.
+        :param _builtins.str csr_pem: PEM-encoded certificate signing request.
+        :param _builtins.str signed_certificate_issuer: Issuer field of the signed certificate. Null until a certificate is uploaded.
+        :param _builtins.str signed_certificate_not_valid_after_date: Expiration date of the signed certificate, in RFC3339 format. Null until a certificate is uploaded.
+        :param _builtins.str signed_certificate_not_valid_before_date: Start of validity of the signed certificate, in RFC3339 format. Null until a certificate is uploaded.
+        :param _builtins.str signed_certificate_pem: PEM-encoded signed certificate. Null until a certificate is uploaded.
+        :param _builtins.str signed_certificate_serial_number: Serial number of the signed certificate in hex format. Null until a certificate is uploaded.
+        :param _builtins.str signed_certificate_sha256_fingerprint: SHA-256 fingerprint of the signed certificate. Null until a certificate is uploaded.
+        :param _builtins.str trust_chain_pem: PEM-encoded trust chain uploaded alongside the signed certificate. Null if none was uploaded.
+        """
+        pulumi.set(__self__, "algorithm_instance_created_by", algorithm_instance_created_by)
+        pulumi.set(__self__, "algorithm_instance_created_time", algorithm_instance_created_time)
+        pulumi.set(__self__, "algorithm_instance_id", algorithm_instance_id)
+        pulumi.set(__self__, "algorithm_instance_modified_by", algorithm_instance_modified_by)
+        pulumi.set(__self__, "algorithm_instance_modified_time", algorithm_instance_modified_time)
+        pulumi.set(__self__, "certificate_status", certificate_status)
+        pulumi.set(__self__, "csr_expiration_date", csr_expiration_date)
+        pulumi.set(__self__, "csr_pem", csr_pem)
+        pulumi.set(__self__, "signed_certificate_issuer", signed_certificate_issuer)
+        pulumi.set(__self__, "signed_certificate_not_valid_after_date", signed_certificate_not_valid_after_date)
+        pulumi.set(__self__, "signed_certificate_not_valid_before_date", signed_certificate_not_valid_before_date)
+        pulumi.set(__self__, "signed_certificate_pem", signed_certificate_pem)
+        pulumi.set(__self__, "signed_certificate_serial_number", signed_certificate_serial_number)
+        pulumi.set(__self__, "signed_certificate_sha256_fingerprint", signed_certificate_sha256_fingerprint)
+        pulumi.set(__self__, "trust_chain_pem", trust_chain_pem)
+
+    @_builtins.property
+    @pulumi.getter(name="algorithmInstanceCreatedBy")
+    def algorithm_instance_created_by(self) -> _builtins.str:
+        """
+        Username of the person who created the algorithm instance.
+        """
+        return pulumi.get(self, "algorithm_instance_created_by")
+
+    @_builtins.property
+    @pulumi.getter(name="algorithmInstanceCreatedTime")
+    def algorithm_instance_created_time(self) -> _builtins.str:
+        """
+        Time the algorithm instance was created, in RFC3339 format.
+        """
+        return pulumi.get(self, "algorithm_instance_created_time")
+
+    @_builtins.property
+    @pulumi.getter(name="algorithmInstanceId")
+    def algorithm_instance_id(self) -> _builtins.int:
+        """
+        Unique identifier of the algorithm instance.
+        """
+        return pulumi.get(self, "algorithm_instance_id")
+
+    @_builtins.property
+    @pulumi.getter(name="algorithmInstanceModifiedBy")
+    def algorithm_instance_modified_by(self) -> _builtins.str:
+        """
+        Username of the person who last modified the algorithm instance. Null if never modified.
+        """
+        return pulumi.get(self, "algorithm_instance_modified_by")
+
+    @_builtins.property
+    @pulumi.getter(name="algorithmInstanceModifiedTime")
+    def algorithm_instance_modified_time(self) -> _builtins.str:
+        """
+        Time the algorithm instance was last modified, in RFC3339 format. Null if never modified.
+        """
+        return pulumi.get(self, "algorithm_instance_modified_time")
+
+    @_builtins.property
+    @pulumi.getter(name="certificateStatus")
+    def certificate_status(self) -> _builtins.str:
+        """
+        Status of the certificate for this key type: `CSR_READY`, `CERT_UPLOAD_PROCESSING`, `READY_FOR_USE`, or `ABANDONED`.
+        """
+        return pulumi.get(self, "certificate_status")
+
+    @_builtins.property
+    @pulumi.getter(name="csrExpirationDate")
+    def csr_expiration_date(self) -> _builtins.str:
+        """
+        Date when the CSR expires, in RFC3339 format.
+        """
+        return pulumi.get(self, "csr_expiration_date")
+
+    @_builtins.property
+    @pulumi.getter(name="csrPem")
+    def csr_pem(self) -> _builtins.str:
+        """
+        PEM-encoded certificate signing request.
+        """
+        return pulumi.get(self, "csr_pem")
+
+    @_builtins.property
+    @pulumi.getter(name="signedCertificateIssuer")
+    def signed_certificate_issuer(self) -> _builtins.str:
+        """
+        Issuer field of the signed certificate. Null until a certificate is uploaded.
+        """
+        return pulumi.get(self, "signed_certificate_issuer")
+
+    @_builtins.property
+    @pulumi.getter(name="signedCertificateNotValidAfterDate")
+    def signed_certificate_not_valid_after_date(self) -> _builtins.str:
+        """
+        Expiration date of the signed certificate, in RFC3339 format. Null until a certificate is uploaded.
+        """
+        return pulumi.get(self, "signed_certificate_not_valid_after_date")
+
+    @_builtins.property
+    @pulumi.getter(name="signedCertificateNotValidBeforeDate")
+    def signed_certificate_not_valid_before_date(self) -> _builtins.str:
+        """
+        Start of validity of the signed certificate, in RFC3339 format. Null until a certificate is uploaded.
+        """
+        return pulumi.get(self, "signed_certificate_not_valid_before_date")
+
+    @_builtins.property
+    @pulumi.getter(name="signedCertificatePem")
+    def signed_certificate_pem(self) -> _builtins.str:
+        """
+        PEM-encoded signed certificate. Null until a certificate is uploaded.
+        """
+        return pulumi.get(self, "signed_certificate_pem")
+
+    @_builtins.property
+    @pulumi.getter(name="signedCertificateSerialNumber")
+    def signed_certificate_serial_number(self) -> _builtins.str:
+        """
+        Serial number of the signed certificate in hex format. Null until a certificate is uploaded.
+        """
+        return pulumi.get(self, "signed_certificate_serial_number")
+
+    @_builtins.property
+    @pulumi.getter(name="signedCertificateSha256Fingerprint")
+    def signed_certificate_sha256_fingerprint(self) -> _builtins.str:
+        """
+        SHA-256 fingerprint of the signed certificate. Null until a certificate is uploaded.
+        """
+        return pulumi.get(self, "signed_certificate_sha256_fingerprint")
+
+    @_builtins.property
+    @pulumi.getter(name="trustChainPem")
+    def trust_chain_pem(self) -> _builtins.str:
+        """
+        PEM-encoded trust chain uploaded alongside the signed certificate. Null if none was uploaded.
+        """
+        return pulumi.get(self, "trust_chain_pem")
+
+
+@pulumi.output_type
+class GetCloudcertificatesLineagesLineageSubjectResult(dict):
+    def __init__(__self__, *,
+                 common_name: _builtins.str,
+                 country: _builtins.str,
+                 locality: _builtins.str,
+                 organization: _builtins.str,
+                 organizational_unit: _builtins.str,
+                 state: _builtins.str):
+        """
+        :param _builtins.str common_name: Common name (CN). Null if not provided.
+        :param _builtins.str country: Two-letter ISO 3166 country code (C). Null if not provided.
+        :param _builtins.str locality: Locality or city name (L). Null if not provided.
+        :param _builtins.str organization: Organization (O). Null if not provided.
+        :param _builtins.str organizational_unit: Organizational unit (OU). Null if not provided.
+        :param _builtins.str state: State or province name (ST). Null if not provided.
+        """
+        pulumi.set(__self__, "common_name", common_name)
+        pulumi.set(__self__, "country", country)
+        pulumi.set(__self__, "locality", locality)
+        pulumi.set(__self__, "organization", organization)
+        pulumi.set(__self__, "organizational_unit", organizational_unit)
+        pulumi.set(__self__, "state", state)
+
+    @_builtins.property
+    @pulumi.getter(name="commonName")
+    def common_name(self) -> _builtins.str:
+        """
+        Common name (CN). Null if not provided.
+        """
+        return pulumi.get(self, "common_name")
+
+    @_builtins.property
+    @pulumi.getter
+    def country(self) -> _builtins.str:
+        """
+        Two-letter ISO 3166 country code (C). Null if not provided.
+        """
+        return pulumi.get(self, "country")
+
+    @_builtins.property
+    @pulumi.getter
+    def locality(self) -> _builtins.str:
+        """
+        Locality or city name (L). Null if not provided.
+        """
+        return pulumi.get(self, "locality")
+
+    @_builtins.property
+    @pulumi.getter
+    def organization(self) -> _builtins.str:
+        """
+        Organization (O). Null if not provided.
+        """
+        return pulumi.get(self, "organization")
+
+    @_builtins.property
+    @pulumi.getter(name="organizationalUnit")
+    def organizational_unit(self) -> _builtins.str:
+        """
+        Organizational unit (OU). Null if not provided.
+        """
+        return pulumi.get(self, "organizational_unit")
+
+    @_builtins.property
+    @pulumi.getter
+    def state(self) -> _builtins.str:
+        """
+        State or province name (ST). Null if not provided.
+        """
+        return pulumi.get(self, "state")
 
 
 @pulumi.output_type
@@ -38806,6 +44659,9 @@ class GetPropertyHostnamesDiffHostnameResult(dict):
 @pulumi.output_type
 class GetPropertyHostnamesHostnameResult(dict):
     def __init__(__self__, *,
+                 ccm_cert_id: _builtins.str,
+                 ccm_cert_link: _builtins.str,
+                 ccm_cert_status: Sequence['outputs.GetPropertyHostnamesHostnameCcmCertStatusResult'],
                  ccm_cert_statuses: Sequence['outputs.GetPropertyHostnamesHostnameCcmCertStatusResult'],
                  ccm_certificates: Sequence['outputs.GetPropertyHostnamesHostnameCcmCertificateResult'],
                  cert_provisioning_type: _builtins.str,
@@ -38818,7 +44674,10 @@ class GetPropertyHostnamesHostnameResult(dict):
                  mtls: Sequence['outputs.GetPropertyHostnamesHostnameMtlResult'],
                  tls_configurations: Sequence['outputs.GetPropertyHostnamesHostnameTlsConfigurationResult']):
         """
-        :param Sequence['GetPropertyHostnamesHostnameCcmCertStatusArgs'] ccm_cert_statuses: CCM certificate deployment status for RSA and ECDSA certificates.
+        :param _builtins.str ccm_cert_id: The certificate lineage ID of the Cloud Certificate Manager (CCM) certificate bound to the hostname.
+        :param _builtins.str ccm_cert_link: The link to the Cloud Certificate Manager (CCM) certificate lineage bound to the hostname.
+        :param Sequence['GetPropertyHostnamesHostnameCcmCertStatusArgs'] ccm_cert_status: CCM certificate deployment status for RSA and ECDSA certificates.
+        :param Sequence['GetPropertyHostnamesHostnameCcmCertStatusArgs'] ccm_cert_statuses: The deployment statuses of the Cloud Certificate Manager (CCM) certificate lineage bound to the hostname are listed by key type and network.
         :param Sequence['GetPropertyHostnamesHostnameCcmCertificateArgs'] ccm_certificates: Identifiers for the RSA and ECDSA certificates created with Cloud Certificate Manager (CCM).
         :param _builtins.str cert_provisioning_type: Indicates the certificate's provisioning type. Either `CPS_MANAGED` for the certificates created with the Certificate Provisioning System (CPS) API, `CCM` for the certificates created with the Cloud Certificate Manager (CCM) API, or `DEFAULT` for the Domain Validation (DV) certificates created automatically. Note that you can't specify the `DEFAULT` value if your property hostname uses the `akamaized.net` domain suffix.
         :param _builtins.str cname_from: The hostname that your end users see, indicated by the Host header in end user requests.
@@ -38829,6 +44688,9 @@ class GetPropertyHostnamesHostnameResult(dict):
         :param Sequence['GetPropertyHostnamesHostnameMtlArgs'] mtls: Mutual TLS configuration for the hostnames created with Cloud Certificate Manager (CCM).
         :param Sequence['GetPropertyHostnamesHostnameTlsConfigurationArgs'] tls_configurations: TLS configuration settings applicable to the Cloud Certificate Manager (CCM) hostnames.
         """
+        pulumi.set(__self__, "ccm_cert_id", ccm_cert_id)
+        pulumi.set(__self__, "ccm_cert_link", ccm_cert_link)
+        pulumi.set(__self__, "ccm_cert_status", ccm_cert_status)
         pulumi.set(__self__, "ccm_cert_statuses", ccm_cert_statuses)
         pulumi.set(__self__, "ccm_certificates", ccm_certificates)
         pulumi.set(__self__, "cert_provisioning_type", cert_provisioning_type)
@@ -38842,10 +44704,34 @@ class GetPropertyHostnamesHostnameResult(dict):
         pulumi.set(__self__, "tls_configurations", tls_configurations)
 
     @_builtins.property
+    @pulumi.getter(name="ccmCertId")
+    def ccm_cert_id(self) -> _builtins.str:
+        """
+        The certificate lineage ID of the Cloud Certificate Manager (CCM) certificate bound to the hostname.
+        """
+        return pulumi.get(self, "ccm_cert_id")
+
+    @_builtins.property
+    @pulumi.getter(name="ccmCertLink")
+    def ccm_cert_link(self) -> _builtins.str:
+        """
+        The link to the Cloud Certificate Manager (CCM) certificate lineage bound to the hostname.
+        """
+        return pulumi.get(self, "ccm_cert_link")
+
+    @_builtins.property
+    @pulumi.getter(name="ccmCertStatus")
+    def ccm_cert_status(self) -> Sequence['outputs.GetPropertyHostnamesHostnameCcmCertStatusResult']:
+        """
+        CCM certificate deployment status for RSA and ECDSA certificates.
+        """
+        return pulumi.get(self, "ccm_cert_status")
+
+    @_builtins.property
     @pulumi.getter(name="ccmCertStatuses")
     def ccm_cert_statuses(self) -> Sequence['outputs.GetPropertyHostnamesHostnameCcmCertStatusResult']:
         """
-        CCM certificate deployment status for RSA and ECDSA certificates.
+        The deployment statuses of the Cloud Certificate Manager (CCM) certificate lineage bound to the hostname are listed by key type and network.
         """
         return pulumi.get(self, "ccm_cert_statuses")
 
@@ -39294,52 +45180,41 @@ class GetPropertyHostnamesHostnameBucketCertStatusAuthorizationHttp01ResultResul
 @pulumi.output_type
 class GetPropertyHostnamesHostnameCcmCertStatusResult(dict):
     def __init__(__self__, *,
-                 ecdsa_production_status: _builtins.str,
-                 ecdsa_staging_status: _builtins.str,
-                 rsa_production_status: _builtins.str,
-                 rsa_staging_status: _builtins.str):
+                 key_type: _builtins.str,
+                 network: _builtins.str,
+                 status: _builtins.str):
         """
-        :param _builtins.str ecdsa_production_status: Status of the ECDSA certificate on production network.
-        :param _builtins.str ecdsa_staging_status: Status of the ECDSA certificate on staging network.
-        :param _builtins.str rsa_production_status: Status of the RSA certificate on production network.
-        :param _builtins.str rsa_staging_status: Status of the RSA certificate on staging network.
+        :param _builtins.str key_type: The key algorithm type of the certificate, either `RSA` or `ECDSA`.
+        :param _builtins.str network: The network the status applies to, either `STAGING` or `PRODUCTION`.
+        :param _builtins.str status: The deployment status of the certificate on the given network.
         """
-        pulumi.set(__self__, "ecdsa_production_status", ecdsa_production_status)
-        pulumi.set(__self__, "ecdsa_staging_status", ecdsa_staging_status)
-        pulumi.set(__self__, "rsa_production_status", rsa_production_status)
-        pulumi.set(__self__, "rsa_staging_status", rsa_staging_status)
+        pulumi.set(__self__, "key_type", key_type)
+        pulumi.set(__self__, "network", network)
+        pulumi.set(__self__, "status", status)
 
     @_builtins.property
-    @pulumi.getter(name="ecdsaProductionStatus")
-    def ecdsa_production_status(self) -> _builtins.str:
+    @pulumi.getter(name="keyType")
+    def key_type(self) -> _builtins.str:
         """
-        Status of the ECDSA certificate on production network.
+        The key algorithm type of the certificate, either `RSA` or `ECDSA`.
         """
-        return pulumi.get(self, "ecdsa_production_status")
+        return pulumi.get(self, "key_type")
 
     @_builtins.property
-    @pulumi.getter(name="ecdsaStagingStatus")
-    def ecdsa_staging_status(self) -> _builtins.str:
+    @pulumi.getter
+    def network(self) -> _builtins.str:
         """
-        Status of the ECDSA certificate on staging network.
+        The network the status applies to, either `STAGING` or `PRODUCTION`.
         """
-        return pulumi.get(self, "ecdsa_staging_status")
+        return pulumi.get(self, "network")
 
     @_builtins.property
-    @pulumi.getter(name="rsaProductionStatus")
-    def rsa_production_status(self) -> _builtins.str:
+    @pulumi.getter
+    def status(self) -> _builtins.str:
         """
-        Status of the RSA certificate on production network.
+        The deployment status of the certificate on the given network.
         """
-        return pulumi.get(self, "rsa_production_status")
-
-    @_builtins.property
-    @pulumi.getter(name="rsaStagingStatus")
-    def rsa_staging_status(self) -> _builtins.str:
-        """
-        Status of the RSA certificate on staging network.
-        """
-        return pulumi.get(self, "rsa_staging_status")
+        return pulumi.get(self, "status")
 
 
 @pulumi.output_type

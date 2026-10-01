@@ -23,14 +23,67 @@ public final class PropertyHostnameArgs extends com.pulumi.resources.ResourceArg
     public static final PropertyHostnameArgs Empty = new PropertyHostnameArgs();
 
     /**
+     * The certificate lineage ID of the Cloud Certificate Manager (CCM) certificate to bind to the hostname. It cannot be used together with `ccmCertificates`.
+     * 
+     */
+    @Import(name="ccmCertId")
+    private @Nullable Output<String> ccmCertId;
+
+    /**
+     * @return The certificate lineage ID of the Cloud Certificate Manager (CCM) certificate to bind to the hostname. It cannot be used together with `ccmCertificates`.
+     * 
+     */
+    public Optional<Output<String>> ccmCertId() {
+        return Optional.ofNullable(this.ccmCertId);
+    }
+
+    /**
+     * The link to the Cloud Certificate Manager (CCM) certificate lineage bound to the hostname.
+     * 
+     */
+    @Import(name="ccmCertLink")
+    private @Nullable Output<String> ccmCertLink;
+
+    /**
+     * @return The link to the Cloud Certificate Manager (CCM) certificate lineage bound to the hostname.
+     * 
+     */
+    public Optional<Output<String>> ccmCertLink() {
+        return Optional.ofNullable(this.ccmCertLink);
+    }
+
+    /**
      * Deployment status for the RSA and ECDSA certificates created with Cloud Certificate Manager (CCM).
+     * 
+     * @deprecated
+     * Will be replaced by ccm_cert_statuses.
+     * 
+     */
+    @Deprecated /* Will be replaced by ccm_cert_statuses. */
+    @Import(name="ccmCertStatus")
+    private @Nullable Output<List<PropertyHostnameCcmCertStatusArgs>> ccmCertStatus;
+
+    /**
+     * @return Deployment status for the RSA and ECDSA certificates created with Cloud Certificate Manager (CCM).
+     * 
+     * @deprecated
+     * Will be replaced by ccm_cert_statuses.
+     * 
+     */
+    @Deprecated /* Will be replaced by ccm_cert_statuses. */
+    public Optional<Output<List<PropertyHostnameCcmCertStatusArgs>>> ccmCertStatus() {
+        return Optional.ofNullable(this.ccmCertStatus);
+    }
+
+    /**
+     * The deployment statuses of the Cloud Certificate Manager (CCM) certificate lineage bound to the hostname, organized by key type and network.
      * 
      */
     @Import(name="ccmCertStatuses")
     private @Nullable Output<List<PropertyHostnameCcmCertStatusArgs>> ccmCertStatuses;
 
     /**
-     * @return Deployment status for the RSA and ECDSA certificates created with Cloud Certificate Manager (CCM).
+     * @return The deployment statuses of the Cloud Certificate Manager (CCM) certificate lineage bound to the hostname, organized by key type and network.
      * 
      */
     public Optional<Output<List<PropertyHostnameCcmCertStatusArgs>>> ccmCertStatuses() {
@@ -40,14 +93,22 @@ public final class PropertyHostnameArgs extends com.pulumi.resources.ResourceArg
     /**
      * Certificate identifiers and links for the CCM-managed certificates.
      * 
+     * @deprecated
+     * Use ccmCertId instead.
+     * 
      */
+    @Deprecated /* Use ccmCertId instead. */
     @Import(name="ccmCertificates")
     private @Nullable Output<PropertyHostnameCcmCertificatesArgs> ccmCertificates;
 
     /**
      * @return Certificate identifiers and links for the CCM-managed certificates.
      * 
+     * @deprecated
+     * Use ccmCertId instead.
+     * 
      */
+    @Deprecated /* Use ccmCertId instead. */
     public Optional<Output<PropertyHostnameCcmCertificatesArgs>> ccmCertificates() {
         return Optional.ofNullable(this.ccmCertificates);
     }
@@ -127,6 +188,9 @@ public final class PropertyHostnameArgs extends com.pulumi.resources.ResourceArg
     private PropertyHostnameArgs() {}
 
     private PropertyHostnameArgs(PropertyHostnameArgs $) {
+        this.ccmCertId = $.ccmCertId;
+        this.ccmCertLink = $.ccmCertLink;
+        this.ccmCertStatus = $.ccmCertStatus;
         this.ccmCertStatuses = $.ccmCertStatuses;
         this.ccmCertificates = $.ccmCertificates;
         this.certProvisioningType = $.certProvisioningType;
@@ -158,7 +222,92 @@ public final class PropertyHostnameArgs extends com.pulumi.resources.ResourceArg
         }
 
         /**
-         * @param ccmCertStatuses Deployment status for the RSA and ECDSA certificates created with Cloud Certificate Manager (CCM).
+         * @param ccmCertId The certificate lineage ID of the Cloud Certificate Manager (CCM) certificate to bind to the hostname. It cannot be used together with `ccmCertificates`.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder ccmCertId(@Nullable Output<String> ccmCertId) {
+            $.ccmCertId = ccmCertId;
+            return this;
+        }
+
+        /**
+         * @param ccmCertId The certificate lineage ID of the Cloud Certificate Manager (CCM) certificate to bind to the hostname. It cannot be used together with `ccmCertificates`.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder ccmCertId(String ccmCertId) {
+            return ccmCertId(Output.of(ccmCertId));
+        }
+
+        /**
+         * @param ccmCertLink The link to the Cloud Certificate Manager (CCM) certificate lineage bound to the hostname.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder ccmCertLink(@Nullable Output<String> ccmCertLink) {
+            $.ccmCertLink = ccmCertLink;
+            return this;
+        }
+
+        /**
+         * @param ccmCertLink The link to the Cloud Certificate Manager (CCM) certificate lineage bound to the hostname.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder ccmCertLink(String ccmCertLink) {
+            return ccmCertLink(Output.of(ccmCertLink));
+        }
+
+        /**
+         * @param ccmCertStatus Deployment status for the RSA and ECDSA certificates created with Cloud Certificate Manager (CCM).
+         * 
+         * @return builder
+         * 
+         * @deprecated
+         * Will be replaced by ccm_cert_statuses.
+         * 
+         */
+        @Deprecated /* Will be replaced by ccm_cert_statuses. */
+        public Builder ccmCertStatus(@Nullable Output<List<PropertyHostnameCcmCertStatusArgs>> ccmCertStatus) {
+            $.ccmCertStatus = ccmCertStatus;
+            return this;
+        }
+
+        /**
+         * @param ccmCertStatus Deployment status for the RSA and ECDSA certificates created with Cloud Certificate Manager (CCM).
+         * 
+         * @return builder
+         * 
+         * @deprecated
+         * Will be replaced by ccm_cert_statuses.
+         * 
+         */
+        @Deprecated /* Will be replaced by ccm_cert_statuses. */
+        public Builder ccmCertStatus(List<PropertyHostnameCcmCertStatusArgs> ccmCertStatus) {
+            return ccmCertStatus(Output.of(ccmCertStatus));
+        }
+
+        /**
+         * @param ccmCertStatus Deployment status for the RSA and ECDSA certificates created with Cloud Certificate Manager (CCM).
+         * 
+         * @return builder
+         * 
+         * @deprecated
+         * Will be replaced by ccm_cert_statuses.
+         * 
+         */
+        @Deprecated /* Will be replaced by ccm_cert_statuses. */
+        public Builder ccmCertStatus(PropertyHostnameCcmCertStatusArgs... ccmCertStatus) {
+            return ccmCertStatus(List.of(ccmCertStatus));
+        }
+
+        /**
+         * @param ccmCertStatuses The deployment statuses of the Cloud Certificate Manager (CCM) certificate lineage bound to the hostname, organized by key type and network.
          * 
          * @return builder
          * 
@@ -169,7 +318,7 @@ public final class PropertyHostnameArgs extends com.pulumi.resources.ResourceArg
         }
 
         /**
-         * @param ccmCertStatuses Deployment status for the RSA and ECDSA certificates created with Cloud Certificate Manager (CCM).
+         * @param ccmCertStatuses The deployment statuses of the Cloud Certificate Manager (CCM) certificate lineage bound to the hostname, organized by key type and network.
          * 
          * @return builder
          * 
@@ -179,7 +328,7 @@ public final class PropertyHostnameArgs extends com.pulumi.resources.ResourceArg
         }
 
         /**
-         * @param ccmCertStatuses Deployment status for the RSA and ECDSA certificates created with Cloud Certificate Manager (CCM).
+         * @param ccmCertStatuses The deployment statuses of the Cloud Certificate Manager (CCM) certificate lineage bound to the hostname, organized by key type and network.
          * 
          * @return builder
          * 
@@ -193,7 +342,11 @@ public final class PropertyHostnameArgs extends com.pulumi.resources.ResourceArg
          * 
          * @return builder
          * 
+         * @deprecated
+         * Use ccmCertId instead.
+         * 
          */
+        @Deprecated /* Use ccmCertId instead. */
         public Builder ccmCertificates(@Nullable Output<PropertyHostnameCcmCertificatesArgs> ccmCertificates) {
             $.ccmCertificates = ccmCertificates;
             return this;
@@ -204,7 +357,11 @@ public final class PropertyHostnameArgs extends com.pulumi.resources.ResourceArg
          * 
          * @return builder
          * 
+         * @deprecated
+         * Use ccmCertId instead.
+         * 
          */
+        @Deprecated /* Use ccmCertId instead. */
         public Builder ccmCertificates(PropertyHostnameCcmCertificatesArgs ccmCertificates) {
             return ccmCertificates(Output.of(ccmCertificates));
         }

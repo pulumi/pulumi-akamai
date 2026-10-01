@@ -3133,172 +3133,3558 @@ func (o CloudAccessKeyTimeoutsPtrOutput) Update() pulumi.StringPtrOutput {
 	}).(pulumi.StringPtrOutput)
 }
 
-type CloudcertificatesCertificateSubject struct {
-	// Fully qualified domain name (FQDN) or other name associated with the subject. If specified, this value must also be included in the SANs list.
-	CommonName *string `pulumi:"commonName"`
-	// Two-letter ISO 3166 country code.
-	Country *string `pulumi:"country"`
-	// City or locality name.
-	Locality *string `pulumi:"locality"`
-	// Legal name of the organization.
-	Organization *string `pulumi:"organization"`
-	// Full name of the state or province.
-	State *string `pulumi:"state"`
+type CloudcertificatesActivationProduction struct {
+	// The time the activation request was created.
+	ActivationCreatedTime *string `pulumi:"activationCreatedTime"`
+	// Unique identifier of the activation request.
+	ActivationId *int `pulumi:"activationId"`
+	// The time the activation request was last modified.
+	ActivationModifiedTime *string `pulumi:"activationModifiedTime"`
+	// The status of the activation request: `INIT`, `PENDING`, `IN_PROGRESS`, `COMPLETE`, `PARTIAL_SUCCESS`, `FAILED`, or `ABORTED`.
+	ActivationStatus *string `pulumi:"activationStatus"`
+	// The type of the activation operation. Always `PROMOTE` for this resource.
+	ActivationType *string `pulumi:"activationType"`
+	// The user who created the activation request.
+	CreatedBy *string `pulumi:"createdBy"`
+	// Error type information when the activation failed, or null otherwise.
+	ErrorTypes *string `pulumi:"errorTypes"`
+	// Unique identifier of the generation actually tracked as active on the PRODUCTION network.
+	GenerationId *int `pulumi:"generationId"`
+	// The number of hostnames still in progress for this activation, or null if not yet known.
+	InProgressHostnameCount *int `pulumi:"inProgressHostnameCount"`
+	// The user who last modified the activation request.
+	ModifiedBy *string `pulumi:"modifiedBy"`
+	// The activation request that pre-empted (superseded) this one, or null if this activation was not pre-empted.
+	PreEmptedBy *int `pulumi:"preEmptedBy"`
+	// The total number of hostnames being deployed as part of this activation, or null if not yet known.
+	TotalHostnameCount *int `pulumi:"totalHostnameCount"`
 }
 
-// CloudcertificatesCertificateSubjectInput is an input type that accepts CloudcertificatesCertificateSubjectArgs and CloudcertificatesCertificateSubjectOutput values.
-// You can construct a concrete instance of `CloudcertificatesCertificateSubjectInput` via:
+// CloudcertificatesActivationProductionInput is an input type that accepts CloudcertificatesActivationProductionArgs and CloudcertificatesActivationProductionOutput values.
+// You can construct a concrete instance of `CloudcertificatesActivationProductionInput` via:
 //
-//	CloudcertificatesCertificateSubjectArgs{...}
-type CloudcertificatesCertificateSubjectInput interface {
+//	CloudcertificatesActivationProductionArgs{...}
+type CloudcertificatesActivationProductionInput interface {
 	pulumi.Input
 
-	ToCloudcertificatesCertificateSubjectOutput() CloudcertificatesCertificateSubjectOutput
-	ToCloudcertificatesCertificateSubjectOutputWithContext(context.Context) CloudcertificatesCertificateSubjectOutput
+	ToCloudcertificatesActivationProductionOutput() CloudcertificatesActivationProductionOutput
+	ToCloudcertificatesActivationProductionOutputWithContext(context.Context) CloudcertificatesActivationProductionOutput
 }
 
-type CloudcertificatesCertificateSubjectArgs struct {
-	// Fully qualified domain name (FQDN) or other name associated with the subject. If specified, this value must also be included in the SANs list.
-	CommonName pulumi.StringPtrInput `pulumi:"commonName"`
-	// Two-letter ISO 3166 country code.
-	Country pulumi.StringPtrInput `pulumi:"country"`
-	// City or locality name.
-	Locality pulumi.StringPtrInput `pulumi:"locality"`
-	// Legal name of the organization.
-	Organization pulumi.StringPtrInput `pulumi:"organization"`
-	// Full name of the state or province.
-	State pulumi.StringPtrInput `pulumi:"state"`
+type CloudcertificatesActivationProductionArgs struct {
+	// The time the activation request was created.
+	ActivationCreatedTime pulumi.StringPtrInput `pulumi:"activationCreatedTime"`
+	// Unique identifier of the activation request.
+	ActivationId pulumi.IntPtrInput `pulumi:"activationId"`
+	// The time the activation request was last modified.
+	ActivationModifiedTime pulumi.StringPtrInput `pulumi:"activationModifiedTime"`
+	// The status of the activation request: `INIT`, `PENDING`, `IN_PROGRESS`, `COMPLETE`, `PARTIAL_SUCCESS`, `FAILED`, or `ABORTED`.
+	ActivationStatus pulumi.StringPtrInput `pulumi:"activationStatus"`
+	// The type of the activation operation. Always `PROMOTE` for this resource.
+	ActivationType pulumi.StringPtrInput `pulumi:"activationType"`
+	// The user who created the activation request.
+	CreatedBy pulumi.StringPtrInput `pulumi:"createdBy"`
+	// Error type information when the activation failed, or null otherwise.
+	ErrorTypes pulumi.StringPtrInput `pulumi:"errorTypes"`
+	// Unique identifier of the generation actually tracked as active on the PRODUCTION network.
+	GenerationId pulumi.IntPtrInput `pulumi:"generationId"`
+	// The number of hostnames still in progress for this activation, or null if not yet known.
+	InProgressHostnameCount pulumi.IntPtrInput `pulumi:"inProgressHostnameCount"`
+	// The user who last modified the activation request.
+	ModifiedBy pulumi.StringPtrInput `pulumi:"modifiedBy"`
+	// The activation request that pre-empted (superseded) this one, or null if this activation was not pre-empted.
+	PreEmptedBy pulumi.IntPtrInput `pulumi:"preEmptedBy"`
+	// The total number of hostnames being deployed as part of this activation, or null if not yet known.
+	TotalHostnameCount pulumi.IntPtrInput `pulumi:"totalHostnameCount"`
 }
 
-func (CloudcertificatesCertificateSubjectArgs) ElementType() reflect.Type {
-	return reflect.TypeOf((*CloudcertificatesCertificateSubject)(nil)).Elem()
+func (CloudcertificatesActivationProductionArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*CloudcertificatesActivationProduction)(nil)).Elem()
 }
 
-func (i CloudcertificatesCertificateSubjectArgs) ToCloudcertificatesCertificateSubjectOutput() CloudcertificatesCertificateSubjectOutput {
-	return i.ToCloudcertificatesCertificateSubjectOutputWithContext(context.Background())
+func (i CloudcertificatesActivationProductionArgs) ToCloudcertificatesActivationProductionOutput() CloudcertificatesActivationProductionOutput {
+	return i.ToCloudcertificatesActivationProductionOutputWithContext(context.Background())
 }
 
-func (i CloudcertificatesCertificateSubjectArgs) ToCloudcertificatesCertificateSubjectOutputWithContext(ctx context.Context) CloudcertificatesCertificateSubjectOutput {
-	return pulumi.ToOutputWithContext(ctx, i).(CloudcertificatesCertificateSubjectOutput)
+func (i CloudcertificatesActivationProductionArgs) ToCloudcertificatesActivationProductionOutputWithContext(ctx context.Context) CloudcertificatesActivationProductionOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(CloudcertificatesActivationProductionOutput)
 }
 
-func (i CloudcertificatesCertificateSubjectArgs) ToCloudcertificatesCertificateSubjectPtrOutput() CloudcertificatesCertificateSubjectPtrOutput {
-	return i.ToCloudcertificatesCertificateSubjectPtrOutputWithContext(context.Background())
+func (i CloudcertificatesActivationProductionArgs) ToCloudcertificatesActivationProductionPtrOutput() CloudcertificatesActivationProductionPtrOutput {
+	return i.ToCloudcertificatesActivationProductionPtrOutputWithContext(context.Background())
 }
 
-func (i CloudcertificatesCertificateSubjectArgs) ToCloudcertificatesCertificateSubjectPtrOutputWithContext(ctx context.Context) CloudcertificatesCertificateSubjectPtrOutput {
-	return pulumi.ToOutputWithContext(ctx, i).(CloudcertificatesCertificateSubjectOutput).ToCloudcertificatesCertificateSubjectPtrOutputWithContext(ctx)
+func (i CloudcertificatesActivationProductionArgs) ToCloudcertificatesActivationProductionPtrOutputWithContext(ctx context.Context) CloudcertificatesActivationProductionPtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(CloudcertificatesActivationProductionOutput).ToCloudcertificatesActivationProductionPtrOutputWithContext(ctx)
 }
 
-// CloudcertificatesCertificateSubjectPtrInput is an input type that accepts CloudcertificatesCertificateSubjectArgs, CloudcertificatesCertificateSubjectPtr and CloudcertificatesCertificateSubjectPtrOutput values.
-// You can construct a concrete instance of `CloudcertificatesCertificateSubjectPtrInput` via:
+// CloudcertificatesActivationProductionPtrInput is an input type that accepts CloudcertificatesActivationProductionArgs, CloudcertificatesActivationProductionPtr and CloudcertificatesActivationProductionPtrOutput values.
+// You can construct a concrete instance of `CloudcertificatesActivationProductionPtrInput` via:
 //
-//	        CloudcertificatesCertificateSubjectArgs{...}
+//	        CloudcertificatesActivationProductionArgs{...}
 //
 //	or:
 //
 //	        nil
-type CloudcertificatesCertificateSubjectPtrInput interface {
+type CloudcertificatesActivationProductionPtrInput interface {
 	pulumi.Input
 
-	ToCloudcertificatesCertificateSubjectPtrOutput() CloudcertificatesCertificateSubjectPtrOutput
-	ToCloudcertificatesCertificateSubjectPtrOutputWithContext(context.Context) CloudcertificatesCertificateSubjectPtrOutput
+	ToCloudcertificatesActivationProductionPtrOutput() CloudcertificatesActivationProductionPtrOutput
+	ToCloudcertificatesActivationProductionPtrOutputWithContext(context.Context) CloudcertificatesActivationProductionPtrOutput
 }
 
-type cloudcertificatesCertificateSubjectPtrType CloudcertificatesCertificateSubjectArgs
+type cloudcertificatesActivationProductionPtrType CloudcertificatesActivationProductionArgs
 
-func CloudcertificatesCertificateSubjectPtr(v *CloudcertificatesCertificateSubjectArgs) CloudcertificatesCertificateSubjectPtrInput {
-	return (*cloudcertificatesCertificateSubjectPtrType)(v)
+func CloudcertificatesActivationProductionPtr(v *CloudcertificatesActivationProductionArgs) CloudcertificatesActivationProductionPtrInput {
+	return (*cloudcertificatesActivationProductionPtrType)(v)
 }
 
-func (*cloudcertificatesCertificateSubjectPtrType) ElementType() reflect.Type {
-	return reflect.TypeOf((**CloudcertificatesCertificateSubject)(nil)).Elem()
+func (*cloudcertificatesActivationProductionPtrType) ElementType() reflect.Type {
+	return reflect.TypeOf((**CloudcertificatesActivationProduction)(nil)).Elem()
 }
 
-func (i *cloudcertificatesCertificateSubjectPtrType) ToCloudcertificatesCertificateSubjectPtrOutput() CloudcertificatesCertificateSubjectPtrOutput {
-	return i.ToCloudcertificatesCertificateSubjectPtrOutputWithContext(context.Background())
+func (i *cloudcertificatesActivationProductionPtrType) ToCloudcertificatesActivationProductionPtrOutput() CloudcertificatesActivationProductionPtrOutput {
+	return i.ToCloudcertificatesActivationProductionPtrOutputWithContext(context.Background())
 }
 
-func (i *cloudcertificatesCertificateSubjectPtrType) ToCloudcertificatesCertificateSubjectPtrOutputWithContext(ctx context.Context) CloudcertificatesCertificateSubjectPtrOutput {
-	return pulumi.ToOutputWithContext(ctx, i).(CloudcertificatesCertificateSubjectPtrOutput)
+func (i *cloudcertificatesActivationProductionPtrType) ToCloudcertificatesActivationProductionPtrOutputWithContext(ctx context.Context) CloudcertificatesActivationProductionPtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(CloudcertificatesActivationProductionPtrOutput)
 }
 
-type CloudcertificatesCertificateSubjectOutput struct{ *pulumi.OutputState }
+type CloudcertificatesActivationProductionOutput struct{ *pulumi.OutputState }
 
-func (CloudcertificatesCertificateSubjectOutput) ElementType() reflect.Type {
-	return reflect.TypeOf((*CloudcertificatesCertificateSubject)(nil)).Elem()
+func (CloudcertificatesActivationProductionOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*CloudcertificatesActivationProduction)(nil)).Elem()
 }
 
-func (o CloudcertificatesCertificateSubjectOutput) ToCloudcertificatesCertificateSubjectOutput() CloudcertificatesCertificateSubjectOutput {
+func (o CloudcertificatesActivationProductionOutput) ToCloudcertificatesActivationProductionOutput() CloudcertificatesActivationProductionOutput {
 	return o
 }
 
-func (o CloudcertificatesCertificateSubjectOutput) ToCloudcertificatesCertificateSubjectOutputWithContext(ctx context.Context) CloudcertificatesCertificateSubjectOutput {
+func (o CloudcertificatesActivationProductionOutput) ToCloudcertificatesActivationProductionOutputWithContext(ctx context.Context) CloudcertificatesActivationProductionOutput {
 	return o
 }
 
-func (o CloudcertificatesCertificateSubjectOutput) ToCloudcertificatesCertificateSubjectPtrOutput() CloudcertificatesCertificateSubjectPtrOutput {
-	return o.ToCloudcertificatesCertificateSubjectPtrOutputWithContext(context.Background())
+func (o CloudcertificatesActivationProductionOutput) ToCloudcertificatesActivationProductionPtrOutput() CloudcertificatesActivationProductionPtrOutput {
+	return o.ToCloudcertificatesActivationProductionPtrOutputWithContext(context.Background())
 }
 
-func (o CloudcertificatesCertificateSubjectOutput) ToCloudcertificatesCertificateSubjectPtrOutputWithContext(ctx context.Context) CloudcertificatesCertificateSubjectPtrOutput {
-	return o.ApplyTWithContext(ctx, func(_ context.Context, v CloudcertificatesCertificateSubject) *CloudcertificatesCertificateSubject {
+func (o CloudcertificatesActivationProductionOutput) ToCloudcertificatesActivationProductionPtrOutputWithContext(ctx context.Context) CloudcertificatesActivationProductionPtrOutput {
+	return o.ApplyTWithContext(ctx, func(_ context.Context, v CloudcertificatesActivationProduction) *CloudcertificatesActivationProduction {
 		return &v
-	}).(CloudcertificatesCertificateSubjectPtrOutput)
+	}).(CloudcertificatesActivationProductionPtrOutput)
 }
 
-// Fully qualified domain name (FQDN) or other name associated with the subject. If specified, this value must also be included in the SANs list.
-func (o CloudcertificatesCertificateSubjectOutput) CommonName() pulumi.StringPtrOutput {
-	return o.ApplyT(func(v CloudcertificatesCertificateSubject) *string { return v.CommonName }).(pulumi.StringPtrOutput)
+// The time the activation request was created.
+func (o CloudcertificatesActivationProductionOutput) ActivationCreatedTime() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v CloudcertificatesActivationProduction) *string { return v.ActivationCreatedTime }).(pulumi.StringPtrOutput)
 }
 
-// Two-letter ISO 3166 country code.
-func (o CloudcertificatesCertificateSubjectOutput) Country() pulumi.StringPtrOutput {
-	return o.ApplyT(func(v CloudcertificatesCertificateSubject) *string { return v.Country }).(pulumi.StringPtrOutput)
+// Unique identifier of the activation request.
+func (o CloudcertificatesActivationProductionOutput) ActivationId() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v CloudcertificatesActivationProduction) *int { return v.ActivationId }).(pulumi.IntPtrOutput)
 }
 
-// City or locality name.
-func (o CloudcertificatesCertificateSubjectOutput) Locality() pulumi.StringPtrOutput {
-	return o.ApplyT(func(v CloudcertificatesCertificateSubject) *string { return v.Locality }).(pulumi.StringPtrOutput)
+// The time the activation request was last modified.
+func (o CloudcertificatesActivationProductionOutput) ActivationModifiedTime() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v CloudcertificatesActivationProduction) *string { return v.ActivationModifiedTime }).(pulumi.StringPtrOutput)
 }
 
-// Legal name of the organization.
-func (o CloudcertificatesCertificateSubjectOutput) Organization() pulumi.StringPtrOutput {
-	return o.ApplyT(func(v CloudcertificatesCertificateSubject) *string { return v.Organization }).(pulumi.StringPtrOutput)
+// The status of the activation request: `INIT`, `PENDING`, `IN_PROGRESS`, `COMPLETE`, `PARTIAL_SUCCESS`, `FAILED`, or `ABORTED`.
+func (o CloudcertificatesActivationProductionOutput) ActivationStatus() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v CloudcertificatesActivationProduction) *string { return v.ActivationStatus }).(pulumi.StringPtrOutput)
 }
 
-// Full name of the state or province.
-func (o CloudcertificatesCertificateSubjectOutput) State() pulumi.StringPtrOutput {
-	return o.ApplyT(func(v CloudcertificatesCertificateSubject) *string { return v.State }).(pulumi.StringPtrOutput)
+// The type of the activation operation. Always `PROMOTE` for this resource.
+func (o CloudcertificatesActivationProductionOutput) ActivationType() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v CloudcertificatesActivationProduction) *string { return v.ActivationType }).(pulumi.StringPtrOutput)
 }
 
-type CloudcertificatesCertificateSubjectPtrOutput struct{ *pulumi.OutputState }
-
-func (CloudcertificatesCertificateSubjectPtrOutput) ElementType() reflect.Type {
-	return reflect.TypeOf((**CloudcertificatesCertificateSubject)(nil)).Elem()
+// The user who created the activation request.
+func (o CloudcertificatesActivationProductionOutput) CreatedBy() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v CloudcertificatesActivationProduction) *string { return v.CreatedBy }).(pulumi.StringPtrOutput)
 }
 
-func (o CloudcertificatesCertificateSubjectPtrOutput) ToCloudcertificatesCertificateSubjectPtrOutput() CloudcertificatesCertificateSubjectPtrOutput {
+// Error type information when the activation failed, or null otherwise.
+func (o CloudcertificatesActivationProductionOutput) ErrorTypes() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v CloudcertificatesActivationProduction) *string { return v.ErrorTypes }).(pulumi.StringPtrOutput)
+}
+
+// Unique identifier of the generation actually tracked as active on the PRODUCTION network.
+func (o CloudcertificatesActivationProductionOutput) GenerationId() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v CloudcertificatesActivationProduction) *int { return v.GenerationId }).(pulumi.IntPtrOutput)
+}
+
+// The number of hostnames still in progress for this activation, or null if not yet known.
+func (o CloudcertificatesActivationProductionOutput) InProgressHostnameCount() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v CloudcertificatesActivationProduction) *int { return v.InProgressHostnameCount }).(pulumi.IntPtrOutput)
+}
+
+// The user who last modified the activation request.
+func (o CloudcertificatesActivationProductionOutput) ModifiedBy() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v CloudcertificatesActivationProduction) *string { return v.ModifiedBy }).(pulumi.StringPtrOutput)
+}
+
+// The activation request that pre-empted (superseded) this one, or null if this activation was not pre-empted.
+func (o CloudcertificatesActivationProductionOutput) PreEmptedBy() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v CloudcertificatesActivationProduction) *int { return v.PreEmptedBy }).(pulumi.IntPtrOutput)
+}
+
+// The total number of hostnames being deployed as part of this activation, or null if not yet known.
+func (o CloudcertificatesActivationProductionOutput) TotalHostnameCount() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v CloudcertificatesActivationProduction) *int { return v.TotalHostnameCount }).(pulumi.IntPtrOutput)
+}
+
+type CloudcertificatesActivationProductionPtrOutput struct{ *pulumi.OutputState }
+
+func (CloudcertificatesActivationProductionPtrOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((**CloudcertificatesActivationProduction)(nil)).Elem()
+}
+
+func (o CloudcertificatesActivationProductionPtrOutput) ToCloudcertificatesActivationProductionPtrOutput() CloudcertificatesActivationProductionPtrOutput {
 	return o
 }
 
-func (o CloudcertificatesCertificateSubjectPtrOutput) ToCloudcertificatesCertificateSubjectPtrOutputWithContext(ctx context.Context) CloudcertificatesCertificateSubjectPtrOutput {
+func (o CloudcertificatesActivationProductionPtrOutput) ToCloudcertificatesActivationProductionPtrOutputWithContext(ctx context.Context) CloudcertificatesActivationProductionPtrOutput {
 	return o
 }
 
-func (o CloudcertificatesCertificateSubjectPtrOutput) Elem() CloudcertificatesCertificateSubjectOutput {
-	return o.ApplyT(func(v *CloudcertificatesCertificateSubject) CloudcertificatesCertificateSubject {
+func (o CloudcertificatesActivationProductionPtrOutput) Elem() CloudcertificatesActivationProductionOutput {
+	return o.ApplyT(func(v *CloudcertificatesActivationProduction) CloudcertificatesActivationProduction {
 		if v != nil {
 			return *v
 		}
-		var ret CloudcertificatesCertificateSubject
+		var ret CloudcertificatesActivationProduction
 		return ret
-	}).(CloudcertificatesCertificateSubjectOutput)
+	}).(CloudcertificatesActivationProductionOutput)
 }
 
-// Fully qualified domain name (FQDN) or other name associated with the subject. If specified, this value must also be included in the SANs list.
-func (o CloudcertificatesCertificateSubjectPtrOutput) CommonName() pulumi.StringPtrOutput {
-	return o.ApplyT(func(v *CloudcertificatesCertificateSubject) *string {
+// The time the activation request was created.
+func (o CloudcertificatesActivationProductionPtrOutput) ActivationCreatedTime() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *CloudcertificatesActivationProduction) *string {
+		if v == nil {
+			return nil
+		}
+		return v.ActivationCreatedTime
+	}).(pulumi.StringPtrOutput)
+}
+
+// Unique identifier of the activation request.
+func (o CloudcertificatesActivationProductionPtrOutput) ActivationId() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v *CloudcertificatesActivationProduction) *int {
+		if v == nil {
+			return nil
+		}
+		return v.ActivationId
+	}).(pulumi.IntPtrOutput)
+}
+
+// The time the activation request was last modified.
+func (o CloudcertificatesActivationProductionPtrOutput) ActivationModifiedTime() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *CloudcertificatesActivationProduction) *string {
+		if v == nil {
+			return nil
+		}
+		return v.ActivationModifiedTime
+	}).(pulumi.StringPtrOutput)
+}
+
+// The status of the activation request: `INIT`, `PENDING`, `IN_PROGRESS`, `COMPLETE`, `PARTIAL_SUCCESS`, `FAILED`, or `ABORTED`.
+func (o CloudcertificatesActivationProductionPtrOutput) ActivationStatus() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *CloudcertificatesActivationProduction) *string {
+		if v == nil {
+			return nil
+		}
+		return v.ActivationStatus
+	}).(pulumi.StringPtrOutput)
+}
+
+// The type of the activation operation. Always `PROMOTE` for this resource.
+func (o CloudcertificatesActivationProductionPtrOutput) ActivationType() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *CloudcertificatesActivationProduction) *string {
+		if v == nil {
+			return nil
+		}
+		return v.ActivationType
+	}).(pulumi.StringPtrOutput)
+}
+
+// The user who created the activation request.
+func (o CloudcertificatesActivationProductionPtrOutput) CreatedBy() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *CloudcertificatesActivationProduction) *string {
+		if v == nil {
+			return nil
+		}
+		return v.CreatedBy
+	}).(pulumi.StringPtrOutput)
+}
+
+// Error type information when the activation failed, or null otherwise.
+func (o CloudcertificatesActivationProductionPtrOutput) ErrorTypes() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *CloudcertificatesActivationProduction) *string {
+		if v == nil {
+			return nil
+		}
+		return v.ErrorTypes
+	}).(pulumi.StringPtrOutput)
+}
+
+// Unique identifier of the generation actually tracked as active on the PRODUCTION network.
+func (o CloudcertificatesActivationProductionPtrOutput) GenerationId() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v *CloudcertificatesActivationProduction) *int {
+		if v == nil {
+			return nil
+		}
+		return v.GenerationId
+	}).(pulumi.IntPtrOutput)
+}
+
+// The number of hostnames still in progress for this activation, or null if not yet known.
+func (o CloudcertificatesActivationProductionPtrOutput) InProgressHostnameCount() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v *CloudcertificatesActivationProduction) *int {
+		if v == nil {
+			return nil
+		}
+		return v.InProgressHostnameCount
+	}).(pulumi.IntPtrOutput)
+}
+
+// The user who last modified the activation request.
+func (o CloudcertificatesActivationProductionPtrOutput) ModifiedBy() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *CloudcertificatesActivationProduction) *string {
+		if v == nil {
+			return nil
+		}
+		return v.ModifiedBy
+	}).(pulumi.StringPtrOutput)
+}
+
+// The activation request that pre-empted (superseded) this one, or null if this activation was not pre-empted.
+func (o CloudcertificatesActivationProductionPtrOutput) PreEmptedBy() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v *CloudcertificatesActivationProduction) *int {
+		if v == nil {
+			return nil
+		}
+		return v.PreEmptedBy
+	}).(pulumi.IntPtrOutput)
+}
+
+// The total number of hostnames being deployed as part of this activation, or null if not yet known.
+func (o CloudcertificatesActivationProductionPtrOutput) TotalHostnameCount() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v *CloudcertificatesActivationProduction) *int {
+		if v == nil {
+			return nil
+		}
+		return v.TotalHostnameCount
+	}).(pulumi.IntPtrOutput)
+}
+
+type CloudcertificatesActivationStaging struct {
+	// The time the activation request was created.
+	ActivationCreatedTime *string `pulumi:"activationCreatedTime"`
+	// Unique identifier of the activation request.
+	ActivationId *int `pulumi:"activationId"`
+	// The time the activation request was last modified.
+	ActivationModifiedTime *string `pulumi:"activationModifiedTime"`
+	// The status of the activation request: `INIT`, `PENDING`, `IN_PROGRESS`, `COMPLETE`, `PARTIAL_SUCCESS`, `FAILED`, or `ABORTED`.
+	ActivationStatus *string `pulumi:"activationStatus"`
+	// The type of the activation operation. Always `PROMOTE` for this resource.
+	ActivationType *string `pulumi:"activationType"`
+	// The user who created the activation request.
+	CreatedBy *string `pulumi:"createdBy"`
+	// Error type information when the activation failed, or null otherwise.
+	ErrorTypes *string `pulumi:"errorTypes"`
+	// Unique identifier of the generation actually tracked as active on the STAGING network.
+	GenerationId *int `pulumi:"generationId"`
+	// The number of hostnames still in progress for this activation, or null if not yet known.
+	InProgressHostnameCount *int `pulumi:"inProgressHostnameCount"`
+	// The user who last modified the activation request.
+	ModifiedBy *string `pulumi:"modifiedBy"`
+	// The activation request that pre-empted (superseded) this one, or null if this activation was not pre-empted.
+	PreEmptedBy *int `pulumi:"preEmptedBy"`
+	// The total number of hostnames being deployed as part of this activation, or null if not yet known.
+	TotalHostnameCount *int `pulumi:"totalHostnameCount"`
+}
+
+// CloudcertificatesActivationStagingInput is an input type that accepts CloudcertificatesActivationStagingArgs and CloudcertificatesActivationStagingOutput values.
+// You can construct a concrete instance of `CloudcertificatesActivationStagingInput` via:
+//
+//	CloudcertificatesActivationStagingArgs{...}
+type CloudcertificatesActivationStagingInput interface {
+	pulumi.Input
+
+	ToCloudcertificatesActivationStagingOutput() CloudcertificatesActivationStagingOutput
+	ToCloudcertificatesActivationStagingOutputWithContext(context.Context) CloudcertificatesActivationStagingOutput
+}
+
+type CloudcertificatesActivationStagingArgs struct {
+	// The time the activation request was created.
+	ActivationCreatedTime pulumi.StringPtrInput `pulumi:"activationCreatedTime"`
+	// Unique identifier of the activation request.
+	ActivationId pulumi.IntPtrInput `pulumi:"activationId"`
+	// The time the activation request was last modified.
+	ActivationModifiedTime pulumi.StringPtrInput `pulumi:"activationModifiedTime"`
+	// The status of the activation request: `INIT`, `PENDING`, `IN_PROGRESS`, `COMPLETE`, `PARTIAL_SUCCESS`, `FAILED`, or `ABORTED`.
+	ActivationStatus pulumi.StringPtrInput `pulumi:"activationStatus"`
+	// The type of the activation operation. Always `PROMOTE` for this resource.
+	ActivationType pulumi.StringPtrInput `pulumi:"activationType"`
+	// The user who created the activation request.
+	CreatedBy pulumi.StringPtrInput `pulumi:"createdBy"`
+	// Error type information when the activation failed, or null otherwise.
+	ErrorTypes pulumi.StringPtrInput `pulumi:"errorTypes"`
+	// Unique identifier of the generation actually tracked as active on the STAGING network.
+	GenerationId pulumi.IntPtrInput `pulumi:"generationId"`
+	// The number of hostnames still in progress for this activation, or null if not yet known.
+	InProgressHostnameCount pulumi.IntPtrInput `pulumi:"inProgressHostnameCount"`
+	// The user who last modified the activation request.
+	ModifiedBy pulumi.StringPtrInput `pulumi:"modifiedBy"`
+	// The activation request that pre-empted (superseded) this one, or null if this activation was not pre-empted.
+	PreEmptedBy pulumi.IntPtrInput `pulumi:"preEmptedBy"`
+	// The total number of hostnames being deployed as part of this activation, or null if not yet known.
+	TotalHostnameCount pulumi.IntPtrInput `pulumi:"totalHostnameCount"`
+}
+
+func (CloudcertificatesActivationStagingArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*CloudcertificatesActivationStaging)(nil)).Elem()
+}
+
+func (i CloudcertificatesActivationStagingArgs) ToCloudcertificatesActivationStagingOutput() CloudcertificatesActivationStagingOutput {
+	return i.ToCloudcertificatesActivationStagingOutputWithContext(context.Background())
+}
+
+func (i CloudcertificatesActivationStagingArgs) ToCloudcertificatesActivationStagingOutputWithContext(ctx context.Context) CloudcertificatesActivationStagingOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(CloudcertificatesActivationStagingOutput)
+}
+
+func (i CloudcertificatesActivationStagingArgs) ToCloudcertificatesActivationStagingPtrOutput() CloudcertificatesActivationStagingPtrOutput {
+	return i.ToCloudcertificatesActivationStagingPtrOutputWithContext(context.Background())
+}
+
+func (i CloudcertificatesActivationStagingArgs) ToCloudcertificatesActivationStagingPtrOutputWithContext(ctx context.Context) CloudcertificatesActivationStagingPtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(CloudcertificatesActivationStagingOutput).ToCloudcertificatesActivationStagingPtrOutputWithContext(ctx)
+}
+
+// CloudcertificatesActivationStagingPtrInput is an input type that accepts CloudcertificatesActivationStagingArgs, CloudcertificatesActivationStagingPtr and CloudcertificatesActivationStagingPtrOutput values.
+// You can construct a concrete instance of `CloudcertificatesActivationStagingPtrInput` via:
+//
+//	        CloudcertificatesActivationStagingArgs{...}
+//
+//	or:
+//
+//	        nil
+type CloudcertificatesActivationStagingPtrInput interface {
+	pulumi.Input
+
+	ToCloudcertificatesActivationStagingPtrOutput() CloudcertificatesActivationStagingPtrOutput
+	ToCloudcertificatesActivationStagingPtrOutputWithContext(context.Context) CloudcertificatesActivationStagingPtrOutput
+}
+
+type cloudcertificatesActivationStagingPtrType CloudcertificatesActivationStagingArgs
+
+func CloudcertificatesActivationStagingPtr(v *CloudcertificatesActivationStagingArgs) CloudcertificatesActivationStagingPtrInput {
+	return (*cloudcertificatesActivationStagingPtrType)(v)
+}
+
+func (*cloudcertificatesActivationStagingPtrType) ElementType() reflect.Type {
+	return reflect.TypeOf((**CloudcertificatesActivationStaging)(nil)).Elem()
+}
+
+func (i *cloudcertificatesActivationStagingPtrType) ToCloudcertificatesActivationStagingPtrOutput() CloudcertificatesActivationStagingPtrOutput {
+	return i.ToCloudcertificatesActivationStagingPtrOutputWithContext(context.Background())
+}
+
+func (i *cloudcertificatesActivationStagingPtrType) ToCloudcertificatesActivationStagingPtrOutputWithContext(ctx context.Context) CloudcertificatesActivationStagingPtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(CloudcertificatesActivationStagingPtrOutput)
+}
+
+type CloudcertificatesActivationStagingOutput struct{ *pulumi.OutputState }
+
+func (CloudcertificatesActivationStagingOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*CloudcertificatesActivationStaging)(nil)).Elem()
+}
+
+func (o CloudcertificatesActivationStagingOutput) ToCloudcertificatesActivationStagingOutput() CloudcertificatesActivationStagingOutput {
+	return o
+}
+
+func (o CloudcertificatesActivationStagingOutput) ToCloudcertificatesActivationStagingOutputWithContext(ctx context.Context) CloudcertificatesActivationStagingOutput {
+	return o
+}
+
+func (o CloudcertificatesActivationStagingOutput) ToCloudcertificatesActivationStagingPtrOutput() CloudcertificatesActivationStagingPtrOutput {
+	return o.ToCloudcertificatesActivationStagingPtrOutputWithContext(context.Background())
+}
+
+func (o CloudcertificatesActivationStagingOutput) ToCloudcertificatesActivationStagingPtrOutputWithContext(ctx context.Context) CloudcertificatesActivationStagingPtrOutput {
+	return o.ApplyTWithContext(ctx, func(_ context.Context, v CloudcertificatesActivationStaging) *CloudcertificatesActivationStaging {
+		return &v
+	}).(CloudcertificatesActivationStagingPtrOutput)
+}
+
+// The time the activation request was created.
+func (o CloudcertificatesActivationStagingOutput) ActivationCreatedTime() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v CloudcertificatesActivationStaging) *string { return v.ActivationCreatedTime }).(pulumi.StringPtrOutput)
+}
+
+// Unique identifier of the activation request.
+func (o CloudcertificatesActivationStagingOutput) ActivationId() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v CloudcertificatesActivationStaging) *int { return v.ActivationId }).(pulumi.IntPtrOutput)
+}
+
+// The time the activation request was last modified.
+func (o CloudcertificatesActivationStagingOutput) ActivationModifiedTime() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v CloudcertificatesActivationStaging) *string { return v.ActivationModifiedTime }).(pulumi.StringPtrOutput)
+}
+
+// The status of the activation request: `INIT`, `PENDING`, `IN_PROGRESS`, `COMPLETE`, `PARTIAL_SUCCESS`, `FAILED`, or `ABORTED`.
+func (o CloudcertificatesActivationStagingOutput) ActivationStatus() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v CloudcertificatesActivationStaging) *string { return v.ActivationStatus }).(pulumi.StringPtrOutput)
+}
+
+// The type of the activation operation. Always `PROMOTE` for this resource.
+func (o CloudcertificatesActivationStagingOutput) ActivationType() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v CloudcertificatesActivationStaging) *string { return v.ActivationType }).(pulumi.StringPtrOutput)
+}
+
+// The user who created the activation request.
+func (o CloudcertificatesActivationStagingOutput) CreatedBy() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v CloudcertificatesActivationStaging) *string { return v.CreatedBy }).(pulumi.StringPtrOutput)
+}
+
+// Error type information when the activation failed, or null otherwise.
+func (o CloudcertificatesActivationStagingOutput) ErrorTypes() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v CloudcertificatesActivationStaging) *string { return v.ErrorTypes }).(pulumi.StringPtrOutput)
+}
+
+// Unique identifier of the generation actually tracked as active on the STAGING network.
+func (o CloudcertificatesActivationStagingOutput) GenerationId() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v CloudcertificatesActivationStaging) *int { return v.GenerationId }).(pulumi.IntPtrOutput)
+}
+
+// The number of hostnames still in progress for this activation, or null if not yet known.
+func (o CloudcertificatesActivationStagingOutput) InProgressHostnameCount() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v CloudcertificatesActivationStaging) *int { return v.InProgressHostnameCount }).(pulumi.IntPtrOutput)
+}
+
+// The user who last modified the activation request.
+func (o CloudcertificatesActivationStagingOutput) ModifiedBy() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v CloudcertificatesActivationStaging) *string { return v.ModifiedBy }).(pulumi.StringPtrOutput)
+}
+
+// The activation request that pre-empted (superseded) this one, or null if this activation was not pre-empted.
+func (o CloudcertificatesActivationStagingOutput) PreEmptedBy() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v CloudcertificatesActivationStaging) *int { return v.PreEmptedBy }).(pulumi.IntPtrOutput)
+}
+
+// The total number of hostnames being deployed as part of this activation, or null if not yet known.
+func (o CloudcertificatesActivationStagingOutput) TotalHostnameCount() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v CloudcertificatesActivationStaging) *int { return v.TotalHostnameCount }).(pulumi.IntPtrOutput)
+}
+
+type CloudcertificatesActivationStagingPtrOutput struct{ *pulumi.OutputState }
+
+func (CloudcertificatesActivationStagingPtrOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((**CloudcertificatesActivationStaging)(nil)).Elem()
+}
+
+func (o CloudcertificatesActivationStagingPtrOutput) ToCloudcertificatesActivationStagingPtrOutput() CloudcertificatesActivationStagingPtrOutput {
+	return o
+}
+
+func (o CloudcertificatesActivationStagingPtrOutput) ToCloudcertificatesActivationStagingPtrOutputWithContext(ctx context.Context) CloudcertificatesActivationStagingPtrOutput {
+	return o
+}
+
+func (o CloudcertificatesActivationStagingPtrOutput) Elem() CloudcertificatesActivationStagingOutput {
+	return o.ApplyT(func(v *CloudcertificatesActivationStaging) CloudcertificatesActivationStaging {
+		if v != nil {
+			return *v
+		}
+		var ret CloudcertificatesActivationStaging
+		return ret
+	}).(CloudcertificatesActivationStagingOutput)
+}
+
+// The time the activation request was created.
+func (o CloudcertificatesActivationStagingPtrOutput) ActivationCreatedTime() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *CloudcertificatesActivationStaging) *string {
+		if v == nil {
+			return nil
+		}
+		return v.ActivationCreatedTime
+	}).(pulumi.StringPtrOutput)
+}
+
+// Unique identifier of the activation request.
+func (o CloudcertificatesActivationStagingPtrOutput) ActivationId() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v *CloudcertificatesActivationStaging) *int {
+		if v == nil {
+			return nil
+		}
+		return v.ActivationId
+	}).(pulumi.IntPtrOutput)
+}
+
+// The time the activation request was last modified.
+func (o CloudcertificatesActivationStagingPtrOutput) ActivationModifiedTime() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *CloudcertificatesActivationStaging) *string {
+		if v == nil {
+			return nil
+		}
+		return v.ActivationModifiedTime
+	}).(pulumi.StringPtrOutput)
+}
+
+// The status of the activation request: `INIT`, `PENDING`, `IN_PROGRESS`, `COMPLETE`, `PARTIAL_SUCCESS`, `FAILED`, or `ABORTED`.
+func (o CloudcertificatesActivationStagingPtrOutput) ActivationStatus() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *CloudcertificatesActivationStaging) *string {
+		if v == nil {
+			return nil
+		}
+		return v.ActivationStatus
+	}).(pulumi.StringPtrOutput)
+}
+
+// The type of the activation operation. Always `PROMOTE` for this resource.
+func (o CloudcertificatesActivationStagingPtrOutput) ActivationType() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *CloudcertificatesActivationStaging) *string {
+		if v == nil {
+			return nil
+		}
+		return v.ActivationType
+	}).(pulumi.StringPtrOutput)
+}
+
+// The user who created the activation request.
+func (o CloudcertificatesActivationStagingPtrOutput) CreatedBy() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *CloudcertificatesActivationStaging) *string {
+		if v == nil {
+			return nil
+		}
+		return v.CreatedBy
+	}).(pulumi.StringPtrOutput)
+}
+
+// Error type information when the activation failed, or null otherwise.
+func (o CloudcertificatesActivationStagingPtrOutput) ErrorTypes() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *CloudcertificatesActivationStaging) *string {
+		if v == nil {
+			return nil
+		}
+		return v.ErrorTypes
+	}).(pulumi.StringPtrOutput)
+}
+
+// Unique identifier of the generation actually tracked as active on the STAGING network.
+func (o CloudcertificatesActivationStagingPtrOutput) GenerationId() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v *CloudcertificatesActivationStaging) *int {
+		if v == nil {
+			return nil
+		}
+		return v.GenerationId
+	}).(pulumi.IntPtrOutput)
+}
+
+// The number of hostnames still in progress for this activation, or null if not yet known.
+func (o CloudcertificatesActivationStagingPtrOutput) InProgressHostnameCount() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v *CloudcertificatesActivationStaging) *int {
+		if v == nil {
+			return nil
+		}
+		return v.InProgressHostnameCount
+	}).(pulumi.IntPtrOutput)
+}
+
+// The user who last modified the activation request.
+func (o CloudcertificatesActivationStagingPtrOutput) ModifiedBy() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *CloudcertificatesActivationStaging) *string {
+		if v == nil {
+			return nil
+		}
+		return v.ModifiedBy
+	}).(pulumi.StringPtrOutput)
+}
+
+// The activation request that pre-empted (superseded) this one, or null if this activation was not pre-empted.
+func (o CloudcertificatesActivationStagingPtrOutput) PreEmptedBy() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v *CloudcertificatesActivationStaging) *int {
+		if v == nil {
+			return nil
+		}
+		return v.PreEmptedBy
+	}).(pulumi.IntPtrOutput)
+}
+
+// The total number of hostnames being deployed as part of this activation, or null if not yet known.
+func (o CloudcertificatesActivationStagingPtrOutput) TotalHostnameCount() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v *CloudcertificatesActivationStaging) *int {
+		if v == nil {
+			return nil
+		}
+		return v.TotalHostnameCount
+	}).(pulumi.IntPtrOutput)
+}
+
+type CloudcertificatesActivationTimeouts struct {
+	// Optional configurable timeout for waiting for a newly created activation to reach a terminal status. By default it's 30m with a 15s polling interval.
+	Create *string `pulumi:"create"`
+	// Optional configurable timeout for waiting for a network's changed activation to reach a terminal status. By default it's 30m with a 15s polling interval.
+	Update *string `pulumi:"update"`
+}
+
+// CloudcertificatesActivationTimeoutsInput is an input type that accepts CloudcertificatesActivationTimeoutsArgs and CloudcertificatesActivationTimeoutsOutput values.
+// You can construct a concrete instance of `CloudcertificatesActivationTimeoutsInput` via:
+//
+//	CloudcertificatesActivationTimeoutsArgs{...}
+type CloudcertificatesActivationTimeoutsInput interface {
+	pulumi.Input
+
+	ToCloudcertificatesActivationTimeoutsOutput() CloudcertificatesActivationTimeoutsOutput
+	ToCloudcertificatesActivationTimeoutsOutputWithContext(context.Context) CloudcertificatesActivationTimeoutsOutput
+}
+
+type CloudcertificatesActivationTimeoutsArgs struct {
+	// Optional configurable timeout for waiting for a newly created activation to reach a terminal status. By default it's 30m with a 15s polling interval.
+	Create pulumi.StringPtrInput `pulumi:"create"`
+	// Optional configurable timeout for waiting for a network's changed activation to reach a terminal status. By default it's 30m with a 15s polling interval.
+	Update pulumi.StringPtrInput `pulumi:"update"`
+}
+
+func (CloudcertificatesActivationTimeoutsArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*CloudcertificatesActivationTimeouts)(nil)).Elem()
+}
+
+func (i CloudcertificatesActivationTimeoutsArgs) ToCloudcertificatesActivationTimeoutsOutput() CloudcertificatesActivationTimeoutsOutput {
+	return i.ToCloudcertificatesActivationTimeoutsOutputWithContext(context.Background())
+}
+
+func (i CloudcertificatesActivationTimeoutsArgs) ToCloudcertificatesActivationTimeoutsOutputWithContext(ctx context.Context) CloudcertificatesActivationTimeoutsOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(CloudcertificatesActivationTimeoutsOutput)
+}
+
+func (i CloudcertificatesActivationTimeoutsArgs) ToCloudcertificatesActivationTimeoutsPtrOutput() CloudcertificatesActivationTimeoutsPtrOutput {
+	return i.ToCloudcertificatesActivationTimeoutsPtrOutputWithContext(context.Background())
+}
+
+func (i CloudcertificatesActivationTimeoutsArgs) ToCloudcertificatesActivationTimeoutsPtrOutputWithContext(ctx context.Context) CloudcertificatesActivationTimeoutsPtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(CloudcertificatesActivationTimeoutsOutput).ToCloudcertificatesActivationTimeoutsPtrOutputWithContext(ctx)
+}
+
+// CloudcertificatesActivationTimeoutsPtrInput is an input type that accepts CloudcertificatesActivationTimeoutsArgs, CloudcertificatesActivationTimeoutsPtr and CloudcertificatesActivationTimeoutsPtrOutput values.
+// You can construct a concrete instance of `CloudcertificatesActivationTimeoutsPtrInput` via:
+//
+//	        CloudcertificatesActivationTimeoutsArgs{...}
+//
+//	or:
+//
+//	        nil
+type CloudcertificatesActivationTimeoutsPtrInput interface {
+	pulumi.Input
+
+	ToCloudcertificatesActivationTimeoutsPtrOutput() CloudcertificatesActivationTimeoutsPtrOutput
+	ToCloudcertificatesActivationTimeoutsPtrOutputWithContext(context.Context) CloudcertificatesActivationTimeoutsPtrOutput
+}
+
+type cloudcertificatesActivationTimeoutsPtrType CloudcertificatesActivationTimeoutsArgs
+
+func CloudcertificatesActivationTimeoutsPtr(v *CloudcertificatesActivationTimeoutsArgs) CloudcertificatesActivationTimeoutsPtrInput {
+	return (*cloudcertificatesActivationTimeoutsPtrType)(v)
+}
+
+func (*cloudcertificatesActivationTimeoutsPtrType) ElementType() reflect.Type {
+	return reflect.TypeOf((**CloudcertificatesActivationTimeouts)(nil)).Elem()
+}
+
+func (i *cloudcertificatesActivationTimeoutsPtrType) ToCloudcertificatesActivationTimeoutsPtrOutput() CloudcertificatesActivationTimeoutsPtrOutput {
+	return i.ToCloudcertificatesActivationTimeoutsPtrOutputWithContext(context.Background())
+}
+
+func (i *cloudcertificatesActivationTimeoutsPtrType) ToCloudcertificatesActivationTimeoutsPtrOutputWithContext(ctx context.Context) CloudcertificatesActivationTimeoutsPtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(CloudcertificatesActivationTimeoutsPtrOutput)
+}
+
+type CloudcertificatesActivationTimeoutsOutput struct{ *pulumi.OutputState }
+
+func (CloudcertificatesActivationTimeoutsOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*CloudcertificatesActivationTimeouts)(nil)).Elem()
+}
+
+func (o CloudcertificatesActivationTimeoutsOutput) ToCloudcertificatesActivationTimeoutsOutput() CloudcertificatesActivationTimeoutsOutput {
+	return o
+}
+
+func (o CloudcertificatesActivationTimeoutsOutput) ToCloudcertificatesActivationTimeoutsOutputWithContext(ctx context.Context) CloudcertificatesActivationTimeoutsOutput {
+	return o
+}
+
+func (o CloudcertificatesActivationTimeoutsOutput) ToCloudcertificatesActivationTimeoutsPtrOutput() CloudcertificatesActivationTimeoutsPtrOutput {
+	return o.ToCloudcertificatesActivationTimeoutsPtrOutputWithContext(context.Background())
+}
+
+func (o CloudcertificatesActivationTimeoutsOutput) ToCloudcertificatesActivationTimeoutsPtrOutputWithContext(ctx context.Context) CloudcertificatesActivationTimeoutsPtrOutput {
+	return o.ApplyTWithContext(ctx, func(_ context.Context, v CloudcertificatesActivationTimeouts) *CloudcertificatesActivationTimeouts {
+		return &v
+	}).(CloudcertificatesActivationTimeoutsPtrOutput)
+}
+
+// Optional configurable timeout for waiting for a newly created activation to reach a terminal status. By default it's 30m with a 15s polling interval.
+func (o CloudcertificatesActivationTimeoutsOutput) Create() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v CloudcertificatesActivationTimeouts) *string { return v.Create }).(pulumi.StringPtrOutput)
+}
+
+// Optional configurable timeout for waiting for a network's changed activation to reach a terminal status. By default it's 30m with a 15s polling interval.
+func (o CloudcertificatesActivationTimeoutsOutput) Update() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v CloudcertificatesActivationTimeouts) *string { return v.Update }).(pulumi.StringPtrOutput)
+}
+
+type CloudcertificatesActivationTimeoutsPtrOutput struct{ *pulumi.OutputState }
+
+func (CloudcertificatesActivationTimeoutsPtrOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((**CloudcertificatesActivationTimeouts)(nil)).Elem()
+}
+
+func (o CloudcertificatesActivationTimeoutsPtrOutput) ToCloudcertificatesActivationTimeoutsPtrOutput() CloudcertificatesActivationTimeoutsPtrOutput {
+	return o
+}
+
+func (o CloudcertificatesActivationTimeoutsPtrOutput) ToCloudcertificatesActivationTimeoutsPtrOutputWithContext(ctx context.Context) CloudcertificatesActivationTimeoutsPtrOutput {
+	return o
+}
+
+func (o CloudcertificatesActivationTimeoutsPtrOutput) Elem() CloudcertificatesActivationTimeoutsOutput {
+	return o.ApplyT(func(v *CloudcertificatesActivationTimeouts) CloudcertificatesActivationTimeouts {
+		if v != nil {
+			return *v
+		}
+		var ret CloudcertificatesActivationTimeouts
+		return ret
+	}).(CloudcertificatesActivationTimeoutsOutput)
+}
+
+// Optional configurable timeout for waiting for a newly created activation to reach a terminal status. By default it's 30m with a 15s polling interval.
+func (o CloudcertificatesActivationTimeoutsPtrOutput) Create() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *CloudcertificatesActivationTimeouts) *string {
+		if v == nil {
+			return nil
+		}
+		return v.Create
+	}).(pulumi.StringPtrOutput)
+}
+
+// Optional configurable timeout for waiting for a network's changed activation to reach a terminal status. By default it's 30m with a 15s polling interval.
+func (o CloudcertificatesActivationTimeoutsPtrOutput) Update() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *CloudcertificatesActivationTimeouts) *string {
+		if v == nil {
+			return nil
+		}
+		return v.Update
+	}).(pulumi.StringPtrOutput)
+}
+
+type CloudcertificatesLineageCurrentProduction struct {
+	// Per key-type (RSA or ECDSA) certificate details for this generation, keyed by key_type.
+	Algorithms map[string]CloudcertificatesLineageCurrentProductionAlgorithms `pulumi:"algorithms"`
+	// Time the generation was first promoted to production, in RFC3339 format. Null if never promoted.
+	FirstPromotedToProductionTime *string `pulumi:"firstPromotedToProductionTime"`
+	// Username of the person who created this generation.
+	GenerationCreatedBy *string `pulumi:"generationCreatedBy"`
+	// Time the generation was created, in RFC3339 format.
+	GenerationCreatedTime *string `pulumi:"generationCreatedTime"`
+	// Unique identifier of this generation.
+	GenerationId *int `pulumi:"generationId"`
+	// Username of the person who last modified this generation.
+	GenerationModifiedBy *string `pulumi:"generationModifiedBy"`
+	// Time the generation was last modified, in RFC3339 format. Null if never modified since creation.
+	GenerationModifiedTime *string `pulumi:"generationModifiedTime"`
+	// Status of this generation.
+	GenerationStatus *string `pulumi:"generationStatus"`
+}
+
+// CloudcertificatesLineageCurrentProductionInput is an input type that accepts CloudcertificatesLineageCurrentProductionArgs and CloudcertificatesLineageCurrentProductionOutput values.
+// You can construct a concrete instance of `CloudcertificatesLineageCurrentProductionInput` via:
+//
+//	CloudcertificatesLineageCurrentProductionArgs{...}
+type CloudcertificatesLineageCurrentProductionInput interface {
+	pulumi.Input
+
+	ToCloudcertificatesLineageCurrentProductionOutput() CloudcertificatesLineageCurrentProductionOutput
+	ToCloudcertificatesLineageCurrentProductionOutputWithContext(context.Context) CloudcertificatesLineageCurrentProductionOutput
+}
+
+type CloudcertificatesLineageCurrentProductionArgs struct {
+	// Per key-type (RSA or ECDSA) certificate details for this generation, keyed by key_type.
+	Algorithms CloudcertificatesLineageCurrentProductionAlgorithmsMapInput `pulumi:"algorithms"`
+	// Time the generation was first promoted to production, in RFC3339 format. Null if never promoted.
+	FirstPromotedToProductionTime pulumi.StringPtrInput `pulumi:"firstPromotedToProductionTime"`
+	// Username of the person who created this generation.
+	GenerationCreatedBy pulumi.StringPtrInput `pulumi:"generationCreatedBy"`
+	// Time the generation was created, in RFC3339 format.
+	GenerationCreatedTime pulumi.StringPtrInput `pulumi:"generationCreatedTime"`
+	// Unique identifier of this generation.
+	GenerationId pulumi.IntPtrInput `pulumi:"generationId"`
+	// Username of the person who last modified this generation.
+	GenerationModifiedBy pulumi.StringPtrInput `pulumi:"generationModifiedBy"`
+	// Time the generation was last modified, in RFC3339 format. Null if never modified since creation.
+	GenerationModifiedTime pulumi.StringPtrInput `pulumi:"generationModifiedTime"`
+	// Status of this generation.
+	GenerationStatus pulumi.StringPtrInput `pulumi:"generationStatus"`
+}
+
+func (CloudcertificatesLineageCurrentProductionArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*CloudcertificatesLineageCurrentProduction)(nil)).Elem()
+}
+
+func (i CloudcertificatesLineageCurrentProductionArgs) ToCloudcertificatesLineageCurrentProductionOutput() CloudcertificatesLineageCurrentProductionOutput {
+	return i.ToCloudcertificatesLineageCurrentProductionOutputWithContext(context.Background())
+}
+
+func (i CloudcertificatesLineageCurrentProductionArgs) ToCloudcertificatesLineageCurrentProductionOutputWithContext(ctx context.Context) CloudcertificatesLineageCurrentProductionOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(CloudcertificatesLineageCurrentProductionOutput)
+}
+
+func (i CloudcertificatesLineageCurrentProductionArgs) ToCloudcertificatesLineageCurrentProductionPtrOutput() CloudcertificatesLineageCurrentProductionPtrOutput {
+	return i.ToCloudcertificatesLineageCurrentProductionPtrOutputWithContext(context.Background())
+}
+
+func (i CloudcertificatesLineageCurrentProductionArgs) ToCloudcertificatesLineageCurrentProductionPtrOutputWithContext(ctx context.Context) CloudcertificatesLineageCurrentProductionPtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(CloudcertificatesLineageCurrentProductionOutput).ToCloudcertificatesLineageCurrentProductionPtrOutputWithContext(ctx)
+}
+
+// CloudcertificatesLineageCurrentProductionPtrInput is an input type that accepts CloudcertificatesLineageCurrentProductionArgs, CloudcertificatesLineageCurrentProductionPtr and CloudcertificatesLineageCurrentProductionPtrOutput values.
+// You can construct a concrete instance of `CloudcertificatesLineageCurrentProductionPtrInput` via:
+//
+//	        CloudcertificatesLineageCurrentProductionArgs{...}
+//
+//	or:
+//
+//	        nil
+type CloudcertificatesLineageCurrentProductionPtrInput interface {
+	pulumi.Input
+
+	ToCloudcertificatesLineageCurrentProductionPtrOutput() CloudcertificatesLineageCurrentProductionPtrOutput
+	ToCloudcertificatesLineageCurrentProductionPtrOutputWithContext(context.Context) CloudcertificatesLineageCurrentProductionPtrOutput
+}
+
+type cloudcertificatesLineageCurrentProductionPtrType CloudcertificatesLineageCurrentProductionArgs
+
+func CloudcertificatesLineageCurrentProductionPtr(v *CloudcertificatesLineageCurrentProductionArgs) CloudcertificatesLineageCurrentProductionPtrInput {
+	return (*cloudcertificatesLineageCurrentProductionPtrType)(v)
+}
+
+func (*cloudcertificatesLineageCurrentProductionPtrType) ElementType() reflect.Type {
+	return reflect.TypeOf((**CloudcertificatesLineageCurrentProduction)(nil)).Elem()
+}
+
+func (i *cloudcertificatesLineageCurrentProductionPtrType) ToCloudcertificatesLineageCurrentProductionPtrOutput() CloudcertificatesLineageCurrentProductionPtrOutput {
+	return i.ToCloudcertificatesLineageCurrentProductionPtrOutputWithContext(context.Background())
+}
+
+func (i *cloudcertificatesLineageCurrentProductionPtrType) ToCloudcertificatesLineageCurrentProductionPtrOutputWithContext(ctx context.Context) CloudcertificatesLineageCurrentProductionPtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(CloudcertificatesLineageCurrentProductionPtrOutput)
+}
+
+type CloudcertificatesLineageCurrentProductionOutput struct{ *pulumi.OutputState }
+
+func (CloudcertificatesLineageCurrentProductionOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*CloudcertificatesLineageCurrentProduction)(nil)).Elem()
+}
+
+func (o CloudcertificatesLineageCurrentProductionOutput) ToCloudcertificatesLineageCurrentProductionOutput() CloudcertificatesLineageCurrentProductionOutput {
+	return o
+}
+
+func (o CloudcertificatesLineageCurrentProductionOutput) ToCloudcertificatesLineageCurrentProductionOutputWithContext(ctx context.Context) CloudcertificatesLineageCurrentProductionOutput {
+	return o
+}
+
+func (o CloudcertificatesLineageCurrentProductionOutput) ToCloudcertificatesLineageCurrentProductionPtrOutput() CloudcertificatesLineageCurrentProductionPtrOutput {
+	return o.ToCloudcertificatesLineageCurrentProductionPtrOutputWithContext(context.Background())
+}
+
+func (o CloudcertificatesLineageCurrentProductionOutput) ToCloudcertificatesLineageCurrentProductionPtrOutputWithContext(ctx context.Context) CloudcertificatesLineageCurrentProductionPtrOutput {
+	return o.ApplyTWithContext(ctx, func(_ context.Context, v CloudcertificatesLineageCurrentProduction) *CloudcertificatesLineageCurrentProduction {
+		return &v
+	}).(CloudcertificatesLineageCurrentProductionPtrOutput)
+}
+
+// Per key-type (RSA or ECDSA) certificate details for this generation, keyed by key_type.
+func (o CloudcertificatesLineageCurrentProductionOutput) Algorithms() CloudcertificatesLineageCurrentProductionAlgorithmsMapOutput {
+	return o.ApplyT(func(v CloudcertificatesLineageCurrentProduction) map[string]CloudcertificatesLineageCurrentProductionAlgorithms {
+		return v.Algorithms
+	}).(CloudcertificatesLineageCurrentProductionAlgorithmsMapOutput)
+}
+
+// Time the generation was first promoted to production, in RFC3339 format. Null if never promoted.
+func (o CloudcertificatesLineageCurrentProductionOutput) FirstPromotedToProductionTime() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v CloudcertificatesLineageCurrentProduction) *string { return v.FirstPromotedToProductionTime }).(pulumi.StringPtrOutput)
+}
+
+// Username of the person who created this generation.
+func (o CloudcertificatesLineageCurrentProductionOutput) GenerationCreatedBy() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v CloudcertificatesLineageCurrentProduction) *string { return v.GenerationCreatedBy }).(pulumi.StringPtrOutput)
+}
+
+// Time the generation was created, in RFC3339 format.
+func (o CloudcertificatesLineageCurrentProductionOutput) GenerationCreatedTime() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v CloudcertificatesLineageCurrentProduction) *string { return v.GenerationCreatedTime }).(pulumi.StringPtrOutput)
+}
+
+// Unique identifier of this generation.
+func (o CloudcertificatesLineageCurrentProductionOutput) GenerationId() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v CloudcertificatesLineageCurrentProduction) *int { return v.GenerationId }).(pulumi.IntPtrOutput)
+}
+
+// Username of the person who last modified this generation.
+func (o CloudcertificatesLineageCurrentProductionOutput) GenerationModifiedBy() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v CloudcertificatesLineageCurrentProduction) *string { return v.GenerationModifiedBy }).(pulumi.StringPtrOutput)
+}
+
+// Time the generation was last modified, in RFC3339 format. Null if never modified since creation.
+func (o CloudcertificatesLineageCurrentProductionOutput) GenerationModifiedTime() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v CloudcertificatesLineageCurrentProduction) *string { return v.GenerationModifiedTime }).(pulumi.StringPtrOutput)
+}
+
+// Status of this generation.
+func (o CloudcertificatesLineageCurrentProductionOutput) GenerationStatus() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v CloudcertificatesLineageCurrentProduction) *string { return v.GenerationStatus }).(pulumi.StringPtrOutput)
+}
+
+type CloudcertificatesLineageCurrentProductionPtrOutput struct{ *pulumi.OutputState }
+
+func (CloudcertificatesLineageCurrentProductionPtrOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((**CloudcertificatesLineageCurrentProduction)(nil)).Elem()
+}
+
+func (o CloudcertificatesLineageCurrentProductionPtrOutput) ToCloudcertificatesLineageCurrentProductionPtrOutput() CloudcertificatesLineageCurrentProductionPtrOutput {
+	return o
+}
+
+func (o CloudcertificatesLineageCurrentProductionPtrOutput) ToCloudcertificatesLineageCurrentProductionPtrOutputWithContext(ctx context.Context) CloudcertificatesLineageCurrentProductionPtrOutput {
+	return o
+}
+
+func (o CloudcertificatesLineageCurrentProductionPtrOutput) Elem() CloudcertificatesLineageCurrentProductionOutput {
+	return o.ApplyT(func(v *CloudcertificatesLineageCurrentProduction) CloudcertificatesLineageCurrentProduction {
+		if v != nil {
+			return *v
+		}
+		var ret CloudcertificatesLineageCurrentProduction
+		return ret
+	}).(CloudcertificatesLineageCurrentProductionOutput)
+}
+
+// Per key-type (RSA or ECDSA) certificate details for this generation, keyed by key_type.
+func (o CloudcertificatesLineageCurrentProductionPtrOutput) Algorithms() CloudcertificatesLineageCurrentProductionAlgorithmsMapOutput {
+	return o.ApplyT(func(v *CloudcertificatesLineageCurrentProduction) map[string]CloudcertificatesLineageCurrentProductionAlgorithms {
+		if v == nil {
+			return nil
+		}
+		return v.Algorithms
+	}).(CloudcertificatesLineageCurrentProductionAlgorithmsMapOutput)
+}
+
+// Time the generation was first promoted to production, in RFC3339 format. Null if never promoted.
+func (o CloudcertificatesLineageCurrentProductionPtrOutput) FirstPromotedToProductionTime() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *CloudcertificatesLineageCurrentProduction) *string {
+		if v == nil {
+			return nil
+		}
+		return v.FirstPromotedToProductionTime
+	}).(pulumi.StringPtrOutput)
+}
+
+// Username of the person who created this generation.
+func (o CloudcertificatesLineageCurrentProductionPtrOutput) GenerationCreatedBy() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *CloudcertificatesLineageCurrentProduction) *string {
+		if v == nil {
+			return nil
+		}
+		return v.GenerationCreatedBy
+	}).(pulumi.StringPtrOutput)
+}
+
+// Time the generation was created, in RFC3339 format.
+func (o CloudcertificatesLineageCurrentProductionPtrOutput) GenerationCreatedTime() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *CloudcertificatesLineageCurrentProduction) *string {
+		if v == nil {
+			return nil
+		}
+		return v.GenerationCreatedTime
+	}).(pulumi.StringPtrOutput)
+}
+
+// Unique identifier of this generation.
+func (o CloudcertificatesLineageCurrentProductionPtrOutput) GenerationId() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v *CloudcertificatesLineageCurrentProduction) *int {
+		if v == nil {
+			return nil
+		}
+		return v.GenerationId
+	}).(pulumi.IntPtrOutput)
+}
+
+// Username of the person who last modified this generation.
+func (o CloudcertificatesLineageCurrentProductionPtrOutput) GenerationModifiedBy() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *CloudcertificatesLineageCurrentProduction) *string {
+		if v == nil {
+			return nil
+		}
+		return v.GenerationModifiedBy
+	}).(pulumi.StringPtrOutput)
+}
+
+// Time the generation was last modified, in RFC3339 format. Null if never modified since creation.
+func (o CloudcertificatesLineageCurrentProductionPtrOutput) GenerationModifiedTime() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *CloudcertificatesLineageCurrentProduction) *string {
+		if v == nil {
+			return nil
+		}
+		return v.GenerationModifiedTime
+	}).(pulumi.StringPtrOutput)
+}
+
+// Status of this generation.
+func (o CloudcertificatesLineageCurrentProductionPtrOutput) GenerationStatus() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *CloudcertificatesLineageCurrentProduction) *string {
+		if v == nil {
+			return nil
+		}
+		return v.GenerationStatus
+	}).(pulumi.StringPtrOutput)
+}
+
+type CloudcertificatesLineageCurrentProductionAlgorithms struct {
+	// Username of the person who created the algorithm instance.
+	AlgorithmInstanceCreatedBy *string `pulumi:"algorithmInstanceCreatedBy"`
+	// Time the algorithm instance was created, in RFC3339 format.
+	AlgorithmInstanceCreatedTime *string `pulumi:"algorithmInstanceCreatedTime"`
+	// Unique identifier of the algorithm instance.
+	AlgorithmInstanceId *int `pulumi:"algorithmInstanceId"`
+	// Username of the person who last modified the algorithm instance. Null if never modified.
+	AlgorithmInstanceModifiedBy *string `pulumi:"algorithmInstanceModifiedBy"`
+	// Time the algorithm instance was last modified, in RFC3339 format. Null if never modified.
+	AlgorithmInstanceModifiedTime *string `pulumi:"algorithmInstanceModifiedTime"`
+	// Status of the certificate for this key type: `CSR_READY`, `CERT_UPLOAD_PROCESSING`, `READY_FOR_USE`, or `ABANDONED`.
+	CertificateStatus *string `pulumi:"certificateStatus"`
+	// Date when the CSR expires, in RFC3339 format.
+	CsrExpirationDate *string `pulumi:"csrExpirationDate"`
+	// PEM-encoded certificate signing request.
+	CsrPem *string `pulumi:"csrPem"`
+	// Issuer field of the signed certificate. Null until a certificate is uploaded.
+	SignedCertificateIssuer *string `pulumi:"signedCertificateIssuer"`
+	// Expiration date of the signed certificate, in RFC3339 format. Null until a certificate is uploaded.
+	SignedCertificateNotValidAfterDate *string `pulumi:"signedCertificateNotValidAfterDate"`
+	// Start of validity of the signed certificate, in RFC3339 format. Null until a certificate is uploaded.
+	SignedCertificateNotValidBeforeDate *string `pulumi:"signedCertificateNotValidBeforeDate"`
+	// PEM-encoded signed certificate. Null until a certificate is uploaded.
+	SignedCertificatePem *string `pulumi:"signedCertificatePem"`
+	// Serial number of the signed certificate in hex format. Null until a certificate is uploaded.
+	SignedCertificateSerialNumber *string `pulumi:"signedCertificateSerialNumber"`
+	// SHA-256 fingerprint of the signed certificate. Null until a certificate is uploaded.
+	SignedCertificateSha256Fingerprint *string `pulumi:"signedCertificateSha256Fingerprint"`
+	// PEM-encoded trust chain uploaded alongside the signed certificate. Null if none was uploaded.
+	TrustChainPem *string `pulumi:"trustChainPem"`
+}
+
+// CloudcertificatesLineageCurrentProductionAlgorithmsInput is an input type that accepts CloudcertificatesLineageCurrentProductionAlgorithmsArgs and CloudcertificatesLineageCurrentProductionAlgorithmsOutput values.
+// You can construct a concrete instance of `CloudcertificatesLineageCurrentProductionAlgorithmsInput` via:
+//
+//	CloudcertificatesLineageCurrentProductionAlgorithmsArgs{...}
+type CloudcertificatesLineageCurrentProductionAlgorithmsInput interface {
+	pulumi.Input
+
+	ToCloudcertificatesLineageCurrentProductionAlgorithmsOutput() CloudcertificatesLineageCurrentProductionAlgorithmsOutput
+	ToCloudcertificatesLineageCurrentProductionAlgorithmsOutputWithContext(context.Context) CloudcertificatesLineageCurrentProductionAlgorithmsOutput
+}
+
+type CloudcertificatesLineageCurrentProductionAlgorithmsArgs struct {
+	// Username of the person who created the algorithm instance.
+	AlgorithmInstanceCreatedBy pulumi.StringPtrInput `pulumi:"algorithmInstanceCreatedBy"`
+	// Time the algorithm instance was created, in RFC3339 format.
+	AlgorithmInstanceCreatedTime pulumi.StringPtrInput `pulumi:"algorithmInstanceCreatedTime"`
+	// Unique identifier of the algorithm instance.
+	AlgorithmInstanceId pulumi.IntPtrInput `pulumi:"algorithmInstanceId"`
+	// Username of the person who last modified the algorithm instance. Null if never modified.
+	AlgorithmInstanceModifiedBy pulumi.StringPtrInput `pulumi:"algorithmInstanceModifiedBy"`
+	// Time the algorithm instance was last modified, in RFC3339 format. Null if never modified.
+	AlgorithmInstanceModifiedTime pulumi.StringPtrInput `pulumi:"algorithmInstanceModifiedTime"`
+	// Status of the certificate for this key type: `CSR_READY`, `CERT_UPLOAD_PROCESSING`, `READY_FOR_USE`, or `ABANDONED`.
+	CertificateStatus pulumi.StringPtrInput `pulumi:"certificateStatus"`
+	// Date when the CSR expires, in RFC3339 format.
+	CsrExpirationDate pulumi.StringPtrInput `pulumi:"csrExpirationDate"`
+	// PEM-encoded certificate signing request.
+	CsrPem pulumi.StringPtrInput `pulumi:"csrPem"`
+	// Issuer field of the signed certificate. Null until a certificate is uploaded.
+	SignedCertificateIssuer pulumi.StringPtrInput `pulumi:"signedCertificateIssuer"`
+	// Expiration date of the signed certificate, in RFC3339 format. Null until a certificate is uploaded.
+	SignedCertificateNotValidAfterDate pulumi.StringPtrInput `pulumi:"signedCertificateNotValidAfterDate"`
+	// Start of validity of the signed certificate, in RFC3339 format. Null until a certificate is uploaded.
+	SignedCertificateNotValidBeforeDate pulumi.StringPtrInput `pulumi:"signedCertificateNotValidBeforeDate"`
+	// PEM-encoded signed certificate. Null until a certificate is uploaded.
+	SignedCertificatePem pulumi.StringPtrInput `pulumi:"signedCertificatePem"`
+	// Serial number of the signed certificate in hex format. Null until a certificate is uploaded.
+	SignedCertificateSerialNumber pulumi.StringPtrInput `pulumi:"signedCertificateSerialNumber"`
+	// SHA-256 fingerprint of the signed certificate. Null until a certificate is uploaded.
+	SignedCertificateSha256Fingerprint pulumi.StringPtrInput `pulumi:"signedCertificateSha256Fingerprint"`
+	// PEM-encoded trust chain uploaded alongside the signed certificate. Null if none was uploaded.
+	TrustChainPem pulumi.StringPtrInput `pulumi:"trustChainPem"`
+}
+
+func (CloudcertificatesLineageCurrentProductionAlgorithmsArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*CloudcertificatesLineageCurrentProductionAlgorithms)(nil)).Elem()
+}
+
+func (i CloudcertificatesLineageCurrentProductionAlgorithmsArgs) ToCloudcertificatesLineageCurrentProductionAlgorithmsOutput() CloudcertificatesLineageCurrentProductionAlgorithmsOutput {
+	return i.ToCloudcertificatesLineageCurrentProductionAlgorithmsOutputWithContext(context.Background())
+}
+
+func (i CloudcertificatesLineageCurrentProductionAlgorithmsArgs) ToCloudcertificatesLineageCurrentProductionAlgorithmsOutputWithContext(ctx context.Context) CloudcertificatesLineageCurrentProductionAlgorithmsOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(CloudcertificatesLineageCurrentProductionAlgorithmsOutput)
+}
+
+// CloudcertificatesLineageCurrentProductionAlgorithmsMapInput is an input type that accepts CloudcertificatesLineageCurrentProductionAlgorithmsMap and CloudcertificatesLineageCurrentProductionAlgorithmsMapOutput values.
+// You can construct a concrete instance of `CloudcertificatesLineageCurrentProductionAlgorithmsMapInput` via:
+//
+//	CloudcertificatesLineageCurrentProductionAlgorithmsMap{ "key": CloudcertificatesLineageCurrentProductionAlgorithmsArgs{...} }
+type CloudcertificatesLineageCurrentProductionAlgorithmsMapInput interface {
+	pulumi.Input
+
+	ToCloudcertificatesLineageCurrentProductionAlgorithmsMapOutput() CloudcertificatesLineageCurrentProductionAlgorithmsMapOutput
+	ToCloudcertificatesLineageCurrentProductionAlgorithmsMapOutputWithContext(context.Context) CloudcertificatesLineageCurrentProductionAlgorithmsMapOutput
+}
+
+type CloudcertificatesLineageCurrentProductionAlgorithmsMap map[string]CloudcertificatesLineageCurrentProductionAlgorithmsInput
+
+func (CloudcertificatesLineageCurrentProductionAlgorithmsMap) ElementType() reflect.Type {
+	return reflect.TypeOf((*map[string]CloudcertificatesLineageCurrentProductionAlgorithms)(nil)).Elem()
+}
+
+func (i CloudcertificatesLineageCurrentProductionAlgorithmsMap) ToCloudcertificatesLineageCurrentProductionAlgorithmsMapOutput() CloudcertificatesLineageCurrentProductionAlgorithmsMapOutput {
+	return i.ToCloudcertificatesLineageCurrentProductionAlgorithmsMapOutputWithContext(context.Background())
+}
+
+func (i CloudcertificatesLineageCurrentProductionAlgorithmsMap) ToCloudcertificatesLineageCurrentProductionAlgorithmsMapOutputWithContext(ctx context.Context) CloudcertificatesLineageCurrentProductionAlgorithmsMapOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(CloudcertificatesLineageCurrentProductionAlgorithmsMapOutput)
+}
+
+type CloudcertificatesLineageCurrentProductionAlgorithmsOutput struct{ *pulumi.OutputState }
+
+func (CloudcertificatesLineageCurrentProductionAlgorithmsOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*CloudcertificatesLineageCurrentProductionAlgorithms)(nil)).Elem()
+}
+
+func (o CloudcertificatesLineageCurrentProductionAlgorithmsOutput) ToCloudcertificatesLineageCurrentProductionAlgorithmsOutput() CloudcertificatesLineageCurrentProductionAlgorithmsOutput {
+	return o
+}
+
+func (o CloudcertificatesLineageCurrentProductionAlgorithmsOutput) ToCloudcertificatesLineageCurrentProductionAlgorithmsOutputWithContext(ctx context.Context) CloudcertificatesLineageCurrentProductionAlgorithmsOutput {
+	return o
+}
+
+// Username of the person who created the algorithm instance.
+func (o CloudcertificatesLineageCurrentProductionAlgorithmsOutput) AlgorithmInstanceCreatedBy() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v CloudcertificatesLineageCurrentProductionAlgorithms) *string {
+		return v.AlgorithmInstanceCreatedBy
+	}).(pulumi.StringPtrOutput)
+}
+
+// Time the algorithm instance was created, in RFC3339 format.
+func (o CloudcertificatesLineageCurrentProductionAlgorithmsOutput) AlgorithmInstanceCreatedTime() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v CloudcertificatesLineageCurrentProductionAlgorithms) *string {
+		return v.AlgorithmInstanceCreatedTime
+	}).(pulumi.StringPtrOutput)
+}
+
+// Unique identifier of the algorithm instance.
+func (o CloudcertificatesLineageCurrentProductionAlgorithmsOutput) AlgorithmInstanceId() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v CloudcertificatesLineageCurrentProductionAlgorithms) *int { return v.AlgorithmInstanceId }).(pulumi.IntPtrOutput)
+}
+
+// Username of the person who last modified the algorithm instance. Null if never modified.
+func (o CloudcertificatesLineageCurrentProductionAlgorithmsOutput) AlgorithmInstanceModifiedBy() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v CloudcertificatesLineageCurrentProductionAlgorithms) *string {
+		return v.AlgorithmInstanceModifiedBy
+	}).(pulumi.StringPtrOutput)
+}
+
+// Time the algorithm instance was last modified, in RFC3339 format. Null if never modified.
+func (o CloudcertificatesLineageCurrentProductionAlgorithmsOutput) AlgorithmInstanceModifiedTime() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v CloudcertificatesLineageCurrentProductionAlgorithms) *string {
+		return v.AlgorithmInstanceModifiedTime
+	}).(pulumi.StringPtrOutput)
+}
+
+// Status of the certificate for this key type: `CSR_READY`, `CERT_UPLOAD_PROCESSING`, `READY_FOR_USE`, or `ABANDONED`.
+func (o CloudcertificatesLineageCurrentProductionAlgorithmsOutput) CertificateStatus() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v CloudcertificatesLineageCurrentProductionAlgorithms) *string { return v.CertificateStatus }).(pulumi.StringPtrOutput)
+}
+
+// Date when the CSR expires, in RFC3339 format.
+func (o CloudcertificatesLineageCurrentProductionAlgorithmsOutput) CsrExpirationDate() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v CloudcertificatesLineageCurrentProductionAlgorithms) *string { return v.CsrExpirationDate }).(pulumi.StringPtrOutput)
+}
+
+// PEM-encoded certificate signing request.
+func (o CloudcertificatesLineageCurrentProductionAlgorithmsOutput) CsrPem() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v CloudcertificatesLineageCurrentProductionAlgorithms) *string { return v.CsrPem }).(pulumi.StringPtrOutput)
+}
+
+// Issuer field of the signed certificate. Null until a certificate is uploaded.
+func (o CloudcertificatesLineageCurrentProductionAlgorithmsOutput) SignedCertificateIssuer() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v CloudcertificatesLineageCurrentProductionAlgorithms) *string { return v.SignedCertificateIssuer }).(pulumi.StringPtrOutput)
+}
+
+// Expiration date of the signed certificate, in RFC3339 format. Null until a certificate is uploaded.
+func (o CloudcertificatesLineageCurrentProductionAlgorithmsOutput) SignedCertificateNotValidAfterDate() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v CloudcertificatesLineageCurrentProductionAlgorithms) *string {
+		return v.SignedCertificateNotValidAfterDate
+	}).(pulumi.StringPtrOutput)
+}
+
+// Start of validity of the signed certificate, in RFC3339 format. Null until a certificate is uploaded.
+func (o CloudcertificatesLineageCurrentProductionAlgorithmsOutput) SignedCertificateNotValidBeforeDate() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v CloudcertificatesLineageCurrentProductionAlgorithms) *string {
+		return v.SignedCertificateNotValidBeforeDate
+	}).(pulumi.StringPtrOutput)
+}
+
+// PEM-encoded signed certificate. Null until a certificate is uploaded.
+func (o CloudcertificatesLineageCurrentProductionAlgorithmsOutput) SignedCertificatePem() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v CloudcertificatesLineageCurrentProductionAlgorithms) *string { return v.SignedCertificatePem }).(pulumi.StringPtrOutput)
+}
+
+// Serial number of the signed certificate in hex format. Null until a certificate is uploaded.
+func (o CloudcertificatesLineageCurrentProductionAlgorithmsOutput) SignedCertificateSerialNumber() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v CloudcertificatesLineageCurrentProductionAlgorithms) *string {
+		return v.SignedCertificateSerialNumber
+	}).(pulumi.StringPtrOutput)
+}
+
+// SHA-256 fingerprint of the signed certificate. Null until a certificate is uploaded.
+func (o CloudcertificatesLineageCurrentProductionAlgorithmsOutput) SignedCertificateSha256Fingerprint() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v CloudcertificatesLineageCurrentProductionAlgorithms) *string {
+		return v.SignedCertificateSha256Fingerprint
+	}).(pulumi.StringPtrOutput)
+}
+
+// PEM-encoded trust chain uploaded alongside the signed certificate. Null if none was uploaded.
+func (o CloudcertificatesLineageCurrentProductionAlgorithmsOutput) TrustChainPem() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v CloudcertificatesLineageCurrentProductionAlgorithms) *string { return v.TrustChainPem }).(pulumi.StringPtrOutput)
+}
+
+type CloudcertificatesLineageCurrentProductionAlgorithmsMapOutput struct{ *pulumi.OutputState }
+
+func (CloudcertificatesLineageCurrentProductionAlgorithmsMapOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*map[string]CloudcertificatesLineageCurrentProductionAlgorithms)(nil)).Elem()
+}
+
+func (o CloudcertificatesLineageCurrentProductionAlgorithmsMapOutput) ToCloudcertificatesLineageCurrentProductionAlgorithmsMapOutput() CloudcertificatesLineageCurrentProductionAlgorithmsMapOutput {
+	return o
+}
+
+func (o CloudcertificatesLineageCurrentProductionAlgorithmsMapOutput) ToCloudcertificatesLineageCurrentProductionAlgorithmsMapOutputWithContext(ctx context.Context) CloudcertificatesLineageCurrentProductionAlgorithmsMapOutput {
+	return o
+}
+
+func (o CloudcertificatesLineageCurrentProductionAlgorithmsMapOutput) MapIndex(k pulumi.StringInput) CloudcertificatesLineageCurrentProductionAlgorithmsOutput {
+	return pulumi.All(o, k).ApplyT(func(vs []interface{}) CloudcertificatesLineageCurrentProductionAlgorithms {
+		return vs[0].(map[string]CloudcertificatesLineageCurrentProductionAlgorithms)[vs[1].(string)]
+	}).(CloudcertificatesLineageCurrentProductionAlgorithmsOutput)
+}
+
+type CloudcertificatesLineageCurrentStaging struct {
+	// Per key-type (RSA or ECDSA) certificate details for this generation, keyed by key_type.
+	Algorithms map[string]CloudcertificatesLineageCurrentStagingAlgorithms `pulumi:"algorithms"`
+	// Time the generation was first promoted to production, in RFC3339 format. Null if never promoted.
+	FirstPromotedToProductionTime *string `pulumi:"firstPromotedToProductionTime"`
+	// Username of the person who created this generation.
+	GenerationCreatedBy *string `pulumi:"generationCreatedBy"`
+	// Time the generation was created, in RFC3339 format.
+	GenerationCreatedTime *string `pulumi:"generationCreatedTime"`
+	// Unique identifier of this generation.
+	GenerationId *int `pulumi:"generationId"`
+	// Username of the person who last modified this generation.
+	GenerationModifiedBy *string `pulumi:"generationModifiedBy"`
+	// Time the generation was last modified, in RFC3339 format. Null if never modified since creation.
+	GenerationModifiedTime *string `pulumi:"generationModifiedTime"`
+	// Status of this generation.
+	GenerationStatus *string `pulumi:"generationStatus"`
+}
+
+// CloudcertificatesLineageCurrentStagingInput is an input type that accepts CloudcertificatesLineageCurrentStagingArgs and CloudcertificatesLineageCurrentStagingOutput values.
+// You can construct a concrete instance of `CloudcertificatesLineageCurrentStagingInput` via:
+//
+//	CloudcertificatesLineageCurrentStagingArgs{...}
+type CloudcertificatesLineageCurrentStagingInput interface {
+	pulumi.Input
+
+	ToCloudcertificatesLineageCurrentStagingOutput() CloudcertificatesLineageCurrentStagingOutput
+	ToCloudcertificatesLineageCurrentStagingOutputWithContext(context.Context) CloudcertificatesLineageCurrentStagingOutput
+}
+
+type CloudcertificatesLineageCurrentStagingArgs struct {
+	// Per key-type (RSA or ECDSA) certificate details for this generation, keyed by key_type.
+	Algorithms CloudcertificatesLineageCurrentStagingAlgorithmsMapInput `pulumi:"algorithms"`
+	// Time the generation was first promoted to production, in RFC3339 format. Null if never promoted.
+	FirstPromotedToProductionTime pulumi.StringPtrInput `pulumi:"firstPromotedToProductionTime"`
+	// Username of the person who created this generation.
+	GenerationCreatedBy pulumi.StringPtrInput `pulumi:"generationCreatedBy"`
+	// Time the generation was created, in RFC3339 format.
+	GenerationCreatedTime pulumi.StringPtrInput `pulumi:"generationCreatedTime"`
+	// Unique identifier of this generation.
+	GenerationId pulumi.IntPtrInput `pulumi:"generationId"`
+	// Username of the person who last modified this generation.
+	GenerationModifiedBy pulumi.StringPtrInput `pulumi:"generationModifiedBy"`
+	// Time the generation was last modified, in RFC3339 format. Null if never modified since creation.
+	GenerationModifiedTime pulumi.StringPtrInput `pulumi:"generationModifiedTime"`
+	// Status of this generation.
+	GenerationStatus pulumi.StringPtrInput `pulumi:"generationStatus"`
+}
+
+func (CloudcertificatesLineageCurrentStagingArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*CloudcertificatesLineageCurrentStaging)(nil)).Elem()
+}
+
+func (i CloudcertificatesLineageCurrentStagingArgs) ToCloudcertificatesLineageCurrentStagingOutput() CloudcertificatesLineageCurrentStagingOutput {
+	return i.ToCloudcertificatesLineageCurrentStagingOutputWithContext(context.Background())
+}
+
+func (i CloudcertificatesLineageCurrentStagingArgs) ToCloudcertificatesLineageCurrentStagingOutputWithContext(ctx context.Context) CloudcertificatesLineageCurrentStagingOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(CloudcertificatesLineageCurrentStagingOutput)
+}
+
+func (i CloudcertificatesLineageCurrentStagingArgs) ToCloudcertificatesLineageCurrentStagingPtrOutput() CloudcertificatesLineageCurrentStagingPtrOutput {
+	return i.ToCloudcertificatesLineageCurrentStagingPtrOutputWithContext(context.Background())
+}
+
+func (i CloudcertificatesLineageCurrentStagingArgs) ToCloudcertificatesLineageCurrentStagingPtrOutputWithContext(ctx context.Context) CloudcertificatesLineageCurrentStagingPtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(CloudcertificatesLineageCurrentStagingOutput).ToCloudcertificatesLineageCurrentStagingPtrOutputWithContext(ctx)
+}
+
+// CloudcertificatesLineageCurrentStagingPtrInput is an input type that accepts CloudcertificatesLineageCurrentStagingArgs, CloudcertificatesLineageCurrentStagingPtr and CloudcertificatesLineageCurrentStagingPtrOutput values.
+// You can construct a concrete instance of `CloudcertificatesLineageCurrentStagingPtrInput` via:
+//
+//	        CloudcertificatesLineageCurrentStagingArgs{...}
+//
+//	or:
+//
+//	        nil
+type CloudcertificatesLineageCurrentStagingPtrInput interface {
+	pulumi.Input
+
+	ToCloudcertificatesLineageCurrentStagingPtrOutput() CloudcertificatesLineageCurrentStagingPtrOutput
+	ToCloudcertificatesLineageCurrentStagingPtrOutputWithContext(context.Context) CloudcertificatesLineageCurrentStagingPtrOutput
+}
+
+type cloudcertificatesLineageCurrentStagingPtrType CloudcertificatesLineageCurrentStagingArgs
+
+func CloudcertificatesLineageCurrentStagingPtr(v *CloudcertificatesLineageCurrentStagingArgs) CloudcertificatesLineageCurrentStagingPtrInput {
+	return (*cloudcertificatesLineageCurrentStagingPtrType)(v)
+}
+
+func (*cloudcertificatesLineageCurrentStagingPtrType) ElementType() reflect.Type {
+	return reflect.TypeOf((**CloudcertificatesLineageCurrentStaging)(nil)).Elem()
+}
+
+func (i *cloudcertificatesLineageCurrentStagingPtrType) ToCloudcertificatesLineageCurrentStagingPtrOutput() CloudcertificatesLineageCurrentStagingPtrOutput {
+	return i.ToCloudcertificatesLineageCurrentStagingPtrOutputWithContext(context.Background())
+}
+
+func (i *cloudcertificatesLineageCurrentStagingPtrType) ToCloudcertificatesLineageCurrentStagingPtrOutputWithContext(ctx context.Context) CloudcertificatesLineageCurrentStagingPtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(CloudcertificatesLineageCurrentStagingPtrOutput)
+}
+
+type CloudcertificatesLineageCurrentStagingOutput struct{ *pulumi.OutputState }
+
+func (CloudcertificatesLineageCurrentStagingOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*CloudcertificatesLineageCurrentStaging)(nil)).Elem()
+}
+
+func (o CloudcertificatesLineageCurrentStagingOutput) ToCloudcertificatesLineageCurrentStagingOutput() CloudcertificatesLineageCurrentStagingOutput {
+	return o
+}
+
+func (o CloudcertificatesLineageCurrentStagingOutput) ToCloudcertificatesLineageCurrentStagingOutputWithContext(ctx context.Context) CloudcertificatesLineageCurrentStagingOutput {
+	return o
+}
+
+func (o CloudcertificatesLineageCurrentStagingOutput) ToCloudcertificatesLineageCurrentStagingPtrOutput() CloudcertificatesLineageCurrentStagingPtrOutput {
+	return o.ToCloudcertificatesLineageCurrentStagingPtrOutputWithContext(context.Background())
+}
+
+func (o CloudcertificatesLineageCurrentStagingOutput) ToCloudcertificatesLineageCurrentStagingPtrOutputWithContext(ctx context.Context) CloudcertificatesLineageCurrentStagingPtrOutput {
+	return o.ApplyTWithContext(ctx, func(_ context.Context, v CloudcertificatesLineageCurrentStaging) *CloudcertificatesLineageCurrentStaging {
+		return &v
+	}).(CloudcertificatesLineageCurrentStagingPtrOutput)
+}
+
+// Per key-type (RSA or ECDSA) certificate details for this generation, keyed by key_type.
+func (o CloudcertificatesLineageCurrentStagingOutput) Algorithms() CloudcertificatesLineageCurrentStagingAlgorithmsMapOutput {
+	return o.ApplyT(func(v CloudcertificatesLineageCurrentStaging) map[string]CloudcertificatesLineageCurrentStagingAlgorithms {
+		return v.Algorithms
+	}).(CloudcertificatesLineageCurrentStagingAlgorithmsMapOutput)
+}
+
+// Time the generation was first promoted to production, in RFC3339 format. Null if never promoted.
+func (o CloudcertificatesLineageCurrentStagingOutput) FirstPromotedToProductionTime() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v CloudcertificatesLineageCurrentStaging) *string { return v.FirstPromotedToProductionTime }).(pulumi.StringPtrOutput)
+}
+
+// Username of the person who created this generation.
+func (o CloudcertificatesLineageCurrentStagingOutput) GenerationCreatedBy() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v CloudcertificatesLineageCurrentStaging) *string { return v.GenerationCreatedBy }).(pulumi.StringPtrOutput)
+}
+
+// Time the generation was created, in RFC3339 format.
+func (o CloudcertificatesLineageCurrentStagingOutput) GenerationCreatedTime() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v CloudcertificatesLineageCurrentStaging) *string { return v.GenerationCreatedTime }).(pulumi.StringPtrOutput)
+}
+
+// Unique identifier of this generation.
+func (o CloudcertificatesLineageCurrentStagingOutput) GenerationId() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v CloudcertificatesLineageCurrentStaging) *int { return v.GenerationId }).(pulumi.IntPtrOutput)
+}
+
+// Username of the person who last modified this generation.
+func (o CloudcertificatesLineageCurrentStagingOutput) GenerationModifiedBy() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v CloudcertificatesLineageCurrentStaging) *string { return v.GenerationModifiedBy }).(pulumi.StringPtrOutput)
+}
+
+// Time the generation was last modified, in RFC3339 format. Null if never modified since creation.
+func (o CloudcertificatesLineageCurrentStagingOutput) GenerationModifiedTime() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v CloudcertificatesLineageCurrentStaging) *string { return v.GenerationModifiedTime }).(pulumi.StringPtrOutput)
+}
+
+// Status of this generation.
+func (o CloudcertificatesLineageCurrentStagingOutput) GenerationStatus() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v CloudcertificatesLineageCurrentStaging) *string { return v.GenerationStatus }).(pulumi.StringPtrOutput)
+}
+
+type CloudcertificatesLineageCurrentStagingPtrOutput struct{ *pulumi.OutputState }
+
+func (CloudcertificatesLineageCurrentStagingPtrOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((**CloudcertificatesLineageCurrentStaging)(nil)).Elem()
+}
+
+func (o CloudcertificatesLineageCurrentStagingPtrOutput) ToCloudcertificatesLineageCurrentStagingPtrOutput() CloudcertificatesLineageCurrentStagingPtrOutput {
+	return o
+}
+
+func (o CloudcertificatesLineageCurrentStagingPtrOutput) ToCloudcertificatesLineageCurrentStagingPtrOutputWithContext(ctx context.Context) CloudcertificatesLineageCurrentStagingPtrOutput {
+	return o
+}
+
+func (o CloudcertificatesLineageCurrentStagingPtrOutput) Elem() CloudcertificatesLineageCurrentStagingOutput {
+	return o.ApplyT(func(v *CloudcertificatesLineageCurrentStaging) CloudcertificatesLineageCurrentStaging {
+		if v != nil {
+			return *v
+		}
+		var ret CloudcertificatesLineageCurrentStaging
+		return ret
+	}).(CloudcertificatesLineageCurrentStagingOutput)
+}
+
+// Per key-type (RSA or ECDSA) certificate details for this generation, keyed by key_type.
+func (o CloudcertificatesLineageCurrentStagingPtrOutput) Algorithms() CloudcertificatesLineageCurrentStagingAlgorithmsMapOutput {
+	return o.ApplyT(func(v *CloudcertificatesLineageCurrentStaging) map[string]CloudcertificatesLineageCurrentStagingAlgorithms {
+		if v == nil {
+			return nil
+		}
+		return v.Algorithms
+	}).(CloudcertificatesLineageCurrentStagingAlgorithmsMapOutput)
+}
+
+// Time the generation was first promoted to production, in RFC3339 format. Null if never promoted.
+func (o CloudcertificatesLineageCurrentStagingPtrOutput) FirstPromotedToProductionTime() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *CloudcertificatesLineageCurrentStaging) *string {
+		if v == nil {
+			return nil
+		}
+		return v.FirstPromotedToProductionTime
+	}).(pulumi.StringPtrOutput)
+}
+
+// Username of the person who created this generation.
+func (o CloudcertificatesLineageCurrentStagingPtrOutput) GenerationCreatedBy() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *CloudcertificatesLineageCurrentStaging) *string {
+		if v == nil {
+			return nil
+		}
+		return v.GenerationCreatedBy
+	}).(pulumi.StringPtrOutput)
+}
+
+// Time the generation was created, in RFC3339 format.
+func (o CloudcertificatesLineageCurrentStagingPtrOutput) GenerationCreatedTime() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *CloudcertificatesLineageCurrentStaging) *string {
+		if v == nil {
+			return nil
+		}
+		return v.GenerationCreatedTime
+	}).(pulumi.StringPtrOutput)
+}
+
+// Unique identifier of this generation.
+func (o CloudcertificatesLineageCurrentStagingPtrOutput) GenerationId() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v *CloudcertificatesLineageCurrentStaging) *int {
+		if v == nil {
+			return nil
+		}
+		return v.GenerationId
+	}).(pulumi.IntPtrOutput)
+}
+
+// Username of the person who last modified this generation.
+func (o CloudcertificatesLineageCurrentStagingPtrOutput) GenerationModifiedBy() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *CloudcertificatesLineageCurrentStaging) *string {
+		if v == nil {
+			return nil
+		}
+		return v.GenerationModifiedBy
+	}).(pulumi.StringPtrOutput)
+}
+
+// Time the generation was last modified, in RFC3339 format. Null if never modified since creation.
+func (o CloudcertificatesLineageCurrentStagingPtrOutput) GenerationModifiedTime() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *CloudcertificatesLineageCurrentStaging) *string {
+		if v == nil {
+			return nil
+		}
+		return v.GenerationModifiedTime
+	}).(pulumi.StringPtrOutput)
+}
+
+// Status of this generation.
+func (o CloudcertificatesLineageCurrentStagingPtrOutput) GenerationStatus() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *CloudcertificatesLineageCurrentStaging) *string {
+		if v == nil {
+			return nil
+		}
+		return v.GenerationStatus
+	}).(pulumi.StringPtrOutput)
+}
+
+type CloudcertificatesLineageCurrentStagingAlgorithms struct {
+	// Username of the person who created the algorithm instance.
+	AlgorithmInstanceCreatedBy *string `pulumi:"algorithmInstanceCreatedBy"`
+	// Time the algorithm instance was created, in RFC3339 format.
+	AlgorithmInstanceCreatedTime *string `pulumi:"algorithmInstanceCreatedTime"`
+	// Unique identifier of the algorithm instance.
+	AlgorithmInstanceId *int `pulumi:"algorithmInstanceId"`
+	// Username of the person who last modified the algorithm instance. Null if never modified.
+	AlgorithmInstanceModifiedBy *string `pulumi:"algorithmInstanceModifiedBy"`
+	// Time the algorithm instance was last modified, in RFC3339 format. Null if never modified.
+	AlgorithmInstanceModifiedTime *string `pulumi:"algorithmInstanceModifiedTime"`
+	// Status of the certificate for this key type: `CSR_READY`, `CERT_UPLOAD_PROCESSING`, `READY_FOR_USE`, or `ABANDONED`.
+	CertificateStatus *string `pulumi:"certificateStatus"`
+	// Date when the CSR expires, in RFC3339 format.
+	CsrExpirationDate *string `pulumi:"csrExpirationDate"`
+	// PEM-encoded certificate signing request.
+	CsrPem *string `pulumi:"csrPem"`
+	// Issuer field of the signed certificate. Null until a certificate is uploaded.
+	SignedCertificateIssuer *string `pulumi:"signedCertificateIssuer"`
+	// Expiration date of the signed certificate, in RFC3339 format. Null until a certificate is uploaded.
+	SignedCertificateNotValidAfterDate *string `pulumi:"signedCertificateNotValidAfterDate"`
+	// Start of validity of the signed certificate, in RFC3339 format. Null until a certificate is uploaded.
+	SignedCertificateNotValidBeforeDate *string `pulumi:"signedCertificateNotValidBeforeDate"`
+	// PEM-encoded signed certificate. Null until a certificate is uploaded.
+	SignedCertificatePem *string `pulumi:"signedCertificatePem"`
+	// Serial number of the signed certificate in hex format. Null until a certificate is uploaded.
+	SignedCertificateSerialNumber *string `pulumi:"signedCertificateSerialNumber"`
+	// SHA-256 fingerprint of the signed certificate. Null until a certificate is uploaded.
+	SignedCertificateSha256Fingerprint *string `pulumi:"signedCertificateSha256Fingerprint"`
+	// PEM-encoded trust chain uploaded alongside the signed certificate. Null if none was uploaded.
+	TrustChainPem *string `pulumi:"trustChainPem"`
+}
+
+// CloudcertificatesLineageCurrentStagingAlgorithmsInput is an input type that accepts CloudcertificatesLineageCurrentStagingAlgorithmsArgs and CloudcertificatesLineageCurrentStagingAlgorithmsOutput values.
+// You can construct a concrete instance of `CloudcertificatesLineageCurrentStagingAlgorithmsInput` via:
+//
+//	CloudcertificatesLineageCurrentStagingAlgorithmsArgs{...}
+type CloudcertificatesLineageCurrentStagingAlgorithmsInput interface {
+	pulumi.Input
+
+	ToCloudcertificatesLineageCurrentStagingAlgorithmsOutput() CloudcertificatesLineageCurrentStagingAlgorithmsOutput
+	ToCloudcertificatesLineageCurrentStagingAlgorithmsOutputWithContext(context.Context) CloudcertificatesLineageCurrentStagingAlgorithmsOutput
+}
+
+type CloudcertificatesLineageCurrentStagingAlgorithmsArgs struct {
+	// Username of the person who created the algorithm instance.
+	AlgorithmInstanceCreatedBy pulumi.StringPtrInput `pulumi:"algorithmInstanceCreatedBy"`
+	// Time the algorithm instance was created, in RFC3339 format.
+	AlgorithmInstanceCreatedTime pulumi.StringPtrInput `pulumi:"algorithmInstanceCreatedTime"`
+	// Unique identifier of the algorithm instance.
+	AlgorithmInstanceId pulumi.IntPtrInput `pulumi:"algorithmInstanceId"`
+	// Username of the person who last modified the algorithm instance. Null if never modified.
+	AlgorithmInstanceModifiedBy pulumi.StringPtrInput `pulumi:"algorithmInstanceModifiedBy"`
+	// Time the algorithm instance was last modified, in RFC3339 format. Null if never modified.
+	AlgorithmInstanceModifiedTime pulumi.StringPtrInput `pulumi:"algorithmInstanceModifiedTime"`
+	// Status of the certificate for this key type: `CSR_READY`, `CERT_UPLOAD_PROCESSING`, `READY_FOR_USE`, or `ABANDONED`.
+	CertificateStatus pulumi.StringPtrInput `pulumi:"certificateStatus"`
+	// Date when the CSR expires, in RFC3339 format.
+	CsrExpirationDate pulumi.StringPtrInput `pulumi:"csrExpirationDate"`
+	// PEM-encoded certificate signing request.
+	CsrPem pulumi.StringPtrInput `pulumi:"csrPem"`
+	// Issuer field of the signed certificate. Null until a certificate is uploaded.
+	SignedCertificateIssuer pulumi.StringPtrInput `pulumi:"signedCertificateIssuer"`
+	// Expiration date of the signed certificate, in RFC3339 format. Null until a certificate is uploaded.
+	SignedCertificateNotValidAfterDate pulumi.StringPtrInput `pulumi:"signedCertificateNotValidAfterDate"`
+	// Start of validity of the signed certificate, in RFC3339 format. Null until a certificate is uploaded.
+	SignedCertificateNotValidBeforeDate pulumi.StringPtrInput `pulumi:"signedCertificateNotValidBeforeDate"`
+	// PEM-encoded signed certificate. Null until a certificate is uploaded.
+	SignedCertificatePem pulumi.StringPtrInput `pulumi:"signedCertificatePem"`
+	// Serial number of the signed certificate in hex format. Null until a certificate is uploaded.
+	SignedCertificateSerialNumber pulumi.StringPtrInput `pulumi:"signedCertificateSerialNumber"`
+	// SHA-256 fingerprint of the signed certificate. Null until a certificate is uploaded.
+	SignedCertificateSha256Fingerprint pulumi.StringPtrInput `pulumi:"signedCertificateSha256Fingerprint"`
+	// PEM-encoded trust chain uploaded alongside the signed certificate. Null if none was uploaded.
+	TrustChainPem pulumi.StringPtrInput `pulumi:"trustChainPem"`
+}
+
+func (CloudcertificatesLineageCurrentStagingAlgorithmsArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*CloudcertificatesLineageCurrentStagingAlgorithms)(nil)).Elem()
+}
+
+func (i CloudcertificatesLineageCurrentStagingAlgorithmsArgs) ToCloudcertificatesLineageCurrentStagingAlgorithmsOutput() CloudcertificatesLineageCurrentStagingAlgorithmsOutput {
+	return i.ToCloudcertificatesLineageCurrentStagingAlgorithmsOutputWithContext(context.Background())
+}
+
+func (i CloudcertificatesLineageCurrentStagingAlgorithmsArgs) ToCloudcertificatesLineageCurrentStagingAlgorithmsOutputWithContext(ctx context.Context) CloudcertificatesLineageCurrentStagingAlgorithmsOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(CloudcertificatesLineageCurrentStagingAlgorithmsOutput)
+}
+
+// CloudcertificatesLineageCurrentStagingAlgorithmsMapInput is an input type that accepts CloudcertificatesLineageCurrentStagingAlgorithmsMap and CloudcertificatesLineageCurrentStagingAlgorithmsMapOutput values.
+// You can construct a concrete instance of `CloudcertificatesLineageCurrentStagingAlgorithmsMapInput` via:
+//
+//	CloudcertificatesLineageCurrentStagingAlgorithmsMap{ "key": CloudcertificatesLineageCurrentStagingAlgorithmsArgs{...} }
+type CloudcertificatesLineageCurrentStagingAlgorithmsMapInput interface {
+	pulumi.Input
+
+	ToCloudcertificatesLineageCurrentStagingAlgorithmsMapOutput() CloudcertificatesLineageCurrentStagingAlgorithmsMapOutput
+	ToCloudcertificatesLineageCurrentStagingAlgorithmsMapOutputWithContext(context.Context) CloudcertificatesLineageCurrentStagingAlgorithmsMapOutput
+}
+
+type CloudcertificatesLineageCurrentStagingAlgorithmsMap map[string]CloudcertificatesLineageCurrentStagingAlgorithmsInput
+
+func (CloudcertificatesLineageCurrentStagingAlgorithmsMap) ElementType() reflect.Type {
+	return reflect.TypeOf((*map[string]CloudcertificatesLineageCurrentStagingAlgorithms)(nil)).Elem()
+}
+
+func (i CloudcertificatesLineageCurrentStagingAlgorithmsMap) ToCloudcertificatesLineageCurrentStagingAlgorithmsMapOutput() CloudcertificatesLineageCurrentStagingAlgorithmsMapOutput {
+	return i.ToCloudcertificatesLineageCurrentStagingAlgorithmsMapOutputWithContext(context.Background())
+}
+
+func (i CloudcertificatesLineageCurrentStagingAlgorithmsMap) ToCloudcertificatesLineageCurrentStagingAlgorithmsMapOutputWithContext(ctx context.Context) CloudcertificatesLineageCurrentStagingAlgorithmsMapOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(CloudcertificatesLineageCurrentStagingAlgorithmsMapOutput)
+}
+
+type CloudcertificatesLineageCurrentStagingAlgorithmsOutput struct{ *pulumi.OutputState }
+
+func (CloudcertificatesLineageCurrentStagingAlgorithmsOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*CloudcertificatesLineageCurrentStagingAlgorithms)(nil)).Elem()
+}
+
+func (o CloudcertificatesLineageCurrentStagingAlgorithmsOutput) ToCloudcertificatesLineageCurrentStagingAlgorithmsOutput() CloudcertificatesLineageCurrentStagingAlgorithmsOutput {
+	return o
+}
+
+func (o CloudcertificatesLineageCurrentStagingAlgorithmsOutput) ToCloudcertificatesLineageCurrentStagingAlgorithmsOutputWithContext(ctx context.Context) CloudcertificatesLineageCurrentStagingAlgorithmsOutput {
+	return o
+}
+
+// Username of the person who created the algorithm instance.
+func (o CloudcertificatesLineageCurrentStagingAlgorithmsOutput) AlgorithmInstanceCreatedBy() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v CloudcertificatesLineageCurrentStagingAlgorithms) *string { return v.AlgorithmInstanceCreatedBy }).(pulumi.StringPtrOutput)
+}
+
+// Time the algorithm instance was created, in RFC3339 format.
+func (o CloudcertificatesLineageCurrentStagingAlgorithmsOutput) AlgorithmInstanceCreatedTime() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v CloudcertificatesLineageCurrentStagingAlgorithms) *string {
+		return v.AlgorithmInstanceCreatedTime
+	}).(pulumi.StringPtrOutput)
+}
+
+// Unique identifier of the algorithm instance.
+func (o CloudcertificatesLineageCurrentStagingAlgorithmsOutput) AlgorithmInstanceId() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v CloudcertificatesLineageCurrentStagingAlgorithms) *int { return v.AlgorithmInstanceId }).(pulumi.IntPtrOutput)
+}
+
+// Username of the person who last modified the algorithm instance. Null if never modified.
+func (o CloudcertificatesLineageCurrentStagingAlgorithmsOutput) AlgorithmInstanceModifiedBy() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v CloudcertificatesLineageCurrentStagingAlgorithms) *string { return v.AlgorithmInstanceModifiedBy }).(pulumi.StringPtrOutput)
+}
+
+// Time the algorithm instance was last modified, in RFC3339 format. Null if never modified.
+func (o CloudcertificatesLineageCurrentStagingAlgorithmsOutput) AlgorithmInstanceModifiedTime() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v CloudcertificatesLineageCurrentStagingAlgorithms) *string {
+		return v.AlgorithmInstanceModifiedTime
+	}).(pulumi.StringPtrOutput)
+}
+
+// Status of the certificate for this key type: `CSR_READY`, `CERT_UPLOAD_PROCESSING`, `READY_FOR_USE`, or `ABANDONED`.
+func (o CloudcertificatesLineageCurrentStagingAlgorithmsOutput) CertificateStatus() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v CloudcertificatesLineageCurrentStagingAlgorithms) *string { return v.CertificateStatus }).(pulumi.StringPtrOutput)
+}
+
+// Date when the CSR expires, in RFC3339 format.
+func (o CloudcertificatesLineageCurrentStagingAlgorithmsOutput) CsrExpirationDate() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v CloudcertificatesLineageCurrentStagingAlgorithms) *string { return v.CsrExpirationDate }).(pulumi.StringPtrOutput)
+}
+
+// PEM-encoded certificate signing request.
+func (o CloudcertificatesLineageCurrentStagingAlgorithmsOutput) CsrPem() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v CloudcertificatesLineageCurrentStagingAlgorithms) *string { return v.CsrPem }).(pulumi.StringPtrOutput)
+}
+
+// Issuer field of the signed certificate. Null until a certificate is uploaded.
+func (o CloudcertificatesLineageCurrentStagingAlgorithmsOutput) SignedCertificateIssuer() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v CloudcertificatesLineageCurrentStagingAlgorithms) *string { return v.SignedCertificateIssuer }).(pulumi.StringPtrOutput)
+}
+
+// Expiration date of the signed certificate, in RFC3339 format. Null until a certificate is uploaded.
+func (o CloudcertificatesLineageCurrentStagingAlgorithmsOutput) SignedCertificateNotValidAfterDate() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v CloudcertificatesLineageCurrentStagingAlgorithms) *string {
+		return v.SignedCertificateNotValidAfterDate
+	}).(pulumi.StringPtrOutput)
+}
+
+// Start of validity of the signed certificate, in RFC3339 format. Null until a certificate is uploaded.
+func (o CloudcertificatesLineageCurrentStagingAlgorithmsOutput) SignedCertificateNotValidBeforeDate() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v CloudcertificatesLineageCurrentStagingAlgorithms) *string {
+		return v.SignedCertificateNotValidBeforeDate
+	}).(pulumi.StringPtrOutput)
+}
+
+// PEM-encoded signed certificate. Null until a certificate is uploaded.
+func (o CloudcertificatesLineageCurrentStagingAlgorithmsOutput) SignedCertificatePem() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v CloudcertificatesLineageCurrentStagingAlgorithms) *string { return v.SignedCertificatePem }).(pulumi.StringPtrOutput)
+}
+
+// Serial number of the signed certificate in hex format. Null until a certificate is uploaded.
+func (o CloudcertificatesLineageCurrentStagingAlgorithmsOutput) SignedCertificateSerialNumber() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v CloudcertificatesLineageCurrentStagingAlgorithms) *string {
+		return v.SignedCertificateSerialNumber
+	}).(pulumi.StringPtrOutput)
+}
+
+// SHA-256 fingerprint of the signed certificate. Null until a certificate is uploaded.
+func (o CloudcertificatesLineageCurrentStagingAlgorithmsOutput) SignedCertificateSha256Fingerprint() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v CloudcertificatesLineageCurrentStagingAlgorithms) *string {
+		return v.SignedCertificateSha256Fingerprint
+	}).(pulumi.StringPtrOutput)
+}
+
+// PEM-encoded trust chain uploaded alongside the signed certificate. Null if none was uploaded.
+func (o CloudcertificatesLineageCurrentStagingAlgorithmsOutput) TrustChainPem() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v CloudcertificatesLineageCurrentStagingAlgorithms) *string { return v.TrustChainPem }).(pulumi.StringPtrOutput)
+}
+
+type CloudcertificatesLineageCurrentStagingAlgorithmsMapOutput struct{ *pulumi.OutputState }
+
+func (CloudcertificatesLineageCurrentStagingAlgorithmsMapOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*map[string]CloudcertificatesLineageCurrentStagingAlgorithms)(nil)).Elem()
+}
+
+func (o CloudcertificatesLineageCurrentStagingAlgorithmsMapOutput) ToCloudcertificatesLineageCurrentStagingAlgorithmsMapOutput() CloudcertificatesLineageCurrentStagingAlgorithmsMapOutput {
+	return o
+}
+
+func (o CloudcertificatesLineageCurrentStagingAlgorithmsMapOutput) ToCloudcertificatesLineageCurrentStagingAlgorithmsMapOutputWithContext(ctx context.Context) CloudcertificatesLineageCurrentStagingAlgorithmsMapOutput {
+	return o
+}
+
+func (o CloudcertificatesLineageCurrentStagingAlgorithmsMapOutput) MapIndex(k pulumi.StringInput) CloudcertificatesLineageCurrentStagingAlgorithmsOutput {
+	return pulumi.All(o, k).ApplyT(func(vs []interface{}) CloudcertificatesLineageCurrentStagingAlgorithms {
+		return vs[0].(map[string]CloudcertificatesLineageCurrentStagingAlgorithms)[vs[1].(string)]
+	}).(CloudcertificatesLineageCurrentStagingAlgorithmsOutput)
+}
+
+type CloudcertificatesLineageHead struct {
+	// Per key-type (RSA or ECDSA) certificate details for this generation, keyed by key_type.
+	Algorithms map[string]CloudcertificatesLineageHeadAlgorithms `pulumi:"algorithms"`
+	// Time the generation was first promoted to production, in RFC3339 format. Null if never promoted.
+	FirstPromotedToProductionTime *string `pulumi:"firstPromotedToProductionTime"`
+	// Username of the person who created this generation.
+	GenerationCreatedBy *string `pulumi:"generationCreatedBy"`
+	// Time the generation was created, in RFC3339 format.
+	GenerationCreatedTime *string `pulumi:"generationCreatedTime"`
+	// Unique identifier of this generation.
+	GenerationId *int `pulumi:"generationId"`
+	// Username of the person who last modified this generation.
+	GenerationModifiedBy *string `pulumi:"generationModifiedBy"`
+	// Time the generation was last modified, in RFC3339 format. Null if never modified since creation.
+	GenerationModifiedTime *string `pulumi:"generationModifiedTime"`
+	// Status of this generation.
+	GenerationStatus *string `pulumi:"generationStatus"`
+}
+
+// CloudcertificatesLineageHeadInput is an input type that accepts CloudcertificatesLineageHeadArgs and CloudcertificatesLineageHeadOutput values.
+// You can construct a concrete instance of `CloudcertificatesLineageHeadInput` via:
+//
+//	CloudcertificatesLineageHeadArgs{...}
+type CloudcertificatesLineageHeadInput interface {
+	pulumi.Input
+
+	ToCloudcertificatesLineageHeadOutput() CloudcertificatesLineageHeadOutput
+	ToCloudcertificatesLineageHeadOutputWithContext(context.Context) CloudcertificatesLineageHeadOutput
+}
+
+type CloudcertificatesLineageHeadArgs struct {
+	// Per key-type (RSA or ECDSA) certificate details for this generation, keyed by key_type.
+	Algorithms CloudcertificatesLineageHeadAlgorithmsMapInput `pulumi:"algorithms"`
+	// Time the generation was first promoted to production, in RFC3339 format. Null if never promoted.
+	FirstPromotedToProductionTime pulumi.StringPtrInput `pulumi:"firstPromotedToProductionTime"`
+	// Username of the person who created this generation.
+	GenerationCreatedBy pulumi.StringPtrInput `pulumi:"generationCreatedBy"`
+	// Time the generation was created, in RFC3339 format.
+	GenerationCreatedTime pulumi.StringPtrInput `pulumi:"generationCreatedTime"`
+	// Unique identifier of this generation.
+	GenerationId pulumi.IntPtrInput `pulumi:"generationId"`
+	// Username of the person who last modified this generation.
+	GenerationModifiedBy pulumi.StringPtrInput `pulumi:"generationModifiedBy"`
+	// Time the generation was last modified, in RFC3339 format. Null if never modified since creation.
+	GenerationModifiedTime pulumi.StringPtrInput `pulumi:"generationModifiedTime"`
+	// Status of this generation.
+	GenerationStatus pulumi.StringPtrInput `pulumi:"generationStatus"`
+}
+
+func (CloudcertificatesLineageHeadArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*CloudcertificatesLineageHead)(nil)).Elem()
+}
+
+func (i CloudcertificatesLineageHeadArgs) ToCloudcertificatesLineageHeadOutput() CloudcertificatesLineageHeadOutput {
+	return i.ToCloudcertificatesLineageHeadOutputWithContext(context.Background())
+}
+
+func (i CloudcertificatesLineageHeadArgs) ToCloudcertificatesLineageHeadOutputWithContext(ctx context.Context) CloudcertificatesLineageHeadOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(CloudcertificatesLineageHeadOutput)
+}
+
+func (i CloudcertificatesLineageHeadArgs) ToCloudcertificatesLineageHeadPtrOutput() CloudcertificatesLineageHeadPtrOutput {
+	return i.ToCloudcertificatesLineageHeadPtrOutputWithContext(context.Background())
+}
+
+func (i CloudcertificatesLineageHeadArgs) ToCloudcertificatesLineageHeadPtrOutputWithContext(ctx context.Context) CloudcertificatesLineageHeadPtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(CloudcertificatesLineageHeadOutput).ToCloudcertificatesLineageHeadPtrOutputWithContext(ctx)
+}
+
+// CloudcertificatesLineageHeadPtrInput is an input type that accepts CloudcertificatesLineageHeadArgs, CloudcertificatesLineageHeadPtr and CloudcertificatesLineageHeadPtrOutput values.
+// You can construct a concrete instance of `CloudcertificatesLineageHeadPtrInput` via:
+//
+//	        CloudcertificatesLineageHeadArgs{...}
+//
+//	or:
+//
+//	        nil
+type CloudcertificatesLineageHeadPtrInput interface {
+	pulumi.Input
+
+	ToCloudcertificatesLineageHeadPtrOutput() CloudcertificatesLineageHeadPtrOutput
+	ToCloudcertificatesLineageHeadPtrOutputWithContext(context.Context) CloudcertificatesLineageHeadPtrOutput
+}
+
+type cloudcertificatesLineageHeadPtrType CloudcertificatesLineageHeadArgs
+
+func CloudcertificatesLineageHeadPtr(v *CloudcertificatesLineageHeadArgs) CloudcertificatesLineageHeadPtrInput {
+	return (*cloudcertificatesLineageHeadPtrType)(v)
+}
+
+func (*cloudcertificatesLineageHeadPtrType) ElementType() reflect.Type {
+	return reflect.TypeOf((**CloudcertificatesLineageHead)(nil)).Elem()
+}
+
+func (i *cloudcertificatesLineageHeadPtrType) ToCloudcertificatesLineageHeadPtrOutput() CloudcertificatesLineageHeadPtrOutput {
+	return i.ToCloudcertificatesLineageHeadPtrOutputWithContext(context.Background())
+}
+
+func (i *cloudcertificatesLineageHeadPtrType) ToCloudcertificatesLineageHeadPtrOutputWithContext(ctx context.Context) CloudcertificatesLineageHeadPtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(CloudcertificatesLineageHeadPtrOutput)
+}
+
+type CloudcertificatesLineageHeadOutput struct{ *pulumi.OutputState }
+
+func (CloudcertificatesLineageHeadOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*CloudcertificatesLineageHead)(nil)).Elem()
+}
+
+func (o CloudcertificatesLineageHeadOutput) ToCloudcertificatesLineageHeadOutput() CloudcertificatesLineageHeadOutput {
+	return o
+}
+
+func (o CloudcertificatesLineageHeadOutput) ToCloudcertificatesLineageHeadOutputWithContext(ctx context.Context) CloudcertificatesLineageHeadOutput {
+	return o
+}
+
+func (o CloudcertificatesLineageHeadOutput) ToCloudcertificatesLineageHeadPtrOutput() CloudcertificatesLineageHeadPtrOutput {
+	return o.ToCloudcertificatesLineageHeadPtrOutputWithContext(context.Background())
+}
+
+func (o CloudcertificatesLineageHeadOutput) ToCloudcertificatesLineageHeadPtrOutputWithContext(ctx context.Context) CloudcertificatesLineageHeadPtrOutput {
+	return o.ApplyTWithContext(ctx, func(_ context.Context, v CloudcertificatesLineageHead) *CloudcertificatesLineageHead {
+		return &v
+	}).(CloudcertificatesLineageHeadPtrOutput)
+}
+
+// Per key-type (RSA or ECDSA) certificate details for this generation, keyed by key_type.
+func (o CloudcertificatesLineageHeadOutput) Algorithms() CloudcertificatesLineageHeadAlgorithmsMapOutput {
+	return o.ApplyT(func(v CloudcertificatesLineageHead) map[string]CloudcertificatesLineageHeadAlgorithms {
+		return v.Algorithms
+	}).(CloudcertificatesLineageHeadAlgorithmsMapOutput)
+}
+
+// Time the generation was first promoted to production, in RFC3339 format. Null if never promoted.
+func (o CloudcertificatesLineageHeadOutput) FirstPromotedToProductionTime() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v CloudcertificatesLineageHead) *string { return v.FirstPromotedToProductionTime }).(pulumi.StringPtrOutput)
+}
+
+// Username of the person who created this generation.
+func (o CloudcertificatesLineageHeadOutput) GenerationCreatedBy() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v CloudcertificatesLineageHead) *string { return v.GenerationCreatedBy }).(pulumi.StringPtrOutput)
+}
+
+// Time the generation was created, in RFC3339 format.
+func (o CloudcertificatesLineageHeadOutput) GenerationCreatedTime() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v CloudcertificatesLineageHead) *string { return v.GenerationCreatedTime }).(pulumi.StringPtrOutput)
+}
+
+// Unique identifier of this generation.
+func (o CloudcertificatesLineageHeadOutput) GenerationId() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v CloudcertificatesLineageHead) *int { return v.GenerationId }).(pulumi.IntPtrOutput)
+}
+
+// Username of the person who last modified this generation.
+func (o CloudcertificatesLineageHeadOutput) GenerationModifiedBy() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v CloudcertificatesLineageHead) *string { return v.GenerationModifiedBy }).(pulumi.StringPtrOutput)
+}
+
+// Time the generation was last modified, in RFC3339 format. Null if never modified since creation.
+func (o CloudcertificatesLineageHeadOutput) GenerationModifiedTime() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v CloudcertificatesLineageHead) *string { return v.GenerationModifiedTime }).(pulumi.StringPtrOutput)
+}
+
+// Status of this generation.
+func (o CloudcertificatesLineageHeadOutput) GenerationStatus() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v CloudcertificatesLineageHead) *string { return v.GenerationStatus }).(pulumi.StringPtrOutput)
+}
+
+type CloudcertificatesLineageHeadPtrOutput struct{ *pulumi.OutputState }
+
+func (CloudcertificatesLineageHeadPtrOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((**CloudcertificatesLineageHead)(nil)).Elem()
+}
+
+func (o CloudcertificatesLineageHeadPtrOutput) ToCloudcertificatesLineageHeadPtrOutput() CloudcertificatesLineageHeadPtrOutput {
+	return o
+}
+
+func (o CloudcertificatesLineageHeadPtrOutput) ToCloudcertificatesLineageHeadPtrOutputWithContext(ctx context.Context) CloudcertificatesLineageHeadPtrOutput {
+	return o
+}
+
+func (o CloudcertificatesLineageHeadPtrOutput) Elem() CloudcertificatesLineageHeadOutput {
+	return o.ApplyT(func(v *CloudcertificatesLineageHead) CloudcertificatesLineageHead {
+		if v != nil {
+			return *v
+		}
+		var ret CloudcertificatesLineageHead
+		return ret
+	}).(CloudcertificatesLineageHeadOutput)
+}
+
+// Per key-type (RSA or ECDSA) certificate details for this generation, keyed by key_type.
+func (o CloudcertificatesLineageHeadPtrOutput) Algorithms() CloudcertificatesLineageHeadAlgorithmsMapOutput {
+	return o.ApplyT(func(v *CloudcertificatesLineageHead) map[string]CloudcertificatesLineageHeadAlgorithms {
+		if v == nil {
+			return nil
+		}
+		return v.Algorithms
+	}).(CloudcertificatesLineageHeadAlgorithmsMapOutput)
+}
+
+// Time the generation was first promoted to production, in RFC3339 format. Null if never promoted.
+func (o CloudcertificatesLineageHeadPtrOutput) FirstPromotedToProductionTime() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *CloudcertificatesLineageHead) *string {
+		if v == nil {
+			return nil
+		}
+		return v.FirstPromotedToProductionTime
+	}).(pulumi.StringPtrOutput)
+}
+
+// Username of the person who created this generation.
+func (o CloudcertificatesLineageHeadPtrOutput) GenerationCreatedBy() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *CloudcertificatesLineageHead) *string {
+		if v == nil {
+			return nil
+		}
+		return v.GenerationCreatedBy
+	}).(pulumi.StringPtrOutput)
+}
+
+// Time the generation was created, in RFC3339 format.
+func (o CloudcertificatesLineageHeadPtrOutput) GenerationCreatedTime() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *CloudcertificatesLineageHead) *string {
+		if v == nil {
+			return nil
+		}
+		return v.GenerationCreatedTime
+	}).(pulumi.StringPtrOutput)
+}
+
+// Unique identifier of this generation.
+func (o CloudcertificatesLineageHeadPtrOutput) GenerationId() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v *CloudcertificatesLineageHead) *int {
+		if v == nil {
+			return nil
+		}
+		return v.GenerationId
+	}).(pulumi.IntPtrOutput)
+}
+
+// Username of the person who last modified this generation.
+func (o CloudcertificatesLineageHeadPtrOutput) GenerationModifiedBy() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *CloudcertificatesLineageHead) *string {
+		if v == nil {
+			return nil
+		}
+		return v.GenerationModifiedBy
+	}).(pulumi.StringPtrOutput)
+}
+
+// Time the generation was last modified, in RFC3339 format. Null if never modified since creation.
+func (o CloudcertificatesLineageHeadPtrOutput) GenerationModifiedTime() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *CloudcertificatesLineageHead) *string {
+		if v == nil {
+			return nil
+		}
+		return v.GenerationModifiedTime
+	}).(pulumi.StringPtrOutput)
+}
+
+// Status of this generation.
+func (o CloudcertificatesLineageHeadPtrOutput) GenerationStatus() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *CloudcertificatesLineageHead) *string {
+		if v == nil {
+			return nil
+		}
+		return v.GenerationStatus
+	}).(pulumi.StringPtrOutput)
+}
+
+type CloudcertificatesLineageHeadAlgorithms struct {
+	// Username of the person who created the algorithm instance.
+	AlgorithmInstanceCreatedBy *string `pulumi:"algorithmInstanceCreatedBy"`
+	// Time the algorithm instance was created, in RFC3339 format.
+	AlgorithmInstanceCreatedTime *string `pulumi:"algorithmInstanceCreatedTime"`
+	// Unique identifier of the algorithm instance.
+	AlgorithmInstanceId *int `pulumi:"algorithmInstanceId"`
+	// Username of the person who last modified the algorithm instance. Null if never modified.
+	AlgorithmInstanceModifiedBy *string `pulumi:"algorithmInstanceModifiedBy"`
+	// Time the algorithm instance was last modified, in RFC3339 format. Null if never modified.
+	AlgorithmInstanceModifiedTime *string `pulumi:"algorithmInstanceModifiedTime"`
+	// Status of the certificate for this key type: `CSR_READY`, `CERT_UPLOAD_PROCESSING`, `READY_FOR_USE`, or `ABANDONED`.
+	CertificateStatus *string `pulumi:"certificateStatus"`
+	// Date when the CSR expires, in RFC3339 format.
+	CsrExpirationDate *string `pulumi:"csrExpirationDate"`
+	// PEM-encoded certificate signing request.
+	CsrPem *string `pulumi:"csrPem"`
+	// Issuer field of the signed certificate. Null until a certificate is uploaded.
+	SignedCertificateIssuer *string `pulumi:"signedCertificateIssuer"`
+	// Expiration date of the signed certificate, in RFC3339 format. Null until a certificate is uploaded.
+	SignedCertificateNotValidAfterDate *string `pulumi:"signedCertificateNotValidAfterDate"`
+	// Start of validity of the signed certificate, in RFC3339 format. Null until a certificate is uploaded.
+	SignedCertificateNotValidBeforeDate *string `pulumi:"signedCertificateNotValidBeforeDate"`
+	// PEM-encoded signed certificate. Null until a certificate is uploaded.
+	SignedCertificatePem *string `pulumi:"signedCertificatePem"`
+	// Serial number of the signed certificate in hex format. Null until a certificate is uploaded.
+	SignedCertificateSerialNumber *string `pulumi:"signedCertificateSerialNumber"`
+	// SHA-256 fingerprint of the signed certificate. Null until a certificate is uploaded.
+	SignedCertificateSha256Fingerprint *string `pulumi:"signedCertificateSha256Fingerprint"`
+	// PEM-encoded trust chain uploaded alongside the signed certificate. Null if none was uploaded.
+	TrustChainPem *string `pulumi:"trustChainPem"`
+}
+
+// CloudcertificatesLineageHeadAlgorithmsInput is an input type that accepts CloudcertificatesLineageHeadAlgorithmsArgs and CloudcertificatesLineageHeadAlgorithmsOutput values.
+// You can construct a concrete instance of `CloudcertificatesLineageHeadAlgorithmsInput` via:
+//
+//	CloudcertificatesLineageHeadAlgorithmsArgs{...}
+type CloudcertificatesLineageHeadAlgorithmsInput interface {
+	pulumi.Input
+
+	ToCloudcertificatesLineageHeadAlgorithmsOutput() CloudcertificatesLineageHeadAlgorithmsOutput
+	ToCloudcertificatesLineageHeadAlgorithmsOutputWithContext(context.Context) CloudcertificatesLineageHeadAlgorithmsOutput
+}
+
+type CloudcertificatesLineageHeadAlgorithmsArgs struct {
+	// Username of the person who created the algorithm instance.
+	AlgorithmInstanceCreatedBy pulumi.StringPtrInput `pulumi:"algorithmInstanceCreatedBy"`
+	// Time the algorithm instance was created, in RFC3339 format.
+	AlgorithmInstanceCreatedTime pulumi.StringPtrInput `pulumi:"algorithmInstanceCreatedTime"`
+	// Unique identifier of the algorithm instance.
+	AlgorithmInstanceId pulumi.IntPtrInput `pulumi:"algorithmInstanceId"`
+	// Username of the person who last modified the algorithm instance. Null if never modified.
+	AlgorithmInstanceModifiedBy pulumi.StringPtrInput `pulumi:"algorithmInstanceModifiedBy"`
+	// Time the algorithm instance was last modified, in RFC3339 format. Null if never modified.
+	AlgorithmInstanceModifiedTime pulumi.StringPtrInput `pulumi:"algorithmInstanceModifiedTime"`
+	// Status of the certificate for this key type: `CSR_READY`, `CERT_UPLOAD_PROCESSING`, `READY_FOR_USE`, or `ABANDONED`.
+	CertificateStatus pulumi.StringPtrInput `pulumi:"certificateStatus"`
+	// Date when the CSR expires, in RFC3339 format.
+	CsrExpirationDate pulumi.StringPtrInput `pulumi:"csrExpirationDate"`
+	// PEM-encoded certificate signing request.
+	CsrPem pulumi.StringPtrInput `pulumi:"csrPem"`
+	// Issuer field of the signed certificate. Null until a certificate is uploaded.
+	SignedCertificateIssuer pulumi.StringPtrInput `pulumi:"signedCertificateIssuer"`
+	// Expiration date of the signed certificate, in RFC3339 format. Null until a certificate is uploaded.
+	SignedCertificateNotValidAfterDate pulumi.StringPtrInput `pulumi:"signedCertificateNotValidAfterDate"`
+	// Start of validity of the signed certificate, in RFC3339 format. Null until a certificate is uploaded.
+	SignedCertificateNotValidBeforeDate pulumi.StringPtrInput `pulumi:"signedCertificateNotValidBeforeDate"`
+	// PEM-encoded signed certificate. Null until a certificate is uploaded.
+	SignedCertificatePem pulumi.StringPtrInput `pulumi:"signedCertificatePem"`
+	// Serial number of the signed certificate in hex format. Null until a certificate is uploaded.
+	SignedCertificateSerialNumber pulumi.StringPtrInput `pulumi:"signedCertificateSerialNumber"`
+	// SHA-256 fingerprint of the signed certificate. Null until a certificate is uploaded.
+	SignedCertificateSha256Fingerprint pulumi.StringPtrInput `pulumi:"signedCertificateSha256Fingerprint"`
+	// PEM-encoded trust chain uploaded alongside the signed certificate. Null if none was uploaded.
+	TrustChainPem pulumi.StringPtrInput `pulumi:"trustChainPem"`
+}
+
+func (CloudcertificatesLineageHeadAlgorithmsArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*CloudcertificatesLineageHeadAlgorithms)(nil)).Elem()
+}
+
+func (i CloudcertificatesLineageHeadAlgorithmsArgs) ToCloudcertificatesLineageHeadAlgorithmsOutput() CloudcertificatesLineageHeadAlgorithmsOutput {
+	return i.ToCloudcertificatesLineageHeadAlgorithmsOutputWithContext(context.Background())
+}
+
+func (i CloudcertificatesLineageHeadAlgorithmsArgs) ToCloudcertificatesLineageHeadAlgorithmsOutputWithContext(ctx context.Context) CloudcertificatesLineageHeadAlgorithmsOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(CloudcertificatesLineageHeadAlgorithmsOutput)
+}
+
+// CloudcertificatesLineageHeadAlgorithmsMapInput is an input type that accepts CloudcertificatesLineageHeadAlgorithmsMap and CloudcertificatesLineageHeadAlgorithmsMapOutput values.
+// You can construct a concrete instance of `CloudcertificatesLineageHeadAlgorithmsMapInput` via:
+//
+//	CloudcertificatesLineageHeadAlgorithmsMap{ "key": CloudcertificatesLineageHeadAlgorithmsArgs{...} }
+type CloudcertificatesLineageHeadAlgorithmsMapInput interface {
+	pulumi.Input
+
+	ToCloudcertificatesLineageHeadAlgorithmsMapOutput() CloudcertificatesLineageHeadAlgorithmsMapOutput
+	ToCloudcertificatesLineageHeadAlgorithmsMapOutputWithContext(context.Context) CloudcertificatesLineageHeadAlgorithmsMapOutput
+}
+
+type CloudcertificatesLineageHeadAlgorithmsMap map[string]CloudcertificatesLineageHeadAlgorithmsInput
+
+func (CloudcertificatesLineageHeadAlgorithmsMap) ElementType() reflect.Type {
+	return reflect.TypeOf((*map[string]CloudcertificatesLineageHeadAlgorithms)(nil)).Elem()
+}
+
+func (i CloudcertificatesLineageHeadAlgorithmsMap) ToCloudcertificatesLineageHeadAlgorithmsMapOutput() CloudcertificatesLineageHeadAlgorithmsMapOutput {
+	return i.ToCloudcertificatesLineageHeadAlgorithmsMapOutputWithContext(context.Background())
+}
+
+func (i CloudcertificatesLineageHeadAlgorithmsMap) ToCloudcertificatesLineageHeadAlgorithmsMapOutputWithContext(ctx context.Context) CloudcertificatesLineageHeadAlgorithmsMapOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(CloudcertificatesLineageHeadAlgorithmsMapOutput)
+}
+
+type CloudcertificatesLineageHeadAlgorithmsOutput struct{ *pulumi.OutputState }
+
+func (CloudcertificatesLineageHeadAlgorithmsOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*CloudcertificatesLineageHeadAlgorithms)(nil)).Elem()
+}
+
+func (o CloudcertificatesLineageHeadAlgorithmsOutput) ToCloudcertificatesLineageHeadAlgorithmsOutput() CloudcertificatesLineageHeadAlgorithmsOutput {
+	return o
+}
+
+func (o CloudcertificatesLineageHeadAlgorithmsOutput) ToCloudcertificatesLineageHeadAlgorithmsOutputWithContext(ctx context.Context) CloudcertificatesLineageHeadAlgorithmsOutput {
+	return o
+}
+
+// Username of the person who created the algorithm instance.
+func (o CloudcertificatesLineageHeadAlgorithmsOutput) AlgorithmInstanceCreatedBy() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v CloudcertificatesLineageHeadAlgorithms) *string { return v.AlgorithmInstanceCreatedBy }).(pulumi.StringPtrOutput)
+}
+
+// Time the algorithm instance was created, in RFC3339 format.
+func (o CloudcertificatesLineageHeadAlgorithmsOutput) AlgorithmInstanceCreatedTime() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v CloudcertificatesLineageHeadAlgorithms) *string { return v.AlgorithmInstanceCreatedTime }).(pulumi.StringPtrOutput)
+}
+
+// Unique identifier of the algorithm instance.
+func (o CloudcertificatesLineageHeadAlgorithmsOutput) AlgorithmInstanceId() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v CloudcertificatesLineageHeadAlgorithms) *int { return v.AlgorithmInstanceId }).(pulumi.IntPtrOutput)
+}
+
+// Username of the person who last modified the algorithm instance. Null if never modified.
+func (o CloudcertificatesLineageHeadAlgorithmsOutput) AlgorithmInstanceModifiedBy() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v CloudcertificatesLineageHeadAlgorithms) *string { return v.AlgorithmInstanceModifiedBy }).(pulumi.StringPtrOutput)
+}
+
+// Time the algorithm instance was last modified, in RFC3339 format. Null if never modified.
+func (o CloudcertificatesLineageHeadAlgorithmsOutput) AlgorithmInstanceModifiedTime() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v CloudcertificatesLineageHeadAlgorithms) *string { return v.AlgorithmInstanceModifiedTime }).(pulumi.StringPtrOutput)
+}
+
+// Status of the certificate for this key type: `CSR_READY`, `CERT_UPLOAD_PROCESSING`, `READY_FOR_USE`, or `ABANDONED`.
+func (o CloudcertificatesLineageHeadAlgorithmsOutput) CertificateStatus() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v CloudcertificatesLineageHeadAlgorithms) *string { return v.CertificateStatus }).(pulumi.StringPtrOutput)
+}
+
+// Date when the CSR expires, in RFC3339 format.
+func (o CloudcertificatesLineageHeadAlgorithmsOutput) CsrExpirationDate() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v CloudcertificatesLineageHeadAlgorithms) *string { return v.CsrExpirationDate }).(pulumi.StringPtrOutput)
+}
+
+// PEM-encoded certificate signing request.
+func (o CloudcertificatesLineageHeadAlgorithmsOutput) CsrPem() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v CloudcertificatesLineageHeadAlgorithms) *string { return v.CsrPem }).(pulumi.StringPtrOutput)
+}
+
+// Issuer field of the signed certificate. Null until a certificate is uploaded.
+func (o CloudcertificatesLineageHeadAlgorithmsOutput) SignedCertificateIssuer() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v CloudcertificatesLineageHeadAlgorithms) *string { return v.SignedCertificateIssuer }).(pulumi.StringPtrOutput)
+}
+
+// Expiration date of the signed certificate, in RFC3339 format. Null until a certificate is uploaded.
+func (o CloudcertificatesLineageHeadAlgorithmsOutput) SignedCertificateNotValidAfterDate() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v CloudcertificatesLineageHeadAlgorithms) *string { return v.SignedCertificateNotValidAfterDate }).(pulumi.StringPtrOutput)
+}
+
+// Start of validity of the signed certificate, in RFC3339 format. Null until a certificate is uploaded.
+func (o CloudcertificatesLineageHeadAlgorithmsOutput) SignedCertificateNotValidBeforeDate() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v CloudcertificatesLineageHeadAlgorithms) *string { return v.SignedCertificateNotValidBeforeDate }).(pulumi.StringPtrOutput)
+}
+
+// PEM-encoded signed certificate. Null until a certificate is uploaded.
+func (o CloudcertificatesLineageHeadAlgorithmsOutput) SignedCertificatePem() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v CloudcertificatesLineageHeadAlgorithms) *string { return v.SignedCertificatePem }).(pulumi.StringPtrOutput)
+}
+
+// Serial number of the signed certificate in hex format. Null until a certificate is uploaded.
+func (o CloudcertificatesLineageHeadAlgorithmsOutput) SignedCertificateSerialNumber() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v CloudcertificatesLineageHeadAlgorithms) *string { return v.SignedCertificateSerialNumber }).(pulumi.StringPtrOutput)
+}
+
+// SHA-256 fingerprint of the signed certificate. Null until a certificate is uploaded.
+func (o CloudcertificatesLineageHeadAlgorithmsOutput) SignedCertificateSha256Fingerprint() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v CloudcertificatesLineageHeadAlgorithms) *string { return v.SignedCertificateSha256Fingerprint }).(pulumi.StringPtrOutput)
+}
+
+// PEM-encoded trust chain uploaded alongside the signed certificate. Null if none was uploaded.
+func (o CloudcertificatesLineageHeadAlgorithmsOutput) TrustChainPem() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v CloudcertificatesLineageHeadAlgorithms) *string { return v.TrustChainPem }).(pulumi.StringPtrOutput)
+}
+
+type CloudcertificatesLineageHeadAlgorithmsMapOutput struct{ *pulumi.OutputState }
+
+func (CloudcertificatesLineageHeadAlgorithmsMapOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*map[string]CloudcertificatesLineageHeadAlgorithms)(nil)).Elem()
+}
+
+func (o CloudcertificatesLineageHeadAlgorithmsMapOutput) ToCloudcertificatesLineageHeadAlgorithmsMapOutput() CloudcertificatesLineageHeadAlgorithmsMapOutput {
+	return o
+}
+
+func (o CloudcertificatesLineageHeadAlgorithmsMapOutput) ToCloudcertificatesLineageHeadAlgorithmsMapOutputWithContext(ctx context.Context) CloudcertificatesLineageHeadAlgorithmsMapOutput {
+	return o
+}
+
+func (o CloudcertificatesLineageHeadAlgorithmsMapOutput) MapIndex(k pulumi.StringInput) CloudcertificatesLineageHeadAlgorithmsOutput {
+	return pulumi.All(o, k).ApplyT(func(vs []interface{}) CloudcertificatesLineageHeadAlgorithms {
+		return vs[0].(map[string]CloudcertificatesLineageHeadAlgorithms)[vs[1].(string)]
+	}).(CloudcertificatesLineageHeadAlgorithmsOutput)
+}
+
+type CloudcertificatesLineagePreviousProduction struct {
+	// Per key-type (RSA or ECDSA) certificate details for this generation, keyed by key_type.
+	Algorithms map[string]CloudcertificatesLineagePreviousProductionAlgorithms `pulumi:"algorithms"`
+	// Time the generation was first promoted to production, in RFC3339 format. Null if never promoted.
+	FirstPromotedToProductionTime *string `pulumi:"firstPromotedToProductionTime"`
+	// Username of the person who created this generation.
+	GenerationCreatedBy *string `pulumi:"generationCreatedBy"`
+	// Time the generation was created, in RFC3339 format.
+	GenerationCreatedTime *string `pulumi:"generationCreatedTime"`
+	// Unique identifier of this generation.
+	GenerationId *int `pulumi:"generationId"`
+	// Username of the person who last modified this generation.
+	GenerationModifiedBy *string `pulumi:"generationModifiedBy"`
+	// Time the generation was last modified, in RFC3339 format. Null if never modified since creation.
+	GenerationModifiedTime *string `pulumi:"generationModifiedTime"`
+	// Status of this generation.
+	GenerationStatus *string `pulumi:"generationStatus"`
+}
+
+// CloudcertificatesLineagePreviousProductionInput is an input type that accepts CloudcertificatesLineagePreviousProductionArgs and CloudcertificatesLineagePreviousProductionOutput values.
+// You can construct a concrete instance of `CloudcertificatesLineagePreviousProductionInput` via:
+//
+//	CloudcertificatesLineagePreviousProductionArgs{...}
+type CloudcertificatesLineagePreviousProductionInput interface {
+	pulumi.Input
+
+	ToCloudcertificatesLineagePreviousProductionOutput() CloudcertificatesLineagePreviousProductionOutput
+	ToCloudcertificatesLineagePreviousProductionOutputWithContext(context.Context) CloudcertificatesLineagePreviousProductionOutput
+}
+
+type CloudcertificatesLineagePreviousProductionArgs struct {
+	// Per key-type (RSA or ECDSA) certificate details for this generation, keyed by key_type.
+	Algorithms CloudcertificatesLineagePreviousProductionAlgorithmsMapInput `pulumi:"algorithms"`
+	// Time the generation was first promoted to production, in RFC3339 format. Null if never promoted.
+	FirstPromotedToProductionTime pulumi.StringPtrInput `pulumi:"firstPromotedToProductionTime"`
+	// Username of the person who created this generation.
+	GenerationCreatedBy pulumi.StringPtrInput `pulumi:"generationCreatedBy"`
+	// Time the generation was created, in RFC3339 format.
+	GenerationCreatedTime pulumi.StringPtrInput `pulumi:"generationCreatedTime"`
+	// Unique identifier of this generation.
+	GenerationId pulumi.IntPtrInput `pulumi:"generationId"`
+	// Username of the person who last modified this generation.
+	GenerationModifiedBy pulumi.StringPtrInput `pulumi:"generationModifiedBy"`
+	// Time the generation was last modified, in RFC3339 format. Null if never modified since creation.
+	GenerationModifiedTime pulumi.StringPtrInput `pulumi:"generationModifiedTime"`
+	// Status of this generation.
+	GenerationStatus pulumi.StringPtrInput `pulumi:"generationStatus"`
+}
+
+func (CloudcertificatesLineagePreviousProductionArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*CloudcertificatesLineagePreviousProduction)(nil)).Elem()
+}
+
+func (i CloudcertificatesLineagePreviousProductionArgs) ToCloudcertificatesLineagePreviousProductionOutput() CloudcertificatesLineagePreviousProductionOutput {
+	return i.ToCloudcertificatesLineagePreviousProductionOutputWithContext(context.Background())
+}
+
+func (i CloudcertificatesLineagePreviousProductionArgs) ToCloudcertificatesLineagePreviousProductionOutputWithContext(ctx context.Context) CloudcertificatesLineagePreviousProductionOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(CloudcertificatesLineagePreviousProductionOutput)
+}
+
+func (i CloudcertificatesLineagePreviousProductionArgs) ToCloudcertificatesLineagePreviousProductionPtrOutput() CloudcertificatesLineagePreviousProductionPtrOutput {
+	return i.ToCloudcertificatesLineagePreviousProductionPtrOutputWithContext(context.Background())
+}
+
+func (i CloudcertificatesLineagePreviousProductionArgs) ToCloudcertificatesLineagePreviousProductionPtrOutputWithContext(ctx context.Context) CloudcertificatesLineagePreviousProductionPtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(CloudcertificatesLineagePreviousProductionOutput).ToCloudcertificatesLineagePreviousProductionPtrOutputWithContext(ctx)
+}
+
+// CloudcertificatesLineagePreviousProductionPtrInput is an input type that accepts CloudcertificatesLineagePreviousProductionArgs, CloudcertificatesLineagePreviousProductionPtr and CloudcertificatesLineagePreviousProductionPtrOutput values.
+// You can construct a concrete instance of `CloudcertificatesLineagePreviousProductionPtrInput` via:
+//
+//	        CloudcertificatesLineagePreviousProductionArgs{...}
+//
+//	or:
+//
+//	        nil
+type CloudcertificatesLineagePreviousProductionPtrInput interface {
+	pulumi.Input
+
+	ToCloudcertificatesLineagePreviousProductionPtrOutput() CloudcertificatesLineagePreviousProductionPtrOutput
+	ToCloudcertificatesLineagePreviousProductionPtrOutputWithContext(context.Context) CloudcertificatesLineagePreviousProductionPtrOutput
+}
+
+type cloudcertificatesLineagePreviousProductionPtrType CloudcertificatesLineagePreviousProductionArgs
+
+func CloudcertificatesLineagePreviousProductionPtr(v *CloudcertificatesLineagePreviousProductionArgs) CloudcertificatesLineagePreviousProductionPtrInput {
+	return (*cloudcertificatesLineagePreviousProductionPtrType)(v)
+}
+
+func (*cloudcertificatesLineagePreviousProductionPtrType) ElementType() reflect.Type {
+	return reflect.TypeOf((**CloudcertificatesLineagePreviousProduction)(nil)).Elem()
+}
+
+func (i *cloudcertificatesLineagePreviousProductionPtrType) ToCloudcertificatesLineagePreviousProductionPtrOutput() CloudcertificatesLineagePreviousProductionPtrOutput {
+	return i.ToCloudcertificatesLineagePreviousProductionPtrOutputWithContext(context.Background())
+}
+
+func (i *cloudcertificatesLineagePreviousProductionPtrType) ToCloudcertificatesLineagePreviousProductionPtrOutputWithContext(ctx context.Context) CloudcertificatesLineagePreviousProductionPtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(CloudcertificatesLineagePreviousProductionPtrOutput)
+}
+
+type CloudcertificatesLineagePreviousProductionOutput struct{ *pulumi.OutputState }
+
+func (CloudcertificatesLineagePreviousProductionOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*CloudcertificatesLineagePreviousProduction)(nil)).Elem()
+}
+
+func (o CloudcertificatesLineagePreviousProductionOutput) ToCloudcertificatesLineagePreviousProductionOutput() CloudcertificatesLineagePreviousProductionOutput {
+	return o
+}
+
+func (o CloudcertificatesLineagePreviousProductionOutput) ToCloudcertificatesLineagePreviousProductionOutputWithContext(ctx context.Context) CloudcertificatesLineagePreviousProductionOutput {
+	return o
+}
+
+func (o CloudcertificatesLineagePreviousProductionOutput) ToCloudcertificatesLineagePreviousProductionPtrOutput() CloudcertificatesLineagePreviousProductionPtrOutput {
+	return o.ToCloudcertificatesLineagePreviousProductionPtrOutputWithContext(context.Background())
+}
+
+func (o CloudcertificatesLineagePreviousProductionOutput) ToCloudcertificatesLineagePreviousProductionPtrOutputWithContext(ctx context.Context) CloudcertificatesLineagePreviousProductionPtrOutput {
+	return o.ApplyTWithContext(ctx, func(_ context.Context, v CloudcertificatesLineagePreviousProduction) *CloudcertificatesLineagePreviousProduction {
+		return &v
+	}).(CloudcertificatesLineagePreviousProductionPtrOutput)
+}
+
+// Per key-type (RSA or ECDSA) certificate details for this generation, keyed by key_type.
+func (o CloudcertificatesLineagePreviousProductionOutput) Algorithms() CloudcertificatesLineagePreviousProductionAlgorithmsMapOutput {
+	return o.ApplyT(func(v CloudcertificatesLineagePreviousProduction) map[string]CloudcertificatesLineagePreviousProductionAlgorithms {
+		return v.Algorithms
+	}).(CloudcertificatesLineagePreviousProductionAlgorithmsMapOutput)
+}
+
+// Time the generation was first promoted to production, in RFC3339 format. Null if never promoted.
+func (o CloudcertificatesLineagePreviousProductionOutput) FirstPromotedToProductionTime() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v CloudcertificatesLineagePreviousProduction) *string { return v.FirstPromotedToProductionTime }).(pulumi.StringPtrOutput)
+}
+
+// Username of the person who created this generation.
+func (o CloudcertificatesLineagePreviousProductionOutput) GenerationCreatedBy() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v CloudcertificatesLineagePreviousProduction) *string { return v.GenerationCreatedBy }).(pulumi.StringPtrOutput)
+}
+
+// Time the generation was created, in RFC3339 format.
+func (o CloudcertificatesLineagePreviousProductionOutput) GenerationCreatedTime() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v CloudcertificatesLineagePreviousProduction) *string { return v.GenerationCreatedTime }).(pulumi.StringPtrOutput)
+}
+
+// Unique identifier of this generation.
+func (o CloudcertificatesLineagePreviousProductionOutput) GenerationId() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v CloudcertificatesLineagePreviousProduction) *int { return v.GenerationId }).(pulumi.IntPtrOutput)
+}
+
+// Username of the person who last modified this generation.
+func (o CloudcertificatesLineagePreviousProductionOutput) GenerationModifiedBy() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v CloudcertificatesLineagePreviousProduction) *string { return v.GenerationModifiedBy }).(pulumi.StringPtrOutput)
+}
+
+// Time the generation was last modified, in RFC3339 format. Null if never modified since creation.
+func (o CloudcertificatesLineagePreviousProductionOutput) GenerationModifiedTime() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v CloudcertificatesLineagePreviousProduction) *string { return v.GenerationModifiedTime }).(pulumi.StringPtrOutput)
+}
+
+// Status of this generation.
+func (o CloudcertificatesLineagePreviousProductionOutput) GenerationStatus() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v CloudcertificatesLineagePreviousProduction) *string { return v.GenerationStatus }).(pulumi.StringPtrOutput)
+}
+
+type CloudcertificatesLineagePreviousProductionPtrOutput struct{ *pulumi.OutputState }
+
+func (CloudcertificatesLineagePreviousProductionPtrOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((**CloudcertificatesLineagePreviousProduction)(nil)).Elem()
+}
+
+func (o CloudcertificatesLineagePreviousProductionPtrOutput) ToCloudcertificatesLineagePreviousProductionPtrOutput() CloudcertificatesLineagePreviousProductionPtrOutput {
+	return o
+}
+
+func (o CloudcertificatesLineagePreviousProductionPtrOutput) ToCloudcertificatesLineagePreviousProductionPtrOutputWithContext(ctx context.Context) CloudcertificatesLineagePreviousProductionPtrOutput {
+	return o
+}
+
+func (o CloudcertificatesLineagePreviousProductionPtrOutput) Elem() CloudcertificatesLineagePreviousProductionOutput {
+	return o.ApplyT(func(v *CloudcertificatesLineagePreviousProduction) CloudcertificatesLineagePreviousProduction {
+		if v != nil {
+			return *v
+		}
+		var ret CloudcertificatesLineagePreviousProduction
+		return ret
+	}).(CloudcertificatesLineagePreviousProductionOutput)
+}
+
+// Per key-type (RSA or ECDSA) certificate details for this generation, keyed by key_type.
+func (o CloudcertificatesLineagePreviousProductionPtrOutput) Algorithms() CloudcertificatesLineagePreviousProductionAlgorithmsMapOutput {
+	return o.ApplyT(func(v *CloudcertificatesLineagePreviousProduction) map[string]CloudcertificatesLineagePreviousProductionAlgorithms {
+		if v == nil {
+			return nil
+		}
+		return v.Algorithms
+	}).(CloudcertificatesLineagePreviousProductionAlgorithmsMapOutput)
+}
+
+// Time the generation was first promoted to production, in RFC3339 format. Null if never promoted.
+func (o CloudcertificatesLineagePreviousProductionPtrOutput) FirstPromotedToProductionTime() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *CloudcertificatesLineagePreviousProduction) *string {
+		if v == nil {
+			return nil
+		}
+		return v.FirstPromotedToProductionTime
+	}).(pulumi.StringPtrOutput)
+}
+
+// Username of the person who created this generation.
+func (o CloudcertificatesLineagePreviousProductionPtrOutput) GenerationCreatedBy() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *CloudcertificatesLineagePreviousProduction) *string {
+		if v == nil {
+			return nil
+		}
+		return v.GenerationCreatedBy
+	}).(pulumi.StringPtrOutput)
+}
+
+// Time the generation was created, in RFC3339 format.
+func (o CloudcertificatesLineagePreviousProductionPtrOutput) GenerationCreatedTime() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *CloudcertificatesLineagePreviousProduction) *string {
+		if v == nil {
+			return nil
+		}
+		return v.GenerationCreatedTime
+	}).(pulumi.StringPtrOutput)
+}
+
+// Unique identifier of this generation.
+func (o CloudcertificatesLineagePreviousProductionPtrOutput) GenerationId() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v *CloudcertificatesLineagePreviousProduction) *int {
+		if v == nil {
+			return nil
+		}
+		return v.GenerationId
+	}).(pulumi.IntPtrOutput)
+}
+
+// Username of the person who last modified this generation.
+func (o CloudcertificatesLineagePreviousProductionPtrOutput) GenerationModifiedBy() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *CloudcertificatesLineagePreviousProduction) *string {
+		if v == nil {
+			return nil
+		}
+		return v.GenerationModifiedBy
+	}).(pulumi.StringPtrOutput)
+}
+
+// Time the generation was last modified, in RFC3339 format. Null if never modified since creation.
+func (o CloudcertificatesLineagePreviousProductionPtrOutput) GenerationModifiedTime() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *CloudcertificatesLineagePreviousProduction) *string {
+		if v == nil {
+			return nil
+		}
+		return v.GenerationModifiedTime
+	}).(pulumi.StringPtrOutput)
+}
+
+// Status of this generation.
+func (o CloudcertificatesLineagePreviousProductionPtrOutput) GenerationStatus() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *CloudcertificatesLineagePreviousProduction) *string {
+		if v == nil {
+			return nil
+		}
+		return v.GenerationStatus
+	}).(pulumi.StringPtrOutput)
+}
+
+type CloudcertificatesLineagePreviousProductionAlgorithms struct {
+	// Username of the person who created the algorithm instance.
+	AlgorithmInstanceCreatedBy *string `pulumi:"algorithmInstanceCreatedBy"`
+	// Time the algorithm instance was created, in RFC3339 format.
+	AlgorithmInstanceCreatedTime *string `pulumi:"algorithmInstanceCreatedTime"`
+	// Unique identifier of the algorithm instance.
+	AlgorithmInstanceId *int `pulumi:"algorithmInstanceId"`
+	// Username of the person who last modified the algorithm instance. Null if never modified.
+	AlgorithmInstanceModifiedBy *string `pulumi:"algorithmInstanceModifiedBy"`
+	// Time the algorithm instance was last modified, in RFC3339 format. Null if never modified.
+	AlgorithmInstanceModifiedTime *string `pulumi:"algorithmInstanceModifiedTime"`
+	// Status of the certificate for this key type: `CSR_READY`, `CERT_UPLOAD_PROCESSING`, `READY_FOR_USE`, or `ABANDONED`.
+	CertificateStatus *string `pulumi:"certificateStatus"`
+	// Date when the CSR expires, in RFC3339 format.
+	CsrExpirationDate *string `pulumi:"csrExpirationDate"`
+	// PEM-encoded certificate signing request.
+	CsrPem *string `pulumi:"csrPem"`
+	// Issuer field of the signed certificate. Null until a certificate is uploaded.
+	SignedCertificateIssuer *string `pulumi:"signedCertificateIssuer"`
+	// Expiration date of the signed certificate, in RFC3339 format. Null until a certificate is uploaded.
+	SignedCertificateNotValidAfterDate *string `pulumi:"signedCertificateNotValidAfterDate"`
+	// Start of validity of the signed certificate, in RFC3339 format. Null until a certificate is uploaded.
+	SignedCertificateNotValidBeforeDate *string `pulumi:"signedCertificateNotValidBeforeDate"`
+	// PEM-encoded signed certificate. Null until a certificate is uploaded.
+	SignedCertificatePem *string `pulumi:"signedCertificatePem"`
+	// Serial number of the signed certificate in hex format. Null until a certificate is uploaded.
+	SignedCertificateSerialNumber *string `pulumi:"signedCertificateSerialNumber"`
+	// SHA-256 fingerprint of the signed certificate. Null until a certificate is uploaded.
+	SignedCertificateSha256Fingerprint *string `pulumi:"signedCertificateSha256Fingerprint"`
+	// PEM-encoded trust chain uploaded alongside the signed certificate. Null if none was uploaded.
+	TrustChainPem *string `pulumi:"trustChainPem"`
+}
+
+// CloudcertificatesLineagePreviousProductionAlgorithmsInput is an input type that accepts CloudcertificatesLineagePreviousProductionAlgorithmsArgs and CloudcertificatesLineagePreviousProductionAlgorithmsOutput values.
+// You can construct a concrete instance of `CloudcertificatesLineagePreviousProductionAlgorithmsInput` via:
+//
+//	CloudcertificatesLineagePreviousProductionAlgorithmsArgs{...}
+type CloudcertificatesLineagePreviousProductionAlgorithmsInput interface {
+	pulumi.Input
+
+	ToCloudcertificatesLineagePreviousProductionAlgorithmsOutput() CloudcertificatesLineagePreviousProductionAlgorithmsOutput
+	ToCloudcertificatesLineagePreviousProductionAlgorithmsOutputWithContext(context.Context) CloudcertificatesLineagePreviousProductionAlgorithmsOutput
+}
+
+type CloudcertificatesLineagePreviousProductionAlgorithmsArgs struct {
+	// Username of the person who created the algorithm instance.
+	AlgorithmInstanceCreatedBy pulumi.StringPtrInput `pulumi:"algorithmInstanceCreatedBy"`
+	// Time the algorithm instance was created, in RFC3339 format.
+	AlgorithmInstanceCreatedTime pulumi.StringPtrInput `pulumi:"algorithmInstanceCreatedTime"`
+	// Unique identifier of the algorithm instance.
+	AlgorithmInstanceId pulumi.IntPtrInput `pulumi:"algorithmInstanceId"`
+	// Username of the person who last modified the algorithm instance. Null if never modified.
+	AlgorithmInstanceModifiedBy pulumi.StringPtrInput `pulumi:"algorithmInstanceModifiedBy"`
+	// Time the algorithm instance was last modified, in RFC3339 format. Null if never modified.
+	AlgorithmInstanceModifiedTime pulumi.StringPtrInput `pulumi:"algorithmInstanceModifiedTime"`
+	// Status of the certificate for this key type: `CSR_READY`, `CERT_UPLOAD_PROCESSING`, `READY_FOR_USE`, or `ABANDONED`.
+	CertificateStatus pulumi.StringPtrInput `pulumi:"certificateStatus"`
+	// Date when the CSR expires, in RFC3339 format.
+	CsrExpirationDate pulumi.StringPtrInput `pulumi:"csrExpirationDate"`
+	// PEM-encoded certificate signing request.
+	CsrPem pulumi.StringPtrInput `pulumi:"csrPem"`
+	// Issuer field of the signed certificate. Null until a certificate is uploaded.
+	SignedCertificateIssuer pulumi.StringPtrInput `pulumi:"signedCertificateIssuer"`
+	// Expiration date of the signed certificate, in RFC3339 format. Null until a certificate is uploaded.
+	SignedCertificateNotValidAfterDate pulumi.StringPtrInput `pulumi:"signedCertificateNotValidAfterDate"`
+	// Start of validity of the signed certificate, in RFC3339 format. Null until a certificate is uploaded.
+	SignedCertificateNotValidBeforeDate pulumi.StringPtrInput `pulumi:"signedCertificateNotValidBeforeDate"`
+	// PEM-encoded signed certificate. Null until a certificate is uploaded.
+	SignedCertificatePem pulumi.StringPtrInput `pulumi:"signedCertificatePem"`
+	// Serial number of the signed certificate in hex format. Null until a certificate is uploaded.
+	SignedCertificateSerialNumber pulumi.StringPtrInput `pulumi:"signedCertificateSerialNumber"`
+	// SHA-256 fingerprint of the signed certificate. Null until a certificate is uploaded.
+	SignedCertificateSha256Fingerprint pulumi.StringPtrInput `pulumi:"signedCertificateSha256Fingerprint"`
+	// PEM-encoded trust chain uploaded alongside the signed certificate. Null if none was uploaded.
+	TrustChainPem pulumi.StringPtrInput `pulumi:"trustChainPem"`
+}
+
+func (CloudcertificatesLineagePreviousProductionAlgorithmsArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*CloudcertificatesLineagePreviousProductionAlgorithms)(nil)).Elem()
+}
+
+func (i CloudcertificatesLineagePreviousProductionAlgorithmsArgs) ToCloudcertificatesLineagePreviousProductionAlgorithmsOutput() CloudcertificatesLineagePreviousProductionAlgorithmsOutput {
+	return i.ToCloudcertificatesLineagePreviousProductionAlgorithmsOutputWithContext(context.Background())
+}
+
+func (i CloudcertificatesLineagePreviousProductionAlgorithmsArgs) ToCloudcertificatesLineagePreviousProductionAlgorithmsOutputWithContext(ctx context.Context) CloudcertificatesLineagePreviousProductionAlgorithmsOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(CloudcertificatesLineagePreviousProductionAlgorithmsOutput)
+}
+
+// CloudcertificatesLineagePreviousProductionAlgorithmsMapInput is an input type that accepts CloudcertificatesLineagePreviousProductionAlgorithmsMap and CloudcertificatesLineagePreviousProductionAlgorithmsMapOutput values.
+// You can construct a concrete instance of `CloudcertificatesLineagePreviousProductionAlgorithmsMapInput` via:
+//
+//	CloudcertificatesLineagePreviousProductionAlgorithmsMap{ "key": CloudcertificatesLineagePreviousProductionAlgorithmsArgs{...} }
+type CloudcertificatesLineagePreviousProductionAlgorithmsMapInput interface {
+	pulumi.Input
+
+	ToCloudcertificatesLineagePreviousProductionAlgorithmsMapOutput() CloudcertificatesLineagePreviousProductionAlgorithmsMapOutput
+	ToCloudcertificatesLineagePreviousProductionAlgorithmsMapOutputWithContext(context.Context) CloudcertificatesLineagePreviousProductionAlgorithmsMapOutput
+}
+
+type CloudcertificatesLineagePreviousProductionAlgorithmsMap map[string]CloudcertificatesLineagePreviousProductionAlgorithmsInput
+
+func (CloudcertificatesLineagePreviousProductionAlgorithmsMap) ElementType() reflect.Type {
+	return reflect.TypeOf((*map[string]CloudcertificatesLineagePreviousProductionAlgorithms)(nil)).Elem()
+}
+
+func (i CloudcertificatesLineagePreviousProductionAlgorithmsMap) ToCloudcertificatesLineagePreviousProductionAlgorithmsMapOutput() CloudcertificatesLineagePreviousProductionAlgorithmsMapOutput {
+	return i.ToCloudcertificatesLineagePreviousProductionAlgorithmsMapOutputWithContext(context.Background())
+}
+
+func (i CloudcertificatesLineagePreviousProductionAlgorithmsMap) ToCloudcertificatesLineagePreviousProductionAlgorithmsMapOutputWithContext(ctx context.Context) CloudcertificatesLineagePreviousProductionAlgorithmsMapOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(CloudcertificatesLineagePreviousProductionAlgorithmsMapOutput)
+}
+
+type CloudcertificatesLineagePreviousProductionAlgorithmsOutput struct{ *pulumi.OutputState }
+
+func (CloudcertificatesLineagePreviousProductionAlgorithmsOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*CloudcertificatesLineagePreviousProductionAlgorithms)(nil)).Elem()
+}
+
+func (o CloudcertificatesLineagePreviousProductionAlgorithmsOutput) ToCloudcertificatesLineagePreviousProductionAlgorithmsOutput() CloudcertificatesLineagePreviousProductionAlgorithmsOutput {
+	return o
+}
+
+func (o CloudcertificatesLineagePreviousProductionAlgorithmsOutput) ToCloudcertificatesLineagePreviousProductionAlgorithmsOutputWithContext(ctx context.Context) CloudcertificatesLineagePreviousProductionAlgorithmsOutput {
+	return o
+}
+
+// Username of the person who created the algorithm instance.
+func (o CloudcertificatesLineagePreviousProductionAlgorithmsOutput) AlgorithmInstanceCreatedBy() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v CloudcertificatesLineagePreviousProductionAlgorithms) *string {
+		return v.AlgorithmInstanceCreatedBy
+	}).(pulumi.StringPtrOutput)
+}
+
+// Time the algorithm instance was created, in RFC3339 format.
+func (o CloudcertificatesLineagePreviousProductionAlgorithmsOutput) AlgorithmInstanceCreatedTime() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v CloudcertificatesLineagePreviousProductionAlgorithms) *string {
+		return v.AlgorithmInstanceCreatedTime
+	}).(pulumi.StringPtrOutput)
+}
+
+// Unique identifier of the algorithm instance.
+func (o CloudcertificatesLineagePreviousProductionAlgorithmsOutput) AlgorithmInstanceId() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v CloudcertificatesLineagePreviousProductionAlgorithms) *int { return v.AlgorithmInstanceId }).(pulumi.IntPtrOutput)
+}
+
+// Username of the person who last modified the algorithm instance. Null if never modified.
+func (o CloudcertificatesLineagePreviousProductionAlgorithmsOutput) AlgorithmInstanceModifiedBy() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v CloudcertificatesLineagePreviousProductionAlgorithms) *string {
+		return v.AlgorithmInstanceModifiedBy
+	}).(pulumi.StringPtrOutput)
+}
+
+// Time the algorithm instance was last modified, in RFC3339 format. Null if never modified.
+func (o CloudcertificatesLineagePreviousProductionAlgorithmsOutput) AlgorithmInstanceModifiedTime() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v CloudcertificatesLineagePreviousProductionAlgorithms) *string {
+		return v.AlgorithmInstanceModifiedTime
+	}).(pulumi.StringPtrOutput)
+}
+
+// Status of the certificate for this key type: `CSR_READY`, `CERT_UPLOAD_PROCESSING`, `READY_FOR_USE`, or `ABANDONED`.
+func (o CloudcertificatesLineagePreviousProductionAlgorithmsOutput) CertificateStatus() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v CloudcertificatesLineagePreviousProductionAlgorithms) *string { return v.CertificateStatus }).(pulumi.StringPtrOutput)
+}
+
+// Date when the CSR expires, in RFC3339 format.
+func (o CloudcertificatesLineagePreviousProductionAlgorithmsOutput) CsrExpirationDate() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v CloudcertificatesLineagePreviousProductionAlgorithms) *string { return v.CsrExpirationDate }).(pulumi.StringPtrOutput)
+}
+
+// PEM-encoded certificate signing request.
+func (o CloudcertificatesLineagePreviousProductionAlgorithmsOutput) CsrPem() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v CloudcertificatesLineagePreviousProductionAlgorithms) *string { return v.CsrPem }).(pulumi.StringPtrOutput)
+}
+
+// Issuer field of the signed certificate. Null until a certificate is uploaded.
+func (o CloudcertificatesLineagePreviousProductionAlgorithmsOutput) SignedCertificateIssuer() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v CloudcertificatesLineagePreviousProductionAlgorithms) *string { return v.SignedCertificateIssuer }).(pulumi.StringPtrOutput)
+}
+
+// Expiration date of the signed certificate, in RFC3339 format. Null until a certificate is uploaded.
+func (o CloudcertificatesLineagePreviousProductionAlgorithmsOutput) SignedCertificateNotValidAfterDate() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v CloudcertificatesLineagePreviousProductionAlgorithms) *string {
+		return v.SignedCertificateNotValidAfterDate
+	}).(pulumi.StringPtrOutput)
+}
+
+// Start of validity of the signed certificate, in RFC3339 format. Null until a certificate is uploaded.
+func (o CloudcertificatesLineagePreviousProductionAlgorithmsOutput) SignedCertificateNotValidBeforeDate() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v CloudcertificatesLineagePreviousProductionAlgorithms) *string {
+		return v.SignedCertificateNotValidBeforeDate
+	}).(pulumi.StringPtrOutput)
+}
+
+// PEM-encoded signed certificate. Null until a certificate is uploaded.
+func (o CloudcertificatesLineagePreviousProductionAlgorithmsOutput) SignedCertificatePem() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v CloudcertificatesLineagePreviousProductionAlgorithms) *string { return v.SignedCertificatePem }).(pulumi.StringPtrOutput)
+}
+
+// Serial number of the signed certificate in hex format. Null until a certificate is uploaded.
+func (o CloudcertificatesLineagePreviousProductionAlgorithmsOutput) SignedCertificateSerialNumber() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v CloudcertificatesLineagePreviousProductionAlgorithms) *string {
+		return v.SignedCertificateSerialNumber
+	}).(pulumi.StringPtrOutput)
+}
+
+// SHA-256 fingerprint of the signed certificate. Null until a certificate is uploaded.
+func (o CloudcertificatesLineagePreviousProductionAlgorithmsOutput) SignedCertificateSha256Fingerprint() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v CloudcertificatesLineagePreviousProductionAlgorithms) *string {
+		return v.SignedCertificateSha256Fingerprint
+	}).(pulumi.StringPtrOutput)
+}
+
+// PEM-encoded trust chain uploaded alongside the signed certificate. Null if none was uploaded.
+func (o CloudcertificatesLineagePreviousProductionAlgorithmsOutput) TrustChainPem() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v CloudcertificatesLineagePreviousProductionAlgorithms) *string { return v.TrustChainPem }).(pulumi.StringPtrOutput)
+}
+
+type CloudcertificatesLineagePreviousProductionAlgorithmsMapOutput struct{ *pulumi.OutputState }
+
+func (CloudcertificatesLineagePreviousProductionAlgorithmsMapOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*map[string]CloudcertificatesLineagePreviousProductionAlgorithms)(nil)).Elem()
+}
+
+func (o CloudcertificatesLineagePreviousProductionAlgorithmsMapOutput) ToCloudcertificatesLineagePreviousProductionAlgorithmsMapOutput() CloudcertificatesLineagePreviousProductionAlgorithmsMapOutput {
+	return o
+}
+
+func (o CloudcertificatesLineagePreviousProductionAlgorithmsMapOutput) ToCloudcertificatesLineagePreviousProductionAlgorithmsMapOutputWithContext(ctx context.Context) CloudcertificatesLineagePreviousProductionAlgorithmsMapOutput {
+	return o
+}
+
+func (o CloudcertificatesLineagePreviousProductionAlgorithmsMapOutput) MapIndex(k pulumi.StringInput) CloudcertificatesLineagePreviousProductionAlgorithmsOutput {
+	return pulumi.All(o, k).ApplyT(func(vs []interface{}) CloudcertificatesLineagePreviousProductionAlgorithms {
+		return vs[0].(map[string]CloudcertificatesLineagePreviousProductionAlgorithms)[vs[1].(string)]
+	}).(CloudcertificatesLineagePreviousProductionAlgorithmsOutput)
+}
+
+type CloudcertificatesLineageSigningTarget struct {
+	// Per key-type (RSA or ECDSA) certificate details for this generation, keyed by key_type.
+	Algorithms map[string]CloudcertificatesLineageSigningTargetAlgorithms `pulumi:"algorithms"`
+	// Time the generation was first promoted to production, in RFC3339 format. Null if never promoted.
+	FirstPromotedToProductionTime *string `pulumi:"firstPromotedToProductionTime"`
+	// Username of the person who created this generation.
+	GenerationCreatedBy *string `pulumi:"generationCreatedBy"`
+	// Time the generation was created, in RFC3339 format.
+	GenerationCreatedTime *string `pulumi:"generationCreatedTime"`
+	// Unique identifier of this generation.
+	GenerationId *int `pulumi:"generationId"`
+	// Username of the person who last modified this generation.
+	GenerationModifiedBy *string `pulumi:"generationModifiedBy"`
+	// Time the generation was last modified, in RFC3339 format. Null if never modified since creation.
+	GenerationModifiedTime *string `pulumi:"generationModifiedTime"`
+	// Status of this generation.
+	GenerationStatus *string `pulumi:"generationStatus"`
+}
+
+// CloudcertificatesLineageSigningTargetInput is an input type that accepts CloudcertificatesLineageSigningTargetArgs and CloudcertificatesLineageSigningTargetOutput values.
+// You can construct a concrete instance of `CloudcertificatesLineageSigningTargetInput` via:
+//
+//	CloudcertificatesLineageSigningTargetArgs{...}
+type CloudcertificatesLineageSigningTargetInput interface {
+	pulumi.Input
+
+	ToCloudcertificatesLineageSigningTargetOutput() CloudcertificatesLineageSigningTargetOutput
+	ToCloudcertificatesLineageSigningTargetOutputWithContext(context.Context) CloudcertificatesLineageSigningTargetOutput
+}
+
+type CloudcertificatesLineageSigningTargetArgs struct {
+	// Per key-type (RSA or ECDSA) certificate details for this generation, keyed by key_type.
+	Algorithms CloudcertificatesLineageSigningTargetAlgorithmsMapInput `pulumi:"algorithms"`
+	// Time the generation was first promoted to production, in RFC3339 format. Null if never promoted.
+	FirstPromotedToProductionTime pulumi.StringPtrInput `pulumi:"firstPromotedToProductionTime"`
+	// Username of the person who created this generation.
+	GenerationCreatedBy pulumi.StringPtrInput `pulumi:"generationCreatedBy"`
+	// Time the generation was created, in RFC3339 format.
+	GenerationCreatedTime pulumi.StringPtrInput `pulumi:"generationCreatedTime"`
+	// Unique identifier of this generation.
+	GenerationId pulumi.IntPtrInput `pulumi:"generationId"`
+	// Username of the person who last modified this generation.
+	GenerationModifiedBy pulumi.StringPtrInput `pulumi:"generationModifiedBy"`
+	// Time the generation was last modified, in RFC3339 format. Null if never modified since creation.
+	GenerationModifiedTime pulumi.StringPtrInput `pulumi:"generationModifiedTime"`
+	// Status of this generation.
+	GenerationStatus pulumi.StringPtrInput `pulumi:"generationStatus"`
+}
+
+func (CloudcertificatesLineageSigningTargetArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*CloudcertificatesLineageSigningTarget)(nil)).Elem()
+}
+
+func (i CloudcertificatesLineageSigningTargetArgs) ToCloudcertificatesLineageSigningTargetOutput() CloudcertificatesLineageSigningTargetOutput {
+	return i.ToCloudcertificatesLineageSigningTargetOutputWithContext(context.Background())
+}
+
+func (i CloudcertificatesLineageSigningTargetArgs) ToCloudcertificatesLineageSigningTargetOutputWithContext(ctx context.Context) CloudcertificatesLineageSigningTargetOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(CloudcertificatesLineageSigningTargetOutput)
+}
+
+func (i CloudcertificatesLineageSigningTargetArgs) ToCloudcertificatesLineageSigningTargetPtrOutput() CloudcertificatesLineageSigningTargetPtrOutput {
+	return i.ToCloudcertificatesLineageSigningTargetPtrOutputWithContext(context.Background())
+}
+
+func (i CloudcertificatesLineageSigningTargetArgs) ToCloudcertificatesLineageSigningTargetPtrOutputWithContext(ctx context.Context) CloudcertificatesLineageSigningTargetPtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(CloudcertificatesLineageSigningTargetOutput).ToCloudcertificatesLineageSigningTargetPtrOutputWithContext(ctx)
+}
+
+// CloudcertificatesLineageSigningTargetPtrInput is an input type that accepts CloudcertificatesLineageSigningTargetArgs, CloudcertificatesLineageSigningTargetPtr and CloudcertificatesLineageSigningTargetPtrOutput values.
+// You can construct a concrete instance of `CloudcertificatesLineageSigningTargetPtrInput` via:
+//
+//	        CloudcertificatesLineageSigningTargetArgs{...}
+//
+//	or:
+//
+//	        nil
+type CloudcertificatesLineageSigningTargetPtrInput interface {
+	pulumi.Input
+
+	ToCloudcertificatesLineageSigningTargetPtrOutput() CloudcertificatesLineageSigningTargetPtrOutput
+	ToCloudcertificatesLineageSigningTargetPtrOutputWithContext(context.Context) CloudcertificatesLineageSigningTargetPtrOutput
+}
+
+type cloudcertificatesLineageSigningTargetPtrType CloudcertificatesLineageSigningTargetArgs
+
+func CloudcertificatesLineageSigningTargetPtr(v *CloudcertificatesLineageSigningTargetArgs) CloudcertificatesLineageSigningTargetPtrInput {
+	return (*cloudcertificatesLineageSigningTargetPtrType)(v)
+}
+
+func (*cloudcertificatesLineageSigningTargetPtrType) ElementType() reflect.Type {
+	return reflect.TypeOf((**CloudcertificatesLineageSigningTarget)(nil)).Elem()
+}
+
+func (i *cloudcertificatesLineageSigningTargetPtrType) ToCloudcertificatesLineageSigningTargetPtrOutput() CloudcertificatesLineageSigningTargetPtrOutput {
+	return i.ToCloudcertificatesLineageSigningTargetPtrOutputWithContext(context.Background())
+}
+
+func (i *cloudcertificatesLineageSigningTargetPtrType) ToCloudcertificatesLineageSigningTargetPtrOutputWithContext(ctx context.Context) CloudcertificatesLineageSigningTargetPtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(CloudcertificatesLineageSigningTargetPtrOutput)
+}
+
+type CloudcertificatesLineageSigningTargetOutput struct{ *pulumi.OutputState }
+
+func (CloudcertificatesLineageSigningTargetOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*CloudcertificatesLineageSigningTarget)(nil)).Elem()
+}
+
+func (o CloudcertificatesLineageSigningTargetOutput) ToCloudcertificatesLineageSigningTargetOutput() CloudcertificatesLineageSigningTargetOutput {
+	return o
+}
+
+func (o CloudcertificatesLineageSigningTargetOutput) ToCloudcertificatesLineageSigningTargetOutputWithContext(ctx context.Context) CloudcertificatesLineageSigningTargetOutput {
+	return o
+}
+
+func (o CloudcertificatesLineageSigningTargetOutput) ToCloudcertificatesLineageSigningTargetPtrOutput() CloudcertificatesLineageSigningTargetPtrOutput {
+	return o.ToCloudcertificatesLineageSigningTargetPtrOutputWithContext(context.Background())
+}
+
+func (o CloudcertificatesLineageSigningTargetOutput) ToCloudcertificatesLineageSigningTargetPtrOutputWithContext(ctx context.Context) CloudcertificatesLineageSigningTargetPtrOutput {
+	return o.ApplyTWithContext(ctx, func(_ context.Context, v CloudcertificatesLineageSigningTarget) *CloudcertificatesLineageSigningTarget {
+		return &v
+	}).(CloudcertificatesLineageSigningTargetPtrOutput)
+}
+
+// Per key-type (RSA or ECDSA) certificate details for this generation, keyed by key_type.
+func (o CloudcertificatesLineageSigningTargetOutput) Algorithms() CloudcertificatesLineageSigningTargetAlgorithmsMapOutput {
+	return o.ApplyT(func(v CloudcertificatesLineageSigningTarget) map[string]CloudcertificatesLineageSigningTargetAlgorithms {
+		return v.Algorithms
+	}).(CloudcertificatesLineageSigningTargetAlgorithmsMapOutput)
+}
+
+// Time the generation was first promoted to production, in RFC3339 format. Null if never promoted.
+func (o CloudcertificatesLineageSigningTargetOutput) FirstPromotedToProductionTime() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v CloudcertificatesLineageSigningTarget) *string { return v.FirstPromotedToProductionTime }).(pulumi.StringPtrOutput)
+}
+
+// Username of the person who created this generation.
+func (o CloudcertificatesLineageSigningTargetOutput) GenerationCreatedBy() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v CloudcertificatesLineageSigningTarget) *string { return v.GenerationCreatedBy }).(pulumi.StringPtrOutput)
+}
+
+// Time the generation was created, in RFC3339 format.
+func (o CloudcertificatesLineageSigningTargetOutput) GenerationCreatedTime() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v CloudcertificatesLineageSigningTarget) *string { return v.GenerationCreatedTime }).(pulumi.StringPtrOutput)
+}
+
+// Unique identifier of this generation.
+func (o CloudcertificatesLineageSigningTargetOutput) GenerationId() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v CloudcertificatesLineageSigningTarget) *int { return v.GenerationId }).(pulumi.IntPtrOutput)
+}
+
+// Username of the person who last modified this generation.
+func (o CloudcertificatesLineageSigningTargetOutput) GenerationModifiedBy() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v CloudcertificatesLineageSigningTarget) *string { return v.GenerationModifiedBy }).(pulumi.StringPtrOutput)
+}
+
+// Time the generation was last modified, in RFC3339 format. Null if never modified since creation.
+func (o CloudcertificatesLineageSigningTargetOutput) GenerationModifiedTime() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v CloudcertificatesLineageSigningTarget) *string { return v.GenerationModifiedTime }).(pulumi.StringPtrOutput)
+}
+
+// Status of this generation.
+func (o CloudcertificatesLineageSigningTargetOutput) GenerationStatus() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v CloudcertificatesLineageSigningTarget) *string { return v.GenerationStatus }).(pulumi.StringPtrOutput)
+}
+
+type CloudcertificatesLineageSigningTargetPtrOutput struct{ *pulumi.OutputState }
+
+func (CloudcertificatesLineageSigningTargetPtrOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((**CloudcertificatesLineageSigningTarget)(nil)).Elem()
+}
+
+func (o CloudcertificatesLineageSigningTargetPtrOutput) ToCloudcertificatesLineageSigningTargetPtrOutput() CloudcertificatesLineageSigningTargetPtrOutput {
+	return o
+}
+
+func (o CloudcertificatesLineageSigningTargetPtrOutput) ToCloudcertificatesLineageSigningTargetPtrOutputWithContext(ctx context.Context) CloudcertificatesLineageSigningTargetPtrOutput {
+	return o
+}
+
+func (o CloudcertificatesLineageSigningTargetPtrOutput) Elem() CloudcertificatesLineageSigningTargetOutput {
+	return o.ApplyT(func(v *CloudcertificatesLineageSigningTarget) CloudcertificatesLineageSigningTarget {
+		if v != nil {
+			return *v
+		}
+		var ret CloudcertificatesLineageSigningTarget
+		return ret
+	}).(CloudcertificatesLineageSigningTargetOutput)
+}
+
+// Per key-type (RSA or ECDSA) certificate details for this generation, keyed by key_type.
+func (o CloudcertificatesLineageSigningTargetPtrOutput) Algorithms() CloudcertificatesLineageSigningTargetAlgorithmsMapOutput {
+	return o.ApplyT(func(v *CloudcertificatesLineageSigningTarget) map[string]CloudcertificatesLineageSigningTargetAlgorithms {
+		if v == nil {
+			return nil
+		}
+		return v.Algorithms
+	}).(CloudcertificatesLineageSigningTargetAlgorithmsMapOutput)
+}
+
+// Time the generation was first promoted to production, in RFC3339 format. Null if never promoted.
+func (o CloudcertificatesLineageSigningTargetPtrOutput) FirstPromotedToProductionTime() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *CloudcertificatesLineageSigningTarget) *string {
+		if v == nil {
+			return nil
+		}
+		return v.FirstPromotedToProductionTime
+	}).(pulumi.StringPtrOutput)
+}
+
+// Username of the person who created this generation.
+func (o CloudcertificatesLineageSigningTargetPtrOutput) GenerationCreatedBy() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *CloudcertificatesLineageSigningTarget) *string {
+		if v == nil {
+			return nil
+		}
+		return v.GenerationCreatedBy
+	}).(pulumi.StringPtrOutput)
+}
+
+// Time the generation was created, in RFC3339 format.
+func (o CloudcertificatesLineageSigningTargetPtrOutput) GenerationCreatedTime() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *CloudcertificatesLineageSigningTarget) *string {
+		if v == nil {
+			return nil
+		}
+		return v.GenerationCreatedTime
+	}).(pulumi.StringPtrOutput)
+}
+
+// Unique identifier of this generation.
+func (o CloudcertificatesLineageSigningTargetPtrOutput) GenerationId() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v *CloudcertificatesLineageSigningTarget) *int {
+		if v == nil {
+			return nil
+		}
+		return v.GenerationId
+	}).(pulumi.IntPtrOutput)
+}
+
+// Username of the person who last modified this generation.
+func (o CloudcertificatesLineageSigningTargetPtrOutput) GenerationModifiedBy() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *CloudcertificatesLineageSigningTarget) *string {
+		if v == nil {
+			return nil
+		}
+		return v.GenerationModifiedBy
+	}).(pulumi.StringPtrOutput)
+}
+
+// Time the generation was last modified, in RFC3339 format. Null if never modified since creation.
+func (o CloudcertificatesLineageSigningTargetPtrOutput) GenerationModifiedTime() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *CloudcertificatesLineageSigningTarget) *string {
+		if v == nil {
+			return nil
+		}
+		return v.GenerationModifiedTime
+	}).(pulumi.StringPtrOutput)
+}
+
+// Status of this generation.
+func (o CloudcertificatesLineageSigningTargetPtrOutput) GenerationStatus() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *CloudcertificatesLineageSigningTarget) *string {
+		if v == nil {
+			return nil
+		}
+		return v.GenerationStatus
+	}).(pulumi.StringPtrOutput)
+}
+
+type CloudcertificatesLineageSigningTargetAlgorithms struct {
+	// Username of the person who created the algorithm instance.
+	AlgorithmInstanceCreatedBy *string `pulumi:"algorithmInstanceCreatedBy"`
+	// Time the algorithm instance was created, in RFC3339 format.
+	AlgorithmInstanceCreatedTime *string `pulumi:"algorithmInstanceCreatedTime"`
+	// Unique identifier of the algorithm instance.
+	AlgorithmInstanceId *int `pulumi:"algorithmInstanceId"`
+	// Username of the person who last modified the algorithm instance. Null if never modified.
+	AlgorithmInstanceModifiedBy *string `pulumi:"algorithmInstanceModifiedBy"`
+	// Time the algorithm instance was last modified, in RFC3339 format. Null if never modified.
+	AlgorithmInstanceModifiedTime *string `pulumi:"algorithmInstanceModifiedTime"`
+	// Status of the certificate for this key type: `CSR_READY`, `CERT_UPLOAD_PROCESSING`, `READY_FOR_USE`, or `ABANDONED`.
+	CertificateStatus *string `pulumi:"certificateStatus"`
+	// Date when the CSR expires, in RFC3339 format.
+	CsrExpirationDate *string `pulumi:"csrExpirationDate"`
+	// PEM-encoded certificate signing request.
+	CsrPem *string `pulumi:"csrPem"`
+	// Issuer field of the signed certificate. Null until a certificate is uploaded.
+	SignedCertificateIssuer *string `pulumi:"signedCertificateIssuer"`
+	// Expiration date of the signed certificate, in RFC3339 format. Null until a certificate is uploaded.
+	SignedCertificateNotValidAfterDate *string `pulumi:"signedCertificateNotValidAfterDate"`
+	// Start of validity of the signed certificate, in RFC3339 format. Null until a certificate is uploaded.
+	SignedCertificateNotValidBeforeDate *string `pulumi:"signedCertificateNotValidBeforeDate"`
+	// PEM-encoded signed certificate. Null until a certificate is uploaded.
+	SignedCertificatePem *string `pulumi:"signedCertificatePem"`
+	// Serial number of the signed certificate in hex format. Null until a certificate is uploaded.
+	SignedCertificateSerialNumber *string `pulumi:"signedCertificateSerialNumber"`
+	// SHA-256 fingerprint of the signed certificate. Null until a certificate is uploaded.
+	SignedCertificateSha256Fingerprint *string `pulumi:"signedCertificateSha256Fingerprint"`
+	// PEM-encoded trust chain uploaded alongside the signed certificate. Null if none was uploaded.
+	TrustChainPem *string `pulumi:"trustChainPem"`
+}
+
+// CloudcertificatesLineageSigningTargetAlgorithmsInput is an input type that accepts CloudcertificatesLineageSigningTargetAlgorithmsArgs and CloudcertificatesLineageSigningTargetAlgorithmsOutput values.
+// You can construct a concrete instance of `CloudcertificatesLineageSigningTargetAlgorithmsInput` via:
+//
+//	CloudcertificatesLineageSigningTargetAlgorithmsArgs{...}
+type CloudcertificatesLineageSigningTargetAlgorithmsInput interface {
+	pulumi.Input
+
+	ToCloudcertificatesLineageSigningTargetAlgorithmsOutput() CloudcertificatesLineageSigningTargetAlgorithmsOutput
+	ToCloudcertificatesLineageSigningTargetAlgorithmsOutputWithContext(context.Context) CloudcertificatesLineageSigningTargetAlgorithmsOutput
+}
+
+type CloudcertificatesLineageSigningTargetAlgorithmsArgs struct {
+	// Username of the person who created the algorithm instance.
+	AlgorithmInstanceCreatedBy pulumi.StringPtrInput `pulumi:"algorithmInstanceCreatedBy"`
+	// Time the algorithm instance was created, in RFC3339 format.
+	AlgorithmInstanceCreatedTime pulumi.StringPtrInput `pulumi:"algorithmInstanceCreatedTime"`
+	// Unique identifier of the algorithm instance.
+	AlgorithmInstanceId pulumi.IntPtrInput `pulumi:"algorithmInstanceId"`
+	// Username of the person who last modified the algorithm instance. Null if never modified.
+	AlgorithmInstanceModifiedBy pulumi.StringPtrInput `pulumi:"algorithmInstanceModifiedBy"`
+	// Time the algorithm instance was last modified, in RFC3339 format. Null if never modified.
+	AlgorithmInstanceModifiedTime pulumi.StringPtrInput `pulumi:"algorithmInstanceModifiedTime"`
+	// Status of the certificate for this key type: `CSR_READY`, `CERT_UPLOAD_PROCESSING`, `READY_FOR_USE`, or `ABANDONED`.
+	CertificateStatus pulumi.StringPtrInput `pulumi:"certificateStatus"`
+	// Date when the CSR expires, in RFC3339 format.
+	CsrExpirationDate pulumi.StringPtrInput `pulumi:"csrExpirationDate"`
+	// PEM-encoded certificate signing request.
+	CsrPem pulumi.StringPtrInput `pulumi:"csrPem"`
+	// Issuer field of the signed certificate. Null until a certificate is uploaded.
+	SignedCertificateIssuer pulumi.StringPtrInput `pulumi:"signedCertificateIssuer"`
+	// Expiration date of the signed certificate, in RFC3339 format. Null until a certificate is uploaded.
+	SignedCertificateNotValidAfterDate pulumi.StringPtrInput `pulumi:"signedCertificateNotValidAfterDate"`
+	// Start of validity of the signed certificate, in RFC3339 format. Null until a certificate is uploaded.
+	SignedCertificateNotValidBeforeDate pulumi.StringPtrInput `pulumi:"signedCertificateNotValidBeforeDate"`
+	// PEM-encoded signed certificate. Null until a certificate is uploaded.
+	SignedCertificatePem pulumi.StringPtrInput `pulumi:"signedCertificatePem"`
+	// Serial number of the signed certificate in hex format. Null until a certificate is uploaded.
+	SignedCertificateSerialNumber pulumi.StringPtrInput `pulumi:"signedCertificateSerialNumber"`
+	// SHA-256 fingerprint of the signed certificate. Null until a certificate is uploaded.
+	SignedCertificateSha256Fingerprint pulumi.StringPtrInput `pulumi:"signedCertificateSha256Fingerprint"`
+	// PEM-encoded trust chain uploaded alongside the signed certificate. Null if none was uploaded.
+	TrustChainPem pulumi.StringPtrInput `pulumi:"trustChainPem"`
+}
+
+func (CloudcertificatesLineageSigningTargetAlgorithmsArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*CloudcertificatesLineageSigningTargetAlgorithms)(nil)).Elem()
+}
+
+func (i CloudcertificatesLineageSigningTargetAlgorithmsArgs) ToCloudcertificatesLineageSigningTargetAlgorithmsOutput() CloudcertificatesLineageSigningTargetAlgorithmsOutput {
+	return i.ToCloudcertificatesLineageSigningTargetAlgorithmsOutputWithContext(context.Background())
+}
+
+func (i CloudcertificatesLineageSigningTargetAlgorithmsArgs) ToCloudcertificatesLineageSigningTargetAlgorithmsOutputWithContext(ctx context.Context) CloudcertificatesLineageSigningTargetAlgorithmsOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(CloudcertificatesLineageSigningTargetAlgorithmsOutput)
+}
+
+// CloudcertificatesLineageSigningTargetAlgorithmsMapInput is an input type that accepts CloudcertificatesLineageSigningTargetAlgorithmsMap and CloudcertificatesLineageSigningTargetAlgorithmsMapOutput values.
+// You can construct a concrete instance of `CloudcertificatesLineageSigningTargetAlgorithmsMapInput` via:
+//
+//	CloudcertificatesLineageSigningTargetAlgorithmsMap{ "key": CloudcertificatesLineageSigningTargetAlgorithmsArgs{...} }
+type CloudcertificatesLineageSigningTargetAlgorithmsMapInput interface {
+	pulumi.Input
+
+	ToCloudcertificatesLineageSigningTargetAlgorithmsMapOutput() CloudcertificatesLineageSigningTargetAlgorithmsMapOutput
+	ToCloudcertificatesLineageSigningTargetAlgorithmsMapOutputWithContext(context.Context) CloudcertificatesLineageSigningTargetAlgorithmsMapOutput
+}
+
+type CloudcertificatesLineageSigningTargetAlgorithmsMap map[string]CloudcertificatesLineageSigningTargetAlgorithmsInput
+
+func (CloudcertificatesLineageSigningTargetAlgorithmsMap) ElementType() reflect.Type {
+	return reflect.TypeOf((*map[string]CloudcertificatesLineageSigningTargetAlgorithms)(nil)).Elem()
+}
+
+func (i CloudcertificatesLineageSigningTargetAlgorithmsMap) ToCloudcertificatesLineageSigningTargetAlgorithmsMapOutput() CloudcertificatesLineageSigningTargetAlgorithmsMapOutput {
+	return i.ToCloudcertificatesLineageSigningTargetAlgorithmsMapOutputWithContext(context.Background())
+}
+
+func (i CloudcertificatesLineageSigningTargetAlgorithmsMap) ToCloudcertificatesLineageSigningTargetAlgorithmsMapOutputWithContext(ctx context.Context) CloudcertificatesLineageSigningTargetAlgorithmsMapOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(CloudcertificatesLineageSigningTargetAlgorithmsMapOutput)
+}
+
+type CloudcertificatesLineageSigningTargetAlgorithmsOutput struct{ *pulumi.OutputState }
+
+func (CloudcertificatesLineageSigningTargetAlgorithmsOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*CloudcertificatesLineageSigningTargetAlgorithms)(nil)).Elem()
+}
+
+func (o CloudcertificatesLineageSigningTargetAlgorithmsOutput) ToCloudcertificatesLineageSigningTargetAlgorithmsOutput() CloudcertificatesLineageSigningTargetAlgorithmsOutput {
+	return o
+}
+
+func (o CloudcertificatesLineageSigningTargetAlgorithmsOutput) ToCloudcertificatesLineageSigningTargetAlgorithmsOutputWithContext(ctx context.Context) CloudcertificatesLineageSigningTargetAlgorithmsOutput {
+	return o
+}
+
+// Username of the person who created the algorithm instance.
+func (o CloudcertificatesLineageSigningTargetAlgorithmsOutput) AlgorithmInstanceCreatedBy() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v CloudcertificatesLineageSigningTargetAlgorithms) *string { return v.AlgorithmInstanceCreatedBy }).(pulumi.StringPtrOutput)
+}
+
+// Time the algorithm instance was created, in RFC3339 format.
+func (o CloudcertificatesLineageSigningTargetAlgorithmsOutput) AlgorithmInstanceCreatedTime() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v CloudcertificatesLineageSigningTargetAlgorithms) *string { return v.AlgorithmInstanceCreatedTime }).(pulumi.StringPtrOutput)
+}
+
+// Unique identifier of the algorithm instance.
+func (o CloudcertificatesLineageSigningTargetAlgorithmsOutput) AlgorithmInstanceId() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v CloudcertificatesLineageSigningTargetAlgorithms) *int { return v.AlgorithmInstanceId }).(pulumi.IntPtrOutput)
+}
+
+// Username of the person who last modified the algorithm instance. Null if never modified.
+func (o CloudcertificatesLineageSigningTargetAlgorithmsOutput) AlgorithmInstanceModifiedBy() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v CloudcertificatesLineageSigningTargetAlgorithms) *string { return v.AlgorithmInstanceModifiedBy }).(pulumi.StringPtrOutput)
+}
+
+// Time the algorithm instance was last modified, in RFC3339 format. Null if never modified.
+func (o CloudcertificatesLineageSigningTargetAlgorithmsOutput) AlgorithmInstanceModifiedTime() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v CloudcertificatesLineageSigningTargetAlgorithms) *string {
+		return v.AlgorithmInstanceModifiedTime
+	}).(pulumi.StringPtrOutput)
+}
+
+// Status of the certificate for this key type: `CSR_READY`, `CERT_UPLOAD_PROCESSING`, `READY_FOR_USE`, or `ABANDONED`.
+func (o CloudcertificatesLineageSigningTargetAlgorithmsOutput) CertificateStatus() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v CloudcertificatesLineageSigningTargetAlgorithms) *string { return v.CertificateStatus }).(pulumi.StringPtrOutput)
+}
+
+// Date when the CSR expires, in RFC3339 format.
+func (o CloudcertificatesLineageSigningTargetAlgorithmsOutput) CsrExpirationDate() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v CloudcertificatesLineageSigningTargetAlgorithms) *string { return v.CsrExpirationDate }).(pulumi.StringPtrOutput)
+}
+
+// PEM-encoded certificate signing request.
+func (o CloudcertificatesLineageSigningTargetAlgorithmsOutput) CsrPem() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v CloudcertificatesLineageSigningTargetAlgorithms) *string { return v.CsrPem }).(pulumi.StringPtrOutput)
+}
+
+// Issuer field of the signed certificate. Null until a certificate is uploaded.
+func (o CloudcertificatesLineageSigningTargetAlgorithmsOutput) SignedCertificateIssuer() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v CloudcertificatesLineageSigningTargetAlgorithms) *string { return v.SignedCertificateIssuer }).(pulumi.StringPtrOutput)
+}
+
+// Expiration date of the signed certificate, in RFC3339 format. Null until a certificate is uploaded.
+func (o CloudcertificatesLineageSigningTargetAlgorithmsOutput) SignedCertificateNotValidAfterDate() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v CloudcertificatesLineageSigningTargetAlgorithms) *string {
+		return v.SignedCertificateNotValidAfterDate
+	}).(pulumi.StringPtrOutput)
+}
+
+// Start of validity of the signed certificate, in RFC3339 format. Null until a certificate is uploaded.
+func (o CloudcertificatesLineageSigningTargetAlgorithmsOutput) SignedCertificateNotValidBeforeDate() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v CloudcertificatesLineageSigningTargetAlgorithms) *string {
+		return v.SignedCertificateNotValidBeforeDate
+	}).(pulumi.StringPtrOutput)
+}
+
+// PEM-encoded signed certificate. Null until a certificate is uploaded.
+func (o CloudcertificatesLineageSigningTargetAlgorithmsOutput) SignedCertificatePem() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v CloudcertificatesLineageSigningTargetAlgorithms) *string { return v.SignedCertificatePem }).(pulumi.StringPtrOutput)
+}
+
+// Serial number of the signed certificate in hex format. Null until a certificate is uploaded.
+func (o CloudcertificatesLineageSigningTargetAlgorithmsOutput) SignedCertificateSerialNumber() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v CloudcertificatesLineageSigningTargetAlgorithms) *string {
+		return v.SignedCertificateSerialNumber
+	}).(pulumi.StringPtrOutput)
+}
+
+// SHA-256 fingerprint of the signed certificate. Null until a certificate is uploaded.
+func (o CloudcertificatesLineageSigningTargetAlgorithmsOutput) SignedCertificateSha256Fingerprint() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v CloudcertificatesLineageSigningTargetAlgorithms) *string {
+		return v.SignedCertificateSha256Fingerprint
+	}).(pulumi.StringPtrOutput)
+}
+
+// PEM-encoded trust chain uploaded alongside the signed certificate. Null if none was uploaded.
+func (o CloudcertificatesLineageSigningTargetAlgorithmsOutput) TrustChainPem() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v CloudcertificatesLineageSigningTargetAlgorithms) *string { return v.TrustChainPem }).(pulumi.StringPtrOutput)
+}
+
+type CloudcertificatesLineageSigningTargetAlgorithmsMapOutput struct{ *pulumi.OutputState }
+
+func (CloudcertificatesLineageSigningTargetAlgorithmsMapOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*map[string]CloudcertificatesLineageSigningTargetAlgorithms)(nil)).Elem()
+}
+
+func (o CloudcertificatesLineageSigningTargetAlgorithmsMapOutput) ToCloudcertificatesLineageSigningTargetAlgorithmsMapOutput() CloudcertificatesLineageSigningTargetAlgorithmsMapOutput {
+	return o
+}
+
+func (o CloudcertificatesLineageSigningTargetAlgorithmsMapOutput) ToCloudcertificatesLineageSigningTargetAlgorithmsMapOutputWithContext(ctx context.Context) CloudcertificatesLineageSigningTargetAlgorithmsMapOutput {
+	return o
+}
+
+func (o CloudcertificatesLineageSigningTargetAlgorithmsMapOutput) MapIndex(k pulumi.StringInput) CloudcertificatesLineageSigningTargetAlgorithmsOutput {
+	return pulumi.All(o, k).ApplyT(func(vs []interface{}) CloudcertificatesLineageSigningTargetAlgorithms {
+		return vs[0].(map[string]CloudcertificatesLineageSigningTargetAlgorithms)[vs[1].(string)]
+	}).(CloudcertificatesLineageSigningTargetAlgorithmsOutput)
+}
+
+type CloudcertificatesLineageSubject struct {
+	// Common name (CN).
+	CommonName *string `pulumi:"commonName"`
+	// Two-letter ISO 3166 country code (C).
+	Country *string `pulumi:"country"`
+	// Locality or city name (L).
+	Locality *string `pulumi:"locality"`
+	// Organization (O).
+	Organization *string `pulumi:"organization"`
+	// Organizational unit (OU).
+	OrganizationalUnit *string `pulumi:"organizationalUnit"`
+	// State or province name (ST).
+	State *string `pulumi:"state"`
+}
+
+// CloudcertificatesLineageSubjectInput is an input type that accepts CloudcertificatesLineageSubjectArgs and CloudcertificatesLineageSubjectOutput values.
+// You can construct a concrete instance of `CloudcertificatesLineageSubjectInput` via:
+//
+//	CloudcertificatesLineageSubjectArgs{...}
+type CloudcertificatesLineageSubjectInput interface {
+	pulumi.Input
+
+	ToCloudcertificatesLineageSubjectOutput() CloudcertificatesLineageSubjectOutput
+	ToCloudcertificatesLineageSubjectOutputWithContext(context.Context) CloudcertificatesLineageSubjectOutput
+}
+
+type CloudcertificatesLineageSubjectArgs struct {
+	// Common name (CN).
+	CommonName pulumi.StringPtrInput `pulumi:"commonName"`
+	// Two-letter ISO 3166 country code (C).
+	Country pulumi.StringPtrInput `pulumi:"country"`
+	// Locality or city name (L).
+	Locality pulumi.StringPtrInput `pulumi:"locality"`
+	// Organization (O).
+	Organization pulumi.StringPtrInput `pulumi:"organization"`
+	// Organizational unit (OU).
+	OrganizationalUnit pulumi.StringPtrInput `pulumi:"organizationalUnit"`
+	// State or province name (ST).
+	State pulumi.StringPtrInput `pulumi:"state"`
+}
+
+func (CloudcertificatesLineageSubjectArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*CloudcertificatesLineageSubject)(nil)).Elem()
+}
+
+func (i CloudcertificatesLineageSubjectArgs) ToCloudcertificatesLineageSubjectOutput() CloudcertificatesLineageSubjectOutput {
+	return i.ToCloudcertificatesLineageSubjectOutputWithContext(context.Background())
+}
+
+func (i CloudcertificatesLineageSubjectArgs) ToCloudcertificatesLineageSubjectOutputWithContext(ctx context.Context) CloudcertificatesLineageSubjectOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(CloudcertificatesLineageSubjectOutput)
+}
+
+func (i CloudcertificatesLineageSubjectArgs) ToCloudcertificatesLineageSubjectPtrOutput() CloudcertificatesLineageSubjectPtrOutput {
+	return i.ToCloudcertificatesLineageSubjectPtrOutputWithContext(context.Background())
+}
+
+func (i CloudcertificatesLineageSubjectArgs) ToCloudcertificatesLineageSubjectPtrOutputWithContext(ctx context.Context) CloudcertificatesLineageSubjectPtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(CloudcertificatesLineageSubjectOutput).ToCloudcertificatesLineageSubjectPtrOutputWithContext(ctx)
+}
+
+// CloudcertificatesLineageSubjectPtrInput is an input type that accepts CloudcertificatesLineageSubjectArgs, CloudcertificatesLineageSubjectPtr and CloudcertificatesLineageSubjectPtrOutput values.
+// You can construct a concrete instance of `CloudcertificatesLineageSubjectPtrInput` via:
+//
+//	        CloudcertificatesLineageSubjectArgs{...}
+//
+//	or:
+//
+//	        nil
+type CloudcertificatesLineageSubjectPtrInput interface {
+	pulumi.Input
+
+	ToCloudcertificatesLineageSubjectPtrOutput() CloudcertificatesLineageSubjectPtrOutput
+	ToCloudcertificatesLineageSubjectPtrOutputWithContext(context.Context) CloudcertificatesLineageSubjectPtrOutput
+}
+
+type cloudcertificatesLineageSubjectPtrType CloudcertificatesLineageSubjectArgs
+
+func CloudcertificatesLineageSubjectPtr(v *CloudcertificatesLineageSubjectArgs) CloudcertificatesLineageSubjectPtrInput {
+	return (*cloudcertificatesLineageSubjectPtrType)(v)
+}
+
+func (*cloudcertificatesLineageSubjectPtrType) ElementType() reflect.Type {
+	return reflect.TypeOf((**CloudcertificatesLineageSubject)(nil)).Elem()
+}
+
+func (i *cloudcertificatesLineageSubjectPtrType) ToCloudcertificatesLineageSubjectPtrOutput() CloudcertificatesLineageSubjectPtrOutput {
+	return i.ToCloudcertificatesLineageSubjectPtrOutputWithContext(context.Background())
+}
+
+func (i *cloudcertificatesLineageSubjectPtrType) ToCloudcertificatesLineageSubjectPtrOutputWithContext(ctx context.Context) CloudcertificatesLineageSubjectPtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(CloudcertificatesLineageSubjectPtrOutput)
+}
+
+type CloudcertificatesLineageSubjectOutput struct{ *pulumi.OutputState }
+
+func (CloudcertificatesLineageSubjectOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*CloudcertificatesLineageSubject)(nil)).Elem()
+}
+
+func (o CloudcertificatesLineageSubjectOutput) ToCloudcertificatesLineageSubjectOutput() CloudcertificatesLineageSubjectOutput {
+	return o
+}
+
+func (o CloudcertificatesLineageSubjectOutput) ToCloudcertificatesLineageSubjectOutputWithContext(ctx context.Context) CloudcertificatesLineageSubjectOutput {
+	return o
+}
+
+func (o CloudcertificatesLineageSubjectOutput) ToCloudcertificatesLineageSubjectPtrOutput() CloudcertificatesLineageSubjectPtrOutput {
+	return o.ToCloudcertificatesLineageSubjectPtrOutputWithContext(context.Background())
+}
+
+func (o CloudcertificatesLineageSubjectOutput) ToCloudcertificatesLineageSubjectPtrOutputWithContext(ctx context.Context) CloudcertificatesLineageSubjectPtrOutput {
+	return o.ApplyTWithContext(ctx, func(_ context.Context, v CloudcertificatesLineageSubject) *CloudcertificatesLineageSubject {
+		return &v
+	}).(CloudcertificatesLineageSubjectPtrOutput)
+}
+
+// Common name (CN).
+func (o CloudcertificatesLineageSubjectOutput) CommonName() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v CloudcertificatesLineageSubject) *string { return v.CommonName }).(pulumi.StringPtrOutput)
+}
+
+// Two-letter ISO 3166 country code (C).
+func (o CloudcertificatesLineageSubjectOutput) Country() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v CloudcertificatesLineageSubject) *string { return v.Country }).(pulumi.StringPtrOutput)
+}
+
+// Locality or city name (L).
+func (o CloudcertificatesLineageSubjectOutput) Locality() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v CloudcertificatesLineageSubject) *string { return v.Locality }).(pulumi.StringPtrOutput)
+}
+
+// Organization (O).
+func (o CloudcertificatesLineageSubjectOutput) Organization() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v CloudcertificatesLineageSubject) *string { return v.Organization }).(pulumi.StringPtrOutput)
+}
+
+// Organizational unit (OU).
+func (o CloudcertificatesLineageSubjectOutput) OrganizationalUnit() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v CloudcertificatesLineageSubject) *string { return v.OrganizationalUnit }).(pulumi.StringPtrOutput)
+}
+
+// State or province name (ST).
+func (o CloudcertificatesLineageSubjectOutput) State() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v CloudcertificatesLineageSubject) *string { return v.State }).(pulumi.StringPtrOutput)
+}
+
+type CloudcertificatesLineageSubjectPtrOutput struct{ *pulumi.OutputState }
+
+func (CloudcertificatesLineageSubjectPtrOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((**CloudcertificatesLineageSubject)(nil)).Elem()
+}
+
+func (o CloudcertificatesLineageSubjectPtrOutput) ToCloudcertificatesLineageSubjectPtrOutput() CloudcertificatesLineageSubjectPtrOutput {
+	return o
+}
+
+func (o CloudcertificatesLineageSubjectPtrOutput) ToCloudcertificatesLineageSubjectPtrOutputWithContext(ctx context.Context) CloudcertificatesLineageSubjectPtrOutput {
+	return o
+}
+
+func (o CloudcertificatesLineageSubjectPtrOutput) Elem() CloudcertificatesLineageSubjectOutput {
+	return o.ApplyT(func(v *CloudcertificatesLineageSubject) CloudcertificatesLineageSubject {
+		if v != nil {
+			return *v
+		}
+		var ret CloudcertificatesLineageSubject
+		return ret
+	}).(CloudcertificatesLineageSubjectOutput)
+}
+
+// Common name (CN).
+func (o CloudcertificatesLineageSubjectPtrOutput) CommonName() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *CloudcertificatesLineageSubject) *string {
 		if v == nil {
 			return nil
 		}
@@ -3306,9 +6692,9 @@ func (o CloudcertificatesCertificateSubjectPtrOutput) CommonName() pulumi.String
 	}).(pulumi.StringPtrOutput)
 }
 
-// Two-letter ISO 3166 country code.
-func (o CloudcertificatesCertificateSubjectPtrOutput) Country() pulumi.StringPtrOutput {
-	return o.ApplyT(func(v *CloudcertificatesCertificateSubject) *string {
+// Two-letter ISO 3166 country code (C).
+func (o CloudcertificatesLineageSubjectPtrOutput) Country() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *CloudcertificatesLineageSubject) *string {
 		if v == nil {
 			return nil
 		}
@@ -3316,9 +6702,9 @@ func (o CloudcertificatesCertificateSubjectPtrOutput) Country() pulumi.StringPtr
 	}).(pulumi.StringPtrOutput)
 }
 
-// City or locality name.
-func (o CloudcertificatesCertificateSubjectPtrOutput) Locality() pulumi.StringPtrOutput {
-	return o.ApplyT(func(v *CloudcertificatesCertificateSubject) *string {
+// Locality or city name (L).
+func (o CloudcertificatesLineageSubjectPtrOutput) Locality() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *CloudcertificatesLineageSubject) *string {
 		if v == nil {
 			return nil
 		}
@@ -3326,9 +6712,9 @@ func (o CloudcertificatesCertificateSubjectPtrOutput) Locality() pulumi.StringPt
 	}).(pulumi.StringPtrOutput)
 }
 
-// Legal name of the organization.
-func (o CloudcertificatesCertificateSubjectPtrOutput) Organization() pulumi.StringPtrOutput {
-	return o.ApplyT(func(v *CloudcertificatesCertificateSubject) *string {
+// Organization (O).
+func (o CloudcertificatesLineageSubjectPtrOutput) Organization() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *CloudcertificatesLineageSubject) *string {
 		if v == nil {
 			return nil
 		}
@@ -3336,13 +6722,402 @@ func (o CloudcertificatesCertificateSubjectPtrOutput) Organization() pulumi.Stri
 	}).(pulumi.StringPtrOutput)
 }
 
-// Full name of the state or province.
-func (o CloudcertificatesCertificateSubjectPtrOutput) State() pulumi.StringPtrOutput {
-	return o.ApplyT(func(v *CloudcertificatesCertificateSubject) *string {
+// Organizational unit (OU).
+func (o CloudcertificatesLineageSubjectPtrOutput) OrganizationalUnit() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *CloudcertificatesLineageSubject) *string {
+		if v == nil {
+			return nil
+		}
+		return v.OrganizationalUnit
+	}).(pulumi.StringPtrOutput)
+}
+
+// State or province name (ST).
+func (o CloudcertificatesLineageSubjectPtrOutput) State() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *CloudcertificatesLineageSubject) *string {
 		if v == nil {
 			return nil
 		}
 		return v.State
+	}).(pulumi.StringPtrOutput)
+}
+
+type CloudcertificatesUploadAlgorithms struct {
+	// Username of the person who created the algorithm instance.
+	AlgorithmInstanceCreatedBy *string `pulumi:"algorithmInstanceCreatedBy"`
+	// Time the algorithm instance was created, in RFC3339 format.
+	AlgorithmInstanceCreatedTime *string `pulumi:"algorithmInstanceCreatedTime"`
+	// Unique identifier of the algorithm instance.
+	AlgorithmInstanceId *int `pulumi:"algorithmInstanceId"`
+	// Username of the person who last modified the algorithm instance. Null if never modified.
+	AlgorithmInstanceModifiedBy *string `pulumi:"algorithmInstanceModifiedBy"`
+	// Time the algorithm instance was last modified, in RFC3339 format. Null if never modified.
+	AlgorithmInstanceModifiedTime *string `pulumi:"algorithmInstanceModifiedTime"`
+	// Status of the certificate for this key type: `CSR_READY`, `CERT_UPLOAD_PROCESSING`, `READY_FOR_USE`, or `ABANDONED`.
+	CertificateStatus *string `pulumi:"certificateStatus"`
+	// Date when the CSR expires, in RFC3339 format.
+	CsrExpirationDate *string `pulumi:"csrExpirationDate"`
+	// PEM-encoded certificate signing request.
+	CsrPem *string `pulumi:"csrPem"`
+	// Issuer field of the signed certificate. Null until a certificate is uploaded.
+	SignedCertificateIssuer *string `pulumi:"signedCertificateIssuer"`
+	// Expiration date of the signed certificate, in RFC3339 format. Null until a certificate is uploaded.
+	SignedCertificateNotValidAfterDate *string `pulumi:"signedCertificateNotValidAfterDate"`
+	// Start of validity of the signed certificate, in RFC3339 format. Null until a certificate is uploaded.
+	SignedCertificateNotValidBeforeDate *string `pulumi:"signedCertificateNotValidBeforeDate"`
+	// PEM-encoded signed certificate to upload for this key type.
+	SignedCertificatePem string `pulumi:"signedCertificatePem"`
+	// Serial number of the signed certificate in hex format. Null until a certificate is uploaded.
+	SignedCertificateSerialNumber *string `pulumi:"signedCertificateSerialNumber"`
+	// SHA-256 fingerprint of the signed certificate. Null until a certificate is uploaded.
+	SignedCertificateSha256Fingerprint *string `pulumi:"signedCertificateSha256Fingerprint"`
+	// Optional PEM-encoded trust chain to upload alongside the signed certificate.
+	TrustChainPem *string `pulumi:"trustChainPem"`
+}
+
+// CloudcertificatesUploadAlgorithmsInput is an input type that accepts CloudcertificatesUploadAlgorithmsArgs and CloudcertificatesUploadAlgorithmsOutput values.
+// You can construct a concrete instance of `CloudcertificatesUploadAlgorithmsInput` via:
+//
+//	CloudcertificatesUploadAlgorithmsArgs{...}
+type CloudcertificatesUploadAlgorithmsInput interface {
+	pulumi.Input
+
+	ToCloudcertificatesUploadAlgorithmsOutput() CloudcertificatesUploadAlgorithmsOutput
+	ToCloudcertificatesUploadAlgorithmsOutputWithContext(context.Context) CloudcertificatesUploadAlgorithmsOutput
+}
+
+type CloudcertificatesUploadAlgorithmsArgs struct {
+	// Username of the person who created the algorithm instance.
+	AlgorithmInstanceCreatedBy pulumi.StringPtrInput `pulumi:"algorithmInstanceCreatedBy"`
+	// Time the algorithm instance was created, in RFC3339 format.
+	AlgorithmInstanceCreatedTime pulumi.StringPtrInput `pulumi:"algorithmInstanceCreatedTime"`
+	// Unique identifier of the algorithm instance.
+	AlgorithmInstanceId pulumi.IntPtrInput `pulumi:"algorithmInstanceId"`
+	// Username of the person who last modified the algorithm instance. Null if never modified.
+	AlgorithmInstanceModifiedBy pulumi.StringPtrInput `pulumi:"algorithmInstanceModifiedBy"`
+	// Time the algorithm instance was last modified, in RFC3339 format. Null if never modified.
+	AlgorithmInstanceModifiedTime pulumi.StringPtrInput `pulumi:"algorithmInstanceModifiedTime"`
+	// Status of the certificate for this key type: `CSR_READY`, `CERT_UPLOAD_PROCESSING`, `READY_FOR_USE`, or `ABANDONED`.
+	CertificateStatus pulumi.StringPtrInput `pulumi:"certificateStatus"`
+	// Date when the CSR expires, in RFC3339 format.
+	CsrExpirationDate pulumi.StringPtrInput `pulumi:"csrExpirationDate"`
+	// PEM-encoded certificate signing request.
+	CsrPem pulumi.StringPtrInput `pulumi:"csrPem"`
+	// Issuer field of the signed certificate. Null until a certificate is uploaded.
+	SignedCertificateIssuer pulumi.StringPtrInput `pulumi:"signedCertificateIssuer"`
+	// Expiration date of the signed certificate, in RFC3339 format. Null until a certificate is uploaded.
+	SignedCertificateNotValidAfterDate pulumi.StringPtrInput `pulumi:"signedCertificateNotValidAfterDate"`
+	// Start of validity of the signed certificate, in RFC3339 format. Null until a certificate is uploaded.
+	SignedCertificateNotValidBeforeDate pulumi.StringPtrInput `pulumi:"signedCertificateNotValidBeforeDate"`
+	// PEM-encoded signed certificate to upload for this key type.
+	SignedCertificatePem pulumi.StringInput `pulumi:"signedCertificatePem"`
+	// Serial number of the signed certificate in hex format. Null until a certificate is uploaded.
+	SignedCertificateSerialNumber pulumi.StringPtrInput `pulumi:"signedCertificateSerialNumber"`
+	// SHA-256 fingerprint of the signed certificate. Null until a certificate is uploaded.
+	SignedCertificateSha256Fingerprint pulumi.StringPtrInput `pulumi:"signedCertificateSha256Fingerprint"`
+	// Optional PEM-encoded trust chain to upload alongside the signed certificate.
+	TrustChainPem pulumi.StringPtrInput `pulumi:"trustChainPem"`
+}
+
+func (CloudcertificatesUploadAlgorithmsArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*CloudcertificatesUploadAlgorithms)(nil)).Elem()
+}
+
+func (i CloudcertificatesUploadAlgorithmsArgs) ToCloudcertificatesUploadAlgorithmsOutput() CloudcertificatesUploadAlgorithmsOutput {
+	return i.ToCloudcertificatesUploadAlgorithmsOutputWithContext(context.Background())
+}
+
+func (i CloudcertificatesUploadAlgorithmsArgs) ToCloudcertificatesUploadAlgorithmsOutputWithContext(ctx context.Context) CloudcertificatesUploadAlgorithmsOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(CloudcertificatesUploadAlgorithmsOutput)
+}
+
+// CloudcertificatesUploadAlgorithmsMapInput is an input type that accepts CloudcertificatesUploadAlgorithmsMap and CloudcertificatesUploadAlgorithmsMapOutput values.
+// You can construct a concrete instance of `CloudcertificatesUploadAlgorithmsMapInput` via:
+//
+//	CloudcertificatesUploadAlgorithmsMap{ "key": CloudcertificatesUploadAlgorithmsArgs{...} }
+type CloudcertificatesUploadAlgorithmsMapInput interface {
+	pulumi.Input
+
+	ToCloudcertificatesUploadAlgorithmsMapOutput() CloudcertificatesUploadAlgorithmsMapOutput
+	ToCloudcertificatesUploadAlgorithmsMapOutputWithContext(context.Context) CloudcertificatesUploadAlgorithmsMapOutput
+}
+
+type CloudcertificatesUploadAlgorithmsMap map[string]CloudcertificatesUploadAlgorithmsInput
+
+func (CloudcertificatesUploadAlgorithmsMap) ElementType() reflect.Type {
+	return reflect.TypeOf((*map[string]CloudcertificatesUploadAlgorithms)(nil)).Elem()
+}
+
+func (i CloudcertificatesUploadAlgorithmsMap) ToCloudcertificatesUploadAlgorithmsMapOutput() CloudcertificatesUploadAlgorithmsMapOutput {
+	return i.ToCloudcertificatesUploadAlgorithmsMapOutputWithContext(context.Background())
+}
+
+func (i CloudcertificatesUploadAlgorithmsMap) ToCloudcertificatesUploadAlgorithmsMapOutputWithContext(ctx context.Context) CloudcertificatesUploadAlgorithmsMapOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(CloudcertificatesUploadAlgorithmsMapOutput)
+}
+
+type CloudcertificatesUploadAlgorithmsOutput struct{ *pulumi.OutputState }
+
+func (CloudcertificatesUploadAlgorithmsOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*CloudcertificatesUploadAlgorithms)(nil)).Elem()
+}
+
+func (o CloudcertificatesUploadAlgorithmsOutput) ToCloudcertificatesUploadAlgorithmsOutput() CloudcertificatesUploadAlgorithmsOutput {
+	return o
+}
+
+func (o CloudcertificatesUploadAlgorithmsOutput) ToCloudcertificatesUploadAlgorithmsOutputWithContext(ctx context.Context) CloudcertificatesUploadAlgorithmsOutput {
+	return o
+}
+
+// Username of the person who created the algorithm instance.
+func (o CloudcertificatesUploadAlgorithmsOutput) AlgorithmInstanceCreatedBy() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v CloudcertificatesUploadAlgorithms) *string { return v.AlgorithmInstanceCreatedBy }).(pulumi.StringPtrOutput)
+}
+
+// Time the algorithm instance was created, in RFC3339 format.
+func (o CloudcertificatesUploadAlgorithmsOutput) AlgorithmInstanceCreatedTime() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v CloudcertificatesUploadAlgorithms) *string { return v.AlgorithmInstanceCreatedTime }).(pulumi.StringPtrOutput)
+}
+
+// Unique identifier of the algorithm instance.
+func (o CloudcertificatesUploadAlgorithmsOutput) AlgorithmInstanceId() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v CloudcertificatesUploadAlgorithms) *int { return v.AlgorithmInstanceId }).(pulumi.IntPtrOutput)
+}
+
+// Username of the person who last modified the algorithm instance. Null if never modified.
+func (o CloudcertificatesUploadAlgorithmsOutput) AlgorithmInstanceModifiedBy() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v CloudcertificatesUploadAlgorithms) *string { return v.AlgorithmInstanceModifiedBy }).(pulumi.StringPtrOutput)
+}
+
+// Time the algorithm instance was last modified, in RFC3339 format. Null if never modified.
+func (o CloudcertificatesUploadAlgorithmsOutput) AlgorithmInstanceModifiedTime() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v CloudcertificatesUploadAlgorithms) *string { return v.AlgorithmInstanceModifiedTime }).(pulumi.StringPtrOutput)
+}
+
+// Status of the certificate for this key type: `CSR_READY`, `CERT_UPLOAD_PROCESSING`, `READY_FOR_USE`, or `ABANDONED`.
+func (o CloudcertificatesUploadAlgorithmsOutput) CertificateStatus() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v CloudcertificatesUploadAlgorithms) *string { return v.CertificateStatus }).(pulumi.StringPtrOutput)
+}
+
+// Date when the CSR expires, in RFC3339 format.
+func (o CloudcertificatesUploadAlgorithmsOutput) CsrExpirationDate() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v CloudcertificatesUploadAlgorithms) *string { return v.CsrExpirationDate }).(pulumi.StringPtrOutput)
+}
+
+// PEM-encoded certificate signing request.
+func (o CloudcertificatesUploadAlgorithmsOutput) CsrPem() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v CloudcertificatesUploadAlgorithms) *string { return v.CsrPem }).(pulumi.StringPtrOutput)
+}
+
+// Issuer field of the signed certificate. Null until a certificate is uploaded.
+func (o CloudcertificatesUploadAlgorithmsOutput) SignedCertificateIssuer() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v CloudcertificatesUploadAlgorithms) *string { return v.SignedCertificateIssuer }).(pulumi.StringPtrOutput)
+}
+
+// Expiration date of the signed certificate, in RFC3339 format. Null until a certificate is uploaded.
+func (o CloudcertificatesUploadAlgorithmsOutput) SignedCertificateNotValidAfterDate() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v CloudcertificatesUploadAlgorithms) *string { return v.SignedCertificateNotValidAfterDate }).(pulumi.StringPtrOutput)
+}
+
+// Start of validity of the signed certificate, in RFC3339 format. Null until a certificate is uploaded.
+func (o CloudcertificatesUploadAlgorithmsOutput) SignedCertificateNotValidBeforeDate() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v CloudcertificatesUploadAlgorithms) *string { return v.SignedCertificateNotValidBeforeDate }).(pulumi.StringPtrOutput)
+}
+
+// PEM-encoded signed certificate to upload for this key type.
+func (o CloudcertificatesUploadAlgorithmsOutput) SignedCertificatePem() pulumi.StringOutput {
+	return o.ApplyT(func(v CloudcertificatesUploadAlgorithms) string { return v.SignedCertificatePem }).(pulumi.StringOutput)
+}
+
+// Serial number of the signed certificate in hex format. Null until a certificate is uploaded.
+func (o CloudcertificatesUploadAlgorithmsOutput) SignedCertificateSerialNumber() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v CloudcertificatesUploadAlgorithms) *string { return v.SignedCertificateSerialNumber }).(pulumi.StringPtrOutput)
+}
+
+// SHA-256 fingerprint of the signed certificate. Null until a certificate is uploaded.
+func (o CloudcertificatesUploadAlgorithmsOutput) SignedCertificateSha256Fingerprint() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v CloudcertificatesUploadAlgorithms) *string { return v.SignedCertificateSha256Fingerprint }).(pulumi.StringPtrOutput)
+}
+
+// Optional PEM-encoded trust chain to upload alongside the signed certificate.
+func (o CloudcertificatesUploadAlgorithmsOutput) TrustChainPem() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v CloudcertificatesUploadAlgorithms) *string { return v.TrustChainPem }).(pulumi.StringPtrOutput)
+}
+
+type CloudcertificatesUploadAlgorithmsMapOutput struct{ *pulumi.OutputState }
+
+func (CloudcertificatesUploadAlgorithmsMapOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*map[string]CloudcertificatesUploadAlgorithms)(nil)).Elem()
+}
+
+func (o CloudcertificatesUploadAlgorithmsMapOutput) ToCloudcertificatesUploadAlgorithmsMapOutput() CloudcertificatesUploadAlgorithmsMapOutput {
+	return o
+}
+
+func (o CloudcertificatesUploadAlgorithmsMapOutput) ToCloudcertificatesUploadAlgorithmsMapOutputWithContext(ctx context.Context) CloudcertificatesUploadAlgorithmsMapOutput {
+	return o
+}
+
+func (o CloudcertificatesUploadAlgorithmsMapOutput) MapIndex(k pulumi.StringInput) CloudcertificatesUploadAlgorithmsOutput {
+	return pulumi.All(o, k).ApplyT(func(vs []interface{}) CloudcertificatesUploadAlgorithms {
+		return vs[0].(map[string]CloudcertificatesUploadAlgorithms)[vs[1].(string)]
+	}).(CloudcertificatesUploadAlgorithmsOutput)
+}
+
+type CloudcertificatesUploadTimeouts struct {
+	// Optional configurable timeout for polling until the uploaded certificate(s) finish processing server-side. By default it's 2m.
+	Create *string `pulumi:"create"`
+	// Optional configurable timeout for polling until the uploaded certificate(s) finish processing server-side. By default it's 2m.
+	Update *string `pulumi:"update"`
+}
+
+// CloudcertificatesUploadTimeoutsInput is an input type that accepts CloudcertificatesUploadTimeoutsArgs and CloudcertificatesUploadTimeoutsOutput values.
+// You can construct a concrete instance of `CloudcertificatesUploadTimeoutsInput` via:
+//
+//	CloudcertificatesUploadTimeoutsArgs{...}
+type CloudcertificatesUploadTimeoutsInput interface {
+	pulumi.Input
+
+	ToCloudcertificatesUploadTimeoutsOutput() CloudcertificatesUploadTimeoutsOutput
+	ToCloudcertificatesUploadTimeoutsOutputWithContext(context.Context) CloudcertificatesUploadTimeoutsOutput
+}
+
+type CloudcertificatesUploadTimeoutsArgs struct {
+	// Optional configurable timeout for polling until the uploaded certificate(s) finish processing server-side. By default it's 2m.
+	Create pulumi.StringPtrInput `pulumi:"create"`
+	// Optional configurable timeout for polling until the uploaded certificate(s) finish processing server-side. By default it's 2m.
+	Update pulumi.StringPtrInput `pulumi:"update"`
+}
+
+func (CloudcertificatesUploadTimeoutsArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*CloudcertificatesUploadTimeouts)(nil)).Elem()
+}
+
+func (i CloudcertificatesUploadTimeoutsArgs) ToCloudcertificatesUploadTimeoutsOutput() CloudcertificatesUploadTimeoutsOutput {
+	return i.ToCloudcertificatesUploadTimeoutsOutputWithContext(context.Background())
+}
+
+func (i CloudcertificatesUploadTimeoutsArgs) ToCloudcertificatesUploadTimeoutsOutputWithContext(ctx context.Context) CloudcertificatesUploadTimeoutsOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(CloudcertificatesUploadTimeoutsOutput)
+}
+
+func (i CloudcertificatesUploadTimeoutsArgs) ToCloudcertificatesUploadTimeoutsPtrOutput() CloudcertificatesUploadTimeoutsPtrOutput {
+	return i.ToCloudcertificatesUploadTimeoutsPtrOutputWithContext(context.Background())
+}
+
+func (i CloudcertificatesUploadTimeoutsArgs) ToCloudcertificatesUploadTimeoutsPtrOutputWithContext(ctx context.Context) CloudcertificatesUploadTimeoutsPtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(CloudcertificatesUploadTimeoutsOutput).ToCloudcertificatesUploadTimeoutsPtrOutputWithContext(ctx)
+}
+
+// CloudcertificatesUploadTimeoutsPtrInput is an input type that accepts CloudcertificatesUploadTimeoutsArgs, CloudcertificatesUploadTimeoutsPtr and CloudcertificatesUploadTimeoutsPtrOutput values.
+// You can construct a concrete instance of `CloudcertificatesUploadTimeoutsPtrInput` via:
+//
+//	        CloudcertificatesUploadTimeoutsArgs{...}
+//
+//	or:
+//
+//	        nil
+type CloudcertificatesUploadTimeoutsPtrInput interface {
+	pulumi.Input
+
+	ToCloudcertificatesUploadTimeoutsPtrOutput() CloudcertificatesUploadTimeoutsPtrOutput
+	ToCloudcertificatesUploadTimeoutsPtrOutputWithContext(context.Context) CloudcertificatesUploadTimeoutsPtrOutput
+}
+
+type cloudcertificatesUploadTimeoutsPtrType CloudcertificatesUploadTimeoutsArgs
+
+func CloudcertificatesUploadTimeoutsPtr(v *CloudcertificatesUploadTimeoutsArgs) CloudcertificatesUploadTimeoutsPtrInput {
+	return (*cloudcertificatesUploadTimeoutsPtrType)(v)
+}
+
+func (*cloudcertificatesUploadTimeoutsPtrType) ElementType() reflect.Type {
+	return reflect.TypeOf((**CloudcertificatesUploadTimeouts)(nil)).Elem()
+}
+
+func (i *cloudcertificatesUploadTimeoutsPtrType) ToCloudcertificatesUploadTimeoutsPtrOutput() CloudcertificatesUploadTimeoutsPtrOutput {
+	return i.ToCloudcertificatesUploadTimeoutsPtrOutputWithContext(context.Background())
+}
+
+func (i *cloudcertificatesUploadTimeoutsPtrType) ToCloudcertificatesUploadTimeoutsPtrOutputWithContext(ctx context.Context) CloudcertificatesUploadTimeoutsPtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(CloudcertificatesUploadTimeoutsPtrOutput)
+}
+
+type CloudcertificatesUploadTimeoutsOutput struct{ *pulumi.OutputState }
+
+func (CloudcertificatesUploadTimeoutsOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*CloudcertificatesUploadTimeouts)(nil)).Elem()
+}
+
+func (o CloudcertificatesUploadTimeoutsOutput) ToCloudcertificatesUploadTimeoutsOutput() CloudcertificatesUploadTimeoutsOutput {
+	return o
+}
+
+func (o CloudcertificatesUploadTimeoutsOutput) ToCloudcertificatesUploadTimeoutsOutputWithContext(ctx context.Context) CloudcertificatesUploadTimeoutsOutput {
+	return o
+}
+
+func (o CloudcertificatesUploadTimeoutsOutput) ToCloudcertificatesUploadTimeoutsPtrOutput() CloudcertificatesUploadTimeoutsPtrOutput {
+	return o.ToCloudcertificatesUploadTimeoutsPtrOutputWithContext(context.Background())
+}
+
+func (o CloudcertificatesUploadTimeoutsOutput) ToCloudcertificatesUploadTimeoutsPtrOutputWithContext(ctx context.Context) CloudcertificatesUploadTimeoutsPtrOutput {
+	return o.ApplyTWithContext(ctx, func(_ context.Context, v CloudcertificatesUploadTimeouts) *CloudcertificatesUploadTimeouts {
+		return &v
+	}).(CloudcertificatesUploadTimeoutsPtrOutput)
+}
+
+// Optional configurable timeout for polling until the uploaded certificate(s) finish processing server-side. By default it's 2m.
+func (o CloudcertificatesUploadTimeoutsOutput) Create() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v CloudcertificatesUploadTimeouts) *string { return v.Create }).(pulumi.StringPtrOutput)
+}
+
+// Optional configurable timeout for polling until the uploaded certificate(s) finish processing server-side. By default it's 2m.
+func (o CloudcertificatesUploadTimeoutsOutput) Update() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v CloudcertificatesUploadTimeouts) *string { return v.Update }).(pulumi.StringPtrOutput)
+}
+
+type CloudcertificatesUploadTimeoutsPtrOutput struct{ *pulumi.OutputState }
+
+func (CloudcertificatesUploadTimeoutsPtrOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((**CloudcertificatesUploadTimeouts)(nil)).Elem()
+}
+
+func (o CloudcertificatesUploadTimeoutsPtrOutput) ToCloudcertificatesUploadTimeoutsPtrOutput() CloudcertificatesUploadTimeoutsPtrOutput {
+	return o
+}
+
+func (o CloudcertificatesUploadTimeoutsPtrOutput) ToCloudcertificatesUploadTimeoutsPtrOutputWithContext(ctx context.Context) CloudcertificatesUploadTimeoutsPtrOutput {
+	return o
+}
+
+func (o CloudcertificatesUploadTimeoutsPtrOutput) Elem() CloudcertificatesUploadTimeoutsOutput {
+	return o.ApplyT(func(v *CloudcertificatesUploadTimeouts) CloudcertificatesUploadTimeouts {
+		if v != nil {
+			return *v
+		}
+		var ret CloudcertificatesUploadTimeouts
+		return ret
+	}).(CloudcertificatesUploadTimeoutsOutput)
+}
+
+// Optional configurable timeout for polling until the uploaded certificate(s) finish processing server-side. By default it's 2m.
+func (o CloudcertificatesUploadTimeoutsPtrOutput) Create() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *CloudcertificatesUploadTimeouts) *string {
+		if v == nil {
+			return nil
+		}
+		return v.Create
+	}).(pulumi.StringPtrOutput)
+}
+
+// Optional configurable timeout for polling until the uploaded certificate(s) finish processing server-side. By default it's 2m.
+func (o CloudcertificatesUploadTimeoutsPtrOutput) Update() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *CloudcertificatesUploadTimeouts) *string {
+		if v == nil {
+			return nil
+		}
+		return v.Update
 	}).(pulumi.StringPtrOutput)
 }
 
@@ -23104,9 +26879,19 @@ func (o PropertyDomainownershipValidationTimeoutsPtrOutput) Update() pulumi.Stri
 }
 
 type PropertyHostname struct {
+	// The certificate lineage ID of the Cloud Certificate Manager (CCM) certificate to bind to the hostname. It cannot be used together with `ccmCertificates`.
+	CcmCertId *string `pulumi:"ccmCertId"`
+	// The link to the Cloud Certificate Manager (CCM) certificate lineage bound to the hostname.
+	CcmCertLink *string `pulumi:"ccmCertLink"`
 	// Deployment status for the RSA and ECDSA certificates created with Cloud Certificate Manager (CCM).
+	//
+	// Deprecated: Will be replaced by ccm_cert_statuses.
+	CcmCertStatus []PropertyHostnameCcmCertStatus `pulumi:"ccmCertStatus"`
+	// The deployment statuses of the Cloud Certificate Manager (CCM) certificate lineage bound to the hostname, organized by key type and network.
 	CcmCertStatuses []PropertyHostnameCcmCertStatus `pulumi:"ccmCertStatuses"`
 	// Certificate identifiers and links for the CCM-managed certificates.
+	//
+	// Deprecated: Use ccmCertId instead.
 	CcmCertificates      *PropertyHostnameCcmCertificates `pulumi:"ccmCertificates"`
 	CertProvisioningType string                           `pulumi:"certProvisioningType"`
 	CertStatuses         []PropertyHostnameCertStatus     `pulumi:"certStatuses"`
@@ -23132,9 +26917,19 @@ type PropertyHostnameInput interface {
 }
 
 type PropertyHostnameArgs struct {
+	// The certificate lineage ID of the Cloud Certificate Manager (CCM) certificate to bind to the hostname. It cannot be used together with `ccmCertificates`.
+	CcmCertId pulumi.StringPtrInput `pulumi:"ccmCertId"`
+	// The link to the Cloud Certificate Manager (CCM) certificate lineage bound to the hostname.
+	CcmCertLink pulumi.StringPtrInput `pulumi:"ccmCertLink"`
 	// Deployment status for the RSA and ECDSA certificates created with Cloud Certificate Manager (CCM).
+	//
+	// Deprecated: Will be replaced by ccm_cert_statuses.
+	CcmCertStatus PropertyHostnameCcmCertStatusArrayInput `pulumi:"ccmCertStatus"`
+	// The deployment statuses of the Cloud Certificate Manager (CCM) certificate lineage bound to the hostname, organized by key type and network.
 	CcmCertStatuses PropertyHostnameCcmCertStatusArrayInput `pulumi:"ccmCertStatuses"`
 	// Certificate identifiers and links for the CCM-managed certificates.
+	//
+	// Deprecated: Use ccmCertId instead.
 	CcmCertificates      PropertyHostnameCcmCertificatesPtrInput `pulumi:"ccmCertificates"`
 	CertProvisioningType pulumi.StringInput                      `pulumi:"certProvisioningType"`
 	CertStatuses         PropertyHostnameCertStatusArrayInput    `pulumi:"certStatuses"`
@@ -23199,12 +26994,31 @@ func (o PropertyHostnameOutput) ToPropertyHostnameOutputWithContext(ctx context.
 	return o
 }
 
+// The certificate lineage ID of the Cloud Certificate Manager (CCM) certificate to bind to the hostname. It cannot be used together with `ccmCertificates`.
+func (o PropertyHostnameOutput) CcmCertId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v PropertyHostname) *string { return v.CcmCertId }).(pulumi.StringPtrOutput)
+}
+
+// The link to the Cloud Certificate Manager (CCM) certificate lineage bound to the hostname.
+func (o PropertyHostnameOutput) CcmCertLink() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v PropertyHostname) *string { return v.CcmCertLink }).(pulumi.StringPtrOutput)
+}
+
 // Deployment status for the RSA and ECDSA certificates created with Cloud Certificate Manager (CCM).
+//
+// Deprecated: Will be replaced by ccm_cert_statuses.
+func (o PropertyHostnameOutput) CcmCertStatus() PropertyHostnameCcmCertStatusArrayOutput {
+	return o.ApplyT(func(v PropertyHostname) []PropertyHostnameCcmCertStatus { return v.CcmCertStatus }).(PropertyHostnameCcmCertStatusArrayOutput)
+}
+
+// The deployment statuses of the Cloud Certificate Manager (CCM) certificate lineage bound to the hostname, organized by key type and network.
 func (o PropertyHostnameOutput) CcmCertStatuses() PropertyHostnameCcmCertStatusArrayOutput {
 	return o.ApplyT(func(v PropertyHostname) []PropertyHostnameCcmCertStatus { return v.CcmCertStatuses }).(PropertyHostnameCcmCertStatusArrayOutput)
 }
 
 // Certificate identifiers and links for the CCM-managed certificates.
+//
+// Deprecated: Use ccmCertId instead.
 func (o PropertyHostnameOutput) CcmCertificates() PropertyHostnameCcmCertificatesPtrOutput {
 	return o.ApplyT(func(v PropertyHostname) *PropertyHostnameCcmCertificates { return v.CcmCertificates }).(PropertyHostnameCcmCertificatesPtrOutput)
 }
@@ -23379,14 +27193,12 @@ func (o PropertyHostnameBucketHostnamesMapOutput) MapIndex(k pulumi.StringInput)
 }
 
 type PropertyHostnameCcmCertStatus struct {
-	// Status of the ECDSA certificate on production network.
-	EcdsaProductionStatus *string `pulumi:"ecdsaProductionStatus"`
-	// Status of the ECDSA certificate on staging network.
-	EcdsaStagingStatus *string `pulumi:"ecdsaStagingStatus"`
-	// Status of the RSA certificate on production network.
-	RsaProductionStatus *string `pulumi:"rsaProductionStatus"`
-	// Status of the RSA certificate on staging network.
-	RsaStagingStatus *string `pulumi:"rsaStagingStatus"`
+	// The key algorithm type of the certificate, either `RSA` or `ECDSA`.
+	KeyType *string `pulumi:"keyType"`
+	// The network the status applies to, either `STAGING` or `PRODUCTION`.
+	Network *string `pulumi:"network"`
+	// The deployment status of the certificate on the given network.
+	Status *string `pulumi:"status"`
 }
 
 // PropertyHostnameCcmCertStatusInput is an input type that accepts PropertyHostnameCcmCertStatusArgs and PropertyHostnameCcmCertStatusOutput values.
@@ -23401,14 +27213,12 @@ type PropertyHostnameCcmCertStatusInput interface {
 }
 
 type PropertyHostnameCcmCertStatusArgs struct {
-	// Status of the ECDSA certificate on production network.
-	EcdsaProductionStatus pulumi.StringPtrInput `pulumi:"ecdsaProductionStatus"`
-	// Status of the ECDSA certificate on staging network.
-	EcdsaStagingStatus pulumi.StringPtrInput `pulumi:"ecdsaStagingStatus"`
-	// Status of the RSA certificate on production network.
-	RsaProductionStatus pulumi.StringPtrInput `pulumi:"rsaProductionStatus"`
-	// Status of the RSA certificate on staging network.
-	RsaStagingStatus pulumi.StringPtrInput `pulumi:"rsaStagingStatus"`
+	// The key algorithm type of the certificate, either `RSA` or `ECDSA`.
+	KeyType pulumi.StringPtrInput `pulumi:"keyType"`
+	// The network the status applies to, either `STAGING` or `PRODUCTION`.
+	Network pulumi.StringPtrInput `pulumi:"network"`
+	// The deployment status of the certificate on the given network.
+	Status pulumi.StringPtrInput `pulumi:"status"`
 }
 
 func (PropertyHostnameCcmCertStatusArgs) ElementType() reflect.Type {
@@ -23462,24 +27272,19 @@ func (o PropertyHostnameCcmCertStatusOutput) ToPropertyHostnameCcmCertStatusOutp
 	return o
 }
 
-// Status of the ECDSA certificate on production network.
-func (o PropertyHostnameCcmCertStatusOutput) EcdsaProductionStatus() pulumi.StringPtrOutput {
-	return o.ApplyT(func(v PropertyHostnameCcmCertStatus) *string { return v.EcdsaProductionStatus }).(pulumi.StringPtrOutput)
+// The key algorithm type of the certificate, either `RSA` or `ECDSA`.
+func (o PropertyHostnameCcmCertStatusOutput) KeyType() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v PropertyHostnameCcmCertStatus) *string { return v.KeyType }).(pulumi.StringPtrOutput)
 }
 
-// Status of the ECDSA certificate on staging network.
-func (o PropertyHostnameCcmCertStatusOutput) EcdsaStagingStatus() pulumi.StringPtrOutput {
-	return o.ApplyT(func(v PropertyHostnameCcmCertStatus) *string { return v.EcdsaStagingStatus }).(pulumi.StringPtrOutput)
+// The network the status applies to, either `STAGING` or `PRODUCTION`.
+func (o PropertyHostnameCcmCertStatusOutput) Network() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v PropertyHostnameCcmCertStatus) *string { return v.Network }).(pulumi.StringPtrOutput)
 }
 
-// Status of the RSA certificate on production network.
-func (o PropertyHostnameCcmCertStatusOutput) RsaProductionStatus() pulumi.StringPtrOutput {
-	return o.ApplyT(func(v PropertyHostnameCcmCertStatus) *string { return v.RsaProductionStatus }).(pulumi.StringPtrOutput)
-}
-
-// Status of the RSA certificate on staging network.
-func (o PropertyHostnameCcmCertStatusOutput) RsaStagingStatus() pulumi.StringPtrOutput {
-	return o.ApplyT(func(v PropertyHostnameCcmCertStatus) *string { return v.RsaStagingStatus }).(pulumi.StringPtrOutput)
+// The deployment status of the certificate on the given network.
+func (o PropertyHostnameCcmCertStatusOutput) Status() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v PropertyHostnameCcmCertStatus) *string { return v.Status }).(pulumi.StringPtrOutput)
 }
 
 type PropertyHostnameCcmCertStatusArrayOutput struct{ *pulumi.OutputState }
@@ -33485,749 +37290,5182 @@ func (o GetCloudaccessKeysAccessKeyNetworkConfigurationOutput) SecurityNetwork()
 	return o.ApplyT(func(v GetCloudaccessKeysAccessKeyNetworkConfiguration) string { return v.SecurityNetwork }).(pulumi.StringOutput)
 }
 
-type GetCloudcertificatesCertificateBinding struct {
-	// Unique identifier for the third-party certificate.
-	CertificateId string `pulumi:"certificateId"`
-	// Hostname on the Akamai CDN the certificate applies to.
-	Hostname string `pulumi:"hostname"`
-	// The deployment network, either STAGING or PRODUCTION, on which the certificate is active for a property version.
-	Network string `pulumi:"network"`
-	// Resource type this binding applies to. Currently, only CDN_HOSTNAME is available.
-	ResourceType string `pulumi:"resourceType"`
-}
-
-// GetCloudcertificatesCertificateBindingInput is an input type that accepts GetCloudcertificatesCertificateBindingArgs and GetCloudcertificatesCertificateBindingOutput values.
-// You can construct a concrete instance of `GetCloudcertificatesCertificateBindingInput` via:
-//
-//	GetCloudcertificatesCertificateBindingArgs{...}
-type GetCloudcertificatesCertificateBindingInput interface {
-	pulumi.Input
-
-	ToGetCloudcertificatesCertificateBindingOutput() GetCloudcertificatesCertificateBindingOutput
-	ToGetCloudcertificatesCertificateBindingOutputWithContext(context.Context) GetCloudcertificatesCertificateBindingOutput
-}
-
-type GetCloudcertificatesCertificateBindingArgs struct {
-	// Unique identifier for the third-party certificate.
-	CertificateId pulumi.StringInput `pulumi:"certificateId"`
-	// Hostname on the Akamai CDN the certificate applies to.
-	Hostname pulumi.StringInput `pulumi:"hostname"`
-	// The deployment network, either STAGING or PRODUCTION, on which the certificate is active for a property version.
-	Network pulumi.StringInput `pulumi:"network"`
-	// Resource type this binding applies to. Currently, only CDN_HOSTNAME is available.
-	ResourceType pulumi.StringInput `pulumi:"resourceType"`
-}
-
-func (GetCloudcertificatesCertificateBindingArgs) ElementType() reflect.Type {
-	return reflect.TypeOf((*GetCloudcertificatesCertificateBinding)(nil)).Elem()
-}
-
-func (i GetCloudcertificatesCertificateBindingArgs) ToGetCloudcertificatesCertificateBindingOutput() GetCloudcertificatesCertificateBindingOutput {
-	return i.ToGetCloudcertificatesCertificateBindingOutputWithContext(context.Background())
-}
-
-func (i GetCloudcertificatesCertificateBindingArgs) ToGetCloudcertificatesCertificateBindingOutputWithContext(ctx context.Context) GetCloudcertificatesCertificateBindingOutput {
-	return pulumi.ToOutputWithContext(ctx, i).(GetCloudcertificatesCertificateBindingOutput)
-}
-
-// GetCloudcertificatesCertificateBindingArrayInput is an input type that accepts GetCloudcertificatesCertificateBindingArray and GetCloudcertificatesCertificateBindingArrayOutput values.
-// You can construct a concrete instance of `GetCloudcertificatesCertificateBindingArrayInput` via:
-//
-//	GetCloudcertificatesCertificateBindingArray{ GetCloudcertificatesCertificateBindingArgs{...} }
-type GetCloudcertificatesCertificateBindingArrayInput interface {
-	pulumi.Input
-
-	ToGetCloudcertificatesCertificateBindingArrayOutput() GetCloudcertificatesCertificateBindingArrayOutput
-	ToGetCloudcertificatesCertificateBindingArrayOutputWithContext(context.Context) GetCloudcertificatesCertificateBindingArrayOutput
-}
-
-type GetCloudcertificatesCertificateBindingArray []GetCloudcertificatesCertificateBindingInput
-
-func (GetCloudcertificatesCertificateBindingArray) ElementType() reflect.Type {
-	return reflect.TypeOf((*[]GetCloudcertificatesCertificateBinding)(nil)).Elem()
-}
-
-func (i GetCloudcertificatesCertificateBindingArray) ToGetCloudcertificatesCertificateBindingArrayOutput() GetCloudcertificatesCertificateBindingArrayOutput {
-	return i.ToGetCloudcertificatesCertificateBindingArrayOutputWithContext(context.Background())
-}
-
-func (i GetCloudcertificatesCertificateBindingArray) ToGetCloudcertificatesCertificateBindingArrayOutputWithContext(ctx context.Context) GetCloudcertificatesCertificateBindingArrayOutput {
-	return pulumi.ToOutputWithContext(ctx, i).(GetCloudcertificatesCertificateBindingArrayOutput)
-}
-
-type GetCloudcertificatesCertificateBindingOutput struct{ *pulumi.OutputState }
-
-func (GetCloudcertificatesCertificateBindingOutput) ElementType() reflect.Type {
-	return reflect.TypeOf((*GetCloudcertificatesCertificateBinding)(nil)).Elem()
-}
-
-func (o GetCloudcertificatesCertificateBindingOutput) ToGetCloudcertificatesCertificateBindingOutput() GetCloudcertificatesCertificateBindingOutput {
-	return o
-}
-
-func (o GetCloudcertificatesCertificateBindingOutput) ToGetCloudcertificatesCertificateBindingOutputWithContext(ctx context.Context) GetCloudcertificatesCertificateBindingOutput {
-	return o
-}
-
-// Unique identifier for the third-party certificate.
-func (o GetCloudcertificatesCertificateBindingOutput) CertificateId() pulumi.StringOutput {
-	return o.ApplyT(func(v GetCloudcertificatesCertificateBinding) string { return v.CertificateId }).(pulumi.StringOutput)
-}
-
-// Hostname on the Akamai CDN the certificate applies to.
-func (o GetCloudcertificatesCertificateBindingOutput) Hostname() pulumi.StringOutput {
-	return o.ApplyT(func(v GetCloudcertificatesCertificateBinding) string { return v.Hostname }).(pulumi.StringOutput)
-}
-
-// The deployment network, either STAGING or PRODUCTION, on which the certificate is active for a property version.
-func (o GetCloudcertificatesCertificateBindingOutput) Network() pulumi.StringOutput {
-	return o.ApplyT(func(v GetCloudcertificatesCertificateBinding) string { return v.Network }).(pulumi.StringOutput)
-}
-
-// Resource type this binding applies to. Currently, only CDN_HOSTNAME is available.
-func (o GetCloudcertificatesCertificateBindingOutput) ResourceType() pulumi.StringOutput {
-	return o.ApplyT(func(v GetCloudcertificatesCertificateBinding) string { return v.ResourceType }).(pulumi.StringOutput)
-}
-
-type GetCloudcertificatesCertificateBindingArrayOutput struct{ *pulumi.OutputState }
-
-func (GetCloudcertificatesCertificateBindingArrayOutput) ElementType() reflect.Type {
-	return reflect.TypeOf((*[]GetCloudcertificatesCertificateBinding)(nil)).Elem()
-}
-
-func (o GetCloudcertificatesCertificateBindingArrayOutput) ToGetCloudcertificatesCertificateBindingArrayOutput() GetCloudcertificatesCertificateBindingArrayOutput {
-	return o
-}
-
-func (o GetCloudcertificatesCertificateBindingArrayOutput) ToGetCloudcertificatesCertificateBindingArrayOutputWithContext(ctx context.Context) GetCloudcertificatesCertificateBindingArrayOutput {
-	return o
-}
-
-func (o GetCloudcertificatesCertificateBindingArrayOutput) Index(i pulumi.IntInput) GetCloudcertificatesCertificateBindingOutput {
-	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetCloudcertificatesCertificateBinding {
-		return vs[0].([]GetCloudcertificatesCertificateBinding)[vs[1].(int)]
-	}).(GetCloudcertificatesCertificateBindingOutput)
-}
-
-type GetCloudcertificatesCertificateSubject struct {
-	// Fully qualified domain name (FQDN) or other name associated with the subject. If specified, this value must also be included in the SANs list.
-	CommonName string `pulumi:"commonName"`
-	// Two-letter ISO 3166 country code.
-	Country string `pulumi:"country"`
-	// City or locality name.
-	Locality string `pulumi:"locality"`
-	// Legal name of the organization.
-	Organization string `pulumi:"organization"`
-	// Full name of the state or province.
-	State string `pulumi:"state"`
-}
-
-// GetCloudcertificatesCertificateSubjectInput is an input type that accepts GetCloudcertificatesCertificateSubjectArgs and GetCloudcertificatesCertificateSubjectOutput values.
-// You can construct a concrete instance of `GetCloudcertificatesCertificateSubjectInput` via:
-//
-//	GetCloudcertificatesCertificateSubjectArgs{...}
-type GetCloudcertificatesCertificateSubjectInput interface {
-	pulumi.Input
-
-	ToGetCloudcertificatesCertificateSubjectOutput() GetCloudcertificatesCertificateSubjectOutput
-	ToGetCloudcertificatesCertificateSubjectOutputWithContext(context.Context) GetCloudcertificatesCertificateSubjectOutput
-}
-
-type GetCloudcertificatesCertificateSubjectArgs struct {
-	// Fully qualified domain name (FQDN) or other name associated with the subject. If specified, this value must also be included in the SANs list.
-	CommonName pulumi.StringInput `pulumi:"commonName"`
-	// Two-letter ISO 3166 country code.
-	Country pulumi.StringInput `pulumi:"country"`
-	// City or locality name.
-	Locality pulumi.StringInput `pulumi:"locality"`
-	// Legal name of the organization.
-	Organization pulumi.StringInput `pulumi:"organization"`
-	// Full name of the state or province.
-	State pulumi.StringInput `pulumi:"state"`
-}
-
-func (GetCloudcertificatesCertificateSubjectArgs) ElementType() reflect.Type {
-	return reflect.TypeOf((*GetCloudcertificatesCertificateSubject)(nil)).Elem()
-}
-
-func (i GetCloudcertificatesCertificateSubjectArgs) ToGetCloudcertificatesCertificateSubjectOutput() GetCloudcertificatesCertificateSubjectOutput {
-	return i.ToGetCloudcertificatesCertificateSubjectOutputWithContext(context.Background())
-}
-
-func (i GetCloudcertificatesCertificateSubjectArgs) ToGetCloudcertificatesCertificateSubjectOutputWithContext(ctx context.Context) GetCloudcertificatesCertificateSubjectOutput {
-	return pulumi.ToOutputWithContext(ctx, i).(GetCloudcertificatesCertificateSubjectOutput)
-}
-
-type GetCloudcertificatesCertificateSubjectOutput struct{ *pulumi.OutputState }
-
-func (GetCloudcertificatesCertificateSubjectOutput) ElementType() reflect.Type {
-	return reflect.TypeOf((*GetCloudcertificatesCertificateSubject)(nil)).Elem()
-}
-
-func (o GetCloudcertificatesCertificateSubjectOutput) ToGetCloudcertificatesCertificateSubjectOutput() GetCloudcertificatesCertificateSubjectOutput {
-	return o
-}
-
-func (o GetCloudcertificatesCertificateSubjectOutput) ToGetCloudcertificatesCertificateSubjectOutputWithContext(ctx context.Context) GetCloudcertificatesCertificateSubjectOutput {
-	return o
-}
-
-// Fully qualified domain name (FQDN) or other name associated with the subject. If specified, this value must also be included in the SANs list.
-func (o GetCloudcertificatesCertificateSubjectOutput) CommonName() pulumi.StringOutput {
-	return o.ApplyT(func(v GetCloudcertificatesCertificateSubject) string { return v.CommonName }).(pulumi.StringOutput)
-}
-
-// Two-letter ISO 3166 country code.
-func (o GetCloudcertificatesCertificateSubjectOutput) Country() pulumi.StringOutput {
-	return o.ApplyT(func(v GetCloudcertificatesCertificateSubject) string { return v.Country }).(pulumi.StringOutput)
-}
-
-// City or locality name.
-func (o GetCloudcertificatesCertificateSubjectOutput) Locality() pulumi.StringOutput {
-	return o.ApplyT(func(v GetCloudcertificatesCertificateSubject) string { return v.Locality }).(pulumi.StringOutput)
-}
-
-// Legal name of the organization.
-func (o GetCloudcertificatesCertificateSubjectOutput) Organization() pulumi.StringOutput {
-	return o.ApplyT(func(v GetCloudcertificatesCertificateSubject) string { return v.Organization }).(pulumi.StringOutput)
-}
-
-// Full name of the state or province.
-func (o GetCloudcertificatesCertificateSubjectOutput) State() pulumi.StringOutput {
-	return o.ApplyT(func(v GetCloudcertificatesCertificateSubject) string { return v.State }).(pulumi.StringOutput)
-}
-
-type GetCloudcertificatesCertificatesCertificate struct {
-	// The account identifier associated with the certificate.
-	AccountId string `pulumi:"accountId"`
-	// The unique identifier for the certificate.
-	CertificateId string `pulumi:"certificateId"`
-	// The name of the certificate.
-	CertificateName string `pulumi:"certificateName"`
-	// The status of the certificate.
-	CertificateStatus string `pulumi:"certificateStatus"`
-	// The type of the certificate.
-	CertificateType string `pulumi:"certificateType"`
-	// The contract identifier associated with the certificate.
-	ContractId string `pulumi:"contractId"`
-	// The user who created the certificate.
+type GetCloudcertificatesActivationsActivation struct {
+	// The time the activation request was created.
+	ActivationCreatedTime string `pulumi:"activationCreatedTime"`
+	// The unique identifier of the activation request.
+	ActivationId int `pulumi:"activationId"`
+	// The time the activation request was last modified.
+	ActivationModifiedTime string `pulumi:"activationModifiedTime"`
+	// The status of the activation request: `INIT`, `PENDING`, `IN_PROGRESS`, `COMPLETE`, `PARTIAL_SUCCESS`, `FAILED`, or `ABORTED`.
+	ActivationStatus string `pulumi:"activationStatus"`
+	// The type of the activation operation: `PROMOTE`, `ROLLBACK`, or `REPLACE_STAGING`.
+	ActivationType string `pulumi:"activationType"`
+	// The user who created the activation request.
 	CreatedBy string `pulumi:"createdBy"`
-	// The date when the certificate was created.
-	CreatedDate string `pulumi:"createdDate"`
-	// The expiration date of the CSR.
-	CsrExpirationDate string `pulumi:"csrExpirationDate"`
-	// PEM-encoded certificate signing request (CSR) generated by Akamai for your selected key type.
-	CsrPem string `pulumi:"csrPem"`
-	// The geographic network class of the certificate.
-	GeoClass string `pulumi:"geoClass"`
-	// Size of the key used in the certificate signing request (CSR) in bits.
-	KeySize string `pulumi:"keySize"`
-	// The key type of the algorithm used in the certificate signing request (CSR).
-	KeyType string `pulumi:"keyType"`
-	// The user who last modified the certificate.
+	// Error type information when the activation failed, or null otherwise.
+	ErrorTypes string `pulumi:"errorTypes"`
+	// The unique identifier of the generation being activated.
+	GenerationId int `pulumi:"generationId"`
+	// The number of hostnames still in progress for this activation, or null if not yet known.
+	InProgressHostnameCount int `pulumi:"inProgressHostnameCount"`
+	// The unique identifier of the certificate lineage associated with the activation.
+	LineageId int `pulumi:"lineageId"`
+	// The user who last modified the activation request.
 	ModifiedBy string `pulumi:"modifiedBy"`
-	// The date when the certificate was last modified.
-	ModifiedDate string `pulumi:"modifiedDate"`
-	// The list of SAN (Subject Alternative Name) domains included in the certificate.
-	Sans []string `pulumi:"sans"`
-	// The secure network associated with the certificate.
-	SecureNetwork string `pulumi:"secureNetwork"`
-	// The issuer of the signed certificate.
+	// The activation request that pre-empted (superseded) this one, or null if this activation was not pre-empted.
+	PreEmptedBy int `pulumi:"preEmptedBy"`
+	// The target network for the generation activation: `STAGING` or `PRODUCTION`.
+	TargetEnvironment string `pulumi:"targetEnvironment"`
+	// The total number of hostnames being deployed as part of this activation, or null if not yet known.
+	TotalHostnameCount int `pulumi:"totalHostnameCount"`
+}
+
+// GetCloudcertificatesActivationsActivationInput is an input type that accepts GetCloudcertificatesActivationsActivationArgs and GetCloudcertificatesActivationsActivationOutput values.
+// You can construct a concrete instance of `GetCloudcertificatesActivationsActivationInput` via:
+//
+//	GetCloudcertificatesActivationsActivationArgs{...}
+type GetCloudcertificatesActivationsActivationInput interface {
+	pulumi.Input
+
+	ToGetCloudcertificatesActivationsActivationOutput() GetCloudcertificatesActivationsActivationOutput
+	ToGetCloudcertificatesActivationsActivationOutputWithContext(context.Context) GetCloudcertificatesActivationsActivationOutput
+}
+
+type GetCloudcertificatesActivationsActivationArgs struct {
+	// The time the activation request was created.
+	ActivationCreatedTime pulumi.StringInput `pulumi:"activationCreatedTime"`
+	// The unique identifier of the activation request.
+	ActivationId pulumi.IntInput `pulumi:"activationId"`
+	// The time the activation request was last modified.
+	ActivationModifiedTime pulumi.StringInput `pulumi:"activationModifiedTime"`
+	// The status of the activation request: `INIT`, `PENDING`, `IN_PROGRESS`, `COMPLETE`, `PARTIAL_SUCCESS`, `FAILED`, or `ABORTED`.
+	ActivationStatus pulumi.StringInput `pulumi:"activationStatus"`
+	// The type of the activation operation: `PROMOTE`, `ROLLBACK`, or `REPLACE_STAGING`.
+	ActivationType pulumi.StringInput `pulumi:"activationType"`
+	// The user who created the activation request.
+	CreatedBy pulumi.StringInput `pulumi:"createdBy"`
+	// Error type information when the activation failed, or null otherwise.
+	ErrorTypes pulumi.StringInput `pulumi:"errorTypes"`
+	// The unique identifier of the generation being activated.
+	GenerationId pulumi.IntInput `pulumi:"generationId"`
+	// The number of hostnames still in progress for this activation, or null if not yet known.
+	InProgressHostnameCount pulumi.IntInput `pulumi:"inProgressHostnameCount"`
+	// The unique identifier of the certificate lineage associated with the activation.
+	LineageId pulumi.IntInput `pulumi:"lineageId"`
+	// The user who last modified the activation request.
+	ModifiedBy pulumi.StringInput `pulumi:"modifiedBy"`
+	// The activation request that pre-empted (superseded) this one, or null if this activation was not pre-empted.
+	PreEmptedBy pulumi.IntInput `pulumi:"preEmptedBy"`
+	// The target network for the generation activation: `STAGING` or `PRODUCTION`.
+	TargetEnvironment pulumi.StringInput `pulumi:"targetEnvironment"`
+	// The total number of hostnames being deployed as part of this activation, or null if not yet known.
+	TotalHostnameCount pulumi.IntInput `pulumi:"totalHostnameCount"`
+}
+
+func (GetCloudcertificatesActivationsActivationArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetCloudcertificatesActivationsActivation)(nil)).Elem()
+}
+
+func (i GetCloudcertificatesActivationsActivationArgs) ToGetCloudcertificatesActivationsActivationOutput() GetCloudcertificatesActivationsActivationOutput {
+	return i.ToGetCloudcertificatesActivationsActivationOutputWithContext(context.Background())
+}
+
+func (i GetCloudcertificatesActivationsActivationArgs) ToGetCloudcertificatesActivationsActivationOutputWithContext(ctx context.Context) GetCloudcertificatesActivationsActivationOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetCloudcertificatesActivationsActivationOutput)
+}
+
+// GetCloudcertificatesActivationsActivationArrayInput is an input type that accepts GetCloudcertificatesActivationsActivationArray and GetCloudcertificatesActivationsActivationArrayOutput values.
+// You can construct a concrete instance of `GetCloudcertificatesActivationsActivationArrayInput` via:
+//
+//	GetCloudcertificatesActivationsActivationArray{ GetCloudcertificatesActivationsActivationArgs{...} }
+type GetCloudcertificatesActivationsActivationArrayInput interface {
+	pulumi.Input
+
+	ToGetCloudcertificatesActivationsActivationArrayOutput() GetCloudcertificatesActivationsActivationArrayOutput
+	ToGetCloudcertificatesActivationsActivationArrayOutputWithContext(context.Context) GetCloudcertificatesActivationsActivationArrayOutput
+}
+
+type GetCloudcertificatesActivationsActivationArray []GetCloudcertificatesActivationsActivationInput
+
+func (GetCloudcertificatesActivationsActivationArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetCloudcertificatesActivationsActivation)(nil)).Elem()
+}
+
+func (i GetCloudcertificatesActivationsActivationArray) ToGetCloudcertificatesActivationsActivationArrayOutput() GetCloudcertificatesActivationsActivationArrayOutput {
+	return i.ToGetCloudcertificatesActivationsActivationArrayOutputWithContext(context.Background())
+}
+
+func (i GetCloudcertificatesActivationsActivationArray) ToGetCloudcertificatesActivationsActivationArrayOutputWithContext(ctx context.Context) GetCloudcertificatesActivationsActivationArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetCloudcertificatesActivationsActivationArrayOutput)
+}
+
+type GetCloudcertificatesActivationsActivationOutput struct{ *pulumi.OutputState }
+
+func (GetCloudcertificatesActivationsActivationOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetCloudcertificatesActivationsActivation)(nil)).Elem()
+}
+
+func (o GetCloudcertificatesActivationsActivationOutput) ToGetCloudcertificatesActivationsActivationOutput() GetCloudcertificatesActivationsActivationOutput {
+	return o
+}
+
+func (o GetCloudcertificatesActivationsActivationOutput) ToGetCloudcertificatesActivationsActivationOutputWithContext(ctx context.Context) GetCloudcertificatesActivationsActivationOutput {
+	return o
+}
+
+// The time the activation request was created.
+func (o GetCloudcertificatesActivationsActivationOutput) ActivationCreatedTime() pulumi.StringOutput {
+	return o.ApplyT(func(v GetCloudcertificatesActivationsActivation) string { return v.ActivationCreatedTime }).(pulumi.StringOutput)
+}
+
+// The unique identifier of the activation request.
+func (o GetCloudcertificatesActivationsActivationOutput) ActivationId() pulumi.IntOutput {
+	return o.ApplyT(func(v GetCloudcertificatesActivationsActivation) int { return v.ActivationId }).(pulumi.IntOutput)
+}
+
+// The time the activation request was last modified.
+func (o GetCloudcertificatesActivationsActivationOutput) ActivationModifiedTime() pulumi.StringOutput {
+	return o.ApplyT(func(v GetCloudcertificatesActivationsActivation) string { return v.ActivationModifiedTime }).(pulumi.StringOutput)
+}
+
+// The status of the activation request: `INIT`, `PENDING`, `IN_PROGRESS`, `COMPLETE`, `PARTIAL_SUCCESS`, `FAILED`, or `ABORTED`.
+func (o GetCloudcertificatesActivationsActivationOutput) ActivationStatus() pulumi.StringOutput {
+	return o.ApplyT(func(v GetCloudcertificatesActivationsActivation) string { return v.ActivationStatus }).(pulumi.StringOutput)
+}
+
+// The type of the activation operation: `PROMOTE`, `ROLLBACK`, or `REPLACE_STAGING`.
+func (o GetCloudcertificatesActivationsActivationOutput) ActivationType() pulumi.StringOutput {
+	return o.ApplyT(func(v GetCloudcertificatesActivationsActivation) string { return v.ActivationType }).(pulumi.StringOutput)
+}
+
+// The user who created the activation request.
+func (o GetCloudcertificatesActivationsActivationOutput) CreatedBy() pulumi.StringOutput {
+	return o.ApplyT(func(v GetCloudcertificatesActivationsActivation) string { return v.CreatedBy }).(pulumi.StringOutput)
+}
+
+// Error type information when the activation failed, or null otherwise.
+func (o GetCloudcertificatesActivationsActivationOutput) ErrorTypes() pulumi.StringOutput {
+	return o.ApplyT(func(v GetCloudcertificatesActivationsActivation) string { return v.ErrorTypes }).(pulumi.StringOutput)
+}
+
+// The unique identifier of the generation being activated.
+func (o GetCloudcertificatesActivationsActivationOutput) GenerationId() pulumi.IntOutput {
+	return o.ApplyT(func(v GetCloudcertificatesActivationsActivation) int { return v.GenerationId }).(pulumi.IntOutput)
+}
+
+// The number of hostnames still in progress for this activation, or null if not yet known.
+func (o GetCloudcertificatesActivationsActivationOutput) InProgressHostnameCount() pulumi.IntOutput {
+	return o.ApplyT(func(v GetCloudcertificatesActivationsActivation) int { return v.InProgressHostnameCount }).(pulumi.IntOutput)
+}
+
+// The unique identifier of the certificate lineage associated with the activation.
+func (o GetCloudcertificatesActivationsActivationOutput) LineageId() pulumi.IntOutput {
+	return o.ApplyT(func(v GetCloudcertificatesActivationsActivation) int { return v.LineageId }).(pulumi.IntOutput)
+}
+
+// The user who last modified the activation request.
+func (o GetCloudcertificatesActivationsActivationOutput) ModifiedBy() pulumi.StringOutput {
+	return o.ApplyT(func(v GetCloudcertificatesActivationsActivation) string { return v.ModifiedBy }).(pulumi.StringOutput)
+}
+
+// The activation request that pre-empted (superseded) this one, or null if this activation was not pre-empted.
+func (o GetCloudcertificatesActivationsActivationOutput) PreEmptedBy() pulumi.IntOutput {
+	return o.ApplyT(func(v GetCloudcertificatesActivationsActivation) int { return v.PreEmptedBy }).(pulumi.IntOutput)
+}
+
+// The target network for the generation activation: `STAGING` or `PRODUCTION`.
+func (o GetCloudcertificatesActivationsActivationOutput) TargetEnvironment() pulumi.StringOutput {
+	return o.ApplyT(func(v GetCloudcertificatesActivationsActivation) string { return v.TargetEnvironment }).(pulumi.StringOutput)
+}
+
+// The total number of hostnames being deployed as part of this activation, or null if not yet known.
+func (o GetCloudcertificatesActivationsActivationOutput) TotalHostnameCount() pulumi.IntOutput {
+	return o.ApplyT(func(v GetCloudcertificatesActivationsActivation) int { return v.TotalHostnameCount }).(pulumi.IntOutput)
+}
+
+type GetCloudcertificatesActivationsActivationArrayOutput struct{ *pulumi.OutputState }
+
+func (GetCloudcertificatesActivationsActivationArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetCloudcertificatesActivationsActivation)(nil)).Elem()
+}
+
+func (o GetCloudcertificatesActivationsActivationArrayOutput) ToGetCloudcertificatesActivationsActivationArrayOutput() GetCloudcertificatesActivationsActivationArrayOutput {
+	return o
+}
+
+func (o GetCloudcertificatesActivationsActivationArrayOutput) ToGetCloudcertificatesActivationsActivationArrayOutputWithContext(ctx context.Context) GetCloudcertificatesActivationsActivationArrayOutput {
+	return o
+}
+
+func (o GetCloudcertificatesActivationsActivationArrayOutput) Index(i pulumi.IntInput) GetCloudcertificatesActivationsActivationOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetCloudcertificatesActivationsActivation {
+		return vs[0].([]GetCloudcertificatesActivationsActivation)[vs[1].(int)]
+	}).(GetCloudcertificatesActivationsActivationOutput)
+}
+
+type GetCloudcertificatesActivityActivity struct {
+	// The unique identifier of the activity event.
+	ActivityId int `pulumi:"activityId"`
+	// The user or system that triggered the activity event.
+	CreatedBy string `pulumi:"createdBy"`
+	// The time the activity event was recorded in UTC.
+	CreatedTime string `pulumi:"createdTime"`
+	// The type of operation recorded by the activity event.
+	EventType string `pulumi:"eventType"`
+	// The generation identifier associated with the activity event, or null for lineage-level events.
+	GenerationId int `pulumi:"generationId"`
+	// The unique identifier of the certificate lineage associated with the activity event.
+	LineageId int `pulumi:"lineageId"`
+	// The target network associated with the activity event, or null if not applicable.
+	Network string `pulumi:"network"`
+	// The execution result of the activity event, or null if not applicable.
+	Outcome string `pulumi:"outcome"`
+}
+
+// GetCloudcertificatesActivityActivityInput is an input type that accepts GetCloudcertificatesActivityActivityArgs and GetCloudcertificatesActivityActivityOutput values.
+// You can construct a concrete instance of `GetCloudcertificatesActivityActivityInput` via:
+//
+//	GetCloudcertificatesActivityActivityArgs{...}
+type GetCloudcertificatesActivityActivityInput interface {
+	pulumi.Input
+
+	ToGetCloudcertificatesActivityActivityOutput() GetCloudcertificatesActivityActivityOutput
+	ToGetCloudcertificatesActivityActivityOutputWithContext(context.Context) GetCloudcertificatesActivityActivityOutput
+}
+
+type GetCloudcertificatesActivityActivityArgs struct {
+	// The unique identifier of the activity event.
+	ActivityId pulumi.IntInput `pulumi:"activityId"`
+	// The user or system that triggered the activity event.
+	CreatedBy pulumi.StringInput `pulumi:"createdBy"`
+	// The time the activity event was recorded in UTC.
+	CreatedTime pulumi.StringInput `pulumi:"createdTime"`
+	// The type of operation recorded by the activity event.
+	EventType pulumi.StringInput `pulumi:"eventType"`
+	// The generation identifier associated with the activity event, or null for lineage-level events.
+	GenerationId pulumi.IntInput `pulumi:"generationId"`
+	// The unique identifier of the certificate lineage associated with the activity event.
+	LineageId pulumi.IntInput `pulumi:"lineageId"`
+	// The target network associated with the activity event, or null if not applicable.
+	Network pulumi.StringInput `pulumi:"network"`
+	// The execution result of the activity event, or null if not applicable.
+	Outcome pulumi.StringInput `pulumi:"outcome"`
+}
+
+func (GetCloudcertificatesActivityActivityArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetCloudcertificatesActivityActivity)(nil)).Elem()
+}
+
+func (i GetCloudcertificatesActivityActivityArgs) ToGetCloudcertificatesActivityActivityOutput() GetCloudcertificatesActivityActivityOutput {
+	return i.ToGetCloudcertificatesActivityActivityOutputWithContext(context.Background())
+}
+
+func (i GetCloudcertificatesActivityActivityArgs) ToGetCloudcertificatesActivityActivityOutputWithContext(ctx context.Context) GetCloudcertificatesActivityActivityOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetCloudcertificatesActivityActivityOutput)
+}
+
+// GetCloudcertificatesActivityActivityArrayInput is an input type that accepts GetCloudcertificatesActivityActivityArray and GetCloudcertificatesActivityActivityArrayOutput values.
+// You can construct a concrete instance of `GetCloudcertificatesActivityActivityArrayInput` via:
+//
+//	GetCloudcertificatesActivityActivityArray{ GetCloudcertificatesActivityActivityArgs{...} }
+type GetCloudcertificatesActivityActivityArrayInput interface {
+	pulumi.Input
+
+	ToGetCloudcertificatesActivityActivityArrayOutput() GetCloudcertificatesActivityActivityArrayOutput
+	ToGetCloudcertificatesActivityActivityArrayOutputWithContext(context.Context) GetCloudcertificatesActivityActivityArrayOutput
+}
+
+type GetCloudcertificatesActivityActivityArray []GetCloudcertificatesActivityActivityInput
+
+func (GetCloudcertificatesActivityActivityArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetCloudcertificatesActivityActivity)(nil)).Elem()
+}
+
+func (i GetCloudcertificatesActivityActivityArray) ToGetCloudcertificatesActivityActivityArrayOutput() GetCloudcertificatesActivityActivityArrayOutput {
+	return i.ToGetCloudcertificatesActivityActivityArrayOutputWithContext(context.Background())
+}
+
+func (i GetCloudcertificatesActivityActivityArray) ToGetCloudcertificatesActivityActivityArrayOutputWithContext(ctx context.Context) GetCloudcertificatesActivityActivityArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetCloudcertificatesActivityActivityArrayOutput)
+}
+
+type GetCloudcertificatesActivityActivityOutput struct{ *pulumi.OutputState }
+
+func (GetCloudcertificatesActivityActivityOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetCloudcertificatesActivityActivity)(nil)).Elem()
+}
+
+func (o GetCloudcertificatesActivityActivityOutput) ToGetCloudcertificatesActivityActivityOutput() GetCloudcertificatesActivityActivityOutput {
+	return o
+}
+
+func (o GetCloudcertificatesActivityActivityOutput) ToGetCloudcertificatesActivityActivityOutputWithContext(ctx context.Context) GetCloudcertificatesActivityActivityOutput {
+	return o
+}
+
+// The unique identifier of the activity event.
+func (o GetCloudcertificatesActivityActivityOutput) ActivityId() pulumi.IntOutput {
+	return o.ApplyT(func(v GetCloudcertificatesActivityActivity) int { return v.ActivityId }).(pulumi.IntOutput)
+}
+
+// The user or system that triggered the activity event.
+func (o GetCloudcertificatesActivityActivityOutput) CreatedBy() pulumi.StringOutput {
+	return o.ApplyT(func(v GetCloudcertificatesActivityActivity) string { return v.CreatedBy }).(pulumi.StringOutput)
+}
+
+// The time the activity event was recorded in UTC.
+func (o GetCloudcertificatesActivityActivityOutput) CreatedTime() pulumi.StringOutput {
+	return o.ApplyT(func(v GetCloudcertificatesActivityActivity) string { return v.CreatedTime }).(pulumi.StringOutput)
+}
+
+// The type of operation recorded by the activity event.
+func (o GetCloudcertificatesActivityActivityOutput) EventType() pulumi.StringOutput {
+	return o.ApplyT(func(v GetCloudcertificatesActivityActivity) string { return v.EventType }).(pulumi.StringOutput)
+}
+
+// The generation identifier associated with the activity event, or null for lineage-level events.
+func (o GetCloudcertificatesActivityActivityOutput) GenerationId() pulumi.IntOutput {
+	return o.ApplyT(func(v GetCloudcertificatesActivityActivity) int { return v.GenerationId }).(pulumi.IntOutput)
+}
+
+// The unique identifier of the certificate lineage associated with the activity event.
+func (o GetCloudcertificatesActivityActivityOutput) LineageId() pulumi.IntOutput {
+	return o.ApplyT(func(v GetCloudcertificatesActivityActivity) int { return v.LineageId }).(pulumi.IntOutput)
+}
+
+// The target network associated with the activity event, or null if not applicable.
+func (o GetCloudcertificatesActivityActivityOutput) Network() pulumi.StringOutput {
+	return o.ApplyT(func(v GetCloudcertificatesActivityActivity) string { return v.Network }).(pulumi.StringOutput)
+}
+
+// The execution result of the activity event, or null if not applicable.
+func (o GetCloudcertificatesActivityActivityOutput) Outcome() pulumi.StringOutput {
+	return o.ApplyT(func(v GetCloudcertificatesActivityActivity) string { return v.Outcome }).(pulumi.StringOutput)
+}
+
+type GetCloudcertificatesActivityActivityArrayOutput struct{ *pulumi.OutputState }
+
+func (GetCloudcertificatesActivityActivityArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetCloudcertificatesActivityActivity)(nil)).Elem()
+}
+
+func (o GetCloudcertificatesActivityActivityArrayOutput) ToGetCloudcertificatesActivityActivityArrayOutput() GetCloudcertificatesActivityActivityArrayOutput {
+	return o
+}
+
+func (o GetCloudcertificatesActivityActivityArrayOutput) ToGetCloudcertificatesActivityActivityArrayOutputWithContext(ctx context.Context) GetCloudcertificatesActivityActivityArrayOutput {
+	return o
+}
+
+func (o GetCloudcertificatesActivityActivityArrayOutput) Index(i pulumi.IntInput) GetCloudcertificatesActivityActivityOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetCloudcertificatesActivityActivity {
+		return vs[0].([]GetCloudcertificatesActivityActivity)[vs[1].(int)]
+	}).(GetCloudcertificatesActivityActivityOutput)
+}
+
+type GetCloudcertificatesArchivedGenerationsGeneration struct {
+	// Per key-type certificate details for this generation. Sparse details are returned by default; complete details are returned when includeAlgorithms is true.
+	Algorithms map[string]GetCloudcertificatesArchivedGenerationsGenerationAlgorithms `pulumi:"algorithms"`
+	// Time the generation was first promoted to production, in RFC3339 format. Null if never promoted.
+	FirstPromotedToProductionTime string `pulumi:"firstPromotedToProductionTime"`
+	// Username of the person who created this generation.
+	GenerationCreatedBy string `pulumi:"generationCreatedBy"`
+	// Time the generation was created, in RFC3339 format.
+	GenerationCreatedTime string `pulumi:"generationCreatedTime"`
+	// The unique identifier of the archived generation.
+	GenerationId int `pulumi:"generationId"`
+	// Username of the person who last modified this generation. Null if never modified.
+	GenerationModifiedBy string `pulumi:"generationModifiedBy"`
+	// Time the generation was last modified, in RFC3339 format. Null if the generation has never been modified since creation.
+	GenerationModifiedTime string `pulumi:"generationModifiedTime"`
+	// The status of the archived generation.
+	GenerationStatus string `pulumi:"generationStatus"`
+}
+
+// GetCloudcertificatesArchivedGenerationsGenerationInput is an input type that accepts GetCloudcertificatesArchivedGenerationsGenerationArgs and GetCloudcertificatesArchivedGenerationsGenerationOutput values.
+// You can construct a concrete instance of `GetCloudcertificatesArchivedGenerationsGenerationInput` via:
+//
+//	GetCloudcertificatesArchivedGenerationsGenerationArgs{...}
+type GetCloudcertificatesArchivedGenerationsGenerationInput interface {
+	pulumi.Input
+
+	ToGetCloudcertificatesArchivedGenerationsGenerationOutput() GetCloudcertificatesArchivedGenerationsGenerationOutput
+	ToGetCloudcertificatesArchivedGenerationsGenerationOutputWithContext(context.Context) GetCloudcertificatesArchivedGenerationsGenerationOutput
+}
+
+type GetCloudcertificatesArchivedGenerationsGenerationArgs struct {
+	// Per key-type certificate details for this generation. Sparse details are returned by default; complete details are returned when includeAlgorithms is true.
+	Algorithms GetCloudcertificatesArchivedGenerationsGenerationAlgorithmsMapInput `pulumi:"algorithms"`
+	// Time the generation was first promoted to production, in RFC3339 format. Null if never promoted.
+	FirstPromotedToProductionTime pulumi.StringInput `pulumi:"firstPromotedToProductionTime"`
+	// Username of the person who created this generation.
+	GenerationCreatedBy pulumi.StringInput `pulumi:"generationCreatedBy"`
+	// Time the generation was created, in RFC3339 format.
+	GenerationCreatedTime pulumi.StringInput `pulumi:"generationCreatedTime"`
+	// The unique identifier of the archived generation.
+	GenerationId pulumi.IntInput `pulumi:"generationId"`
+	// Username of the person who last modified this generation. Null if never modified.
+	GenerationModifiedBy pulumi.StringInput `pulumi:"generationModifiedBy"`
+	// Time the generation was last modified, in RFC3339 format. Null if the generation has never been modified since creation.
+	GenerationModifiedTime pulumi.StringInput `pulumi:"generationModifiedTime"`
+	// The status of the archived generation.
+	GenerationStatus pulumi.StringInput `pulumi:"generationStatus"`
+}
+
+func (GetCloudcertificatesArchivedGenerationsGenerationArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetCloudcertificatesArchivedGenerationsGeneration)(nil)).Elem()
+}
+
+func (i GetCloudcertificatesArchivedGenerationsGenerationArgs) ToGetCloudcertificatesArchivedGenerationsGenerationOutput() GetCloudcertificatesArchivedGenerationsGenerationOutput {
+	return i.ToGetCloudcertificatesArchivedGenerationsGenerationOutputWithContext(context.Background())
+}
+
+func (i GetCloudcertificatesArchivedGenerationsGenerationArgs) ToGetCloudcertificatesArchivedGenerationsGenerationOutputWithContext(ctx context.Context) GetCloudcertificatesArchivedGenerationsGenerationOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetCloudcertificatesArchivedGenerationsGenerationOutput)
+}
+
+// GetCloudcertificatesArchivedGenerationsGenerationArrayInput is an input type that accepts GetCloudcertificatesArchivedGenerationsGenerationArray and GetCloudcertificatesArchivedGenerationsGenerationArrayOutput values.
+// You can construct a concrete instance of `GetCloudcertificatesArchivedGenerationsGenerationArrayInput` via:
+//
+//	GetCloudcertificatesArchivedGenerationsGenerationArray{ GetCloudcertificatesArchivedGenerationsGenerationArgs{...} }
+type GetCloudcertificatesArchivedGenerationsGenerationArrayInput interface {
+	pulumi.Input
+
+	ToGetCloudcertificatesArchivedGenerationsGenerationArrayOutput() GetCloudcertificatesArchivedGenerationsGenerationArrayOutput
+	ToGetCloudcertificatesArchivedGenerationsGenerationArrayOutputWithContext(context.Context) GetCloudcertificatesArchivedGenerationsGenerationArrayOutput
+}
+
+type GetCloudcertificatesArchivedGenerationsGenerationArray []GetCloudcertificatesArchivedGenerationsGenerationInput
+
+func (GetCloudcertificatesArchivedGenerationsGenerationArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetCloudcertificatesArchivedGenerationsGeneration)(nil)).Elem()
+}
+
+func (i GetCloudcertificatesArchivedGenerationsGenerationArray) ToGetCloudcertificatesArchivedGenerationsGenerationArrayOutput() GetCloudcertificatesArchivedGenerationsGenerationArrayOutput {
+	return i.ToGetCloudcertificatesArchivedGenerationsGenerationArrayOutputWithContext(context.Background())
+}
+
+func (i GetCloudcertificatesArchivedGenerationsGenerationArray) ToGetCloudcertificatesArchivedGenerationsGenerationArrayOutputWithContext(ctx context.Context) GetCloudcertificatesArchivedGenerationsGenerationArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetCloudcertificatesArchivedGenerationsGenerationArrayOutput)
+}
+
+type GetCloudcertificatesArchivedGenerationsGenerationOutput struct{ *pulumi.OutputState }
+
+func (GetCloudcertificatesArchivedGenerationsGenerationOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetCloudcertificatesArchivedGenerationsGeneration)(nil)).Elem()
+}
+
+func (o GetCloudcertificatesArchivedGenerationsGenerationOutput) ToGetCloudcertificatesArchivedGenerationsGenerationOutput() GetCloudcertificatesArchivedGenerationsGenerationOutput {
+	return o
+}
+
+func (o GetCloudcertificatesArchivedGenerationsGenerationOutput) ToGetCloudcertificatesArchivedGenerationsGenerationOutputWithContext(ctx context.Context) GetCloudcertificatesArchivedGenerationsGenerationOutput {
+	return o
+}
+
+// Per key-type certificate details for this generation. Sparse details are returned by default; complete details are returned when includeAlgorithms is true.
+func (o GetCloudcertificatesArchivedGenerationsGenerationOutput) Algorithms() GetCloudcertificatesArchivedGenerationsGenerationAlgorithmsMapOutput {
+	return o.ApplyT(func(v GetCloudcertificatesArchivedGenerationsGeneration) map[string]GetCloudcertificatesArchivedGenerationsGenerationAlgorithms {
+		return v.Algorithms
+	}).(GetCloudcertificatesArchivedGenerationsGenerationAlgorithmsMapOutput)
+}
+
+// Time the generation was first promoted to production, in RFC3339 format. Null if never promoted.
+func (o GetCloudcertificatesArchivedGenerationsGenerationOutput) FirstPromotedToProductionTime() pulumi.StringOutput {
+	return o.ApplyT(func(v GetCloudcertificatesArchivedGenerationsGeneration) string {
+		return v.FirstPromotedToProductionTime
+	}).(pulumi.StringOutput)
+}
+
+// Username of the person who created this generation.
+func (o GetCloudcertificatesArchivedGenerationsGenerationOutput) GenerationCreatedBy() pulumi.StringOutput {
+	return o.ApplyT(func(v GetCloudcertificatesArchivedGenerationsGeneration) string { return v.GenerationCreatedBy }).(pulumi.StringOutput)
+}
+
+// Time the generation was created, in RFC3339 format.
+func (o GetCloudcertificatesArchivedGenerationsGenerationOutput) GenerationCreatedTime() pulumi.StringOutput {
+	return o.ApplyT(func(v GetCloudcertificatesArchivedGenerationsGeneration) string { return v.GenerationCreatedTime }).(pulumi.StringOutput)
+}
+
+// The unique identifier of the archived generation.
+func (o GetCloudcertificatesArchivedGenerationsGenerationOutput) GenerationId() pulumi.IntOutput {
+	return o.ApplyT(func(v GetCloudcertificatesArchivedGenerationsGeneration) int { return v.GenerationId }).(pulumi.IntOutput)
+}
+
+// Username of the person who last modified this generation. Null if never modified.
+func (o GetCloudcertificatesArchivedGenerationsGenerationOutput) GenerationModifiedBy() pulumi.StringOutput {
+	return o.ApplyT(func(v GetCloudcertificatesArchivedGenerationsGeneration) string { return v.GenerationModifiedBy }).(pulumi.StringOutput)
+}
+
+// Time the generation was last modified, in RFC3339 format. Null if the generation has never been modified since creation.
+func (o GetCloudcertificatesArchivedGenerationsGenerationOutput) GenerationModifiedTime() pulumi.StringOutput {
+	return o.ApplyT(func(v GetCloudcertificatesArchivedGenerationsGeneration) string { return v.GenerationModifiedTime }).(pulumi.StringOutput)
+}
+
+// The status of the archived generation.
+func (o GetCloudcertificatesArchivedGenerationsGenerationOutput) GenerationStatus() pulumi.StringOutput {
+	return o.ApplyT(func(v GetCloudcertificatesArchivedGenerationsGeneration) string { return v.GenerationStatus }).(pulumi.StringOutput)
+}
+
+type GetCloudcertificatesArchivedGenerationsGenerationArrayOutput struct{ *pulumi.OutputState }
+
+func (GetCloudcertificatesArchivedGenerationsGenerationArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetCloudcertificatesArchivedGenerationsGeneration)(nil)).Elem()
+}
+
+func (o GetCloudcertificatesArchivedGenerationsGenerationArrayOutput) ToGetCloudcertificatesArchivedGenerationsGenerationArrayOutput() GetCloudcertificatesArchivedGenerationsGenerationArrayOutput {
+	return o
+}
+
+func (o GetCloudcertificatesArchivedGenerationsGenerationArrayOutput) ToGetCloudcertificatesArchivedGenerationsGenerationArrayOutputWithContext(ctx context.Context) GetCloudcertificatesArchivedGenerationsGenerationArrayOutput {
+	return o
+}
+
+func (o GetCloudcertificatesArchivedGenerationsGenerationArrayOutput) Index(i pulumi.IntInput) GetCloudcertificatesArchivedGenerationsGenerationOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetCloudcertificatesArchivedGenerationsGeneration {
+		return vs[0].([]GetCloudcertificatesArchivedGenerationsGeneration)[vs[1].(int)]
+	}).(GetCloudcertificatesArchivedGenerationsGenerationOutput)
+}
+
+type GetCloudcertificatesArchivedGenerationsGenerationAlgorithms struct {
+	// Username of the person who created the algorithm instance.
+	AlgorithmInstanceCreatedBy string `pulumi:"algorithmInstanceCreatedBy"`
+	// Time the algorithm instance was created, in RFC3339 format.
+	AlgorithmInstanceCreatedTime string `pulumi:"algorithmInstanceCreatedTime"`
+	// Unique identifier of the algorithm instance.
+	AlgorithmInstanceId int `pulumi:"algorithmInstanceId"`
+	// Username of the person who last modified the algorithm instance. Null if never modified.
+	AlgorithmInstanceModifiedBy string `pulumi:"algorithmInstanceModifiedBy"`
+	// Time the algorithm instance was last modified, in RFC3339 format. Null if never modified.
+	AlgorithmInstanceModifiedTime string `pulumi:"algorithmInstanceModifiedTime"`
+	// Status of the certificate for this key type: `CSR_READY`, `CERT_UPLOAD_PROCESSING`, `READY_FOR_USE`, or `ABANDONED`.
+	CertificateStatus string `pulumi:"certificateStatus"`
+	// Date when the CSR expires, in RFC3339 format.
+	CsrExpirationDate string `pulumi:"csrExpirationDate"`
+	// PEM-encoded certificate signing request.
+	CsrPem string `pulumi:"csrPem"`
+	// Issuer field of the signed certificate. Null until a certificate is uploaded.
 	SignedCertificateIssuer string `pulumi:"signedCertificateIssuer"`
-	// The date after which the signed certificate is no longer valid.
+	// Expiration date of the signed certificate, in RFC3339 format. Null until a certificate is uploaded.
 	SignedCertificateNotValidAfterDate string `pulumi:"signedCertificateNotValidAfterDate"`
-	// The date before which the signed certificate is not valid.
+	// Start of validity of the signed certificate, in RFC3339 format. Null until a certificate is uploaded.
 	SignedCertificateNotValidBeforeDate string `pulumi:"signedCertificateNotValidBeforeDate"`
-	// PEM-encoded signed certificate you uploaded for your selected key type.
+	// PEM-encoded signed certificate. Null until a certificate is uploaded.
 	SignedCertificatePem string `pulumi:"signedCertificatePem"`
-	// Signed certificate serial number in hex format.
+	// Serial number of the signed certificate in hex format. Null until a certificate is uploaded.
 	SignedCertificateSerialNumber string `pulumi:"signedCertificateSerialNumber"`
-	// The SHA256 fingerprint of the signed certificate.
+	// SHA-256 fingerprint of the signed certificate. Null until a certificate is uploaded.
 	SignedCertificateSha256Fingerprint string `pulumi:"signedCertificateSha256Fingerprint"`
-	// Subject fields as defined in X.509 certificates (RFC 5280).
-	Subject GetCloudcertificatesCertificatesCertificateSubject `pulumi:"subject"`
-	// The trust chain PEM content uploaded by end user.
+	// PEM-encoded trust chain uploaded alongside the signed certificate. Null if none was uploaded.
 	TrustChainPem string `pulumi:"trustChainPem"`
 }
 
-// GetCloudcertificatesCertificatesCertificateInput is an input type that accepts GetCloudcertificatesCertificatesCertificateArgs and GetCloudcertificatesCertificatesCertificateOutput values.
-// You can construct a concrete instance of `GetCloudcertificatesCertificatesCertificateInput` via:
+// GetCloudcertificatesArchivedGenerationsGenerationAlgorithmsInput is an input type that accepts GetCloudcertificatesArchivedGenerationsGenerationAlgorithmsArgs and GetCloudcertificatesArchivedGenerationsGenerationAlgorithmsOutput values.
+// You can construct a concrete instance of `GetCloudcertificatesArchivedGenerationsGenerationAlgorithmsInput` via:
 //
-//	GetCloudcertificatesCertificatesCertificateArgs{...}
-type GetCloudcertificatesCertificatesCertificateInput interface {
+//	GetCloudcertificatesArchivedGenerationsGenerationAlgorithmsArgs{...}
+type GetCloudcertificatesArchivedGenerationsGenerationAlgorithmsInput interface {
 	pulumi.Input
 
-	ToGetCloudcertificatesCertificatesCertificateOutput() GetCloudcertificatesCertificatesCertificateOutput
-	ToGetCloudcertificatesCertificatesCertificateOutputWithContext(context.Context) GetCloudcertificatesCertificatesCertificateOutput
+	ToGetCloudcertificatesArchivedGenerationsGenerationAlgorithmsOutput() GetCloudcertificatesArchivedGenerationsGenerationAlgorithmsOutput
+	ToGetCloudcertificatesArchivedGenerationsGenerationAlgorithmsOutputWithContext(context.Context) GetCloudcertificatesArchivedGenerationsGenerationAlgorithmsOutput
 }
 
-type GetCloudcertificatesCertificatesCertificateArgs struct {
-	// The account identifier associated with the certificate.
-	AccountId pulumi.StringInput `pulumi:"accountId"`
-	// The unique identifier for the certificate.
-	CertificateId pulumi.StringInput `pulumi:"certificateId"`
-	// The name of the certificate.
-	CertificateName pulumi.StringInput `pulumi:"certificateName"`
-	// The status of the certificate.
+type GetCloudcertificatesArchivedGenerationsGenerationAlgorithmsArgs struct {
+	// Username of the person who created the algorithm instance.
+	AlgorithmInstanceCreatedBy pulumi.StringInput `pulumi:"algorithmInstanceCreatedBy"`
+	// Time the algorithm instance was created, in RFC3339 format.
+	AlgorithmInstanceCreatedTime pulumi.StringInput `pulumi:"algorithmInstanceCreatedTime"`
+	// Unique identifier of the algorithm instance.
+	AlgorithmInstanceId pulumi.IntInput `pulumi:"algorithmInstanceId"`
+	// Username of the person who last modified the algorithm instance. Null if never modified.
+	AlgorithmInstanceModifiedBy pulumi.StringInput `pulumi:"algorithmInstanceModifiedBy"`
+	// Time the algorithm instance was last modified, in RFC3339 format. Null if never modified.
+	AlgorithmInstanceModifiedTime pulumi.StringInput `pulumi:"algorithmInstanceModifiedTime"`
+	// Status of the certificate for this key type: `CSR_READY`, `CERT_UPLOAD_PROCESSING`, `READY_FOR_USE`, or `ABANDONED`.
 	CertificateStatus pulumi.StringInput `pulumi:"certificateStatus"`
-	// The type of the certificate.
-	CertificateType pulumi.StringInput `pulumi:"certificateType"`
-	// The contract identifier associated with the certificate.
-	ContractId pulumi.StringInput `pulumi:"contractId"`
-	// The user who created the certificate.
-	CreatedBy pulumi.StringInput `pulumi:"createdBy"`
-	// The date when the certificate was created.
-	CreatedDate pulumi.StringInput `pulumi:"createdDate"`
-	// The expiration date of the CSR.
+	// Date when the CSR expires, in RFC3339 format.
 	CsrExpirationDate pulumi.StringInput `pulumi:"csrExpirationDate"`
-	// PEM-encoded certificate signing request (CSR) generated by Akamai for your selected key type.
+	// PEM-encoded certificate signing request.
 	CsrPem pulumi.StringInput `pulumi:"csrPem"`
-	// The geographic network class of the certificate.
-	GeoClass pulumi.StringInput `pulumi:"geoClass"`
-	// Size of the key used in the certificate signing request (CSR) in bits.
-	KeySize pulumi.StringInput `pulumi:"keySize"`
-	// The key type of the algorithm used in the certificate signing request (CSR).
-	KeyType pulumi.StringInput `pulumi:"keyType"`
-	// The user who last modified the certificate.
-	ModifiedBy pulumi.StringInput `pulumi:"modifiedBy"`
-	// The date when the certificate was last modified.
-	ModifiedDate pulumi.StringInput `pulumi:"modifiedDate"`
-	// The list of SAN (Subject Alternative Name) domains included in the certificate.
-	Sans pulumi.StringArrayInput `pulumi:"sans"`
-	// The secure network associated with the certificate.
-	SecureNetwork pulumi.StringInput `pulumi:"secureNetwork"`
-	// The issuer of the signed certificate.
+	// Issuer field of the signed certificate. Null until a certificate is uploaded.
 	SignedCertificateIssuer pulumi.StringInput `pulumi:"signedCertificateIssuer"`
-	// The date after which the signed certificate is no longer valid.
+	// Expiration date of the signed certificate, in RFC3339 format. Null until a certificate is uploaded.
 	SignedCertificateNotValidAfterDate pulumi.StringInput `pulumi:"signedCertificateNotValidAfterDate"`
-	// The date before which the signed certificate is not valid.
+	// Start of validity of the signed certificate, in RFC3339 format. Null until a certificate is uploaded.
 	SignedCertificateNotValidBeforeDate pulumi.StringInput `pulumi:"signedCertificateNotValidBeforeDate"`
-	// PEM-encoded signed certificate you uploaded for your selected key type.
+	// PEM-encoded signed certificate. Null until a certificate is uploaded.
 	SignedCertificatePem pulumi.StringInput `pulumi:"signedCertificatePem"`
-	// Signed certificate serial number in hex format.
+	// Serial number of the signed certificate in hex format. Null until a certificate is uploaded.
 	SignedCertificateSerialNumber pulumi.StringInput `pulumi:"signedCertificateSerialNumber"`
-	// The SHA256 fingerprint of the signed certificate.
+	// SHA-256 fingerprint of the signed certificate. Null until a certificate is uploaded.
 	SignedCertificateSha256Fingerprint pulumi.StringInput `pulumi:"signedCertificateSha256Fingerprint"`
-	// Subject fields as defined in X.509 certificates (RFC 5280).
-	Subject GetCloudcertificatesCertificatesCertificateSubjectInput `pulumi:"subject"`
-	// The trust chain PEM content uploaded by end user.
+	// PEM-encoded trust chain uploaded alongside the signed certificate. Null if none was uploaded.
 	TrustChainPem pulumi.StringInput `pulumi:"trustChainPem"`
 }
 
-func (GetCloudcertificatesCertificatesCertificateArgs) ElementType() reflect.Type {
-	return reflect.TypeOf((*GetCloudcertificatesCertificatesCertificate)(nil)).Elem()
+func (GetCloudcertificatesArchivedGenerationsGenerationAlgorithmsArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetCloudcertificatesArchivedGenerationsGenerationAlgorithms)(nil)).Elem()
 }
 
-func (i GetCloudcertificatesCertificatesCertificateArgs) ToGetCloudcertificatesCertificatesCertificateOutput() GetCloudcertificatesCertificatesCertificateOutput {
-	return i.ToGetCloudcertificatesCertificatesCertificateOutputWithContext(context.Background())
+func (i GetCloudcertificatesArchivedGenerationsGenerationAlgorithmsArgs) ToGetCloudcertificatesArchivedGenerationsGenerationAlgorithmsOutput() GetCloudcertificatesArchivedGenerationsGenerationAlgorithmsOutput {
+	return i.ToGetCloudcertificatesArchivedGenerationsGenerationAlgorithmsOutputWithContext(context.Background())
 }
 
-func (i GetCloudcertificatesCertificatesCertificateArgs) ToGetCloudcertificatesCertificatesCertificateOutputWithContext(ctx context.Context) GetCloudcertificatesCertificatesCertificateOutput {
-	return pulumi.ToOutputWithContext(ctx, i).(GetCloudcertificatesCertificatesCertificateOutput)
+func (i GetCloudcertificatesArchivedGenerationsGenerationAlgorithmsArgs) ToGetCloudcertificatesArchivedGenerationsGenerationAlgorithmsOutputWithContext(ctx context.Context) GetCloudcertificatesArchivedGenerationsGenerationAlgorithmsOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetCloudcertificatesArchivedGenerationsGenerationAlgorithmsOutput)
 }
 
-// GetCloudcertificatesCertificatesCertificateArrayInput is an input type that accepts GetCloudcertificatesCertificatesCertificateArray and GetCloudcertificatesCertificatesCertificateArrayOutput values.
-// You can construct a concrete instance of `GetCloudcertificatesCertificatesCertificateArrayInput` via:
+// GetCloudcertificatesArchivedGenerationsGenerationAlgorithmsMapInput is an input type that accepts GetCloudcertificatesArchivedGenerationsGenerationAlgorithmsMap and GetCloudcertificatesArchivedGenerationsGenerationAlgorithmsMapOutput values.
+// You can construct a concrete instance of `GetCloudcertificatesArchivedGenerationsGenerationAlgorithmsMapInput` via:
 //
-//	GetCloudcertificatesCertificatesCertificateArray{ GetCloudcertificatesCertificatesCertificateArgs{...} }
-type GetCloudcertificatesCertificatesCertificateArrayInput interface {
+//	GetCloudcertificatesArchivedGenerationsGenerationAlgorithmsMap{ "key": GetCloudcertificatesArchivedGenerationsGenerationAlgorithmsArgs{...} }
+type GetCloudcertificatesArchivedGenerationsGenerationAlgorithmsMapInput interface {
 	pulumi.Input
 
-	ToGetCloudcertificatesCertificatesCertificateArrayOutput() GetCloudcertificatesCertificatesCertificateArrayOutput
-	ToGetCloudcertificatesCertificatesCertificateArrayOutputWithContext(context.Context) GetCloudcertificatesCertificatesCertificateArrayOutput
+	ToGetCloudcertificatesArchivedGenerationsGenerationAlgorithmsMapOutput() GetCloudcertificatesArchivedGenerationsGenerationAlgorithmsMapOutput
+	ToGetCloudcertificatesArchivedGenerationsGenerationAlgorithmsMapOutputWithContext(context.Context) GetCloudcertificatesArchivedGenerationsGenerationAlgorithmsMapOutput
 }
 
-type GetCloudcertificatesCertificatesCertificateArray []GetCloudcertificatesCertificatesCertificateInput
+type GetCloudcertificatesArchivedGenerationsGenerationAlgorithmsMap map[string]GetCloudcertificatesArchivedGenerationsGenerationAlgorithmsInput
 
-func (GetCloudcertificatesCertificatesCertificateArray) ElementType() reflect.Type {
-	return reflect.TypeOf((*[]GetCloudcertificatesCertificatesCertificate)(nil)).Elem()
+func (GetCloudcertificatesArchivedGenerationsGenerationAlgorithmsMap) ElementType() reflect.Type {
+	return reflect.TypeOf((*map[string]GetCloudcertificatesArchivedGenerationsGenerationAlgorithms)(nil)).Elem()
 }
 
-func (i GetCloudcertificatesCertificatesCertificateArray) ToGetCloudcertificatesCertificatesCertificateArrayOutput() GetCloudcertificatesCertificatesCertificateArrayOutput {
-	return i.ToGetCloudcertificatesCertificatesCertificateArrayOutputWithContext(context.Background())
+func (i GetCloudcertificatesArchivedGenerationsGenerationAlgorithmsMap) ToGetCloudcertificatesArchivedGenerationsGenerationAlgorithmsMapOutput() GetCloudcertificatesArchivedGenerationsGenerationAlgorithmsMapOutput {
+	return i.ToGetCloudcertificatesArchivedGenerationsGenerationAlgorithmsMapOutputWithContext(context.Background())
 }
 
-func (i GetCloudcertificatesCertificatesCertificateArray) ToGetCloudcertificatesCertificatesCertificateArrayOutputWithContext(ctx context.Context) GetCloudcertificatesCertificatesCertificateArrayOutput {
-	return pulumi.ToOutputWithContext(ctx, i).(GetCloudcertificatesCertificatesCertificateArrayOutput)
+func (i GetCloudcertificatesArchivedGenerationsGenerationAlgorithmsMap) ToGetCloudcertificatesArchivedGenerationsGenerationAlgorithmsMapOutputWithContext(ctx context.Context) GetCloudcertificatesArchivedGenerationsGenerationAlgorithmsMapOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetCloudcertificatesArchivedGenerationsGenerationAlgorithmsMapOutput)
 }
 
-type GetCloudcertificatesCertificatesCertificateOutput struct{ *pulumi.OutputState }
+type GetCloudcertificatesArchivedGenerationsGenerationAlgorithmsOutput struct{ *pulumi.OutputState }
 
-func (GetCloudcertificatesCertificatesCertificateOutput) ElementType() reflect.Type {
-	return reflect.TypeOf((*GetCloudcertificatesCertificatesCertificate)(nil)).Elem()
+func (GetCloudcertificatesArchivedGenerationsGenerationAlgorithmsOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetCloudcertificatesArchivedGenerationsGenerationAlgorithms)(nil)).Elem()
 }
 
-func (o GetCloudcertificatesCertificatesCertificateOutput) ToGetCloudcertificatesCertificatesCertificateOutput() GetCloudcertificatesCertificatesCertificateOutput {
+func (o GetCloudcertificatesArchivedGenerationsGenerationAlgorithmsOutput) ToGetCloudcertificatesArchivedGenerationsGenerationAlgorithmsOutput() GetCloudcertificatesArchivedGenerationsGenerationAlgorithmsOutput {
 	return o
 }
 
-func (o GetCloudcertificatesCertificatesCertificateOutput) ToGetCloudcertificatesCertificatesCertificateOutputWithContext(ctx context.Context) GetCloudcertificatesCertificatesCertificateOutput {
+func (o GetCloudcertificatesArchivedGenerationsGenerationAlgorithmsOutput) ToGetCloudcertificatesArchivedGenerationsGenerationAlgorithmsOutputWithContext(ctx context.Context) GetCloudcertificatesArchivedGenerationsGenerationAlgorithmsOutput {
 	return o
 }
 
-// The account identifier associated with the certificate.
-func (o GetCloudcertificatesCertificatesCertificateOutput) AccountId() pulumi.StringOutput {
-	return o.ApplyT(func(v GetCloudcertificatesCertificatesCertificate) string { return v.AccountId }).(pulumi.StringOutput)
+// Username of the person who created the algorithm instance.
+func (o GetCloudcertificatesArchivedGenerationsGenerationAlgorithmsOutput) AlgorithmInstanceCreatedBy() pulumi.StringOutput {
+	return o.ApplyT(func(v GetCloudcertificatesArchivedGenerationsGenerationAlgorithms) string {
+		return v.AlgorithmInstanceCreatedBy
+	}).(pulumi.StringOutput)
 }
 
-// The unique identifier for the certificate.
-func (o GetCloudcertificatesCertificatesCertificateOutput) CertificateId() pulumi.StringOutput {
-	return o.ApplyT(func(v GetCloudcertificatesCertificatesCertificate) string { return v.CertificateId }).(pulumi.StringOutput)
+// Time the algorithm instance was created, in RFC3339 format.
+func (o GetCloudcertificatesArchivedGenerationsGenerationAlgorithmsOutput) AlgorithmInstanceCreatedTime() pulumi.StringOutput {
+	return o.ApplyT(func(v GetCloudcertificatesArchivedGenerationsGenerationAlgorithms) string {
+		return v.AlgorithmInstanceCreatedTime
+	}).(pulumi.StringOutput)
 }
 
-// The name of the certificate.
-func (o GetCloudcertificatesCertificatesCertificateOutput) CertificateName() pulumi.StringOutput {
-	return o.ApplyT(func(v GetCloudcertificatesCertificatesCertificate) string { return v.CertificateName }).(pulumi.StringOutput)
+// Unique identifier of the algorithm instance.
+func (o GetCloudcertificatesArchivedGenerationsGenerationAlgorithmsOutput) AlgorithmInstanceId() pulumi.IntOutput {
+	return o.ApplyT(func(v GetCloudcertificatesArchivedGenerationsGenerationAlgorithms) int { return v.AlgorithmInstanceId }).(pulumi.IntOutput)
 }
 
-// The status of the certificate.
-func (o GetCloudcertificatesCertificatesCertificateOutput) CertificateStatus() pulumi.StringOutput {
-	return o.ApplyT(func(v GetCloudcertificatesCertificatesCertificate) string { return v.CertificateStatus }).(pulumi.StringOutput)
+// Username of the person who last modified the algorithm instance. Null if never modified.
+func (o GetCloudcertificatesArchivedGenerationsGenerationAlgorithmsOutput) AlgorithmInstanceModifiedBy() pulumi.StringOutput {
+	return o.ApplyT(func(v GetCloudcertificatesArchivedGenerationsGenerationAlgorithms) string {
+		return v.AlgorithmInstanceModifiedBy
+	}).(pulumi.StringOutput)
 }
 
-// The type of the certificate.
-func (o GetCloudcertificatesCertificatesCertificateOutput) CertificateType() pulumi.StringOutput {
-	return o.ApplyT(func(v GetCloudcertificatesCertificatesCertificate) string { return v.CertificateType }).(pulumi.StringOutput)
+// Time the algorithm instance was last modified, in RFC3339 format. Null if never modified.
+func (o GetCloudcertificatesArchivedGenerationsGenerationAlgorithmsOutput) AlgorithmInstanceModifiedTime() pulumi.StringOutput {
+	return o.ApplyT(func(v GetCloudcertificatesArchivedGenerationsGenerationAlgorithms) string {
+		return v.AlgorithmInstanceModifiedTime
+	}).(pulumi.StringOutput)
 }
 
-// The contract identifier associated with the certificate.
-func (o GetCloudcertificatesCertificatesCertificateOutput) ContractId() pulumi.StringOutput {
-	return o.ApplyT(func(v GetCloudcertificatesCertificatesCertificate) string { return v.ContractId }).(pulumi.StringOutput)
+// Status of the certificate for this key type: `CSR_READY`, `CERT_UPLOAD_PROCESSING`, `READY_FOR_USE`, or `ABANDONED`.
+func (o GetCloudcertificatesArchivedGenerationsGenerationAlgorithmsOutput) CertificateStatus() pulumi.StringOutput {
+	return o.ApplyT(func(v GetCloudcertificatesArchivedGenerationsGenerationAlgorithms) string { return v.CertificateStatus }).(pulumi.StringOutput)
 }
 
-// The user who created the certificate.
-func (o GetCloudcertificatesCertificatesCertificateOutput) CreatedBy() pulumi.StringOutput {
-	return o.ApplyT(func(v GetCloudcertificatesCertificatesCertificate) string { return v.CreatedBy }).(pulumi.StringOutput)
+// Date when the CSR expires, in RFC3339 format.
+func (o GetCloudcertificatesArchivedGenerationsGenerationAlgorithmsOutput) CsrExpirationDate() pulumi.StringOutput {
+	return o.ApplyT(func(v GetCloudcertificatesArchivedGenerationsGenerationAlgorithms) string { return v.CsrExpirationDate }).(pulumi.StringOutput)
 }
 
-// The date when the certificate was created.
-func (o GetCloudcertificatesCertificatesCertificateOutput) CreatedDate() pulumi.StringOutput {
-	return o.ApplyT(func(v GetCloudcertificatesCertificatesCertificate) string { return v.CreatedDate }).(pulumi.StringOutput)
+// PEM-encoded certificate signing request.
+func (o GetCloudcertificatesArchivedGenerationsGenerationAlgorithmsOutput) CsrPem() pulumi.StringOutput {
+	return o.ApplyT(func(v GetCloudcertificatesArchivedGenerationsGenerationAlgorithms) string { return v.CsrPem }).(pulumi.StringOutput)
 }
 
-// The expiration date of the CSR.
-func (o GetCloudcertificatesCertificatesCertificateOutput) CsrExpirationDate() pulumi.StringOutput {
-	return o.ApplyT(func(v GetCloudcertificatesCertificatesCertificate) string { return v.CsrExpirationDate }).(pulumi.StringOutput)
+// Issuer field of the signed certificate. Null until a certificate is uploaded.
+func (o GetCloudcertificatesArchivedGenerationsGenerationAlgorithmsOutput) SignedCertificateIssuer() pulumi.StringOutput {
+	return o.ApplyT(func(v GetCloudcertificatesArchivedGenerationsGenerationAlgorithms) string {
+		return v.SignedCertificateIssuer
+	}).(pulumi.StringOutput)
 }
 
-// PEM-encoded certificate signing request (CSR) generated by Akamai for your selected key type.
-func (o GetCloudcertificatesCertificatesCertificateOutput) CsrPem() pulumi.StringOutput {
-	return o.ApplyT(func(v GetCloudcertificatesCertificatesCertificate) string { return v.CsrPem }).(pulumi.StringOutput)
-}
-
-// The geographic network class of the certificate.
-func (o GetCloudcertificatesCertificatesCertificateOutput) GeoClass() pulumi.StringOutput {
-	return o.ApplyT(func(v GetCloudcertificatesCertificatesCertificate) string { return v.GeoClass }).(pulumi.StringOutput)
-}
-
-// Size of the key used in the certificate signing request (CSR) in bits.
-func (o GetCloudcertificatesCertificatesCertificateOutput) KeySize() pulumi.StringOutput {
-	return o.ApplyT(func(v GetCloudcertificatesCertificatesCertificate) string { return v.KeySize }).(pulumi.StringOutput)
-}
-
-// The key type of the algorithm used in the certificate signing request (CSR).
-func (o GetCloudcertificatesCertificatesCertificateOutput) KeyType() pulumi.StringOutput {
-	return o.ApplyT(func(v GetCloudcertificatesCertificatesCertificate) string { return v.KeyType }).(pulumi.StringOutput)
-}
-
-// The user who last modified the certificate.
-func (o GetCloudcertificatesCertificatesCertificateOutput) ModifiedBy() pulumi.StringOutput {
-	return o.ApplyT(func(v GetCloudcertificatesCertificatesCertificate) string { return v.ModifiedBy }).(pulumi.StringOutput)
-}
-
-// The date when the certificate was last modified.
-func (o GetCloudcertificatesCertificatesCertificateOutput) ModifiedDate() pulumi.StringOutput {
-	return o.ApplyT(func(v GetCloudcertificatesCertificatesCertificate) string { return v.ModifiedDate }).(pulumi.StringOutput)
-}
-
-// The list of SAN (Subject Alternative Name) domains included in the certificate.
-func (o GetCloudcertificatesCertificatesCertificateOutput) Sans() pulumi.StringArrayOutput {
-	return o.ApplyT(func(v GetCloudcertificatesCertificatesCertificate) []string { return v.Sans }).(pulumi.StringArrayOutput)
-}
-
-// The secure network associated with the certificate.
-func (o GetCloudcertificatesCertificatesCertificateOutput) SecureNetwork() pulumi.StringOutput {
-	return o.ApplyT(func(v GetCloudcertificatesCertificatesCertificate) string { return v.SecureNetwork }).(pulumi.StringOutput)
-}
-
-// The issuer of the signed certificate.
-func (o GetCloudcertificatesCertificatesCertificateOutput) SignedCertificateIssuer() pulumi.StringOutput {
-	return o.ApplyT(func(v GetCloudcertificatesCertificatesCertificate) string { return v.SignedCertificateIssuer }).(pulumi.StringOutput)
-}
-
-// The date after which the signed certificate is no longer valid.
-func (o GetCloudcertificatesCertificatesCertificateOutput) SignedCertificateNotValidAfterDate() pulumi.StringOutput {
-	return o.ApplyT(func(v GetCloudcertificatesCertificatesCertificate) string {
+// Expiration date of the signed certificate, in RFC3339 format. Null until a certificate is uploaded.
+func (o GetCloudcertificatesArchivedGenerationsGenerationAlgorithmsOutput) SignedCertificateNotValidAfterDate() pulumi.StringOutput {
+	return o.ApplyT(func(v GetCloudcertificatesArchivedGenerationsGenerationAlgorithms) string {
 		return v.SignedCertificateNotValidAfterDate
 	}).(pulumi.StringOutput)
 }
 
-// The date before which the signed certificate is not valid.
-func (o GetCloudcertificatesCertificatesCertificateOutput) SignedCertificateNotValidBeforeDate() pulumi.StringOutput {
-	return o.ApplyT(func(v GetCloudcertificatesCertificatesCertificate) string {
+// Start of validity of the signed certificate, in RFC3339 format. Null until a certificate is uploaded.
+func (o GetCloudcertificatesArchivedGenerationsGenerationAlgorithmsOutput) SignedCertificateNotValidBeforeDate() pulumi.StringOutput {
+	return o.ApplyT(func(v GetCloudcertificatesArchivedGenerationsGenerationAlgorithms) string {
 		return v.SignedCertificateNotValidBeforeDate
 	}).(pulumi.StringOutput)
 }
 
-// PEM-encoded signed certificate you uploaded for your selected key type.
-func (o GetCloudcertificatesCertificatesCertificateOutput) SignedCertificatePem() pulumi.StringOutput {
-	return o.ApplyT(func(v GetCloudcertificatesCertificatesCertificate) string { return v.SignedCertificatePem }).(pulumi.StringOutput)
+// PEM-encoded signed certificate. Null until a certificate is uploaded.
+func (o GetCloudcertificatesArchivedGenerationsGenerationAlgorithmsOutput) SignedCertificatePem() pulumi.StringOutput {
+	return o.ApplyT(func(v GetCloudcertificatesArchivedGenerationsGenerationAlgorithms) string {
+		return v.SignedCertificatePem
+	}).(pulumi.StringOutput)
 }
 
-// Signed certificate serial number in hex format.
-func (o GetCloudcertificatesCertificatesCertificateOutput) SignedCertificateSerialNumber() pulumi.StringOutput {
-	return o.ApplyT(func(v GetCloudcertificatesCertificatesCertificate) string { return v.SignedCertificateSerialNumber }).(pulumi.StringOutput)
+// Serial number of the signed certificate in hex format. Null until a certificate is uploaded.
+func (o GetCloudcertificatesArchivedGenerationsGenerationAlgorithmsOutput) SignedCertificateSerialNumber() pulumi.StringOutput {
+	return o.ApplyT(func(v GetCloudcertificatesArchivedGenerationsGenerationAlgorithms) string {
+		return v.SignedCertificateSerialNumber
+	}).(pulumi.StringOutput)
 }
 
-// The SHA256 fingerprint of the signed certificate.
-func (o GetCloudcertificatesCertificatesCertificateOutput) SignedCertificateSha256Fingerprint() pulumi.StringOutput {
-	return o.ApplyT(func(v GetCloudcertificatesCertificatesCertificate) string {
+// SHA-256 fingerprint of the signed certificate. Null until a certificate is uploaded.
+func (o GetCloudcertificatesArchivedGenerationsGenerationAlgorithmsOutput) SignedCertificateSha256Fingerprint() pulumi.StringOutput {
+	return o.ApplyT(func(v GetCloudcertificatesArchivedGenerationsGenerationAlgorithms) string {
 		return v.SignedCertificateSha256Fingerprint
 	}).(pulumi.StringOutput)
 }
 
-// Subject fields as defined in X.509 certificates (RFC 5280).
-func (o GetCloudcertificatesCertificatesCertificateOutput) Subject() GetCloudcertificatesCertificatesCertificateSubjectOutput {
-	return o.ApplyT(func(v GetCloudcertificatesCertificatesCertificate) GetCloudcertificatesCertificatesCertificateSubject {
-		return v.Subject
-	}).(GetCloudcertificatesCertificatesCertificateSubjectOutput)
+// PEM-encoded trust chain uploaded alongside the signed certificate. Null if none was uploaded.
+func (o GetCloudcertificatesArchivedGenerationsGenerationAlgorithmsOutput) TrustChainPem() pulumi.StringOutput {
+	return o.ApplyT(func(v GetCloudcertificatesArchivedGenerationsGenerationAlgorithms) string { return v.TrustChainPem }).(pulumi.StringOutput)
 }
 
-// The trust chain PEM content uploaded by end user.
-func (o GetCloudcertificatesCertificatesCertificateOutput) TrustChainPem() pulumi.StringOutput {
-	return o.ApplyT(func(v GetCloudcertificatesCertificatesCertificate) string { return v.TrustChainPem }).(pulumi.StringOutput)
+type GetCloudcertificatesArchivedGenerationsGenerationAlgorithmsMapOutput struct{ *pulumi.OutputState }
+
+func (GetCloudcertificatesArchivedGenerationsGenerationAlgorithmsMapOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*map[string]GetCloudcertificatesArchivedGenerationsGenerationAlgorithms)(nil)).Elem()
 }
 
-type GetCloudcertificatesCertificatesCertificateArrayOutput struct{ *pulumi.OutputState }
-
-func (GetCloudcertificatesCertificatesCertificateArrayOutput) ElementType() reflect.Type {
-	return reflect.TypeOf((*[]GetCloudcertificatesCertificatesCertificate)(nil)).Elem()
-}
-
-func (o GetCloudcertificatesCertificatesCertificateArrayOutput) ToGetCloudcertificatesCertificatesCertificateArrayOutput() GetCloudcertificatesCertificatesCertificateArrayOutput {
+func (o GetCloudcertificatesArchivedGenerationsGenerationAlgorithmsMapOutput) ToGetCloudcertificatesArchivedGenerationsGenerationAlgorithmsMapOutput() GetCloudcertificatesArchivedGenerationsGenerationAlgorithmsMapOutput {
 	return o
 }
 
-func (o GetCloudcertificatesCertificatesCertificateArrayOutput) ToGetCloudcertificatesCertificatesCertificateArrayOutputWithContext(ctx context.Context) GetCloudcertificatesCertificatesCertificateArrayOutput {
+func (o GetCloudcertificatesArchivedGenerationsGenerationAlgorithmsMapOutput) ToGetCloudcertificatesArchivedGenerationsGenerationAlgorithmsMapOutputWithContext(ctx context.Context) GetCloudcertificatesArchivedGenerationsGenerationAlgorithmsMapOutput {
 	return o
 }
 
-func (o GetCloudcertificatesCertificatesCertificateArrayOutput) Index(i pulumi.IntInput) GetCloudcertificatesCertificatesCertificateOutput {
-	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetCloudcertificatesCertificatesCertificate {
-		return vs[0].([]GetCloudcertificatesCertificatesCertificate)[vs[1].(int)]
-	}).(GetCloudcertificatesCertificatesCertificateOutput)
+func (o GetCloudcertificatesArchivedGenerationsGenerationAlgorithmsMapOutput) MapIndex(k pulumi.StringInput) GetCloudcertificatesArchivedGenerationsGenerationAlgorithmsOutput {
+	return pulumi.All(o, k).ApplyT(func(vs []interface{}) GetCloudcertificatesArchivedGenerationsGenerationAlgorithms {
+		return vs[0].(map[string]GetCloudcertificatesArchivedGenerationsGenerationAlgorithms)[vs[1].(string)]
+	}).(GetCloudcertificatesArchivedGenerationsGenerationAlgorithmsOutput)
 }
 
-type GetCloudcertificatesCertificatesCertificateSubject struct {
-	// Fully qualified domain name (FQDN) or other name associated with the subject.
+type GetCloudcertificatesBindingsBinding struct {
+	// Whether the binding is currently active.
+	Active bool `pulumi:"active"`
+	// The bound hostname.
+	Hostname string `pulumi:"hostname"`
+	// The networks to which the hostname is bound, e.g., `STAGING`, `PRODUCTION`, or both.
+	Networks []string `pulumi:"networks"`
+}
+
+// GetCloudcertificatesBindingsBindingInput is an input type that accepts GetCloudcertificatesBindingsBindingArgs and GetCloudcertificatesBindingsBindingOutput values.
+// You can construct a concrete instance of `GetCloudcertificatesBindingsBindingInput` via:
+//
+//	GetCloudcertificatesBindingsBindingArgs{...}
+type GetCloudcertificatesBindingsBindingInput interface {
+	pulumi.Input
+
+	ToGetCloudcertificatesBindingsBindingOutput() GetCloudcertificatesBindingsBindingOutput
+	ToGetCloudcertificatesBindingsBindingOutputWithContext(context.Context) GetCloudcertificatesBindingsBindingOutput
+}
+
+type GetCloudcertificatesBindingsBindingArgs struct {
+	// Whether the binding is currently active.
+	Active pulumi.BoolInput `pulumi:"active"`
+	// The bound hostname.
+	Hostname pulumi.StringInput `pulumi:"hostname"`
+	// The networks to which the hostname is bound, e.g., `STAGING`, `PRODUCTION`, or both.
+	Networks pulumi.StringArrayInput `pulumi:"networks"`
+}
+
+func (GetCloudcertificatesBindingsBindingArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetCloudcertificatesBindingsBinding)(nil)).Elem()
+}
+
+func (i GetCloudcertificatesBindingsBindingArgs) ToGetCloudcertificatesBindingsBindingOutput() GetCloudcertificatesBindingsBindingOutput {
+	return i.ToGetCloudcertificatesBindingsBindingOutputWithContext(context.Background())
+}
+
+func (i GetCloudcertificatesBindingsBindingArgs) ToGetCloudcertificatesBindingsBindingOutputWithContext(ctx context.Context) GetCloudcertificatesBindingsBindingOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetCloudcertificatesBindingsBindingOutput)
+}
+
+// GetCloudcertificatesBindingsBindingArrayInput is an input type that accepts GetCloudcertificatesBindingsBindingArray and GetCloudcertificatesBindingsBindingArrayOutput values.
+// You can construct a concrete instance of `GetCloudcertificatesBindingsBindingArrayInput` via:
+//
+//	GetCloudcertificatesBindingsBindingArray{ GetCloudcertificatesBindingsBindingArgs{...} }
+type GetCloudcertificatesBindingsBindingArrayInput interface {
+	pulumi.Input
+
+	ToGetCloudcertificatesBindingsBindingArrayOutput() GetCloudcertificatesBindingsBindingArrayOutput
+	ToGetCloudcertificatesBindingsBindingArrayOutputWithContext(context.Context) GetCloudcertificatesBindingsBindingArrayOutput
+}
+
+type GetCloudcertificatesBindingsBindingArray []GetCloudcertificatesBindingsBindingInput
+
+func (GetCloudcertificatesBindingsBindingArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetCloudcertificatesBindingsBinding)(nil)).Elem()
+}
+
+func (i GetCloudcertificatesBindingsBindingArray) ToGetCloudcertificatesBindingsBindingArrayOutput() GetCloudcertificatesBindingsBindingArrayOutput {
+	return i.ToGetCloudcertificatesBindingsBindingArrayOutputWithContext(context.Background())
+}
+
+func (i GetCloudcertificatesBindingsBindingArray) ToGetCloudcertificatesBindingsBindingArrayOutputWithContext(ctx context.Context) GetCloudcertificatesBindingsBindingArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetCloudcertificatesBindingsBindingArrayOutput)
+}
+
+type GetCloudcertificatesBindingsBindingOutput struct{ *pulumi.OutputState }
+
+func (GetCloudcertificatesBindingsBindingOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetCloudcertificatesBindingsBinding)(nil)).Elem()
+}
+
+func (o GetCloudcertificatesBindingsBindingOutput) ToGetCloudcertificatesBindingsBindingOutput() GetCloudcertificatesBindingsBindingOutput {
+	return o
+}
+
+func (o GetCloudcertificatesBindingsBindingOutput) ToGetCloudcertificatesBindingsBindingOutputWithContext(ctx context.Context) GetCloudcertificatesBindingsBindingOutput {
+	return o
+}
+
+// Whether the binding is currently active.
+func (o GetCloudcertificatesBindingsBindingOutput) Active() pulumi.BoolOutput {
+	return o.ApplyT(func(v GetCloudcertificatesBindingsBinding) bool { return v.Active }).(pulumi.BoolOutput)
+}
+
+// The bound hostname.
+func (o GetCloudcertificatesBindingsBindingOutput) Hostname() pulumi.StringOutput {
+	return o.ApplyT(func(v GetCloudcertificatesBindingsBinding) string { return v.Hostname }).(pulumi.StringOutput)
+}
+
+// The networks to which the hostname is bound, e.g., `STAGING`, `PRODUCTION`, or both.
+func (o GetCloudcertificatesBindingsBindingOutput) Networks() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v GetCloudcertificatesBindingsBinding) []string { return v.Networks }).(pulumi.StringArrayOutput)
+}
+
+type GetCloudcertificatesBindingsBindingArrayOutput struct{ *pulumi.OutputState }
+
+func (GetCloudcertificatesBindingsBindingArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetCloudcertificatesBindingsBinding)(nil)).Elem()
+}
+
+func (o GetCloudcertificatesBindingsBindingArrayOutput) ToGetCloudcertificatesBindingsBindingArrayOutput() GetCloudcertificatesBindingsBindingArrayOutput {
+	return o
+}
+
+func (o GetCloudcertificatesBindingsBindingArrayOutput) ToGetCloudcertificatesBindingsBindingArrayOutputWithContext(ctx context.Context) GetCloudcertificatesBindingsBindingArrayOutput {
+	return o
+}
+
+func (o GetCloudcertificatesBindingsBindingArrayOutput) Index(i pulumi.IntInput) GetCloudcertificatesBindingsBindingOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetCloudcertificatesBindingsBinding {
+		return vs[0].([]GetCloudcertificatesBindingsBinding)[vs[1].(int)]
+	}).(GetCloudcertificatesBindingsBindingOutput)
+}
+
+type GetCloudcertificatesGenerationAlgorithms struct {
+	// Username of the person who created the algorithm instance.
+	AlgorithmInstanceCreatedBy string `pulumi:"algorithmInstanceCreatedBy"`
+	// Time the algorithm instance was created, in RFC3339 format.
+	AlgorithmInstanceCreatedTime string `pulumi:"algorithmInstanceCreatedTime"`
+	// Unique identifier of the algorithm instance.
+	AlgorithmInstanceId int `pulumi:"algorithmInstanceId"`
+	// Username of the person who last modified the algorithm instance. Null if never modified.
+	AlgorithmInstanceModifiedBy string `pulumi:"algorithmInstanceModifiedBy"`
+	// Time the algorithm instance was last modified, in RFC3339 format. Null if never modified.
+	AlgorithmInstanceModifiedTime string `pulumi:"algorithmInstanceModifiedTime"`
+	// Status of the certificate for this key type: `CSR_READY`, `CERT_UPLOAD_PROCESSING`, `READY_FOR_USE`, or `ABANDONED`.
+	CertificateStatus string `pulumi:"certificateStatus"`
+	// Date when the CSR expires, in RFC3339 format.
+	CsrExpirationDate string `pulumi:"csrExpirationDate"`
+	// PEM-encoded certificate signing request.
+	CsrPem string `pulumi:"csrPem"`
+	// Issuer field of the signed certificate. Null until a certificate is uploaded.
+	SignedCertificateIssuer string `pulumi:"signedCertificateIssuer"`
+	// Expiration date of the signed certificate, in RFC3339 format. Null until a certificate is uploaded.
+	SignedCertificateNotValidAfterDate string `pulumi:"signedCertificateNotValidAfterDate"`
+	// Start of validity of the signed certificate, in RFC3339 format. Null until a certificate is uploaded.
+	SignedCertificateNotValidBeforeDate string `pulumi:"signedCertificateNotValidBeforeDate"`
+	// PEM-encoded signed certificate. Null until a certificate is uploaded.
+	SignedCertificatePem string `pulumi:"signedCertificatePem"`
+	// Serial number of the signed certificate in hex format. Null until a certificate is uploaded.
+	SignedCertificateSerialNumber string `pulumi:"signedCertificateSerialNumber"`
+	// SHA-256 fingerprint of the signed certificate. Null until a certificate is uploaded.
+	SignedCertificateSha256Fingerprint string `pulumi:"signedCertificateSha256Fingerprint"`
+	// PEM-encoded trust chain uploaded alongside the signed certificate. Null if none was uploaded.
+	TrustChainPem string `pulumi:"trustChainPem"`
+}
+
+// GetCloudcertificatesGenerationAlgorithmsInput is an input type that accepts GetCloudcertificatesGenerationAlgorithmsArgs and GetCloudcertificatesGenerationAlgorithmsOutput values.
+// You can construct a concrete instance of `GetCloudcertificatesGenerationAlgorithmsInput` via:
+//
+//	GetCloudcertificatesGenerationAlgorithmsArgs{...}
+type GetCloudcertificatesGenerationAlgorithmsInput interface {
+	pulumi.Input
+
+	ToGetCloudcertificatesGenerationAlgorithmsOutput() GetCloudcertificatesGenerationAlgorithmsOutput
+	ToGetCloudcertificatesGenerationAlgorithmsOutputWithContext(context.Context) GetCloudcertificatesGenerationAlgorithmsOutput
+}
+
+type GetCloudcertificatesGenerationAlgorithmsArgs struct {
+	// Username of the person who created the algorithm instance.
+	AlgorithmInstanceCreatedBy pulumi.StringInput `pulumi:"algorithmInstanceCreatedBy"`
+	// Time the algorithm instance was created, in RFC3339 format.
+	AlgorithmInstanceCreatedTime pulumi.StringInput `pulumi:"algorithmInstanceCreatedTime"`
+	// Unique identifier of the algorithm instance.
+	AlgorithmInstanceId pulumi.IntInput `pulumi:"algorithmInstanceId"`
+	// Username of the person who last modified the algorithm instance. Null if never modified.
+	AlgorithmInstanceModifiedBy pulumi.StringInput `pulumi:"algorithmInstanceModifiedBy"`
+	// Time the algorithm instance was last modified, in RFC3339 format. Null if never modified.
+	AlgorithmInstanceModifiedTime pulumi.StringInput `pulumi:"algorithmInstanceModifiedTime"`
+	// Status of the certificate for this key type: `CSR_READY`, `CERT_UPLOAD_PROCESSING`, `READY_FOR_USE`, or `ABANDONED`.
+	CertificateStatus pulumi.StringInput `pulumi:"certificateStatus"`
+	// Date when the CSR expires, in RFC3339 format.
+	CsrExpirationDate pulumi.StringInput `pulumi:"csrExpirationDate"`
+	// PEM-encoded certificate signing request.
+	CsrPem pulumi.StringInput `pulumi:"csrPem"`
+	// Issuer field of the signed certificate. Null until a certificate is uploaded.
+	SignedCertificateIssuer pulumi.StringInput `pulumi:"signedCertificateIssuer"`
+	// Expiration date of the signed certificate, in RFC3339 format. Null until a certificate is uploaded.
+	SignedCertificateNotValidAfterDate pulumi.StringInput `pulumi:"signedCertificateNotValidAfterDate"`
+	// Start of validity of the signed certificate, in RFC3339 format. Null until a certificate is uploaded.
+	SignedCertificateNotValidBeforeDate pulumi.StringInput `pulumi:"signedCertificateNotValidBeforeDate"`
+	// PEM-encoded signed certificate. Null until a certificate is uploaded.
+	SignedCertificatePem pulumi.StringInput `pulumi:"signedCertificatePem"`
+	// Serial number of the signed certificate in hex format. Null until a certificate is uploaded.
+	SignedCertificateSerialNumber pulumi.StringInput `pulumi:"signedCertificateSerialNumber"`
+	// SHA-256 fingerprint of the signed certificate. Null until a certificate is uploaded.
+	SignedCertificateSha256Fingerprint pulumi.StringInput `pulumi:"signedCertificateSha256Fingerprint"`
+	// PEM-encoded trust chain uploaded alongside the signed certificate. Null if none was uploaded.
+	TrustChainPem pulumi.StringInput `pulumi:"trustChainPem"`
+}
+
+func (GetCloudcertificatesGenerationAlgorithmsArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetCloudcertificatesGenerationAlgorithms)(nil)).Elem()
+}
+
+func (i GetCloudcertificatesGenerationAlgorithmsArgs) ToGetCloudcertificatesGenerationAlgorithmsOutput() GetCloudcertificatesGenerationAlgorithmsOutput {
+	return i.ToGetCloudcertificatesGenerationAlgorithmsOutputWithContext(context.Background())
+}
+
+func (i GetCloudcertificatesGenerationAlgorithmsArgs) ToGetCloudcertificatesGenerationAlgorithmsOutputWithContext(ctx context.Context) GetCloudcertificatesGenerationAlgorithmsOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetCloudcertificatesGenerationAlgorithmsOutput)
+}
+
+// GetCloudcertificatesGenerationAlgorithmsMapInput is an input type that accepts GetCloudcertificatesGenerationAlgorithmsMap and GetCloudcertificatesGenerationAlgorithmsMapOutput values.
+// You can construct a concrete instance of `GetCloudcertificatesGenerationAlgorithmsMapInput` via:
+//
+//	GetCloudcertificatesGenerationAlgorithmsMap{ "key": GetCloudcertificatesGenerationAlgorithmsArgs{...} }
+type GetCloudcertificatesGenerationAlgorithmsMapInput interface {
+	pulumi.Input
+
+	ToGetCloudcertificatesGenerationAlgorithmsMapOutput() GetCloudcertificatesGenerationAlgorithmsMapOutput
+	ToGetCloudcertificatesGenerationAlgorithmsMapOutputWithContext(context.Context) GetCloudcertificatesGenerationAlgorithmsMapOutput
+}
+
+type GetCloudcertificatesGenerationAlgorithmsMap map[string]GetCloudcertificatesGenerationAlgorithmsInput
+
+func (GetCloudcertificatesGenerationAlgorithmsMap) ElementType() reflect.Type {
+	return reflect.TypeOf((*map[string]GetCloudcertificatesGenerationAlgorithms)(nil)).Elem()
+}
+
+func (i GetCloudcertificatesGenerationAlgorithmsMap) ToGetCloudcertificatesGenerationAlgorithmsMapOutput() GetCloudcertificatesGenerationAlgorithmsMapOutput {
+	return i.ToGetCloudcertificatesGenerationAlgorithmsMapOutputWithContext(context.Background())
+}
+
+func (i GetCloudcertificatesGenerationAlgorithmsMap) ToGetCloudcertificatesGenerationAlgorithmsMapOutputWithContext(ctx context.Context) GetCloudcertificatesGenerationAlgorithmsMapOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetCloudcertificatesGenerationAlgorithmsMapOutput)
+}
+
+type GetCloudcertificatesGenerationAlgorithmsOutput struct{ *pulumi.OutputState }
+
+func (GetCloudcertificatesGenerationAlgorithmsOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetCloudcertificatesGenerationAlgorithms)(nil)).Elem()
+}
+
+func (o GetCloudcertificatesGenerationAlgorithmsOutput) ToGetCloudcertificatesGenerationAlgorithmsOutput() GetCloudcertificatesGenerationAlgorithmsOutput {
+	return o
+}
+
+func (o GetCloudcertificatesGenerationAlgorithmsOutput) ToGetCloudcertificatesGenerationAlgorithmsOutputWithContext(ctx context.Context) GetCloudcertificatesGenerationAlgorithmsOutput {
+	return o
+}
+
+// Username of the person who created the algorithm instance.
+func (o GetCloudcertificatesGenerationAlgorithmsOutput) AlgorithmInstanceCreatedBy() pulumi.StringOutput {
+	return o.ApplyT(func(v GetCloudcertificatesGenerationAlgorithms) string { return v.AlgorithmInstanceCreatedBy }).(pulumi.StringOutput)
+}
+
+// Time the algorithm instance was created, in RFC3339 format.
+func (o GetCloudcertificatesGenerationAlgorithmsOutput) AlgorithmInstanceCreatedTime() pulumi.StringOutput {
+	return o.ApplyT(func(v GetCloudcertificatesGenerationAlgorithms) string { return v.AlgorithmInstanceCreatedTime }).(pulumi.StringOutput)
+}
+
+// Unique identifier of the algorithm instance.
+func (o GetCloudcertificatesGenerationAlgorithmsOutput) AlgorithmInstanceId() pulumi.IntOutput {
+	return o.ApplyT(func(v GetCloudcertificatesGenerationAlgorithms) int { return v.AlgorithmInstanceId }).(pulumi.IntOutput)
+}
+
+// Username of the person who last modified the algorithm instance. Null if never modified.
+func (o GetCloudcertificatesGenerationAlgorithmsOutput) AlgorithmInstanceModifiedBy() pulumi.StringOutput {
+	return o.ApplyT(func(v GetCloudcertificatesGenerationAlgorithms) string { return v.AlgorithmInstanceModifiedBy }).(pulumi.StringOutput)
+}
+
+// Time the algorithm instance was last modified, in RFC3339 format. Null if never modified.
+func (o GetCloudcertificatesGenerationAlgorithmsOutput) AlgorithmInstanceModifiedTime() pulumi.StringOutput {
+	return o.ApplyT(func(v GetCloudcertificatesGenerationAlgorithms) string { return v.AlgorithmInstanceModifiedTime }).(pulumi.StringOutput)
+}
+
+// Status of the certificate for this key type: `CSR_READY`, `CERT_UPLOAD_PROCESSING`, `READY_FOR_USE`, or `ABANDONED`.
+func (o GetCloudcertificatesGenerationAlgorithmsOutput) CertificateStatus() pulumi.StringOutput {
+	return o.ApplyT(func(v GetCloudcertificatesGenerationAlgorithms) string { return v.CertificateStatus }).(pulumi.StringOutput)
+}
+
+// Date when the CSR expires, in RFC3339 format.
+func (o GetCloudcertificatesGenerationAlgorithmsOutput) CsrExpirationDate() pulumi.StringOutput {
+	return o.ApplyT(func(v GetCloudcertificatesGenerationAlgorithms) string { return v.CsrExpirationDate }).(pulumi.StringOutput)
+}
+
+// PEM-encoded certificate signing request.
+func (o GetCloudcertificatesGenerationAlgorithmsOutput) CsrPem() pulumi.StringOutput {
+	return o.ApplyT(func(v GetCloudcertificatesGenerationAlgorithms) string { return v.CsrPem }).(pulumi.StringOutput)
+}
+
+// Issuer field of the signed certificate. Null until a certificate is uploaded.
+func (o GetCloudcertificatesGenerationAlgorithmsOutput) SignedCertificateIssuer() pulumi.StringOutput {
+	return o.ApplyT(func(v GetCloudcertificatesGenerationAlgorithms) string { return v.SignedCertificateIssuer }).(pulumi.StringOutput)
+}
+
+// Expiration date of the signed certificate, in RFC3339 format. Null until a certificate is uploaded.
+func (o GetCloudcertificatesGenerationAlgorithmsOutput) SignedCertificateNotValidAfterDate() pulumi.StringOutput {
+	return o.ApplyT(func(v GetCloudcertificatesGenerationAlgorithms) string { return v.SignedCertificateNotValidAfterDate }).(pulumi.StringOutput)
+}
+
+// Start of validity of the signed certificate, in RFC3339 format. Null until a certificate is uploaded.
+func (o GetCloudcertificatesGenerationAlgorithmsOutput) SignedCertificateNotValidBeforeDate() pulumi.StringOutput {
+	return o.ApplyT(func(v GetCloudcertificatesGenerationAlgorithms) string { return v.SignedCertificateNotValidBeforeDate }).(pulumi.StringOutput)
+}
+
+// PEM-encoded signed certificate. Null until a certificate is uploaded.
+func (o GetCloudcertificatesGenerationAlgorithmsOutput) SignedCertificatePem() pulumi.StringOutput {
+	return o.ApplyT(func(v GetCloudcertificatesGenerationAlgorithms) string { return v.SignedCertificatePem }).(pulumi.StringOutput)
+}
+
+// Serial number of the signed certificate in hex format. Null until a certificate is uploaded.
+func (o GetCloudcertificatesGenerationAlgorithmsOutput) SignedCertificateSerialNumber() pulumi.StringOutput {
+	return o.ApplyT(func(v GetCloudcertificatesGenerationAlgorithms) string { return v.SignedCertificateSerialNumber }).(pulumi.StringOutput)
+}
+
+// SHA-256 fingerprint of the signed certificate. Null until a certificate is uploaded.
+func (o GetCloudcertificatesGenerationAlgorithmsOutput) SignedCertificateSha256Fingerprint() pulumi.StringOutput {
+	return o.ApplyT(func(v GetCloudcertificatesGenerationAlgorithms) string { return v.SignedCertificateSha256Fingerprint }).(pulumi.StringOutput)
+}
+
+// PEM-encoded trust chain uploaded alongside the signed certificate. Null if none was uploaded.
+func (o GetCloudcertificatesGenerationAlgorithmsOutput) TrustChainPem() pulumi.StringOutput {
+	return o.ApplyT(func(v GetCloudcertificatesGenerationAlgorithms) string { return v.TrustChainPem }).(pulumi.StringOutput)
+}
+
+type GetCloudcertificatesGenerationAlgorithmsMapOutput struct{ *pulumi.OutputState }
+
+func (GetCloudcertificatesGenerationAlgorithmsMapOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*map[string]GetCloudcertificatesGenerationAlgorithms)(nil)).Elem()
+}
+
+func (o GetCloudcertificatesGenerationAlgorithmsMapOutput) ToGetCloudcertificatesGenerationAlgorithmsMapOutput() GetCloudcertificatesGenerationAlgorithmsMapOutput {
+	return o
+}
+
+func (o GetCloudcertificatesGenerationAlgorithmsMapOutput) ToGetCloudcertificatesGenerationAlgorithmsMapOutputWithContext(ctx context.Context) GetCloudcertificatesGenerationAlgorithmsMapOutput {
+	return o
+}
+
+func (o GetCloudcertificatesGenerationAlgorithmsMapOutput) MapIndex(k pulumi.StringInput) GetCloudcertificatesGenerationAlgorithmsOutput {
+	return pulumi.All(o, k).ApplyT(func(vs []interface{}) GetCloudcertificatesGenerationAlgorithms {
+		return vs[0].(map[string]GetCloudcertificatesGenerationAlgorithms)[vs[1].(string)]
+	}).(GetCloudcertificatesGenerationAlgorithmsOutput)
+}
+
+type GetCloudcertificatesLineageCurrentProduction struct {
+	// Per key-type (RSA or ECDSA) certificate details for this generation, keyed by key_type. Populated only when expandGenerations is true.
+	Algorithms map[string]GetCloudcertificatesLineageCurrentProductionAlgorithms `pulumi:"algorithms"`
+	// Time the generation was first promoted to production, in RFC3339 format. Null if never promoted, or if not requested via expand_generations.
+	FirstPromotedToProductionTime string `pulumi:"firstPromotedToProductionTime"`
+	// Username of the person who created this generation. Populated only when expandGenerations is true.
+	GenerationCreatedBy string `pulumi:"generationCreatedBy"`
+	// Time the generation was created, in RFC3339 format. Populated only when expandGenerations is true.
+	GenerationCreatedTime string `pulumi:"generationCreatedTime"`
+	// Unique identifier of the generation.
+	GenerationId int `pulumi:"generationId"`
+	// Username of the person who last modified this generation. Populated only when expandGenerations is true.
+	GenerationModifiedBy string `pulumi:"generationModifiedBy"`
+	// Time the generation was last modified, in RFC3339 format. Null if not requested via expand_generations, or if the generation has never been modified since creation.
+	GenerationModifiedTime string `pulumi:"generationModifiedTime"`
+	// Status of the generation.
+	GenerationStatus string `pulumi:"generationStatus"`
+}
+
+// GetCloudcertificatesLineageCurrentProductionInput is an input type that accepts GetCloudcertificatesLineageCurrentProductionArgs and GetCloudcertificatesLineageCurrentProductionOutput values.
+// You can construct a concrete instance of `GetCloudcertificatesLineageCurrentProductionInput` via:
+//
+//	GetCloudcertificatesLineageCurrentProductionArgs{...}
+type GetCloudcertificatesLineageCurrentProductionInput interface {
+	pulumi.Input
+
+	ToGetCloudcertificatesLineageCurrentProductionOutput() GetCloudcertificatesLineageCurrentProductionOutput
+	ToGetCloudcertificatesLineageCurrentProductionOutputWithContext(context.Context) GetCloudcertificatesLineageCurrentProductionOutput
+}
+
+type GetCloudcertificatesLineageCurrentProductionArgs struct {
+	// Per key-type (RSA or ECDSA) certificate details for this generation, keyed by key_type. Populated only when expandGenerations is true.
+	Algorithms GetCloudcertificatesLineageCurrentProductionAlgorithmsMapInput `pulumi:"algorithms"`
+	// Time the generation was first promoted to production, in RFC3339 format. Null if never promoted, or if not requested via expand_generations.
+	FirstPromotedToProductionTime pulumi.StringInput `pulumi:"firstPromotedToProductionTime"`
+	// Username of the person who created this generation. Populated only when expandGenerations is true.
+	GenerationCreatedBy pulumi.StringInput `pulumi:"generationCreatedBy"`
+	// Time the generation was created, in RFC3339 format. Populated only when expandGenerations is true.
+	GenerationCreatedTime pulumi.StringInput `pulumi:"generationCreatedTime"`
+	// Unique identifier of the generation.
+	GenerationId pulumi.IntInput `pulumi:"generationId"`
+	// Username of the person who last modified this generation. Populated only when expandGenerations is true.
+	GenerationModifiedBy pulumi.StringInput `pulumi:"generationModifiedBy"`
+	// Time the generation was last modified, in RFC3339 format. Null if not requested via expand_generations, or if the generation has never been modified since creation.
+	GenerationModifiedTime pulumi.StringInput `pulumi:"generationModifiedTime"`
+	// Status of the generation.
+	GenerationStatus pulumi.StringInput `pulumi:"generationStatus"`
+}
+
+func (GetCloudcertificatesLineageCurrentProductionArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetCloudcertificatesLineageCurrentProduction)(nil)).Elem()
+}
+
+func (i GetCloudcertificatesLineageCurrentProductionArgs) ToGetCloudcertificatesLineageCurrentProductionOutput() GetCloudcertificatesLineageCurrentProductionOutput {
+	return i.ToGetCloudcertificatesLineageCurrentProductionOutputWithContext(context.Background())
+}
+
+func (i GetCloudcertificatesLineageCurrentProductionArgs) ToGetCloudcertificatesLineageCurrentProductionOutputWithContext(ctx context.Context) GetCloudcertificatesLineageCurrentProductionOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetCloudcertificatesLineageCurrentProductionOutput)
+}
+
+type GetCloudcertificatesLineageCurrentProductionOutput struct{ *pulumi.OutputState }
+
+func (GetCloudcertificatesLineageCurrentProductionOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetCloudcertificatesLineageCurrentProduction)(nil)).Elem()
+}
+
+func (o GetCloudcertificatesLineageCurrentProductionOutput) ToGetCloudcertificatesLineageCurrentProductionOutput() GetCloudcertificatesLineageCurrentProductionOutput {
+	return o
+}
+
+func (o GetCloudcertificatesLineageCurrentProductionOutput) ToGetCloudcertificatesLineageCurrentProductionOutputWithContext(ctx context.Context) GetCloudcertificatesLineageCurrentProductionOutput {
+	return o
+}
+
+// Per key-type (RSA or ECDSA) certificate details for this generation, keyed by key_type. Populated only when expandGenerations is true.
+func (o GetCloudcertificatesLineageCurrentProductionOutput) Algorithms() GetCloudcertificatesLineageCurrentProductionAlgorithmsMapOutput {
+	return o.ApplyT(func(v GetCloudcertificatesLineageCurrentProduction) map[string]GetCloudcertificatesLineageCurrentProductionAlgorithms {
+		return v.Algorithms
+	}).(GetCloudcertificatesLineageCurrentProductionAlgorithmsMapOutput)
+}
+
+// Time the generation was first promoted to production, in RFC3339 format. Null if never promoted, or if not requested via expand_generations.
+func (o GetCloudcertificatesLineageCurrentProductionOutput) FirstPromotedToProductionTime() pulumi.StringOutput {
+	return o.ApplyT(func(v GetCloudcertificatesLineageCurrentProduction) string { return v.FirstPromotedToProductionTime }).(pulumi.StringOutput)
+}
+
+// Username of the person who created this generation. Populated only when expandGenerations is true.
+func (o GetCloudcertificatesLineageCurrentProductionOutput) GenerationCreatedBy() pulumi.StringOutput {
+	return o.ApplyT(func(v GetCloudcertificatesLineageCurrentProduction) string { return v.GenerationCreatedBy }).(pulumi.StringOutput)
+}
+
+// Time the generation was created, in RFC3339 format. Populated only when expandGenerations is true.
+func (o GetCloudcertificatesLineageCurrentProductionOutput) GenerationCreatedTime() pulumi.StringOutput {
+	return o.ApplyT(func(v GetCloudcertificatesLineageCurrentProduction) string { return v.GenerationCreatedTime }).(pulumi.StringOutput)
+}
+
+// Unique identifier of the generation.
+func (o GetCloudcertificatesLineageCurrentProductionOutput) GenerationId() pulumi.IntOutput {
+	return o.ApplyT(func(v GetCloudcertificatesLineageCurrentProduction) int { return v.GenerationId }).(pulumi.IntOutput)
+}
+
+// Username of the person who last modified this generation. Populated only when expandGenerations is true.
+func (o GetCloudcertificatesLineageCurrentProductionOutput) GenerationModifiedBy() pulumi.StringOutput {
+	return o.ApplyT(func(v GetCloudcertificatesLineageCurrentProduction) string { return v.GenerationModifiedBy }).(pulumi.StringOutput)
+}
+
+// Time the generation was last modified, in RFC3339 format. Null if not requested via expand_generations, or if the generation has never been modified since creation.
+func (o GetCloudcertificatesLineageCurrentProductionOutput) GenerationModifiedTime() pulumi.StringOutput {
+	return o.ApplyT(func(v GetCloudcertificatesLineageCurrentProduction) string { return v.GenerationModifiedTime }).(pulumi.StringOutput)
+}
+
+// Status of the generation.
+func (o GetCloudcertificatesLineageCurrentProductionOutput) GenerationStatus() pulumi.StringOutput {
+	return o.ApplyT(func(v GetCloudcertificatesLineageCurrentProduction) string { return v.GenerationStatus }).(pulumi.StringOutput)
+}
+
+type GetCloudcertificatesLineageCurrentProductionAlgorithms struct {
+	// Username of the person who created the algorithm instance.
+	AlgorithmInstanceCreatedBy string `pulumi:"algorithmInstanceCreatedBy"`
+	// Time the algorithm instance was created, in RFC3339 format.
+	AlgorithmInstanceCreatedTime string `pulumi:"algorithmInstanceCreatedTime"`
+	// Unique identifier of the algorithm instance.
+	AlgorithmInstanceId int `pulumi:"algorithmInstanceId"`
+	// Username of the person who last modified the algorithm instance. Null if never modified.
+	AlgorithmInstanceModifiedBy string `pulumi:"algorithmInstanceModifiedBy"`
+	// Time the algorithm instance was last modified, in RFC3339 format. Null if never modified.
+	AlgorithmInstanceModifiedTime string `pulumi:"algorithmInstanceModifiedTime"`
+	// Status of the certificate for this key type: `CSR_READY`, `CERT_UPLOAD_PROCESSING`, `READY_FOR_USE`, or `ABANDONED`.
+	CertificateStatus string `pulumi:"certificateStatus"`
+	// Date when the CSR expires, in RFC3339 format.
+	CsrExpirationDate string `pulumi:"csrExpirationDate"`
+	// PEM-encoded certificate signing request.
+	CsrPem string `pulumi:"csrPem"`
+	// Issuer field of the signed certificate. Null until a certificate is uploaded.
+	SignedCertificateIssuer string `pulumi:"signedCertificateIssuer"`
+	// Expiration date of the signed certificate, in RFC3339 format. Null until a certificate is uploaded.
+	SignedCertificateNotValidAfterDate string `pulumi:"signedCertificateNotValidAfterDate"`
+	// Start of validity of the signed certificate, in RFC3339 format. Null until a certificate is uploaded.
+	SignedCertificateNotValidBeforeDate string `pulumi:"signedCertificateNotValidBeforeDate"`
+	// PEM-encoded signed certificate. Null until a certificate is uploaded.
+	SignedCertificatePem string `pulumi:"signedCertificatePem"`
+	// Serial number of the signed certificate in hex format. Null until a certificate is uploaded.
+	SignedCertificateSerialNumber string `pulumi:"signedCertificateSerialNumber"`
+	// SHA-256 fingerprint of the signed certificate. Null until a certificate is uploaded.
+	SignedCertificateSha256Fingerprint string `pulumi:"signedCertificateSha256Fingerprint"`
+	// PEM-encoded trust chain uploaded alongside the signed certificate. Null if none was uploaded.
+	TrustChainPem string `pulumi:"trustChainPem"`
+}
+
+// GetCloudcertificatesLineageCurrentProductionAlgorithmsInput is an input type that accepts GetCloudcertificatesLineageCurrentProductionAlgorithmsArgs and GetCloudcertificatesLineageCurrentProductionAlgorithmsOutput values.
+// You can construct a concrete instance of `GetCloudcertificatesLineageCurrentProductionAlgorithmsInput` via:
+//
+//	GetCloudcertificatesLineageCurrentProductionAlgorithmsArgs{...}
+type GetCloudcertificatesLineageCurrentProductionAlgorithmsInput interface {
+	pulumi.Input
+
+	ToGetCloudcertificatesLineageCurrentProductionAlgorithmsOutput() GetCloudcertificatesLineageCurrentProductionAlgorithmsOutput
+	ToGetCloudcertificatesLineageCurrentProductionAlgorithmsOutputWithContext(context.Context) GetCloudcertificatesLineageCurrentProductionAlgorithmsOutput
+}
+
+type GetCloudcertificatesLineageCurrentProductionAlgorithmsArgs struct {
+	// Username of the person who created the algorithm instance.
+	AlgorithmInstanceCreatedBy pulumi.StringInput `pulumi:"algorithmInstanceCreatedBy"`
+	// Time the algorithm instance was created, in RFC3339 format.
+	AlgorithmInstanceCreatedTime pulumi.StringInput `pulumi:"algorithmInstanceCreatedTime"`
+	// Unique identifier of the algorithm instance.
+	AlgorithmInstanceId pulumi.IntInput `pulumi:"algorithmInstanceId"`
+	// Username of the person who last modified the algorithm instance. Null if never modified.
+	AlgorithmInstanceModifiedBy pulumi.StringInput `pulumi:"algorithmInstanceModifiedBy"`
+	// Time the algorithm instance was last modified, in RFC3339 format. Null if never modified.
+	AlgorithmInstanceModifiedTime pulumi.StringInput `pulumi:"algorithmInstanceModifiedTime"`
+	// Status of the certificate for this key type: `CSR_READY`, `CERT_UPLOAD_PROCESSING`, `READY_FOR_USE`, or `ABANDONED`.
+	CertificateStatus pulumi.StringInput `pulumi:"certificateStatus"`
+	// Date when the CSR expires, in RFC3339 format.
+	CsrExpirationDate pulumi.StringInput `pulumi:"csrExpirationDate"`
+	// PEM-encoded certificate signing request.
+	CsrPem pulumi.StringInput `pulumi:"csrPem"`
+	// Issuer field of the signed certificate. Null until a certificate is uploaded.
+	SignedCertificateIssuer pulumi.StringInput `pulumi:"signedCertificateIssuer"`
+	// Expiration date of the signed certificate, in RFC3339 format. Null until a certificate is uploaded.
+	SignedCertificateNotValidAfterDate pulumi.StringInput `pulumi:"signedCertificateNotValidAfterDate"`
+	// Start of validity of the signed certificate, in RFC3339 format. Null until a certificate is uploaded.
+	SignedCertificateNotValidBeforeDate pulumi.StringInput `pulumi:"signedCertificateNotValidBeforeDate"`
+	// PEM-encoded signed certificate. Null until a certificate is uploaded.
+	SignedCertificatePem pulumi.StringInput `pulumi:"signedCertificatePem"`
+	// Serial number of the signed certificate in hex format. Null until a certificate is uploaded.
+	SignedCertificateSerialNumber pulumi.StringInput `pulumi:"signedCertificateSerialNumber"`
+	// SHA-256 fingerprint of the signed certificate. Null until a certificate is uploaded.
+	SignedCertificateSha256Fingerprint pulumi.StringInput `pulumi:"signedCertificateSha256Fingerprint"`
+	// PEM-encoded trust chain uploaded alongside the signed certificate. Null if none was uploaded.
+	TrustChainPem pulumi.StringInput `pulumi:"trustChainPem"`
+}
+
+func (GetCloudcertificatesLineageCurrentProductionAlgorithmsArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetCloudcertificatesLineageCurrentProductionAlgorithms)(nil)).Elem()
+}
+
+func (i GetCloudcertificatesLineageCurrentProductionAlgorithmsArgs) ToGetCloudcertificatesLineageCurrentProductionAlgorithmsOutput() GetCloudcertificatesLineageCurrentProductionAlgorithmsOutput {
+	return i.ToGetCloudcertificatesLineageCurrentProductionAlgorithmsOutputWithContext(context.Background())
+}
+
+func (i GetCloudcertificatesLineageCurrentProductionAlgorithmsArgs) ToGetCloudcertificatesLineageCurrentProductionAlgorithmsOutputWithContext(ctx context.Context) GetCloudcertificatesLineageCurrentProductionAlgorithmsOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetCloudcertificatesLineageCurrentProductionAlgorithmsOutput)
+}
+
+// GetCloudcertificatesLineageCurrentProductionAlgorithmsMapInput is an input type that accepts GetCloudcertificatesLineageCurrentProductionAlgorithmsMap and GetCloudcertificatesLineageCurrentProductionAlgorithmsMapOutput values.
+// You can construct a concrete instance of `GetCloudcertificatesLineageCurrentProductionAlgorithmsMapInput` via:
+//
+//	GetCloudcertificatesLineageCurrentProductionAlgorithmsMap{ "key": GetCloudcertificatesLineageCurrentProductionAlgorithmsArgs{...} }
+type GetCloudcertificatesLineageCurrentProductionAlgorithmsMapInput interface {
+	pulumi.Input
+
+	ToGetCloudcertificatesLineageCurrentProductionAlgorithmsMapOutput() GetCloudcertificatesLineageCurrentProductionAlgorithmsMapOutput
+	ToGetCloudcertificatesLineageCurrentProductionAlgorithmsMapOutputWithContext(context.Context) GetCloudcertificatesLineageCurrentProductionAlgorithmsMapOutput
+}
+
+type GetCloudcertificatesLineageCurrentProductionAlgorithmsMap map[string]GetCloudcertificatesLineageCurrentProductionAlgorithmsInput
+
+func (GetCloudcertificatesLineageCurrentProductionAlgorithmsMap) ElementType() reflect.Type {
+	return reflect.TypeOf((*map[string]GetCloudcertificatesLineageCurrentProductionAlgorithms)(nil)).Elem()
+}
+
+func (i GetCloudcertificatesLineageCurrentProductionAlgorithmsMap) ToGetCloudcertificatesLineageCurrentProductionAlgorithmsMapOutput() GetCloudcertificatesLineageCurrentProductionAlgorithmsMapOutput {
+	return i.ToGetCloudcertificatesLineageCurrentProductionAlgorithmsMapOutputWithContext(context.Background())
+}
+
+func (i GetCloudcertificatesLineageCurrentProductionAlgorithmsMap) ToGetCloudcertificatesLineageCurrentProductionAlgorithmsMapOutputWithContext(ctx context.Context) GetCloudcertificatesLineageCurrentProductionAlgorithmsMapOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetCloudcertificatesLineageCurrentProductionAlgorithmsMapOutput)
+}
+
+type GetCloudcertificatesLineageCurrentProductionAlgorithmsOutput struct{ *pulumi.OutputState }
+
+func (GetCloudcertificatesLineageCurrentProductionAlgorithmsOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetCloudcertificatesLineageCurrentProductionAlgorithms)(nil)).Elem()
+}
+
+func (o GetCloudcertificatesLineageCurrentProductionAlgorithmsOutput) ToGetCloudcertificatesLineageCurrentProductionAlgorithmsOutput() GetCloudcertificatesLineageCurrentProductionAlgorithmsOutput {
+	return o
+}
+
+func (o GetCloudcertificatesLineageCurrentProductionAlgorithmsOutput) ToGetCloudcertificatesLineageCurrentProductionAlgorithmsOutputWithContext(ctx context.Context) GetCloudcertificatesLineageCurrentProductionAlgorithmsOutput {
+	return o
+}
+
+// Username of the person who created the algorithm instance.
+func (o GetCloudcertificatesLineageCurrentProductionAlgorithmsOutput) AlgorithmInstanceCreatedBy() pulumi.StringOutput {
+	return o.ApplyT(func(v GetCloudcertificatesLineageCurrentProductionAlgorithms) string {
+		return v.AlgorithmInstanceCreatedBy
+	}).(pulumi.StringOutput)
+}
+
+// Time the algorithm instance was created, in RFC3339 format.
+func (o GetCloudcertificatesLineageCurrentProductionAlgorithmsOutput) AlgorithmInstanceCreatedTime() pulumi.StringOutput {
+	return o.ApplyT(func(v GetCloudcertificatesLineageCurrentProductionAlgorithms) string {
+		return v.AlgorithmInstanceCreatedTime
+	}).(pulumi.StringOutput)
+}
+
+// Unique identifier of the algorithm instance.
+func (o GetCloudcertificatesLineageCurrentProductionAlgorithmsOutput) AlgorithmInstanceId() pulumi.IntOutput {
+	return o.ApplyT(func(v GetCloudcertificatesLineageCurrentProductionAlgorithms) int { return v.AlgorithmInstanceId }).(pulumi.IntOutput)
+}
+
+// Username of the person who last modified the algorithm instance. Null if never modified.
+func (o GetCloudcertificatesLineageCurrentProductionAlgorithmsOutput) AlgorithmInstanceModifiedBy() pulumi.StringOutput {
+	return o.ApplyT(func(v GetCloudcertificatesLineageCurrentProductionAlgorithms) string {
+		return v.AlgorithmInstanceModifiedBy
+	}).(pulumi.StringOutput)
+}
+
+// Time the algorithm instance was last modified, in RFC3339 format. Null if never modified.
+func (o GetCloudcertificatesLineageCurrentProductionAlgorithmsOutput) AlgorithmInstanceModifiedTime() pulumi.StringOutput {
+	return o.ApplyT(func(v GetCloudcertificatesLineageCurrentProductionAlgorithms) string {
+		return v.AlgorithmInstanceModifiedTime
+	}).(pulumi.StringOutput)
+}
+
+// Status of the certificate for this key type: `CSR_READY`, `CERT_UPLOAD_PROCESSING`, `READY_FOR_USE`, or `ABANDONED`.
+func (o GetCloudcertificatesLineageCurrentProductionAlgorithmsOutput) CertificateStatus() pulumi.StringOutput {
+	return o.ApplyT(func(v GetCloudcertificatesLineageCurrentProductionAlgorithms) string { return v.CertificateStatus }).(pulumi.StringOutput)
+}
+
+// Date when the CSR expires, in RFC3339 format.
+func (o GetCloudcertificatesLineageCurrentProductionAlgorithmsOutput) CsrExpirationDate() pulumi.StringOutput {
+	return o.ApplyT(func(v GetCloudcertificatesLineageCurrentProductionAlgorithms) string { return v.CsrExpirationDate }).(pulumi.StringOutput)
+}
+
+// PEM-encoded certificate signing request.
+func (o GetCloudcertificatesLineageCurrentProductionAlgorithmsOutput) CsrPem() pulumi.StringOutput {
+	return o.ApplyT(func(v GetCloudcertificatesLineageCurrentProductionAlgorithms) string { return v.CsrPem }).(pulumi.StringOutput)
+}
+
+// Issuer field of the signed certificate. Null until a certificate is uploaded.
+func (o GetCloudcertificatesLineageCurrentProductionAlgorithmsOutput) SignedCertificateIssuer() pulumi.StringOutput {
+	return o.ApplyT(func(v GetCloudcertificatesLineageCurrentProductionAlgorithms) string {
+		return v.SignedCertificateIssuer
+	}).(pulumi.StringOutput)
+}
+
+// Expiration date of the signed certificate, in RFC3339 format. Null until a certificate is uploaded.
+func (o GetCloudcertificatesLineageCurrentProductionAlgorithmsOutput) SignedCertificateNotValidAfterDate() pulumi.StringOutput {
+	return o.ApplyT(func(v GetCloudcertificatesLineageCurrentProductionAlgorithms) string {
+		return v.SignedCertificateNotValidAfterDate
+	}).(pulumi.StringOutput)
+}
+
+// Start of validity of the signed certificate, in RFC3339 format. Null until a certificate is uploaded.
+func (o GetCloudcertificatesLineageCurrentProductionAlgorithmsOutput) SignedCertificateNotValidBeforeDate() pulumi.StringOutput {
+	return o.ApplyT(func(v GetCloudcertificatesLineageCurrentProductionAlgorithms) string {
+		return v.SignedCertificateNotValidBeforeDate
+	}).(pulumi.StringOutput)
+}
+
+// PEM-encoded signed certificate. Null until a certificate is uploaded.
+func (o GetCloudcertificatesLineageCurrentProductionAlgorithmsOutput) SignedCertificatePem() pulumi.StringOutput {
+	return o.ApplyT(func(v GetCloudcertificatesLineageCurrentProductionAlgorithms) string { return v.SignedCertificatePem }).(pulumi.StringOutput)
+}
+
+// Serial number of the signed certificate in hex format. Null until a certificate is uploaded.
+func (o GetCloudcertificatesLineageCurrentProductionAlgorithmsOutput) SignedCertificateSerialNumber() pulumi.StringOutput {
+	return o.ApplyT(func(v GetCloudcertificatesLineageCurrentProductionAlgorithms) string {
+		return v.SignedCertificateSerialNumber
+	}).(pulumi.StringOutput)
+}
+
+// SHA-256 fingerprint of the signed certificate. Null until a certificate is uploaded.
+func (o GetCloudcertificatesLineageCurrentProductionAlgorithmsOutput) SignedCertificateSha256Fingerprint() pulumi.StringOutput {
+	return o.ApplyT(func(v GetCloudcertificatesLineageCurrentProductionAlgorithms) string {
+		return v.SignedCertificateSha256Fingerprint
+	}).(pulumi.StringOutput)
+}
+
+// PEM-encoded trust chain uploaded alongside the signed certificate. Null if none was uploaded.
+func (o GetCloudcertificatesLineageCurrentProductionAlgorithmsOutput) TrustChainPem() pulumi.StringOutput {
+	return o.ApplyT(func(v GetCloudcertificatesLineageCurrentProductionAlgorithms) string { return v.TrustChainPem }).(pulumi.StringOutput)
+}
+
+type GetCloudcertificatesLineageCurrentProductionAlgorithmsMapOutput struct{ *pulumi.OutputState }
+
+func (GetCloudcertificatesLineageCurrentProductionAlgorithmsMapOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*map[string]GetCloudcertificatesLineageCurrentProductionAlgorithms)(nil)).Elem()
+}
+
+func (o GetCloudcertificatesLineageCurrentProductionAlgorithmsMapOutput) ToGetCloudcertificatesLineageCurrentProductionAlgorithmsMapOutput() GetCloudcertificatesLineageCurrentProductionAlgorithmsMapOutput {
+	return o
+}
+
+func (o GetCloudcertificatesLineageCurrentProductionAlgorithmsMapOutput) ToGetCloudcertificatesLineageCurrentProductionAlgorithmsMapOutputWithContext(ctx context.Context) GetCloudcertificatesLineageCurrentProductionAlgorithmsMapOutput {
+	return o
+}
+
+func (o GetCloudcertificatesLineageCurrentProductionAlgorithmsMapOutput) MapIndex(k pulumi.StringInput) GetCloudcertificatesLineageCurrentProductionAlgorithmsOutput {
+	return pulumi.All(o, k).ApplyT(func(vs []interface{}) GetCloudcertificatesLineageCurrentProductionAlgorithms {
+		return vs[0].(map[string]GetCloudcertificatesLineageCurrentProductionAlgorithms)[vs[1].(string)]
+	}).(GetCloudcertificatesLineageCurrentProductionAlgorithmsOutput)
+}
+
+type GetCloudcertificatesLineageCurrentStaging struct {
+	// Per key-type (RSA or ECDSA) certificate details for this generation, keyed by key_type. Populated only when expandGenerations is true.
+	Algorithms map[string]GetCloudcertificatesLineageCurrentStagingAlgorithms `pulumi:"algorithms"`
+	// Time the generation was first promoted to production, in RFC3339 format. Null if never promoted, or if not requested via expand_generations.
+	FirstPromotedToProductionTime string `pulumi:"firstPromotedToProductionTime"`
+	// Username of the person who created this generation. Populated only when expandGenerations is true.
+	GenerationCreatedBy string `pulumi:"generationCreatedBy"`
+	// Time the generation was created, in RFC3339 format. Populated only when expandGenerations is true.
+	GenerationCreatedTime string `pulumi:"generationCreatedTime"`
+	// Unique identifier of the generation.
+	GenerationId int `pulumi:"generationId"`
+	// Username of the person who last modified this generation. Populated only when expandGenerations is true.
+	GenerationModifiedBy string `pulumi:"generationModifiedBy"`
+	// Time the generation was last modified, in RFC3339 format. Null if not requested via expand_generations, or if the generation has never been modified since creation.
+	GenerationModifiedTime string `pulumi:"generationModifiedTime"`
+	// Status of the generation.
+	GenerationStatus string `pulumi:"generationStatus"`
+}
+
+// GetCloudcertificatesLineageCurrentStagingInput is an input type that accepts GetCloudcertificatesLineageCurrentStagingArgs and GetCloudcertificatesLineageCurrentStagingOutput values.
+// You can construct a concrete instance of `GetCloudcertificatesLineageCurrentStagingInput` via:
+//
+//	GetCloudcertificatesLineageCurrentStagingArgs{...}
+type GetCloudcertificatesLineageCurrentStagingInput interface {
+	pulumi.Input
+
+	ToGetCloudcertificatesLineageCurrentStagingOutput() GetCloudcertificatesLineageCurrentStagingOutput
+	ToGetCloudcertificatesLineageCurrentStagingOutputWithContext(context.Context) GetCloudcertificatesLineageCurrentStagingOutput
+}
+
+type GetCloudcertificatesLineageCurrentStagingArgs struct {
+	// Per key-type (RSA or ECDSA) certificate details for this generation, keyed by key_type. Populated only when expandGenerations is true.
+	Algorithms GetCloudcertificatesLineageCurrentStagingAlgorithmsMapInput `pulumi:"algorithms"`
+	// Time the generation was first promoted to production, in RFC3339 format. Null if never promoted, or if not requested via expand_generations.
+	FirstPromotedToProductionTime pulumi.StringInput `pulumi:"firstPromotedToProductionTime"`
+	// Username of the person who created this generation. Populated only when expandGenerations is true.
+	GenerationCreatedBy pulumi.StringInput `pulumi:"generationCreatedBy"`
+	// Time the generation was created, in RFC3339 format. Populated only when expandGenerations is true.
+	GenerationCreatedTime pulumi.StringInput `pulumi:"generationCreatedTime"`
+	// Unique identifier of the generation.
+	GenerationId pulumi.IntInput `pulumi:"generationId"`
+	// Username of the person who last modified this generation. Populated only when expandGenerations is true.
+	GenerationModifiedBy pulumi.StringInput `pulumi:"generationModifiedBy"`
+	// Time the generation was last modified, in RFC3339 format. Null if not requested via expand_generations, or if the generation has never been modified since creation.
+	GenerationModifiedTime pulumi.StringInput `pulumi:"generationModifiedTime"`
+	// Status of the generation.
+	GenerationStatus pulumi.StringInput `pulumi:"generationStatus"`
+}
+
+func (GetCloudcertificatesLineageCurrentStagingArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetCloudcertificatesLineageCurrentStaging)(nil)).Elem()
+}
+
+func (i GetCloudcertificatesLineageCurrentStagingArgs) ToGetCloudcertificatesLineageCurrentStagingOutput() GetCloudcertificatesLineageCurrentStagingOutput {
+	return i.ToGetCloudcertificatesLineageCurrentStagingOutputWithContext(context.Background())
+}
+
+func (i GetCloudcertificatesLineageCurrentStagingArgs) ToGetCloudcertificatesLineageCurrentStagingOutputWithContext(ctx context.Context) GetCloudcertificatesLineageCurrentStagingOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetCloudcertificatesLineageCurrentStagingOutput)
+}
+
+type GetCloudcertificatesLineageCurrentStagingOutput struct{ *pulumi.OutputState }
+
+func (GetCloudcertificatesLineageCurrentStagingOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetCloudcertificatesLineageCurrentStaging)(nil)).Elem()
+}
+
+func (o GetCloudcertificatesLineageCurrentStagingOutput) ToGetCloudcertificatesLineageCurrentStagingOutput() GetCloudcertificatesLineageCurrentStagingOutput {
+	return o
+}
+
+func (o GetCloudcertificatesLineageCurrentStagingOutput) ToGetCloudcertificatesLineageCurrentStagingOutputWithContext(ctx context.Context) GetCloudcertificatesLineageCurrentStagingOutput {
+	return o
+}
+
+// Per key-type (RSA or ECDSA) certificate details for this generation, keyed by key_type. Populated only when expandGenerations is true.
+func (o GetCloudcertificatesLineageCurrentStagingOutput) Algorithms() GetCloudcertificatesLineageCurrentStagingAlgorithmsMapOutput {
+	return o.ApplyT(func(v GetCloudcertificatesLineageCurrentStaging) map[string]GetCloudcertificatesLineageCurrentStagingAlgorithms {
+		return v.Algorithms
+	}).(GetCloudcertificatesLineageCurrentStagingAlgorithmsMapOutput)
+}
+
+// Time the generation was first promoted to production, in RFC3339 format. Null if never promoted, or if not requested via expand_generations.
+func (o GetCloudcertificatesLineageCurrentStagingOutput) FirstPromotedToProductionTime() pulumi.StringOutput {
+	return o.ApplyT(func(v GetCloudcertificatesLineageCurrentStaging) string { return v.FirstPromotedToProductionTime }).(pulumi.StringOutput)
+}
+
+// Username of the person who created this generation. Populated only when expandGenerations is true.
+func (o GetCloudcertificatesLineageCurrentStagingOutput) GenerationCreatedBy() pulumi.StringOutput {
+	return o.ApplyT(func(v GetCloudcertificatesLineageCurrentStaging) string { return v.GenerationCreatedBy }).(pulumi.StringOutput)
+}
+
+// Time the generation was created, in RFC3339 format. Populated only when expandGenerations is true.
+func (o GetCloudcertificatesLineageCurrentStagingOutput) GenerationCreatedTime() pulumi.StringOutput {
+	return o.ApplyT(func(v GetCloudcertificatesLineageCurrentStaging) string { return v.GenerationCreatedTime }).(pulumi.StringOutput)
+}
+
+// Unique identifier of the generation.
+func (o GetCloudcertificatesLineageCurrentStagingOutput) GenerationId() pulumi.IntOutput {
+	return o.ApplyT(func(v GetCloudcertificatesLineageCurrentStaging) int { return v.GenerationId }).(pulumi.IntOutput)
+}
+
+// Username of the person who last modified this generation. Populated only when expandGenerations is true.
+func (o GetCloudcertificatesLineageCurrentStagingOutput) GenerationModifiedBy() pulumi.StringOutput {
+	return o.ApplyT(func(v GetCloudcertificatesLineageCurrentStaging) string { return v.GenerationModifiedBy }).(pulumi.StringOutput)
+}
+
+// Time the generation was last modified, in RFC3339 format. Null if not requested via expand_generations, or if the generation has never been modified since creation.
+func (o GetCloudcertificatesLineageCurrentStagingOutput) GenerationModifiedTime() pulumi.StringOutput {
+	return o.ApplyT(func(v GetCloudcertificatesLineageCurrentStaging) string { return v.GenerationModifiedTime }).(pulumi.StringOutput)
+}
+
+// Status of the generation.
+func (o GetCloudcertificatesLineageCurrentStagingOutput) GenerationStatus() pulumi.StringOutput {
+	return o.ApplyT(func(v GetCloudcertificatesLineageCurrentStaging) string { return v.GenerationStatus }).(pulumi.StringOutput)
+}
+
+type GetCloudcertificatesLineageCurrentStagingAlgorithms struct {
+	// Username of the person who created the algorithm instance.
+	AlgorithmInstanceCreatedBy string `pulumi:"algorithmInstanceCreatedBy"`
+	// Time the algorithm instance was created, in RFC3339 format.
+	AlgorithmInstanceCreatedTime string `pulumi:"algorithmInstanceCreatedTime"`
+	// Unique identifier of the algorithm instance.
+	AlgorithmInstanceId int `pulumi:"algorithmInstanceId"`
+	// Username of the person who last modified the algorithm instance. Null if never modified.
+	AlgorithmInstanceModifiedBy string `pulumi:"algorithmInstanceModifiedBy"`
+	// Time the algorithm instance was last modified, in RFC3339 format. Null if never modified.
+	AlgorithmInstanceModifiedTime string `pulumi:"algorithmInstanceModifiedTime"`
+	// Status of the certificate for this key type: `CSR_READY`, `CERT_UPLOAD_PROCESSING`, `READY_FOR_USE`, or `ABANDONED`.
+	CertificateStatus string `pulumi:"certificateStatus"`
+	// Date when the CSR expires, in RFC3339 format.
+	CsrExpirationDate string `pulumi:"csrExpirationDate"`
+	// PEM-encoded certificate signing request.
+	CsrPem string `pulumi:"csrPem"`
+	// Issuer field of the signed certificate. Null until a certificate is uploaded.
+	SignedCertificateIssuer string `pulumi:"signedCertificateIssuer"`
+	// Expiration date of the signed certificate, in RFC3339 format. Null until a certificate is uploaded.
+	SignedCertificateNotValidAfterDate string `pulumi:"signedCertificateNotValidAfterDate"`
+	// Start of validity of the signed certificate, in RFC3339 format. Null until a certificate is uploaded.
+	SignedCertificateNotValidBeforeDate string `pulumi:"signedCertificateNotValidBeforeDate"`
+	// PEM-encoded signed certificate. Null until a certificate is uploaded.
+	SignedCertificatePem string `pulumi:"signedCertificatePem"`
+	// Serial number of the signed certificate in hex format. Null until a certificate is uploaded.
+	SignedCertificateSerialNumber string `pulumi:"signedCertificateSerialNumber"`
+	// SHA-256 fingerprint of the signed certificate. Null until a certificate is uploaded.
+	SignedCertificateSha256Fingerprint string `pulumi:"signedCertificateSha256Fingerprint"`
+	// PEM-encoded trust chain uploaded alongside the signed certificate. Null if none was uploaded.
+	TrustChainPem string `pulumi:"trustChainPem"`
+}
+
+// GetCloudcertificatesLineageCurrentStagingAlgorithmsInput is an input type that accepts GetCloudcertificatesLineageCurrentStagingAlgorithmsArgs and GetCloudcertificatesLineageCurrentStagingAlgorithmsOutput values.
+// You can construct a concrete instance of `GetCloudcertificatesLineageCurrentStagingAlgorithmsInput` via:
+//
+//	GetCloudcertificatesLineageCurrentStagingAlgorithmsArgs{...}
+type GetCloudcertificatesLineageCurrentStagingAlgorithmsInput interface {
+	pulumi.Input
+
+	ToGetCloudcertificatesLineageCurrentStagingAlgorithmsOutput() GetCloudcertificatesLineageCurrentStagingAlgorithmsOutput
+	ToGetCloudcertificatesLineageCurrentStagingAlgorithmsOutputWithContext(context.Context) GetCloudcertificatesLineageCurrentStagingAlgorithmsOutput
+}
+
+type GetCloudcertificatesLineageCurrentStagingAlgorithmsArgs struct {
+	// Username of the person who created the algorithm instance.
+	AlgorithmInstanceCreatedBy pulumi.StringInput `pulumi:"algorithmInstanceCreatedBy"`
+	// Time the algorithm instance was created, in RFC3339 format.
+	AlgorithmInstanceCreatedTime pulumi.StringInput `pulumi:"algorithmInstanceCreatedTime"`
+	// Unique identifier of the algorithm instance.
+	AlgorithmInstanceId pulumi.IntInput `pulumi:"algorithmInstanceId"`
+	// Username of the person who last modified the algorithm instance. Null if never modified.
+	AlgorithmInstanceModifiedBy pulumi.StringInput `pulumi:"algorithmInstanceModifiedBy"`
+	// Time the algorithm instance was last modified, in RFC3339 format. Null if never modified.
+	AlgorithmInstanceModifiedTime pulumi.StringInput `pulumi:"algorithmInstanceModifiedTime"`
+	// Status of the certificate for this key type: `CSR_READY`, `CERT_UPLOAD_PROCESSING`, `READY_FOR_USE`, or `ABANDONED`.
+	CertificateStatus pulumi.StringInput `pulumi:"certificateStatus"`
+	// Date when the CSR expires, in RFC3339 format.
+	CsrExpirationDate pulumi.StringInput `pulumi:"csrExpirationDate"`
+	// PEM-encoded certificate signing request.
+	CsrPem pulumi.StringInput `pulumi:"csrPem"`
+	// Issuer field of the signed certificate. Null until a certificate is uploaded.
+	SignedCertificateIssuer pulumi.StringInput `pulumi:"signedCertificateIssuer"`
+	// Expiration date of the signed certificate, in RFC3339 format. Null until a certificate is uploaded.
+	SignedCertificateNotValidAfterDate pulumi.StringInput `pulumi:"signedCertificateNotValidAfterDate"`
+	// Start of validity of the signed certificate, in RFC3339 format. Null until a certificate is uploaded.
+	SignedCertificateNotValidBeforeDate pulumi.StringInput `pulumi:"signedCertificateNotValidBeforeDate"`
+	// PEM-encoded signed certificate. Null until a certificate is uploaded.
+	SignedCertificatePem pulumi.StringInput `pulumi:"signedCertificatePem"`
+	// Serial number of the signed certificate in hex format. Null until a certificate is uploaded.
+	SignedCertificateSerialNumber pulumi.StringInput `pulumi:"signedCertificateSerialNumber"`
+	// SHA-256 fingerprint of the signed certificate. Null until a certificate is uploaded.
+	SignedCertificateSha256Fingerprint pulumi.StringInput `pulumi:"signedCertificateSha256Fingerprint"`
+	// PEM-encoded trust chain uploaded alongside the signed certificate. Null if none was uploaded.
+	TrustChainPem pulumi.StringInput `pulumi:"trustChainPem"`
+}
+
+func (GetCloudcertificatesLineageCurrentStagingAlgorithmsArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetCloudcertificatesLineageCurrentStagingAlgorithms)(nil)).Elem()
+}
+
+func (i GetCloudcertificatesLineageCurrentStagingAlgorithmsArgs) ToGetCloudcertificatesLineageCurrentStagingAlgorithmsOutput() GetCloudcertificatesLineageCurrentStagingAlgorithmsOutput {
+	return i.ToGetCloudcertificatesLineageCurrentStagingAlgorithmsOutputWithContext(context.Background())
+}
+
+func (i GetCloudcertificatesLineageCurrentStagingAlgorithmsArgs) ToGetCloudcertificatesLineageCurrentStagingAlgorithmsOutputWithContext(ctx context.Context) GetCloudcertificatesLineageCurrentStagingAlgorithmsOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetCloudcertificatesLineageCurrentStagingAlgorithmsOutput)
+}
+
+// GetCloudcertificatesLineageCurrentStagingAlgorithmsMapInput is an input type that accepts GetCloudcertificatesLineageCurrentStagingAlgorithmsMap and GetCloudcertificatesLineageCurrentStagingAlgorithmsMapOutput values.
+// You can construct a concrete instance of `GetCloudcertificatesLineageCurrentStagingAlgorithmsMapInput` via:
+//
+//	GetCloudcertificatesLineageCurrentStagingAlgorithmsMap{ "key": GetCloudcertificatesLineageCurrentStagingAlgorithmsArgs{...} }
+type GetCloudcertificatesLineageCurrentStagingAlgorithmsMapInput interface {
+	pulumi.Input
+
+	ToGetCloudcertificatesLineageCurrentStagingAlgorithmsMapOutput() GetCloudcertificatesLineageCurrentStagingAlgorithmsMapOutput
+	ToGetCloudcertificatesLineageCurrentStagingAlgorithmsMapOutputWithContext(context.Context) GetCloudcertificatesLineageCurrentStagingAlgorithmsMapOutput
+}
+
+type GetCloudcertificatesLineageCurrentStagingAlgorithmsMap map[string]GetCloudcertificatesLineageCurrentStagingAlgorithmsInput
+
+func (GetCloudcertificatesLineageCurrentStagingAlgorithmsMap) ElementType() reflect.Type {
+	return reflect.TypeOf((*map[string]GetCloudcertificatesLineageCurrentStagingAlgorithms)(nil)).Elem()
+}
+
+func (i GetCloudcertificatesLineageCurrentStagingAlgorithmsMap) ToGetCloudcertificatesLineageCurrentStagingAlgorithmsMapOutput() GetCloudcertificatesLineageCurrentStagingAlgorithmsMapOutput {
+	return i.ToGetCloudcertificatesLineageCurrentStagingAlgorithmsMapOutputWithContext(context.Background())
+}
+
+func (i GetCloudcertificatesLineageCurrentStagingAlgorithmsMap) ToGetCloudcertificatesLineageCurrentStagingAlgorithmsMapOutputWithContext(ctx context.Context) GetCloudcertificatesLineageCurrentStagingAlgorithmsMapOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetCloudcertificatesLineageCurrentStagingAlgorithmsMapOutput)
+}
+
+type GetCloudcertificatesLineageCurrentStagingAlgorithmsOutput struct{ *pulumi.OutputState }
+
+func (GetCloudcertificatesLineageCurrentStagingAlgorithmsOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetCloudcertificatesLineageCurrentStagingAlgorithms)(nil)).Elem()
+}
+
+func (o GetCloudcertificatesLineageCurrentStagingAlgorithmsOutput) ToGetCloudcertificatesLineageCurrentStagingAlgorithmsOutput() GetCloudcertificatesLineageCurrentStagingAlgorithmsOutput {
+	return o
+}
+
+func (o GetCloudcertificatesLineageCurrentStagingAlgorithmsOutput) ToGetCloudcertificatesLineageCurrentStagingAlgorithmsOutputWithContext(ctx context.Context) GetCloudcertificatesLineageCurrentStagingAlgorithmsOutput {
+	return o
+}
+
+// Username of the person who created the algorithm instance.
+func (o GetCloudcertificatesLineageCurrentStagingAlgorithmsOutput) AlgorithmInstanceCreatedBy() pulumi.StringOutput {
+	return o.ApplyT(func(v GetCloudcertificatesLineageCurrentStagingAlgorithms) string {
+		return v.AlgorithmInstanceCreatedBy
+	}).(pulumi.StringOutput)
+}
+
+// Time the algorithm instance was created, in RFC3339 format.
+func (o GetCloudcertificatesLineageCurrentStagingAlgorithmsOutput) AlgorithmInstanceCreatedTime() pulumi.StringOutput {
+	return o.ApplyT(func(v GetCloudcertificatesLineageCurrentStagingAlgorithms) string {
+		return v.AlgorithmInstanceCreatedTime
+	}).(pulumi.StringOutput)
+}
+
+// Unique identifier of the algorithm instance.
+func (o GetCloudcertificatesLineageCurrentStagingAlgorithmsOutput) AlgorithmInstanceId() pulumi.IntOutput {
+	return o.ApplyT(func(v GetCloudcertificatesLineageCurrentStagingAlgorithms) int { return v.AlgorithmInstanceId }).(pulumi.IntOutput)
+}
+
+// Username of the person who last modified the algorithm instance. Null if never modified.
+func (o GetCloudcertificatesLineageCurrentStagingAlgorithmsOutput) AlgorithmInstanceModifiedBy() pulumi.StringOutput {
+	return o.ApplyT(func(v GetCloudcertificatesLineageCurrentStagingAlgorithms) string {
+		return v.AlgorithmInstanceModifiedBy
+	}).(pulumi.StringOutput)
+}
+
+// Time the algorithm instance was last modified, in RFC3339 format. Null if never modified.
+func (o GetCloudcertificatesLineageCurrentStagingAlgorithmsOutput) AlgorithmInstanceModifiedTime() pulumi.StringOutput {
+	return o.ApplyT(func(v GetCloudcertificatesLineageCurrentStagingAlgorithms) string {
+		return v.AlgorithmInstanceModifiedTime
+	}).(pulumi.StringOutput)
+}
+
+// Status of the certificate for this key type: `CSR_READY`, `CERT_UPLOAD_PROCESSING`, `READY_FOR_USE`, or `ABANDONED`.
+func (o GetCloudcertificatesLineageCurrentStagingAlgorithmsOutput) CertificateStatus() pulumi.StringOutput {
+	return o.ApplyT(func(v GetCloudcertificatesLineageCurrentStagingAlgorithms) string { return v.CertificateStatus }).(pulumi.StringOutput)
+}
+
+// Date when the CSR expires, in RFC3339 format.
+func (o GetCloudcertificatesLineageCurrentStagingAlgorithmsOutput) CsrExpirationDate() pulumi.StringOutput {
+	return o.ApplyT(func(v GetCloudcertificatesLineageCurrentStagingAlgorithms) string { return v.CsrExpirationDate }).(pulumi.StringOutput)
+}
+
+// PEM-encoded certificate signing request.
+func (o GetCloudcertificatesLineageCurrentStagingAlgorithmsOutput) CsrPem() pulumi.StringOutput {
+	return o.ApplyT(func(v GetCloudcertificatesLineageCurrentStagingAlgorithms) string { return v.CsrPem }).(pulumi.StringOutput)
+}
+
+// Issuer field of the signed certificate. Null until a certificate is uploaded.
+func (o GetCloudcertificatesLineageCurrentStagingAlgorithmsOutput) SignedCertificateIssuer() pulumi.StringOutput {
+	return o.ApplyT(func(v GetCloudcertificatesLineageCurrentStagingAlgorithms) string { return v.SignedCertificateIssuer }).(pulumi.StringOutput)
+}
+
+// Expiration date of the signed certificate, in RFC3339 format. Null until a certificate is uploaded.
+func (o GetCloudcertificatesLineageCurrentStagingAlgorithmsOutput) SignedCertificateNotValidAfterDate() pulumi.StringOutput {
+	return o.ApplyT(func(v GetCloudcertificatesLineageCurrentStagingAlgorithms) string {
+		return v.SignedCertificateNotValidAfterDate
+	}).(pulumi.StringOutput)
+}
+
+// Start of validity of the signed certificate, in RFC3339 format. Null until a certificate is uploaded.
+func (o GetCloudcertificatesLineageCurrentStagingAlgorithmsOutput) SignedCertificateNotValidBeforeDate() pulumi.StringOutput {
+	return o.ApplyT(func(v GetCloudcertificatesLineageCurrentStagingAlgorithms) string {
+		return v.SignedCertificateNotValidBeforeDate
+	}).(pulumi.StringOutput)
+}
+
+// PEM-encoded signed certificate. Null until a certificate is uploaded.
+func (o GetCloudcertificatesLineageCurrentStagingAlgorithmsOutput) SignedCertificatePem() pulumi.StringOutput {
+	return o.ApplyT(func(v GetCloudcertificatesLineageCurrentStagingAlgorithms) string { return v.SignedCertificatePem }).(pulumi.StringOutput)
+}
+
+// Serial number of the signed certificate in hex format. Null until a certificate is uploaded.
+func (o GetCloudcertificatesLineageCurrentStagingAlgorithmsOutput) SignedCertificateSerialNumber() pulumi.StringOutput {
+	return o.ApplyT(func(v GetCloudcertificatesLineageCurrentStagingAlgorithms) string {
+		return v.SignedCertificateSerialNumber
+	}).(pulumi.StringOutput)
+}
+
+// SHA-256 fingerprint of the signed certificate. Null until a certificate is uploaded.
+func (o GetCloudcertificatesLineageCurrentStagingAlgorithmsOutput) SignedCertificateSha256Fingerprint() pulumi.StringOutput {
+	return o.ApplyT(func(v GetCloudcertificatesLineageCurrentStagingAlgorithms) string {
+		return v.SignedCertificateSha256Fingerprint
+	}).(pulumi.StringOutput)
+}
+
+// PEM-encoded trust chain uploaded alongside the signed certificate. Null if none was uploaded.
+func (o GetCloudcertificatesLineageCurrentStagingAlgorithmsOutput) TrustChainPem() pulumi.StringOutput {
+	return o.ApplyT(func(v GetCloudcertificatesLineageCurrentStagingAlgorithms) string { return v.TrustChainPem }).(pulumi.StringOutput)
+}
+
+type GetCloudcertificatesLineageCurrentStagingAlgorithmsMapOutput struct{ *pulumi.OutputState }
+
+func (GetCloudcertificatesLineageCurrentStagingAlgorithmsMapOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*map[string]GetCloudcertificatesLineageCurrentStagingAlgorithms)(nil)).Elem()
+}
+
+func (o GetCloudcertificatesLineageCurrentStagingAlgorithmsMapOutput) ToGetCloudcertificatesLineageCurrentStagingAlgorithmsMapOutput() GetCloudcertificatesLineageCurrentStagingAlgorithmsMapOutput {
+	return o
+}
+
+func (o GetCloudcertificatesLineageCurrentStagingAlgorithmsMapOutput) ToGetCloudcertificatesLineageCurrentStagingAlgorithmsMapOutputWithContext(ctx context.Context) GetCloudcertificatesLineageCurrentStagingAlgorithmsMapOutput {
+	return o
+}
+
+func (o GetCloudcertificatesLineageCurrentStagingAlgorithmsMapOutput) MapIndex(k pulumi.StringInput) GetCloudcertificatesLineageCurrentStagingAlgorithmsOutput {
+	return pulumi.All(o, k).ApplyT(func(vs []interface{}) GetCloudcertificatesLineageCurrentStagingAlgorithms {
+		return vs[0].(map[string]GetCloudcertificatesLineageCurrentStagingAlgorithms)[vs[1].(string)]
+	}).(GetCloudcertificatesLineageCurrentStagingAlgorithmsOutput)
+}
+
+type GetCloudcertificatesLineageHead struct {
+	// Per key-type (RSA or ECDSA) certificate details for this generation, keyed by key_type. Populated only when expandGenerations is true.
+	Algorithms map[string]GetCloudcertificatesLineageHeadAlgorithms `pulumi:"algorithms"`
+	// Time the generation was first promoted to production, in RFC3339 format. Null if never promoted, or if not requested via expand_generations.
+	FirstPromotedToProductionTime string `pulumi:"firstPromotedToProductionTime"`
+	// Username of the person who created this generation. Populated only when expandGenerations is true.
+	GenerationCreatedBy string `pulumi:"generationCreatedBy"`
+	// Time the generation was created, in RFC3339 format. Populated only when expandGenerations is true.
+	GenerationCreatedTime string `pulumi:"generationCreatedTime"`
+	// Unique identifier of the generation.
+	GenerationId int `pulumi:"generationId"`
+	// Username of the person who last modified this generation. Populated only when expandGenerations is true.
+	GenerationModifiedBy string `pulumi:"generationModifiedBy"`
+	// Time the generation was last modified, in RFC3339 format. Null if not requested via expand_generations, or if the generation has never been modified since creation.
+	GenerationModifiedTime string `pulumi:"generationModifiedTime"`
+	// Status of the generation.
+	GenerationStatus string `pulumi:"generationStatus"`
+}
+
+// GetCloudcertificatesLineageHeadInput is an input type that accepts GetCloudcertificatesLineageHeadArgs and GetCloudcertificatesLineageHeadOutput values.
+// You can construct a concrete instance of `GetCloudcertificatesLineageHeadInput` via:
+//
+//	GetCloudcertificatesLineageHeadArgs{...}
+type GetCloudcertificatesLineageHeadInput interface {
+	pulumi.Input
+
+	ToGetCloudcertificatesLineageHeadOutput() GetCloudcertificatesLineageHeadOutput
+	ToGetCloudcertificatesLineageHeadOutputWithContext(context.Context) GetCloudcertificatesLineageHeadOutput
+}
+
+type GetCloudcertificatesLineageHeadArgs struct {
+	// Per key-type (RSA or ECDSA) certificate details for this generation, keyed by key_type. Populated only when expandGenerations is true.
+	Algorithms GetCloudcertificatesLineageHeadAlgorithmsMapInput `pulumi:"algorithms"`
+	// Time the generation was first promoted to production, in RFC3339 format. Null if never promoted, or if not requested via expand_generations.
+	FirstPromotedToProductionTime pulumi.StringInput `pulumi:"firstPromotedToProductionTime"`
+	// Username of the person who created this generation. Populated only when expandGenerations is true.
+	GenerationCreatedBy pulumi.StringInput `pulumi:"generationCreatedBy"`
+	// Time the generation was created, in RFC3339 format. Populated only when expandGenerations is true.
+	GenerationCreatedTime pulumi.StringInput `pulumi:"generationCreatedTime"`
+	// Unique identifier of the generation.
+	GenerationId pulumi.IntInput `pulumi:"generationId"`
+	// Username of the person who last modified this generation. Populated only when expandGenerations is true.
+	GenerationModifiedBy pulumi.StringInput `pulumi:"generationModifiedBy"`
+	// Time the generation was last modified, in RFC3339 format. Null if not requested via expand_generations, or if the generation has never been modified since creation.
+	GenerationModifiedTime pulumi.StringInput `pulumi:"generationModifiedTime"`
+	// Status of the generation.
+	GenerationStatus pulumi.StringInput `pulumi:"generationStatus"`
+}
+
+func (GetCloudcertificatesLineageHeadArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetCloudcertificatesLineageHead)(nil)).Elem()
+}
+
+func (i GetCloudcertificatesLineageHeadArgs) ToGetCloudcertificatesLineageHeadOutput() GetCloudcertificatesLineageHeadOutput {
+	return i.ToGetCloudcertificatesLineageHeadOutputWithContext(context.Background())
+}
+
+func (i GetCloudcertificatesLineageHeadArgs) ToGetCloudcertificatesLineageHeadOutputWithContext(ctx context.Context) GetCloudcertificatesLineageHeadOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetCloudcertificatesLineageHeadOutput)
+}
+
+type GetCloudcertificatesLineageHeadOutput struct{ *pulumi.OutputState }
+
+func (GetCloudcertificatesLineageHeadOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetCloudcertificatesLineageHead)(nil)).Elem()
+}
+
+func (o GetCloudcertificatesLineageHeadOutput) ToGetCloudcertificatesLineageHeadOutput() GetCloudcertificatesLineageHeadOutput {
+	return o
+}
+
+func (o GetCloudcertificatesLineageHeadOutput) ToGetCloudcertificatesLineageHeadOutputWithContext(ctx context.Context) GetCloudcertificatesLineageHeadOutput {
+	return o
+}
+
+// Per key-type (RSA or ECDSA) certificate details for this generation, keyed by key_type. Populated only when expandGenerations is true.
+func (o GetCloudcertificatesLineageHeadOutput) Algorithms() GetCloudcertificatesLineageHeadAlgorithmsMapOutput {
+	return o.ApplyT(func(v GetCloudcertificatesLineageHead) map[string]GetCloudcertificatesLineageHeadAlgorithms {
+		return v.Algorithms
+	}).(GetCloudcertificatesLineageHeadAlgorithmsMapOutput)
+}
+
+// Time the generation was first promoted to production, in RFC3339 format. Null if never promoted, or if not requested via expand_generations.
+func (o GetCloudcertificatesLineageHeadOutput) FirstPromotedToProductionTime() pulumi.StringOutput {
+	return o.ApplyT(func(v GetCloudcertificatesLineageHead) string { return v.FirstPromotedToProductionTime }).(pulumi.StringOutput)
+}
+
+// Username of the person who created this generation. Populated only when expandGenerations is true.
+func (o GetCloudcertificatesLineageHeadOutput) GenerationCreatedBy() pulumi.StringOutput {
+	return o.ApplyT(func(v GetCloudcertificatesLineageHead) string { return v.GenerationCreatedBy }).(pulumi.StringOutput)
+}
+
+// Time the generation was created, in RFC3339 format. Populated only when expandGenerations is true.
+func (o GetCloudcertificatesLineageHeadOutput) GenerationCreatedTime() pulumi.StringOutput {
+	return o.ApplyT(func(v GetCloudcertificatesLineageHead) string { return v.GenerationCreatedTime }).(pulumi.StringOutput)
+}
+
+// Unique identifier of the generation.
+func (o GetCloudcertificatesLineageHeadOutput) GenerationId() pulumi.IntOutput {
+	return o.ApplyT(func(v GetCloudcertificatesLineageHead) int { return v.GenerationId }).(pulumi.IntOutput)
+}
+
+// Username of the person who last modified this generation. Populated only when expandGenerations is true.
+func (o GetCloudcertificatesLineageHeadOutput) GenerationModifiedBy() pulumi.StringOutput {
+	return o.ApplyT(func(v GetCloudcertificatesLineageHead) string { return v.GenerationModifiedBy }).(pulumi.StringOutput)
+}
+
+// Time the generation was last modified, in RFC3339 format. Null if not requested via expand_generations, or if the generation has never been modified since creation.
+func (o GetCloudcertificatesLineageHeadOutput) GenerationModifiedTime() pulumi.StringOutput {
+	return o.ApplyT(func(v GetCloudcertificatesLineageHead) string { return v.GenerationModifiedTime }).(pulumi.StringOutput)
+}
+
+// Status of the generation.
+func (o GetCloudcertificatesLineageHeadOutput) GenerationStatus() pulumi.StringOutput {
+	return o.ApplyT(func(v GetCloudcertificatesLineageHead) string { return v.GenerationStatus }).(pulumi.StringOutput)
+}
+
+type GetCloudcertificatesLineageHeadAlgorithms struct {
+	// Username of the person who created the algorithm instance.
+	AlgorithmInstanceCreatedBy string `pulumi:"algorithmInstanceCreatedBy"`
+	// Time the algorithm instance was created, in RFC3339 format.
+	AlgorithmInstanceCreatedTime string `pulumi:"algorithmInstanceCreatedTime"`
+	// Unique identifier of the algorithm instance.
+	AlgorithmInstanceId int `pulumi:"algorithmInstanceId"`
+	// Username of the person who last modified the algorithm instance. Null if never modified.
+	AlgorithmInstanceModifiedBy string `pulumi:"algorithmInstanceModifiedBy"`
+	// Time the algorithm instance was last modified, in RFC3339 format. Null if never modified.
+	AlgorithmInstanceModifiedTime string `pulumi:"algorithmInstanceModifiedTime"`
+	// Status of the certificate for this key type: `CSR_READY`, `CERT_UPLOAD_PROCESSING`, `READY_FOR_USE`, or `ABANDONED`.
+	CertificateStatus string `pulumi:"certificateStatus"`
+	// Date when the CSR expires, in RFC3339 format.
+	CsrExpirationDate string `pulumi:"csrExpirationDate"`
+	// PEM-encoded certificate signing request.
+	CsrPem string `pulumi:"csrPem"`
+	// Issuer field of the signed certificate. Null until a certificate is uploaded.
+	SignedCertificateIssuer string `pulumi:"signedCertificateIssuer"`
+	// Expiration date of the signed certificate, in RFC3339 format. Null until a certificate is uploaded.
+	SignedCertificateNotValidAfterDate string `pulumi:"signedCertificateNotValidAfterDate"`
+	// Start of validity of the signed certificate, in RFC3339 format. Null until a certificate is uploaded.
+	SignedCertificateNotValidBeforeDate string `pulumi:"signedCertificateNotValidBeforeDate"`
+	// PEM-encoded signed certificate. Null until a certificate is uploaded.
+	SignedCertificatePem string `pulumi:"signedCertificatePem"`
+	// Serial number of the signed certificate in hex format. Null until a certificate is uploaded.
+	SignedCertificateSerialNumber string `pulumi:"signedCertificateSerialNumber"`
+	// SHA-256 fingerprint of the signed certificate. Null until a certificate is uploaded.
+	SignedCertificateSha256Fingerprint string `pulumi:"signedCertificateSha256Fingerprint"`
+	// PEM-encoded trust chain uploaded alongside the signed certificate. Null if none was uploaded.
+	TrustChainPem string `pulumi:"trustChainPem"`
+}
+
+// GetCloudcertificatesLineageHeadAlgorithmsInput is an input type that accepts GetCloudcertificatesLineageHeadAlgorithmsArgs and GetCloudcertificatesLineageHeadAlgorithmsOutput values.
+// You can construct a concrete instance of `GetCloudcertificatesLineageHeadAlgorithmsInput` via:
+//
+//	GetCloudcertificatesLineageHeadAlgorithmsArgs{...}
+type GetCloudcertificatesLineageHeadAlgorithmsInput interface {
+	pulumi.Input
+
+	ToGetCloudcertificatesLineageHeadAlgorithmsOutput() GetCloudcertificatesLineageHeadAlgorithmsOutput
+	ToGetCloudcertificatesLineageHeadAlgorithmsOutputWithContext(context.Context) GetCloudcertificatesLineageHeadAlgorithmsOutput
+}
+
+type GetCloudcertificatesLineageHeadAlgorithmsArgs struct {
+	// Username of the person who created the algorithm instance.
+	AlgorithmInstanceCreatedBy pulumi.StringInput `pulumi:"algorithmInstanceCreatedBy"`
+	// Time the algorithm instance was created, in RFC3339 format.
+	AlgorithmInstanceCreatedTime pulumi.StringInput `pulumi:"algorithmInstanceCreatedTime"`
+	// Unique identifier of the algorithm instance.
+	AlgorithmInstanceId pulumi.IntInput `pulumi:"algorithmInstanceId"`
+	// Username of the person who last modified the algorithm instance. Null if never modified.
+	AlgorithmInstanceModifiedBy pulumi.StringInput `pulumi:"algorithmInstanceModifiedBy"`
+	// Time the algorithm instance was last modified, in RFC3339 format. Null if never modified.
+	AlgorithmInstanceModifiedTime pulumi.StringInput `pulumi:"algorithmInstanceModifiedTime"`
+	// Status of the certificate for this key type: `CSR_READY`, `CERT_UPLOAD_PROCESSING`, `READY_FOR_USE`, or `ABANDONED`.
+	CertificateStatus pulumi.StringInput `pulumi:"certificateStatus"`
+	// Date when the CSR expires, in RFC3339 format.
+	CsrExpirationDate pulumi.StringInput `pulumi:"csrExpirationDate"`
+	// PEM-encoded certificate signing request.
+	CsrPem pulumi.StringInput `pulumi:"csrPem"`
+	// Issuer field of the signed certificate. Null until a certificate is uploaded.
+	SignedCertificateIssuer pulumi.StringInput `pulumi:"signedCertificateIssuer"`
+	// Expiration date of the signed certificate, in RFC3339 format. Null until a certificate is uploaded.
+	SignedCertificateNotValidAfterDate pulumi.StringInput `pulumi:"signedCertificateNotValidAfterDate"`
+	// Start of validity of the signed certificate, in RFC3339 format. Null until a certificate is uploaded.
+	SignedCertificateNotValidBeforeDate pulumi.StringInput `pulumi:"signedCertificateNotValidBeforeDate"`
+	// PEM-encoded signed certificate. Null until a certificate is uploaded.
+	SignedCertificatePem pulumi.StringInput `pulumi:"signedCertificatePem"`
+	// Serial number of the signed certificate in hex format. Null until a certificate is uploaded.
+	SignedCertificateSerialNumber pulumi.StringInput `pulumi:"signedCertificateSerialNumber"`
+	// SHA-256 fingerprint of the signed certificate. Null until a certificate is uploaded.
+	SignedCertificateSha256Fingerprint pulumi.StringInput `pulumi:"signedCertificateSha256Fingerprint"`
+	// PEM-encoded trust chain uploaded alongside the signed certificate. Null if none was uploaded.
+	TrustChainPem pulumi.StringInput `pulumi:"trustChainPem"`
+}
+
+func (GetCloudcertificatesLineageHeadAlgorithmsArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetCloudcertificatesLineageHeadAlgorithms)(nil)).Elem()
+}
+
+func (i GetCloudcertificatesLineageHeadAlgorithmsArgs) ToGetCloudcertificatesLineageHeadAlgorithmsOutput() GetCloudcertificatesLineageHeadAlgorithmsOutput {
+	return i.ToGetCloudcertificatesLineageHeadAlgorithmsOutputWithContext(context.Background())
+}
+
+func (i GetCloudcertificatesLineageHeadAlgorithmsArgs) ToGetCloudcertificatesLineageHeadAlgorithmsOutputWithContext(ctx context.Context) GetCloudcertificatesLineageHeadAlgorithmsOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetCloudcertificatesLineageHeadAlgorithmsOutput)
+}
+
+// GetCloudcertificatesLineageHeadAlgorithmsMapInput is an input type that accepts GetCloudcertificatesLineageHeadAlgorithmsMap and GetCloudcertificatesLineageHeadAlgorithmsMapOutput values.
+// You can construct a concrete instance of `GetCloudcertificatesLineageHeadAlgorithmsMapInput` via:
+//
+//	GetCloudcertificatesLineageHeadAlgorithmsMap{ "key": GetCloudcertificatesLineageHeadAlgorithmsArgs{...} }
+type GetCloudcertificatesLineageHeadAlgorithmsMapInput interface {
+	pulumi.Input
+
+	ToGetCloudcertificatesLineageHeadAlgorithmsMapOutput() GetCloudcertificatesLineageHeadAlgorithmsMapOutput
+	ToGetCloudcertificatesLineageHeadAlgorithmsMapOutputWithContext(context.Context) GetCloudcertificatesLineageHeadAlgorithmsMapOutput
+}
+
+type GetCloudcertificatesLineageHeadAlgorithmsMap map[string]GetCloudcertificatesLineageHeadAlgorithmsInput
+
+func (GetCloudcertificatesLineageHeadAlgorithmsMap) ElementType() reflect.Type {
+	return reflect.TypeOf((*map[string]GetCloudcertificatesLineageHeadAlgorithms)(nil)).Elem()
+}
+
+func (i GetCloudcertificatesLineageHeadAlgorithmsMap) ToGetCloudcertificatesLineageHeadAlgorithmsMapOutput() GetCloudcertificatesLineageHeadAlgorithmsMapOutput {
+	return i.ToGetCloudcertificatesLineageHeadAlgorithmsMapOutputWithContext(context.Background())
+}
+
+func (i GetCloudcertificatesLineageHeadAlgorithmsMap) ToGetCloudcertificatesLineageHeadAlgorithmsMapOutputWithContext(ctx context.Context) GetCloudcertificatesLineageHeadAlgorithmsMapOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetCloudcertificatesLineageHeadAlgorithmsMapOutput)
+}
+
+type GetCloudcertificatesLineageHeadAlgorithmsOutput struct{ *pulumi.OutputState }
+
+func (GetCloudcertificatesLineageHeadAlgorithmsOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetCloudcertificatesLineageHeadAlgorithms)(nil)).Elem()
+}
+
+func (o GetCloudcertificatesLineageHeadAlgorithmsOutput) ToGetCloudcertificatesLineageHeadAlgorithmsOutput() GetCloudcertificatesLineageHeadAlgorithmsOutput {
+	return o
+}
+
+func (o GetCloudcertificatesLineageHeadAlgorithmsOutput) ToGetCloudcertificatesLineageHeadAlgorithmsOutputWithContext(ctx context.Context) GetCloudcertificatesLineageHeadAlgorithmsOutput {
+	return o
+}
+
+// Username of the person who created the algorithm instance.
+func (o GetCloudcertificatesLineageHeadAlgorithmsOutput) AlgorithmInstanceCreatedBy() pulumi.StringOutput {
+	return o.ApplyT(func(v GetCloudcertificatesLineageHeadAlgorithms) string { return v.AlgorithmInstanceCreatedBy }).(pulumi.StringOutput)
+}
+
+// Time the algorithm instance was created, in RFC3339 format.
+func (o GetCloudcertificatesLineageHeadAlgorithmsOutput) AlgorithmInstanceCreatedTime() pulumi.StringOutput {
+	return o.ApplyT(func(v GetCloudcertificatesLineageHeadAlgorithms) string { return v.AlgorithmInstanceCreatedTime }).(pulumi.StringOutput)
+}
+
+// Unique identifier of the algorithm instance.
+func (o GetCloudcertificatesLineageHeadAlgorithmsOutput) AlgorithmInstanceId() pulumi.IntOutput {
+	return o.ApplyT(func(v GetCloudcertificatesLineageHeadAlgorithms) int { return v.AlgorithmInstanceId }).(pulumi.IntOutput)
+}
+
+// Username of the person who last modified the algorithm instance. Null if never modified.
+func (o GetCloudcertificatesLineageHeadAlgorithmsOutput) AlgorithmInstanceModifiedBy() pulumi.StringOutput {
+	return o.ApplyT(func(v GetCloudcertificatesLineageHeadAlgorithms) string { return v.AlgorithmInstanceModifiedBy }).(pulumi.StringOutput)
+}
+
+// Time the algorithm instance was last modified, in RFC3339 format. Null if never modified.
+func (o GetCloudcertificatesLineageHeadAlgorithmsOutput) AlgorithmInstanceModifiedTime() pulumi.StringOutput {
+	return o.ApplyT(func(v GetCloudcertificatesLineageHeadAlgorithms) string { return v.AlgorithmInstanceModifiedTime }).(pulumi.StringOutput)
+}
+
+// Status of the certificate for this key type: `CSR_READY`, `CERT_UPLOAD_PROCESSING`, `READY_FOR_USE`, or `ABANDONED`.
+func (o GetCloudcertificatesLineageHeadAlgorithmsOutput) CertificateStatus() pulumi.StringOutput {
+	return o.ApplyT(func(v GetCloudcertificatesLineageHeadAlgorithms) string { return v.CertificateStatus }).(pulumi.StringOutput)
+}
+
+// Date when the CSR expires, in RFC3339 format.
+func (o GetCloudcertificatesLineageHeadAlgorithmsOutput) CsrExpirationDate() pulumi.StringOutput {
+	return o.ApplyT(func(v GetCloudcertificatesLineageHeadAlgorithms) string { return v.CsrExpirationDate }).(pulumi.StringOutput)
+}
+
+// PEM-encoded certificate signing request.
+func (o GetCloudcertificatesLineageHeadAlgorithmsOutput) CsrPem() pulumi.StringOutput {
+	return o.ApplyT(func(v GetCloudcertificatesLineageHeadAlgorithms) string { return v.CsrPem }).(pulumi.StringOutput)
+}
+
+// Issuer field of the signed certificate. Null until a certificate is uploaded.
+func (o GetCloudcertificatesLineageHeadAlgorithmsOutput) SignedCertificateIssuer() pulumi.StringOutput {
+	return o.ApplyT(func(v GetCloudcertificatesLineageHeadAlgorithms) string { return v.SignedCertificateIssuer }).(pulumi.StringOutput)
+}
+
+// Expiration date of the signed certificate, in RFC3339 format. Null until a certificate is uploaded.
+func (o GetCloudcertificatesLineageHeadAlgorithmsOutput) SignedCertificateNotValidAfterDate() pulumi.StringOutput {
+	return o.ApplyT(func(v GetCloudcertificatesLineageHeadAlgorithms) string { return v.SignedCertificateNotValidAfterDate }).(pulumi.StringOutput)
+}
+
+// Start of validity of the signed certificate, in RFC3339 format. Null until a certificate is uploaded.
+func (o GetCloudcertificatesLineageHeadAlgorithmsOutput) SignedCertificateNotValidBeforeDate() pulumi.StringOutput {
+	return o.ApplyT(func(v GetCloudcertificatesLineageHeadAlgorithms) string { return v.SignedCertificateNotValidBeforeDate }).(pulumi.StringOutput)
+}
+
+// PEM-encoded signed certificate. Null until a certificate is uploaded.
+func (o GetCloudcertificatesLineageHeadAlgorithmsOutput) SignedCertificatePem() pulumi.StringOutput {
+	return o.ApplyT(func(v GetCloudcertificatesLineageHeadAlgorithms) string { return v.SignedCertificatePem }).(pulumi.StringOutput)
+}
+
+// Serial number of the signed certificate in hex format. Null until a certificate is uploaded.
+func (o GetCloudcertificatesLineageHeadAlgorithmsOutput) SignedCertificateSerialNumber() pulumi.StringOutput {
+	return o.ApplyT(func(v GetCloudcertificatesLineageHeadAlgorithms) string { return v.SignedCertificateSerialNumber }).(pulumi.StringOutput)
+}
+
+// SHA-256 fingerprint of the signed certificate. Null until a certificate is uploaded.
+func (o GetCloudcertificatesLineageHeadAlgorithmsOutput) SignedCertificateSha256Fingerprint() pulumi.StringOutput {
+	return o.ApplyT(func(v GetCloudcertificatesLineageHeadAlgorithms) string { return v.SignedCertificateSha256Fingerprint }).(pulumi.StringOutput)
+}
+
+// PEM-encoded trust chain uploaded alongside the signed certificate. Null if none was uploaded.
+func (o GetCloudcertificatesLineageHeadAlgorithmsOutput) TrustChainPem() pulumi.StringOutput {
+	return o.ApplyT(func(v GetCloudcertificatesLineageHeadAlgorithms) string { return v.TrustChainPem }).(pulumi.StringOutput)
+}
+
+type GetCloudcertificatesLineageHeadAlgorithmsMapOutput struct{ *pulumi.OutputState }
+
+func (GetCloudcertificatesLineageHeadAlgorithmsMapOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*map[string]GetCloudcertificatesLineageHeadAlgorithms)(nil)).Elem()
+}
+
+func (o GetCloudcertificatesLineageHeadAlgorithmsMapOutput) ToGetCloudcertificatesLineageHeadAlgorithmsMapOutput() GetCloudcertificatesLineageHeadAlgorithmsMapOutput {
+	return o
+}
+
+func (o GetCloudcertificatesLineageHeadAlgorithmsMapOutput) ToGetCloudcertificatesLineageHeadAlgorithmsMapOutputWithContext(ctx context.Context) GetCloudcertificatesLineageHeadAlgorithmsMapOutput {
+	return o
+}
+
+func (o GetCloudcertificatesLineageHeadAlgorithmsMapOutput) MapIndex(k pulumi.StringInput) GetCloudcertificatesLineageHeadAlgorithmsOutput {
+	return pulumi.All(o, k).ApplyT(func(vs []interface{}) GetCloudcertificatesLineageHeadAlgorithms {
+		return vs[0].(map[string]GetCloudcertificatesLineageHeadAlgorithms)[vs[1].(string)]
+	}).(GetCloudcertificatesLineageHeadAlgorithmsOutput)
+}
+
+type GetCloudcertificatesLineagePreviousProduction struct {
+	// Per key-type (RSA or ECDSA) certificate details for this generation, keyed by key_type. Populated only when expandGenerations is true.
+	Algorithms map[string]GetCloudcertificatesLineagePreviousProductionAlgorithms `pulumi:"algorithms"`
+	// Time the generation was first promoted to production, in RFC3339 format. Null if never promoted, or if not requested via expand_generations.
+	FirstPromotedToProductionTime string `pulumi:"firstPromotedToProductionTime"`
+	// Username of the person who created this generation. Populated only when expandGenerations is true.
+	GenerationCreatedBy string `pulumi:"generationCreatedBy"`
+	// Time the generation was created, in RFC3339 format. Populated only when expandGenerations is true.
+	GenerationCreatedTime string `pulumi:"generationCreatedTime"`
+	// Unique identifier of the generation.
+	GenerationId int `pulumi:"generationId"`
+	// Username of the person who last modified this generation. Populated only when expandGenerations is true.
+	GenerationModifiedBy string `pulumi:"generationModifiedBy"`
+	// Time the generation was last modified, in RFC3339 format. Null if not requested via expand_generations, or if the generation has never been modified since creation.
+	GenerationModifiedTime string `pulumi:"generationModifiedTime"`
+	// Status of the generation.
+	GenerationStatus string `pulumi:"generationStatus"`
+}
+
+// GetCloudcertificatesLineagePreviousProductionInput is an input type that accepts GetCloudcertificatesLineagePreviousProductionArgs and GetCloudcertificatesLineagePreviousProductionOutput values.
+// You can construct a concrete instance of `GetCloudcertificatesLineagePreviousProductionInput` via:
+//
+//	GetCloudcertificatesLineagePreviousProductionArgs{...}
+type GetCloudcertificatesLineagePreviousProductionInput interface {
+	pulumi.Input
+
+	ToGetCloudcertificatesLineagePreviousProductionOutput() GetCloudcertificatesLineagePreviousProductionOutput
+	ToGetCloudcertificatesLineagePreviousProductionOutputWithContext(context.Context) GetCloudcertificatesLineagePreviousProductionOutput
+}
+
+type GetCloudcertificatesLineagePreviousProductionArgs struct {
+	// Per key-type (RSA or ECDSA) certificate details for this generation, keyed by key_type. Populated only when expandGenerations is true.
+	Algorithms GetCloudcertificatesLineagePreviousProductionAlgorithmsMapInput `pulumi:"algorithms"`
+	// Time the generation was first promoted to production, in RFC3339 format. Null if never promoted, or if not requested via expand_generations.
+	FirstPromotedToProductionTime pulumi.StringInput `pulumi:"firstPromotedToProductionTime"`
+	// Username of the person who created this generation. Populated only when expandGenerations is true.
+	GenerationCreatedBy pulumi.StringInput `pulumi:"generationCreatedBy"`
+	// Time the generation was created, in RFC3339 format. Populated only when expandGenerations is true.
+	GenerationCreatedTime pulumi.StringInput `pulumi:"generationCreatedTime"`
+	// Unique identifier of the generation.
+	GenerationId pulumi.IntInput `pulumi:"generationId"`
+	// Username of the person who last modified this generation. Populated only when expandGenerations is true.
+	GenerationModifiedBy pulumi.StringInput `pulumi:"generationModifiedBy"`
+	// Time the generation was last modified, in RFC3339 format. Null if not requested via expand_generations, or if the generation has never been modified since creation.
+	GenerationModifiedTime pulumi.StringInput `pulumi:"generationModifiedTime"`
+	// Status of the generation.
+	GenerationStatus pulumi.StringInput `pulumi:"generationStatus"`
+}
+
+func (GetCloudcertificatesLineagePreviousProductionArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetCloudcertificatesLineagePreviousProduction)(nil)).Elem()
+}
+
+func (i GetCloudcertificatesLineagePreviousProductionArgs) ToGetCloudcertificatesLineagePreviousProductionOutput() GetCloudcertificatesLineagePreviousProductionOutput {
+	return i.ToGetCloudcertificatesLineagePreviousProductionOutputWithContext(context.Background())
+}
+
+func (i GetCloudcertificatesLineagePreviousProductionArgs) ToGetCloudcertificatesLineagePreviousProductionOutputWithContext(ctx context.Context) GetCloudcertificatesLineagePreviousProductionOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetCloudcertificatesLineagePreviousProductionOutput)
+}
+
+type GetCloudcertificatesLineagePreviousProductionOutput struct{ *pulumi.OutputState }
+
+func (GetCloudcertificatesLineagePreviousProductionOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetCloudcertificatesLineagePreviousProduction)(nil)).Elem()
+}
+
+func (o GetCloudcertificatesLineagePreviousProductionOutput) ToGetCloudcertificatesLineagePreviousProductionOutput() GetCloudcertificatesLineagePreviousProductionOutput {
+	return o
+}
+
+func (o GetCloudcertificatesLineagePreviousProductionOutput) ToGetCloudcertificatesLineagePreviousProductionOutputWithContext(ctx context.Context) GetCloudcertificatesLineagePreviousProductionOutput {
+	return o
+}
+
+// Per key-type (RSA or ECDSA) certificate details for this generation, keyed by key_type. Populated only when expandGenerations is true.
+func (o GetCloudcertificatesLineagePreviousProductionOutput) Algorithms() GetCloudcertificatesLineagePreviousProductionAlgorithmsMapOutput {
+	return o.ApplyT(func(v GetCloudcertificatesLineagePreviousProduction) map[string]GetCloudcertificatesLineagePreviousProductionAlgorithms {
+		return v.Algorithms
+	}).(GetCloudcertificatesLineagePreviousProductionAlgorithmsMapOutput)
+}
+
+// Time the generation was first promoted to production, in RFC3339 format. Null if never promoted, or if not requested via expand_generations.
+func (o GetCloudcertificatesLineagePreviousProductionOutput) FirstPromotedToProductionTime() pulumi.StringOutput {
+	return o.ApplyT(func(v GetCloudcertificatesLineagePreviousProduction) string { return v.FirstPromotedToProductionTime }).(pulumi.StringOutput)
+}
+
+// Username of the person who created this generation. Populated only when expandGenerations is true.
+func (o GetCloudcertificatesLineagePreviousProductionOutput) GenerationCreatedBy() pulumi.StringOutput {
+	return o.ApplyT(func(v GetCloudcertificatesLineagePreviousProduction) string { return v.GenerationCreatedBy }).(pulumi.StringOutput)
+}
+
+// Time the generation was created, in RFC3339 format. Populated only when expandGenerations is true.
+func (o GetCloudcertificatesLineagePreviousProductionOutput) GenerationCreatedTime() pulumi.StringOutput {
+	return o.ApplyT(func(v GetCloudcertificatesLineagePreviousProduction) string { return v.GenerationCreatedTime }).(pulumi.StringOutput)
+}
+
+// Unique identifier of the generation.
+func (o GetCloudcertificatesLineagePreviousProductionOutput) GenerationId() pulumi.IntOutput {
+	return o.ApplyT(func(v GetCloudcertificatesLineagePreviousProduction) int { return v.GenerationId }).(pulumi.IntOutput)
+}
+
+// Username of the person who last modified this generation. Populated only when expandGenerations is true.
+func (o GetCloudcertificatesLineagePreviousProductionOutput) GenerationModifiedBy() pulumi.StringOutput {
+	return o.ApplyT(func(v GetCloudcertificatesLineagePreviousProduction) string { return v.GenerationModifiedBy }).(pulumi.StringOutput)
+}
+
+// Time the generation was last modified, in RFC3339 format. Null if not requested via expand_generations, or if the generation has never been modified since creation.
+func (o GetCloudcertificatesLineagePreviousProductionOutput) GenerationModifiedTime() pulumi.StringOutput {
+	return o.ApplyT(func(v GetCloudcertificatesLineagePreviousProduction) string { return v.GenerationModifiedTime }).(pulumi.StringOutput)
+}
+
+// Status of the generation.
+func (o GetCloudcertificatesLineagePreviousProductionOutput) GenerationStatus() pulumi.StringOutput {
+	return o.ApplyT(func(v GetCloudcertificatesLineagePreviousProduction) string { return v.GenerationStatus }).(pulumi.StringOutput)
+}
+
+type GetCloudcertificatesLineagePreviousProductionAlgorithms struct {
+	// Username of the person who created the algorithm instance.
+	AlgorithmInstanceCreatedBy string `pulumi:"algorithmInstanceCreatedBy"`
+	// Time the algorithm instance was created, in RFC3339 format.
+	AlgorithmInstanceCreatedTime string `pulumi:"algorithmInstanceCreatedTime"`
+	// Unique identifier of the algorithm instance.
+	AlgorithmInstanceId int `pulumi:"algorithmInstanceId"`
+	// Username of the person who last modified the algorithm instance. Null if never modified.
+	AlgorithmInstanceModifiedBy string `pulumi:"algorithmInstanceModifiedBy"`
+	// Time the algorithm instance was last modified, in RFC3339 format. Null if never modified.
+	AlgorithmInstanceModifiedTime string `pulumi:"algorithmInstanceModifiedTime"`
+	// Status of the certificate for this key type: `CSR_READY`, `CERT_UPLOAD_PROCESSING`, `READY_FOR_USE`, or `ABANDONED`.
+	CertificateStatus string `pulumi:"certificateStatus"`
+	// Date when the CSR expires, in RFC3339 format.
+	CsrExpirationDate string `pulumi:"csrExpirationDate"`
+	// PEM-encoded certificate signing request.
+	CsrPem string `pulumi:"csrPem"`
+	// Issuer field of the signed certificate. Null until a certificate is uploaded.
+	SignedCertificateIssuer string `pulumi:"signedCertificateIssuer"`
+	// Expiration date of the signed certificate, in RFC3339 format. Null until a certificate is uploaded.
+	SignedCertificateNotValidAfterDate string `pulumi:"signedCertificateNotValidAfterDate"`
+	// Start of validity of the signed certificate, in RFC3339 format. Null until a certificate is uploaded.
+	SignedCertificateNotValidBeforeDate string `pulumi:"signedCertificateNotValidBeforeDate"`
+	// PEM-encoded signed certificate. Null until a certificate is uploaded.
+	SignedCertificatePem string `pulumi:"signedCertificatePem"`
+	// Serial number of the signed certificate in hex format. Null until a certificate is uploaded.
+	SignedCertificateSerialNumber string `pulumi:"signedCertificateSerialNumber"`
+	// SHA-256 fingerprint of the signed certificate. Null until a certificate is uploaded.
+	SignedCertificateSha256Fingerprint string `pulumi:"signedCertificateSha256Fingerprint"`
+	// PEM-encoded trust chain uploaded alongside the signed certificate. Null if none was uploaded.
+	TrustChainPem string `pulumi:"trustChainPem"`
+}
+
+// GetCloudcertificatesLineagePreviousProductionAlgorithmsInput is an input type that accepts GetCloudcertificatesLineagePreviousProductionAlgorithmsArgs and GetCloudcertificatesLineagePreviousProductionAlgorithmsOutput values.
+// You can construct a concrete instance of `GetCloudcertificatesLineagePreviousProductionAlgorithmsInput` via:
+//
+//	GetCloudcertificatesLineagePreviousProductionAlgorithmsArgs{...}
+type GetCloudcertificatesLineagePreviousProductionAlgorithmsInput interface {
+	pulumi.Input
+
+	ToGetCloudcertificatesLineagePreviousProductionAlgorithmsOutput() GetCloudcertificatesLineagePreviousProductionAlgorithmsOutput
+	ToGetCloudcertificatesLineagePreviousProductionAlgorithmsOutputWithContext(context.Context) GetCloudcertificatesLineagePreviousProductionAlgorithmsOutput
+}
+
+type GetCloudcertificatesLineagePreviousProductionAlgorithmsArgs struct {
+	// Username of the person who created the algorithm instance.
+	AlgorithmInstanceCreatedBy pulumi.StringInput `pulumi:"algorithmInstanceCreatedBy"`
+	// Time the algorithm instance was created, in RFC3339 format.
+	AlgorithmInstanceCreatedTime pulumi.StringInput `pulumi:"algorithmInstanceCreatedTime"`
+	// Unique identifier of the algorithm instance.
+	AlgorithmInstanceId pulumi.IntInput `pulumi:"algorithmInstanceId"`
+	// Username of the person who last modified the algorithm instance. Null if never modified.
+	AlgorithmInstanceModifiedBy pulumi.StringInput `pulumi:"algorithmInstanceModifiedBy"`
+	// Time the algorithm instance was last modified, in RFC3339 format. Null if never modified.
+	AlgorithmInstanceModifiedTime pulumi.StringInput `pulumi:"algorithmInstanceModifiedTime"`
+	// Status of the certificate for this key type: `CSR_READY`, `CERT_UPLOAD_PROCESSING`, `READY_FOR_USE`, or `ABANDONED`.
+	CertificateStatus pulumi.StringInput `pulumi:"certificateStatus"`
+	// Date when the CSR expires, in RFC3339 format.
+	CsrExpirationDate pulumi.StringInput `pulumi:"csrExpirationDate"`
+	// PEM-encoded certificate signing request.
+	CsrPem pulumi.StringInput `pulumi:"csrPem"`
+	// Issuer field of the signed certificate. Null until a certificate is uploaded.
+	SignedCertificateIssuer pulumi.StringInput `pulumi:"signedCertificateIssuer"`
+	// Expiration date of the signed certificate, in RFC3339 format. Null until a certificate is uploaded.
+	SignedCertificateNotValidAfterDate pulumi.StringInput `pulumi:"signedCertificateNotValidAfterDate"`
+	// Start of validity of the signed certificate, in RFC3339 format. Null until a certificate is uploaded.
+	SignedCertificateNotValidBeforeDate pulumi.StringInput `pulumi:"signedCertificateNotValidBeforeDate"`
+	// PEM-encoded signed certificate. Null until a certificate is uploaded.
+	SignedCertificatePem pulumi.StringInput `pulumi:"signedCertificatePem"`
+	// Serial number of the signed certificate in hex format. Null until a certificate is uploaded.
+	SignedCertificateSerialNumber pulumi.StringInput `pulumi:"signedCertificateSerialNumber"`
+	// SHA-256 fingerprint of the signed certificate. Null until a certificate is uploaded.
+	SignedCertificateSha256Fingerprint pulumi.StringInput `pulumi:"signedCertificateSha256Fingerprint"`
+	// PEM-encoded trust chain uploaded alongside the signed certificate. Null if none was uploaded.
+	TrustChainPem pulumi.StringInput `pulumi:"trustChainPem"`
+}
+
+func (GetCloudcertificatesLineagePreviousProductionAlgorithmsArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetCloudcertificatesLineagePreviousProductionAlgorithms)(nil)).Elem()
+}
+
+func (i GetCloudcertificatesLineagePreviousProductionAlgorithmsArgs) ToGetCloudcertificatesLineagePreviousProductionAlgorithmsOutput() GetCloudcertificatesLineagePreviousProductionAlgorithmsOutput {
+	return i.ToGetCloudcertificatesLineagePreviousProductionAlgorithmsOutputWithContext(context.Background())
+}
+
+func (i GetCloudcertificatesLineagePreviousProductionAlgorithmsArgs) ToGetCloudcertificatesLineagePreviousProductionAlgorithmsOutputWithContext(ctx context.Context) GetCloudcertificatesLineagePreviousProductionAlgorithmsOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetCloudcertificatesLineagePreviousProductionAlgorithmsOutput)
+}
+
+// GetCloudcertificatesLineagePreviousProductionAlgorithmsMapInput is an input type that accepts GetCloudcertificatesLineagePreviousProductionAlgorithmsMap and GetCloudcertificatesLineagePreviousProductionAlgorithmsMapOutput values.
+// You can construct a concrete instance of `GetCloudcertificatesLineagePreviousProductionAlgorithmsMapInput` via:
+//
+//	GetCloudcertificatesLineagePreviousProductionAlgorithmsMap{ "key": GetCloudcertificatesLineagePreviousProductionAlgorithmsArgs{...} }
+type GetCloudcertificatesLineagePreviousProductionAlgorithmsMapInput interface {
+	pulumi.Input
+
+	ToGetCloudcertificatesLineagePreviousProductionAlgorithmsMapOutput() GetCloudcertificatesLineagePreviousProductionAlgorithmsMapOutput
+	ToGetCloudcertificatesLineagePreviousProductionAlgorithmsMapOutputWithContext(context.Context) GetCloudcertificatesLineagePreviousProductionAlgorithmsMapOutput
+}
+
+type GetCloudcertificatesLineagePreviousProductionAlgorithmsMap map[string]GetCloudcertificatesLineagePreviousProductionAlgorithmsInput
+
+func (GetCloudcertificatesLineagePreviousProductionAlgorithmsMap) ElementType() reflect.Type {
+	return reflect.TypeOf((*map[string]GetCloudcertificatesLineagePreviousProductionAlgorithms)(nil)).Elem()
+}
+
+func (i GetCloudcertificatesLineagePreviousProductionAlgorithmsMap) ToGetCloudcertificatesLineagePreviousProductionAlgorithmsMapOutput() GetCloudcertificatesLineagePreviousProductionAlgorithmsMapOutput {
+	return i.ToGetCloudcertificatesLineagePreviousProductionAlgorithmsMapOutputWithContext(context.Background())
+}
+
+func (i GetCloudcertificatesLineagePreviousProductionAlgorithmsMap) ToGetCloudcertificatesLineagePreviousProductionAlgorithmsMapOutputWithContext(ctx context.Context) GetCloudcertificatesLineagePreviousProductionAlgorithmsMapOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetCloudcertificatesLineagePreviousProductionAlgorithmsMapOutput)
+}
+
+type GetCloudcertificatesLineagePreviousProductionAlgorithmsOutput struct{ *pulumi.OutputState }
+
+func (GetCloudcertificatesLineagePreviousProductionAlgorithmsOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetCloudcertificatesLineagePreviousProductionAlgorithms)(nil)).Elem()
+}
+
+func (o GetCloudcertificatesLineagePreviousProductionAlgorithmsOutput) ToGetCloudcertificatesLineagePreviousProductionAlgorithmsOutput() GetCloudcertificatesLineagePreviousProductionAlgorithmsOutput {
+	return o
+}
+
+func (o GetCloudcertificatesLineagePreviousProductionAlgorithmsOutput) ToGetCloudcertificatesLineagePreviousProductionAlgorithmsOutputWithContext(ctx context.Context) GetCloudcertificatesLineagePreviousProductionAlgorithmsOutput {
+	return o
+}
+
+// Username of the person who created the algorithm instance.
+func (o GetCloudcertificatesLineagePreviousProductionAlgorithmsOutput) AlgorithmInstanceCreatedBy() pulumi.StringOutput {
+	return o.ApplyT(func(v GetCloudcertificatesLineagePreviousProductionAlgorithms) string {
+		return v.AlgorithmInstanceCreatedBy
+	}).(pulumi.StringOutput)
+}
+
+// Time the algorithm instance was created, in RFC3339 format.
+func (o GetCloudcertificatesLineagePreviousProductionAlgorithmsOutput) AlgorithmInstanceCreatedTime() pulumi.StringOutput {
+	return o.ApplyT(func(v GetCloudcertificatesLineagePreviousProductionAlgorithms) string {
+		return v.AlgorithmInstanceCreatedTime
+	}).(pulumi.StringOutput)
+}
+
+// Unique identifier of the algorithm instance.
+func (o GetCloudcertificatesLineagePreviousProductionAlgorithmsOutput) AlgorithmInstanceId() pulumi.IntOutput {
+	return o.ApplyT(func(v GetCloudcertificatesLineagePreviousProductionAlgorithms) int { return v.AlgorithmInstanceId }).(pulumi.IntOutput)
+}
+
+// Username of the person who last modified the algorithm instance. Null if never modified.
+func (o GetCloudcertificatesLineagePreviousProductionAlgorithmsOutput) AlgorithmInstanceModifiedBy() pulumi.StringOutput {
+	return o.ApplyT(func(v GetCloudcertificatesLineagePreviousProductionAlgorithms) string {
+		return v.AlgorithmInstanceModifiedBy
+	}).(pulumi.StringOutput)
+}
+
+// Time the algorithm instance was last modified, in RFC3339 format. Null if never modified.
+func (o GetCloudcertificatesLineagePreviousProductionAlgorithmsOutput) AlgorithmInstanceModifiedTime() pulumi.StringOutput {
+	return o.ApplyT(func(v GetCloudcertificatesLineagePreviousProductionAlgorithms) string {
+		return v.AlgorithmInstanceModifiedTime
+	}).(pulumi.StringOutput)
+}
+
+// Status of the certificate for this key type: `CSR_READY`, `CERT_UPLOAD_PROCESSING`, `READY_FOR_USE`, or `ABANDONED`.
+func (o GetCloudcertificatesLineagePreviousProductionAlgorithmsOutput) CertificateStatus() pulumi.StringOutput {
+	return o.ApplyT(func(v GetCloudcertificatesLineagePreviousProductionAlgorithms) string { return v.CertificateStatus }).(pulumi.StringOutput)
+}
+
+// Date when the CSR expires, in RFC3339 format.
+func (o GetCloudcertificatesLineagePreviousProductionAlgorithmsOutput) CsrExpirationDate() pulumi.StringOutput {
+	return o.ApplyT(func(v GetCloudcertificatesLineagePreviousProductionAlgorithms) string { return v.CsrExpirationDate }).(pulumi.StringOutput)
+}
+
+// PEM-encoded certificate signing request.
+func (o GetCloudcertificatesLineagePreviousProductionAlgorithmsOutput) CsrPem() pulumi.StringOutput {
+	return o.ApplyT(func(v GetCloudcertificatesLineagePreviousProductionAlgorithms) string { return v.CsrPem }).(pulumi.StringOutput)
+}
+
+// Issuer field of the signed certificate. Null until a certificate is uploaded.
+func (o GetCloudcertificatesLineagePreviousProductionAlgorithmsOutput) SignedCertificateIssuer() pulumi.StringOutput {
+	return o.ApplyT(func(v GetCloudcertificatesLineagePreviousProductionAlgorithms) string {
+		return v.SignedCertificateIssuer
+	}).(pulumi.StringOutput)
+}
+
+// Expiration date of the signed certificate, in RFC3339 format. Null until a certificate is uploaded.
+func (o GetCloudcertificatesLineagePreviousProductionAlgorithmsOutput) SignedCertificateNotValidAfterDate() pulumi.StringOutput {
+	return o.ApplyT(func(v GetCloudcertificatesLineagePreviousProductionAlgorithms) string {
+		return v.SignedCertificateNotValidAfterDate
+	}).(pulumi.StringOutput)
+}
+
+// Start of validity of the signed certificate, in RFC3339 format. Null until a certificate is uploaded.
+func (o GetCloudcertificatesLineagePreviousProductionAlgorithmsOutput) SignedCertificateNotValidBeforeDate() pulumi.StringOutput {
+	return o.ApplyT(func(v GetCloudcertificatesLineagePreviousProductionAlgorithms) string {
+		return v.SignedCertificateNotValidBeforeDate
+	}).(pulumi.StringOutput)
+}
+
+// PEM-encoded signed certificate. Null until a certificate is uploaded.
+func (o GetCloudcertificatesLineagePreviousProductionAlgorithmsOutput) SignedCertificatePem() pulumi.StringOutput {
+	return o.ApplyT(func(v GetCloudcertificatesLineagePreviousProductionAlgorithms) string { return v.SignedCertificatePem }).(pulumi.StringOutput)
+}
+
+// Serial number of the signed certificate in hex format. Null until a certificate is uploaded.
+func (o GetCloudcertificatesLineagePreviousProductionAlgorithmsOutput) SignedCertificateSerialNumber() pulumi.StringOutput {
+	return o.ApplyT(func(v GetCloudcertificatesLineagePreviousProductionAlgorithms) string {
+		return v.SignedCertificateSerialNumber
+	}).(pulumi.StringOutput)
+}
+
+// SHA-256 fingerprint of the signed certificate. Null until a certificate is uploaded.
+func (o GetCloudcertificatesLineagePreviousProductionAlgorithmsOutput) SignedCertificateSha256Fingerprint() pulumi.StringOutput {
+	return o.ApplyT(func(v GetCloudcertificatesLineagePreviousProductionAlgorithms) string {
+		return v.SignedCertificateSha256Fingerprint
+	}).(pulumi.StringOutput)
+}
+
+// PEM-encoded trust chain uploaded alongside the signed certificate. Null if none was uploaded.
+func (o GetCloudcertificatesLineagePreviousProductionAlgorithmsOutput) TrustChainPem() pulumi.StringOutput {
+	return o.ApplyT(func(v GetCloudcertificatesLineagePreviousProductionAlgorithms) string { return v.TrustChainPem }).(pulumi.StringOutput)
+}
+
+type GetCloudcertificatesLineagePreviousProductionAlgorithmsMapOutput struct{ *pulumi.OutputState }
+
+func (GetCloudcertificatesLineagePreviousProductionAlgorithmsMapOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*map[string]GetCloudcertificatesLineagePreviousProductionAlgorithms)(nil)).Elem()
+}
+
+func (o GetCloudcertificatesLineagePreviousProductionAlgorithmsMapOutput) ToGetCloudcertificatesLineagePreviousProductionAlgorithmsMapOutput() GetCloudcertificatesLineagePreviousProductionAlgorithmsMapOutput {
+	return o
+}
+
+func (o GetCloudcertificatesLineagePreviousProductionAlgorithmsMapOutput) ToGetCloudcertificatesLineagePreviousProductionAlgorithmsMapOutputWithContext(ctx context.Context) GetCloudcertificatesLineagePreviousProductionAlgorithmsMapOutput {
+	return o
+}
+
+func (o GetCloudcertificatesLineagePreviousProductionAlgorithmsMapOutput) MapIndex(k pulumi.StringInput) GetCloudcertificatesLineagePreviousProductionAlgorithmsOutput {
+	return pulumi.All(o, k).ApplyT(func(vs []interface{}) GetCloudcertificatesLineagePreviousProductionAlgorithms {
+		return vs[0].(map[string]GetCloudcertificatesLineagePreviousProductionAlgorithms)[vs[1].(string)]
+	}).(GetCloudcertificatesLineagePreviousProductionAlgorithmsOutput)
+}
+
+type GetCloudcertificatesLineageSigningTarget struct {
+	// Per key-type (RSA or ECDSA) certificate details for this generation, keyed by key_type. Populated only when expandGenerations is true.
+	Algorithms map[string]GetCloudcertificatesLineageSigningTargetAlgorithms `pulumi:"algorithms"`
+	// Time the generation was first promoted to production, in RFC3339 format. Null if never promoted, or if not requested via expand_generations.
+	FirstPromotedToProductionTime string `pulumi:"firstPromotedToProductionTime"`
+	// Username of the person who created this generation. Populated only when expandGenerations is true.
+	GenerationCreatedBy string `pulumi:"generationCreatedBy"`
+	// Time the generation was created, in RFC3339 format. Populated only when expandGenerations is true.
+	GenerationCreatedTime string `pulumi:"generationCreatedTime"`
+	// Unique identifier of the generation.
+	GenerationId int `pulumi:"generationId"`
+	// Username of the person who last modified this generation. Populated only when expandGenerations is true.
+	GenerationModifiedBy string `pulumi:"generationModifiedBy"`
+	// Time the generation was last modified, in RFC3339 format. Null if not requested via expand_generations, or if the generation has never been modified since creation.
+	GenerationModifiedTime string `pulumi:"generationModifiedTime"`
+	// Status of the generation.
+	GenerationStatus string `pulumi:"generationStatus"`
+}
+
+// GetCloudcertificatesLineageSigningTargetInput is an input type that accepts GetCloudcertificatesLineageSigningTargetArgs and GetCloudcertificatesLineageSigningTargetOutput values.
+// You can construct a concrete instance of `GetCloudcertificatesLineageSigningTargetInput` via:
+//
+//	GetCloudcertificatesLineageSigningTargetArgs{...}
+type GetCloudcertificatesLineageSigningTargetInput interface {
+	pulumi.Input
+
+	ToGetCloudcertificatesLineageSigningTargetOutput() GetCloudcertificatesLineageSigningTargetOutput
+	ToGetCloudcertificatesLineageSigningTargetOutputWithContext(context.Context) GetCloudcertificatesLineageSigningTargetOutput
+}
+
+type GetCloudcertificatesLineageSigningTargetArgs struct {
+	// Per key-type (RSA or ECDSA) certificate details for this generation, keyed by key_type. Populated only when expandGenerations is true.
+	Algorithms GetCloudcertificatesLineageSigningTargetAlgorithmsMapInput `pulumi:"algorithms"`
+	// Time the generation was first promoted to production, in RFC3339 format. Null if never promoted, or if not requested via expand_generations.
+	FirstPromotedToProductionTime pulumi.StringInput `pulumi:"firstPromotedToProductionTime"`
+	// Username of the person who created this generation. Populated only when expandGenerations is true.
+	GenerationCreatedBy pulumi.StringInput `pulumi:"generationCreatedBy"`
+	// Time the generation was created, in RFC3339 format. Populated only when expandGenerations is true.
+	GenerationCreatedTime pulumi.StringInput `pulumi:"generationCreatedTime"`
+	// Unique identifier of the generation.
+	GenerationId pulumi.IntInput `pulumi:"generationId"`
+	// Username of the person who last modified this generation. Populated only when expandGenerations is true.
+	GenerationModifiedBy pulumi.StringInput `pulumi:"generationModifiedBy"`
+	// Time the generation was last modified, in RFC3339 format. Null if not requested via expand_generations, or if the generation has never been modified since creation.
+	GenerationModifiedTime pulumi.StringInput `pulumi:"generationModifiedTime"`
+	// Status of the generation.
+	GenerationStatus pulumi.StringInput `pulumi:"generationStatus"`
+}
+
+func (GetCloudcertificatesLineageSigningTargetArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetCloudcertificatesLineageSigningTarget)(nil)).Elem()
+}
+
+func (i GetCloudcertificatesLineageSigningTargetArgs) ToGetCloudcertificatesLineageSigningTargetOutput() GetCloudcertificatesLineageSigningTargetOutput {
+	return i.ToGetCloudcertificatesLineageSigningTargetOutputWithContext(context.Background())
+}
+
+func (i GetCloudcertificatesLineageSigningTargetArgs) ToGetCloudcertificatesLineageSigningTargetOutputWithContext(ctx context.Context) GetCloudcertificatesLineageSigningTargetOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetCloudcertificatesLineageSigningTargetOutput)
+}
+
+type GetCloudcertificatesLineageSigningTargetOutput struct{ *pulumi.OutputState }
+
+func (GetCloudcertificatesLineageSigningTargetOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetCloudcertificatesLineageSigningTarget)(nil)).Elem()
+}
+
+func (o GetCloudcertificatesLineageSigningTargetOutput) ToGetCloudcertificatesLineageSigningTargetOutput() GetCloudcertificatesLineageSigningTargetOutput {
+	return o
+}
+
+func (o GetCloudcertificatesLineageSigningTargetOutput) ToGetCloudcertificatesLineageSigningTargetOutputWithContext(ctx context.Context) GetCloudcertificatesLineageSigningTargetOutput {
+	return o
+}
+
+// Per key-type (RSA or ECDSA) certificate details for this generation, keyed by key_type. Populated only when expandGenerations is true.
+func (o GetCloudcertificatesLineageSigningTargetOutput) Algorithms() GetCloudcertificatesLineageSigningTargetAlgorithmsMapOutput {
+	return o.ApplyT(func(v GetCloudcertificatesLineageSigningTarget) map[string]GetCloudcertificatesLineageSigningTargetAlgorithms {
+		return v.Algorithms
+	}).(GetCloudcertificatesLineageSigningTargetAlgorithmsMapOutput)
+}
+
+// Time the generation was first promoted to production, in RFC3339 format. Null if never promoted, or if not requested via expand_generations.
+func (o GetCloudcertificatesLineageSigningTargetOutput) FirstPromotedToProductionTime() pulumi.StringOutput {
+	return o.ApplyT(func(v GetCloudcertificatesLineageSigningTarget) string { return v.FirstPromotedToProductionTime }).(pulumi.StringOutput)
+}
+
+// Username of the person who created this generation. Populated only when expandGenerations is true.
+func (o GetCloudcertificatesLineageSigningTargetOutput) GenerationCreatedBy() pulumi.StringOutput {
+	return o.ApplyT(func(v GetCloudcertificatesLineageSigningTarget) string { return v.GenerationCreatedBy }).(pulumi.StringOutput)
+}
+
+// Time the generation was created, in RFC3339 format. Populated only when expandGenerations is true.
+func (o GetCloudcertificatesLineageSigningTargetOutput) GenerationCreatedTime() pulumi.StringOutput {
+	return o.ApplyT(func(v GetCloudcertificatesLineageSigningTarget) string { return v.GenerationCreatedTime }).(pulumi.StringOutput)
+}
+
+// Unique identifier of the generation.
+func (o GetCloudcertificatesLineageSigningTargetOutput) GenerationId() pulumi.IntOutput {
+	return o.ApplyT(func(v GetCloudcertificatesLineageSigningTarget) int { return v.GenerationId }).(pulumi.IntOutput)
+}
+
+// Username of the person who last modified this generation. Populated only when expandGenerations is true.
+func (o GetCloudcertificatesLineageSigningTargetOutput) GenerationModifiedBy() pulumi.StringOutput {
+	return o.ApplyT(func(v GetCloudcertificatesLineageSigningTarget) string { return v.GenerationModifiedBy }).(pulumi.StringOutput)
+}
+
+// Time the generation was last modified, in RFC3339 format. Null if not requested via expand_generations, or if the generation has never been modified since creation.
+func (o GetCloudcertificatesLineageSigningTargetOutput) GenerationModifiedTime() pulumi.StringOutput {
+	return o.ApplyT(func(v GetCloudcertificatesLineageSigningTarget) string { return v.GenerationModifiedTime }).(pulumi.StringOutput)
+}
+
+// Status of the generation.
+func (o GetCloudcertificatesLineageSigningTargetOutput) GenerationStatus() pulumi.StringOutput {
+	return o.ApplyT(func(v GetCloudcertificatesLineageSigningTarget) string { return v.GenerationStatus }).(pulumi.StringOutput)
+}
+
+type GetCloudcertificatesLineageSigningTargetAlgorithms struct {
+	// Username of the person who created the algorithm instance.
+	AlgorithmInstanceCreatedBy string `pulumi:"algorithmInstanceCreatedBy"`
+	// Time the algorithm instance was created, in RFC3339 format.
+	AlgorithmInstanceCreatedTime string `pulumi:"algorithmInstanceCreatedTime"`
+	// Unique identifier of the algorithm instance.
+	AlgorithmInstanceId int `pulumi:"algorithmInstanceId"`
+	// Username of the person who last modified the algorithm instance. Null if never modified.
+	AlgorithmInstanceModifiedBy string `pulumi:"algorithmInstanceModifiedBy"`
+	// Time the algorithm instance was last modified, in RFC3339 format. Null if never modified.
+	AlgorithmInstanceModifiedTime string `pulumi:"algorithmInstanceModifiedTime"`
+	// Status of the certificate for this key type: `CSR_READY`, `CERT_UPLOAD_PROCESSING`, `READY_FOR_USE`, or `ABANDONED`.
+	CertificateStatus string `pulumi:"certificateStatus"`
+	// Date when the CSR expires, in RFC3339 format.
+	CsrExpirationDate string `pulumi:"csrExpirationDate"`
+	// PEM-encoded certificate signing request.
+	CsrPem string `pulumi:"csrPem"`
+	// Issuer field of the signed certificate. Null until a certificate is uploaded.
+	SignedCertificateIssuer string `pulumi:"signedCertificateIssuer"`
+	// Expiration date of the signed certificate, in RFC3339 format. Null until a certificate is uploaded.
+	SignedCertificateNotValidAfterDate string `pulumi:"signedCertificateNotValidAfterDate"`
+	// Start of validity of the signed certificate, in RFC3339 format. Null until a certificate is uploaded.
+	SignedCertificateNotValidBeforeDate string `pulumi:"signedCertificateNotValidBeforeDate"`
+	// PEM-encoded signed certificate. Null until a certificate is uploaded.
+	SignedCertificatePem string `pulumi:"signedCertificatePem"`
+	// Serial number of the signed certificate in hex format. Null until a certificate is uploaded.
+	SignedCertificateSerialNumber string `pulumi:"signedCertificateSerialNumber"`
+	// SHA-256 fingerprint of the signed certificate. Null until a certificate is uploaded.
+	SignedCertificateSha256Fingerprint string `pulumi:"signedCertificateSha256Fingerprint"`
+	// PEM-encoded trust chain uploaded alongside the signed certificate. Null if none was uploaded.
+	TrustChainPem string `pulumi:"trustChainPem"`
+}
+
+// GetCloudcertificatesLineageSigningTargetAlgorithmsInput is an input type that accepts GetCloudcertificatesLineageSigningTargetAlgorithmsArgs and GetCloudcertificatesLineageSigningTargetAlgorithmsOutput values.
+// You can construct a concrete instance of `GetCloudcertificatesLineageSigningTargetAlgorithmsInput` via:
+//
+//	GetCloudcertificatesLineageSigningTargetAlgorithmsArgs{...}
+type GetCloudcertificatesLineageSigningTargetAlgorithmsInput interface {
+	pulumi.Input
+
+	ToGetCloudcertificatesLineageSigningTargetAlgorithmsOutput() GetCloudcertificatesLineageSigningTargetAlgorithmsOutput
+	ToGetCloudcertificatesLineageSigningTargetAlgorithmsOutputWithContext(context.Context) GetCloudcertificatesLineageSigningTargetAlgorithmsOutput
+}
+
+type GetCloudcertificatesLineageSigningTargetAlgorithmsArgs struct {
+	// Username of the person who created the algorithm instance.
+	AlgorithmInstanceCreatedBy pulumi.StringInput `pulumi:"algorithmInstanceCreatedBy"`
+	// Time the algorithm instance was created, in RFC3339 format.
+	AlgorithmInstanceCreatedTime pulumi.StringInput `pulumi:"algorithmInstanceCreatedTime"`
+	// Unique identifier of the algorithm instance.
+	AlgorithmInstanceId pulumi.IntInput `pulumi:"algorithmInstanceId"`
+	// Username of the person who last modified the algorithm instance. Null if never modified.
+	AlgorithmInstanceModifiedBy pulumi.StringInput `pulumi:"algorithmInstanceModifiedBy"`
+	// Time the algorithm instance was last modified, in RFC3339 format. Null if never modified.
+	AlgorithmInstanceModifiedTime pulumi.StringInput `pulumi:"algorithmInstanceModifiedTime"`
+	// Status of the certificate for this key type: `CSR_READY`, `CERT_UPLOAD_PROCESSING`, `READY_FOR_USE`, or `ABANDONED`.
+	CertificateStatus pulumi.StringInput `pulumi:"certificateStatus"`
+	// Date when the CSR expires, in RFC3339 format.
+	CsrExpirationDate pulumi.StringInput `pulumi:"csrExpirationDate"`
+	// PEM-encoded certificate signing request.
+	CsrPem pulumi.StringInput `pulumi:"csrPem"`
+	// Issuer field of the signed certificate. Null until a certificate is uploaded.
+	SignedCertificateIssuer pulumi.StringInput `pulumi:"signedCertificateIssuer"`
+	// Expiration date of the signed certificate, in RFC3339 format. Null until a certificate is uploaded.
+	SignedCertificateNotValidAfterDate pulumi.StringInput `pulumi:"signedCertificateNotValidAfterDate"`
+	// Start of validity of the signed certificate, in RFC3339 format. Null until a certificate is uploaded.
+	SignedCertificateNotValidBeforeDate pulumi.StringInput `pulumi:"signedCertificateNotValidBeforeDate"`
+	// PEM-encoded signed certificate. Null until a certificate is uploaded.
+	SignedCertificatePem pulumi.StringInput `pulumi:"signedCertificatePem"`
+	// Serial number of the signed certificate in hex format. Null until a certificate is uploaded.
+	SignedCertificateSerialNumber pulumi.StringInput `pulumi:"signedCertificateSerialNumber"`
+	// SHA-256 fingerprint of the signed certificate. Null until a certificate is uploaded.
+	SignedCertificateSha256Fingerprint pulumi.StringInput `pulumi:"signedCertificateSha256Fingerprint"`
+	// PEM-encoded trust chain uploaded alongside the signed certificate. Null if none was uploaded.
+	TrustChainPem pulumi.StringInput `pulumi:"trustChainPem"`
+}
+
+func (GetCloudcertificatesLineageSigningTargetAlgorithmsArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetCloudcertificatesLineageSigningTargetAlgorithms)(nil)).Elem()
+}
+
+func (i GetCloudcertificatesLineageSigningTargetAlgorithmsArgs) ToGetCloudcertificatesLineageSigningTargetAlgorithmsOutput() GetCloudcertificatesLineageSigningTargetAlgorithmsOutput {
+	return i.ToGetCloudcertificatesLineageSigningTargetAlgorithmsOutputWithContext(context.Background())
+}
+
+func (i GetCloudcertificatesLineageSigningTargetAlgorithmsArgs) ToGetCloudcertificatesLineageSigningTargetAlgorithmsOutputWithContext(ctx context.Context) GetCloudcertificatesLineageSigningTargetAlgorithmsOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetCloudcertificatesLineageSigningTargetAlgorithmsOutput)
+}
+
+// GetCloudcertificatesLineageSigningTargetAlgorithmsMapInput is an input type that accepts GetCloudcertificatesLineageSigningTargetAlgorithmsMap and GetCloudcertificatesLineageSigningTargetAlgorithmsMapOutput values.
+// You can construct a concrete instance of `GetCloudcertificatesLineageSigningTargetAlgorithmsMapInput` via:
+//
+//	GetCloudcertificatesLineageSigningTargetAlgorithmsMap{ "key": GetCloudcertificatesLineageSigningTargetAlgorithmsArgs{...} }
+type GetCloudcertificatesLineageSigningTargetAlgorithmsMapInput interface {
+	pulumi.Input
+
+	ToGetCloudcertificatesLineageSigningTargetAlgorithmsMapOutput() GetCloudcertificatesLineageSigningTargetAlgorithmsMapOutput
+	ToGetCloudcertificatesLineageSigningTargetAlgorithmsMapOutputWithContext(context.Context) GetCloudcertificatesLineageSigningTargetAlgorithmsMapOutput
+}
+
+type GetCloudcertificatesLineageSigningTargetAlgorithmsMap map[string]GetCloudcertificatesLineageSigningTargetAlgorithmsInput
+
+func (GetCloudcertificatesLineageSigningTargetAlgorithmsMap) ElementType() reflect.Type {
+	return reflect.TypeOf((*map[string]GetCloudcertificatesLineageSigningTargetAlgorithms)(nil)).Elem()
+}
+
+func (i GetCloudcertificatesLineageSigningTargetAlgorithmsMap) ToGetCloudcertificatesLineageSigningTargetAlgorithmsMapOutput() GetCloudcertificatesLineageSigningTargetAlgorithmsMapOutput {
+	return i.ToGetCloudcertificatesLineageSigningTargetAlgorithmsMapOutputWithContext(context.Background())
+}
+
+func (i GetCloudcertificatesLineageSigningTargetAlgorithmsMap) ToGetCloudcertificatesLineageSigningTargetAlgorithmsMapOutputWithContext(ctx context.Context) GetCloudcertificatesLineageSigningTargetAlgorithmsMapOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetCloudcertificatesLineageSigningTargetAlgorithmsMapOutput)
+}
+
+type GetCloudcertificatesLineageSigningTargetAlgorithmsOutput struct{ *pulumi.OutputState }
+
+func (GetCloudcertificatesLineageSigningTargetAlgorithmsOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetCloudcertificatesLineageSigningTargetAlgorithms)(nil)).Elem()
+}
+
+func (o GetCloudcertificatesLineageSigningTargetAlgorithmsOutput) ToGetCloudcertificatesLineageSigningTargetAlgorithmsOutput() GetCloudcertificatesLineageSigningTargetAlgorithmsOutput {
+	return o
+}
+
+func (o GetCloudcertificatesLineageSigningTargetAlgorithmsOutput) ToGetCloudcertificatesLineageSigningTargetAlgorithmsOutputWithContext(ctx context.Context) GetCloudcertificatesLineageSigningTargetAlgorithmsOutput {
+	return o
+}
+
+// Username of the person who created the algorithm instance.
+func (o GetCloudcertificatesLineageSigningTargetAlgorithmsOutput) AlgorithmInstanceCreatedBy() pulumi.StringOutput {
+	return o.ApplyT(func(v GetCloudcertificatesLineageSigningTargetAlgorithms) string { return v.AlgorithmInstanceCreatedBy }).(pulumi.StringOutput)
+}
+
+// Time the algorithm instance was created, in RFC3339 format.
+func (o GetCloudcertificatesLineageSigningTargetAlgorithmsOutput) AlgorithmInstanceCreatedTime() pulumi.StringOutput {
+	return o.ApplyT(func(v GetCloudcertificatesLineageSigningTargetAlgorithms) string {
+		return v.AlgorithmInstanceCreatedTime
+	}).(pulumi.StringOutput)
+}
+
+// Unique identifier of the algorithm instance.
+func (o GetCloudcertificatesLineageSigningTargetAlgorithmsOutput) AlgorithmInstanceId() pulumi.IntOutput {
+	return o.ApplyT(func(v GetCloudcertificatesLineageSigningTargetAlgorithms) int { return v.AlgorithmInstanceId }).(pulumi.IntOutput)
+}
+
+// Username of the person who last modified the algorithm instance. Null if never modified.
+func (o GetCloudcertificatesLineageSigningTargetAlgorithmsOutput) AlgorithmInstanceModifiedBy() pulumi.StringOutput {
+	return o.ApplyT(func(v GetCloudcertificatesLineageSigningTargetAlgorithms) string {
+		return v.AlgorithmInstanceModifiedBy
+	}).(pulumi.StringOutput)
+}
+
+// Time the algorithm instance was last modified, in RFC3339 format. Null if never modified.
+func (o GetCloudcertificatesLineageSigningTargetAlgorithmsOutput) AlgorithmInstanceModifiedTime() pulumi.StringOutput {
+	return o.ApplyT(func(v GetCloudcertificatesLineageSigningTargetAlgorithms) string {
+		return v.AlgorithmInstanceModifiedTime
+	}).(pulumi.StringOutput)
+}
+
+// Status of the certificate for this key type: `CSR_READY`, `CERT_UPLOAD_PROCESSING`, `READY_FOR_USE`, or `ABANDONED`.
+func (o GetCloudcertificatesLineageSigningTargetAlgorithmsOutput) CertificateStatus() pulumi.StringOutput {
+	return o.ApplyT(func(v GetCloudcertificatesLineageSigningTargetAlgorithms) string { return v.CertificateStatus }).(pulumi.StringOutput)
+}
+
+// Date when the CSR expires, in RFC3339 format.
+func (o GetCloudcertificatesLineageSigningTargetAlgorithmsOutput) CsrExpirationDate() pulumi.StringOutput {
+	return o.ApplyT(func(v GetCloudcertificatesLineageSigningTargetAlgorithms) string { return v.CsrExpirationDate }).(pulumi.StringOutput)
+}
+
+// PEM-encoded certificate signing request.
+func (o GetCloudcertificatesLineageSigningTargetAlgorithmsOutput) CsrPem() pulumi.StringOutput {
+	return o.ApplyT(func(v GetCloudcertificatesLineageSigningTargetAlgorithms) string { return v.CsrPem }).(pulumi.StringOutput)
+}
+
+// Issuer field of the signed certificate. Null until a certificate is uploaded.
+func (o GetCloudcertificatesLineageSigningTargetAlgorithmsOutput) SignedCertificateIssuer() pulumi.StringOutput {
+	return o.ApplyT(func(v GetCloudcertificatesLineageSigningTargetAlgorithms) string { return v.SignedCertificateIssuer }).(pulumi.StringOutput)
+}
+
+// Expiration date of the signed certificate, in RFC3339 format. Null until a certificate is uploaded.
+func (o GetCloudcertificatesLineageSigningTargetAlgorithmsOutput) SignedCertificateNotValidAfterDate() pulumi.StringOutput {
+	return o.ApplyT(func(v GetCloudcertificatesLineageSigningTargetAlgorithms) string {
+		return v.SignedCertificateNotValidAfterDate
+	}).(pulumi.StringOutput)
+}
+
+// Start of validity of the signed certificate, in RFC3339 format. Null until a certificate is uploaded.
+func (o GetCloudcertificatesLineageSigningTargetAlgorithmsOutput) SignedCertificateNotValidBeforeDate() pulumi.StringOutput {
+	return o.ApplyT(func(v GetCloudcertificatesLineageSigningTargetAlgorithms) string {
+		return v.SignedCertificateNotValidBeforeDate
+	}).(pulumi.StringOutput)
+}
+
+// PEM-encoded signed certificate. Null until a certificate is uploaded.
+func (o GetCloudcertificatesLineageSigningTargetAlgorithmsOutput) SignedCertificatePem() pulumi.StringOutput {
+	return o.ApplyT(func(v GetCloudcertificatesLineageSigningTargetAlgorithms) string { return v.SignedCertificatePem }).(pulumi.StringOutput)
+}
+
+// Serial number of the signed certificate in hex format. Null until a certificate is uploaded.
+func (o GetCloudcertificatesLineageSigningTargetAlgorithmsOutput) SignedCertificateSerialNumber() pulumi.StringOutput {
+	return o.ApplyT(func(v GetCloudcertificatesLineageSigningTargetAlgorithms) string {
+		return v.SignedCertificateSerialNumber
+	}).(pulumi.StringOutput)
+}
+
+// SHA-256 fingerprint of the signed certificate. Null until a certificate is uploaded.
+func (o GetCloudcertificatesLineageSigningTargetAlgorithmsOutput) SignedCertificateSha256Fingerprint() pulumi.StringOutput {
+	return o.ApplyT(func(v GetCloudcertificatesLineageSigningTargetAlgorithms) string {
+		return v.SignedCertificateSha256Fingerprint
+	}).(pulumi.StringOutput)
+}
+
+// PEM-encoded trust chain uploaded alongside the signed certificate. Null if none was uploaded.
+func (o GetCloudcertificatesLineageSigningTargetAlgorithmsOutput) TrustChainPem() pulumi.StringOutput {
+	return o.ApplyT(func(v GetCloudcertificatesLineageSigningTargetAlgorithms) string { return v.TrustChainPem }).(pulumi.StringOutput)
+}
+
+type GetCloudcertificatesLineageSigningTargetAlgorithmsMapOutput struct{ *pulumi.OutputState }
+
+func (GetCloudcertificatesLineageSigningTargetAlgorithmsMapOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*map[string]GetCloudcertificatesLineageSigningTargetAlgorithms)(nil)).Elem()
+}
+
+func (o GetCloudcertificatesLineageSigningTargetAlgorithmsMapOutput) ToGetCloudcertificatesLineageSigningTargetAlgorithmsMapOutput() GetCloudcertificatesLineageSigningTargetAlgorithmsMapOutput {
+	return o
+}
+
+func (o GetCloudcertificatesLineageSigningTargetAlgorithmsMapOutput) ToGetCloudcertificatesLineageSigningTargetAlgorithmsMapOutputWithContext(ctx context.Context) GetCloudcertificatesLineageSigningTargetAlgorithmsMapOutput {
+	return o
+}
+
+func (o GetCloudcertificatesLineageSigningTargetAlgorithmsMapOutput) MapIndex(k pulumi.StringInput) GetCloudcertificatesLineageSigningTargetAlgorithmsOutput {
+	return pulumi.All(o, k).ApplyT(func(vs []interface{}) GetCloudcertificatesLineageSigningTargetAlgorithms {
+		return vs[0].(map[string]GetCloudcertificatesLineageSigningTargetAlgorithms)[vs[1].(string)]
+	}).(GetCloudcertificatesLineageSigningTargetAlgorithmsOutput)
+}
+
+type GetCloudcertificatesLineageSubject struct {
+	// Common name (CN). Null if not provided.
 	CommonName string `pulumi:"commonName"`
-	// Two-letter ISO 3166 country code.
+	// Two-letter ISO 3166 country code (C). Null if not provided.
 	Country string `pulumi:"country"`
-	// City or locality name.
+	// Locality or city name (L). Null if not provided.
 	Locality string `pulumi:"locality"`
-	// Legal name of the organization.
+	// Organization (O). Null if not provided.
 	Organization string `pulumi:"organization"`
-	// Full name of the state or province.
+	// Organizational unit (OU). Null if not provided.
+	OrganizationalUnit string `pulumi:"organizationalUnit"`
+	// State or province name (ST). Null if not provided.
 	State string `pulumi:"state"`
 }
 
-// GetCloudcertificatesCertificatesCertificateSubjectInput is an input type that accepts GetCloudcertificatesCertificatesCertificateSubjectArgs and GetCloudcertificatesCertificatesCertificateSubjectOutput values.
-// You can construct a concrete instance of `GetCloudcertificatesCertificatesCertificateSubjectInput` via:
+// GetCloudcertificatesLineageSubjectInput is an input type that accepts GetCloudcertificatesLineageSubjectArgs and GetCloudcertificatesLineageSubjectOutput values.
+// You can construct a concrete instance of `GetCloudcertificatesLineageSubjectInput` via:
 //
-//	GetCloudcertificatesCertificatesCertificateSubjectArgs{...}
-type GetCloudcertificatesCertificatesCertificateSubjectInput interface {
+//	GetCloudcertificatesLineageSubjectArgs{...}
+type GetCloudcertificatesLineageSubjectInput interface {
 	pulumi.Input
 
-	ToGetCloudcertificatesCertificatesCertificateSubjectOutput() GetCloudcertificatesCertificatesCertificateSubjectOutput
-	ToGetCloudcertificatesCertificatesCertificateSubjectOutputWithContext(context.Context) GetCloudcertificatesCertificatesCertificateSubjectOutput
+	ToGetCloudcertificatesLineageSubjectOutput() GetCloudcertificatesLineageSubjectOutput
+	ToGetCloudcertificatesLineageSubjectOutputWithContext(context.Context) GetCloudcertificatesLineageSubjectOutput
 }
 
-type GetCloudcertificatesCertificatesCertificateSubjectArgs struct {
-	// Fully qualified domain name (FQDN) or other name associated with the subject.
+type GetCloudcertificatesLineageSubjectArgs struct {
+	// Common name (CN). Null if not provided.
 	CommonName pulumi.StringInput `pulumi:"commonName"`
-	// Two-letter ISO 3166 country code.
+	// Two-letter ISO 3166 country code (C). Null if not provided.
 	Country pulumi.StringInput `pulumi:"country"`
-	// City or locality name.
+	// Locality or city name (L). Null if not provided.
 	Locality pulumi.StringInput `pulumi:"locality"`
-	// Legal name of the organization.
+	// Organization (O). Null if not provided.
 	Organization pulumi.StringInput `pulumi:"organization"`
-	// Full name of the state or province.
+	// Organizational unit (OU). Null if not provided.
+	OrganizationalUnit pulumi.StringInput `pulumi:"organizationalUnit"`
+	// State or province name (ST). Null if not provided.
 	State pulumi.StringInput `pulumi:"state"`
 }
 
-func (GetCloudcertificatesCertificatesCertificateSubjectArgs) ElementType() reflect.Type {
-	return reflect.TypeOf((*GetCloudcertificatesCertificatesCertificateSubject)(nil)).Elem()
+func (GetCloudcertificatesLineageSubjectArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetCloudcertificatesLineageSubject)(nil)).Elem()
 }
 
-func (i GetCloudcertificatesCertificatesCertificateSubjectArgs) ToGetCloudcertificatesCertificatesCertificateSubjectOutput() GetCloudcertificatesCertificatesCertificateSubjectOutput {
-	return i.ToGetCloudcertificatesCertificatesCertificateSubjectOutputWithContext(context.Background())
+func (i GetCloudcertificatesLineageSubjectArgs) ToGetCloudcertificatesLineageSubjectOutput() GetCloudcertificatesLineageSubjectOutput {
+	return i.ToGetCloudcertificatesLineageSubjectOutputWithContext(context.Background())
 }
 
-func (i GetCloudcertificatesCertificatesCertificateSubjectArgs) ToGetCloudcertificatesCertificatesCertificateSubjectOutputWithContext(ctx context.Context) GetCloudcertificatesCertificatesCertificateSubjectOutput {
-	return pulumi.ToOutputWithContext(ctx, i).(GetCloudcertificatesCertificatesCertificateSubjectOutput)
+func (i GetCloudcertificatesLineageSubjectArgs) ToGetCloudcertificatesLineageSubjectOutputWithContext(ctx context.Context) GetCloudcertificatesLineageSubjectOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetCloudcertificatesLineageSubjectOutput)
 }
 
-type GetCloudcertificatesCertificatesCertificateSubjectOutput struct{ *pulumi.OutputState }
+type GetCloudcertificatesLineageSubjectOutput struct{ *pulumi.OutputState }
 
-func (GetCloudcertificatesCertificatesCertificateSubjectOutput) ElementType() reflect.Type {
-	return reflect.TypeOf((*GetCloudcertificatesCertificatesCertificateSubject)(nil)).Elem()
+func (GetCloudcertificatesLineageSubjectOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetCloudcertificatesLineageSubject)(nil)).Elem()
 }
 
-func (o GetCloudcertificatesCertificatesCertificateSubjectOutput) ToGetCloudcertificatesCertificatesCertificateSubjectOutput() GetCloudcertificatesCertificatesCertificateSubjectOutput {
+func (o GetCloudcertificatesLineageSubjectOutput) ToGetCloudcertificatesLineageSubjectOutput() GetCloudcertificatesLineageSubjectOutput {
 	return o
 }
 
-func (o GetCloudcertificatesCertificatesCertificateSubjectOutput) ToGetCloudcertificatesCertificatesCertificateSubjectOutputWithContext(ctx context.Context) GetCloudcertificatesCertificatesCertificateSubjectOutput {
+func (o GetCloudcertificatesLineageSubjectOutput) ToGetCloudcertificatesLineageSubjectOutputWithContext(ctx context.Context) GetCloudcertificatesLineageSubjectOutput {
 	return o
 }
 
-// Fully qualified domain name (FQDN) or other name associated with the subject.
-func (o GetCloudcertificatesCertificatesCertificateSubjectOutput) CommonName() pulumi.StringOutput {
-	return o.ApplyT(func(v GetCloudcertificatesCertificatesCertificateSubject) string { return v.CommonName }).(pulumi.StringOutput)
+// Common name (CN). Null if not provided.
+func (o GetCloudcertificatesLineageSubjectOutput) CommonName() pulumi.StringOutput {
+	return o.ApplyT(func(v GetCloudcertificatesLineageSubject) string { return v.CommonName }).(pulumi.StringOutput)
 }
 
-// Two-letter ISO 3166 country code.
-func (o GetCloudcertificatesCertificatesCertificateSubjectOutput) Country() pulumi.StringOutput {
-	return o.ApplyT(func(v GetCloudcertificatesCertificatesCertificateSubject) string { return v.Country }).(pulumi.StringOutput)
+// Two-letter ISO 3166 country code (C). Null if not provided.
+func (o GetCloudcertificatesLineageSubjectOutput) Country() pulumi.StringOutput {
+	return o.ApplyT(func(v GetCloudcertificatesLineageSubject) string { return v.Country }).(pulumi.StringOutput)
 }
 
-// City or locality name.
-func (o GetCloudcertificatesCertificatesCertificateSubjectOutput) Locality() pulumi.StringOutput {
-	return o.ApplyT(func(v GetCloudcertificatesCertificatesCertificateSubject) string { return v.Locality }).(pulumi.StringOutput)
+// Locality or city name (L). Null if not provided.
+func (o GetCloudcertificatesLineageSubjectOutput) Locality() pulumi.StringOutput {
+	return o.ApplyT(func(v GetCloudcertificatesLineageSubject) string { return v.Locality }).(pulumi.StringOutput)
 }
 
-// Legal name of the organization.
-func (o GetCloudcertificatesCertificatesCertificateSubjectOutput) Organization() pulumi.StringOutput {
-	return o.ApplyT(func(v GetCloudcertificatesCertificatesCertificateSubject) string { return v.Organization }).(pulumi.StringOutput)
+// Organization (O). Null if not provided.
+func (o GetCloudcertificatesLineageSubjectOutput) Organization() pulumi.StringOutput {
+	return o.ApplyT(func(v GetCloudcertificatesLineageSubject) string { return v.Organization }).(pulumi.StringOutput)
 }
 
-// Full name of the state or province.
-func (o GetCloudcertificatesCertificatesCertificateSubjectOutput) State() pulumi.StringOutput {
-	return o.ApplyT(func(v GetCloudcertificatesCertificatesCertificateSubject) string { return v.State }).(pulumi.StringOutput)
+// Organizational unit (OU). Null if not provided.
+func (o GetCloudcertificatesLineageSubjectOutput) OrganizationalUnit() pulumi.StringOutput {
+	return o.ApplyT(func(v GetCloudcertificatesLineageSubject) string { return v.OrganizationalUnit }).(pulumi.StringOutput)
 }
 
-type GetCloudcertificatesHostnameBindingsBinding struct {
-	// Unique identifier for the third-party certificate.
-	CertificateId string `pulumi:"certificateId"`
-	// Hostname on the Akamai CDN the certificate applies to.
-	Hostname string `pulumi:"hostname"`
-	// The deployment network, either 'STAGING' or 'PRODUCTION', on which the certificate is active for a property version.
-	Network string `pulumi:"network"`
-	// Resource type this binding applies to. Currently, only 'CDN_HOSTNAME' is available.
-	ResourceType string `pulumi:"resourceType"`
+// State or province name (ST). Null if not provided.
+func (o GetCloudcertificatesLineageSubjectOutput) State() pulumi.StringOutput {
+	return o.ApplyT(func(v GetCloudcertificatesLineageSubject) string { return v.State }).(pulumi.StringOutput)
 }
 
-// GetCloudcertificatesHostnameBindingsBindingInput is an input type that accepts GetCloudcertificatesHostnameBindingsBindingArgs and GetCloudcertificatesHostnameBindingsBindingOutput values.
-// You can construct a concrete instance of `GetCloudcertificatesHostnameBindingsBindingInput` via:
+type GetCloudcertificatesLineagesLineage struct {
+	// Account identifier associated with the contract.
+	AccountId string `pulumi:"accountId"`
+	// Contract identifier under which the lineage was created.
+	ContractId string `pulumi:"contractId"`
+	// Generation currently deployed to the production network. Null when no current production generation exists. Populated only when expandGenerations is true.
+	CurrentProduction GetCloudcertificatesLineagesLineageCurrentProduction `pulumi:"currentProduction"`
+	// Generation currently deployed to the staging network. Null when no current staging generation exists. Populated only when expandGenerations is true.
+	CurrentStaging GetCloudcertificatesLineagesLineageCurrentStaging `pulumi:"currentStaging"`
+	// Geographic class of the certificate.
+	GeoClass string `pulumi:"geoClass"`
+	// Unique identifier of the group.
+	GroupId int `pulumi:"groupId"`
+	// Head generation of the lineage. Null when no head generation exists. Populated only when expandGenerations is true.
+	Head GetCloudcertificatesLineagesLineageHead `pulumi:"head"`
+	// Key specifications declared for the lineage, mapping keyType (e.g. RSA or ECDSA) to keySize (e.g. 2048 or P-256).
+	KeySpecs map[string]string `pulumi:"keySpecs"`
+	// Username of the person who created the lineage.
+	LineageCreatedBy string `pulumi:"lineageCreatedBy"`
+	// Time the lineage was created, in RFC3339 format.
+	LineageCreatedTime string `pulumi:"lineageCreatedTime"`
+	// Unique identifier of the lineage.
+	LineageId int `pulumi:"lineageId"`
+	// Username of the person who last modified the lineage.
+	LineageModifiedBy string `pulumi:"lineageModifiedBy"`
+	// Time the lineage was last modified, in RFC3339 format.
+	LineageModifiedTime string `pulumi:"lineageModifiedTime"`
+	// Name of the lineage.
+	LineageName string `pulumi:"lineageName"`
+	// Type of the lineage, e.g. MULTIPLE_GENERATION or SINGLE_GENERATION.
+	LineageType string `pulumi:"lineageType"`
+	// Generation previously deployed to production (rollback candidate). Null when no previous production generation exists. Populated only when expandGenerations is true.
+	PreviousProduction GetCloudcertificatesLineagesLineagePreviousProduction `pulumi:"previousProduction"`
+	// Subject Alternative Names (SANs) for the certificate.
+	Sans []string `pulumi:"sans"`
+	// Secure network type, e.g. ENHANCED_TLS or STANDARD_TLS.
+	SecureNetwork string `pulumi:"secureNetwork"`
+	// Derived convenience field, not a distinct API concept: the generation whose CSR currently needs to be signed and uploaded - the lineage's head generation if one exists, otherwise its current production generation (e.g. while completing a MULTIPLE_STACK lineage's second algorithm). It is null if neither exists or if expandGenerations is false.
+	SigningTarget GetCloudcertificatesLineagesLineageSigningTarget `pulumi:"signingTarget"`
+	// Stack mode of the lineage, e.g. SINGLE_STACK or MULTIPLE_STACK.
+	StackMode string `pulumi:"stackMode"`
+	// X.509 subject fields of the certificate. All fields are null if no subject was provided when the lineage was created.
+	Subject GetCloudcertificatesLineagesLineageSubject `pulumi:"subject"`
+}
+
+// GetCloudcertificatesLineagesLineageInput is an input type that accepts GetCloudcertificatesLineagesLineageArgs and GetCloudcertificatesLineagesLineageOutput values.
+// You can construct a concrete instance of `GetCloudcertificatesLineagesLineageInput` via:
 //
-//	GetCloudcertificatesHostnameBindingsBindingArgs{...}
-type GetCloudcertificatesHostnameBindingsBindingInput interface {
+//	GetCloudcertificatesLineagesLineageArgs{...}
+type GetCloudcertificatesLineagesLineageInput interface {
 	pulumi.Input
 
-	ToGetCloudcertificatesHostnameBindingsBindingOutput() GetCloudcertificatesHostnameBindingsBindingOutput
-	ToGetCloudcertificatesHostnameBindingsBindingOutputWithContext(context.Context) GetCloudcertificatesHostnameBindingsBindingOutput
+	ToGetCloudcertificatesLineagesLineageOutput() GetCloudcertificatesLineagesLineageOutput
+	ToGetCloudcertificatesLineagesLineageOutputWithContext(context.Context) GetCloudcertificatesLineagesLineageOutput
 }
 
-type GetCloudcertificatesHostnameBindingsBindingArgs struct {
-	// Unique identifier for the third-party certificate.
-	CertificateId pulumi.StringInput `pulumi:"certificateId"`
-	// Hostname on the Akamai CDN the certificate applies to.
-	Hostname pulumi.StringInput `pulumi:"hostname"`
-	// The deployment network, either 'STAGING' or 'PRODUCTION', on which the certificate is active for a property version.
-	Network pulumi.StringInput `pulumi:"network"`
-	// Resource type this binding applies to. Currently, only 'CDN_HOSTNAME' is available.
-	ResourceType pulumi.StringInput `pulumi:"resourceType"`
+type GetCloudcertificatesLineagesLineageArgs struct {
+	// Account identifier associated with the contract.
+	AccountId pulumi.StringInput `pulumi:"accountId"`
+	// Contract identifier under which the lineage was created.
+	ContractId pulumi.StringInput `pulumi:"contractId"`
+	// Generation currently deployed to the production network. Null when no current production generation exists. Populated only when expandGenerations is true.
+	CurrentProduction GetCloudcertificatesLineagesLineageCurrentProductionInput `pulumi:"currentProduction"`
+	// Generation currently deployed to the staging network. Null when no current staging generation exists. Populated only when expandGenerations is true.
+	CurrentStaging GetCloudcertificatesLineagesLineageCurrentStagingInput `pulumi:"currentStaging"`
+	// Geographic class of the certificate.
+	GeoClass pulumi.StringInput `pulumi:"geoClass"`
+	// Unique identifier of the group.
+	GroupId pulumi.IntInput `pulumi:"groupId"`
+	// Head generation of the lineage. Null when no head generation exists. Populated only when expandGenerations is true.
+	Head GetCloudcertificatesLineagesLineageHeadInput `pulumi:"head"`
+	// Key specifications declared for the lineage, mapping keyType (e.g. RSA or ECDSA) to keySize (e.g. 2048 or P-256).
+	KeySpecs pulumi.StringMapInput `pulumi:"keySpecs"`
+	// Username of the person who created the lineage.
+	LineageCreatedBy pulumi.StringInput `pulumi:"lineageCreatedBy"`
+	// Time the lineage was created, in RFC3339 format.
+	LineageCreatedTime pulumi.StringInput `pulumi:"lineageCreatedTime"`
+	// Unique identifier of the lineage.
+	LineageId pulumi.IntInput `pulumi:"lineageId"`
+	// Username of the person who last modified the lineage.
+	LineageModifiedBy pulumi.StringInput `pulumi:"lineageModifiedBy"`
+	// Time the lineage was last modified, in RFC3339 format.
+	LineageModifiedTime pulumi.StringInput `pulumi:"lineageModifiedTime"`
+	// Name of the lineage.
+	LineageName pulumi.StringInput `pulumi:"lineageName"`
+	// Type of the lineage, e.g. MULTIPLE_GENERATION or SINGLE_GENERATION.
+	LineageType pulumi.StringInput `pulumi:"lineageType"`
+	// Generation previously deployed to production (rollback candidate). Null when no previous production generation exists. Populated only when expandGenerations is true.
+	PreviousProduction GetCloudcertificatesLineagesLineagePreviousProductionInput `pulumi:"previousProduction"`
+	// Subject Alternative Names (SANs) for the certificate.
+	Sans pulumi.StringArrayInput `pulumi:"sans"`
+	// Secure network type, e.g. ENHANCED_TLS or STANDARD_TLS.
+	SecureNetwork pulumi.StringInput `pulumi:"secureNetwork"`
+	// Derived convenience field, not a distinct API concept: the generation whose CSR currently needs to be signed and uploaded - the lineage's head generation if one exists, otherwise its current production generation (e.g. while completing a MULTIPLE_STACK lineage's second algorithm). It is null if neither exists or if expandGenerations is false.
+	SigningTarget GetCloudcertificatesLineagesLineageSigningTargetInput `pulumi:"signingTarget"`
+	// Stack mode of the lineage, e.g. SINGLE_STACK or MULTIPLE_STACK.
+	StackMode pulumi.StringInput `pulumi:"stackMode"`
+	// X.509 subject fields of the certificate. All fields are null if no subject was provided when the lineage was created.
+	Subject GetCloudcertificatesLineagesLineageSubjectInput `pulumi:"subject"`
 }
 
-func (GetCloudcertificatesHostnameBindingsBindingArgs) ElementType() reflect.Type {
-	return reflect.TypeOf((*GetCloudcertificatesHostnameBindingsBinding)(nil)).Elem()
+func (GetCloudcertificatesLineagesLineageArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetCloudcertificatesLineagesLineage)(nil)).Elem()
 }
 
-func (i GetCloudcertificatesHostnameBindingsBindingArgs) ToGetCloudcertificatesHostnameBindingsBindingOutput() GetCloudcertificatesHostnameBindingsBindingOutput {
-	return i.ToGetCloudcertificatesHostnameBindingsBindingOutputWithContext(context.Background())
+func (i GetCloudcertificatesLineagesLineageArgs) ToGetCloudcertificatesLineagesLineageOutput() GetCloudcertificatesLineagesLineageOutput {
+	return i.ToGetCloudcertificatesLineagesLineageOutputWithContext(context.Background())
 }
 
-func (i GetCloudcertificatesHostnameBindingsBindingArgs) ToGetCloudcertificatesHostnameBindingsBindingOutputWithContext(ctx context.Context) GetCloudcertificatesHostnameBindingsBindingOutput {
-	return pulumi.ToOutputWithContext(ctx, i).(GetCloudcertificatesHostnameBindingsBindingOutput)
+func (i GetCloudcertificatesLineagesLineageArgs) ToGetCloudcertificatesLineagesLineageOutputWithContext(ctx context.Context) GetCloudcertificatesLineagesLineageOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetCloudcertificatesLineagesLineageOutput)
 }
 
-// GetCloudcertificatesHostnameBindingsBindingArrayInput is an input type that accepts GetCloudcertificatesHostnameBindingsBindingArray and GetCloudcertificatesHostnameBindingsBindingArrayOutput values.
-// You can construct a concrete instance of `GetCloudcertificatesHostnameBindingsBindingArrayInput` via:
+// GetCloudcertificatesLineagesLineageArrayInput is an input type that accepts GetCloudcertificatesLineagesLineageArray and GetCloudcertificatesLineagesLineageArrayOutput values.
+// You can construct a concrete instance of `GetCloudcertificatesLineagesLineageArrayInput` via:
 //
-//	GetCloudcertificatesHostnameBindingsBindingArray{ GetCloudcertificatesHostnameBindingsBindingArgs{...} }
-type GetCloudcertificatesHostnameBindingsBindingArrayInput interface {
+//	GetCloudcertificatesLineagesLineageArray{ GetCloudcertificatesLineagesLineageArgs{...} }
+type GetCloudcertificatesLineagesLineageArrayInput interface {
 	pulumi.Input
 
-	ToGetCloudcertificatesHostnameBindingsBindingArrayOutput() GetCloudcertificatesHostnameBindingsBindingArrayOutput
-	ToGetCloudcertificatesHostnameBindingsBindingArrayOutputWithContext(context.Context) GetCloudcertificatesHostnameBindingsBindingArrayOutput
+	ToGetCloudcertificatesLineagesLineageArrayOutput() GetCloudcertificatesLineagesLineageArrayOutput
+	ToGetCloudcertificatesLineagesLineageArrayOutputWithContext(context.Context) GetCloudcertificatesLineagesLineageArrayOutput
 }
 
-type GetCloudcertificatesHostnameBindingsBindingArray []GetCloudcertificatesHostnameBindingsBindingInput
+type GetCloudcertificatesLineagesLineageArray []GetCloudcertificatesLineagesLineageInput
 
-func (GetCloudcertificatesHostnameBindingsBindingArray) ElementType() reflect.Type {
-	return reflect.TypeOf((*[]GetCloudcertificatesHostnameBindingsBinding)(nil)).Elem()
+func (GetCloudcertificatesLineagesLineageArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetCloudcertificatesLineagesLineage)(nil)).Elem()
 }
 
-func (i GetCloudcertificatesHostnameBindingsBindingArray) ToGetCloudcertificatesHostnameBindingsBindingArrayOutput() GetCloudcertificatesHostnameBindingsBindingArrayOutput {
-	return i.ToGetCloudcertificatesHostnameBindingsBindingArrayOutputWithContext(context.Background())
+func (i GetCloudcertificatesLineagesLineageArray) ToGetCloudcertificatesLineagesLineageArrayOutput() GetCloudcertificatesLineagesLineageArrayOutput {
+	return i.ToGetCloudcertificatesLineagesLineageArrayOutputWithContext(context.Background())
 }
 
-func (i GetCloudcertificatesHostnameBindingsBindingArray) ToGetCloudcertificatesHostnameBindingsBindingArrayOutputWithContext(ctx context.Context) GetCloudcertificatesHostnameBindingsBindingArrayOutput {
-	return pulumi.ToOutputWithContext(ctx, i).(GetCloudcertificatesHostnameBindingsBindingArrayOutput)
+func (i GetCloudcertificatesLineagesLineageArray) ToGetCloudcertificatesLineagesLineageArrayOutputWithContext(ctx context.Context) GetCloudcertificatesLineagesLineageArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetCloudcertificatesLineagesLineageArrayOutput)
 }
 
-type GetCloudcertificatesHostnameBindingsBindingOutput struct{ *pulumi.OutputState }
+type GetCloudcertificatesLineagesLineageOutput struct{ *pulumi.OutputState }
 
-func (GetCloudcertificatesHostnameBindingsBindingOutput) ElementType() reflect.Type {
-	return reflect.TypeOf((*GetCloudcertificatesHostnameBindingsBinding)(nil)).Elem()
+func (GetCloudcertificatesLineagesLineageOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetCloudcertificatesLineagesLineage)(nil)).Elem()
 }
 
-func (o GetCloudcertificatesHostnameBindingsBindingOutput) ToGetCloudcertificatesHostnameBindingsBindingOutput() GetCloudcertificatesHostnameBindingsBindingOutput {
+func (o GetCloudcertificatesLineagesLineageOutput) ToGetCloudcertificatesLineagesLineageOutput() GetCloudcertificatesLineagesLineageOutput {
 	return o
 }
 
-func (o GetCloudcertificatesHostnameBindingsBindingOutput) ToGetCloudcertificatesHostnameBindingsBindingOutputWithContext(ctx context.Context) GetCloudcertificatesHostnameBindingsBindingOutput {
+func (o GetCloudcertificatesLineagesLineageOutput) ToGetCloudcertificatesLineagesLineageOutputWithContext(ctx context.Context) GetCloudcertificatesLineagesLineageOutput {
 	return o
 }
 
-// Unique identifier for the third-party certificate.
-func (o GetCloudcertificatesHostnameBindingsBindingOutput) CertificateId() pulumi.StringOutput {
-	return o.ApplyT(func(v GetCloudcertificatesHostnameBindingsBinding) string { return v.CertificateId }).(pulumi.StringOutput)
+// Account identifier associated with the contract.
+func (o GetCloudcertificatesLineagesLineageOutput) AccountId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetCloudcertificatesLineagesLineage) string { return v.AccountId }).(pulumi.StringOutput)
 }
 
-// Hostname on the Akamai CDN the certificate applies to.
-func (o GetCloudcertificatesHostnameBindingsBindingOutput) Hostname() pulumi.StringOutput {
-	return o.ApplyT(func(v GetCloudcertificatesHostnameBindingsBinding) string { return v.Hostname }).(pulumi.StringOutput)
+// Contract identifier under which the lineage was created.
+func (o GetCloudcertificatesLineagesLineageOutput) ContractId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetCloudcertificatesLineagesLineage) string { return v.ContractId }).(pulumi.StringOutput)
 }
 
-// The deployment network, either 'STAGING' or 'PRODUCTION', on which the certificate is active for a property version.
-func (o GetCloudcertificatesHostnameBindingsBindingOutput) Network() pulumi.StringOutput {
-	return o.ApplyT(func(v GetCloudcertificatesHostnameBindingsBinding) string { return v.Network }).(pulumi.StringOutput)
+// Generation currently deployed to the production network. Null when no current production generation exists. Populated only when expandGenerations is true.
+func (o GetCloudcertificatesLineagesLineageOutput) CurrentProduction() GetCloudcertificatesLineagesLineageCurrentProductionOutput {
+	return o.ApplyT(func(v GetCloudcertificatesLineagesLineage) GetCloudcertificatesLineagesLineageCurrentProduction {
+		return v.CurrentProduction
+	}).(GetCloudcertificatesLineagesLineageCurrentProductionOutput)
 }
 
-// Resource type this binding applies to. Currently, only 'CDN_HOSTNAME' is available.
-func (o GetCloudcertificatesHostnameBindingsBindingOutput) ResourceType() pulumi.StringOutput {
-	return o.ApplyT(func(v GetCloudcertificatesHostnameBindingsBinding) string { return v.ResourceType }).(pulumi.StringOutput)
+// Generation currently deployed to the staging network. Null when no current staging generation exists. Populated only when expandGenerations is true.
+func (o GetCloudcertificatesLineagesLineageOutput) CurrentStaging() GetCloudcertificatesLineagesLineageCurrentStagingOutput {
+	return o.ApplyT(func(v GetCloudcertificatesLineagesLineage) GetCloudcertificatesLineagesLineageCurrentStaging {
+		return v.CurrentStaging
+	}).(GetCloudcertificatesLineagesLineageCurrentStagingOutput)
 }
 
-type GetCloudcertificatesHostnameBindingsBindingArrayOutput struct{ *pulumi.OutputState }
-
-func (GetCloudcertificatesHostnameBindingsBindingArrayOutput) ElementType() reflect.Type {
-	return reflect.TypeOf((*[]GetCloudcertificatesHostnameBindingsBinding)(nil)).Elem()
+// Geographic class of the certificate.
+func (o GetCloudcertificatesLineagesLineageOutput) GeoClass() pulumi.StringOutput {
+	return o.ApplyT(func(v GetCloudcertificatesLineagesLineage) string { return v.GeoClass }).(pulumi.StringOutput)
 }
 
-func (o GetCloudcertificatesHostnameBindingsBindingArrayOutput) ToGetCloudcertificatesHostnameBindingsBindingArrayOutput() GetCloudcertificatesHostnameBindingsBindingArrayOutput {
+// Unique identifier of the group.
+func (o GetCloudcertificatesLineagesLineageOutput) GroupId() pulumi.IntOutput {
+	return o.ApplyT(func(v GetCloudcertificatesLineagesLineage) int { return v.GroupId }).(pulumi.IntOutput)
+}
+
+// Head generation of the lineage. Null when no head generation exists. Populated only when expandGenerations is true.
+func (o GetCloudcertificatesLineagesLineageOutput) Head() GetCloudcertificatesLineagesLineageHeadOutput {
+	return o.ApplyT(func(v GetCloudcertificatesLineagesLineage) GetCloudcertificatesLineagesLineageHead { return v.Head }).(GetCloudcertificatesLineagesLineageHeadOutput)
+}
+
+// Key specifications declared for the lineage, mapping keyType (e.g. RSA or ECDSA) to keySize (e.g. 2048 or P-256).
+func (o GetCloudcertificatesLineagesLineageOutput) KeySpecs() pulumi.StringMapOutput {
+	return o.ApplyT(func(v GetCloudcertificatesLineagesLineage) map[string]string { return v.KeySpecs }).(pulumi.StringMapOutput)
+}
+
+// Username of the person who created the lineage.
+func (o GetCloudcertificatesLineagesLineageOutput) LineageCreatedBy() pulumi.StringOutput {
+	return o.ApplyT(func(v GetCloudcertificatesLineagesLineage) string { return v.LineageCreatedBy }).(pulumi.StringOutput)
+}
+
+// Time the lineage was created, in RFC3339 format.
+func (o GetCloudcertificatesLineagesLineageOutput) LineageCreatedTime() pulumi.StringOutput {
+	return o.ApplyT(func(v GetCloudcertificatesLineagesLineage) string { return v.LineageCreatedTime }).(pulumi.StringOutput)
+}
+
+// Unique identifier of the lineage.
+func (o GetCloudcertificatesLineagesLineageOutput) LineageId() pulumi.IntOutput {
+	return o.ApplyT(func(v GetCloudcertificatesLineagesLineage) int { return v.LineageId }).(pulumi.IntOutput)
+}
+
+// Username of the person who last modified the lineage.
+func (o GetCloudcertificatesLineagesLineageOutput) LineageModifiedBy() pulumi.StringOutput {
+	return o.ApplyT(func(v GetCloudcertificatesLineagesLineage) string { return v.LineageModifiedBy }).(pulumi.StringOutput)
+}
+
+// Time the lineage was last modified, in RFC3339 format.
+func (o GetCloudcertificatesLineagesLineageOutput) LineageModifiedTime() pulumi.StringOutput {
+	return o.ApplyT(func(v GetCloudcertificatesLineagesLineage) string { return v.LineageModifiedTime }).(pulumi.StringOutput)
+}
+
+// Name of the lineage.
+func (o GetCloudcertificatesLineagesLineageOutput) LineageName() pulumi.StringOutput {
+	return o.ApplyT(func(v GetCloudcertificatesLineagesLineage) string { return v.LineageName }).(pulumi.StringOutput)
+}
+
+// Type of the lineage, e.g. MULTIPLE_GENERATION or SINGLE_GENERATION.
+func (o GetCloudcertificatesLineagesLineageOutput) LineageType() pulumi.StringOutput {
+	return o.ApplyT(func(v GetCloudcertificatesLineagesLineage) string { return v.LineageType }).(pulumi.StringOutput)
+}
+
+// Generation previously deployed to production (rollback candidate). Null when no previous production generation exists. Populated only when expandGenerations is true.
+func (o GetCloudcertificatesLineagesLineageOutput) PreviousProduction() GetCloudcertificatesLineagesLineagePreviousProductionOutput {
+	return o.ApplyT(func(v GetCloudcertificatesLineagesLineage) GetCloudcertificatesLineagesLineagePreviousProduction {
+		return v.PreviousProduction
+	}).(GetCloudcertificatesLineagesLineagePreviousProductionOutput)
+}
+
+// Subject Alternative Names (SANs) for the certificate.
+func (o GetCloudcertificatesLineagesLineageOutput) Sans() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v GetCloudcertificatesLineagesLineage) []string { return v.Sans }).(pulumi.StringArrayOutput)
+}
+
+// Secure network type, e.g. ENHANCED_TLS or STANDARD_TLS.
+func (o GetCloudcertificatesLineagesLineageOutput) SecureNetwork() pulumi.StringOutput {
+	return o.ApplyT(func(v GetCloudcertificatesLineagesLineage) string { return v.SecureNetwork }).(pulumi.StringOutput)
+}
+
+// Derived convenience field, not a distinct API concept: the generation whose CSR currently needs to be signed and uploaded - the lineage's head generation if one exists, otherwise its current production generation (e.g. while completing a MULTIPLE_STACK lineage's second algorithm). It is null if neither exists or if expandGenerations is false.
+func (o GetCloudcertificatesLineagesLineageOutput) SigningTarget() GetCloudcertificatesLineagesLineageSigningTargetOutput {
+	return o.ApplyT(func(v GetCloudcertificatesLineagesLineage) GetCloudcertificatesLineagesLineageSigningTarget {
+		return v.SigningTarget
+	}).(GetCloudcertificatesLineagesLineageSigningTargetOutput)
+}
+
+// Stack mode of the lineage, e.g. SINGLE_STACK or MULTIPLE_STACK.
+func (o GetCloudcertificatesLineagesLineageOutput) StackMode() pulumi.StringOutput {
+	return o.ApplyT(func(v GetCloudcertificatesLineagesLineage) string { return v.StackMode }).(pulumi.StringOutput)
+}
+
+// X.509 subject fields of the certificate. All fields are null if no subject was provided when the lineage was created.
+func (o GetCloudcertificatesLineagesLineageOutput) Subject() GetCloudcertificatesLineagesLineageSubjectOutput {
+	return o.ApplyT(func(v GetCloudcertificatesLineagesLineage) GetCloudcertificatesLineagesLineageSubject {
+		return v.Subject
+	}).(GetCloudcertificatesLineagesLineageSubjectOutput)
+}
+
+type GetCloudcertificatesLineagesLineageArrayOutput struct{ *pulumi.OutputState }
+
+func (GetCloudcertificatesLineagesLineageArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetCloudcertificatesLineagesLineage)(nil)).Elem()
+}
+
+func (o GetCloudcertificatesLineagesLineageArrayOutput) ToGetCloudcertificatesLineagesLineageArrayOutput() GetCloudcertificatesLineagesLineageArrayOutput {
 	return o
 }
 
-func (o GetCloudcertificatesHostnameBindingsBindingArrayOutput) ToGetCloudcertificatesHostnameBindingsBindingArrayOutputWithContext(ctx context.Context) GetCloudcertificatesHostnameBindingsBindingArrayOutput {
+func (o GetCloudcertificatesLineagesLineageArrayOutput) ToGetCloudcertificatesLineagesLineageArrayOutputWithContext(ctx context.Context) GetCloudcertificatesLineagesLineageArrayOutput {
 	return o
 }
 
-func (o GetCloudcertificatesHostnameBindingsBindingArrayOutput) Index(i pulumi.IntInput) GetCloudcertificatesHostnameBindingsBindingOutput {
-	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetCloudcertificatesHostnameBindingsBinding {
-		return vs[0].([]GetCloudcertificatesHostnameBindingsBinding)[vs[1].(int)]
-	}).(GetCloudcertificatesHostnameBindingsBindingOutput)
+func (o GetCloudcertificatesLineagesLineageArrayOutput) Index(i pulumi.IntInput) GetCloudcertificatesLineagesLineageOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetCloudcertificatesLineagesLineage {
+		return vs[0].([]GetCloudcertificatesLineagesLineage)[vs[1].(int)]
+	}).(GetCloudcertificatesLineagesLineageOutput)
+}
+
+type GetCloudcertificatesLineagesLineageCurrentProduction struct {
+	// Per key-type (RSA or ECDSA) certificate details for this generation, keyed by key_type. Populated only when expandGenerations is true.
+	Algorithms map[string]GetCloudcertificatesLineagesLineageCurrentProductionAlgorithms `pulumi:"algorithms"`
+	// Time the generation was first promoted to production, in RFC3339 format. Null if never promoted, or if not requested via expand_generations.
+	FirstPromotedToProductionTime string `pulumi:"firstPromotedToProductionTime"`
+	// Username of the person who created this generation. Populated only when expandGenerations is true.
+	GenerationCreatedBy string `pulumi:"generationCreatedBy"`
+	// Time the generation was created, in RFC3339 format. Populated only when expandGenerations is true.
+	GenerationCreatedTime string `pulumi:"generationCreatedTime"`
+	// Unique identifier of the generation.
+	GenerationId int `pulumi:"generationId"`
+	// Username of the person who last modified this generation. Populated only when expandGenerations is true.
+	GenerationModifiedBy string `pulumi:"generationModifiedBy"`
+	// Time the generation was last modified, in RFC3339 format. Null if not requested via expand_generations, or if the generation has never been modified since creation.
+	GenerationModifiedTime string `pulumi:"generationModifiedTime"`
+	// Status of the generation.
+	GenerationStatus string `pulumi:"generationStatus"`
+}
+
+// GetCloudcertificatesLineagesLineageCurrentProductionInput is an input type that accepts GetCloudcertificatesLineagesLineageCurrentProductionArgs and GetCloudcertificatesLineagesLineageCurrentProductionOutput values.
+// You can construct a concrete instance of `GetCloudcertificatesLineagesLineageCurrentProductionInput` via:
+//
+//	GetCloudcertificatesLineagesLineageCurrentProductionArgs{...}
+type GetCloudcertificatesLineagesLineageCurrentProductionInput interface {
+	pulumi.Input
+
+	ToGetCloudcertificatesLineagesLineageCurrentProductionOutput() GetCloudcertificatesLineagesLineageCurrentProductionOutput
+	ToGetCloudcertificatesLineagesLineageCurrentProductionOutputWithContext(context.Context) GetCloudcertificatesLineagesLineageCurrentProductionOutput
+}
+
+type GetCloudcertificatesLineagesLineageCurrentProductionArgs struct {
+	// Per key-type (RSA or ECDSA) certificate details for this generation, keyed by key_type. Populated only when expandGenerations is true.
+	Algorithms GetCloudcertificatesLineagesLineageCurrentProductionAlgorithmsMapInput `pulumi:"algorithms"`
+	// Time the generation was first promoted to production, in RFC3339 format. Null if never promoted, or if not requested via expand_generations.
+	FirstPromotedToProductionTime pulumi.StringInput `pulumi:"firstPromotedToProductionTime"`
+	// Username of the person who created this generation. Populated only when expandGenerations is true.
+	GenerationCreatedBy pulumi.StringInput `pulumi:"generationCreatedBy"`
+	// Time the generation was created, in RFC3339 format. Populated only when expandGenerations is true.
+	GenerationCreatedTime pulumi.StringInput `pulumi:"generationCreatedTime"`
+	// Unique identifier of the generation.
+	GenerationId pulumi.IntInput `pulumi:"generationId"`
+	// Username of the person who last modified this generation. Populated only when expandGenerations is true.
+	GenerationModifiedBy pulumi.StringInput `pulumi:"generationModifiedBy"`
+	// Time the generation was last modified, in RFC3339 format. Null if not requested via expand_generations, or if the generation has never been modified since creation.
+	GenerationModifiedTime pulumi.StringInput `pulumi:"generationModifiedTime"`
+	// Status of the generation.
+	GenerationStatus pulumi.StringInput `pulumi:"generationStatus"`
+}
+
+func (GetCloudcertificatesLineagesLineageCurrentProductionArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetCloudcertificatesLineagesLineageCurrentProduction)(nil)).Elem()
+}
+
+func (i GetCloudcertificatesLineagesLineageCurrentProductionArgs) ToGetCloudcertificatesLineagesLineageCurrentProductionOutput() GetCloudcertificatesLineagesLineageCurrentProductionOutput {
+	return i.ToGetCloudcertificatesLineagesLineageCurrentProductionOutputWithContext(context.Background())
+}
+
+func (i GetCloudcertificatesLineagesLineageCurrentProductionArgs) ToGetCloudcertificatesLineagesLineageCurrentProductionOutputWithContext(ctx context.Context) GetCloudcertificatesLineagesLineageCurrentProductionOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetCloudcertificatesLineagesLineageCurrentProductionOutput)
+}
+
+type GetCloudcertificatesLineagesLineageCurrentProductionOutput struct{ *pulumi.OutputState }
+
+func (GetCloudcertificatesLineagesLineageCurrentProductionOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetCloudcertificatesLineagesLineageCurrentProduction)(nil)).Elem()
+}
+
+func (o GetCloudcertificatesLineagesLineageCurrentProductionOutput) ToGetCloudcertificatesLineagesLineageCurrentProductionOutput() GetCloudcertificatesLineagesLineageCurrentProductionOutput {
+	return o
+}
+
+func (o GetCloudcertificatesLineagesLineageCurrentProductionOutput) ToGetCloudcertificatesLineagesLineageCurrentProductionOutputWithContext(ctx context.Context) GetCloudcertificatesLineagesLineageCurrentProductionOutput {
+	return o
+}
+
+// Per key-type (RSA or ECDSA) certificate details for this generation, keyed by key_type. Populated only when expandGenerations is true.
+func (o GetCloudcertificatesLineagesLineageCurrentProductionOutput) Algorithms() GetCloudcertificatesLineagesLineageCurrentProductionAlgorithmsMapOutput {
+	return o.ApplyT(func(v GetCloudcertificatesLineagesLineageCurrentProduction) map[string]GetCloudcertificatesLineagesLineageCurrentProductionAlgorithms {
+		return v.Algorithms
+	}).(GetCloudcertificatesLineagesLineageCurrentProductionAlgorithmsMapOutput)
+}
+
+// Time the generation was first promoted to production, in RFC3339 format. Null if never promoted, or if not requested via expand_generations.
+func (o GetCloudcertificatesLineagesLineageCurrentProductionOutput) FirstPromotedToProductionTime() pulumi.StringOutput {
+	return o.ApplyT(func(v GetCloudcertificatesLineagesLineageCurrentProduction) string {
+		return v.FirstPromotedToProductionTime
+	}).(pulumi.StringOutput)
+}
+
+// Username of the person who created this generation. Populated only when expandGenerations is true.
+func (o GetCloudcertificatesLineagesLineageCurrentProductionOutput) GenerationCreatedBy() pulumi.StringOutput {
+	return o.ApplyT(func(v GetCloudcertificatesLineagesLineageCurrentProduction) string { return v.GenerationCreatedBy }).(pulumi.StringOutput)
+}
+
+// Time the generation was created, in RFC3339 format. Populated only when expandGenerations is true.
+func (o GetCloudcertificatesLineagesLineageCurrentProductionOutput) GenerationCreatedTime() pulumi.StringOutput {
+	return o.ApplyT(func(v GetCloudcertificatesLineagesLineageCurrentProduction) string { return v.GenerationCreatedTime }).(pulumi.StringOutput)
+}
+
+// Unique identifier of the generation.
+func (o GetCloudcertificatesLineagesLineageCurrentProductionOutput) GenerationId() pulumi.IntOutput {
+	return o.ApplyT(func(v GetCloudcertificatesLineagesLineageCurrentProduction) int { return v.GenerationId }).(pulumi.IntOutput)
+}
+
+// Username of the person who last modified this generation. Populated only when expandGenerations is true.
+func (o GetCloudcertificatesLineagesLineageCurrentProductionOutput) GenerationModifiedBy() pulumi.StringOutput {
+	return o.ApplyT(func(v GetCloudcertificatesLineagesLineageCurrentProduction) string { return v.GenerationModifiedBy }).(pulumi.StringOutput)
+}
+
+// Time the generation was last modified, in RFC3339 format. Null if not requested via expand_generations, or if the generation has never been modified since creation.
+func (o GetCloudcertificatesLineagesLineageCurrentProductionOutput) GenerationModifiedTime() pulumi.StringOutput {
+	return o.ApplyT(func(v GetCloudcertificatesLineagesLineageCurrentProduction) string { return v.GenerationModifiedTime }).(pulumi.StringOutput)
+}
+
+// Status of the generation.
+func (o GetCloudcertificatesLineagesLineageCurrentProductionOutput) GenerationStatus() pulumi.StringOutput {
+	return o.ApplyT(func(v GetCloudcertificatesLineagesLineageCurrentProduction) string { return v.GenerationStatus }).(pulumi.StringOutput)
+}
+
+type GetCloudcertificatesLineagesLineageCurrentProductionAlgorithms struct {
+	// Username of the person who created the algorithm instance.
+	AlgorithmInstanceCreatedBy string `pulumi:"algorithmInstanceCreatedBy"`
+	// Time the algorithm instance was created, in RFC3339 format.
+	AlgorithmInstanceCreatedTime string `pulumi:"algorithmInstanceCreatedTime"`
+	// Unique identifier of the algorithm instance.
+	AlgorithmInstanceId int `pulumi:"algorithmInstanceId"`
+	// Username of the person who last modified the algorithm instance. Null if never modified.
+	AlgorithmInstanceModifiedBy string `pulumi:"algorithmInstanceModifiedBy"`
+	// Time the algorithm instance was last modified, in RFC3339 format. Null if never modified.
+	AlgorithmInstanceModifiedTime string `pulumi:"algorithmInstanceModifiedTime"`
+	// Status of the certificate for this key type: `CSR_READY`, `CERT_UPLOAD_PROCESSING`, `READY_FOR_USE`, or `ABANDONED`.
+	CertificateStatus string `pulumi:"certificateStatus"`
+	// Date when the CSR expires, in RFC3339 format.
+	CsrExpirationDate string `pulumi:"csrExpirationDate"`
+	// PEM-encoded certificate signing request.
+	CsrPem string `pulumi:"csrPem"`
+	// Issuer field of the signed certificate. Null until a certificate is uploaded.
+	SignedCertificateIssuer string `pulumi:"signedCertificateIssuer"`
+	// Expiration date of the signed certificate, in RFC3339 format. Null until a certificate is uploaded.
+	SignedCertificateNotValidAfterDate string `pulumi:"signedCertificateNotValidAfterDate"`
+	// Start of validity of the signed certificate, in RFC3339 format. Null until a certificate is uploaded.
+	SignedCertificateNotValidBeforeDate string `pulumi:"signedCertificateNotValidBeforeDate"`
+	// PEM-encoded signed certificate. Null until a certificate is uploaded.
+	SignedCertificatePem string `pulumi:"signedCertificatePem"`
+	// Serial number of the signed certificate in hex format. Null until a certificate is uploaded.
+	SignedCertificateSerialNumber string `pulumi:"signedCertificateSerialNumber"`
+	// SHA-256 fingerprint of the signed certificate. Null until a certificate is uploaded.
+	SignedCertificateSha256Fingerprint string `pulumi:"signedCertificateSha256Fingerprint"`
+	// PEM-encoded trust chain uploaded alongside the signed certificate. Null if none was uploaded.
+	TrustChainPem string `pulumi:"trustChainPem"`
+}
+
+// GetCloudcertificatesLineagesLineageCurrentProductionAlgorithmsInput is an input type that accepts GetCloudcertificatesLineagesLineageCurrentProductionAlgorithmsArgs and GetCloudcertificatesLineagesLineageCurrentProductionAlgorithmsOutput values.
+// You can construct a concrete instance of `GetCloudcertificatesLineagesLineageCurrentProductionAlgorithmsInput` via:
+//
+//	GetCloudcertificatesLineagesLineageCurrentProductionAlgorithmsArgs{...}
+type GetCloudcertificatesLineagesLineageCurrentProductionAlgorithmsInput interface {
+	pulumi.Input
+
+	ToGetCloudcertificatesLineagesLineageCurrentProductionAlgorithmsOutput() GetCloudcertificatesLineagesLineageCurrentProductionAlgorithmsOutput
+	ToGetCloudcertificatesLineagesLineageCurrentProductionAlgorithmsOutputWithContext(context.Context) GetCloudcertificatesLineagesLineageCurrentProductionAlgorithmsOutput
+}
+
+type GetCloudcertificatesLineagesLineageCurrentProductionAlgorithmsArgs struct {
+	// Username of the person who created the algorithm instance.
+	AlgorithmInstanceCreatedBy pulumi.StringInput `pulumi:"algorithmInstanceCreatedBy"`
+	// Time the algorithm instance was created, in RFC3339 format.
+	AlgorithmInstanceCreatedTime pulumi.StringInput `pulumi:"algorithmInstanceCreatedTime"`
+	// Unique identifier of the algorithm instance.
+	AlgorithmInstanceId pulumi.IntInput `pulumi:"algorithmInstanceId"`
+	// Username of the person who last modified the algorithm instance. Null if never modified.
+	AlgorithmInstanceModifiedBy pulumi.StringInput `pulumi:"algorithmInstanceModifiedBy"`
+	// Time the algorithm instance was last modified, in RFC3339 format. Null if never modified.
+	AlgorithmInstanceModifiedTime pulumi.StringInput `pulumi:"algorithmInstanceModifiedTime"`
+	// Status of the certificate for this key type: `CSR_READY`, `CERT_UPLOAD_PROCESSING`, `READY_FOR_USE`, or `ABANDONED`.
+	CertificateStatus pulumi.StringInput `pulumi:"certificateStatus"`
+	// Date when the CSR expires, in RFC3339 format.
+	CsrExpirationDate pulumi.StringInput `pulumi:"csrExpirationDate"`
+	// PEM-encoded certificate signing request.
+	CsrPem pulumi.StringInput `pulumi:"csrPem"`
+	// Issuer field of the signed certificate. Null until a certificate is uploaded.
+	SignedCertificateIssuer pulumi.StringInput `pulumi:"signedCertificateIssuer"`
+	// Expiration date of the signed certificate, in RFC3339 format. Null until a certificate is uploaded.
+	SignedCertificateNotValidAfterDate pulumi.StringInput `pulumi:"signedCertificateNotValidAfterDate"`
+	// Start of validity of the signed certificate, in RFC3339 format. Null until a certificate is uploaded.
+	SignedCertificateNotValidBeforeDate pulumi.StringInput `pulumi:"signedCertificateNotValidBeforeDate"`
+	// PEM-encoded signed certificate. Null until a certificate is uploaded.
+	SignedCertificatePem pulumi.StringInput `pulumi:"signedCertificatePem"`
+	// Serial number of the signed certificate in hex format. Null until a certificate is uploaded.
+	SignedCertificateSerialNumber pulumi.StringInput `pulumi:"signedCertificateSerialNumber"`
+	// SHA-256 fingerprint of the signed certificate. Null until a certificate is uploaded.
+	SignedCertificateSha256Fingerprint pulumi.StringInput `pulumi:"signedCertificateSha256Fingerprint"`
+	// PEM-encoded trust chain uploaded alongside the signed certificate. Null if none was uploaded.
+	TrustChainPem pulumi.StringInput `pulumi:"trustChainPem"`
+}
+
+func (GetCloudcertificatesLineagesLineageCurrentProductionAlgorithmsArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetCloudcertificatesLineagesLineageCurrentProductionAlgorithms)(nil)).Elem()
+}
+
+func (i GetCloudcertificatesLineagesLineageCurrentProductionAlgorithmsArgs) ToGetCloudcertificatesLineagesLineageCurrentProductionAlgorithmsOutput() GetCloudcertificatesLineagesLineageCurrentProductionAlgorithmsOutput {
+	return i.ToGetCloudcertificatesLineagesLineageCurrentProductionAlgorithmsOutputWithContext(context.Background())
+}
+
+func (i GetCloudcertificatesLineagesLineageCurrentProductionAlgorithmsArgs) ToGetCloudcertificatesLineagesLineageCurrentProductionAlgorithmsOutputWithContext(ctx context.Context) GetCloudcertificatesLineagesLineageCurrentProductionAlgorithmsOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetCloudcertificatesLineagesLineageCurrentProductionAlgorithmsOutput)
+}
+
+// GetCloudcertificatesLineagesLineageCurrentProductionAlgorithmsMapInput is an input type that accepts GetCloudcertificatesLineagesLineageCurrentProductionAlgorithmsMap and GetCloudcertificatesLineagesLineageCurrentProductionAlgorithmsMapOutput values.
+// You can construct a concrete instance of `GetCloudcertificatesLineagesLineageCurrentProductionAlgorithmsMapInput` via:
+//
+//	GetCloudcertificatesLineagesLineageCurrentProductionAlgorithmsMap{ "key": GetCloudcertificatesLineagesLineageCurrentProductionAlgorithmsArgs{...} }
+type GetCloudcertificatesLineagesLineageCurrentProductionAlgorithmsMapInput interface {
+	pulumi.Input
+
+	ToGetCloudcertificatesLineagesLineageCurrentProductionAlgorithmsMapOutput() GetCloudcertificatesLineagesLineageCurrentProductionAlgorithmsMapOutput
+	ToGetCloudcertificatesLineagesLineageCurrentProductionAlgorithmsMapOutputWithContext(context.Context) GetCloudcertificatesLineagesLineageCurrentProductionAlgorithmsMapOutput
+}
+
+type GetCloudcertificatesLineagesLineageCurrentProductionAlgorithmsMap map[string]GetCloudcertificatesLineagesLineageCurrentProductionAlgorithmsInput
+
+func (GetCloudcertificatesLineagesLineageCurrentProductionAlgorithmsMap) ElementType() reflect.Type {
+	return reflect.TypeOf((*map[string]GetCloudcertificatesLineagesLineageCurrentProductionAlgorithms)(nil)).Elem()
+}
+
+func (i GetCloudcertificatesLineagesLineageCurrentProductionAlgorithmsMap) ToGetCloudcertificatesLineagesLineageCurrentProductionAlgorithmsMapOutput() GetCloudcertificatesLineagesLineageCurrentProductionAlgorithmsMapOutput {
+	return i.ToGetCloudcertificatesLineagesLineageCurrentProductionAlgorithmsMapOutputWithContext(context.Background())
+}
+
+func (i GetCloudcertificatesLineagesLineageCurrentProductionAlgorithmsMap) ToGetCloudcertificatesLineagesLineageCurrentProductionAlgorithmsMapOutputWithContext(ctx context.Context) GetCloudcertificatesLineagesLineageCurrentProductionAlgorithmsMapOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetCloudcertificatesLineagesLineageCurrentProductionAlgorithmsMapOutput)
+}
+
+type GetCloudcertificatesLineagesLineageCurrentProductionAlgorithmsOutput struct{ *pulumi.OutputState }
+
+func (GetCloudcertificatesLineagesLineageCurrentProductionAlgorithmsOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetCloudcertificatesLineagesLineageCurrentProductionAlgorithms)(nil)).Elem()
+}
+
+func (o GetCloudcertificatesLineagesLineageCurrentProductionAlgorithmsOutput) ToGetCloudcertificatesLineagesLineageCurrentProductionAlgorithmsOutput() GetCloudcertificatesLineagesLineageCurrentProductionAlgorithmsOutput {
+	return o
+}
+
+func (o GetCloudcertificatesLineagesLineageCurrentProductionAlgorithmsOutput) ToGetCloudcertificatesLineagesLineageCurrentProductionAlgorithmsOutputWithContext(ctx context.Context) GetCloudcertificatesLineagesLineageCurrentProductionAlgorithmsOutput {
+	return o
+}
+
+// Username of the person who created the algorithm instance.
+func (o GetCloudcertificatesLineagesLineageCurrentProductionAlgorithmsOutput) AlgorithmInstanceCreatedBy() pulumi.StringOutput {
+	return o.ApplyT(func(v GetCloudcertificatesLineagesLineageCurrentProductionAlgorithms) string {
+		return v.AlgorithmInstanceCreatedBy
+	}).(pulumi.StringOutput)
+}
+
+// Time the algorithm instance was created, in RFC3339 format.
+func (o GetCloudcertificatesLineagesLineageCurrentProductionAlgorithmsOutput) AlgorithmInstanceCreatedTime() pulumi.StringOutput {
+	return o.ApplyT(func(v GetCloudcertificatesLineagesLineageCurrentProductionAlgorithms) string {
+		return v.AlgorithmInstanceCreatedTime
+	}).(pulumi.StringOutput)
+}
+
+// Unique identifier of the algorithm instance.
+func (o GetCloudcertificatesLineagesLineageCurrentProductionAlgorithmsOutput) AlgorithmInstanceId() pulumi.IntOutput {
+	return o.ApplyT(func(v GetCloudcertificatesLineagesLineageCurrentProductionAlgorithms) int {
+		return v.AlgorithmInstanceId
+	}).(pulumi.IntOutput)
+}
+
+// Username of the person who last modified the algorithm instance. Null if never modified.
+func (o GetCloudcertificatesLineagesLineageCurrentProductionAlgorithmsOutput) AlgorithmInstanceModifiedBy() pulumi.StringOutput {
+	return o.ApplyT(func(v GetCloudcertificatesLineagesLineageCurrentProductionAlgorithms) string {
+		return v.AlgorithmInstanceModifiedBy
+	}).(pulumi.StringOutput)
+}
+
+// Time the algorithm instance was last modified, in RFC3339 format. Null if never modified.
+func (o GetCloudcertificatesLineagesLineageCurrentProductionAlgorithmsOutput) AlgorithmInstanceModifiedTime() pulumi.StringOutput {
+	return o.ApplyT(func(v GetCloudcertificatesLineagesLineageCurrentProductionAlgorithms) string {
+		return v.AlgorithmInstanceModifiedTime
+	}).(pulumi.StringOutput)
+}
+
+// Status of the certificate for this key type: `CSR_READY`, `CERT_UPLOAD_PROCESSING`, `READY_FOR_USE`, or `ABANDONED`.
+func (o GetCloudcertificatesLineagesLineageCurrentProductionAlgorithmsOutput) CertificateStatus() pulumi.StringOutput {
+	return o.ApplyT(func(v GetCloudcertificatesLineagesLineageCurrentProductionAlgorithms) string {
+		return v.CertificateStatus
+	}).(pulumi.StringOutput)
+}
+
+// Date when the CSR expires, in RFC3339 format.
+func (o GetCloudcertificatesLineagesLineageCurrentProductionAlgorithmsOutput) CsrExpirationDate() pulumi.StringOutput {
+	return o.ApplyT(func(v GetCloudcertificatesLineagesLineageCurrentProductionAlgorithms) string {
+		return v.CsrExpirationDate
+	}).(pulumi.StringOutput)
+}
+
+// PEM-encoded certificate signing request.
+func (o GetCloudcertificatesLineagesLineageCurrentProductionAlgorithmsOutput) CsrPem() pulumi.StringOutput {
+	return o.ApplyT(func(v GetCloudcertificatesLineagesLineageCurrentProductionAlgorithms) string { return v.CsrPem }).(pulumi.StringOutput)
+}
+
+// Issuer field of the signed certificate. Null until a certificate is uploaded.
+func (o GetCloudcertificatesLineagesLineageCurrentProductionAlgorithmsOutput) SignedCertificateIssuer() pulumi.StringOutput {
+	return o.ApplyT(func(v GetCloudcertificatesLineagesLineageCurrentProductionAlgorithms) string {
+		return v.SignedCertificateIssuer
+	}).(pulumi.StringOutput)
+}
+
+// Expiration date of the signed certificate, in RFC3339 format. Null until a certificate is uploaded.
+func (o GetCloudcertificatesLineagesLineageCurrentProductionAlgorithmsOutput) SignedCertificateNotValidAfterDate() pulumi.StringOutput {
+	return o.ApplyT(func(v GetCloudcertificatesLineagesLineageCurrentProductionAlgorithms) string {
+		return v.SignedCertificateNotValidAfterDate
+	}).(pulumi.StringOutput)
+}
+
+// Start of validity of the signed certificate, in RFC3339 format. Null until a certificate is uploaded.
+func (o GetCloudcertificatesLineagesLineageCurrentProductionAlgorithmsOutput) SignedCertificateNotValidBeforeDate() pulumi.StringOutput {
+	return o.ApplyT(func(v GetCloudcertificatesLineagesLineageCurrentProductionAlgorithms) string {
+		return v.SignedCertificateNotValidBeforeDate
+	}).(pulumi.StringOutput)
+}
+
+// PEM-encoded signed certificate. Null until a certificate is uploaded.
+func (o GetCloudcertificatesLineagesLineageCurrentProductionAlgorithmsOutput) SignedCertificatePem() pulumi.StringOutput {
+	return o.ApplyT(func(v GetCloudcertificatesLineagesLineageCurrentProductionAlgorithms) string {
+		return v.SignedCertificatePem
+	}).(pulumi.StringOutput)
+}
+
+// Serial number of the signed certificate in hex format. Null until a certificate is uploaded.
+func (o GetCloudcertificatesLineagesLineageCurrentProductionAlgorithmsOutput) SignedCertificateSerialNumber() pulumi.StringOutput {
+	return o.ApplyT(func(v GetCloudcertificatesLineagesLineageCurrentProductionAlgorithms) string {
+		return v.SignedCertificateSerialNumber
+	}).(pulumi.StringOutput)
+}
+
+// SHA-256 fingerprint of the signed certificate. Null until a certificate is uploaded.
+func (o GetCloudcertificatesLineagesLineageCurrentProductionAlgorithmsOutput) SignedCertificateSha256Fingerprint() pulumi.StringOutput {
+	return o.ApplyT(func(v GetCloudcertificatesLineagesLineageCurrentProductionAlgorithms) string {
+		return v.SignedCertificateSha256Fingerprint
+	}).(pulumi.StringOutput)
+}
+
+// PEM-encoded trust chain uploaded alongside the signed certificate. Null if none was uploaded.
+func (o GetCloudcertificatesLineagesLineageCurrentProductionAlgorithmsOutput) TrustChainPem() pulumi.StringOutput {
+	return o.ApplyT(func(v GetCloudcertificatesLineagesLineageCurrentProductionAlgorithms) string { return v.TrustChainPem }).(pulumi.StringOutput)
+}
+
+type GetCloudcertificatesLineagesLineageCurrentProductionAlgorithmsMapOutput struct{ *pulumi.OutputState }
+
+func (GetCloudcertificatesLineagesLineageCurrentProductionAlgorithmsMapOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*map[string]GetCloudcertificatesLineagesLineageCurrentProductionAlgorithms)(nil)).Elem()
+}
+
+func (o GetCloudcertificatesLineagesLineageCurrentProductionAlgorithmsMapOutput) ToGetCloudcertificatesLineagesLineageCurrentProductionAlgorithmsMapOutput() GetCloudcertificatesLineagesLineageCurrentProductionAlgorithmsMapOutput {
+	return o
+}
+
+func (o GetCloudcertificatesLineagesLineageCurrentProductionAlgorithmsMapOutput) ToGetCloudcertificatesLineagesLineageCurrentProductionAlgorithmsMapOutputWithContext(ctx context.Context) GetCloudcertificatesLineagesLineageCurrentProductionAlgorithmsMapOutput {
+	return o
+}
+
+func (o GetCloudcertificatesLineagesLineageCurrentProductionAlgorithmsMapOutput) MapIndex(k pulumi.StringInput) GetCloudcertificatesLineagesLineageCurrentProductionAlgorithmsOutput {
+	return pulumi.All(o, k).ApplyT(func(vs []interface{}) GetCloudcertificatesLineagesLineageCurrentProductionAlgorithms {
+		return vs[0].(map[string]GetCloudcertificatesLineagesLineageCurrentProductionAlgorithms)[vs[1].(string)]
+	}).(GetCloudcertificatesLineagesLineageCurrentProductionAlgorithmsOutput)
+}
+
+type GetCloudcertificatesLineagesLineageCurrentStaging struct {
+	// Per key-type (RSA or ECDSA) certificate details for this generation, keyed by key_type. Populated only when expandGenerations is true.
+	Algorithms map[string]GetCloudcertificatesLineagesLineageCurrentStagingAlgorithms `pulumi:"algorithms"`
+	// Time the generation was first promoted to production, in RFC3339 format. Null if never promoted, or if not requested via expand_generations.
+	FirstPromotedToProductionTime string `pulumi:"firstPromotedToProductionTime"`
+	// Username of the person who created this generation. Populated only when expandGenerations is true.
+	GenerationCreatedBy string `pulumi:"generationCreatedBy"`
+	// Time the generation was created, in RFC3339 format. Populated only when expandGenerations is true.
+	GenerationCreatedTime string `pulumi:"generationCreatedTime"`
+	// Unique identifier of the generation.
+	GenerationId int `pulumi:"generationId"`
+	// Username of the person who last modified this generation. Populated only when expandGenerations is true.
+	GenerationModifiedBy string `pulumi:"generationModifiedBy"`
+	// Time the generation was last modified, in RFC3339 format. Null if not requested via expand_generations, or if the generation has never been modified since creation.
+	GenerationModifiedTime string `pulumi:"generationModifiedTime"`
+	// Status of the generation.
+	GenerationStatus string `pulumi:"generationStatus"`
+}
+
+// GetCloudcertificatesLineagesLineageCurrentStagingInput is an input type that accepts GetCloudcertificatesLineagesLineageCurrentStagingArgs and GetCloudcertificatesLineagesLineageCurrentStagingOutput values.
+// You can construct a concrete instance of `GetCloudcertificatesLineagesLineageCurrentStagingInput` via:
+//
+//	GetCloudcertificatesLineagesLineageCurrentStagingArgs{...}
+type GetCloudcertificatesLineagesLineageCurrentStagingInput interface {
+	pulumi.Input
+
+	ToGetCloudcertificatesLineagesLineageCurrentStagingOutput() GetCloudcertificatesLineagesLineageCurrentStagingOutput
+	ToGetCloudcertificatesLineagesLineageCurrentStagingOutputWithContext(context.Context) GetCloudcertificatesLineagesLineageCurrentStagingOutput
+}
+
+type GetCloudcertificatesLineagesLineageCurrentStagingArgs struct {
+	// Per key-type (RSA or ECDSA) certificate details for this generation, keyed by key_type. Populated only when expandGenerations is true.
+	Algorithms GetCloudcertificatesLineagesLineageCurrentStagingAlgorithmsMapInput `pulumi:"algorithms"`
+	// Time the generation was first promoted to production, in RFC3339 format. Null if never promoted, or if not requested via expand_generations.
+	FirstPromotedToProductionTime pulumi.StringInput `pulumi:"firstPromotedToProductionTime"`
+	// Username of the person who created this generation. Populated only when expandGenerations is true.
+	GenerationCreatedBy pulumi.StringInput `pulumi:"generationCreatedBy"`
+	// Time the generation was created, in RFC3339 format. Populated only when expandGenerations is true.
+	GenerationCreatedTime pulumi.StringInput `pulumi:"generationCreatedTime"`
+	// Unique identifier of the generation.
+	GenerationId pulumi.IntInput `pulumi:"generationId"`
+	// Username of the person who last modified this generation. Populated only when expandGenerations is true.
+	GenerationModifiedBy pulumi.StringInput `pulumi:"generationModifiedBy"`
+	// Time the generation was last modified, in RFC3339 format. Null if not requested via expand_generations, or if the generation has never been modified since creation.
+	GenerationModifiedTime pulumi.StringInput `pulumi:"generationModifiedTime"`
+	// Status of the generation.
+	GenerationStatus pulumi.StringInput `pulumi:"generationStatus"`
+}
+
+func (GetCloudcertificatesLineagesLineageCurrentStagingArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetCloudcertificatesLineagesLineageCurrentStaging)(nil)).Elem()
+}
+
+func (i GetCloudcertificatesLineagesLineageCurrentStagingArgs) ToGetCloudcertificatesLineagesLineageCurrentStagingOutput() GetCloudcertificatesLineagesLineageCurrentStagingOutput {
+	return i.ToGetCloudcertificatesLineagesLineageCurrentStagingOutputWithContext(context.Background())
+}
+
+func (i GetCloudcertificatesLineagesLineageCurrentStagingArgs) ToGetCloudcertificatesLineagesLineageCurrentStagingOutputWithContext(ctx context.Context) GetCloudcertificatesLineagesLineageCurrentStagingOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetCloudcertificatesLineagesLineageCurrentStagingOutput)
+}
+
+type GetCloudcertificatesLineagesLineageCurrentStagingOutput struct{ *pulumi.OutputState }
+
+func (GetCloudcertificatesLineagesLineageCurrentStagingOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetCloudcertificatesLineagesLineageCurrentStaging)(nil)).Elem()
+}
+
+func (o GetCloudcertificatesLineagesLineageCurrentStagingOutput) ToGetCloudcertificatesLineagesLineageCurrentStagingOutput() GetCloudcertificatesLineagesLineageCurrentStagingOutput {
+	return o
+}
+
+func (o GetCloudcertificatesLineagesLineageCurrentStagingOutput) ToGetCloudcertificatesLineagesLineageCurrentStagingOutputWithContext(ctx context.Context) GetCloudcertificatesLineagesLineageCurrentStagingOutput {
+	return o
+}
+
+// Per key-type (RSA or ECDSA) certificate details for this generation, keyed by key_type. Populated only when expandGenerations is true.
+func (o GetCloudcertificatesLineagesLineageCurrentStagingOutput) Algorithms() GetCloudcertificatesLineagesLineageCurrentStagingAlgorithmsMapOutput {
+	return o.ApplyT(func(v GetCloudcertificatesLineagesLineageCurrentStaging) map[string]GetCloudcertificatesLineagesLineageCurrentStagingAlgorithms {
+		return v.Algorithms
+	}).(GetCloudcertificatesLineagesLineageCurrentStagingAlgorithmsMapOutput)
+}
+
+// Time the generation was first promoted to production, in RFC3339 format. Null if never promoted, or if not requested via expand_generations.
+func (o GetCloudcertificatesLineagesLineageCurrentStagingOutput) FirstPromotedToProductionTime() pulumi.StringOutput {
+	return o.ApplyT(func(v GetCloudcertificatesLineagesLineageCurrentStaging) string {
+		return v.FirstPromotedToProductionTime
+	}).(pulumi.StringOutput)
+}
+
+// Username of the person who created this generation. Populated only when expandGenerations is true.
+func (o GetCloudcertificatesLineagesLineageCurrentStagingOutput) GenerationCreatedBy() pulumi.StringOutput {
+	return o.ApplyT(func(v GetCloudcertificatesLineagesLineageCurrentStaging) string { return v.GenerationCreatedBy }).(pulumi.StringOutput)
+}
+
+// Time the generation was created, in RFC3339 format. Populated only when expandGenerations is true.
+func (o GetCloudcertificatesLineagesLineageCurrentStagingOutput) GenerationCreatedTime() pulumi.StringOutput {
+	return o.ApplyT(func(v GetCloudcertificatesLineagesLineageCurrentStaging) string { return v.GenerationCreatedTime }).(pulumi.StringOutput)
+}
+
+// Unique identifier of the generation.
+func (o GetCloudcertificatesLineagesLineageCurrentStagingOutput) GenerationId() pulumi.IntOutput {
+	return o.ApplyT(func(v GetCloudcertificatesLineagesLineageCurrentStaging) int { return v.GenerationId }).(pulumi.IntOutput)
+}
+
+// Username of the person who last modified this generation. Populated only when expandGenerations is true.
+func (o GetCloudcertificatesLineagesLineageCurrentStagingOutput) GenerationModifiedBy() pulumi.StringOutput {
+	return o.ApplyT(func(v GetCloudcertificatesLineagesLineageCurrentStaging) string { return v.GenerationModifiedBy }).(pulumi.StringOutput)
+}
+
+// Time the generation was last modified, in RFC3339 format. Null if not requested via expand_generations, or if the generation has never been modified since creation.
+func (o GetCloudcertificatesLineagesLineageCurrentStagingOutput) GenerationModifiedTime() pulumi.StringOutput {
+	return o.ApplyT(func(v GetCloudcertificatesLineagesLineageCurrentStaging) string { return v.GenerationModifiedTime }).(pulumi.StringOutput)
+}
+
+// Status of the generation.
+func (o GetCloudcertificatesLineagesLineageCurrentStagingOutput) GenerationStatus() pulumi.StringOutput {
+	return o.ApplyT(func(v GetCloudcertificatesLineagesLineageCurrentStaging) string { return v.GenerationStatus }).(pulumi.StringOutput)
+}
+
+type GetCloudcertificatesLineagesLineageCurrentStagingAlgorithms struct {
+	// Username of the person who created the algorithm instance.
+	AlgorithmInstanceCreatedBy string `pulumi:"algorithmInstanceCreatedBy"`
+	// Time the algorithm instance was created, in RFC3339 format.
+	AlgorithmInstanceCreatedTime string `pulumi:"algorithmInstanceCreatedTime"`
+	// Unique identifier of the algorithm instance.
+	AlgorithmInstanceId int `pulumi:"algorithmInstanceId"`
+	// Username of the person who last modified the algorithm instance. Null if never modified.
+	AlgorithmInstanceModifiedBy string `pulumi:"algorithmInstanceModifiedBy"`
+	// Time the algorithm instance was last modified, in RFC3339 format. Null if never modified.
+	AlgorithmInstanceModifiedTime string `pulumi:"algorithmInstanceModifiedTime"`
+	// Status of the certificate for this key type: `CSR_READY`, `CERT_UPLOAD_PROCESSING`, `READY_FOR_USE`, or `ABANDONED`.
+	CertificateStatus string `pulumi:"certificateStatus"`
+	// Date when the CSR expires, in RFC3339 format.
+	CsrExpirationDate string `pulumi:"csrExpirationDate"`
+	// PEM-encoded certificate signing request.
+	CsrPem string `pulumi:"csrPem"`
+	// Issuer field of the signed certificate. Null until a certificate is uploaded.
+	SignedCertificateIssuer string `pulumi:"signedCertificateIssuer"`
+	// Expiration date of the signed certificate, in RFC3339 format. Null until a certificate is uploaded.
+	SignedCertificateNotValidAfterDate string `pulumi:"signedCertificateNotValidAfterDate"`
+	// Start of validity of the signed certificate, in RFC3339 format. Null until a certificate is uploaded.
+	SignedCertificateNotValidBeforeDate string `pulumi:"signedCertificateNotValidBeforeDate"`
+	// PEM-encoded signed certificate. Null until a certificate is uploaded.
+	SignedCertificatePem string `pulumi:"signedCertificatePem"`
+	// Serial number of the signed certificate in hex format. Null until a certificate is uploaded.
+	SignedCertificateSerialNumber string `pulumi:"signedCertificateSerialNumber"`
+	// SHA-256 fingerprint of the signed certificate. Null until a certificate is uploaded.
+	SignedCertificateSha256Fingerprint string `pulumi:"signedCertificateSha256Fingerprint"`
+	// PEM-encoded trust chain uploaded alongside the signed certificate. Null if none was uploaded.
+	TrustChainPem string `pulumi:"trustChainPem"`
+}
+
+// GetCloudcertificatesLineagesLineageCurrentStagingAlgorithmsInput is an input type that accepts GetCloudcertificatesLineagesLineageCurrentStagingAlgorithmsArgs and GetCloudcertificatesLineagesLineageCurrentStagingAlgorithmsOutput values.
+// You can construct a concrete instance of `GetCloudcertificatesLineagesLineageCurrentStagingAlgorithmsInput` via:
+//
+//	GetCloudcertificatesLineagesLineageCurrentStagingAlgorithmsArgs{...}
+type GetCloudcertificatesLineagesLineageCurrentStagingAlgorithmsInput interface {
+	pulumi.Input
+
+	ToGetCloudcertificatesLineagesLineageCurrentStagingAlgorithmsOutput() GetCloudcertificatesLineagesLineageCurrentStagingAlgorithmsOutput
+	ToGetCloudcertificatesLineagesLineageCurrentStagingAlgorithmsOutputWithContext(context.Context) GetCloudcertificatesLineagesLineageCurrentStagingAlgorithmsOutput
+}
+
+type GetCloudcertificatesLineagesLineageCurrentStagingAlgorithmsArgs struct {
+	// Username of the person who created the algorithm instance.
+	AlgorithmInstanceCreatedBy pulumi.StringInput `pulumi:"algorithmInstanceCreatedBy"`
+	// Time the algorithm instance was created, in RFC3339 format.
+	AlgorithmInstanceCreatedTime pulumi.StringInput `pulumi:"algorithmInstanceCreatedTime"`
+	// Unique identifier of the algorithm instance.
+	AlgorithmInstanceId pulumi.IntInput `pulumi:"algorithmInstanceId"`
+	// Username of the person who last modified the algorithm instance. Null if never modified.
+	AlgorithmInstanceModifiedBy pulumi.StringInput `pulumi:"algorithmInstanceModifiedBy"`
+	// Time the algorithm instance was last modified, in RFC3339 format. Null if never modified.
+	AlgorithmInstanceModifiedTime pulumi.StringInput `pulumi:"algorithmInstanceModifiedTime"`
+	// Status of the certificate for this key type: `CSR_READY`, `CERT_UPLOAD_PROCESSING`, `READY_FOR_USE`, or `ABANDONED`.
+	CertificateStatus pulumi.StringInput `pulumi:"certificateStatus"`
+	// Date when the CSR expires, in RFC3339 format.
+	CsrExpirationDate pulumi.StringInput `pulumi:"csrExpirationDate"`
+	// PEM-encoded certificate signing request.
+	CsrPem pulumi.StringInput `pulumi:"csrPem"`
+	// Issuer field of the signed certificate. Null until a certificate is uploaded.
+	SignedCertificateIssuer pulumi.StringInput `pulumi:"signedCertificateIssuer"`
+	// Expiration date of the signed certificate, in RFC3339 format. Null until a certificate is uploaded.
+	SignedCertificateNotValidAfterDate pulumi.StringInput `pulumi:"signedCertificateNotValidAfterDate"`
+	// Start of validity of the signed certificate, in RFC3339 format. Null until a certificate is uploaded.
+	SignedCertificateNotValidBeforeDate pulumi.StringInput `pulumi:"signedCertificateNotValidBeforeDate"`
+	// PEM-encoded signed certificate. Null until a certificate is uploaded.
+	SignedCertificatePem pulumi.StringInput `pulumi:"signedCertificatePem"`
+	// Serial number of the signed certificate in hex format. Null until a certificate is uploaded.
+	SignedCertificateSerialNumber pulumi.StringInput `pulumi:"signedCertificateSerialNumber"`
+	// SHA-256 fingerprint of the signed certificate. Null until a certificate is uploaded.
+	SignedCertificateSha256Fingerprint pulumi.StringInput `pulumi:"signedCertificateSha256Fingerprint"`
+	// PEM-encoded trust chain uploaded alongside the signed certificate. Null if none was uploaded.
+	TrustChainPem pulumi.StringInput `pulumi:"trustChainPem"`
+}
+
+func (GetCloudcertificatesLineagesLineageCurrentStagingAlgorithmsArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetCloudcertificatesLineagesLineageCurrentStagingAlgorithms)(nil)).Elem()
+}
+
+func (i GetCloudcertificatesLineagesLineageCurrentStagingAlgorithmsArgs) ToGetCloudcertificatesLineagesLineageCurrentStagingAlgorithmsOutput() GetCloudcertificatesLineagesLineageCurrentStagingAlgorithmsOutput {
+	return i.ToGetCloudcertificatesLineagesLineageCurrentStagingAlgorithmsOutputWithContext(context.Background())
+}
+
+func (i GetCloudcertificatesLineagesLineageCurrentStagingAlgorithmsArgs) ToGetCloudcertificatesLineagesLineageCurrentStagingAlgorithmsOutputWithContext(ctx context.Context) GetCloudcertificatesLineagesLineageCurrentStagingAlgorithmsOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetCloudcertificatesLineagesLineageCurrentStagingAlgorithmsOutput)
+}
+
+// GetCloudcertificatesLineagesLineageCurrentStagingAlgorithmsMapInput is an input type that accepts GetCloudcertificatesLineagesLineageCurrentStagingAlgorithmsMap and GetCloudcertificatesLineagesLineageCurrentStagingAlgorithmsMapOutput values.
+// You can construct a concrete instance of `GetCloudcertificatesLineagesLineageCurrentStagingAlgorithmsMapInput` via:
+//
+//	GetCloudcertificatesLineagesLineageCurrentStagingAlgorithmsMap{ "key": GetCloudcertificatesLineagesLineageCurrentStagingAlgorithmsArgs{...} }
+type GetCloudcertificatesLineagesLineageCurrentStagingAlgorithmsMapInput interface {
+	pulumi.Input
+
+	ToGetCloudcertificatesLineagesLineageCurrentStagingAlgorithmsMapOutput() GetCloudcertificatesLineagesLineageCurrentStagingAlgorithmsMapOutput
+	ToGetCloudcertificatesLineagesLineageCurrentStagingAlgorithmsMapOutputWithContext(context.Context) GetCloudcertificatesLineagesLineageCurrentStagingAlgorithmsMapOutput
+}
+
+type GetCloudcertificatesLineagesLineageCurrentStagingAlgorithmsMap map[string]GetCloudcertificatesLineagesLineageCurrentStagingAlgorithmsInput
+
+func (GetCloudcertificatesLineagesLineageCurrentStagingAlgorithmsMap) ElementType() reflect.Type {
+	return reflect.TypeOf((*map[string]GetCloudcertificatesLineagesLineageCurrentStagingAlgorithms)(nil)).Elem()
+}
+
+func (i GetCloudcertificatesLineagesLineageCurrentStagingAlgorithmsMap) ToGetCloudcertificatesLineagesLineageCurrentStagingAlgorithmsMapOutput() GetCloudcertificatesLineagesLineageCurrentStagingAlgorithmsMapOutput {
+	return i.ToGetCloudcertificatesLineagesLineageCurrentStagingAlgorithmsMapOutputWithContext(context.Background())
+}
+
+func (i GetCloudcertificatesLineagesLineageCurrentStagingAlgorithmsMap) ToGetCloudcertificatesLineagesLineageCurrentStagingAlgorithmsMapOutputWithContext(ctx context.Context) GetCloudcertificatesLineagesLineageCurrentStagingAlgorithmsMapOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetCloudcertificatesLineagesLineageCurrentStagingAlgorithmsMapOutput)
+}
+
+type GetCloudcertificatesLineagesLineageCurrentStagingAlgorithmsOutput struct{ *pulumi.OutputState }
+
+func (GetCloudcertificatesLineagesLineageCurrentStagingAlgorithmsOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetCloudcertificatesLineagesLineageCurrentStagingAlgorithms)(nil)).Elem()
+}
+
+func (o GetCloudcertificatesLineagesLineageCurrentStagingAlgorithmsOutput) ToGetCloudcertificatesLineagesLineageCurrentStagingAlgorithmsOutput() GetCloudcertificatesLineagesLineageCurrentStagingAlgorithmsOutput {
+	return o
+}
+
+func (o GetCloudcertificatesLineagesLineageCurrentStagingAlgorithmsOutput) ToGetCloudcertificatesLineagesLineageCurrentStagingAlgorithmsOutputWithContext(ctx context.Context) GetCloudcertificatesLineagesLineageCurrentStagingAlgorithmsOutput {
+	return o
+}
+
+// Username of the person who created the algorithm instance.
+func (o GetCloudcertificatesLineagesLineageCurrentStagingAlgorithmsOutput) AlgorithmInstanceCreatedBy() pulumi.StringOutput {
+	return o.ApplyT(func(v GetCloudcertificatesLineagesLineageCurrentStagingAlgorithms) string {
+		return v.AlgorithmInstanceCreatedBy
+	}).(pulumi.StringOutput)
+}
+
+// Time the algorithm instance was created, in RFC3339 format.
+func (o GetCloudcertificatesLineagesLineageCurrentStagingAlgorithmsOutput) AlgorithmInstanceCreatedTime() pulumi.StringOutput {
+	return o.ApplyT(func(v GetCloudcertificatesLineagesLineageCurrentStagingAlgorithms) string {
+		return v.AlgorithmInstanceCreatedTime
+	}).(pulumi.StringOutput)
+}
+
+// Unique identifier of the algorithm instance.
+func (o GetCloudcertificatesLineagesLineageCurrentStagingAlgorithmsOutput) AlgorithmInstanceId() pulumi.IntOutput {
+	return o.ApplyT(func(v GetCloudcertificatesLineagesLineageCurrentStagingAlgorithms) int { return v.AlgorithmInstanceId }).(pulumi.IntOutput)
+}
+
+// Username of the person who last modified the algorithm instance. Null if never modified.
+func (o GetCloudcertificatesLineagesLineageCurrentStagingAlgorithmsOutput) AlgorithmInstanceModifiedBy() pulumi.StringOutput {
+	return o.ApplyT(func(v GetCloudcertificatesLineagesLineageCurrentStagingAlgorithms) string {
+		return v.AlgorithmInstanceModifiedBy
+	}).(pulumi.StringOutput)
+}
+
+// Time the algorithm instance was last modified, in RFC3339 format. Null if never modified.
+func (o GetCloudcertificatesLineagesLineageCurrentStagingAlgorithmsOutput) AlgorithmInstanceModifiedTime() pulumi.StringOutput {
+	return o.ApplyT(func(v GetCloudcertificatesLineagesLineageCurrentStagingAlgorithms) string {
+		return v.AlgorithmInstanceModifiedTime
+	}).(pulumi.StringOutput)
+}
+
+// Status of the certificate for this key type: `CSR_READY`, `CERT_UPLOAD_PROCESSING`, `READY_FOR_USE`, or `ABANDONED`.
+func (o GetCloudcertificatesLineagesLineageCurrentStagingAlgorithmsOutput) CertificateStatus() pulumi.StringOutput {
+	return o.ApplyT(func(v GetCloudcertificatesLineagesLineageCurrentStagingAlgorithms) string { return v.CertificateStatus }).(pulumi.StringOutput)
+}
+
+// Date when the CSR expires, in RFC3339 format.
+func (o GetCloudcertificatesLineagesLineageCurrentStagingAlgorithmsOutput) CsrExpirationDate() pulumi.StringOutput {
+	return o.ApplyT(func(v GetCloudcertificatesLineagesLineageCurrentStagingAlgorithms) string { return v.CsrExpirationDate }).(pulumi.StringOutput)
+}
+
+// PEM-encoded certificate signing request.
+func (o GetCloudcertificatesLineagesLineageCurrentStagingAlgorithmsOutput) CsrPem() pulumi.StringOutput {
+	return o.ApplyT(func(v GetCloudcertificatesLineagesLineageCurrentStagingAlgorithms) string { return v.CsrPem }).(pulumi.StringOutput)
+}
+
+// Issuer field of the signed certificate. Null until a certificate is uploaded.
+func (o GetCloudcertificatesLineagesLineageCurrentStagingAlgorithmsOutput) SignedCertificateIssuer() pulumi.StringOutput {
+	return o.ApplyT(func(v GetCloudcertificatesLineagesLineageCurrentStagingAlgorithms) string {
+		return v.SignedCertificateIssuer
+	}).(pulumi.StringOutput)
+}
+
+// Expiration date of the signed certificate, in RFC3339 format. Null until a certificate is uploaded.
+func (o GetCloudcertificatesLineagesLineageCurrentStagingAlgorithmsOutput) SignedCertificateNotValidAfterDate() pulumi.StringOutput {
+	return o.ApplyT(func(v GetCloudcertificatesLineagesLineageCurrentStagingAlgorithms) string {
+		return v.SignedCertificateNotValidAfterDate
+	}).(pulumi.StringOutput)
+}
+
+// Start of validity of the signed certificate, in RFC3339 format. Null until a certificate is uploaded.
+func (o GetCloudcertificatesLineagesLineageCurrentStagingAlgorithmsOutput) SignedCertificateNotValidBeforeDate() pulumi.StringOutput {
+	return o.ApplyT(func(v GetCloudcertificatesLineagesLineageCurrentStagingAlgorithms) string {
+		return v.SignedCertificateNotValidBeforeDate
+	}).(pulumi.StringOutput)
+}
+
+// PEM-encoded signed certificate. Null until a certificate is uploaded.
+func (o GetCloudcertificatesLineagesLineageCurrentStagingAlgorithmsOutput) SignedCertificatePem() pulumi.StringOutput {
+	return o.ApplyT(func(v GetCloudcertificatesLineagesLineageCurrentStagingAlgorithms) string {
+		return v.SignedCertificatePem
+	}).(pulumi.StringOutput)
+}
+
+// Serial number of the signed certificate in hex format. Null until a certificate is uploaded.
+func (o GetCloudcertificatesLineagesLineageCurrentStagingAlgorithmsOutput) SignedCertificateSerialNumber() pulumi.StringOutput {
+	return o.ApplyT(func(v GetCloudcertificatesLineagesLineageCurrentStagingAlgorithms) string {
+		return v.SignedCertificateSerialNumber
+	}).(pulumi.StringOutput)
+}
+
+// SHA-256 fingerprint of the signed certificate. Null until a certificate is uploaded.
+func (o GetCloudcertificatesLineagesLineageCurrentStagingAlgorithmsOutput) SignedCertificateSha256Fingerprint() pulumi.StringOutput {
+	return o.ApplyT(func(v GetCloudcertificatesLineagesLineageCurrentStagingAlgorithms) string {
+		return v.SignedCertificateSha256Fingerprint
+	}).(pulumi.StringOutput)
+}
+
+// PEM-encoded trust chain uploaded alongside the signed certificate. Null if none was uploaded.
+func (o GetCloudcertificatesLineagesLineageCurrentStagingAlgorithmsOutput) TrustChainPem() pulumi.StringOutput {
+	return o.ApplyT(func(v GetCloudcertificatesLineagesLineageCurrentStagingAlgorithms) string { return v.TrustChainPem }).(pulumi.StringOutput)
+}
+
+type GetCloudcertificatesLineagesLineageCurrentStagingAlgorithmsMapOutput struct{ *pulumi.OutputState }
+
+func (GetCloudcertificatesLineagesLineageCurrentStagingAlgorithmsMapOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*map[string]GetCloudcertificatesLineagesLineageCurrentStagingAlgorithms)(nil)).Elem()
+}
+
+func (o GetCloudcertificatesLineagesLineageCurrentStagingAlgorithmsMapOutput) ToGetCloudcertificatesLineagesLineageCurrentStagingAlgorithmsMapOutput() GetCloudcertificatesLineagesLineageCurrentStagingAlgorithmsMapOutput {
+	return o
+}
+
+func (o GetCloudcertificatesLineagesLineageCurrentStagingAlgorithmsMapOutput) ToGetCloudcertificatesLineagesLineageCurrentStagingAlgorithmsMapOutputWithContext(ctx context.Context) GetCloudcertificatesLineagesLineageCurrentStagingAlgorithmsMapOutput {
+	return o
+}
+
+func (o GetCloudcertificatesLineagesLineageCurrentStagingAlgorithmsMapOutput) MapIndex(k pulumi.StringInput) GetCloudcertificatesLineagesLineageCurrentStagingAlgorithmsOutput {
+	return pulumi.All(o, k).ApplyT(func(vs []interface{}) GetCloudcertificatesLineagesLineageCurrentStagingAlgorithms {
+		return vs[0].(map[string]GetCloudcertificatesLineagesLineageCurrentStagingAlgorithms)[vs[1].(string)]
+	}).(GetCloudcertificatesLineagesLineageCurrentStagingAlgorithmsOutput)
+}
+
+type GetCloudcertificatesLineagesLineageHead struct {
+	// Per key-type (RSA or ECDSA) certificate details for this generation, keyed by key_type. Populated only when expandGenerations is true.
+	Algorithms map[string]GetCloudcertificatesLineagesLineageHeadAlgorithms `pulumi:"algorithms"`
+	// Time the generation was first promoted to production, in RFC3339 format. Null if never promoted, or if not requested via expand_generations.
+	FirstPromotedToProductionTime string `pulumi:"firstPromotedToProductionTime"`
+	// Username of the person who created this generation. Populated only when expandGenerations is true.
+	GenerationCreatedBy string `pulumi:"generationCreatedBy"`
+	// Time the generation was created, in RFC3339 format. Populated only when expandGenerations is true.
+	GenerationCreatedTime string `pulumi:"generationCreatedTime"`
+	// Unique identifier of the generation.
+	GenerationId int `pulumi:"generationId"`
+	// Username of the person who last modified this generation. Populated only when expandGenerations is true.
+	GenerationModifiedBy string `pulumi:"generationModifiedBy"`
+	// Time the generation was last modified, in RFC3339 format. Null if not requested via expand_generations, or if the generation has never been modified since creation.
+	GenerationModifiedTime string `pulumi:"generationModifiedTime"`
+	// Status of the generation.
+	GenerationStatus string `pulumi:"generationStatus"`
+}
+
+// GetCloudcertificatesLineagesLineageHeadInput is an input type that accepts GetCloudcertificatesLineagesLineageHeadArgs and GetCloudcertificatesLineagesLineageHeadOutput values.
+// You can construct a concrete instance of `GetCloudcertificatesLineagesLineageHeadInput` via:
+//
+//	GetCloudcertificatesLineagesLineageHeadArgs{...}
+type GetCloudcertificatesLineagesLineageHeadInput interface {
+	pulumi.Input
+
+	ToGetCloudcertificatesLineagesLineageHeadOutput() GetCloudcertificatesLineagesLineageHeadOutput
+	ToGetCloudcertificatesLineagesLineageHeadOutputWithContext(context.Context) GetCloudcertificatesLineagesLineageHeadOutput
+}
+
+type GetCloudcertificatesLineagesLineageHeadArgs struct {
+	// Per key-type (RSA or ECDSA) certificate details for this generation, keyed by key_type. Populated only when expandGenerations is true.
+	Algorithms GetCloudcertificatesLineagesLineageHeadAlgorithmsMapInput `pulumi:"algorithms"`
+	// Time the generation was first promoted to production, in RFC3339 format. Null if never promoted, or if not requested via expand_generations.
+	FirstPromotedToProductionTime pulumi.StringInput `pulumi:"firstPromotedToProductionTime"`
+	// Username of the person who created this generation. Populated only when expandGenerations is true.
+	GenerationCreatedBy pulumi.StringInput `pulumi:"generationCreatedBy"`
+	// Time the generation was created, in RFC3339 format. Populated only when expandGenerations is true.
+	GenerationCreatedTime pulumi.StringInput `pulumi:"generationCreatedTime"`
+	// Unique identifier of the generation.
+	GenerationId pulumi.IntInput `pulumi:"generationId"`
+	// Username of the person who last modified this generation. Populated only when expandGenerations is true.
+	GenerationModifiedBy pulumi.StringInput `pulumi:"generationModifiedBy"`
+	// Time the generation was last modified, in RFC3339 format. Null if not requested via expand_generations, or if the generation has never been modified since creation.
+	GenerationModifiedTime pulumi.StringInput `pulumi:"generationModifiedTime"`
+	// Status of the generation.
+	GenerationStatus pulumi.StringInput `pulumi:"generationStatus"`
+}
+
+func (GetCloudcertificatesLineagesLineageHeadArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetCloudcertificatesLineagesLineageHead)(nil)).Elem()
+}
+
+func (i GetCloudcertificatesLineagesLineageHeadArgs) ToGetCloudcertificatesLineagesLineageHeadOutput() GetCloudcertificatesLineagesLineageHeadOutput {
+	return i.ToGetCloudcertificatesLineagesLineageHeadOutputWithContext(context.Background())
+}
+
+func (i GetCloudcertificatesLineagesLineageHeadArgs) ToGetCloudcertificatesLineagesLineageHeadOutputWithContext(ctx context.Context) GetCloudcertificatesLineagesLineageHeadOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetCloudcertificatesLineagesLineageHeadOutput)
+}
+
+type GetCloudcertificatesLineagesLineageHeadOutput struct{ *pulumi.OutputState }
+
+func (GetCloudcertificatesLineagesLineageHeadOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetCloudcertificatesLineagesLineageHead)(nil)).Elem()
+}
+
+func (o GetCloudcertificatesLineagesLineageHeadOutput) ToGetCloudcertificatesLineagesLineageHeadOutput() GetCloudcertificatesLineagesLineageHeadOutput {
+	return o
+}
+
+func (o GetCloudcertificatesLineagesLineageHeadOutput) ToGetCloudcertificatesLineagesLineageHeadOutputWithContext(ctx context.Context) GetCloudcertificatesLineagesLineageHeadOutput {
+	return o
+}
+
+// Per key-type (RSA or ECDSA) certificate details for this generation, keyed by key_type. Populated only when expandGenerations is true.
+func (o GetCloudcertificatesLineagesLineageHeadOutput) Algorithms() GetCloudcertificatesLineagesLineageHeadAlgorithmsMapOutput {
+	return o.ApplyT(func(v GetCloudcertificatesLineagesLineageHead) map[string]GetCloudcertificatesLineagesLineageHeadAlgorithms {
+		return v.Algorithms
+	}).(GetCloudcertificatesLineagesLineageHeadAlgorithmsMapOutput)
+}
+
+// Time the generation was first promoted to production, in RFC3339 format. Null if never promoted, or if not requested via expand_generations.
+func (o GetCloudcertificatesLineagesLineageHeadOutput) FirstPromotedToProductionTime() pulumi.StringOutput {
+	return o.ApplyT(func(v GetCloudcertificatesLineagesLineageHead) string { return v.FirstPromotedToProductionTime }).(pulumi.StringOutput)
+}
+
+// Username of the person who created this generation. Populated only when expandGenerations is true.
+func (o GetCloudcertificatesLineagesLineageHeadOutput) GenerationCreatedBy() pulumi.StringOutput {
+	return o.ApplyT(func(v GetCloudcertificatesLineagesLineageHead) string { return v.GenerationCreatedBy }).(pulumi.StringOutput)
+}
+
+// Time the generation was created, in RFC3339 format. Populated only when expandGenerations is true.
+func (o GetCloudcertificatesLineagesLineageHeadOutput) GenerationCreatedTime() pulumi.StringOutput {
+	return o.ApplyT(func(v GetCloudcertificatesLineagesLineageHead) string { return v.GenerationCreatedTime }).(pulumi.StringOutput)
+}
+
+// Unique identifier of the generation.
+func (o GetCloudcertificatesLineagesLineageHeadOutput) GenerationId() pulumi.IntOutput {
+	return o.ApplyT(func(v GetCloudcertificatesLineagesLineageHead) int { return v.GenerationId }).(pulumi.IntOutput)
+}
+
+// Username of the person who last modified this generation. Populated only when expandGenerations is true.
+func (o GetCloudcertificatesLineagesLineageHeadOutput) GenerationModifiedBy() pulumi.StringOutput {
+	return o.ApplyT(func(v GetCloudcertificatesLineagesLineageHead) string { return v.GenerationModifiedBy }).(pulumi.StringOutput)
+}
+
+// Time the generation was last modified, in RFC3339 format. Null if not requested via expand_generations, or if the generation has never been modified since creation.
+func (o GetCloudcertificatesLineagesLineageHeadOutput) GenerationModifiedTime() pulumi.StringOutput {
+	return o.ApplyT(func(v GetCloudcertificatesLineagesLineageHead) string { return v.GenerationModifiedTime }).(pulumi.StringOutput)
+}
+
+// Status of the generation.
+func (o GetCloudcertificatesLineagesLineageHeadOutput) GenerationStatus() pulumi.StringOutput {
+	return o.ApplyT(func(v GetCloudcertificatesLineagesLineageHead) string { return v.GenerationStatus }).(pulumi.StringOutput)
+}
+
+type GetCloudcertificatesLineagesLineageHeadAlgorithms struct {
+	// Username of the person who created the algorithm instance.
+	AlgorithmInstanceCreatedBy string `pulumi:"algorithmInstanceCreatedBy"`
+	// Time the algorithm instance was created, in RFC3339 format.
+	AlgorithmInstanceCreatedTime string `pulumi:"algorithmInstanceCreatedTime"`
+	// Unique identifier of the algorithm instance.
+	AlgorithmInstanceId int `pulumi:"algorithmInstanceId"`
+	// Username of the person who last modified the algorithm instance. Null if never modified.
+	AlgorithmInstanceModifiedBy string `pulumi:"algorithmInstanceModifiedBy"`
+	// Time the algorithm instance was last modified, in RFC3339 format. Null if never modified.
+	AlgorithmInstanceModifiedTime string `pulumi:"algorithmInstanceModifiedTime"`
+	// Status of the certificate for this key type: `CSR_READY`, `CERT_UPLOAD_PROCESSING`, `READY_FOR_USE`, or `ABANDONED`.
+	CertificateStatus string `pulumi:"certificateStatus"`
+	// Date when the CSR expires, in RFC3339 format.
+	CsrExpirationDate string `pulumi:"csrExpirationDate"`
+	// PEM-encoded certificate signing request.
+	CsrPem string `pulumi:"csrPem"`
+	// Issuer field of the signed certificate. Null until a certificate is uploaded.
+	SignedCertificateIssuer string `pulumi:"signedCertificateIssuer"`
+	// Expiration date of the signed certificate, in RFC3339 format. Null until a certificate is uploaded.
+	SignedCertificateNotValidAfterDate string `pulumi:"signedCertificateNotValidAfterDate"`
+	// Start of validity of the signed certificate, in RFC3339 format. Null until a certificate is uploaded.
+	SignedCertificateNotValidBeforeDate string `pulumi:"signedCertificateNotValidBeforeDate"`
+	// PEM-encoded signed certificate. Null until a certificate is uploaded.
+	SignedCertificatePem string `pulumi:"signedCertificatePem"`
+	// Serial number of the signed certificate in hex format. Null until a certificate is uploaded.
+	SignedCertificateSerialNumber string `pulumi:"signedCertificateSerialNumber"`
+	// SHA-256 fingerprint of the signed certificate. Null until a certificate is uploaded.
+	SignedCertificateSha256Fingerprint string `pulumi:"signedCertificateSha256Fingerprint"`
+	// PEM-encoded trust chain uploaded alongside the signed certificate. Null if none was uploaded.
+	TrustChainPem string `pulumi:"trustChainPem"`
+}
+
+// GetCloudcertificatesLineagesLineageHeadAlgorithmsInput is an input type that accepts GetCloudcertificatesLineagesLineageHeadAlgorithmsArgs and GetCloudcertificatesLineagesLineageHeadAlgorithmsOutput values.
+// You can construct a concrete instance of `GetCloudcertificatesLineagesLineageHeadAlgorithmsInput` via:
+//
+//	GetCloudcertificatesLineagesLineageHeadAlgorithmsArgs{...}
+type GetCloudcertificatesLineagesLineageHeadAlgorithmsInput interface {
+	pulumi.Input
+
+	ToGetCloudcertificatesLineagesLineageHeadAlgorithmsOutput() GetCloudcertificatesLineagesLineageHeadAlgorithmsOutput
+	ToGetCloudcertificatesLineagesLineageHeadAlgorithmsOutputWithContext(context.Context) GetCloudcertificatesLineagesLineageHeadAlgorithmsOutput
+}
+
+type GetCloudcertificatesLineagesLineageHeadAlgorithmsArgs struct {
+	// Username of the person who created the algorithm instance.
+	AlgorithmInstanceCreatedBy pulumi.StringInput `pulumi:"algorithmInstanceCreatedBy"`
+	// Time the algorithm instance was created, in RFC3339 format.
+	AlgorithmInstanceCreatedTime pulumi.StringInput `pulumi:"algorithmInstanceCreatedTime"`
+	// Unique identifier of the algorithm instance.
+	AlgorithmInstanceId pulumi.IntInput `pulumi:"algorithmInstanceId"`
+	// Username of the person who last modified the algorithm instance. Null if never modified.
+	AlgorithmInstanceModifiedBy pulumi.StringInput `pulumi:"algorithmInstanceModifiedBy"`
+	// Time the algorithm instance was last modified, in RFC3339 format. Null if never modified.
+	AlgorithmInstanceModifiedTime pulumi.StringInput `pulumi:"algorithmInstanceModifiedTime"`
+	// Status of the certificate for this key type: `CSR_READY`, `CERT_UPLOAD_PROCESSING`, `READY_FOR_USE`, or `ABANDONED`.
+	CertificateStatus pulumi.StringInput `pulumi:"certificateStatus"`
+	// Date when the CSR expires, in RFC3339 format.
+	CsrExpirationDate pulumi.StringInput `pulumi:"csrExpirationDate"`
+	// PEM-encoded certificate signing request.
+	CsrPem pulumi.StringInput `pulumi:"csrPem"`
+	// Issuer field of the signed certificate. Null until a certificate is uploaded.
+	SignedCertificateIssuer pulumi.StringInput `pulumi:"signedCertificateIssuer"`
+	// Expiration date of the signed certificate, in RFC3339 format. Null until a certificate is uploaded.
+	SignedCertificateNotValidAfterDate pulumi.StringInput `pulumi:"signedCertificateNotValidAfterDate"`
+	// Start of validity of the signed certificate, in RFC3339 format. Null until a certificate is uploaded.
+	SignedCertificateNotValidBeforeDate pulumi.StringInput `pulumi:"signedCertificateNotValidBeforeDate"`
+	// PEM-encoded signed certificate. Null until a certificate is uploaded.
+	SignedCertificatePem pulumi.StringInput `pulumi:"signedCertificatePem"`
+	// Serial number of the signed certificate in hex format. Null until a certificate is uploaded.
+	SignedCertificateSerialNumber pulumi.StringInput `pulumi:"signedCertificateSerialNumber"`
+	// SHA-256 fingerprint of the signed certificate. Null until a certificate is uploaded.
+	SignedCertificateSha256Fingerprint pulumi.StringInput `pulumi:"signedCertificateSha256Fingerprint"`
+	// PEM-encoded trust chain uploaded alongside the signed certificate. Null if none was uploaded.
+	TrustChainPem pulumi.StringInput `pulumi:"trustChainPem"`
+}
+
+func (GetCloudcertificatesLineagesLineageHeadAlgorithmsArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetCloudcertificatesLineagesLineageHeadAlgorithms)(nil)).Elem()
+}
+
+func (i GetCloudcertificatesLineagesLineageHeadAlgorithmsArgs) ToGetCloudcertificatesLineagesLineageHeadAlgorithmsOutput() GetCloudcertificatesLineagesLineageHeadAlgorithmsOutput {
+	return i.ToGetCloudcertificatesLineagesLineageHeadAlgorithmsOutputWithContext(context.Background())
+}
+
+func (i GetCloudcertificatesLineagesLineageHeadAlgorithmsArgs) ToGetCloudcertificatesLineagesLineageHeadAlgorithmsOutputWithContext(ctx context.Context) GetCloudcertificatesLineagesLineageHeadAlgorithmsOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetCloudcertificatesLineagesLineageHeadAlgorithmsOutput)
+}
+
+// GetCloudcertificatesLineagesLineageHeadAlgorithmsMapInput is an input type that accepts GetCloudcertificatesLineagesLineageHeadAlgorithmsMap and GetCloudcertificatesLineagesLineageHeadAlgorithmsMapOutput values.
+// You can construct a concrete instance of `GetCloudcertificatesLineagesLineageHeadAlgorithmsMapInput` via:
+//
+//	GetCloudcertificatesLineagesLineageHeadAlgorithmsMap{ "key": GetCloudcertificatesLineagesLineageHeadAlgorithmsArgs{...} }
+type GetCloudcertificatesLineagesLineageHeadAlgorithmsMapInput interface {
+	pulumi.Input
+
+	ToGetCloudcertificatesLineagesLineageHeadAlgorithmsMapOutput() GetCloudcertificatesLineagesLineageHeadAlgorithmsMapOutput
+	ToGetCloudcertificatesLineagesLineageHeadAlgorithmsMapOutputWithContext(context.Context) GetCloudcertificatesLineagesLineageHeadAlgorithmsMapOutput
+}
+
+type GetCloudcertificatesLineagesLineageHeadAlgorithmsMap map[string]GetCloudcertificatesLineagesLineageHeadAlgorithmsInput
+
+func (GetCloudcertificatesLineagesLineageHeadAlgorithmsMap) ElementType() reflect.Type {
+	return reflect.TypeOf((*map[string]GetCloudcertificatesLineagesLineageHeadAlgorithms)(nil)).Elem()
+}
+
+func (i GetCloudcertificatesLineagesLineageHeadAlgorithmsMap) ToGetCloudcertificatesLineagesLineageHeadAlgorithmsMapOutput() GetCloudcertificatesLineagesLineageHeadAlgorithmsMapOutput {
+	return i.ToGetCloudcertificatesLineagesLineageHeadAlgorithmsMapOutputWithContext(context.Background())
+}
+
+func (i GetCloudcertificatesLineagesLineageHeadAlgorithmsMap) ToGetCloudcertificatesLineagesLineageHeadAlgorithmsMapOutputWithContext(ctx context.Context) GetCloudcertificatesLineagesLineageHeadAlgorithmsMapOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetCloudcertificatesLineagesLineageHeadAlgorithmsMapOutput)
+}
+
+type GetCloudcertificatesLineagesLineageHeadAlgorithmsOutput struct{ *pulumi.OutputState }
+
+func (GetCloudcertificatesLineagesLineageHeadAlgorithmsOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetCloudcertificatesLineagesLineageHeadAlgorithms)(nil)).Elem()
+}
+
+func (o GetCloudcertificatesLineagesLineageHeadAlgorithmsOutput) ToGetCloudcertificatesLineagesLineageHeadAlgorithmsOutput() GetCloudcertificatesLineagesLineageHeadAlgorithmsOutput {
+	return o
+}
+
+func (o GetCloudcertificatesLineagesLineageHeadAlgorithmsOutput) ToGetCloudcertificatesLineagesLineageHeadAlgorithmsOutputWithContext(ctx context.Context) GetCloudcertificatesLineagesLineageHeadAlgorithmsOutput {
+	return o
+}
+
+// Username of the person who created the algorithm instance.
+func (o GetCloudcertificatesLineagesLineageHeadAlgorithmsOutput) AlgorithmInstanceCreatedBy() pulumi.StringOutput {
+	return o.ApplyT(func(v GetCloudcertificatesLineagesLineageHeadAlgorithms) string { return v.AlgorithmInstanceCreatedBy }).(pulumi.StringOutput)
+}
+
+// Time the algorithm instance was created, in RFC3339 format.
+func (o GetCloudcertificatesLineagesLineageHeadAlgorithmsOutput) AlgorithmInstanceCreatedTime() pulumi.StringOutput {
+	return o.ApplyT(func(v GetCloudcertificatesLineagesLineageHeadAlgorithms) string {
+		return v.AlgorithmInstanceCreatedTime
+	}).(pulumi.StringOutput)
+}
+
+// Unique identifier of the algorithm instance.
+func (o GetCloudcertificatesLineagesLineageHeadAlgorithmsOutput) AlgorithmInstanceId() pulumi.IntOutput {
+	return o.ApplyT(func(v GetCloudcertificatesLineagesLineageHeadAlgorithms) int { return v.AlgorithmInstanceId }).(pulumi.IntOutput)
+}
+
+// Username of the person who last modified the algorithm instance. Null if never modified.
+func (o GetCloudcertificatesLineagesLineageHeadAlgorithmsOutput) AlgorithmInstanceModifiedBy() pulumi.StringOutput {
+	return o.ApplyT(func(v GetCloudcertificatesLineagesLineageHeadAlgorithms) string { return v.AlgorithmInstanceModifiedBy }).(pulumi.StringOutput)
+}
+
+// Time the algorithm instance was last modified, in RFC3339 format. Null if never modified.
+func (o GetCloudcertificatesLineagesLineageHeadAlgorithmsOutput) AlgorithmInstanceModifiedTime() pulumi.StringOutput {
+	return o.ApplyT(func(v GetCloudcertificatesLineagesLineageHeadAlgorithms) string {
+		return v.AlgorithmInstanceModifiedTime
+	}).(pulumi.StringOutput)
+}
+
+// Status of the certificate for this key type: `CSR_READY`, `CERT_UPLOAD_PROCESSING`, `READY_FOR_USE`, or `ABANDONED`.
+func (o GetCloudcertificatesLineagesLineageHeadAlgorithmsOutput) CertificateStatus() pulumi.StringOutput {
+	return o.ApplyT(func(v GetCloudcertificatesLineagesLineageHeadAlgorithms) string { return v.CertificateStatus }).(pulumi.StringOutput)
+}
+
+// Date when the CSR expires, in RFC3339 format.
+func (o GetCloudcertificatesLineagesLineageHeadAlgorithmsOutput) CsrExpirationDate() pulumi.StringOutput {
+	return o.ApplyT(func(v GetCloudcertificatesLineagesLineageHeadAlgorithms) string { return v.CsrExpirationDate }).(pulumi.StringOutput)
+}
+
+// PEM-encoded certificate signing request.
+func (o GetCloudcertificatesLineagesLineageHeadAlgorithmsOutput) CsrPem() pulumi.StringOutput {
+	return o.ApplyT(func(v GetCloudcertificatesLineagesLineageHeadAlgorithms) string { return v.CsrPem }).(pulumi.StringOutput)
+}
+
+// Issuer field of the signed certificate. Null until a certificate is uploaded.
+func (o GetCloudcertificatesLineagesLineageHeadAlgorithmsOutput) SignedCertificateIssuer() pulumi.StringOutput {
+	return o.ApplyT(func(v GetCloudcertificatesLineagesLineageHeadAlgorithms) string { return v.SignedCertificateIssuer }).(pulumi.StringOutput)
+}
+
+// Expiration date of the signed certificate, in RFC3339 format. Null until a certificate is uploaded.
+func (o GetCloudcertificatesLineagesLineageHeadAlgorithmsOutput) SignedCertificateNotValidAfterDate() pulumi.StringOutput {
+	return o.ApplyT(func(v GetCloudcertificatesLineagesLineageHeadAlgorithms) string {
+		return v.SignedCertificateNotValidAfterDate
+	}).(pulumi.StringOutput)
+}
+
+// Start of validity of the signed certificate, in RFC3339 format. Null until a certificate is uploaded.
+func (o GetCloudcertificatesLineagesLineageHeadAlgorithmsOutput) SignedCertificateNotValidBeforeDate() pulumi.StringOutput {
+	return o.ApplyT(func(v GetCloudcertificatesLineagesLineageHeadAlgorithms) string {
+		return v.SignedCertificateNotValidBeforeDate
+	}).(pulumi.StringOutput)
+}
+
+// PEM-encoded signed certificate. Null until a certificate is uploaded.
+func (o GetCloudcertificatesLineagesLineageHeadAlgorithmsOutput) SignedCertificatePem() pulumi.StringOutput {
+	return o.ApplyT(func(v GetCloudcertificatesLineagesLineageHeadAlgorithms) string { return v.SignedCertificatePem }).(pulumi.StringOutput)
+}
+
+// Serial number of the signed certificate in hex format. Null until a certificate is uploaded.
+func (o GetCloudcertificatesLineagesLineageHeadAlgorithmsOutput) SignedCertificateSerialNumber() pulumi.StringOutput {
+	return o.ApplyT(func(v GetCloudcertificatesLineagesLineageHeadAlgorithms) string {
+		return v.SignedCertificateSerialNumber
+	}).(pulumi.StringOutput)
+}
+
+// SHA-256 fingerprint of the signed certificate. Null until a certificate is uploaded.
+func (o GetCloudcertificatesLineagesLineageHeadAlgorithmsOutput) SignedCertificateSha256Fingerprint() pulumi.StringOutput {
+	return o.ApplyT(func(v GetCloudcertificatesLineagesLineageHeadAlgorithms) string {
+		return v.SignedCertificateSha256Fingerprint
+	}).(pulumi.StringOutput)
+}
+
+// PEM-encoded trust chain uploaded alongside the signed certificate. Null if none was uploaded.
+func (o GetCloudcertificatesLineagesLineageHeadAlgorithmsOutput) TrustChainPem() pulumi.StringOutput {
+	return o.ApplyT(func(v GetCloudcertificatesLineagesLineageHeadAlgorithms) string { return v.TrustChainPem }).(pulumi.StringOutput)
+}
+
+type GetCloudcertificatesLineagesLineageHeadAlgorithmsMapOutput struct{ *pulumi.OutputState }
+
+func (GetCloudcertificatesLineagesLineageHeadAlgorithmsMapOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*map[string]GetCloudcertificatesLineagesLineageHeadAlgorithms)(nil)).Elem()
+}
+
+func (o GetCloudcertificatesLineagesLineageHeadAlgorithmsMapOutput) ToGetCloudcertificatesLineagesLineageHeadAlgorithmsMapOutput() GetCloudcertificatesLineagesLineageHeadAlgorithmsMapOutput {
+	return o
+}
+
+func (o GetCloudcertificatesLineagesLineageHeadAlgorithmsMapOutput) ToGetCloudcertificatesLineagesLineageHeadAlgorithmsMapOutputWithContext(ctx context.Context) GetCloudcertificatesLineagesLineageHeadAlgorithmsMapOutput {
+	return o
+}
+
+func (o GetCloudcertificatesLineagesLineageHeadAlgorithmsMapOutput) MapIndex(k pulumi.StringInput) GetCloudcertificatesLineagesLineageHeadAlgorithmsOutput {
+	return pulumi.All(o, k).ApplyT(func(vs []interface{}) GetCloudcertificatesLineagesLineageHeadAlgorithms {
+		return vs[0].(map[string]GetCloudcertificatesLineagesLineageHeadAlgorithms)[vs[1].(string)]
+	}).(GetCloudcertificatesLineagesLineageHeadAlgorithmsOutput)
+}
+
+type GetCloudcertificatesLineagesLineagePreviousProduction struct {
+	// Per key-type (RSA or ECDSA) certificate details for this generation, keyed by key_type. Populated only when expandGenerations is true.
+	Algorithms map[string]GetCloudcertificatesLineagesLineagePreviousProductionAlgorithms `pulumi:"algorithms"`
+	// Time the generation was first promoted to production, in RFC3339 format. Null if never promoted, or if not requested via expand_generations.
+	FirstPromotedToProductionTime string `pulumi:"firstPromotedToProductionTime"`
+	// Username of the person who created this generation. Populated only when expandGenerations is true.
+	GenerationCreatedBy string `pulumi:"generationCreatedBy"`
+	// Time the generation was created, in RFC3339 format. Populated only when expandGenerations is true.
+	GenerationCreatedTime string `pulumi:"generationCreatedTime"`
+	// Unique identifier of the generation.
+	GenerationId int `pulumi:"generationId"`
+	// Username of the person who last modified this generation. Populated only when expandGenerations is true.
+	GenerationModifiedBy string `pulumi:"generationModifiedBy"`
+	// Time the generation was last modified, in RFC3339 format. Null if not requested via expand_generations, or if the generation has never been modified since creation.
+	GenerationModifiedTime string `pulumi:"generationModifiedTime"`
+	// Status of the generation.
+	GenerationStatus string `pulumi:"generationStatus"`
+}
+
+// GetCloudcertificatesLineagesLineagePreviousProductionInput is an input type that accepts GetCloudcertificatesLineagesLineagePreviousProductionArgs and GetCloudcertificatesLineagesLineagePreviousProductionOutput values.
+// You can construct a concrete instance of `GetCloudcertificatesLineagesLineagePreviousProductionInput` via:
+//
+//	GetCloudcertificatesLineagesLineagePreviousProductionArgs{...}
+type GetCloudcertificatesLineagesLineagePreviousProductionInput interface {
+	pulumi.Input
+
+	ToGetCloudcertificatesLineagesLineagePreviousProductionOutput() GetCloudcertificatesLineagesLineagePreviousProductionOutput
+	ToGetCloudcertificatesLineagesLineagePreviousProductionOutputWithContext(context.Context) GetCloudcertificatesLineagesLineagePreviousProductionOutput
+}
+
+type GetCloudcertificatesLineagesLineagePreviousProductionArgs struct {
+	// Per key-type (RSA or ECDSA) certificate details for this generation, keyed by key_type. Populated only when expandGenerations is true.
+	Algorithms GetCloudcertificatesLineagesLineagePreviousProductionAlgorithmsMapInput `pulumi:"algorithms"`
+	// Time the generation was first promoted to production, in RFC3339 format. Null if never promoted, or if not requested via expand_generations.
+	FirstPromotedToProductionTime pulumi.StringInput `pulumi:"firstPromotedToProductionTime"`
+	// Username of the person who created this generation. Populated only when expandGenerations is true.
+	GenerationCreatedBy pulumi.StringInput `pulumi:"generationCreatedBy"`
+	// Time the generation was created, in RFC3339 format. Populated only when expandGenerations is true.
+	GenerationCreatedTime pulumi.StringInput `pulumi:"generationCreatedTime"`
+	// Unique identifier of the generation.
+	GenerationId pulumi.IntInput `pulumi:"generationId"`
+	// Username of the person who last modified this generation. Populated only when expandGenerations is true.
+	GenerationModifiedBy pulumi.StringInput `pulumi:"generationModifiedBy"`
+	// Time the generation was last modified, in RFC3339 format. Null if not requested via expand_generations, or if the generation has never been modified since creation.
+	GenerationModifiedTime pulumi.StringInput `pulumi:"generationModifiedTime"`
+	// Status of the generation.
+	GenerationStatus pulumi.StringInput `pulumi:"generationStatus"`
+}
+
+func (GetCloudcertificatesLineagesLineagePreviousProductionArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetCloudcertificatesLineagesLineagePreviousProduction)(nil)).Elem()
+}
+
+func (i GetCloudcertificatesLineagesLineagePreviousProductionArgs) ToGetCloudcertificatesLineagesLineagePreviousProductionOutput() GetCloudcertificatesLineagesLineagePreviousProductionOutput {
+	return i.ToGetCloudcertificatesLineagesLineagePreviousProductionOutputWithContext(context.Background())
+}
+
+func (i GetCloudcertificatesLineagesLineagePreviousProductionArgs) ToGetCloudcertificatesLineagesLineagePreviousProductionOutputWithContext(ctx context.Context) GetCloudcertificatesLineagesLineagePreviousProductionOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetCloudcertificatesLineagesLineagePreviousProductionOutput)
+}
+
+type GetCloudcertificatesLineagesLineagePreviousProductionOutput struct{ *pulumi.OutputState }
+
+func (GetCloudcertificatesLineagesLineagePreviousProductionOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetCloudcertificatesLineagesLineagePreviousProduction)(nil)).Elem()
+}
+
+func (o GetCloudcertificatesLineagesLineagePreviousProductionOutput) ToGetCloudcertificatesLineagesLineagePreviousProductionOutput() GetCloudcertificatesLineagesLineagePreviousProductionOutput {
+	return o
+}
+
+func (o GetCloudcertificatesLineagesLineagePreviousProductionOutput) ToGetCloudcertificatesLineagesLineagePreviousProductionOutputWithContext(ctx context.Context) GetCloudcertificatesLineagesLineagePreviousProductionOutput {
+	return o
+}
+
+// Per key-type (RSA or ECDSA) certificate details for this generation, keyed by key_type. Populated only when expandGenerations is true.
+func (o GetCloudcertificatesLineagesLineagePreviousProductionOutput) Algorithms() GetCloudcertificatesLineagesLineagePreviousProductionAlgorithmsMapOutput {
+	return o.ApplyT(func(v GetCloudcertificatesLineagesLineagePreviousProduction) map[string]GetCloudcertificatesLineagesLineagePreviousProductionAlgorithms {
+		return v.Algorithms
+	}).(GetCloudcertificatesLineagesLineagePreviousProductionAlgorithmsMapOutput)
+}
+
+// Time the generation was first promoted to production, in RFC3339 format. Null if never promoted, or if not requested via expand_generations.
+func (o GetCloudcertificatesLineagesLineagePreviousProductionOutput) FirstPromotedToProductionTime() pulumi.StringOutput {
+	return o.ApplyT(func(v GetCloudcertificatesLineagesLineagePreviousProduction) string {
+		return v.FirstPromotedToProductionTime
+	}).(pulumi.StringOutput)
+}
+
+// Username of the person who created this generation. Populated only when expandGenerations is true.
+func (o GetCloudcertificatesLineagesLineagePreviousProductionOutput) GenerationCreatedBy() pulumi.StringOutput {
+	return o.ApplyT(func(v GetCloudcertificatesLineagesLineagePreviousProduction) string { return v.GenerationCreatedBy }).(pulumi.StringOutput)
+}
+
+// Time the generation was created, in RFC3339 format. Populated only when expandGenerations is true.
+func (o GetCloudcertificatesLineagesLineagePreviousProductionOutput) GenerationCreatedTime() pulumi.StringOutput {
+	return o.ApplyT(func(v GetCloudcertificatesLineagesLineagePreviousProduction) string { return v.GenerationCreatedTime }).(pulumi.StringOutput)
+}
+
+// Unique identifier of the generation.
+func (o GetCloudcertificatesLineagesLineagePreviousProductionOutput) GenerationId() pulumi.IntOutput {
+	return o.ApplyT(func(v GetCloudcertificatesLineagesLineagePreviousProduction) int { return v.GenerationId }).(pulumi.IntOutput)
+}
+
+// Username of the person who last modified this generation. Populated only when expandGenerations is true.
+func (o GetCloudcertificatesLineagesLineagePreviousProductionOutput) GenerationModifiedBy() pulumi.StringOutput {
+	return o.ApplyT(func(v GetCloudcertificatesLineagesLineagePreviousProduction) string { return v.GenerationModifiedBy }).(pulumi.StringOutput)
+}
+
+// Time the generation was last modified, in RFC3339 format. Null if not requested via expand_generations, or if the generation has never been modified since creation.
+func (o GetCloudcertificatesLineagesLineagePreviousProductionOutput) GenerationModifiedTime() pulumi.StringOutput {
+	return o.ApplyT(func(v GetCloudcertificatesLineagesLineagePreviousProduction) string { return v.GenerationModifiedTime }).(pulumi.StringOutput)
+}
+
+// Status of the generation.
+func (o GetCloudcertificatesLineagesLineagePreviousProductionOutput) GenerationStatus() pulumi.StringOutput {
+	return o.ApplyT(func(v GetCloudcertificatesLineagesLineagePreviousProduction) string { return v.GenerationStatus }).(pulumi.StringOutput)
+}
+
+type GetCloudcertificatesLineagesLineagePreviousProductionAlgorithms struct {
+	// Username of the person who created the algorithm instance.
+	AlgorithmInstanceCreatedBy string `pulumi:"algorithmInstanceCreatedBy"`
+	// Time the algorithm instance was created, in RFC3339 format.
+	AlgorithmInstanceCreatedTime string `pulumi:"algorithmInstanceCreatedTime"`
+	// Unique identifier of the algorithm instance.
+	AlgorithmInstanceId int `pulumi:"algorithmInstanceId"`
+	// Username of the person who last modified the algorithm instance. Null if never modified.
+	AlgorithmInstanceModifiedBy string `pulumi:"algorithmInstanceModifiedBy"`
+	// Time the algorithm instance was last modified, in RFC3339 format. Null if never modified.
+	AlgorithmInstanceModifiedTime string `pulumi:"algorithmInstanceModifiedTime"`
+	// Status of the certificate for this key type: `CSR_READY`, `CERT_UPLOAD_PROCESSING`, `READY_FOR_USE`, or `ABANDONED`.
+	CertificateStatus string `pulumi:"certificateStatus"`
+	// Date when the CSR expires, in RFC3339 format.
+	CsrExpirationDate string `pulumi:"csrExpirationDate"`
+	// PEM-encoded certificate signing request.
+	CsrPem string `pulumi:"csrPem"`
+	// Issuer field of the signed certificate. Null until a certificate is uploaded.
+	SignedCertificateIssuer string `pulumi:"signedCertificateIssuer"`
+	// Expiration date of the signed certificate, in RFC3339 format. Null until a certificate is uploaded.
+	SignedCertificateNotValidAfterDate string `pulumi:"signedCertificateNotValidAfterDate"`
+	// Start of validity of the signed certificate, in RFC3339 format. Null until a certificate is uploaded.
+	SignedCertificateNotValidBeforeDate string `pulumi:"signedCertificateNotValidBeforeDate"`
+	// PEM-encoded signed certificate. Null until a certificate is uploaded.
+	SignedCertificatePem string `pulumi:"signedCertificatePem"`
+	// Serial number of the signed certificate in hex format. Null until a certificate is uploaded.
+	SignedCertificateSerialNumber string `pulumi:"signedCertificateSerialNumber"`
+	// SHA-256 fingerprint of the signed certificate. Null until a certificate is uploaded.
+	SignedCertificateSha256Fingerprint string `pulumi:"signedCertificateSha256Fingerprint"`
+	// PEM-encoded trust chain uploaded alongside the signed certificate. Null if none was uploaded.
+	TrustChainPem string `pulumi:"trustChainPem"`
+}
+
+// GetCloudcertificatesLineagesLineagePreviousProductionAlgorithmsInput is an input type that accepts GetCloudcertificatesLineagesLineagePreviousProductionAlgorithmsArgs and GetCloudcertificatesLineagesLineagePreviousProductionAlgorithmsOutput values.
+// You can construct a concrete instance of `GetCloudcertificatesLineagesLineagePreviousProductionAlgorithmsInput` via:
+//
+//	GetCloudcertificatesLineagesLineagePreviousProductionAlgorithmsArgs{...}
+type GetCloudcertificatesLineagesLineagePreviousProductionAlgorithmsInput interface {
+	pulumi.Input
+
+	ToGetCloudcertificatesLineagesLineagePreviousProductionAlgorithmsOutput() GetCloudcertificatesLineagesLineagePreviousProductionAlgorithmsOutput
+	ToGetCloudcertificatesLineagesLineagePreviousProductionAlgorithmsOutputWithContext(context.Context) GetCloudcertificatesLineagesLineagePreviousProductionAlgorithmsOutput
+}
+
+type GetCloudcertificatesLineagesLineagePreviousProductionAlgorithmsArgs struct {
+	// Username of the person who created the algorithm instance.
+	AlgorithmInstanceCreatedBy pulumi.StringInput `pulumi:"algorithmInstanceCreatedBy"`
+	// Time the algorithm instance was created, in RFC3339 format.
+	AlgorithmInstanceCreatedTime pulumi.StringInput `pulumi:"algorithmInstanceCreatedTime"`
+	// Unique identifier of the algorithm instance.
+	AlgorithmInstanceId pulumi.IntInput `pulumi:"algorithmInstanceId"`
+	// Username of the person who last modified the algorithm instance. Null if never modified.
+	AlgorithmInstanceModifiedBy pulumi.StringInput `pulumi:"algorithmInstanceModifiedBy"`
+	// Time the algorithm instance was last modified, in RFC3339 format. Null if never modified.
+	AlgorithmInstanceModifiedTime pulumi.StringInput `pulumi:"algorithmInstanceModifiedTime"`
+	// Status of the certificate for this key type: `CSR_READY`, `CERT_UPLOAD_PROCESSING`, `READY_FOR_USE`, or `ABANDONED`.
+	CertificateStatus pulumi.StringInput `pulumi:"certificateStatus"`
+	// Date when the CSR expires, in RFC3339 format.
+	CsrExpirationDate pulumi.StringInput `pulumi:"csrExpirationDate"`
+	// PEM-encoded certificate signing request.
+	CsrPem pulumi.StringInput `pulumi:"csrPem"`
+	// Issuer field of the signed certificate. Null until a certificate is uploaded.
+	SignedCertificateIssuer pulumi.StringInput `pulumi:"signedCertificateIssuer"`
+	// Expiration date of the signed certificate, in RFC3339 format. Null until a certificate is uploaded.
+	SignedCertificateNotValidAfterDate pulumi.StringInput `pulumi:"signedCertificateNotValidAfterDate"`
+	// Start of validity of the signed certificate, in RFC3339 format. Null until a certificate is uploaded.
+	SignedCertificateNotValidBeforeDate pulumi.StringInput `pulumi:"signedCertificateNotValidBeforeDate"`
+	// PEM-encoded signed certificate. Null until a certificate is uploaded.
+	SignedCertificatePem pulumi.StringInput `pulumi:"signedCertificatePem"`
+	// Serial number of the signed certificate in hex format. Null until a certificate is uploaded.
+	SignedCertificateSerialNumber pulumi.StringInput `pulumi:"signedCertificateSerialNumber"`
+	// SHA-256 fingerprint of the signed certificate. Null until a certificate is uploaded.
+	SignedCertificateSha256Fingerprint pulumi.StringInput `pulumi:"signedCertificateSha256Fingerprint"`
+	// PEM-encoded trust chain uploaded alongside the signed certificate. Null if none was uploaded.
+	TrustChainPem pulumi.StringInput `pulumi:"trustChainPem"`
+}
+
+func (GetCloudcertificatesLineagesLineagePreviousProductionAlgorithmsArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetCloudcertificatesLineagesLineagePreviousProductionAlgorithms)(nil)).Elem()
+}
+
+func (i GetCloudcertificatesLineagesLineagePreviousProductionAlgorithmsArgs) ToGetCloudcertificatesLineagesLineagePreviousProductionAlgorithmsOutput() GetCloudcertificatesLineagesLineagePreviousProductionAlgorithmsOutput {
+	return i.ToGetCloudcertificatesLineagesLineagePreviousProductionAlgorithmsOutputWithContext(context.Background())
+}
+
+func (i GetCloudcertificatesLineagesLineagePreviousProductionAlgorithmsArgs) ToGetCloudcertificatesLineagesLineagePreviousProductionAlgorithmsOutputWithContext(ctx context.Context) GetCloudcertificatesLineagesLineagePreviousProductionAlgorithmsOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetCloudcertificatesLineagesLineagePreviousProductionAlgorithmsOutput)
+}
+
+// GetCloudcertificatesLineagesLineagePreviousProductionAlgorithmsMapInput is an input type that accepts GetCloudcertificatesLineagesLineagePreviousProductionAlgorithmsMap and GetCloudcertificatesLineagesLineagePreviousProductionAlgorithmsMapOutput values.
+// You can construct a concrete instance of `GetCloudcertificatesLineagesLineagePreviousProductionAlgorithmsMapInput` via:
+//
+//	GetCloudcertificatesLineagesLineagePreviousProductionAlgorithmsMap{ "key": GetCloudcertificatesLineagesLineagePreviousProductionAlgorithmsArgs{...} }
+type GetCloudcertificatesLineagesLineagePreviousProductionAlgorithmsMapInput interface {
+	pulumi.Input
+
+	ToGetCloudcertificatesLineagesLineagePreviousProductionAlgorithmsMapOutput() GetCloudcertificatesLineagesLineagePreviousProductionAlgorithmsMapOutput
+	ToGetCloudcertificatesLineagesLineagePreviousProductionAlgorithmsMapOutputWithContext(context.Context) GetCloudcertificatesLineagesLineagePreviousProductionAlgorithmsMapOutput
+}
+
+type GetCloudcertificatesLineagesLineagePreviousProductionAlgorithmsMap map[string]GetCloudcertificatesLineagesLineagePreviousProductionAlgorithmsInput
+
+func (GetCloudcertificatesLineagesLineagePreviousProductionAlgorithmsMap) ElementType() reflect.Type {
+	return reflect.TypeOf((*map[string]GetCloudcertificatesLineagesLineagePreviousProductionAlgorithms)(nil)).Elem()
+}
+
+func (i GetCloudcertificatesLineagesLineagePreviousProductionAlgorithmsMap) ToGetCloudcertificatesLineagesLineagePreviousProductionAlgorithmsMapOutput() GetCloudcertificatesLineagesLineagePreviousProductionAlgorithmsMapOutput {
+	return i.ToGetCloudcertificatesLineagesLineagePreviousProductionAlgorithmsMapOutputWithContext(context.Background())
+}
+
+func (i GetCloudcertificatesLineagesLineagePreviousProductionAlgorithmsMap) ToGetCloudcertificatesLineagesLineagePreviousProductionAlgorithmsMapOutputWithContext(ctx context.Context) GetCloudcertificatesLineagesLineagePreviousProductionAlgorithmsMapOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetCloudcertificatesLineagesLineagePreviousProductionAlgorithmsMapOutput)
+}
+
+type GetCloudcertificatesLineagesLineagePreviousProductionAlgorithmsOutput struct{ *pulumi.OutputState }
+
+func (GetCloudcertificatesLineagesLineagePreviousProductionAlgorithmsOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetCloudcertificatesLineagesLineagePreviousProductionAlgorithms)(nil)).Elem()
+}
+
+func (o GetCloudcertificatesLineagesLineagePreviousProductionAlgorithmsOutput) ToGetCloudcertificatesLineagesLineagePreviousProductionAlgorithmsOutput() GetCloudcertificatesLineagesLineagePreviousProductionAlgorithmsOutput {
+	return o
+}
+
+func (o GetCloudcertificatesLineagesLineagePreviousProductionAlgorithmsOutput) ToGetCloudcertificatesLineagesLineagePreviousProductionAlgorithmsOutputWithContext(ctx context.Context) GetCloudcertificatesLineagesLineagePreviousProductionAlgorithmsOutput {
+	return o
+}
+
+// Username of the person who created the algorithm instance.
+func (o GetCloudcertificatesLineagesLineagePreviousProductionAlgorithmsOutput) AlgorithmInstanceCreatedBy() pulumi.StringOutput {
+	return o.ApplyT(func(v GetCloudcertificatesLineagesLineagePreviousProductionAlgorithms) string {
+		return v.AlgorithmInstanceCreatedBy
+	}).(pulumi.StringOutput)
+}
+
+// Time the algorithm instance was created, in RFC3339 format.
+func (o GetCloudcertificatesLineagesLineagePreviousProductionAlgorithmsOutput) AlgorithmInstanceCreatedTime() pulumi.StringOutput {
+	return o.ApplyT(func(v GetCloudcertificatesLineagesLineagePreviousProductionAlgorithms) string {
+		return v.AlgorithmInstanceCreatedTime
+	}).(pulumi.StringOutput)
+}
+
+// Unique identifier of the algorithm instance.
+func (o GetCloudcertificatesLineagesLineagePreviousProductionAlgorithmsOutput) AlgorithmInstanceId() pulumi.IntOutput {
+	return o.ApplyT(func(v GetCloudcertificatesLineagesLineagePreviousProductionAlgorithms) int {
+		return v.AlgorithmInstanceId
+	}).(pulumi.IntOutput)
+}
+
+// Username of the person who last modified the algorithm instance. Null if never modified.
+func (o GetCloudcertificatesLineagesLineagePreviousProductionAlgorithmsOutput) AlgorithmInstanceModifiedBy() pulumi.StringOutput {
+	return o.ApplyT(func(v GetCloudcertificatesLineagesLineagePreviousProductionAlgorithms) string {
+		return v.AlgorithmInstanceModifiedBy
+	}).(pulumi.StringOutput)
+}
+
+// Time the algorithm instance was last modified, in RFC3339 format. Null if never modified.
+func (o GetCloudcertificatesLineagesLineagePreviousProductionAlgorithmsOutput) AlgorithmInstanceModifiedTime() pulumi.StringOutput {
+	return o.ApplyT(func(v GetCloudcertificatesLineagesLineagePreviousProductionAlgorithms) string {
+		return v.AlgorithmInstanceModifiedTime
+	}).(pulumi.StringOutput)
+}
+
+// Status of the certificate for this key type: `CSR_READY`, `CERT_UPLOAD_PROCESSING`, `READY_FOR_USE`, or `ABANDONED`.
+func (o GetCloudcertificatesLineagesLineagePreviousProductionAlgorithmsOutput) CertificateStatus() pulumi.StringOutput {
+	return o.ApplyT(func(v GetCloudcertificatesLineagesLineagePreviousProductionAlgorithms) string {
+		return v.CertificateStatus
+	}).(pulumi.StringOutput)
+}
+
+// Date when the CSR expires, in RFC3339 format.
+func (o GetCloudcertificatesLineagesLineagePreviousProductionAlgorithmsOutput) CsrExpirationDate() pulumi.StringOutput {
+	return o.ApplyT(func(v GetCloudcertificatesLineagesLineagePreviousProductionAlgorithms) string {
+		return v.CsrExpirationDate
+	}).(pulumi.StringOutput)
+}
+
+// PEM-encoded certificate signing request.
+func (o GetCloudcertificatesLineagesLineagePreviousProductionAlgorithmsOutput) CsrPem() pulumi.StringOutput {
+	return o.ApplyT(func(v GetCloudcertificatesLineagesLineagePreviousProductionAlgorithms) string { return v.CsrPem }).(pulumi.StringOutput)
+}
+
+// Issuer field of the signed certificate. Null until a certificate is uploaded.
+func (o GetCloudcertificatesLineagesLineagePreviousProductionAlgorithmsOutput) SignedCertificateIssuer() pulumi.StringOutput {
+	return o.ApplyT(func(v GetCloudcertificatesLineagesLineagePreviousProductionAlgorithms) string {
+		return v.SignedCertificateIssuer
+	}).(pulumi.StringOutput)
+}
+
+// Expiration date of the signed certificate, in RFC3339 format. Null until a certificate is uploaded.
+func (o GetCloudcertificatesLineagesLineagePreviousProductionAlgorithmsOutput) SignedCertificateNotValidAfterDate() pulumi.StringOutput {
+	return o.ApplyT(func(v GetCloudcertificatesLineagesLineagePreviousProductionAlgorithms) string {
+		return v.SignedCertificateNotValidAfterDate
+	}).(pulumi.StringOutput)
+}
+
+// Start of validity of the signed certificate, in RFC3339 format. Null until a certificate is uploaded.
+func (o GetCloudcertificatesLineagesLineagePreviousProductionAlgorithmsOutput) SignedCertificateNotValidBeforeDate() pulumi.StringOutput {
+	return o.ApplyT(func(v GetCloudcertificatesLineagesLineagePreviousProductionAlgorithms) string {
+		return v.SignedCertificateNotValidBeforeDate
+	}).(pulumi.StringOutput)
+}
+
+// PEM-encoded signed certificate. Null until a certificate is uploaded.
+func (o GetCloudcertificatesLineagesLineagePreviousProductionAlgorithmsOutput) SignedCertificatePem() pulumi.StringOutput {
+	return o.ApplyT(func(v GetCloudcertificatesLineagesLineagePreviousProductionAlgorithms) string {
+		return v.SignedCertificatePem
+	}).(pulumi.StringOutput)
+}
+
+// Serial number of the signed certificate in hex format. Null until a certificate is uploaded.
+func (o GetCloudcertificatesLineagesLineagePreviousProductionAlgorithmsOutput) SignedCertificateSerialNumber() pulumi.StringOutput {
+	return o.ApplyT(func(v GetCloudcertificatesLineagesLineagePreviousProductionAlgorithms) string {
+		return v.SignedCertificateSerialNumber
+	}).(pulumi.StringOutput)
+}
+
+// SHA-256 fingerprint of the signed certificate. Null until a certificate is uploaded.
+func (o GetCloudcertificatesLineagesLineagePreviousProductionAlgorithmsOutput) SignedCertificateSha256Fingerprint() pulumi.StringOutput {
+	return o.ApplyT(func(v GetCloudcertificatesLineagesLineagePreviousProductionAlgorithms) string {
+		return v.SignedCertificateSha256Fingerprint
+	}).(pulumi.StringOutput)
+}
+
+// PEM-encoded trust chain uploaded alongside the signed certificate. Null if none was uploaded.
+func (o GetCloudcertificatesLineagesLineagePreviousProductionAlgorithmsOutput) TrustChainPem() pulumi.StringOutput {
+	return o.ApplyT(func(v GetCloudcertificatesLineagesLineagePreviousProductionAlgorithms) string { return v.TrustChainPem }).(pulumi.StringOutput)
+}
+
+type GetCloudcertificatesLineagesLineagePreviousProductionAlgorithmsMapOutput struct{ *pulumi.OutputState }
+
+func (GetCloudcertificatesLineagesLineagePreviousProductionAlgorithmsMapOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*map[string]GetCloudcertificatesLineagesLineagePreviousProductionAlgorithms)(nil)).Elem()
+}
+
+func (o GetCloudcertificatesLineagesLineagePreviousProductionAlgorithmsMapOutput) ToGetCloudcertificatesLineagesLineagePreviousProductionAlgorithmsMapOutput() GetCloudcertificatesLineagesLineagePreviousProductionAlgorithmsMapOutput {
+	return o
+}
+
+func (o GetCloudcertificatesLineagesLineagePreviousProductionAlgorithmsMapOutput) ToGetCloudcertificatesLineagesLineagePreviousProductionAlgorithmsMapOutputWithContext(ctx context.Context) GetCloudcertificatesLineagesLineagePreviousProductionAlgorithmsMapOutput {
+	return o
+}
+
+func (o GetCloudcertificatesLineagesLineagePreviousProductionAlgorithmsMapOutput) MapIndex(k pulumi.StringInput) GetCloudcertificatesLineagesLineagePreviousProductionAlgorithmsOutput {
+	return pulumi.All(o, k).ApplyT(func(vs []interface{}) GetCloudcertificatesLineagesLineagePreviousProductionAlgorithms {
+		return vs[0].(map[string]GetCloudcertificatesLineagesLineagePreviousProductionAlgorithms)[vs[1].(string)]
+	}).(GetCloudcertificatesLineagesLineagePreviousProductionAlgorithmsOutput)
+}
+
+type GetCloudcertificatesLineagesLineageSigningTarget struct {
+	// Per key-type (RSA or ECDSA) certificate details for this generation, keyed by key_type. Populated only when expandGenerations is true.
+	Algorithms map[string]GetCloudcertificatesLineagesLineageSigningTargetAlgorithms `pulumi:"algorithms"`
+	// Time the generation was first promoted to production, in RFC3339 format. Null if never promoted, or if not requested via expand_generations.
+	FirstPromotedToProductionTime string `pulumi:"firstPromotedToProductionTime"`
+	// Username of the person who created this generation. Populated only when expandGenerations is true.
+	GenerationCreatedBy string `pulumi:"generationCreatedBy"`
+	// Time the generation was created, in RFC3339 format. Populated only when expandGenerations is true.
+	GenerationCreatedTime string `pulumi:"generationCreatedTime"`
+	// Unique identifier of the generation.
+	GenerationId int `pulumi:"generationId"`
+	// Username of the person who last modified this generation. Populated only when expandGenerations is true.
+	GenerationModifiedBy string `pulumi:"generationModifiedBy"`
+	// Time the generation was last modified, in RFC3339 format. Null if not requested via expand_generations, or if the generation has never been modified since creation.
+	GenerationModifiedTime string `pulumi:"generationModifiedTime"`
+	// Status of the generation.
+	GenerationStatus string `pulumi:"generationStatus"`
+}
+
+// GetCloudcertificatesLineagesLineageSigningTargetInput is an input type that accepts GetCloudcertificatesLineagesLineageSigningTargetArgs and GetCloudcertificatesLineagesLineageSigningTargetOutput values.
+// You can construct a concrete instance of `GetCloudcertificatesLineagesLineageSigningTargetInput` via:
+//
+//	GetCloudcertificatesLineagesLineageSigningTargetArgs{...}
+type GetCloudcertificatesLineagesLineageSigningTargetInput interface {
+	pulumi.Input
+
+	ToGetCloudcertificatesLineagesLineageSigningTargetOutput() GetCloudcertificatesLineagesLineageSigningTargetOutput
+	ToGetCloudcertificatesLineagesLineageSigningTargetOutputWithContext(context.Context) GetCloudcertificatesLineagesLineageSigningTargetOutput
+}
+
+type GetCloudcertificatesLineagesLineageSigningTargetArgs struct {
+	// Per key-type (RSA or ECDSA) certificate details for this generation, keyed by key_type. Populated only when expandGenerations is true.
+	Algorithms GetCloudcertificatesLineagesLineageSigningTargetAlgorithmsMapInput `pulumi:"algorithms"`
+	// Time the generation was first promoted to production, in RFC3339 format. Null if never promoted, or if not requested via expand_generations.
+	FirstPromotedToProductionTime pulumi.StringInput `pulumi:"firstPromotedToProductionTime"`
+	// Username of the person who created this generation. Populated only when expandGenerations is true.
+	GenerationCreatedBy pulumi.StringInput `pulumi:"generationCreatedBy"`
+	// Time the generation was created, in RFC3339 format. Populated only when expandGenerations is true.
+	GenerationCreatedTime pulumi.StringInput `pulumi:"generationCreatedTime"`
+	// Unique identifier of the generation.
+	GenerationId pulumi.IntInput `pulumi:"generationId"`
+	// Username of the person who last modified this generation. Populated only when expandGenerations is true.
+	GenerationModifiedBy pulumi.StringInput `pulumi:"generationModifiedBy"`
+	// Time the generation was last modified, in RFC3339 format. Null if not requested via expand_generations, or if the generation has never been modified since creation.
+	GenerationModifiedTime pulumi.StringInput `pulumi:"generationModifiedTime"`
+	// Status of the generation.
+	GenerationStatus pulumi.StringInput `pulumi:"generationStatus"`
+}
+
+func (GetCloudcertificatesLineagesLineageSigningTargetArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetCloudcertificatesLineagesLineageSigningTarget)(nil)).Elem()
+}
+
+func (i GetCloudcertificatesLineagesLineageSigningTargetArgs) ToGetCloudcertificatesLineagesLineageSigningTargetOutput() GetCloudcertificatesLineagesLineageSigningTargetOutput {
+	return i.ToGetCloudcertificatesLineagesLineageSigningTargetOutputWithContext(context.Background())
+}
+
+func (i GetCloudcertificatesLineagesLineageSigningTargetArgs) ToGetCloudcertificatesLineagesLineageSigningTargetOutputWithContext(ctx context.Context) GetCloudcertificatesLineagesLineageSigningTargetOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetCloudcertificatesLineagesLineageSigningTargetOutput)
+}
+
+type GetCloudcertificatesLineagesLineageSigningTargetOutput struct{ *pulumi.OutputState }
+
+func (GetCloudcertificatesLineagesLineageSigningTargetOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetCloudcertificatesLineagesLineageSigningTarget)(nil)).Elem()
+}
+
+func (o GetCloudcertificatesLineagesLineageSigningTargetOutput) ToGetCloudcertificatesLineagesLineageSigningTargetOutput() GetCloudcertificatesLineagesLineageSigningTargetOutput {
+	return o
+}
+
+func (o GetCloudcertificatesLineagesLineageSigningTargetOutput) ToGetCloudcertificatesLineagesLineageSigningTargetOutputWithContext(ctx context.Context) GetCloudcertificatesLineagesLineageSigningTargetOutput {
+	return o
+}
+
+// Per key-type (RSA or ECDSA) certificate details for this generation, keyed by key_type. Populated only when expandGenerations is true.
+func (o GetCloudcertificatesLineagesLineageSigningTargetOutput) Algorithms() GetCloudcertificatesLineagesLineageSigningTargetAlgorithmsMapOutput {
+	return o.ApplyT(func(v GetCloudcertificatesLineagesLineageSigningTarget) map[string]GetCloudcertificatesLineagesLineageSigningTargetAlgorithms {
+		return v.Algorithms
+	}).(GetCloudcertificatesLineagesLineageSigningTargetAlgorithmsMapOutput)
+}
+
+// Time the generation was first promoted to production, in RFC3339 format. Null if never promoted, or if not requested via expand_generations.
+func (o GetCloudcertificatesLineagesLineageSigningTargetOutput) FirstPromotedToProductionTime() pulumi.StringOutput {
+	return o.ApplyT(func(v GetCloudcertificatesLineagesLineageSigningTarget) string {
+		return v.FirstPromotedToProductionTime
+	}).(pulumi.StringOutput)
+}
+
+// Username of the person who created this generation. Populated only when expandGenerations is true.
+func (o GetCloudcertificatesLineagesLineageSigningTargetOutput) GenerationCreatedBy() pulumi.StringOutput {
+	return o.ApplyT(func(v GetCloudcertificatesLineagesLineageSigningTarget) string { return v.GenerationCreatedBy }).(pulumi.StringOutput)
+}
+
+// Time the generation was created, in RFC3339 format. Populated only when expandGenerations is true.
+func (o GetCloudcertificatesLineagesLineageSigningTargetOutput) GenerationCreatedTime() pulumi.StringOutput {
+	return o.ApplyT(func(v GetCloudcertificatesLineagesLineageSigningTarget) string { return v.GenerationCreatedTime }).(pulumi.StringOutput)
+}
+
+// Unique identifier of the generation.
+func (o GetCloudcertificatesLineagesLineageSigningTargetOutput) GenerationId() pulumi.IntOutput {
+	return o.ApplyT(func(v GetCloudcertificatesLineagesLineageSigningTarget) int { return v.GenerationId }).(pulumi.IntOutput)
+}
+
+// Username of the person who last modified this generation. Populated only when expandGenerations is true.
+func (o GetCloudcertificatesLineagesLineageSigningTargetOutput) GenerationModifiedBy() pulumi.StringOutput {
+	return o.ApplyT(func(v GetCloudcertificatesLineagesLineageSigningTarget) string { return v.GenerationModifiedBy }).(pulumi.StringOutput)
+}
+
+// Time the generation was last modified, in RFC3339 format. Null if not requested via expand_generations, or if the generation has never been modified since creation.
+func (o GetCloudcertificatesLineagesLineageSigningTargetOutput) GenerationModifiedTime() pulumi.StringOutput {
+	return o.ApplyT(func(v GetCloudcertificatesLineagesLineageSigningTarget) string { return v.GenerationModifiedTime }).(pulumi.StringOutput)
+}
+
+// Status of the generation.
+func (o GetCloudcertificatesLineagesLineageSigningTargetOutput) GenerationStatus() pulumi.StringOutput {
+	return o.ApplyT(func(v GetCloudcertificatesLineagesLineageSigningTarget) string { return v.GenerationStatus }).(pulumi.StringOutput)
+}
+
+type GetCloudcertificatesLineagesLineageSigningTargetAlgorithms struct {
+	// Username of the person who created the algorithm instance.
+	AlgorithmInstanceCreatedBy string `pulumi:"algorithmInstanceCreatedBy"`
+	// Time the algorithm instance was created, in RFC3339 format.
+	AlgorithmInstanceCreatedTime string `pulumi:"algorithmInstanceCreatedTime"`
+	// Unique identifier of the algorithm instance.
+	AlgorithmInstanceId int `pulumi:"algorithmInstanceId"`
+	// Username of the person who last modified the algorithm instance. Null if never modified.
+	AlgorithmInstanceModifiedBy string `pulumi:"algorithmInstanceModifiedBy"`
+	// Time the algorithm instance was last modified, in RFC3339 format. Null if never modified.
+	AlgorithmInstanceModifiedTime string `pulumi:"algorithmInstanceModifiedTime"`
+	// Status of the certificate for this key type: `CSR_READY`, `CERT_UPLOAD_PROCESSING`, `READY_FOR_USE`, or `ABANDONED`.
+	CertificateStatus string `pulumi:"certificateStatus"`
+	// Date when the CSR expires, in RFC3339 format.
+	CsrExpirationDate string `pulumi:"csrExpirationDate"`
+	// PEM-encoded certificate signing request.
+	CsrPem string `pulumi:"csrPem"`
+	// Issuer field of the signed certificate. Null until a certificate is uploaded.
+	SignedCertificateIssuer string `pulumi:"signedCertificateIssuer"`
+	// Expiration date of the signed certificate, in RFC3339 format. Null until a certificate is uploaded.
+	SignedCertificateNotValidAfterDate string `pulumi:"signedCertificateNotValidAfterDate"`
+	// Start of validity of the signed certificate, in RFC3339 format. Null until a certificate is uploaded.
+	SignedCertificateNotValidBeforeDate string `pulumi:"signedCertificateNotValidBeforeDate"`
+	// PEM-encoded signed certificate. Null until a certificate is uploaded.
+	SignedCertificatePem string `pulumi:"signedCertificatePem"`
+	// Serial number of the signed certificate in hex format. Null until a certificate is uploaded.
+	SignedCertificateSerialNumber string `pulumi:"signedCertificateSerialNumber"`
+	// SHA-256 fingerprint of the signed certificate. Null until a certificate is uploaded.
+	SignedCertificateSha256Fingerprint string `pulumi:"signedCertificateSha256Fingerprint"`
+	// PEM-encoded trust chain uploaded alongside the signed certificate. Null if none was uploaded.
+	TrustChainPem string `pulumi:"trustChainPem"`
+}
+
+// GetCloudcertificatesLineagesLineageSigningTargetAlgorithmsInput is an input type that accepts GetCloudcertificatesLineagesLineageSigningTargetAlgorithmsArgs and GetCloudcertificatesLineagesLineageSigningTargetAlgorithmsOutput values.
+// You can construct a concrete instance of `GetCloudcertificatesLineagesLineageSigningTargetAlgorithmsInput` via:
+//
+//	GetCloudcertificatesLineagesLineageSigningTargetAlgorithmsArgs{...}
+type GetCloudcertificatesLineagesLineageSigningTargetAlgorithmsInput interface {
+	pulumi.Input
+
+	ToGetCloudcertificatesLineagesLineageSigningTargetAlgorithmsOutput() GetCloudcertificatesLineagesLineageSigningTargetAlgorithmsOutput
+	ToGetCloudcertificatesLineagesLineageSigningTargetAlgorithmsOutputWithContext(context.Context) GetCloudcertificatesLineagesLineageSigningTargetAlgorithmsOutput
+}
+
+type GetCloudcertificatesLineagesLineageSigningTargetAlgorithmsArgs struct {
+	// Username of the person who created the algorithm instance.
+	AlgorithmInstanceCreatedBy pulumi.StringInput `pulumi:"algorithmInstanceCreatedBy"`
+	// Time the algorithm instance was created, in RFC3339 format.
+	AlgorithmInstanceCreatedTime pulumi.StringInput `pulumi:"algorithmInstanceCreatedTime"`
+	// Unique identifier of the algorithm instance.
+	AlgorithmInstanceId pulumi.IntInput `pulumi:"algorithmInstanceId"`
+	// Username of the person who last modified the algorithm instance. Null if never modified.
+	AlgorithmInstanceModifiedBy pulumi.StringInput `pulumi:"algorithmInstanceModifiedBy"`
+	// Time the algorithm instance was last modified, in RFC3339 format. Null if never modified.
+	AlgorithmInstanceModifiedTime pulumi.StringInput `pulumi:"algorithmInstanceModifiedTime"`
+	// Status of the certificate for this key type: `CSR_READY`, `CERT_UPLOAD_PROCESSING`, `READY_FOR_USE`, or `ABANDONED`.
+	CertificateStatus pulumi.StringInput `pulumi:"certificateStatus"`
+	// Date when the CSR expires, in RFC3339 format.
+	CsrExpirationDate pulumi.StringInput `pulumi:"csrExpirationDate"`
+	// PEM-encoded certificate signing request.
+	CsrPem pulumi.StringInput `pulumi:"csrPem"`
+	// Issuer field of the signed certificate. Null until a certificate is uploaded.
+	SignedCertificateIssuer pulumi.StringInput `pulumi:"signedCertificateIssuer"`
+	// Expiration date of the signed certificate, in RFC3339 format. Null until a certificate is uploaded.
+	SignedCertificateNotValidAfterDate pulumi.StringInput `pulumi:"signedCertificateNotValidAfterDate"`
+	// Start of validity of the signed certificate, in RFC3339 format. Null until a certificate is uploaded.
+	SignedCertificateNotValidBeforeDate pulumi.StringInput `pulumi:"signedCertificateNotValidBeforeDate"`
+	// PEM-encoded signed certificate. Null until a certificate is uploaded.
+	SignedCertificatePem pulumi.StringInput `pulumi:"signedCertificatePem"`
+	// Serial number of the signed certificate in hex format. Null until a certificate is uploaded.
+	SignedCertificateSerialNumber pulumi.StringInput `pulumi:"signedCertificateSerialNumber"`
+	// SHA-256 fingerprint of the signed certificate. Null until a certificate is uploaded.
+	SignedCertificateSha256Fingerprint pulumi.StringInput `pulumi:"signedCertificateSha256Fingerprint"`
+	// PEM-encoded trust chain uploaded alongside the signed certificate. Null if none was uploaded.
+	TrustChainPem pulumi.StringInput `pulumi:"trustChainPem"`
+}
+
+func (GetCloudcertificatesLineagesLineageSigningTargetAlgorithmsArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetCloudcertificatesLineagesLineageSigningTargetAlgorithms)(nil)).Elem()
+}
+
+func (i GetCloudcertificatesLineagesLineageSigningTargetAlgorithmsArgs) ToGetCloudcertificatesLineagesLineageSigningTargetAlgorithmsOutput() GetCloudcertificatesLineagesLineageSigningTargetAlgorithmsOutput {
+	return i.ToGetCloudcertificatesLineagesLineageSigningTargetAlgorithmsOutputWithContext(context.Background())
+}
+
+func (i GetCloudcertificatesLineagesLineageSigningTargetAlgorithmsArgs) ToGetCloudcertificatesLineagesLineageSigningTargetAlgorithmsOutputWithContext(ctx context.Context) GetCloudcertificatesLineagesLineageSigningTargetAlgorithmsOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetCloudcertificatesLineagesLineageSigningTargetAlgorithmsOutput)
+}
+
+// GetCloudcertificatesLineagesLineageSigningTargetAlgorithmsMapInput is an input type that accepts GetCloudcertificatesLineagesLineageSigningTargetAlgorithmsMap and GetCloudcertificatesLineagesLineageSigningTargetAlgorithmsMapOutput values.
+// You can construct a concrete instance of `GetCloudcertificatesLineagesLineageSigningTargetAlgorithmsMapInput` via:
+//
+//	GetCloudcertificatesLineagesLineageSigningTargetAlgorithmsMap{ "key": GetCloudcertificatesLineagesLineageSigningTargetAlgorithmsArgs{...} }
+type GetCloudcertificatesLineagesLineageSigningTargetAlgorithmsMapInput interface {
+	pulumi.Input
+
+	ToGetCloudcertificatesLineagesLineageSigningTargetAlgorithmsMapOutput() GetCloudcertificatesLineagesLineageSigningTargetAlgorithmsMapOutput
+	ToGetCloudcertificatesLineagesLineageSigningTargetAlgorithmsMapOutputWithContext(context.Context) GetCloudcertificatesLineagesLineageSigningTargetAlgorithmsMapOutput
+}
+
+type GetCloudcertificatesLineagesLineageSigningTargetAlgorithmsMap map[string]GetCloudcertificatesLineagesLineageSigningTargetAlgorithmsInput
+
+func (GetCloudcertificatesLineagesLineageSigningTargetAlgorithmsMap) ElementType() reflect.Type {
+	return reflect.TypeOf((*map[string]GetCloudcertificatesLineagesLineageSigningTargetAlgorithms)(nil)).Elem()
+}
+
+func (i GetCloudcertificatesLineagesLineageSigningTargetAlgorithmsMap) ToGetCloudcertificatesLineagesLineageSigningTargetAlgorithmsMapOutput() GetCloudcertificatesLineagesLineageSigningTargetAlgorithmsMapOutput {
+	return i.ToGetCloudcertificatesLineagesLineageSigningTargetAlgorithmsMapOutputWithContext(context.Background())
+}
+
+func (i GetCloudcertificatesLineagesLineageSigningTargetAlgorithmsMap) ToGetCloudcertificatesLineagesLineageSigningTargetAlgorithmsMapOutputWithContext(ctx context.Context) GetCloudcertificatesLineagesLineageSigningTargetAlgorithmsMapOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetCloudcertificatesLineagesLineageSigningTargetAlgorithmsMapOutput)
+}
+
+type GetCloudcertificatesLineagesLineageSigningTargetAlgorithmsOutput struct{ *pulumi.OutputState }
+
+func (GetCloudcertificatesLineagesLineageSigningTargetAlgorithmsOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetCloudcertificatesLineagesLineageSigningTargetAlgorithms)(nil)).Elem()
+}
+
+func (o GetCloudcertificatesLineagesLineageSigningTargetAlgorithmsOutput) ToGetCloudcertificatesLineagesLineageSigningTargetAlgorithmsOutput() GetCloudcertificatesLineagesLineageSigningTargetAlgorithmsOutput {
+	return o
+}
+
+func (o GetCloudcertificatesLineagesLineageSigningTargetAlgorithmsOutput) ToGetCloudcertificatesLineagesLineageSigningTargetAlgorithmsOutputWithContext(ctx context.Context) GetCloudcertificatesLineagesLineageSigningTargetAlgorithmsOutput {
+	return o
+}
+
+// Username of the person who created the algorithm instance.
+func (o GetCloudcertificatesLineagesLineageSigningTargetAlgorithmsOutput) AlgorithmInstanceCreatedBy() pulumi.StringOutput {
+	return o.ApplyT(func(v GetCloudcertificatesLineagesLineageSigningTargetAlgorithms) string {
+		return v.AlgorithmInstanceCreatedBy
+	}).(pulumi.StringOutput)
+}
+
+// Time the algorithm instance was created, in RFC3339 format.
+func (o GetCloudcertificatesLineagesLineageSigningTargetAlgorithmsOutput) AlgorithmInstanceCreatedTime() pulumi.StringOutput {
+	return o.ApplyT(func(v GetCloudcertificatesLineagesLineageSigningTargetAlgorithms) string {
+		return v.AlgorithmInstanceCreatedTime
+	}).(pulumi.StringOutput)
+}
+
+// Unique identifier of the algorithm instance.
+func (o GetCloudcertificatesLineagesLineageSigningTargetAlgorithmsOutput) AlgorithmInstanceId() pulumi.IntOutput {
+	return o.ApplyT(func(v GetCloudcertificatesLineagesLineageSigningTargetAlgorithms) int { return v.AlgorithmInstanceId }).(pulumi.IntOutput)
+}
+
+// Username of the person who last modified the algorithm instance. Null if never modified.
+func (o GetCloudcertificatesLineagesLineageSigningTargetAlgorithmsOutput) AlgorithmInstanceModifiedBy() pulumi.StringOutput {
+	return o.ApplyT(func(v GetCloudcertificatesLineagesLineageSigningTargetAlgorithms) string {
+		return v.AlgorithmInstanceModifiedBy
+	}).(pulumi.StringOutput)
+}
+
+// Time the algorithm instance was last modified, in RFC3339 format. Null if never modified.
+func (o GetCloudcertificatesLineagesLineageSigningTargetAlgorithmsOutput) AlgorithmInstanceModifiedTime() pulumi.StringOutput {
+	return o.ApplyT(func(v GetCloudcertificatesLineagesLineageSigningTargetAlgorithms) string {
+		return v.AlgorithmInstanceModifiedTime
+	}).(pulumi.StringOutput)
+}
+
+// Status of the certificate for this key type: `CSR_READY`, `CERT_UPLOAD_PROCESSING`, `READY_FOR_USE`, or `ABANDONED`.
+func (o GetCloudcertificatesLineagesLineageSigningTargetAlgorithmsOutput) CertificateStatus() pulumi.StringOutput {
+	return o.ApplyT(func(v GetCloudcertificatesLineagesLineageSigningTargetAlgorithms) string { return v.CertificateStatus }).(pulumi.StringOutput)
+}
+
+// Date when the CSR expires, in RFC3339 format.
+func (o GetCloudcertificatesLineagesLineageSigningTargetAlgorithmsOutput) CsrExpirationDate() pulumi.StringOutput {
+	return o.ApplyT(func(v GetCloudcertificatesLineagesLineageSigningTargetAlgorithms) string { return v.CsrExpirationDate }).(pulumi.StringOutput)
+}
+
+// PEM-encoded certificate signing request.
+func (o GetCloudcertificatesLineagesLineageSigningTargetAlgorithmsOutput) CsrPem() pulumi.StringOutput {
+	return o.ApplyT(func(v GetCloudcertificatesLineagesLineageSigningTargetAlgorithms) string { return v.CsrPem }).(pulumi.StringOutput)
+}
+
+// Issuer field of the signed certificate. Null until a certificate is uploaded.
+func (o GetCloudcertificatesLineagesLineageSigningTargetAlgorithmsOutput) SignedCertificateIssuer() pulumi.StringOutput {
+	return o.ApplyT(func(v GetCloudcertificatesLineagesLineageSigningTargetAlgorithms) string {
+		return v.SignedCertificateIssuer
+	}).(pulumi.StringOutput)
+}
+
+// Expiration date of the signed certificate, in RFC3339 format. Null until a certificate is uploaded.
+func (o GetCloudcertificatesLineagesLineageSigningTargetAlgorithmsOutput) SignedCertificateNotValidAfterDate() pulumi.StringOutput {
+	return o.ApplyT(func(v GetCloudcertificatesLineagesLineageSigningTargetAlgorithms) string {
+		return v.SignedCertificateNotValidAfterDate
+	}).(pulumi.StringOutput)
+}
+
+// Start of validity of the signed certificate, in RFC3339 format. Null until a certificate is uploaded.
+func (o GetCloudcertificatesLineagesLineageSigningTargetAlgorithmsOutput) SignedCertificateNotValidBeforeDate() pulumi.StringOutput {
+	return o.ApplyT(func(v GetCloudcertificatesLineagesLineageSigningTargetAlgorithms) string {
+		return v.SignedCertificateNotValidBeforeDate
+	}).(pulumi.StringOutput)
+}
+
+// PEM-encoded signed certificate. Null until a certificate is uploaded.
+func (o GetCloudcertificatesLineagesLineageSigningTargetAlgorithmsOutput) SignedCertificatePem() pulumi.StringOutput {
+	return o.ApplyT(func(v GetCloudcertificatesLineagesLineageSigningTargetAlgorithms) string {
+		return v.SignedCertificatePem
+	}).(pulumi.StringOutput)
+}
+
+// Serial number of the signed certificate in hex format. Null until a certificate is uploaded.
+func (o GetCloudcertificatesLineagesLineageSigningTargetAlgorithmsOutput) SignedCertificateSerialNumber() pulumi.StringOutput {
+	return o.ApplyT(func(v GetCloudcertificatesLineagesLineageSigningTargetAlgorithms) string {
+		return v.SignedCertificateSerialNumber
+	}).(pulumi.StringOutput)
+}
+
+// SHA-256 fingerprint of the signed certificate. Null until a certificate is uploaded.
+func (o GetCloudcertificatesLineagesLineageSigningTargetAlgorithmsOutput) SignedCertificateSha256Fingerprint() pulumi.StringOutput {
+	return o.ApplyT(func(v GetCloudcertificatesLineagesLineageSigningTargetAlgorithms) string {
+		return v.SignedCertificateSha256Fingerprint
+	}).(pulumi.StringOutput)
+}
+
+// PEM-encoded trust chain uploaded alongside the signed certificate. Null if none was uploaded.
+func (o GetCloudcertificatesLineagesLineageSigningTargetAlgorithmsOutput) TrustChainPem() pulumi.StringOutput {
+	return o.ApplyT(func(v GetCloudcertificatesLineagesLineageSigningTargetAlgorithms) string { return v.TrustChainPem }).(pulumi.StringOutput)
+}
+
+type GetCloudcertificatesLineagesLineageSigningTargetAlgorithmsMapOutput struct{ *pulumi.OutputState }
+
+func (GetCloudcertificatesLineagesLineageSigningTargetAlgorithmsMapOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*map[string]GetCloudcertificatesLineagesLineageSigningTargetAlgorithms)(nil)).Elem()
+}
+
+func (o GetCloudcertificatesLineagesLineageSigningTargetAlgorithmsMapOutput) ToGetCloudcertificatesLineagesLineageSigningTargetAlgorithmsMapOutput() GetCloudcertificatesLineagesLineageSigningTargetAlgorithmsMapOutput {
+	return o
+}
+
+func (o GetCloudcertificatesLineagesLineageSigningTargetAlgorithmsMapOutput) ToGetCloudcertificatesLineagesLineageSigningTargetAlgorithmsMapOutputWithContext(ctx context.Context) GetCloudcertificatesLineagesLineageSigningTargetAlgorithmsMapOutput {
+	return o
+}
+
+func (o GetCloudcertificatesLineagesLineageSigningTargetAlgorithmsMapOutput) MapIndex(k pulumi.StringInput) GetCloudcertificatesLineagesLineageSigningTargetAlgorithmsOutput {
+	return pulumi.All(o, k).ApplyT(func(vs []interface{}) GetCloudcertificatesLineagesLineageSigningTargetAlgorithms {
+		return vs[0].(map[string]GetCloudcertificatesLineagesLineageSigningTargetAlgorithms)[vs[1].(string)]
+	}).(GetCloudcertificatesLineagesLineageSigningTargetAlgorithmsOutput)
+}
+
+type GetCloudcertificatesLineagesLineageSubject struct {
+	// Common name (CN). Null if not provided.
+	CommonName string `pulumi:"commonName"`
+	// Two-letter ISO 3166 country code (C). Null if not provided.
+	Country string `pulumi:"country"`
+	// Locality or city name (L). Null if not provided.
+	Locality string `pulumi:"locality"`
+	// Organization (O). Null if not provided.
+	Organization string `pulumi:"organization"`
+	// Organizational unit (OU). Null if not provided.
+	OrganizationalUnit string `pulumi:"organizationalUnit"`
+	// State or province name (ST). Null if not provided.
+	State string `pulumi:"state"`
+}
+
+// GetCloudcertificatesLineagesLineageSubjectInput is an input type that accepts GetCloudcertificatesLineagesLineageSubjectArgs and GetCloudcertificatesLineagesLineageSubjectOutput values.
+// You can construct a concrete instance of `GetCloudcertificatesLineagesLineageSubjectInput` via:
+//
+//	GetCloudcertificatesLineagesLineageSubjectArgs{...}
+type GetCloudcertificatesLineagesLineageSubjectInput interface {
+	pulumi.Input
+
+	ToGetCloudcertificatesLineagesLineageSubjectOutput() GetCloudcertificatesLineagesLineageSubjectOutput
+	ToGetCloudcertificatesLineagesLineageSubjectOutputWithContext(context.Context) GetCloudcertificatesLineagesLineageSubjectOutput
+}
+
+type GetCloudcertificatesLineagesLineageSubjectArgs struct {
+	// Common name (CN). Null if not provided.
+	CommonName pulumi.StringInput `pulumi:"commonName"`
+	// Two-letter ISO 3166 country code (C). Null if not provided.
+	Country pulumi.StringInput `pulumi:"country"`
+	// Locality or city name (L). Null if not provided.
+	Locality pulumi.StringInput `pulumi:"locality"`
+	// Organization (O). Null if not provided.
+	Organization pulumi.StringInput `pulumi:"organization"`
+	// Organizational unit (OU). Null if not provided.
+	OrganizationalUnit pulumi.StringInput `pulumi:"organizationalUnit"`
+	// State or province name (ST). Null if not provided.
+	State pulumi.StringInput `pulumi:"state"`
+}
+
+func (GetCloudcertificatesLineagesLineageSubjectArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetCloudcertificatesLineagesLineageSubject)(nil)).Elem()
+}
+
+func (i GetCloudcertificatesLineagesLineageSubjectArgs) ToGetCloudcertificatesLineagesLineageSubjectOutput() GetCloudcertificatesLineagesLineageSubjectOutput {
+	return i.ToGetCloudcertificatesLineagesLineageSubjectOutputWithContext(context.Background())
+}
+
+func (i GetCloudcertificatesLineagesLineageSubjectArgs) ToGetCloudcertificatesLineagesLineageSubjectOutputWithContext(ctx context.Context) GetCloudcertificatesLineagesLineageSubjectOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetCloudcertificatesLineagesLineageSubjectOutput)
+}
+
+type GetCloudcertificatesLineagesLineageSubjectOutput struct{ *pulumi.OutputState }
+
+func (GetCloudcertificatesLineagesLineageSubjectOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetCloudcertificatesLineagesLineageSubject)(nil)).Elem()
+}
+
+func (o GetCloudcertificatesLineagesLineageSubjectOutput) ToGetCloudcertificatesLineagesLineageSubjectOutput() GetCloudcertificatesLineagesLineageSubjectOutput {
+	return o
+}
+
+func (o GetCloudcertificatesLineagesLineageSubjectOutput) ToGetCloudcertificatesLineagesLineageSubjectOutputWithContext(ctx context.Context) GetCloudcertificatesLineagesLineageSubjectOutput {
+	return o
+}
+
+// Common name (CN). Null if not provided.
+func (o GetCloudcertificatesLineagesLineageSubjectOutput) CommonName() pulumi.StringOutput {
+	return o.ApplyT(func(v GetCloudcertificatesLineagesLineageSubject) string { return v.CommonName }).(pulumi.StringOutput)
+}
+
+// Two-letter ISO 3166 country code (C). Null if not provided.
+func (o GetCloudcertificatesLineagesLineageSubjectOutput) Country() pulumi.StringOutput {
+	return o.ApplyT(func(v GetCloudcertificatesLineagesLineageSubject) string { return v.Country }).(pulumi.StringOutput)
+}
+
+// Locality or city name (L). Null if not provided.
+func (o GetCloudcertificatesLineagesLineageSubjectOutput) Locality() pulumi.StringOutput {
+	return o.ApplyT(func(v GetCloudcertificatesLineagesLineageSubject) string { return v.Locality }).(pulumi.StringOutput)
+}
+
+// Organization (O). Null if not provided.
+func (o GetCloudcertificatesLineagesLineageSubjectOutput) Organization() pulumi.StringOutput {
+	return o.ApplyT(func(v GetCloudcertificatesLineagesLineageSubject) string { return v.Organization }).(pulumi.StringOutput)
+}
+
+// Organizational unit (OU). Null if not provided.
+func (o GetCloudcertificatesLineagesLineageSubjectOutput) OrganizationalUnit() pulumi.StringOutput {
+	return o.ApplyT(func(v GetCloudcertificatesLineagesLineageSubject) string { return v.OrganizationalUnit }).(pulumi.StringOutput)
+}
+
+// State or province name (ST). Null if not provided.
+func (o GetCloudcertificatesLineagesLineageSubjectOutput) State() pulumi.StringOutput {
+	return o.ApplyT(func(v GetCloudcertificatesLineagesLineageSubject) string { return v.State }).(pulumi.StringOutput)
 }
 
 type GetCloudletsApiPrioritizationMatchRuleMatchRule struct {
@@ -71969,5517 +80207,6 @@ func (o GetImagingPolicyVideoPolicyBreakpointsPtrOutput) Widths() pulumi.IntArra
 	}).(pulumi.IntArrayOutput)
 }
 
-type GetImagingPolicyVideoPolicyOutputType struct {
-	// The quality of derivative videos. High preserves video quality with reduced byte savings while low reduces video quality to increase byte savings.
-	PerceptualQuality *string `pulumi:"perceptualQuality"`
-	// The quality of derivative videos. High preserves video quality with reduced byte savings while low reduces video quality to increase byte savings.
-	PerceptualQualityVar *string `pulumi:"perceptualQualityVar"`
-	// Allows you to add a specific placeholder video that appears when a user first requests a video, but before Image & Video Manager processes the video. If not specified the original video plays during the processing time.
-	PlaceholderVideoUrl *string `pulumi:"placeholderVideoUrl"`
-	// Allows you to add a specific placeholder video that appears when a user first requests a video, but before Image & Video Manager processes the video. If not specified the original video plays during the processing time.
-	PlaceholderVideoUrlVar *string `pulumi:"placeholderVideoUrlVar"`
-	// Override the quality of video to serve when Image & Video Manager detects a slow connection. Specifying lower values lets users with slow connections browse your site with reduced load times without impacting the quality of videos for users with faster connections.
-	VideoAdaptiveQuality *string `pulumi:"videoAdaptiveQuality"`
-	// Override the quality of video to serve when Image & Video Manager detects a slow connection. Specifying lower values lets users with slow connections browse your site with reduced load times without impacting the quality of videos for users with faster connections.
-	VideoAdaptiveQualityVar *string `pulumi:"videoAdaptiveQualityVar"`
-}
-
-// GetImagingPolicyVideoPolicyOutputTypeInput is an input type that accepts GetImagingPolicyVideoPolicyOutputTypeArgs and GetImagingPolicyVideoPolicyOutputTypeOutput values.
-// You can construct a concrete instance of `GetImagingPolicyVideoPolicyOutputTypeInput` via:
-//
-//	GetImagingPolicyVideoPolicyOutputTypeArgs{...}
-type GetImagingPolicyVideoPolicyOutputTypeInput interface {
-	pulumi.Input
-
-	ToGetImagingPolicyVideoPolicyOutputTypeOutput() GetImagingPolicyVideoPolicyOutputTypeOutput
-	ToGetImagingPolicyVideoPolicyOutputTypeOutputWithContext(context.Context) GetImagingPolicyVideoPolicyOutputTypeOutput
-}
-
-type GetImagingPolicyVideoPolicyOutputTypeArgs struct {
-	// The quality of derivative videos. High preserves video quality with reduced byte savings while low reduces video quality to increase byte savings.
-	PerceptualQuality pulumi.StringPtrInput `pulumi:"perceptualQuality"`
-	// The quality of derivative videos. High preserves video quality with reduced byte savings while low reduces video quality to increase byte savings.
-	PerceptualQualityVar pulumi.StringPtrInput `pulumi:"perceptualQualityVar"`
-	// Allows you to add a specific placeholder video that appears when a user first requests a video, but before Image & Video Manager processes the video. If not specified the original video plays during the processing time.
-	PlaceholderVideoUrl pulumi.StringPtrInput `pulumi:"placeholderVideoUrl"`
-	// Allows you to add a specific placeholder video that appears when a user first requests a video, but before Image & Video Manager processes the video. If not specified the original video plays during the processing time.
-	PlaceholderVideoUrlVar pulumi.StringPtrInput `pulumi:"placeholderVideoUrlVar"`
-	// Override the quality of video to serve when Image & Video Manager detects a slow connection. Specifying lower values lets users with slow connections browse your site with reduced load times without impacting the quality of videos for users with faster connections.
-	VideoAdaptiveQuality pulumi.StringPtrInput `pulumi:"videoAdaptiveQuality"`
-	// Override the quality of video to serve when Image & Video Manager detects a slow connection. Specifying lower values lets users with slow connections browse your site with reduced load times without impacting the quality of videos for users with faster connections.
-	VideoAdaptiveQualityVar pulumi.StringPtrInput `pulumi:"videoAdaptiveQualityVar"`
-}
-
-func (GetImagingPolicyVideoPolicyOutputTypeArgs) ElementType() reflect.Type {
-	return reflect.TypeOf((*GetImagingPolicyVideoPolicyOutputType)(nil)).Elem()
-}
-
-func (i GetImagingPolicyVideoPolicyOutputTypeArgs) ToGetImagingPolicyVideoPolicyOutputTypeOutput() GetImagingPolicyVideoPolicyOutputTypeOutput {
-	return i.ToGetImagingPolicyVideoPolicyOutputTypeOutputWithContext(context.Background())
-}
-
-func (i GetImagingPolicyVideoPolicyOutputTypeArgs) ToGetImagingPolicyVideoPolicyOutputTypeOutputWithContext(ctx context.Context) GetImagingPolicyVideoPolicyOutputTypeOutput {
-	return pulumi.ToOutputWithContext(ctx, i).(GetImagingPolicyVideoPolicyOutputTypeOutput)
-}
-
-func (i GetImagingPolicyVideoPolicyOutputTypeArgs) ToGetImagingPolicyVideoPolicyOutputTypePtrOutput() GetImagingPolicyVideoPolicyOutputTypePtrOutput {
-	return i.ToGetImagingPolicyVideoPolicyOutputTypePtrOutputWithContext(context.Background())
-}
-
-func (i GetImagingPolicyVideoPolicyOutputTypeArgs) ToGetImagingPolicyVideoPolicyOutputTypePtrOutputWithContext(ctx context.Context) GetImagingPolicyVideoPolicyOutputTypePtrOutput {
-	return pulumi.ToOutputWithContext(ctx, i).(GetImagingPolicyVideoPolicyOutputTypeOutput).ToGetImagingPolicyVideoPolicyOutputTypePtrOutputWithContext(ctx)
-}
-
-// GetImagingPolicyVideoPolicyOutputTypePtrInput is an input type that accepts GetImagingPolicyVideoPolicyOutputTypeArgs, GetImagingPolicyVideoPolicyOutputTypePtr and GetImagingPolicyVideoPolicyOutputTypePtrOutput values.
-// You can construct a concrete instance of `GetImagingPolicyVideoPolicyOutputTypePtrInput` via:
-//
-//	        GetImagingPolicyVideoPolicyOutputTypeArgs{...}
-//
-//	or:
-//
-//	        nil
-type GetImagingPolicyVideoPolicyOutputTypePtrInput interface {
-	pulumi.Input
-
-	ToGetImagingPolicyVideoPolicyOutputTypePtrOutput() GetImagingPolicyVideoPolicyOutputTypePtrOutput
-	ToGetImagingPolicyVideoPolicyOutputTypePtrOutputWithContext(context.Context) GetImagingPolicyVideoPolicyOutputTypePtrOutput
-}
-
-type getImagingPolicyVideoPolicyOutputTypePtrType GetImagingPolicyVideoPolicyOutputTypeArgs
-
-func GetImagingPolicyVideoPolicyOutputTypePtr(v *GetImagingPolicyVideoPolicyOutputTypeArgs) GetImagingPolicyVideoPolicyOutputTypePtrInput {
-	return (*getImagingPolicyVideoPolicyOutputTypePtrType)(v)
-}
-
-func (*getImagingPolicyVideoPolicyOutputTypePtrType) ElementType() reflect.Type {
-	return reflect.TypeOf((**GetImagingPolicyVideoPolicyOutputType)(nil)).Elem()
-}
-
-func (i *getImagingPolicyVideoPolicyOutputTypePtrType) ToGetImagingPolicyVideoPolicyOutputTypePtrOutput() GetImagingPolicyVideoPolicyOutputTypePtrOutput {
-	return i.ToGetImagingPolicyVideoPolicyOutputTypePtrOutputWithContext(context.Background())
-}
-
-func (i *getImagingPolicyVideoPolicyOutputTypePtrType) ToGetImagingPolicyVideoPolicyOutputTypePtrOutputWithContext(ctx context.Context) GetImagingPolicyVideoPolicyOutputTypePtrOutput {
-	return pulumi.ToOutputWithContext(ctx, i).(GetImagingPolicyVideoPolicyOutputTypePtrOutput)
-}
-
-type GetImagingPolicyVideoPolicyOutputTypeOutput struct{ *pulumi.OutputState }
-
-func (GetImagingPolicyVideoPolicyOutputTypeOutput) ElementType() reflect.Type {
-	return reflect.TypeOf((*GetImagingPolicyVideoPolicyOutputType)(nil)).Elem()
-}
-
-func (o GetImagingPolicyVideoPolicyOutputTypeOutput) ToGetImagingPolicyVideoPolicyOutputTypeOutput() GetImagingPolicyVideoPolicyOutputTypeOutput {
-	return o
-}
-
-func (o GetImagingPolicyVideoPolicyOutputTypeOutput) ToGetImagingPolicyVideoPolicyOutputTypeOutputWithContext(ctx context.Context) GetImagingPolicyVideoPolicyOutputTypeOutput {
-	return o
-}
-
-func (o GetImagingPolicyVideoPolicyOutputTypeOutput) ToGetImagingPolicyVideoPolicyOutputTypePtrOutput() GetImagingPolicyVideoPolicyOutputTypePtrOutput {
-	return o.ToGetImagingPolicyVideoPolicyOutputTypePtrOutputWithContext(context.Background())
-}
-
-func (o GetImagingPolicyVideoPolicyOutputTypeOutput) ToGetImagingPolicyVideoPolicyOutputTypePtrOutputWithContext(ctx context.Context) GetImagingPolicyVideoPolicyOutputTypePtrOutput {
-	return o.ApplyTWithContext(ctx, func(_ context.Context, v GetImagingPolicyVideoPolicyOutputType) *GetImagingPolicyVideoPolicyOutputType {
-		return &v
-	}).(GetImagingPolicyVideoPolicyOutputTypePtrOutput)
-}
-
-// The quality of derivative videos. High preserves video quality with reduced byte savings while low reduces video quality to increase byte savings.
-func (o GetImagingPolicyVideoPolicyOutputTypeOutput) PerceptualQuality() pulumi.StringPtrOutput {
-	return o.ApplyT(func(v GetImagingPolicyVideoPolicyOutputType) *string { return v.PerceptualQuality }).(pulumi.StringPtrOutput)
-}
-
-// The quality of derivative videos. High preserves video quality with reduced byte savings while low reduces video quality to increase byte savings.
-func (o GetImagingPolicyVideoPolicyOutputTypeOutput) PerceptualQualityVar() pulumi.StringPtrOutput {
-	return o.ApplyT(func(v GetImagingPolicyVideoPolicyOutputType) *string { return v.PerceptualQualityVar }).(pulumi.StringPtrOutput)
-}
-
-// Allows you to add a specific placeholder video that appears when a user first requests a video, but before Image & Video Manager processes the video. If not specified the original video plays during the processing time.
-func (o GetImagingPolicyVideoPolicyOutputTypeOutput) PlaceholderVideoUrl() pulumi.StringPtrOutput {
-	return o.ApplyT(func(v GetImagingPolicyVideoPolicyOutputType) *string { return v.PlaceholderVideoUrl }).(pulumi.StringPtrOutput)
-}
-
-// Allows you to add a specific placeholder video that appears when a user first requests a video, but before Image & Video Manager processes the video. If not specified the original video plays during the processing time.
-func (o GetImagingPolicyVideoPolicyOutputTypeOutput) PlaceholderVideoUrlVar() pulumi.StringPtrOutput {
-	return o.ApplyT(func(v GetImagingPolicyVideoPolicyOutputType) *string { return v.PlaceholderVideoUrlVar }).(pulumi.StringPtrOutput)
-}
-
-// Override the quality of video to serve when Image & Video Manager detects a slow connection. Specifying lower values lets users with slow connections browse your site with reduced load times without impacting the quality of videos for users with faster connections.
-func (o GetImagingPolicyVideoPolicyOutputTypeOutput) VideoAdaptiveQuality() pulumi.StringPtrOutput {
-	return o.ApplyT(func(v GetImagingPolicyVideoPolicyOutputType) *string { return v.VideoAdaptiveQuality }).(pulumi.StringPtrOutput)
-}
-
-// Override the quality of video to serve when Image & Video Manager detects a slow connection. Specifying lower values lets users with slow connections browse your site with reduced load times without impacting the quality of videos for users with faster connections.
-func (o GetImagingPolicyVideoPolicyOutputTypeOutput) VideoAdaptiveQualityVar() pulumi.StringPtrOutput {
-	return o.ApplyT(func(v GetImagingPolicyVideoPolicyOutputType) *string { return v.VideoAdaptiveQualityVar }).(pulumi.StringPtrOutput)
-}
-
-type GetImagingPolicyVideoPolicyOutputTypePtrOutput struct{ *pulumi.OutputState }
-
-func (GetImagingPolicyVideoPolicyOutputTypePtrOutput) ElementType() reflect.Type {
-	return reflect.TypeOf((**GetImagingPolicyVideoPolicyOutputType)(nil)).Elem()
-}
-
-func (o GetImagingPolicyVideoPolicyOutputTypePtrOutput) ToGetImagingPolicyVideoPolicyOutputTypePtrOutput() GetImagingPolicyVideoPolicyOutputTypePtrOutput {
-	return o
-}
-
-func (o GetImagingPolicyVideoPolicyOutputTypePtrOutput) ToGetImagingPolicyVideoPolicyOutputTypePtrOutputWithContext(ctx context.Context) GetImagingPolicyVideoPolicyOutputTypePtrOutput {
-	return o
-}
-
-func (o GetImagingPolicyVideoPolicyOutputTypePtrOutput) Elem() GetImagingPolicyVideoPolicyOutputTypeOutput {
-	return o.ApplyT(func(v *GetImagingPolicyVideoPolicyOutputType) GetImagingPolicyVideoPolicyOutputType {
-		if v != nil {
-			return *v
-		}
-		var ret GetImagingPolicyVideoPolicyOutputType
-		return ret
-	}).(GetImagingPolicyVideoPolicyOutputTypeOutput)
-}
-
-// The quality of derivative videos. High preserves video quality with reduced byte savings while low reduces video quality to increase byte savings.
-func (o GetImagingPolicyVideoPolicyOutputTypePtrOutput) PerceptualQuality() pulumi.StringPtrOutput {
-	return o.ApplyT(func(v *GetImagingPolicyVideoPolicyOutputType) *string {
-		if v == nil {
-			return nil
-		}
-		return v.PerceptualQuality
-	}).(pulumi.StringPtrOutput)
-}
-
-// The quality of derivative videos. High preserves video quality with reduced byte savings while low reduces video quality to increase byte savings.
-func (o GetImagingPolicyVideoPolicyOutputTypePtrOutput) PerceptualQualityVar() pulumi.StringPtrOutput {
-	return o.ApplyT(func(v *GetImagingPolicyVideoPolicyOutputType) *string {
-		if v == nil {
-			return nil
-		}
-		return v.PerceptualQualityVar
-	}).(pulumi.StringPtrOutput)
-}
-
-// Allows you to add a specific placeholder video that appears when a user first requests a video, but before Image & Video Manager processes the video. If not specified the original video plays during the processing time.
-func (o GetImagingPolicyVideoPolicyOutputTypePtrOutput) PlaceholderVideoUrl() pulumi.StringPtrOutput {
-	return o.ApplyT(func(v *GetImagingPolicyVideoPolicyOutputType) *string {
-		if v == nil {
-			return nil
-		}
-		return v.PlaceholderVideoUrl
-	}).(pulumi.StringPtrOutput)
-}
-
-// Allows you to add a specific placeholder video that appears when a user first requests a video, but before Image & Video Manager processes the video. If not specified the original video plays during the processing time.
-func (o GetImagingPolicyVideoPolicyOutputTypePtrOutput) PlaceholderVideoUrlVar() pulumi.StringPtrOutput {
-	return o.ApplyT(func(v *GetImagingPolicyVideoPolicyOutputType) *string {
-		if v == nil {
-			return nil
-		}
-		return v.PlaceholderVideoUrlVar
-	}).(pulumi.StringPtrOutput)
-}
-
-// Override the quality of video to serve when Image & Video Manager detects a slow connection. Specifying lower values lets users with slow connections browse your site with reduced load times without impacting the quality of videos for users with faster connections.
-func (o GetImagingPolicyVideoPolicyOutputTypePtrOutput) VideoAdaptiveQuality() pulumi.StringPtrOutput {
-	return o.ApplyT(func(v *GetImagingPolicyVideoPolicyOutputType) *string {
-		if v == nil {
-			return nil
-		}
-		return v.VideoAdaptiveQuality
-	}).(pulumi.StringPtrOutput)
-}
-
-// Override the quality of video to serve when Image & Video Manager detects a slow connection. Specifying lower values lets users with slow connections browse your site with reduced load times without impacting the quality of videos for users with faster connections.
-func (o GetImagingPolicyVideoPolicyOutputTypePtrOutput) VideoAdaptiveQualityVar() pulumi.StringPtrOutput {
-	return o.ApplyT(func(v *GetImagingPolicyVideoPolicyOutputType) *string {
-		if v == nil {
-			return nil
-		}
-		return v.VideoAdaptiveQualityVar
-	}).(pulumi.StringPtrOutput)
-}
-
-type GetImagingPolicyVideoPolicyVariable struct {
-	// The default value of the variable if no query parameter is provided. It needs to be one of the `enumOptions` if any are provided.
-	DefaultValue string                                          `pulumi:"defaultValue"`
-	EnumOptions  []GetImagingPolicyVideoPolicyVariableEnumOption `pulumi:"enumOptions"`
-	// The name of the variable, also available as the query parameter name to set the variable's value dynamically. Use up to 50 alphanumeric characters.
-	Name string `pulumi:"name"`
-	// A postfix added to the value provided for the variable, or to the default value.
-	Postfix *string `pulumi:"postfix"`
-	// A prefix added to the value provided for the variable, or to the default value.
-	Prefix *string `pulumi:"prefix"`
-	// The type of value for the variable.
-	Type string `pulumi:"type"`
-}
-
-// GetImagingPolicyVideoPolicyVariableInput is an input type that accepts GetImagingPolicyVideoPolicyVariableArgs and GetImagingPolicyVideoPolicyVariableOutput values.
-// You can construct a concrete instance of `GetImagingPolicyVideoPolicyVariableInput` via:
-//
-//	GetImagingPolicyVideoPolicyVariableArgs{...}
-type GetImagingPolicyVideoPolicyVariableInput interface {
-	pulumi.Input
-
-	ToGetImagingPolicyVideoPolicyVariableOutput() GetImagingPolicyVideoPolicyVariableOutput
-	ToGetImagingPolicyVideoPolicyVariableOutputWithContext(context.Context) GetImagingPolicyVideoPolicyVariableOutput
-}
-
-type GetImagingPolicyVideoPolicyVariableArgs struct {
-	// The default value of the variable if no query parameter is provided. It needs to be one of the `enumOptions` if any are provided.
-	DefaultValue pulumi.StringInput                                      `pulumi:"defaultValue"`
-	EnumOptions  GetImagingPolicyVideoPolicyVariableEnumOptionArrayInput `pulumi:"enumOptions"`
-	// The name of the variable, also available as the query parameter name to set the variable's value dynamically. Use up to 50 alphanumeric characters.
-	Name pulumi.StringInput `pulumi:"name"`
-	// A postfix added to the value provided for the variable, or to the default value.
-	Postfix pulumi.StringPtrInput `pulumi:"postfix"`
-	// A prefix added to the value provided for the variable, or to the default value.
-	Prefix pulumi.StringPtrInput `pulumi:"prefix"`
-	// The type of value for the variable.
-	Type pulumi.StringInput `pulumi:"type"`
-}
-
-func (GetImagingPolicyVideoPolicyVariableArgs) ElementType() reflect.Type {
-	return reflect.TypeOf((*GetImagingPolicyVideoPolicyVariable)(nil)).Elem()
-}
-
-func (i GetImagingPolicyVideoPolicyVariableArgs) ToGetImagingPolicyVideoPolicyVariableOutput() GetImagingPolicyVideoPolicyVariableOutput {
-	return i.ToGetImagingPolicyVideoPolicyVariableOutputWithContext(context.Background())
-}
-
-func (i GetImagingPolicyVideoPolicyVariableArgs) ToGetImagingPolicyVideoPolicyVariableOutputWithContext(ctx context.Context) GetImagingPolicyVideoPolicyVariableOutput {
-	return pulumi.ToOutputWithContext(ctx, i).(GetImagingPolicyVideoPolicyVariableOutput)
-}
-
-// GetImagingPolicyVideoPolicyVariableArrayInput is an input type that accepts GetImagingPolicyVideoPolicyVariableArray and GetImagingPolicyVideoPolicyVariableArrayOutput values.
-// You can construct a concrete instance of `GetImagingPolicyVideoPolicyVariableArrayInput` via:
-//
-//	GetImagingPolicyVideoPolicyVariableArray{ GetImagingPolicyVideoPolicyVariableArgs{...} }
-type GetImagingPolicyVideoPolicyVariableArrayInput interface {
-	pulumi.Input
-
-	ToGetImagingPolicyVideoPolicyVariableArrayOutput() GetImagingPolicyVideoPolicyVariableArrayOutput
-	ToGetImagingPolicyVideoPolicyVariableArrayOutputWithContext(context.Context) GetImagingPolicyVideoPolicyVariableArrayOutput
-}
-
-type GetImagingPolicyVideoPolicyVariableArray []GetImagingPolicyVideoPolicyVariableInput
-
-func (GetImagingPolicyVideoPolicyVariableArray) ElementType() reflect.Type {
-	return reflect.TypeOf((*[]GetImagingPolicyVideoPolicyVariable)(nil)).Elem()
-}
-
-func (i GetImagingPolicyVideoPolicyVariableArray) ToGetImagingPolicyVideoPolicyVariableArrayOutput() GetImagingPolicyVideoPolicyVariableArrayOutput {
-	return i.ToGetImagingPolicyVideoPolicyVariableArrayOutputWithContext(context.Background())
-}
-
-func (i GetImagingPolicyVideoPolicyVariableArray) ToGetImagingPolicyVideoPolicyVariableArrayOutputWithContext(ctx context.Context) GetImagingPolicyVideoPolicyVariableArrayOutput {
-	return pulumi.ToOutputWithContext(ctx, i).(GetImagingPolicyVideoPolicyVariableArrayOutput)
-}
-
-type GetImagingPolicyVideoPolicyVariableOutput struct{ *pulumi.OutputState }
-
-func (GetImagingPolicyVideoPolicyVariableOutput) ElementType() reflect.Type {
-	return reflect.TypeOf((*GetImagingPolicyVideoPolicyVariable)(nil)).Elem()
-}
-
-func (o GetImagingPolicyVideoPolicyVariableOutput) ToGetImagingPolicyVideoPolicyVariableOutput() GetImagingPolicyVideoPolicyVariableOutput {
-	return o
-}
-
-func (o GetImagingPolicyVideoPolicyVariableOutput) ToGetImagingPolicyVideoPolicyVariableOutputWithContext(ctx context.Context) GetImagingPolicyVideoPolicyVariableOutput {
-	return o
-}
-
-// The default value of the variable if no query parameter is provided. It needs to be one of the `enumOptions` if any are provided.
-func (o GetImagingPolicyVideoPolicyVariableOutput) DefaultValue() pulumi.StringOutput {
-	return o.ApplyT(func(v GetImagingPolicyVideoPolicyVariable) string { return v.DefaultValue }).(pulumi.StringOutput)
-}
-
-func (o GetImagingPolicyVideoPolicyVariableOutput) EnumOptions() GetImagingPolicyVideoPolicyVariableEnumOptionArrayOutput {
-	return o.ApplyT(func(v GetImagingPolicyVideoPolicyVariable) []GetImagingPolicyVideoPolicyVariableEnumOption {
-		return v.EnumOptions
-	}).(GetImagingPolicyVideoPolicyVariableEnumOptionArrayOutput)
-}
-
-// The name of the variable, also available as the query parameter name to set the variable's value dynamically. Use up to 50 alphanumeric characters.
-func (o GetImagingPolicyVideoPolicyVariableOutput) Name() pulumi.StringOutput {
-	return o.ApplyT(func(v GetImagingPolicyVideoPolicyVariable) string { return v.Name }).(pulumi.StringOutput)
-}
-
-// A postfix added to the value provided for the variable, or to the default value.
-func (o GetImagingPolicyVideoPolicyVariableOutput) Postfix() pulumi.StringPtrOutput {
-	return o.ApplyT(func(v GetImagingPolicyVideoPolicyVariable) *string { return v.Postfix }).(pulumi.StringPtrOutput)
-}
-
-// A prefix added to the value provided for the variable, or to the default value.
-func (o GetImagingPolicyVideoPolicyVariableOutput) Prefix() pulumi.StringPtrOutput {
-	return o.ApplyT(func(v GetImagingPolicyVideoPolicyVariable) *string { return v.Prefix }).(pulumi.StringPtrOutput)
-}
-
-// The type of value for the variable.
-func (o GetImagingPolicyVideoPolicyVariableOutput) Type() pulumi.StringOutput {
-	return o.ApplyT(func(v GetImagingPolicyVideoPolicyVariable) string { return v.Type }).(pulumi.StringOutput)
-}
-
-type GetImagingPolicyVideoPolicyVariableArrayOutput struct{ *pulumi.OutputState }
-
-func (GetImagingPolicyVideoPolicyVariableArrayOutput) ElementType() reflect.Type {
-	return reflect.TypeOf((*[]GetImagingPolicyVideoPolicyVariable)(nil)).Elem()
-}
-
-func (o GetImagingPolicyVideoPolicyVariableArrayOutput) ToGetImagingPolicyVideoPolicyVariableArrayOutput() GetImagingPolicyVideoPolicyVariableArrayOutput {
-	return o
-}
-
-func (o GetImagingPolicyVideoPolicyVariableArrayOutput) ToGetImagingPolicyVideoPolicyVariableArrayOutputWithContext(ctx context.Context) GetImagingPolicyVideoPolicyVariableArrayOutput {
-	return o
-}
-
-func (o GetImagingPolicyVideoPolicyVariableArrayOutput) Index(i pulumi.IntInput) GetImagingPolicyVideoPolicyVariableOutput {
-	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetImagingPolicyVideoPolicyVariable {
-		return vs[0].([]GetImagingPolicyVideoPolicyVariable)[vs[1].(int)]
-	}).(GetImagingPolicyVideoPolicyVariableOutput)
-}
-
-type GetImagingPolicyVideoPolicyVariableEnumOption struct {
-	// The unique identifier for each enum value, up to 50 alphanumeric characters.
-	Id string `pulumi:"id"`
-	// The value of the variable when the `id` is provided.
-	Value string `pulumi:"value"`
-}
-
-// GetImagingPolicyVideoPolicyVariableEnumOptionInput is an input type that accepts GetImagingPolicyVideoPolicyVariableEnumOptionArgs and GetImagingPolicyVideoPolicyVariableEnumOptionOutput values.
-// You can construct a concrete instance of `GetImagingPolicyVideoPolicyVariableEnumOptionInput` via:
-//
-//	GetImagingPolicyVideoPolicyVariableEnumOptionArgs{...}
-type GetImagingPolicyVideoPolicyVariableEnumOptionInput interface {
-	pulumi.Input
-
-	ToGetImagingPolicyVideoPolicyVariableEnumOptionOutput() GetImagingPolicyVideoPolicyVariableEnumOptionOutput
-	ToGetImagingPolicyVideoPolicyVariableEnumOptionOutputWithContext(context.Context) GetImagingPolicyVideoPolicyVariableEnumOptionOutput
-}
-
-type GetImagingPolicyVideoPolicyVariableEnumOptionArgs struct {
-	// The unique identifier for each enum value, up to 50 alphanumeric characters.
-	Id pulumi.StringInput `pulumi:"id"`
-	// The value of the variable when the `id` is provided.
-	Value pulumi.StringInput `pulumi:"value"`
-}
-
-func (GetImagingPolicyVideoPolicyVariableEnumOptionArgs) ElementType() reflect.Type {
-	return reflect.TypeOf((*GetImagingPolicyVideoPolicyVariableEnumOption)(nil)).Elem()
-}
-
-func (i GetImagingPolicyVideoPolicyVariableEnumOptionArgs) ToGetImagingPolicyVideoPolicyVariableEnumOptionOutput() GetImagingPolicyVideoPolicyVariableEnumOptionOutput {
-	return i.ToGetImagingPolicyVideoPolicyVariableEnumOptionOutputWithContext(context.Background())
-}
-
-func (i GetImagingPolicyVideoPolicyVariableEnumOptionArgs) ToGetImagingPolicyVideoPolicyVariableEnumOptionOutputWithContext(ctx context.Context) GetImagingPolicyVideoPolicyVariableEnumOptionOutput {
-	return pulumi.ToOutputWithContext(ctx, i).(GetImagingPolicyVideoPolicyVariableEnumOptionOutput)
-}
-
-// GetImagingPolicyVideoPolicyVariableEnumOptionArrayInput is an input type that accepts GetImagingPolicyVideoPolicyVariableEnumOptionArray and GetImagingPolicyVideoPolicyVariableEnumOptionArrayOutput values.
-// You can construct a concrete instance of `GetImagingPolicyVideoPolicyVariableEnumOptionArrayInput` via:
-//
-//	GetImagingPolicyVideoPolicyVariableEnumOptionArray{ GetImagingPolicyVideoPolicyVariableEnumOptionArgs{...} }
-type GetImagingPolicyVideoPolicyVariableEnumOptionArrayInput interface {
-	pulumi.Input
-
-	ToGetImagingPolicyVideoPolicyVariableEnumOptionArrayOutput() GetImagingPolicyVideoPolicyVariableEnumOptionArrayOutput
-	ToGetImagingPolicyVideoPolicyVariableEnumOptionArrayOutputWithContext(context.Context) GetImagingPolicyVideoPolicyVariableEnumOptionArrayOutput
-}
-
-type GetImagingPolicyVideoPolicyVariableEnumOptionArray []GetImagingPolicyVideoPolicyVariableEnumOptionInput
-
-func (GetImagingPolicyVideoPolicyVariableEnumOptionArray) ElementType() reflect.Type {
-	return reflect.TypeOf((*[]GetImagingPolicyVideoPolicyVariableEnumOption)(nil)).Elem()
-}
-
-func (i GetImagingPolicyVideoPolicyVariableEnumOptionArray) ToGetImagingPolicyVideoPolicyVariableEnumOptionArrayOutput() GetImagingPolicyVideoPolicyVariableEnumOptionArrayOutput {
-	return i.ToGetImagingPolicyVideoPolicyVariableEnumOptionArrayOutputWithContext(context.Background())
-}
-
-func (i GetImagingPolicyVideoPolicyVariableEnumOptionArray) ToGetImagingPolicyVideoPolicyVariableEnumOptionArrayOutputWithContext(ctx context.Context) GetImagingPolicyVideoPolicyVariableEnumOptionArrayOutput {
-	return pulumi.ToOutputWithContext(ctx, i).(GetImagingPolicyVideoPolicyVariableEnumOptionArrayOutput)
-}
-
-type GetImagingPolicyVideoPolicyVariableEnumOptionOutput struct{ *pulumi.OutputState }
-
-func (GetImagingPolicyVideoPolicyVariableEnumOptionOutput) ElementType() reflect.Type {
-	return reflect.TypeOf((*GetImagingPolicyVideoPolicyVariableEnumOption)(nil)).Elem()
-}
-
-func (o GetImagingPolicyVideoPolicyVariableEnumOptionOutput) ToGetImagingPolicyVideoPolicyVariableEnumOptionOutput() GetImagingPolicyVideoPolicyVariableEnumOptionOutput {
-	return o
-}
-
-func (o GetImagingPolicyVideoPolicyVariableEnumOptionOutput) ToGetImagingPolicyVideoPolicyVariableEnumOptionOutputWithContext(ctx context.Context) GetImagingPolicyVideoPolicyVariableEnumOptionOutput {
-	return o
-}
-
-// The unique identifier for each enum value, up to 50 alphanumeric characters.
-func (o GetImagingPolicyVideoPolicyVariableEnumOptionOutput) Id() pulumi.StringOutput {
-	return o.ApplyT(func(v GetImagingPolicyVideoPolicyVariableEnumOption) string { return v.Id }).(pulumi.StringOutput)
-}
-
-// The value of the variable when the `id` is provided.
-func (o GetImagingPolicyVideoPolicyVariableEnumOptionOutput) Value() pulumi.StringOutput {
-	return o.ApplyT(func(v GetImagingPolicyVideoPolicyVariableEnumOption) string { return v.Value }).(pulumi.StringOutput)
-}
-
-type GetImagingPolicyVideoPolicyVariableEnumOptionArrayOutput struct{ *pulumi.OutputState }
-
-func (GetImagingPolicyVideoPolicyVariableEnumOptionArrayOutput) ElementType() reflect.Type {
-	return reflect.TypeOf((*[]GetImagingPolicyVideoPolicyVariableEnumOption)(nil)).Elem()
-}
-
-func (o GetImagingPolicyVideoPolicyVariableEnumOptionArrayOutput) ToGetImagingPolicyVideoPolicyVariableEnumOptionArrayOutput() GetImagingPolicyVideoPolicyVariableEnumOptionArrayOutput {
-	return o
-}
-
-func (o GetImagingPolicyVideoPolicyVariableEnumOptionArrayOutput) ToGetImagingPolicyVideoPolicyVariableEnumOptionArrayOutputWithContext(ctx context.Context) GetImagingPolicyVideoPolicyVariableEnumOptionArrayOutput {
-	return o
-}
-
-func (o GetImagingPolicyVideoPolicyVariableEnumOptionArrayOutput) Index(i pulumi.IntInput) GetImagingPolicyVideoPolicyVariableEnumOptionOutput {
-	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetImagingPolicyVideoPolicyVariableEnumOption {
-		return vs[0].([]GetImagingPolicyVideoPolicyVariableEnumOption)[vs[1].(int)]
-	}).(GetImagingPolicyVideoPolicyVariableEnumOptionOutput)
-}
-
-type GetMtlskeystoreAccountCaCertificatesCertificate struct {
-	// The account the CA certificate is under.
-	AccountId string `pulumi:"accountId"`
-	// The certificate block of the CA certificate.
-	Certificate string `pulumi:"certificate"`
-	// The common name of the CA certificate.
-	CommonName string `pulumi:"commonName"`
-	// The user who created the CA certificate.
-	CreatedBy string `pulumi:"createdBy"`
-	// An ISO 8601 timestamp indicating the CA certificate's creation.
-	CreatedDate string `pulumi:"createdDate"`
-	// An ISO 8601 timestamp indicating when the CA certificate expires.
-	ExpiryDate string `pulumi:"expiryDate"`
-	// The unique identifier of the CA certificate.
-	Id int `pulumi:"id"`
-	// An ISO 8601 timestamp indicating the CA certificate's availability.
-	IssuedDate string `pulumi:"issuedDate"`
-	// Identifies the CA certificate's encryption algorithm. Possible values: `RSA` or `ECDSA`.
-	KeyAlgorithm string `pulumi:"keyAlgorithm"`
-	// The private key length of the CA certificate.
-	KeySizeInBytes int `pulumi:"keySizeInBytes"`
-	// An ISO 8601 timestamp indicating when the CA certificate's status moved from QUALIFYING to CURRENT.
-	QualificationDate string `pulumi:"qualificationDate"`
-	// Specifies the algorithm that secures the data exchange between the edge server and origin.
-	SignatureAlgorithm string `pulumi:"signatureAlgorithm"`
-	// The status of the CA certificate. Possible values: QUALIFYING, CURRENT, PREVIOUS, or EXPIRED.
-	Status string `pulumi:"status"`
-	// The public key's entity stored in the CA certificate's subject public key field.
-	Subject string `pulumi:"subject"`
-	// The version of the CA certificate.
-	Version int `pulumi:"version"`
-}
-
-// GetMtlskeystoreAccountCaCertificatesCertificateInput is an input type that accepts GetMtlskeystoreAccountCaCertificatesCertificateArgs and GetMtlskeystoreAccountCaCertificatesCertificateOutput values.
-// You can construct a concrete instance of `GetMtlskeystoreAccountCaCertificatesCertificateInput` via:
-//
-//	GetMtlskeystoreAccountCaCertificatesCertificateArgs{...}
-type GetMtlskeystoreAccountCaCertificatesCertificateInput interface {
-	pulumi.Input
-
-	ToGetMtlskeystoreAccountCaCertificatesCertificateOutput() GetMtlskeystoreAccountCaCertificatesCertificateOutput
-	ToGetMtlskeystoreAccountCaCertificatesCertificateOutputWithContext(context.Context) GetMtlskeystoreAccountCaCertificatesCertificateOutput
-}
-
-type GetMtlskeystoreAccountCaCertificatesCertificateArgs struct {
-	// The account the CA certificate is under.
-	AccountId pulumi.StringInput `pulumi:"accountId"`
-	// The certificate block of the CA certificate.
-	Certificate pulumi.StringInput `pulumi:"certificate"`
-	// The common name of the CA certificate.
-	CommonName pulumi.StringInput `pulumi:"commonName"`
-	// The user who created the CA certificate.
-	CreatedBy pulumi.StringInput `pulumi:"createdBy"`
-	// An ISO 8601 timestamp indicating the CA certificate's creation.
-	CreatedDate pulumi.StringInput `pulumi:"createdDate"`
-	// An ISO 8601 timestamp indicating when the CA certificate expires.
-	ExpiryDate pulumi.StringInput `pulumi:"expiryDate"`
-	// The unique identifier of the CA certificate.
-	Id pulumi.IntInput `pulumi:"id"`
-	// An ISO 8601 timestamp indicating the CA certificate's availability.
-	IssuedDate pulumi.StringInput `pulumi:"issuedDate"`
-	// Identifies the CA certificate's encryption algorithm. Possible values: `RSA` or `ECDSA`.
-	KeyAlgorithm pulumi.StringInput `pulumi:"keyAlgorithm"`
-	// The private key length of the CA certificate.
-	KeySizeInBytes pulumi.IntInput `pulumi:"keySizeInBytes"`
-	// An ISO 8601 timestamp indicating when the CA certificate's status moved from QUALIFYING to CURRENT.
-	QualificationDate pulumi.StringInput `pulumi:"qualificationDate"`
-	// Specifies the algorithm that secures the data exchange between the edge server and origin.
-	SignatureAlgorithm pulumi.StringInput `pulumi:"signatureAlgorithm"`
-	// The status of the CA certificate. Possible values: QUALIFYING, CURRENT, PREVIOUS, or EXPIRED.
-	Status pulumi.StringInput `pulumi:"status"`
-	// The public key's entity stored in the CA certificate's subject public key field.
-	Subject pulumi.StringInput `pulumi:"subject"`
-	// The version of the CA certificate.
-	Version pulumi.IntInput `pulumi:"version"`
-}
-
-func (GetMtlskeystoreAccountCaCertificatesCertificateArgs) ElementType() reflect.Type {
-	return reflect.TypeOf((*GetMtlskeystoreAccountCaCertificatesCertificate)(nil)).Elem()
-}
-
-func (i GetMtlskeystoreAccountCaCertificatesCertificateArgs) ToGetMtlskeystoreAccountCaCertificatesCertificateOutput() GetMtlskeystoreAccountCaCertificatesCertificateOutput {
-	return i.ToGetMtlskeystoreAccountCaCertificatesCertificateOutputWithContext(context.Background())
-}
-
-func (i GetMtlskeystoreAccountCaCertificatesCertificateArgs) ToGetMtlskeystoreAccountCaCertificatesCertificateOutputWithContext(ctx context.Context) GetMtlskeystoreAccountCaCertificatesCertificateOutput {
-	return pulumi.ToOutputWithContext(ctx, i).(GetMtlskeystoreAccountCaCertificatesCertificateOutput)
-}
-
-// GetMtlskeystoreAccountCaCertificatesCertificateArrayInput is an input type that accepts GetMtlskeystoreAccountCaCertificatesCertificateArray and GetMtlskeystoreAccountCaCertificatesCertificateArrayOutput values.
-// You can construct a concrete instance of `GetMtlskeystoreAccountCaCertificatesCertificateArrayInput` via:
-//
-//	GetMtlskeystoreAccountCaCertificatesCertificateArray{ GetMtlskeystoreAccountCaCertificatesCertificateArgs{...} }
-type GetMtlskeystoreAccountCaCertificatesCertificateArrayInput interface {
-	pulumi.Input
-
-	ToGetMtlskeystoreAccountCaCertificatesCertificateArrayOutput() GetMtlskeystoreAccountCaCertificatesCertificateArrayOutput
-	ToGetMtlskeystoreAccountCaCertificatesCertificateArrayOutputWithContext(context.Context) GetMtlskeystoreAccountCaCertificatesCertificateArrayOutput
-}
-
-type GetMtlskeystoreAccountCaCertificatesCertificateArray []GetMtlskeystoreAccountCaCertificatesCertificateInput
-
-func (GetMtlskeystoreAccountCaCertificatesCertificateArray) ElementType() reflect.Type {
-	return reflect.TypeOf((*[]GetMtlskeystoreAccountCaCertificatesCertificate)(nil)).Elem()
-}
-
-func (i GetMtlskeystoreAccountCaCertificatesCertificateArray) ToGetMtlskeystoreAccountCaCertificatesCertificateArrayOutput() GetMtlskeystoreAccountCaCertificatesCertificateArrayOutput {
-	return i.ToGetMtlskeystoreAccountCaCertificatesCertificateArrayOutputWithContext(context.Background())
-}
-
-func (i GetMtlskeystoreAccountCaCertificatesCertificateArray) ToGetMtlskeystoreAccountCaCertificatesCertificateArrayOutputWithContext(ctx context.Context) GetMtlskeystoreAccountCaCertificatesCertificateArrayOutput {
-	return pulumi.ToOutputWithContext(ctx, i).(GetMtlskeystoreAccountCaCertificatesCertificateArrayOutput)
-}
-
-type GetMtlskeystoreAccountCaCertificatesCertificateOutput struct{ *pulumi.OutputState }
-
-func (GetMtlskeystoreAccountCaCertificatesCertificateOutput) ElementType() reflect.Type {
-	return reflect.TypeOf((*GetMtlskeystoreAccountCaCertificatesCertificate)(nil)).Elem()
-}
-
-func (o GetMtlskeystoreAccountCaCertificatesCertificateOutput) ToGetMtlskeystoreAccountCaCertificatesCertificateOutput() GetMtlskeystoreAccountCaCertificatesCertificateOutput {
-	return o
-}
-
-func (o GetMtlskeystoreAccountCaCertificatesCertificateOutput) ToGetMtlskeystoreAccountCaCertificatesCertificateOutputWithContext(ctx context.Context) GetMtlskeystoreAccountCaCertificatesCertificateOutput {
-	return o
-}
-
-// The account the CA certificate is under.
-func (o GetMtlskeystoreAccountCaCertificatesCertificateOutput) AccountId() pulumi.StringOutput {
-	return o.ApplyT(func(v GetMtlskeystoreAccountCaCertificatesCertificate) string { return v.AccountId }).(pulumi.StringOutput)
-}
-
-// The certificate block of the CA certificate.
-func (o GetMtlskeystoreAccountCaCertificatesCertificateOutput) Certificate() pulumi.StringOutput {
-	return o.ApplyT(func(v GetMtlskeystoreAccountCaCertificatesCertificate) string { return v.Certificate }).(pulumi.StringOutput)
-}
-
-// The common name of the CA certificate.
-func (o GetMtlskeystoreAccountCaCertificatesCertificateOutput) CommonName() pulumi.StringOutput {
-	return o.ApplyT(func(v GetMtlskeystoreAccountCaCertificatesCertificate) string { return v.CommonName }).(pulumi.StringOutput)
-}
-
-// The user who created the CA certificate.
-func (o GetMtlskeystoreAccountCaCertificatesCertificateOutput) CreatedBy() pulumi.StringOutput {
-	return o.ApplyT(func(v GetMtlskeystoreAccountCaCertificatesCertificate) string { return v.CreatedBy }).(pulumi.StringOutput)
-}
-
-// An ISO 8601 timestamp indicating the CA certificate's creation.
-func (o GetMtlskeystoreAccountCaCertificatesCertificateOutput) CreatedDate() pulumi.StringOutput {
-	return o.ApplyT(func(v GetMtlskeystoreAccountCaCertificatesCertificate) string { return v.CreatedDate }).(pulumi.StringOutput)
-}
-
-// An ISO 8601 timestamp indicating when the CA certificate expires.
-func (o GetMtlskeystoreAccountCaCertificatesCertificateOutput) ExpiryDate() pulumi.StringOutput {
-	return o.ApplyT(func(v GetMtlskeystoreAccountCaCertificatesCertificate) string { return v.ExpiryDate }).(pulumi.StringOutput)
-}
-
-// The unique identifier of the CA certificate.
-func (o GetMtlskeystoreAccountCaCertificatesCertificateOutput) Id() pulumi.IntOutput {
-	return o.ApplyT(func(v GetMtlskeystoreAccountCaCertificatesCertificate) int { return v.Id }).(pulumi.IntOutput)
-}
-
-// An ISO 8601 timestamp indicating the CA certificate's availability.
-func (o GetMtlskeystoreAccountCaCertificatesCertificateOutput) IssuedDate() pulumi.StringOutput {
-	return o.ApplyT(func(v GetMtlskeystoreAccountCaCertificatesCertificate) string { return v.IssuedDate }).(pulumi.StringOutput)
-}
-
-// Identifies the CA certificate's encryption algorithm. Possible values: `RSA` or `ECDSA`.
-func (o GetMtlskeystoreAccountCaCertificatesCertificateOutput) KeyAlgorithm() pulumi.StringOutput {
-	return o.ApplyT(func(v GetMtlskeystoreAccountCaCertificatesCertificate) string { return v.KeyAlgorithm }).(pulumi.StringOutput)
-}
-
-// The private key length of the CA certificate.
-func (o GetMtlskeystoreAccountCaCertificatesCertificateOutput) KeySizeInBytes() pulumi.IntOutput {
-	return o.ApplyT(func(v GetMtlskeystoreAccountCaCertificatesCertificate) int { return v.KeySizeInBytes }).(pulumi.IntOutput)
-}
-
-// An ISO 8601 timestamp indicating when the CA certificate's status moved from QUALIFYING to CURRENT.
-func (o GetMtlskeystoreAccountCaCertificatesCertificateOutput) QualificationDate() pulumi.StringOutput {
-	return o.ApplyT(func(v GetMtlskeystoreAccountCaCertificatesCertificate) string { return v.QualificationDate }).(pulumi.StringOutput)
-}
-
-// Specifies the algorithm that secures the data exchange between the edge server and origin.
-func (o GetMtlskeystoreAccountCaCertificatesCertificateOutput) SignatureAlgorithm() pulumi.StringOutput {
-	return o.ApplyT(func(v GetMtlskeystoreAccountCaCertificatesCertificate) string { return v.SignatureAlgorithm }).(pulumi.StringOutput)
-}
-
-// The status of the CA certificate. Possible values: QUALIFYING, CURRENT, PREVIOUS, or EXPIRED.
-func (o GetMtlskeystoreAccountCaCertificatesCertificateOutput) Status() pulumi.StringOutput {
-	return o.ApplyT(func(v GetMtlskeystoreAccountCaCertificatesCertificate) string { return v.Status }).(pulumi.StringOutput)
-}
-
-// The public key's entity stored in the CA certificate's subject public key field.
-func (o GetMtlskeystoreAccountCaCertificatesCertificateOutput) Subject() pulumi.StringOutput {
-	return o.ApplyT(func(v GetMtlskeystoreAccountCaCertificatesCertificate) string { return v.Subject }).(pulumi.StringOutput)
-}
-
-// The version of the CA certificate.
-func (o GetMtlskeystoreAccountCaCertificatesCertificateOutput) Version() pulumi.IntOutput {
-	return o.ApplyT(func(v GetMtlskeystoreAccountCaCertificatesCertificate) int { return v.Version }).(pulumi.IntOutput)
-}
-
-type GetMtlskeystoreAccountCaCertificatesCertificateArrayOutput struct{ *pulumi.OutputState }
-
-func (GetMtlskeystoreAccountCaCertificatesCertificateArrayOutput) ElementType() reflect.Type {
-	return reflect.TypeOf((*[]GetMtlskeystoreAccountCaCertificatesCertificate)(nil)).Elem()
-}
-
-func (o GetMtlskeystoreAccountCaCertificatesCertificateArrayOutput) ToGetMtlskeystoreAccountCaCertificatesCertificateArrayOutput() GetMtlskeystoreAccountCaCertificatesCertificateArrayOutput {
-	return o
-}
-
-func (o GetMtlskeystoreAccountCaCertificatesCertificateArrayOutput) ToGetMtlskeystoreAccountCaCertificatesCertificateArrayOutputWithContext(ctx context.Context) GetMtlskeystoreAccountCaCertificatesCertificateArrayOutput {
-	return o
-}
-
-func (o GetMtlskeystoreAccountCaCertificatesCertificateArrayOutput) Index(i pulumi.IntInput) GetMtlskeystoreAccountCaCertificatesCertificateOutput {
-	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetMtlskeystoreAccountCaCertificatesCertificate {
-		return vs[0].([]GetMtlskeystoreAccountCaCertificatesCertificate)[vs[1].(int)]
-	}).(GetMtlskeystoreAccountCaCertificatesCertificateOutput)
-}
-
-type GetMtlskeystoreClientCertificateCurrent struct {
-	// Details of the certificate block for the client certificate version.
-	CertificateBlock GetMtlskeystoreClientCertificateCurrentCertificateBlock `pulumi:"certificateBlock"`
-	// The user who uploaded the `THIRD_PARTY` client certificate version.
-	CertificateSubmittedBy string `pulumi:"certificateSubmittedBy"`
-	// An ISO 8601 timestamp indicating when the `THIRD_PARTY` signer client certificate version was uploaded.
-	CertificateSubmittedDate string `pulumi:"certificateSubmittedDate"`
-	// The user who created the client certificate version.
-	CreatedBy string `pulumi:"createdBy"`
-	// An ISO 8601 timestamp indicating the client certificate version's creation.
-	CreatedDate string `pulumi:"createdDate"`
-	// Details of the Certificate Signing Request (CSR) for the client certificate version.
-	CsrBlock GetMtlskeystoreClientCertificateCurrentCsrBlock `pulumi:"csrBlock"`
-	// An ISO 8601 timestamp indicating the client certificate version's deletion request.
-	DeleteRequestedDate string `pulumi:"deleteRequestedDate"`
-	// Specifies the key elliptic curve when the key algorithm `ECDSA` is used.
-	EllipticCurve string `pulumi:"ellipticCurve"`
-	// An ISO 8601 timestamp indicating when the client certificate version expires.
-	ExpiryDate string `pulumi:"expiryDate"`
-	// An ISO 8601 timestamp indicating the client certificate version's availability.
-	IssuedDate string `pulumi:"issuedDate"`
-	// The signing entity of the client certificate version.
-	Issuer string `pulumi:"issuer"`
-	// Identifies the client certificate version's encryption algorithm. Supported values are `RSA` and `ECDSA`.
-	KeyAlgorithm string `pulumi:"keyAlgorithm"`
-	// The private key length of the client certificate version when the key algorithm `RSA` is used.
-	KeySizeInBytes string `pulumi:"keySizeInBytes"`
-	// A list of properties associated with the client certificate.
-	Properties []GetMtlskeystoreClientCertificateCurrentProperty `pulumi:"properties"`
-	// An ISO 8601 timestamp indicating the client certificate version's scheduled deletion.
-	ScheduledDeleteDate string `pulumi:"scheduledDeleteDate"`
-	// Specifies the algorithm that secures the data exchange between the edge server and origin.
-	SignatureAlgorithm string `pulumi:"signatureAlgorithm"`
-	// The client certificate version status. Possible values: `AWAITING_SIGNED_CERTIFICATE`, `DEPLOYMENT_PENDING`, `DEPLOYED`, or `DELETE_PENDING`.
-	Status string `pulumi:"status"`
-	// The public key's entity stored in the client certificate version's subject public key field.
-	Subject string `pulumi:"subject"`
-	// Validation results for the client certificate version.
-	Validation GetMtlskeystoreClientCertificateCurrentValidation `pulumi:"validation"`
-	// The unique identifier of the client certificate version.
-	Version int `pulumi:"version"`
-	// Unique identifier for the client certificate version. Use it to configure mutual authentication (mTLS) sessions between the origin and edge servers in Property Manager's Mutual TLS Origin Keystore behavior.
-	VersionGuid string `pulumi:"versionGuid"`
-}
-
-// GetMtlskeystoreClientCertificateCurrentInput is an input type that accepts GetMtlskeystoreClientCertificateCurrentArgs and GetMtlskeystoreClientCertificateCurrentOutput values.
-// You can construct a concrete instance of `GetMtlskeystoreClientCertificateCurrentInput` via:
-//
-//	GetMtlskeystoreClientCertificateCurrentArgs{...}
-type GetMtlskeystoreClientCertificateCurrentInput interface {
-	pulumi.Input
-
-	ToGetMtlskeystoreClientCertificateCurrentOutput() GetMtlskeystoreClientCertificateCurrentOutput
-	ToGetMtlskeystoreClientCertificateCurrentOutputWithContext(context.Context) GetMtlskeystoreClientCertificateCurrentOutput
-}
-
-type GetMtlskeystoreClientCertificateCurrentArgs struct {
-	// Details of the certificate block for the client certificate version.
-	CertificateBlock GetMtlskeystoreClientCertificateCurrentCertificateBlockInput `pulumi:"certificateBlock"`
-	// The user who uploaded the `THIRD_PARTY` client certificate version.
-	CertificateSubmittedBy pulumi.StringInput `pulumi:"certificateSubmittedBy"`
-	// An ISO 8601 timestamp indicating when the `THIRD_PARTY` signer client certificate version was uploaded.
-	CertificateSubmittedDate pulumi.StringInput `pulumi:"certificateSubmittedDate"`
-	// The user who created the client certificate version.
-	CreatedBy pulumi.StringInput `pulumi:"createdBy"`
-	// An ISO 8601 timestamp indicating the client certificate version's creation.
-	CreatedDate pulumi.StringInput `pulumi:"createdDate"`
-	// Details of the Certificate Signing Request (CSR) for the client certificate version.
-	CsrBlock GetMtlskeystoreClientCertificateCurrentCsrBlockInput `pulumi:"csrBlock"`
-	// An ISO 8601 timestamp indicating the client certificate version's deletion request.
-	DeleteRequestedDate pulumi.StringInput `pulumi:"deleteRequestedDate"`
-	// Specifies the key elliptic curve when the key algorithm `ECDSA` is used.
-	EllipticCurve pulumi.StringInput `pulumi:"ellipticCurve"`
-	// An ISO 8601 timestamp indicating when the client certificate version expires.
-	ExpiryDate pulumi.StringInput `pulumi:"expiryDate"`
-	// An ISO 8601 timestamp indicating the client certificate version's availability.
-	IssuedDate pulumi.StringInput `pulumi:"issuedDate"`
-	// The signing entity of the client certificate version.
-	Issuer pulumi.StringInput `pulumi:"issuer"`
-	// Identifies the client certificate version's encryption algorithm. Supported values are `RSA` and `ECDSA`.
-	KeyAlgorithm pulumi.StringInput `pulumi:"keyAlgorithm"`
-	// The private key length of the client certificate version when the key algorithm `RSA` is used.
-	KeySizeInBytes pulumi.StringInput `pulumi:"keySizeInBytes"`
-	// A list of properties associated with the client certificate.
-	Properties GetMtlskeystoreClientCertificateCurrentPropertyArrayInput `pulumi:"properties"`
-	// An ISO 8601 timestamp indicating the client certificate version's scheduled deletion.
-	ScheduledDeleteDate pulumi.StringInput `pulumi:"scheduledDeleteDate"`
-	// Specifies the algorithm that secures the data exchange between the edge server and origin.
-	SignatureAlgorithm pulumi.StringInput `pulumi:"signatureAlgorithm"`
-	// The client certificate version status. Possible values: `AWAITING_SIGNED_CERTIFICATE`, `DEPLOYMENT_PENDING`, `DEPLOYED`, or `DELETE_PENDING`.
-	Status pulumi.StringInput `pulumi:"status"`
-	// The public key's entity stored in the client certificate version's subject public key field.
-	Subject pulumi.StringInput `pulumi:"subject"`
-	// Validation results for the client certificate version.
-	Validation GetMtlskeystoreClientCertificateCurrentValidationInput `pulumi:"validation"`
-	// The unique identifier of the client certificate version.
-	Version pulumi.IntInput `pulumi:"version"`
-	// Unique identifier for the client certificate version. Use it to configure mutual authentication (mTLS) sessions between the origin and edge servers in Property Manager's Mutual TLS Origin Keystore behavior.
-	VersionGuid pulumi.StringInput `pulumi:"versionGuid"`
-}
-
-func (GetMtlskeystoreClientCertificateCurrentArgs) ElementType() reflect.Type {
-	return reflect.TypeOf((*GetMtlskeystoreClientCertificateCurrent)(nil)).Elem()
-}
-
-func (i GetMtlskeystoreClientCertificateCurrentArgs) ToGetMtlskeystoreClientCertificateCurrentOutput() GetMtlskeystoreClientCertificateCurrentOutput {
-	return i.ToGetMtlskeystoreClientCertificateCurrentOutputWithContext(context.Background())
-}
-
-func (i GetMtlskeystoreClientCertificateCurrentArgs) ToGetMtlskeystoreClientCertificateCurrentOutputWithContext(ctx context.Context) GetMtlskeystoreClientCertificateCurrentOutput {
-	return pulumi.ToOutputWithContext(ctx, i).(GetMtlskeystoreClientCertificateCurrentOutput)
-}
-
-type GetMtlskeystoreClientCertificateCurrentOutput struct{ *pulumi.OutputState }
-
-func (GetMtlskeystoreClientCertificateCurrentOutput) ElementType() reflect.Type {
-	return reflect.TypeOf((*GetMtlskeystoreClientCertificateCurrent)(nil)).Elem()
-}
-
-func (o GetMtlskeystoreClientCertificateCurrentOutput) ToGetMtlskeystoreClientCertificateCurrentOutput() GetMtlskeystoreClientCertificateCurrentOutput {
-	return o
-}
-
-func (o GetMtlskeystoreClientCertificateCurrentOutput) ToGetMtlskeystoreClientCertificateCurrentOutputWithContext(ctx context.Context) GetMtlskeystoreClientCertificateCurrentOutput {
-	return o
-}
-
-// Details of the certificate block for the client certificate version.
-func (o GetMtlskeystoreClientCertificateCurrentOutput) CertificateBlock() GetMtlskeystoreClientCertificateCurrentCertificateBlockOutput {
-	return o.ApplyT(func(v GetMtlskeystoreClientCertificateCurrent) GetMtlskeystoreClientCertificateCurrentCertificateBlock {
-		return v.CertificateBlock
-	}).(GetMtlskeystoreClientCertificateCurrentCertificateBlockOutput)
-}
-
-// The user who uploaded the `THIRD_PARTY` client certificate version.
-func (o GetMtlskeystoreClientCertificateCurrentOutput) CertificateSubmittedBy() pulumi.StringOutput {
-	return o.ApplyT(func(v GetMtlskeystoreClientCertificateCurrent) string { return v.CertificateSubmittedBy }).(pulumi.StringOutput)
-}
-
-// An ISO 8601 timestamp indicating when the `THIRD_PARTY` signer client certificate version was uploaded.
-func (o GetMtlskeystoreClientCertificateCurrentOutput) CertificateSubmittedDate() pulumi.StringOutput {
-	return o.ApplyT(func(v GetMtlskeystoreClientCertificateCurrent) string { return v.CertificateSubmittedDate }).(pulumi.StringOutput)
-}
-
-// The user who created the client certificate version.
-func (o GetMtlskeystoreClientCertificateCurrentOutput) CreatedBy() pulumi.StringOutput {
-	return o.ApplyT(func(v GetMtlskeystoreClientCertificateCurrent) string { return v.CreatedBy }).(pulumi.StringOutput)
-}
-
-// An ISO 8601 timestamp indicating the client certificate version's creation.
-func (o GetMtlskeystoreClientCertificateCurrentOutput) CreatedDate() pulumi.StringOutput {
-	return o.ApplyT(func(v GetMtlskeystoreClientCertificateCurrent) string { return v.CreatedDate }).(pulumi.StringOutput)
-}
-
-// Details of the Certificate Signing Request (CSR) for the client certificate version.
-func (o GetMtlskeystoreClientCertificateCurrentOutput) CsrBlock() GetMtlskeystoreClientCertificateCurrentCsrBlockOutput {
-	return o.ApplyT(func(v GetMtlskeystoreClientCertificateCurrent) GetMtlskeystoreClientCertificateCurrentCsrBlock {
-		return v.CsrBlock
-	}).(GetMtlskeystoreClientCertificateCurrentCsrBlockOutput)
-}
-
-// An ISO 8601 timestamp indicating the client certificate version's deletion request.
-func (o GetMtlskeystoreClientCertificateCurrentOutput) DeleteRequestedDate() pulumi.StringOutput {
-	return o.ApplyT(func(v GetMtlskeystoreClientCertificateCurrent) string { return v.DeleteRequestedDate }).(pulumi.StringOutput)
-}
-
-// Specifies the key elliptic curve when the key algorithm `ECDSA` is used.
-func (o GetMtlskeystoreClientCertificateCurrentOutput) EllipticCurve() pulumi.StringOutput {
-	return o.ApplyT(func(v GetMtlskeystoreClientCertificateCurrent) string { return v.EllipticCurve }).(pulumi.StringOutput)
-}
-
-// An ISO 8601 timestamp indicating when the client certificate version expires.
-func (o GetMtlskeystoreClientCertificateCurrentOutput) ExpiryDate() pulumi.StringOutput {
-	return o.ApplyT(func(v GetMtlskeystoreClientCertificateCurrent) string { return v.ExpiryDate }).(pulumi.StringOutput)
-}
-
-// An ISO 8601 timestamp indicating the client certificate version's availability.
-func (o GetMtlskeystoreClientCertificateCurrentOutput) IssuedDate() pulumi.StringOutput {
-	return o.ApplyT(func(v GetMtlskeystoreClientCertificateCurrent) string { return v.IssuedDate }).(pulumi.StringOutput)
-}
-
-// The signing entity of the client certificate version.
-func (o GetMtlskeystoreClientCertificateCurrentOutput) Issuer() pulumi.StringOutput {
-	return o.ApplyT(func(v GetMtlskeystoreClientCertificateCurrent) string { return v.Issuer }).(pulumi.StringOutput)
-}
-
-// Identifies the client certificate version's encryption algorithm. Supported values are `RSA` and `ECDSA`.
-func (o GetMtlskeystoreClientCertificateCurrentOutput) KeyAlgorithm() pulumi.StringOutput {
-	return o.ApplyT(func(v GetMtlskeystoreClientCertificateCurrent) string { return v.KeyAlgorithm }).(pulumi.StringOutput)
-}
-
-// The private key length of the client certificate version when the key algorithm `RSA` is used.
-func (o GetMtlskeystoreClientCertificateCurrentOutput) KeySizeInBytes() pulumi.StringOutput {
-	return o.ApplyT(func(v GetMtlskeystoreClientCertificateCurrent) string { return v.KeySizeInBytes }).(pulumi.StringOutput)
-}
-
-// A list of properties associated with the client certificate.
-func (o GetMtlskeystoreClientCertificateCurrentOutput) Properties() GetMtlskeystoreClientCertificateCurrentPropertyArrayOutput {
-	return o.ApplyT(func(v GetMtlskeystoreClientCertificateCurrent) []GetMtlskeystoreClientCertificateCurrentProperty {
-		return v.Properties
-	}).(GetMtlskeystoreClientCertificateCurrentPropertyArrayOutput)
-}
-
-// An ISO 8601 timestamp indicating the client certificate version's scheduled deletion.
-func (o GetMtlskeystoreClientCertificateCurrentOutput) ScheduledDeleteDate() pulumi.StringOutput {
-	return o.ApplyT(func(v GetMtlskeystoreClientCertificateCurrent) string { return v.ScheduledDeleteDate }).(pulumi.StringOutput)
-}
-
-// Specifies the algorithm that secures the data exchange between the edge server and origin.
-func (o GetMtlskeystoreClientCertificateCurrentOutput) SignatureAlgorithm() pulumi.StringOutput {
-	return o.ApplyT(func(v GetMtlskeystoreClientCertificateCurrent) string { return v.SignatureAlgorithm }).(pulumi.StringOutput)
-}
-
-// The client certificate version status. Possible values: `AWAITING_SIGNED_CERTIFICATE`, `DEPLOYMENT_PENDING`, `DEPLOYED`, or `DELETE_PENDING`.
-func (o GetMtlskeystoreClientCertificateCurrentOutput) Status() pulumi.StringOutput {
-	return o.ApplyT(func(v GetMtlskeystoreClientCertificateCurrent) string { return v.Status }).(pulumi.StringOutput)
-}
-
-// The public key's entity stored in the client certificate version's subject public key field.
-func (o GetMtlskeystoreClientCertificateCurrentOutput) Subject() pulumi.StringOutput {
-	return o.ApplyT(func(v GetMtlskeystoreClientCertificateCurrent) string { return v.Subject }).(pulumi.StringOutput)
-}
-
-// Validation results for the client certificate version.
-func (o GetMtlskeystoreClientCertificateCurrentOutput) Validation() GetMtlskeystoreClientCertificateCurrentValidationOutput {
-	return o.ApplyT(func(v GetMtlskeystoreClientCertificateCurrent) GetMtlskeystoreClientCertificateCurrentValidation {
-		return v.Validation
-	}).(GetMtlskeystoreClientCertificateCurrentValidationOutput)
-}
-
-// The unique identifier of the client certificate version.
-func (o GetMtlskeystoreClientCertificateCurrentOutput) Version() pulumi.IntOutput {
-	return o.ApplyT(func(v GetMtlskeystoreClientCertificateCurrent) int { return v.Version }).(pulumi.IntOutput)
-}
-
-// Unique identifier for the client certificate version. Use it to configure mutual authentication (mTLS) sessions between the origin and edge servers in Property Manager's Mutual TLS Origin Keystore behavior.
-func (o GetMtlskeystoreClientCertificateCurrentOutput) VersionGuid() pulumi.StringOutput {
-	return o.ApplyT(func(v GetMtlskeystoreClientCertificateCurrent) string { return v.VersionGuid }).(pulumi.StringOutput)
-}
-
-type GetMtlskeystoreClientCertificateCurrentCertificateBlock struct {
-	// A text representation of the client certificate in PEM format.
-	Certificate string `pulumi:"certificate"`
-	// Identifies the CA certificate's encryption algorithm. Possible values: `RSA` or `ECDSA`.
-	KeyAlgorithm string `pulumi:"keyAlgorithm"`
-	// A text representation of the trust chain in PEM format.
-	TrustChain string `pulumi:"trustChain"`
-}
-
-// GetMtlskeystoreClientCertificateCurrentCertificateBlockInput is an input type that accepts GetMtlskeystoreClientCertificateCurrentCertificateBlockArgs and GetMtlskeystoreClientCertificateCurrentCertificateBlockOutput values.
-// You can construct a concrete instance of `GetMtlskeystoreClientCertificateCurrentCertificateBlockInput` via:
-//
-//	GetMtlskeystoreClientCertificateCurrentCertificateBlockArgs{...}
-type GetMtlskeystoreClientCertificateCurrentCertificateBlockInput interface {
-	pulumi.Input
-
-	ToGetMtlskeystoreClientCertificateCurrentCertificateBlockOutput() GetMtlskeystoreClientCertificateCurrentCertificateBlockOutput
-	ToGetMtlskeystoreClientCertificateCurrentCertificateBlockOutputWithContext(context.Context) GetMtlskeystoreClientCertificateCurrentCertificateBlockOutput
-}
-
-type GetMtlskeystoreClientCertificateCurrentCertificateBlockArgs struct {
-	// A text representation of the client certificate in PEM format.
-	Certificate pulumi.StringInput `pulumi:"certificate"`
-	// Identifies the CA certificate's encryption algorithm. Possible values: `RSA` or `ECDSA`.
-	KeyAlgorithm pulumi.StringInput `pulumi:"keyAlgorithm"`
-	// A text representation of the trust chain in PEM format.
-	TrustChain pulumi.StringInput `pulumi:"trustChain"`
-}
-
-func (GetMtlskeystoreClientCertificateCurrentCertificateBlockArgs) ElementType() reflect.Type {
-	return reflect.TypeOf((*GetMtlskeystoreClientCertificateCurrentCertificateBlock)(nil)).Elem()
-}
-
-func (i GetMtlskeystoreClientCertificateCurrentCertificateBlockArgs) ToGetMtlskeystoreClientCertificateCurrentCertificateBlockOutput() GetMtlskeystoreClientCertificateCurrentCertificateBlockOutput {
-	return i.ToGetMtlskeystoreClientCertificateCurrentCertificateBlockOutputWithContext(context.Background())
-}
-
-func (i GetMtlskeystoreClientCertificateCurrentCertificateBlockArgs) ToGetMtlskeystoreClientCertificateCurrentCertificateBlockOutputWithContext(ctx context.Context) GetMtlskeystoreClientCertificateCurrentCertificateBlockOutput {
-	return pulumi.ToOutputWithContext(ctx, i).(GetMtlskeystoreClientCertificateCurrentCertificateBlockOutput)
-}
-
-type GetMtlskeystoreClientCertificateCurrentCertificateBlockOutput struct{ *pulumi.OutputState }
-
-func (GetMtlskeystoreClientCertificateCurrentCertificateBlockOutput) ElementType() reflect.Type {
-	return reflect.TypeOf((*GetMtlskeystoreClientCertificateCurrentCertificateBlock)(nil)).Elem()
-}
-
-func (o GetMtlskeystoreClientCertificateCurrentCertificateBlockOutput) ToGetMtlskeystoreClientCertificateCurrentCertificateBlockOutput() GetMtlskeystoreClientCertificateCurrentCertificateBlockOutput {
-	return o
-}
-
-func (o GetMtlskeystoreClientCertificateCurrentCertificateBlockOutput) ToGetMtlskeystoreClientCertificateCurrentCertificateBlockOutputWithContext(ctx context.Context) GetMtlskeystoreClientCertificateCurrentCertificateBlockOutput {
-	return o
-}
-
-// A text representation of the client certificate in PEM format.
-func (o GetMtlskeystoreClientCertificateCurrentCertificateBlockOutput) Certificate() pulumi.StringOutput {
-	return o.ApplyT(func(v GetMtlskeystoreClientCertificateCurrentCertificateBlock) string { return v.Certificate }).(pulumi.StringOutput)
-}
-
-// Identifies the CA certificate's encryption algorithm. Possible values: `RSA` or `ECDSA`.
-func (o GetMtlskeystoreClientCertificateCurrentCertificateBlockOutput) KeyAlgorithm() pulumi.StringOutput {
-	return o.ApplyT(func(v GetMtlskeystoreClientCertificateCurrentCertificateBlock) string { return v.KeyAlgorithm }).(pulumi.StringOutput)
-}
-
-// A text representation of the trust chain in PEM format.
-func (o GetMtlskeystoreClientCertificateCurrentCertificateBlockOutput) TrustChain() pulumi.StringOutput {
-	return o.ApplyT(func(v GetMtlskeystoreClientCertificateCurrentCertificateBlock) string { return v.TrustChain }).(pulumi.StringOutput)
-}
-
-type GetMtlskeystoreClientCertificateCurrentCsrBlock struct {
-	// Text of the certificate signing request.
-	Csr string `pulumi:"csr"`
-	// Identifies the CA certificate's encryption algorithm. Possible values: `RSA` or `ECDSA`.
-	KeyAlgorithm string `pulumi:"keyAlgorithm"`
-}
-
-// GetMtlskeystoreClientCertificateCurrentCsrBlockInput is an input type that accepts GetMtlskeystoreClientCertificateCurrentCsrBlockArgs and GetMtlskeystoreClientCertificateCurrentCsrBlockOutput values.
-// You can construct a concrete instance of `GetMtlskeystoreClientCertificateCurrentCsrBlockInput` via:
-//
-//	GetMtlskeystoreClientCertificateCurrentCsrBlockArgs{...}
-type GetMtlskeystoreClientCertificateCurrentCsrBlockInput interface {
-	pulumi.Input
-
-	ToGetMtlskeystoreClientCertificateCurrentCsrBlockOutput() GetMtlskeystoreClientCertificateCurrentCsrBlockOutput
-	ToGetMtlskeystoreClientCertificateCurrentCsrBlockOutputWithContext(context.Context) GetMtlskeystoreClientCertificateCurrentCsrBlockOutput
-}
-
-type GetMtlskeystoreClientCertificateCurrentCsrBlockArgs struct {
-	// Text of the certificate signing request.
-	Csr pulumi.StringInput `pulumi:"csr"`
-	// Identifies the CA certificate's encryption algorithm. Possible values: `RSA` or `ECDSA`.
-	KeyAlgorithm pulumi.StringInput `pulumi:"keyAlgorithm"`
-}
-
-func (GetMtlskeystoreClientCertificateCurrentCsrBlockArgs) ElementType() reflect.Type {
-	return reflect.TypeOf((*GetMtlskeystoreClientCertificateCurrentCsrBlock)(nil)).Elem()
-}
-
-func (i GetMtlskeystoreClientCertificateCurrentCsrBlockArgs) ToGetMtlskeystoreClientCertificateCurrentCsrBlockOutput() GetMtlskeystoreClientCertificateCurrentCsrBlockOutput {
-	return i.ToGetMtlskeystoreClientCertificateCurrentCsrBlockOutputWithContext(context.Background())
-}
-
-func (i GetMtlskeystoreClientCertificateCurrentCsrBlockArgs) ToGetMtlskeystoreClientCertificateCurrentCsrBlockOutputWithContext(ctx context.Context) GetMtlskeystoreClientCertificateCurrentCsrBlockOutput {
-	return pulumi.ToOutputWithContext(ctx, i).(GetMtlskeystoreClientCertificateCurrentCsrBlockOutput)
-}
-
-type GetMtlskeystoreClientCertificateCurrentCsrBlockOutput struct{ *pulumi.OutputState }
-
-func (GetMtlskeystoreClientCertificateCurrentCsrBlockOutput) ElementType() reflect.Type {
-	return reflect.TypeOf((*GetMtlskeystoreClientCertificateCurrentCsrBlock)(nil)).Elem()
-}
-
-func (o GetMtlskeystoreClientCertificateCurrentCsrBlockOutput) ToGetMtlskeystoreClientCertificateCurrentCsrBlockOutput() GetMtlskeystoreClientCertificateCurrentCsrBlockOutput {
-	return o
-}
-
-func (o GetMtlskeystoreClientCertificateCurrentCsrBlockOutput) ToGetMtlskeystoreClientCertificateCurrentCsrBlockOutputWithContext(ctx context.Context) GetMtlskeystoreClientCertificateCurrentCsrBlockOutput {
-	return o
-}
-
-// Text of the certificate signing request.
-func (o GetMtlskeystoreClientCertificateCurrentCsrBlockOutput) Csr() pulumi.StringOutput {
-	return o.ApplyT(func(v GetMtlskeystoreClientCertificateCurrentCsrBlock) string { return v.Csr }).(pulumi.StringOutput)
-}
-
-// Identifies the CA certificate's encryption algorithm. Possible values: `RSA` or `ECDSA`.
-func (o GetMtlskeystoreClientCertificateCurrentCsrBlockOutput) KeyAlgorithm() pulumi.StringOutput {
-	return o.ApplyT(func(v GetMtlskeystoreClientCertificateCurrentCsrBlock) string { return v.KeyAlgorithm }).(pulumi.StringOutput)
-}
-
-type GetMtlskeystoreClientCertificateCurrentProperty struct {
-	// The unique identifier of the asset.
-	AssetId int `pulumi:"assetId"`
-	// The unique identifier of the group.
-	GroupId int `pulumi:"groupId"`
-	// The name of the property.
-	PropertyName string `pulumi:"propertyName"`
-	// The version of the property.
-	PropertyVersion int `pulumi:"propertyVersion"`
-}
-
-// GetMtlskeystoreClientCertificateCurrentPropertyInput is an input type that accepts GetMtlskeystoreClientCertificateCurrentPropertyArgs and GetMtlskeystoreClientCertificateCurrentPropertyOutput values.
-// You can construct a concrete instance of `GetMtlskeystoreClientCertificateCurrentPropertyInput` via:
-//
-//	GetMtlskeystoreClientCertificateCurrentPropertyArgs{...}
-type GetMtlskeystoreClientCertificateCurrentPropertyInput interface {
-	pulumi.Input
-
-	ToGetMtlskeystoreClientCertificateCurrentPropertyOutput() GetMtlskeystoreClientCertificateCurrentPropertyOutput
-	ToGetMtlskeystoreClientCertificateCurrentPropertyOutputWithContext(context.Context) GetMtlskeystoreClientCertificateCurrentPropertyOutput
-}
-
-type GetMtlskeystoreClientCertificateCurrentPropertyArgs struct {
-	// The unique identifier of the asset.
-	AssetId pulumi.IntInput `pulumi:"assetId"`
-	// The unique identifier of the group.
-	GroupId pulumi.IntInput `pulumi:"groupId"`
-	// The name of the property.
-	PropertyName pulumi.StringInput `pulumi:"propertyName"`
-	// The version of the property.
-	PropertyVersion pulumi.IntInput `pulumi:"propertyVersion"`
-}
-
-func (GetMtlskeystoreClientCertificateCurrentPropertyArgs) ElementType() reflect.Type {
-	return reflect.TypeOf((*GetMtlskeystoreClientCertificateCurrentProperty)(nil)).Elem()
-}
-
-func (i GetMtlskeystoreClientCertificateCurrentPropertyArgs) ToGetMtlskeystoreClientCertificateCurrentPropertyOutput() GetMtlskeystoreClientCertificateCurrentPropertyOutput {
-	return i.ToGetMtlskeystoreClientCertificateCurrentPropertyOutputWithContext(context.Background())
-}
-
-func (i GetMtlskeystoreClientCertificateCurrentPropertyArgs) ToGetMtlskeystoreClientCertificateCurrentPropertyOutputWithContext(ctx context.Context) GetMtlskeystoreClientCertificateCurrentPropertyOutput {
-	return pulumi.ToOutputWithContext(ctx, i).(GetMtlskeystoreClientCertificateCurrentPropertyOutput)
-}
-
-// GetMtlskeystoreClientCertificateCurrentPropertyArrayInput is an input type that accepts GetMtlskeystoreClientCertificateCurrentPropertyArray and GetMtlskeystoreClientCertificateCurrentPropertyArrayOutput values.
-// You can construct a concrete instance of `GetMtlskeystoreClientCertificateCurrentPropertyArrayInput` via:
-//
-//	GetMtlskeystoreClientCertificateCurrentPropertyArray{ GetMtlskeystoreClientCertificateCurrentPropertyArgs{...} }
-type GetMtlskeystoreClientCertificateCurrentPropertyArrayInput interface {
-	pulumi.Input
-
-	ToGetMtlskeystoreClientCertificateCurrentPropertyArrayOutput() GetMtlskeystoreClientCertificateCurrentPropertyArrayOutput
-	ToGetMtlskeystoreClientCertificateCurrentPropertyArrayOutputWithContext(context.Context) GetMtlskeystoreClientCertificateCurrentPropertyArrayOutput
-}
-
-type GetMtlskeystoreClientCertificateCurrentPropertyArray []GetMtlskeystoreClientCertificateCurrentPropertyInput
-
-func (GetMtlskeystoreClientCertificateCurrentPropertyArray) ElementType() reflect.Type {
-	return reflect.TypeOf((*[]GetMtlskeystoreClientCertificateCurrentProperty)(nil)).Elem()
-}
-
-func (i GetMtlskeystoreClientCertificateCurrentPropertyArray) ToGetMtlskeystoreClientCertificateCurrentPropertyArrayOutput() GetMtlskeystoreClientCertificateCurrentPropertyArrayOutput {
-	return i.ToGetMtlskeystoreClientCertificateCurrentPropertyArrayOutputWithContext(context.Background())
-}
-
-func (i GetMtlskeystoreClientCertificateCurrentPropertyArray) ToGetMtlskeystoreClientCertificateCurrentPropertyArrayOutputWithContext(ctx context.Context) GetMtlskeystoreClientCertificateCurrentPropertyArrayOutput {
-	return pulumi.ToOutputWithContext(ctx, i).(GetMtlskeystoreClientCertificateCurrentPropertyArrayOutput)
-}
-
-type GetMtlskeystoreClientCertificateCurrentPropertyOutput struct{ *pulumi.OutputState }
-
-func (GetMtlskeystoreClientCertificateCurrentPropertyOutput) ElementType() reflect.Type {
-	return reflect.TypeOf((*GetMtlskeystoreClientCertificateCurrentProperty)(nil)).Elem()
-}
-
-func (o GetMtlskeystoreClientCertificateCurrentPropertyOutput) ToGetMtlskeystoreClientCertificateCurrentPropertyOutput() GetMtlskeystoreClientCertificateCurrentPropertyOutput {
-	return o
-}
-
-func (o GetMtlskeystoreClientCertificateCurrentPropertyOutput) ToGetMtlskeystoreClientCertificateCurrentPropertyOutputWithContext(ctx context.Context) GetMtlskeystoreClientCertificateCurrentPropertyOutput {
-	return o
-}
-
-// The unique identifier of the asset.
-func (o GetMtlskeystoreClientCertificateCurrentPropertyOutput) AssetId() pulumi.IntOutput {
-	return o.ApplyT(func(v GetMtlskeystoreClientCertificateCurrentProperty) int { return v.AssetId }).(pulumi.IntOutput)
-}
-
-// The unique identifier of the group.
-func (o GetMtlskeystoreClientCertificateCurrentPropertyOutput) GroupId() pulumi.IntOutput {
-	return o.ApplyT(func(v GetMtlskeystoreClientCertificateCurrentProperty) int { return v.GroupId }).(pulumi.IntOutput)
-}
-
-// The name of the property.
-func (o GetMtlskeystoreClientCertificateCurrentPropertyOutput) PropertyName() pulumi.StringOutput {
-	return o.ApplyT(func(v GetMtlskeystoreClientCertificateCurrentProperty) string { return v.PropertyName }).(pulumi.StringOutput)
-}
-
-// The version of the property.
-func (o GetMtlskeystoreClientCertificateCurrentPropertyOutput) PropertyVersion() pulumi.IntOutput {
-	return o.ApplyT(func(v GetMtlskeystoreClientCertificateCurrentProperty) int { return v.PropertyVersion }).(pulumi.IntOutput)
-}
-
-type GetMtlskeystoreClientCertificateCurrentPropertyArrayOutput struct{ *pulumi.OutputState }
-
-func (GetMtlskeystoreClientCertificateCurrentPropertyArrayOutput) ElementType() reflect.Type {
-	return reflect.TypeOf((*[]GetMtlskeystoreClientCertificateCurrentProperty)(nil)).Elem()
-}
-
-func (o GetMtlskeystoreClientCertificateCurrentPropertyArrayOutput) ToGetMtlskeystoreClientCertificateCurrentPropertyArrayOutput() GetMtlskeystoreClientCertificateCurrentPropertyArrayOutput {
-	return o
-}
-
-func (o GetMtlskeystoreClientCertificateCurrentPropertyArrayOutput) ToGetMtlskeystoreClientCertificateCurrentPropertyArrayOutputWithContext(ctx context.Context) GetMtlskeystoreClientCertificateCurrentPropertyArrayOutput {
-	return o
-}
-
-func (o GetMtlskeystoreClientCertificateCurrentPropertyArrayOutput) Index(i pulumi.IntInput) GetMtlskeystoreClientCertificateCurrentPropertyOutput {
-	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetMtlskeystoreClientCertificateCurrentProperty {
-		return vs[0].([]GetMtlskeystoreClientCertificateCurrentProperty)[vs[1].(int)]
-	}).(GetMtlskeystoreClientCertificateCurrentPropertyOutput)
-}
-
-type GetMtlskeystoreClientCertificateCurrentValidation struct {
-	// Validation errors that need to be resolved for the request to succeed.
-	Errors []GetMtlskeystoreClientCertificateCurrentValidationError `pulumi:"errors"`
-	// Validation warnings that can be resolved.
-	Warnings []GetMtlskeystoreClientCertificateCurrentValidationWarning `pulumi:"warnings"`
-}
-
-// GetMtlskeystoreClientCertificateCurrentValidationInput is an input type that accepts GetMtlskeystoreClientCertificateCurrentValidationArgs and GetMtlskeystoreClientCertificateCurrentValidationOutput values.
-// You can construct a concrete instance of `GetMtlskeystoreClientCertificateCurrentValidationInput` via:
-//
-//	GetMtlskeystoreClientCertificateCurrentValidationArgs{...}
-type GetMtlskeystoreClientCertificateCurrentValidationInput interface {
-	pulumi.Input
-
-	ToGetMtlskeystoreClientCertificateCurrentValidationOutput() GetMtlskeystoreClientCertificateCurrentValidationOutput
-	ToGetMtlskeystoreClientCertificateCurrentValidationOutputWithContext(context.Context) GetMtlskeystoreClientCertificateCurrentValidationOutput
-}
-
-type GetMtlskeystoreClientCertificateCurrentValidationArgs struct {
-	// Validation errors that need to be resolved for the request to succeed.
-	Errors GetMtlskeystoreClientCertificateCurrentValidationErrorArrayInput `pulumi:"errors"`
-	// Validation warnings that can be resolved.
-	Warnings GetMtlskeystoreClientCertificateCurrentValidationWarningArrayInput `pulumi:"warnings"`
-}
-
-func (GetMtlskeystoreClientCertificateCurrentValidationArgs) ElementType() reflect.Type {
-	return reflect.TypeOf((*GetMtlskeystoreClientCertificateCurrentValidation)(nil)).Elem()
-}
-
-func (i GetMtlskeystoreClientCertificateCurrentValidationArgs) ToGetMtlskeystoreClientCertificateCurrentValidationOutput() GetMtlskeystoreClientCertificateCurrentValidationOutput {
-	return i.ToGetMtlskeystoreClientCertificateCurrentValidationOutputWithContext(context.Background())
-}
-
-func (i GetMtlskeystoreClientCertificateCurrentValidationArgs) ToGetMtlskeystoreClientCertificateCurrentValidationOutputWithContext(ctx context.Context) GetMtlskeystoreClientCertificateCurrentValidationOutput {
-	return pulumi.ToOutputWithContext(ctx, i).(GetMtlskeystoreClientCertificateCurrentValidationOutput)
-}
-
-type GetMtlskeystoreClientCertificateCurrentValidationOutput struct{ *pulumi.OutputState }
-
-func (GetMtlskeystoreClientCertificateCurrentValidationOutput) ElementType() reflect.Type {
-	return reflect.TypeOf((*GetMtlskeystoreClientCertificateCurrentValidation)(nil)).Elem()
-}
-
-func (o GetMtlskeystoreClientCertificateCurrentValidationOutput) ToGetMtlskeystoreClientCertificateCurrentValidationOutput() GetMtlskeystoreClientCertificateCurrentValidationOutput {
-	return o
-}
-
-func (o GetMtlskeystoreClientCertificateCurrentValidationOutput) ToGetMtlskeystoreClientCertificateCurrentValidationOutputWithContext(ctx context.Context) GetMtlskeystoreClientCertificateCurrentValidationOutput {
-	return o
-}
-
-// Validation errors that need to be resolved for the request to succeed.
-func (o GetMtlskeystoreClientCertificateCurrentValidationOutput) Errors() GetMtlskeystoreClientCertificateCurrentValidationErrorArrayOutput {
-	return o.ApplyT(func(v GetMtlskeystoreClientCertificateCurrentValidation) []GetMtlskeystoreClientCertificateCurrentValidationError {
-		return v.Errors
-	}).(GetMtlskeystoreClientCertificateCurrentValidationErrorArrayOutput)
-}
-
-// Validation warnings that can be resolved.
-func (o GetMtlskeystoreClientCertificateCurrentValidationOutput) Warnings() GetMtlskeystoreClientCertificateCurrentValidationWarningArrayOutput {
-	return o.ApplyT(func(v GetMtlskeystoreClientCertificateCurrentValidation) []GetMtlskeystoreClientCertificateCurrentValidationWarning {
-		return v.Warnings
-	}).(GetMtlskeystoreClientCertificateCurrentValidationWarningArrayOutput)
-}
-
-type GetMtlskeystoreClientCertificateCurrentValidationError struct {
-	// Specifies the error details.
-	Message string `pulumi:"message"`
-	// Specifies the error root cause.
-	Reason string `pulumi:"reason"`
-	// Specifies the error category.
-	Type string `pulumi:"type"`
-}
-
-// GetMtlskeystoreClientCertificateCurrentValidationErrorInput is an input type that accepts GetMtlskeystoreClientCertificateCurrentValidationErrorArgs and GetMtlskeystoreClientCertificateCurrentValidationErrorOutput values.
-// You can construct a concrete instance of `GetMtlskeystoreClientCertificateCurrentValidationErrorInput` via:
-//
-//	GetMtlskeystoreClientCertificateCurrentValidationErrorArgs{...}
-type GetMtlskeystoreClientCertificateCurrentValidationErrorInput interface {
-	pulumi.Input
-
-	ToGetMtlskeystoreClientCertificateCurrentValidationErrorOutput() GetMtlskeystoreClientCertificateCurrentValidationErrorOutput
-	ToGetMtlskeystoreClientCertificateCurrentValidationErrorOutputWithContext(context.Context) GetMtlskeystoreClientCertificateCurrentValidationErrorOutput
-}
-
-type GetMtlskeystoreClientCertificateCurrentValidationErrorArgs struct {
-	// Specifies the error details.
-	Message pulumi.StringInput `pulumi:"message"`
-	// Specifies the error root cause.
-	Reason pulumi.StringInput `pulumi:"reason"`
-	// Specifies the error category.
-	Type pulumi.StringInput `pulumi:"type"`
-}
-
-func (GetMtlskeystoreClientCertificateCurrentValidationErrorArgs) ElementType() reflect.Type {
-	return reflect.TypeOf((*GetMtlskeystoreClientCertificateCurrentValidationError)(nil)).Elem()
-}
-
-func (i GetMtlskeystoreClientCertificateCurrentValidationErrorArgs) ToGetMtlskeystoreClientCertificateCurrentValidationErrorOutput() GetMtlskeystoreClientCertificateCurrentValidationErrorOutput {
-	return i.ToGetMtlskeystoreClientCertificateCurrentValidationErrorOutputWithContext(context.Background())
-}
-
-func (i GetMtlskeystoreClientCertificateCurrentValidationErrorArgs) ToGetMtlskeystoreClientCertificateCurrentValidationErrorOutputWithContext(ctx context.Context) GetMtlskeystoreClientCertificateCurrentValidationErrorOutput {
-	return pulumi.ToOutputWithContext(ctx, i).(GetMtlskeystoreClientCertificateCurrentValidationErrorOutput)
-}
-
-// GetMtlskeystoreClientCertificateCurrentValidationErrorArrayInput is an input type that accepts GetMtlskeystoreClientCertificateCurrentValidationErrorArray and GetMtlskeystoreClientCertificateCurrentValidationErrorArrayOutput values.
-// You can construct a concrete instance of `GetMtlskeystoreClientCertificateCurrentValidationErrorArrayInput` via:
-//
-//	GetMtlskeystoreClientCertificateCurrentValidationErrorArray{ GetMtlskeystoreClientCertificateCurrentValidationErrorArgs{...} }
-type GetMtlskeystoreClientCertificateCurrentValidationErrorArrayInput interface {
-	pulumi.Input
-
-	ToGetMtlskeystoreClientCertificateCurrentValidationErrorArrayOutput() GetMtlskeystoreClientCertificateCurrentValidationErrorArrayOutput
-	ToGetMtlskeystoreClientCertificateCurrentValidationErrorArrayOutputWithContext(context.Context) GetMtlskeystoreClientCertificateCurrentValidationErrorArrayOutput
-}
-
-type GetMtlskeystoreClientCertificateCurrentValidationErrorArray []GetMtlskeystoreClientCertificateCurrentValidationErrorInput
-
-func (GetMtlskeystoreClientCertificateCurrentValidationErrorArray) ElementType() reflect.Type {
-	return reflect.TypeOf((*[]GetMtlskeystoreClientCertificateCurrentValidationError)(nil)).Elem()
-}
-
-func (i GetMtlskeystoreClientCertificateCurrentValidationErrorArray) ToGetMtlskeystoreClientCertificateCurrentValidationErrorArrayOutput() GetMtlskeystoreClientCertificateCurrentValidationErrorArrayOutput {
-	return i.ToGetMtlskeystoreClientCertificateCurrentValidationErrorArrayOutputWithContext(context.Background())
-}
-
-func (i GetMtlskeystoreClientCertificateCurrentValidationErrorArray) ToGetMtlskeystoreClientCertificateCurrentValidationErrorArrayOutputWithContext(ctx context.Context) GetMtlskeystoreClientCertificateCurrentValidationErrorArrayOutput {
-	return pulumi.ToOutputWithContext(ctx, i).(GetMtlskeystoreClientCertificateCurrentValidationErrorArrayOutput)
-}
-
-type GetMtlskeystoreClientCertificateCurrentValidationErrorOutput struct{ *pulumi.OutputState }
-
-func (GetMtlskeystoreClientCertificateCurrentValidationErrorOutput) ElementType() reflect.Type {
-	return reflect.TypeOf((*GetMtlskeystoreClientCertificateCurrentValidationError)(nil)).Elem()
-}
-
-func (o GetMtlskeystoreClientCertificateCurrentValidationErrorOutput) ToGetMtlskeystoreClientCertificateCurrentValidationErrorOutput() GetMtlskeystoreClientCertificateCurrentValidationErrorOutput {
-	return o
-}
-
-func (o GetMtlskeystoreClientCertificateCurrentValidationErrorOutput) ToGetMtlskeystoreClientCertificateCurrentValidationErrorOutputWithContext(ctx context.Context) GetMtlskeystoreClientCertificateCurrentValidationErrorOutput {
-	return o
-}
-
-// Specifies the error details.
-func (o GetMtlskeystoreClientCertificateCurrentValidationErrorOutput) Message() pulumi.StringOutput {
-	return o.ApplyT(func(v GetMtlskeystoreClientCertificateCurrentValidationError) string { return v.Message }).(pulumi.StringOutput)
-}
-
-// Specifies the error root cause.
-func (o GetMtlskeystoreClientCertificateCurrentValidationErrorOutput) Reason() pulumi.StringOutput {
-	return o.ApplyT(func(v GetMtlskeystoreClientCertificateCurrentValidationError) string { return v.Reason }).(pulumi.StringOutput)
-}
-
-// Specifies the error category.
-func (o GetMtlskeystoreClientCertificateCurrentValidationErrorOutput) Type() pulumi.StringOutput {
-	return o.ApplyT(func(v GetMtlskeystoreClientCertificateCurrentValidationError) string { return v.Type }).(pulumi.StringOutput)
-}
-
-type GetMtlskeystoreClientCertificateCurrentValidationErrorArrayOutput struct{ *pulumi.OutputState }
-
-func (GetMtlskeystoreClientCertificateCurrentValidationErrorArrayOutput) ElementType() reflect.Type {
-	return reflect.TypeOf((*[]GetMtlskeystoreClientCertificateCurrentValidationError)(nil)).Elem()
-}
-
-func (o GetMtlskeystoreClientCertificateCurrentValidationErrorArrayOutput) ToGetMtlskeystoreClientCertificateCurrentValidationErrorArrayOutput() GetMtlskeystoreClientCertificateCurrentValidationErrorArrayOutput {
-	return o
-}
-
-func (o GetMtlskeystoreClientCertificateCurrentValidationErrorArrayOutput) ToGetMtlskeystoreClientCertificateCurrentValidationErrorArrayOutputWithContext(ctx context.Context) GetMtlskeystoreClientCertificateCurrentValidationErrorArrayOutput {
-	return o
-}
-
-func (o GetMtlskeystoreClientCertificateCurrentValidationErrorArrayOutput) Index(i pulumi.IntInput) GetMtlskeystoreClientCertificateCurrentValidationErrorOutput {
-	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetMtlskeystoreClientCertificateCurrentValidationError {
-		return vs[0].([]GetMtlskeystoreClientCertificateCurrentValidationError)[vs[1].(int)]
-	}).(GetMtlskeystoreClientCertificateCurrentValidationErrorOutput)
-}
-
-type GetMtlskeystoreClientCertificateCurrentValidationWarning struct {
-	// Specifies the warning details.
-	Message string `pulumi:"message"`
-	// Specifies the warning root cause.
-	Reason string `pulumi:"reason"`
-	// Specifies the warning category.
-	Type string `pulumi:"type"`
-}
-
-// GetMtlskeystoreClientCertificateCurrentValidationWarningInput is an input type that accepts GetMtlskeystoreClientCertificateCurrentValidationWarningArgs and GetMtlskeystoreClientCertificateCurrentValidationWarningOutput values.
-// You can construct a concrete instance of `GetMtlskeystoreClientCertificateCurrentValidationWarningInput` via:
-//
-//	GetMtlskeystoreClientCertificateCurrentValidationWarningArgs{...}
-type GetMtlskeystoreClientCertificateCurrentValidationWarningInput interface {
-	pulumi.Input
-
-	ToGetMtlskeystoreClientCertificateCurrentValidationWarningOutput() GetMtlskeystoreClientCertificateCurrentValidationWarningOutput
-	ToGetMtlskeystoreClientCertificateCurrentValidationWarningOutputWithContext(context.Context) GetMtlskeystoreClientCertificateCurrentValidationWarningOutput
-}
-
-type GetMtlskeystoreClientCertificateCurrentValidationWarningArgs struct {
-	// Specifies the warning details.
-	Message pulumi.StringInput `pulumi:"message"`
-	// Specifies the warning root cause.
-	Reason pulumi.StringInput `pulumi:"reason"`
-	// Specifies the warning category.
-	Type pulumi.StringInput `pulumi:"type"`
-}
-
-func (GetMtlskeystoreClientCertificateCurrentValidationWarningArgs) ElementType() reflect.Type {
-	return reflect.TypeOf((*GetMtlskeystoreClientCertificateCurrentValidationWarning)(nil)).Elem()
-}
-
-func (i GetMtlskeystoreClientCertificateCurrentValidationWarningArgs) ToGetMtlskeystoreClientCertificateCurrentValidationWarningOutput() GetMtlskeystoreClientCertificateCurrentValidationWarningOutput {
-	return i.ToGetMtlskeystoreClientCertificateCurrentValidationWarningOutputWithContext(context.Background())
-}
-
-func (i GetMtlskeystoreClientCertificateCurrentValidationWarningArgs) ToGetMtlskeystoreClientCertificateCurrentValidationWarningOutputWithContext(ctx context.Context) GetMtlskeystoreClientCertificateCurrentValidationWarningOutput {
-	return pulumi.ToOutputWithContext(ctx, i).(GetMtlskeystoreClientCertificateCurrentValidationWarningOutput)
-}
-
-// GetMtlskeystoreClientCertificateCurrentValidationWarningArrayInput is an input type that accepts GetMtlskeystoreClientCertificateCurrentValidationWarningArray and GetMtlskeystoreClientCertificateCurrentValidationWarningArrayOutput values.
-// You can construct a concrete instance of `GetMtlskeystoreClientCertificateCurrentValidationWarningArrayInput` via:
-//
-//	GetMtlskeystoreClientCertificateCurrentValidationWarningArray{ GetMtlskeystoreClientCertificateCurrentValidationWarningArgs{...} }
-type GetMtlskeystoreClientCertificateCurrentValidationWarningArrayInput interface {
-	pulumi.Input
-
-	ToGetMtlskeystoreClientCertificateCurrentValidationWarningArrayOutput() GetMtlskeystoreClientCertificateCurrentValidationWarningArrayOutput
-	ToGetMtlskeystoreClientCertificateCurrentValidationWarningArrayOutputWithContext(context.Context) GetMtlskeystoreClientCertificateCurrentValidationWarningArrayOutput
-}
-
-type GetMtlskeystoreClientCertificateCurrentValidationWarningArray []GetMtlskeystoreClientCertificateCurrentValidationWarningInput
-
-func (GetMtlskeystoreClientCertificateCurrentValidationWarningArray) ElementType() reflect.Type {
-	return reflect.TypeOf((*[]GetMtlskeystoreClientCertificateCurrentValidationWarning)(nil)).Elem()
-}
-
-func (i GetMtlskeystoreClientCertificateCurrentValidationWarningArray) ToGetMtlskeystoreClientCertificateCurrentValidationWarningArrayOutput() GetMtlskeystoreClientCertificateCurrentValidationWarningArrayOutput {
-	return i.ToGetMtlskeystoreClientCertificateCurrentValidationWarningArrayOutputWithContext(context.Background())
-}
-
-func (i GetMtlskeystoreClientCertificateCurrentValidationWarningArray) ToGetMtlskeystoreClientCertificateCurrentValidationWarningArrayOutputWithContext(ctx context.Context) GetMtlskeystoreClientCertificateCurrentValidationWarningArrayOutput {
-	return pulumi.ToOutputWithContext(ctx, i).(GetMtlskeystoreClientCertificateCurrentValidationWarningArrayOutput)
-}
-
-type GetMtlskeystoreClientCertificateCurrentValidationWarningOutput struct{ *pulumi.OutputState }
-
-func (GetMtlskeystoreClientCertificateCurrentValidationWarningOutput) ElementType() reflect.Type {
-	return reflect.TypeOf((*GetMtlskeystoreClientCertificateCurrentValidationWarning)(nil)).Elem()
-}
-
-func (o GetMtlskeystoreClientCertificateCurrentValidationWarningOutput) ToGetMtlskeystoreClientCertificateCurrentValidationWarningOutput() GetMtlskeystoreClientCertificateCurrentValidationWarningOutput {
-	return o
-}
-
-func (o GetMtlskeystoreClientCertificateCurrentValidationWarningOutput) ToGetMtlskeystoreClientCertificateCurrentValidationWarningOutputWithContext(ctx context.Context) GetMtlskeystoreClientCertificateCurrentValidationWarningOutput {
-	return o
-}
-
-// Specifies the warning details.
-func (o GetMtlskeystoreClientCertificateCurrentValidationWarningOutput) Message() pulumi.StringOutput {
-	return o.ApplyT(func(v GetMtlskeystoreClientCertificateCurrentValidationWarning) string { return v.Message }).(pulumi.StringOutput)
-}
-
-// Specifies the warning root cause.
-func (o GetMtlskeystoreClientCertificateCurrentValidationWarningOutput) Reason() pulumi.StringOutput {
-	return o.ApplyT(func(v GetMtlskeystoreClientCertificateCurrentValidationWarning) string { return v.Reason }).(pulumi.StringOutput)
-}
-
-// Specifies the warning category.
-func (o GetMtlskeystoreClientCertificateCurrentValidationWarningOutput) Type() pulumi.StringOutput {
-	return o.ApplyT(func(v GetMtlskeystoreClientCertificateCurrentValidationWarning) string { return v.Type }).(pulumi.StringOutput)
-}
-
-type GetMtlskeystoreClientCertificateCurrentValidationWarningArrayOutput struct{ *pulumi.OutputState }
-
-func (GetMtlskeystoreClientCertificateCurrentValidationWarningArrayOutput) ElementType() reflect.Type {
-	return reflect.TypeOf((*[]GetMtlskeystoreClientCertificateCurrentValidationWarning)(nil)).Elem()
-}
-
-func (o GetMtlskeystoreClientCertificateCurrentValidationWarningArrayOutput) ToGetMtlskeystoreClientCertificateCurrentValidationWarningArrayOutput() GetMtlskeystoreClientCertificateCurrentValidationWarningArrayOutput {
-	return o
-}
-
-func (o GetMtlskeystoreClientCertificateCurrentValidationWarningArrayOutput) ToGetMtlskeystoreClientCertificateCurrentValidationWarningArrayOutputWithContext(ctx context.Context) GetMtlskeystoreClientCertificateCurrentValidationWarningArrayOutput {
-	return o
-}
-
-func (o GetMtlskeystoreClientCertificateCurrentValidationWarningArrayOutput) Index(i pulumi.IntInput) GetMtlskeystoreClientCertificateCurrentValidationWarningOutput {
-	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetMtlskeystoreClientCertificateCurrentValidationWarning {
-		return vs[0].([]GetMtlskeystoreClientCertificateCurrentValidationWarning)[vs[1].(int)]
-	}).(GetMtlskeystoreClientCertificateCurrentValidationWarningOutput)
-}
-
-type GetMtlskeystoreClientCertificatePrevious struct {
-	// Details of the certificate block for the client certificate version.
-	CertificateBlock GetMtlskeystoreClientCertificatePreviousCertificateBlock `pulumi:"certificateBlock"`
-	// The user who uploaded the `THIRD_PARTY` client certificate version.
-	CertificateSubmittedBy string `pulumi:"certificateSubmittedBy"`
-	// An ISO 8601 timestamp indicating when the `THIRD_PARTY` signer client certificate version was uploaded.
-	CertificateSubmittedDate string `pulumi:"certificateSubmittedDate"`
-	// The user who created the client certificate version.
-	CreatedBy string `pulumi:"createdBy"`
-	// An ISO 8601 timestamp indicating the client certificate version's creation.
-	CreatedDate string `pulumi:"createdDate"`
-	// Details of the Certificate Signing Request (CSR) for the client certificate version.
-	CsrBlock GetMtlskeystoreClientCertificatePreviousCsrBlock `pulumi:"csrBlock"`
-	// An ISO 8601 timestamp indicating the client certificate version's deletion request.
-	DeleteRequestedDate string `pulumi:"deleteRequestedDate"`
-	// Specifies the key elliptic curve when the key algorithm `ECDSA` is used.
-	EllipticCurve string `pulumi:"ellipticCurve"`
-	// An ISO 8601 timestamp indicating when the client certificate version expires.
-	ExpiryDate string `pulumi:"expiryDate"`
-	// An ISO 8601 timestamp indicating the client certificate version's availability.
-	IssuedDate string `pulumi:"issuedDate"`
-	// The signing entity of the client certificate version.
-	Issuer string `pulumi:"issuer"`
-	// Identifies the client certificate version's encryption algorithm. Supported values are `RSA` and `ECDSA`.
-	KeyAlgorithm string `pulumi:"keyAlgorithm"`
-	// The private key length of the client certificate version when the key algorithm `RSA` is used.
-	KeySizeInBytes string `pulumi:"keySizeInBytes"`
-	// A list of properties associated with the client certificate.
-	Properties []GetMtlskeystoreClientCertificatePreviousProperty `pulumi:"properties"`
-	// An ISO 8601 timestamp indicating the client certificate version's scheduled deletion.
-	ScheduledDeleteDate string `pulumi:"scheduledDeleteDate"`
-	// Specifies the algorithm that secures the data exchange between the edge server and origin.
-	SignatureAlgorithm string `pulumi:"signatureAlgorithm"`
-	// The client certificate version status. Possible values: `AWAITING_SIGNED_CERTIFICATE`, `DEPLOYMENT_PENDING`, `DEPLOYED`, or `DELETE_PENDING`.
-	Status string `pulumi:"status"`
-	// The public key's entity stored in the client certificate version's subject public key field.
-	Subject string `pulumi:"subject"`
-	// Validation results for the client certificate version.
-	Validation GetMtlskeystoreClientCertificatePreviousValidation `pulumi:"validation"`
-	// The unique identifier of the client certificate version.
-	Version int `pulumi:"version"`
-	// Unique identifier for the client certificate version. Use it to configure mutual authentication (mTLS) sessions between the origin and edge servers in Property Manager's Mutual TLS Origin Keystore behavior.
-	VersionGuid string `pulumi:"versionGuid"`
-}
-
-// GetMtlskeystoreClientCertificatePreviousInput is an input type that accepts GetMtlskeystoreClientCertificatePreviousArgs and GetMtlskeystoreClientCertificatePreviousOutput values.
-// You can construct a concrete instance of `GetMtlskeystoreClientCertificatePreviousInput` via:
-//
-//	GetMtlskeystoreClientCertificatePreviousArgs{...}
-type GetMtlskeystoreClientCertificatePreviousInput interface {
-	pulumi.Input
-
-	ToGetMtlskeystoreClientCertificatePreviousOutput() GetMtlskeystoreClientCertificatePreviousOutput
-	ToGetMtlskeystoreClientCertificatePreviousOutputWithContext(context.Context) GetMtlskeystoreClientCertificatePreviousOutput
-}
-
-type GetMtlskeystoreClientCertificatePreviousArgs struct {
-	// Details of the certificate block for the client certificate version.
-	CertificateBlock GetMtlskeystoreClientCertificatePreviousCertificateBlockInput `pulumi:"certificateBlock"`
-	// The user who uploaded the `THIRD_PARTY` client certificate version.
-	CertificateSubmittedBy pulumi.StringInput `pulumi:"certificateSubmittedBy"`
-	// An ISO 8601 timestamp indicating when the `THIRD_PARTY` signer client certificate version was uploaded.
-	CertificateSubmittedDate pulumi.StringInput `pulumi:"certificateSubmittedDate"`
-	// The user who created the client certificate version.
-	CreatedBy pulumi.StringInput `pulumi:"createdBy"`
-	// An ISO 8601 timestamp indicating the client certificate version's creation.
-	CreatedDate pulumi.StringInput `pulumi:"createdDate"`
-	// Details of the Certificate Signing Request (CSR) for the client certificate version.
-	CsrBlock GetMtlskeystoreClientCertificatePreviousCsrBlockInput `pulumi:"csrBlock"`
-	// An ISO 8601 timestamp indicating the client certificate version's deletion request.
-	DeleteRequestedDate pulumi.StringInput `pulumi:"deleteRequestedDate"`
-	// Specifies the key elliptic curve when the key algorithm `ECDSA` is used.
-	EllipticCurve pulumi.StringInput `pulumi:"ellipticCurve"`
-	// An ISO 8601 timestamp indicating when the client certificate version expires.
-	ExpiryDate pulumi.StringInput `pulumi:"expiryDate"`
-	// An ISO 8601 timestamp indicating the client certificate version's availability.
-	IssuedDate pulumi.StringInput `pulumi:"issuedDate"`
-	// The signing entity of the client certificate version.
-	Issuer pulumi.StringInput `pulumi:"issuer"`
-	// Identifies the client certificate version's encryption algorithm. Supported values are `RSA` and `ECDSA`.
-	KeyAlgorithm pulumi.StringInput `pulumi:"keyAlgorithm"`
-	// The private key length of the client certificate version when the key algorithm `RSA` is used.
-	KeySizeInBytes pulumi.StringInput `pulumi:"keySizeInBytes"`
-	// A list of properties associated with the client certificate.
-	Properties GetMtlskeystoreClientCertificatePreviousPropertyArrayInput `pulumi:"properties"`
-	// An ISO 8601 timestamp indicating the client certificate version's scheduled deletion.
-	ScheduledDeleteDate pulumi.StringInput `pulumi:"scheduledDeleteDate"`
-	// Specifies the algorithm that secures the data exchange between the edge server and origin.
-	SignatureAlgorithm pulumi.StringInput `pulumi:"signatureAlgorithm"`
-	// The client certificate version status. Possible values: `AWAITING_SIGNED_CERTIFICATE`, `DEPLOYMENT_PENDING`, `DEPLOYED`, or `DELETE_PENDING`.
-	Status pulumi.StringInput `pulumi:"status"`
-	// The public key's entity stored in the client certificate version's subject public key field.
-	Subject pulumi.StringInput `pulumi:"subject"`
-	// Validation results for the client certificate version.
-	Validation GetMtlskeystoreClientCertificatePreviousValidationInput `pulumi:"validation"`
-	// The unique identifier of the client certificate version.
-	Version pulumi.IntInput `pulumi:"version"`
-	// Unique identifier for the client certificate version. Use it to configure mutual authentication (mTLS) sessions between the origin and edge servers in Property Manager's Mutual TLS Origin Keystore behavior.
-	VersionGuid pulumi.StringInput `pulumi:"versionGuid"`
-}
-
-func (GetMtlskeystoreClientCertificatePreviousArgs) ElementType() reflect.Type {
-	return reflect.TypeOf((*GetMtlskeystoreClientCertificatePrevious)(nil)).Elem()
-}
-
-func (i GetMtlskeystoreClientCertificatePreviousArgs) ToGetMtlskeystoreClientCertificatePreviousOutput() GetMtlskeystoreClientCertificatePreviousOutput {
-	return i.ToGetMtlskeystoreClientCertificatePreviousOutputWithContext(context.Background())
-}
-
-func (i GetMtlskeystoreClientCertificatePreviousArgs) ToGetMtlskeystoreClientCertificatePreviousOutputWithContext(ctx context.Context) GetMtlskeystoreClientCertificatePreviousOutput {
-	return pulumi.ToOutputWithContext(ctx, i).(GetMtlskeystoreClientCertificatePreviousOutput)
-}
-
-type GetMtlskeystoreClientCertificatePreviousOutput struct{ *pulumi.OutputState }
-
-func (GetMtlskeystoreClientCertificatePreviousOutput) ElementType() reflect.Type {
-	return reflect.TypeOf((*GetMtlskeystoreClientCertificatePrevious)(nil)).Elem()
-}
-
-func (o GetMtlskeystoreClientCertificatePreviousOutput) ToGetMtlskeystoreClientCertificatePreviousOutput() GetMtlskeystoreClientCertificatePreviousOutput {
-	return o
-}
-
-func (o GetMtlskeystoreClientCertificatePreviousOutput) ToGetMtlskeystoreClientCertificatePreviousOutputWithContext(ctx context.Context) GetMtlskeystoreClientCertificatePreviousOutput {
-	return o
-}
-
-// Details of the certificate block for the client certificate version.
-func (o GetMtlskeystoreClientCertificatePreviousOutput) CertificateBlock() GetMtlskeystoreClientCertificatePreviousCertificateBlockOutput {
-	return o.ApplyT(func(v GetMtlskeystoreClientCertificatePrevious) GetMtlskeystoreClientCertificatePreviousCertificateBlock {
-		return v.CertificateBlock
-	}).(GetMtlskeystoreClientCertificatePreviousCertificateBlockOutput)
-}
-
-// The user who uploaded the `THIRD_PARTY` client certificate version.
-func (o GetMtlskeystoreClientCertificatePreviousOutput) CertificateSubmittedBy() pulumi.StringOutput {
-	return o.ApplyT(func(v GetMtlskeystoreClientCertificatePrevious) string { return v.CertificateSubmittedBy }).(pulumi.StringOutput)
-}
-
-// An ISO 8601 timestamp indicating when the `THIRD_PARTY` signer client certificate version was uploaded.
-func (o GetMtlskeystoreClientCertificatePreviousOutput) CertificateSubmittedDate() pulumi.StringOutput {
-	return o.ApplyT(func(v GetMtlskeystoreClientCertificatePrevious) string { return v.CertificateSubmittedDate }).(pulumi.StringOutput)
-}
-
-// The user who created the client certificate version.
-func (o GetMtlskeystoreClientCertificatePreviousOutput) CreatedBy() pulumi.StringOutput {
-	return o.ApplyT(func(v GetMtlskeystoreClientCertificatePrevious) string { return v.CreatedBy }).(pulumi.StringOutput)
-}
-
-// An ISO 8601 timestamp indicating the client certificate version's creation.
-func (o GetMtlskeystoreClientCertificatePreviousOutput) CreatedDate() pulumi.StringOutput {
-	return o.ApplyT(func(v GetMtlskeystoreClientCertificatePrevious) string { return v.CreatedDate }).(pulumi.StringOutput)
-}
-
-// Details of the Certificate Signing Request (CSR) for the client certificate version.
-func (o GetMtlskeystoreClientCertificatePreviousOutput) CsrBlock() GetMtlskeystoreClientCertificatePreviousCsrBlockOutput {
-	return o.ApplyT(func(v GetMtlskeystoreClientCertificatePrevious) GetMtlskeystoreClientCertificatePreviousCsrBlock {
-		return v.CsrBlock
-	}).(GetMtlskeystoreClientCertificatePreviousCsrBlockOutput)
-}
-
-// An ISO 8601 timestamp indicating the client certificate version's deletion request.
-func (o GetMtlskeystoreClientCertificatePreviousOutput) DeleteRequestedDate() pulumi.StringOutput {
-	return o.ApplyT(func(v GetMtlskeystoreClientCertificatePrevious) string { return v.DeleteRequestedDate }).(pulumi.StringOutput)
-}
-
-// Specifies the key elliptic curve when the key algorithm `ECDSA` is used.
-func (o GetMtlskeystoreClientCertificatePreviousOutput) EllipticCurve() pulumi.StringOutput {
-	return o.ApplyT(func(v GetMtlskeystoreClientCertificatePrevious) string { return v.EllipticCurve }).(pulumi.StringOutput)
-}
-
-// An ISO 8601 timestamp indicating when the client certificate version expires.
-func (o GetMtlskeystoreClientCertificatePreviousOutput) ExpiryDate() pulumi.StringOutput {
-	return o.ApplyT(func(v GetMtlskeystoreClientCertificatePrevious) string { return v.ExpiryDate }).(pulumi.StringOutput)
-}
-
-// An ISO 8601 timestamp indicating the client certificate version's availability.
-func (o GetMtlskeystoreClientCertificatePreviousOutput) IssuedDate() pulumi.StringOutput {
-	return o.ApplyT(func(v GetMtlskeystoreClientCertificatePrevious) string { return v.IssuedDate }).(pulumi.StringOutput)
-}
-
-// The signing entity of the client certificate version.
-func (o GetMtlskeystoreClientCertificatePreviousOutput) Issuer() pulumi.StringOutput {
-	return o.ApplyT(func(v GetMtlskeystoreClientCertificatePrevious) string { return v.Issuer }).(pulumi.StringOutput)
-}
-
-// Identifies the client certificate version's encryption algorithm. Supported values are `RSA` and `ECDSA`.
-func (o GetMtlskeystoreClientCertificatePreviousOutput) KeyAlgorithm() pulumi.StringOutput {
-	return o.ApplyT(func(v GetMtlskeystoreClientCertificatePrevious) string { return v.KeyAlgorithm }).(pulumi.StringOutput)
-}
-
-// The private key length of the client certificate version when the key algorithm `RSA` is used.
-func (o GetMtlskeystoreClientCertificatePreviousOutput) KeySizeInBytes() pulumi.StringOutput {
-	return o.ApplyT(func(v GetMtlskeystoreClientCertificatePrevious) string { return v.KeySizeInBytes }).(pulumi.StringOutput)
-}
-
-// A list of properties associated with the client certificate.
-func (o GetMtlskeystoreClientCertificatePreviousOutput) Properties() GetMtlskeystoreClientCertificatePreviousPropertyArrayOutput {
-	return o.ApplyT(func(v GetMtlskeystoreClientCertificatePrevious) []GetMtlskeystoreClientCertificatePreviousProperty {
-		return v.Properties
-	}).(GetMtlskeystoreClientCertificatePreviousPropertyArrayOutput)
-}
-
-// An ISO 8601 timestamp indicating the client certificate version's scheduled deletion.
-func (o GetMtlskeystoreClientCertificatePreviousOutput) ScheduledDeleteDate() pulumi.StringOutput {
-	return o.ApplyT(func(v GetMtlskeystoreClientCertificatePrevious) string { return v.ScheduledDeleteDate }).(pulumi.StringOutput)
-}
-
-// Specifies the algorithm that secures the data exchange between the edge server and origin.
-func (o GetMtlskeystoreClientCertificatePreviousOutput) SignatureAlgorithm() pulumi.StringOutput {
-	return o.ApplyT(func(v GetMtlskeystoreClientCertificatePrevious) string { return v.SignatureAlgorithm }).(pulumi.StringOutput)
-}
-
-// The client certificate version status. Possible values: `AWAITING_SIGNED_CERTIFICATE`, `DEPLOYMENT_PENDING`, `DEPLOYED`, or `DELETE_PENDING`.
-func (o GetMtlskeystoreClientCertificatePreviousOutput) Status() pulumi.StringOutput {
-	return o.ApplyT(func(v GetMtlskeystoreClientCertificatePrevious) string { return v.Status }).(pulumi.StringOutput)
-}
-
-// The public key's entity stored in the client certificate version's subject public key field.
-func (o GetMtlskeystoreClientCertificatePreviousOutput) Subject() pulumi.StringOutput {
-	return o.ApplyT(func(v GetMtlskeystoreClientCertificatePrevious) string { return v.Subject }).(pulumi.StringOutput)
-}
-
-// Validation results for the client certificate version.
-func (o GetMtlskeystoreClientCertificatePreviousOutput) Validation() GetMtlskeystoreClientCertificatePreviousValidationOutput {
-	return o.ApplyT(func(v GetMtlskeystoreClientCertificatePrevious) GetMtlskeystoreClientCertificatePreviousValidation {
-		return v.Validation
-	}).(GetMtlskeystoreClientCertificatePreviousValidationOutput)
-}
-
-// The unique identifier of the client certificate version.
-func (o GetMtlskeystoreClientCertificatePreviousOutput) Version() pulumi.IntOutput {
-	return o.ApplyT(func(v GetMtlskeystoreClientCertificatePrevious) int { return v.Version }).(pulumi.IntOutput)
-}
-
-// Unique identifier for the client certificate version. Use it to configure mutual authentication (mTLS) sessions between the origin and edge servers in Property Manager's Mutual TLS Origin Keystore behavior.
-func (o GetMtlskeystoreClientCertificatePreviousOutput) VersionGuid() pulumi.StringOutput {
-	return o.ApplyT(func(v GetMtlskeystoreClientCertificatePrevious) string { return v.VersionGuid }).(pulumi.StringOutput)
-}
-
-type GetMtlskeystoreClientCertificatePreviousCertificateBlock struct {
-	// A text representation of the client certificate in PEM format.
-	Certificate string `pulumi:"certificate"`
-	// Identifies the CA certificate's encryption algorithm. Possible values: `RSA` or `ECDSA`.
-	KeyAlgorithm string `pulumi:"keyAlgorithm"`
-	// A text representation of the trust chain in PEM format.
-	TrustChain string `pulumi:"trustChain"`
-}
-
-// GetMtlskeystoreClientCertificatePreviousCertificateBlockInput is an input type that accepts GetMtlskeystoreClientCertificatePreviousCertificateBlockArgs and GetMtlskeystoreClientCertificatePreviousCertificateBlockOutput values.
-// You can construct a concrete instance of `GetMtlskeystoreClientCertificatePreviousCertificateBlockInput` via:
-//
-//	GetMtlskeystoreClientCertificatePreviousCertificateBlockArgs{...}
-type GetMtlskeystoreClientCertificatePreviousCertificateBlockInput interface {
-	pulumi.Input
-
-	ToGetMtlskeystoreClientCertificatePreviousCertificateBlockOutput() GetMtlskeystoreClientCertificatePreviousCertificateBlockOutput
-	ToGetMtlskeystoreClientCertificatePreviousCertificateBlockOutputWithContext(context.Context) GetMtlskeystoreClientCertificatePreviousCertificateBlockOutput
-}
-
-type GetMtlskeystoreClientCertificatePreviousCertificateBlockArgs struct {
-	// A text representation of the client certificate in PEM format.
-	Certificate pulumi.StringInput `pulumi:"certificate"`
-	// Identifies the CA certificate's encryption algorithm. Possible values: `RSA` or `ECDSA`.
-	KeyAlgorithm pulumi.StringInput `pulumi:"keyAlgorithm"`
-	// A text representation of the trust chain in PEM format.
-	TrustChain pulumi.StringInput `pulumi:"trustChain"`
-}
-
-func (GetMtlskeystoreClientCertificatePreviousCertificateBlockArgs) ElementType() reflect.Type {
-	return reflect.TypeOf((*GetMtlskeystoreClientCertificatePreviousCertificateBlock)(nil)).Elem()
-}
-
-func (i GetMtlskeystoreClientCertificatePreviousCertificateBlockArgs) ToGetMtlskeystoreClientCertificatePreviousCertificateBlockOutput() GetMtlskeystoreClientCertificatePreviousCertificateBlockOutput {
-	return i.ToGetMtlskeystoreClientCertificatePreviousCertificateBlockOutputWithContext(context.Background())
-}
-
-func (i GetMtlskeystoreClientCertificatePreviousCertificateBlockArgs) ToGetMtlskeystoreClientCertificatePreviousCertificateBlockOutputWithContext(ctx context.Context) GetMtlskeystoreClientCertificatePreviousCertificateBlockOutput {
-	return pulumi.ToOutputWithContext(ctx, i).(GetMtlskeystoreClientCertificatePreviousCertificateBlockOutput)
-}
-
-type GetMtlskeystoreClientCertificatePreviousCertificateBlockOutput struct{ *pulumi.OutputState }
-
-func (GetMtlskeystoreClientCertificatePreviousCertificateBlockOutput) ElementType() reflect.Type {
-	return reflect.TypeOf((*GetMtlskeystoreClientCertificatePreviousCertificateBlock)(nil)).Elem()
-}
-
-func (o GetMtlskeystoreClientCertificatePreviousCertificateBlockOutput) ToGetMtlskeystoreClientCertificatePreviousCertificateBlockOutput() GetMtlskeystoreClientCertificatePreviousCertificateBlockOutput {
-	return o
-}
-
-func (o GetMtlskeystoreClientCertificatePreviousCertificateBlockOutput) ToGetMtlskeystoreClientCertificatePreviousCertificateBlockOutputWithContext(ctx context.Context) GetMtlskeystoreClientCertificatePreviousCertificateBlockOutput {
-	return o
-}
-
-// A text representation of the client certificate in PEM format.
-func (o GetMtlskeystoreClientCertificatePreviousCertificateBlockOutput) Certificate() pulumi.StringOutput {
-	return o.ApplyT(func(v GetMtlskeystoreClientCertificatePreviousCertificateBlock) string { return v.Certificate }).(pulumi.StringOutput)
-}
-
-// Identifies the CA certificate's encryption algorithm. Possible values: `RSA` or `ECDSA`.
-func (o GetMtlskeystoreClientCertificatePreviousCertificateBlockOutput) KeyAlgorithm() pulumi.StringOutput {
-	return o.ApplyT(func(v GetMtlskeystoreClientCertificatePreviousCertificateBlock) string { return v.KeyAlgorithm }).(pulumi.StringOutput)
-}
-
-// A text representation of the trust chain in PEM format.
-func (o GetMtlskeystoreClientCertificatePreviousCertificateBlockOutput) TrustChain() pulumi.StringOutput {
-	return o.ApplyT(func(v GetMtlskeystoreClientCertificatePreviousCertificateBlock) string { return v.TrustChain }).(pulumi.StringOutput)
-}
-
-type GetMtlskeystoreClientCertificatePreviousCsrBlock struct {
-	// Text of the certificate signing request.
-	Csr string `pulumi:"csr"`
-	// Identifies the CA certificate's encryption algorithm. Possible values: `RSA` or `ECDSA`.
-	KeyAlgorithm string `pulumi:"keyAlgorithm"`
-}
-
-// GetMtlskeystoreClientCertificatePreviousCsrBlockInput is an input type that accepts GetMtlskeystoreClientCertificatePreviousCsrBlockArgs and GetMtlskeystoreClientCertificatePreviousCsrBlockOutput values.
-// You can construct a concrete instance of `GetMtlskeystoreClientCertificatePreviousCsrBlockInput` via:
-//
-//	GetMtlskeystoreClientCertificatePreviousCsrBlockArgs{...}
-type GetMtlskeystoreClientCertificatePreviousCsrBlockInput interface {
-	pulumi.Input
-
-	ToGetMtlskeystoreClientCertificatePreviousCsrBlockOutput() GetMtlskeystoreClientCertificatePreviousCsrBlockOutput
-	ToGetMtlskeystoreClientCertificatePreviousCsrBlockOutputWithContext(context.Context) GetMtlskeystoreClientCertificatePreviousCsrBlockOutput
-}
-
-type GetMtlskeystoreClientCertificatePreviousCsrBlockArgs struct {
-	// Text of the certificate signing request.
-	Csr pulumi.StringInput `pulumi:"csr"`
-	// Identifies the CA certificate's encryption algorithm. Possible values: `RSA` or `ECDSA`.
-	KeyAlgorithm pulumi.StringInput `pulumi:"keyAlgorithm"`
-}
-
-func (GetMtlskeystoreClientCertificatePreviousCsrBlockArgs) ElementType() reflect.Type {
-	return reflect.TypeOf((*GetMtlskeystoreClientCertificatePreviousCsrBlock)(nil)).Elem()
-}
-
-func (i GetMtlskeystoreClientCertificatePreviousCsrBlockArgs) ToGetMtlskeystoreClientCertificatePreviousCsrBlockOutput() GetMtlskeystoreClientCertificatePreviousCsrBlockOutput {
-	return i.ToGetMtlskeystoreClientCertificatePreviousCsrBlockOutputWithContext(context.Background())
-}
-
-func (i GetMtlskeystoreClientCertificatePreviousCsrBlockArgs) ToGetMtlskeystoreClientCertificatePreviousCsrBlockOutputWithContext(ctx context.Context) GetMtlskeystoreClientCertificatePreviousCsrBlockOutput {
-	return pulumi.ToOutputWithContext(ctx, i).(GetMtlskeystoreClientCertificatePreviousCsrBlockOutput)
-}
-
-type GetMtlskeystoreClientCertificatePreviousCsrBlockOutput struct{ *pulumi.OutputState }
-
-func (GetMtlskeystoreClientCertificatePreviousCsrBlockOutput) ElementType() reflect.Type {
-	return reflect.TypeOf((*GetMtlskeystoreClientCertificatePreviousCsrBlock)(nil)).Elem()
-}
-
-func (o GetMtlskeystoreClientCertificatePreviousCsrBlockOutput) ToGetMtlskeystoreClientCertificatePreviousCsrBlockOutput() GetMtlskeystoreClientCertificatePreviousCsrBlockOutput {
-	return o
-}
-
-func (o GetMtlskeystoreClientCertificatePreviousCsrBlockOutput) ToGetMtlskeystoreClientCertificatePreviousCsrBlockOutputWithContext(ctx context.Context) GetMtlskeystoreClientCertificatePreviousCsrBlockOutput {
-	return o
-}
-
-// Text of the certificate signing request.
-func (o GetMtlskeystoreClientCertificatePreviousCsrBlockOutput) Csr() pulumi.StringOutput {
-	return o.ApplyT(func(v GetMtlskeystoreClientCertificatePreviousCsrBlock) string { return v.Csr }).(pulumi.StringOutput)
-}
-
-// Identifies the CA certificate's encryption algorithm. Possible values: `RSA` or `ECDSA`.
-func (o GetMtlskeystoreClientCertificatePreviousCsrBlockOutput) KeyAlgorithm() pulumi.StringOutput {
-	return o.ApplyT(func(v GetMtlskeystoreClientCertificatePreviousCsrBlock) string { return v.KeyAlgorithm }).(pulumi.StringOutput)
-}
-
-type GetMtlskeystoreClientCertificatePreviousProperty struct {
-	// The unique identifier of the asset.
-	AssetId int `pulumi:"assetId"`
-	// The unique identifier of the group.
-	GroupId int `pulumi:"groupId"`
-	// The name of the property.
-	PropertyName string `pulumi:"propertyName"`
-	// The version of the property.
-	PropertyVersion int `pulumi:"propertyVersion"`
-}
-
-// GetMtlskeystoreClientCertificatePreviousPropertyInput is an input type that accepts GetMtlskeystoreClientCertificatePreviousPropertyArgs and GetMtlskeystoreClientCertificatePreviousPropertyOutput values.
-// You can construct a concrete instance of `GetMtlskeystoreClientCertificatePreviousPropertyInput` via:
-//
-//	GetMtlskeystoreClientCertificatePreviousPropertyArgs{...}
-type GetMtlskeystoreClientCertificatePreviousPropertyInput interface {
-	pulumi.Input
-
-	ToGetMtlskeystoreClientCertificatePreviousPropertyOutput() GetMtlskeystoreClientCertificatePreviousPropertyOutput
-	ToGetMtlskeystoreClientCertificatePreviousPropertyOutputWithContext(context.Context) GetMtlskeystoreClientCertificatePreviousPropertyOutput
-}
-
-type GetMtlskeystoreClientCertificatePreviousPropertyArgs struct {
-	// The unique identifier of the asset.
-	AssetId pulumi.IntInput `pulumi:"assetId"`
-	// The unique identifier of the group.
-	GroupId pulumi.IntInput `pulumi:"groupId"`
-	// The name of the property.
-	PropertyName pulumi.StringInput `pulumi:"propertyName"`
-	// The version of the property.
-	PropertyVersion pulumi.IntInput `pulumi:"propertyVersion"`
-}
-
-func (GetMtlskeystoreClientCertificatePreviousPropertyArgs) ElementType() reflect.Type {
-	return reflect.TypeOf((*GetMtlskeystoreClientCertificatePreviousProperty)(nil)).Elem()
-}
-
-func (i GetMtlskeystoreClientCertificatePreviousPropertyArgs) ToGetMtlskeystoreClientCertificatePreviousPropertyOutput() GetMtlskeystoreClientCertificatePreviousPropertyOutput {
-	return i.ToGetMtlskeystoreClientCertificatePreviousPropertyOutputWithContext(context.Background())
-}
-
-func (i GetMtlskeystoreClientCertificatePreviousPropertyArgs) ToGetMtlskeystoreClientCertificatePreviousPropertyOutputWithContext(ctx context.Context) GetMtlskeystoreClientCertificatePreviousPropertyOutput {
-	return pulumi.ToOutputWithContext(ctx, i).(GetMtlskeystoreClientCertificatePreviousPropertyOutput)
-}
-
-// GetMtlskeystoreClientCertificatePreviousPropertyArrayInput is an input type that accepts GetMtlskeystoreClientCertificatePreviousPropertyArray and GetMtlskeystoreClientCertificatePreviousPropertyArrayOutput values.
-// You can construct a concrete instance of `GetMtlskeystoreClientCertificatePreviousPropertyArrayInput` via:
-//
-//	GetMtlskeystoreClientCertificatePreviousPropertyArray{ GetMtlskeystoreClientCertificatePreviousPropertyArgs{...} }
-type GetMtlskeystoreClientCertificatePreviousPropertyArrayInput interface {
-	pulumi.Input
-
-	ToGetMtlskeystoreClientCertificatePreviousPropertyArrayOutput() GetMtlskeystoreClientCertificatePreviousPropertyArrayOutput
-	ToGetMtlskeystoreClientCertificatePreviousPropertyArrayOutputWithContext(context.Context) GetMtlskeystoreClientCertificatePreviousPropertyArrayOutput
-}
-
-type GetMtlskeystoreClientCertificatePreviousPropertyArray []GetMtlskeystoreClientCertificatePreviousPropertyInput
-
-func (GetMtlskeystoreClientCertificatePreviousPropertyArray) ElementType() reflect.Type {
-	return reflect.TypeOf((*[]GetMtlskeystoreClientCertificatePreviousProperty)(nil)).Elem()
-}
-
-func (i GetMtlskeystoreClientCertificatePreviousPropertyArray) ToGetMtlskeystoreClientCertificatePreviousPropertyArrayOutput() GetMtlskeystoreClientCertificatePreviousPropertyArrayOutput {
-	return i.ToGetMtlskeystoreClientCertificatePreviousPropertyArrayOutputWithContext(context.Background())
-}
-
-func (i GetMtlskeystoreClientCertificatePreviousPropertyArray) ToGetMtlskeystoreClientCertificatePreviousPropertyArrayOutputWithContext(ctx context.Context) GetMtlskeystoreClientCertificatePreviousPropertyArrayOutput {
-	return pulumi.ToOutputWithContext(ctx, i).(GetMtlskeystoreClientCertificatePreviousPropertyArrayOutput)
-}
-
-type GetMtlskeystoreClientCertificatePreviousPropertyOutput struct{ *pulumi.OutputState }
-
-func (GetMtlskeystoreClientCertificatePreviousPropertyOutput) ElementType() reflect.Type {
-	return reflect.TypeOf((*GetMtlskeystoreClientCertificatePreviousProperty)(nil)).Elem()
-}
-
-func (o GetMtlskeystoreClientCertificatePreviousPropertyOutput) ToGetMtlskeystoreClientCertificatePreviousPropertyOutput() GetMtlskeystoreClientCertificatePreviousPropertyOutput {
-	return o
-}
-
-func (o GetMtlskeystoreClientCertificatePreviousPropertyOutput) ToGetMtlskeystoreClientCertificatePreviousPropertyOutputWithContext(ctx context.Context) GetMtlskeystoreClientCertificatePreviousPropertyOutput {
-	return o
-}
-
-// The unique identifier of the asset.
-func (o GetMtlskeystoreClientCertificatePreviousPropertyOutput) AssetId() pulumi.IntOutput {
-	return o.ApplyT(func(v GetMtlskeystoreClientCertificatePreviousProperty) int { return v.AssetId }).(pulumi.IntOutput)
-}
-
-// The unique identifier of the group.
-func (o GetMtlskeystoreClientCertificatePreviousPropertyOutput) GroupId() pulumi.IntOutput {
-	return o.ApplyT(func(v GetMtlskeystoreClientCertificatePreviousProperty) int { return v.GroupId }).(pulumi.IntOutput)
-}
-
-// The name of the property.
-func (o GetMtlskeystoreClientCertificatePreviousPropertyOutput) PropertyName() pulumi.StringOutput {
-	return o.ApplyT(func(v GetMtlskeystoreClientCertificatePreviousProperty) string { return v.PropertyName }).(pulumi.StringOutput)
-}
-
-// The version of the property.
-func (o GetMtlskeystoreClientCertificatePreviousPropertyOutput) PropertyVersion() pulumi.IntOutput {
-	return o.ApplyT(func(v GetMtlskeystoreClientCertificatePreviousProperty) int { return v.PropertyVersion }).(pulumi.IntOutput)
-}
-
-type GetMtlskeystoreClientCertificatePreviousPropertyArrayOutput struct{ *pulumi.OutputState }
-
-func (GetMtlskeystoreClientCertificatePreviousPropertyArrayOutput) ElementType() reflect.Type {
-	return reflect.TypeOf((*[]GetMtlskeystoreClientCertificatePreviousProperty)(nil)).Elem()
-}
-
-func (o GetMtlskeystoreClientCertificatePreviousPropertyArrayOutput) ToGetMtlskeystoreClientCertificatePreviousPropertyArrayOutput() GetMtlskeystoreClientCertificatePreviousPropertyArrayOutput {
-	return o
-}
-
-func (o GetMtlskeystoreClientCertificatePreviousPropertyArrayOutput) ToGetMtlskeystoreClientCertificatePreviousPropertyArrayOutputWithContext(ctx context.Context) GetMtlskeystoreClientCertificatePreviousPropertyArrayOutput {
-	return o
-}
-
-func (o GetMtlskeystoreClientCertificatePreviousPropertyArrayOutput) Index(i pulumi.IntInput) GetMtlskeystoreClientCertificatePreviousPropertyOutput {
-	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetMtlskeystoreClientCertificatePreviousProperty {
-		return vs[0].([]GetMtlskeystoreClientCertificatePreviousProperty)[vs[1].(int)]
-	}).(GetMtlskeystoreClientCertificatePreviousPropertyOutput)
-}
-
-type GetMtlskeystoreClientCertificatePreviousValidation struct {
-	// Validation errors that need to be resolved for the request to succeed.
-	Errors []GetMtlskeystoreClientCertificatePreviousValidationError `pulumi:"errors"`
-	// Validation warnings that can be resolved.
-	Warnings []GetMtlskeystoreClientCertificatePreviousValidationWarning `pulumi:"warnings"`
-}
-
-// GetMtlskeystoreClientCertificatePreviousValidationInput is an input type that accepts GetMtlskeystoreClientCertificatePreviousValidationArgs and GetMtlskeystoreClientCertificatePreviousValidationOutput values.
-// You can construct a concrete instance of `GetMtlskeystoreClientCertificatePreviousValidationInput` via:
-//
-//	GetMtlskeystoreClientCertificatePreviousValidationArgs{...}
-type GetMtlskeystoreClientCertificatePreviousValidationInput interface {
-	pulumi.Input
-
-	ToGetMtlskeystoreClientCertificatePreviousValidationOutput() GetMtlskeystoreClientCertificatePreviousValidationOutput
-	ToGetMtlskeystoreClientCertificatePreviousValidationOutputWithContext(context.Context) GetMtlskeystoreClientCertificatePreviousValidationOutput
-}
-
-type GetMtlskeystoreClientCertificatePreviousValidationArgs struct {
-	// Validation errors that need to be resolved for the request to succeed.
-	Errors GetMtlskeystoreClientCertificatePreviousValidationErrorArrayInput `pulumi:"errors"`
-	// Validation warnings that can be resolved.
-	Warnings GetMtlskeystoreClientCertificatePreviousValidationWarningArrayInput `pulumi:"warnings"`
-}
-
-func (GetMtlskeystoreClientCertificatePreviousValidationArgs) ElementType() reflect.Type {
-	return reflect.TypeOf((*GetMtlskeystoreClientCertificatePreviousValidation)(nil)).Elem()
-}
-
-func (i GetMtlskeystoreClientCertificatePreviousValidationArgs) ToGetMtlskeystoreClientCertificatePreviousValidationOutput() GetMtlskeystoreClientCertificatePreviousValidationOutput {
-	return i.ToGetMtlskeystoreClientCertificatePreviousValidationOutputWithContext(context.Background())
-}
-
-func (i GetMtlskeystoreClientCertificatePreviousValidationArgs) ToGetMtlskeystoreClientCertificatePreviousValidationOutputWithContext(ctx context.Context) GetMtlskeystoreClientCertificatePreviousValidationOutput {
-	return pulumi.ToOutputWithContext(ctx, i).(GetMtlskeystoreClientCertificatePreviousValidationOutput)
-}
-
-type GetMtlskeystoreClientCertificatePreviousValidationOutput struct{ *pulumi.OutputState }
-
-func (GetMtlskeystoreClientCertificatePreviousValidationOutput) ElementType() reflect.Type {
-	return reflect.TypeOf((*GetMtlskeystoreClientCertificatePreviousValidation)(nil)).Elem()
-}
-
-func (o GetMtlskeystoreClientCertificatePreviousValidationOutput) ToGetMtlskeystoreClientCertificatePreviousValidationOutput() GetMtlskeystoreClientCertificatePreviousValidationOutput {
-	return o
-}
-
-func (o GetMtlskeystoreClientCertificatePreviousValidationOutput) ToGetMtlskeystoreClientCertificatePreviousValidationOutputWithContext(ctx context.Context) GetMtlskeystoreClientCertificatePreviousValidationOutput {
-	return o
-}
-
-// Validation errors that need to be resolved for the request to succeed.
-func (o GetMtlskeystoreClientCertificatePreviousValidationOutput) Errors() GetMtlskeystoreClientCertificatePreviousValidationErrorArrayOutput {
-	return o.ApplyT(func(v GetMtlskeystoreClientCertificatePreviousValidation) []GetMtlskeystoreClientCertificatePreviousValidationError {
-		return v.Errors
-	}).(GetMtlskeystoreClientCertificatePreviousValidationErrorArrayOutput)
-}
-
-// Validation warnings that can be resolved.
-func (o GetMtlskeystoreClientCertificatePreviousValidationOutput) Warnings() GetMtlskeystoreClientCertificatePreviousValidationWarningArrayOutput {
-	return o.ApplyT(func(v GetMtlskeystoreClientCertificatePreviousValidation) []GetMtlskeystoreClientCertificatePreviousValidationWarning {
-		return v.Warnings
-	}).(GetMtlskeystoreClientCertificatePreviousValidationWarningArrayOutput)
-}
-
-type GetMtlskeystoreClientCertificatePreviousValidationError struct {
-	// Specifies the error details.
-	Message string `pulumi:"message"`
-	// Specifies the error root cause.
-	Reason string `pulumi:"reason"`
-	// Specifies the error category.
-	Type string `pulumi:"type"`
-}
-
-// GetMtlskeystoreClientCertificatePreviousValidationErrorInput is an input type that accepts GetMtlskeystoreClientCertificatePreviousValidationErrorArgs and GetMtlskeystoreClientCertificatePreviousValidationErrorOutput values.
-// You can construct a concrete instance of `GetMtlskeystoreClientCertificatePreviousValidationErrorInput` via:
-//
-//	GetMtlskeystoreClientCertificatePreviousValidationErrorArgs{...}
-type GetMtlskeystoreClientCertificatePreviousValidationErrorInput interface {
-	pulumi.Input
-
-	ToGetMtlskeystoreClientCertificatePreviousValidationErrorOutput() GetMtlskeystoreClientCertificatePreviousValidationErrorOutput
-	ToGetMtlskeystoreClientCertificatePreviousValidationErrorOutputWithContext(context.Context) GetMtlskeystoreClientCertificatePreviousValidationErrorOutput
-}
-
-type GetMtlskeystoreClientCertificatePreviousValidationErrorArgs struct {
-	// Specifies the error details.
-	Message pulumi.StringInput `pulumi:"message"`
-	// Specifies the error root cause.
-	Reason pulumi.StringInput `pulumi:"reason"`
-	// Specifies the error category.
-	Type pulumi.StringInput `pulumi:"type"`
-}
-
-func (GetMtlskeystoreClientCertificatePreviousValidationErrorArgs) ElementType() reflect.Type {
-	return reflect.TypeOf((*GetMtlskeystoreClientCertificatePreviousValidationError)(nil)).Elem()
-}
-
-func (i GetMtlskeystoreClientCertificatePreviousValidationErrorArgs) ToGetMtlskeystoreClientCertificatePreviousValidationErrorOutput() GetMtlskeystoreClientCertificatePreviousValidationErrorOutput {
-	return i.ToGetMtlskeystoreClientCertificatePreviousValidationErrorOutputWithContext(context.Background())
-}
-
-func (i GetMtlskeystoreClientCertificatePreviousValidationErrorArgs) ToGetMtlskeystoreClientCertificatePreviousValidationErrorOutputWithContext(ctx context.Context) GetMtlskeystoreClientCertificatePreviousValidationErrorOutput {
-	return pulumi.ToOutputWithContext(ctx, i).(GetMtlskeystoreClientCertificatePreviousValidationErrorOutput)
-}
-
-// GetMtlskeystoreClientCertificatePreviousValidationErrorArrayInput is an input type that accepts GetMtlskeystoreClientCertificatePreviousValidationErrorArray and GetMtlskeystoreClientCertificatePreviousValidationErrorArrayOutput values.
-// You can construct a concrete instance of `GetMtlskeystoreClientCertificatePreviousValidationErrorArrayInput` via:
-//
-//	GetMtlskeystoreClientCertificatePreviousValidationErrorArray{ GetMtlskeystoreClientCertificatePreviousValidationErrorArgs{...} }
-type GetMtlskeystoreClientCertificatePreviousValidationErrorArrayInput interface {
-	pulumi.Input
-
-	ToGetMtlskeystoreClientCertificatePreviousValidationErrorArrayOutput() GetMtlskeystoreClientCertificatePreviousValidationErrorArrayOutput
-	ToGetMtlskeystoreClientCertificatePreviousValidationErrorArrayOutputWithContext(context.Context) GetMtlskeystoreClientCertificatePreviousValidationErrorArrayOutput
-}
-
-type GetMtlskeystoreClientCertificatePreviousValidationErrorArray []GetMtlskeystoreClientCertificatePreviousValidationErrorInput
-
-func (GetMtlskeystoreClientCertificatePreviousValidationErrorArray) ElementType() reflect.Type {
-	return reflect.TypeOf((*[]GetMtlskeystoreClientCertificatePreviousValidationError)(nil)).Elem()
-}
-
-func (i GetMtlskeystoreClientCertificatePreviousValidationErrorArray) ToGetMtlskeystoreClientCertificatePreviousValidationErrorArrayOutput() GetMtlskeystoreClientCertificatePreviousValidationErrorArrayOutput {
-	return i.ToGetMtlskeystoreClientCertificatePreviousValidationErrorArrayOutputWithContext(context.Background())
-}
-
-func (i GetMtlskeystoreClientCertificatePreviousValidationErrorArray) ToGetMtlskeystoreClientCertificatePreviousValidationErrorArrayOutputWithContext(ctx context.Context) GetMtlskeystoreClientCertificatePreviousValidationErrorArrayOutput {
-	return pulumi.ToOutputWithContext(ctx, i).(GetMtlskeystoreClientCertificatePreviousValidationErrorArrayOutput)
-}
-
-type GetMtlskeystoreClientCertificatePreviousValidationErrorOutput struct{ *pulumi.OutputState }
-
-func (GetMtlskeystoreClientCertificatePreviousValidationErrorOutput) ElementType() reflect.Type {
-	return reflect.TypeOf((*GetMtlskeystoreClientCertificatePreviousValidationError)(nil)).Elem()
-}
-
-func (o GetMtlskeystoreClientCertificatePreviousValidationErrorOutput) ToGetMtlskeystoreClientCertificatePreviousValidationErrorOutput() GetMtlskeystoreClientCertificatePreviousValidationErrorOutput {
-	return o
-}
-
-func (o GetMtlskeystoreClientCertificatePreviousValidationErrorOutput) ToGetMtlskeystoreClientCertificatePreviousValidationErrorOutputWithContext(ctx context.Context) GetMtlskeystoreClientCertificatePreviousValidationErrorOutput {
-	return o
-}
-
-// Specifies the error details.
-func (o GetMtlskeystoreClientCertificatePreviousValidationErrorOutput) Message() pulumi.StringOutput {
-	return o.ApplyT(func(v GetMtlskeystoreClientCertificatePreviousValidationError) string { return v.Message }).(pulumi.StringOutput)
-}
-
-// Specifies the error root cause.
-func (o GetMtlskeystoreClientCertificatePreviousValidationErrorOutput) Reason() pulumi.StringOutput {
-	return o.ApplyT(func(v GetMtlskeystoreClientCertificatePreviousValidationError) string { return v.Reason }).(pulumi.StringOutput)
-}
-
-// Specifies the error category.
-func (o GetMtlskeystoreClientCertificatePreviousValidationErrorOutput) Type() pulumi.StringOutput {
-	return o.ApplyT(func(v GetMtlskeystoreClientCertificatePreviousValidationError) string { return v.Type }).(pulumi.StringOutput)
-}
-
-type GetMtlskeystoreClientCertificatePreviousValidationErrorArrayOutput struct{ *pulumi.OutputState }
-
-func (GetMtlskeystoreClientCertificatePreviousValidationErrorArrayOutput) ElementType() reflect.Type {
-	return reflect.TypeOf((*[]GetMtlskeystoreClientCertificatePreviousValidationError)(nil)).Elem()
-}
-
-func (o GetMtlskeystoreClientCertificatePreviousValidationErrorArrayOutput) ToGetMtlskeystoreClientCertificatePreviousValidationErrorArrayOutput() GetMtlskeystoreClientCertificatePreviousValidationErrorArrayOutput {
-	return o
-}
-
-func (o GetMtlskeystoreClientCertificatePreviousValidationErrorArrayOutput) ToGetMtlskeystoreClientCertificatePreviousValidationErrorArrayOutputWithContext(ctx context.Context) GetMtlskeystoreClientCertificatePreviousValidationErrorArrayOutput {
-	return o
-}
-
-func (o GetMtlskeystoreClientCertificatePreviousValidationErrorArrayOutput) Index(i pulumi.IntInput) GetMtlskeystoreClientCertificatePreviousValidationErrorOutput {
-	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetMtlskeystoreClientCertificatePreviousValidationError {
-		return vs[0].([]GetMtlskeystoreClientCertificatePreviousValidationError)[vs[1].(int)]
-	}).(GetMtlskeystoreClientCertificatePreviousValidationErrorOutput)
-}
-
-type GetMtlskeystoreClientCertificatePreviousValidationWarning struct {
-	// Specifies the warning details.
-	Message string `pulumi:"message"`
-	// Specifies the warning root cause.
-	Reason string `pulumi:"reason"`
-	// Specifies the warning category.
-	Type string `pulumi:"type"`
-}
-
-// GetMtlskeystoreClientCertificatePreviousValidationWarningInput is an input type that accepts GetMtlskeystoreClientCertificatePreviousValidationWarningArgs and GetMtlskeystoreClientCertificatePreviousValidationWarningOutput values.
-// You can construct a concrete instance of `GetMtlskeystoreClientCertificatePreviousValidationWarningInput` via:
-//
-//	GetMtlskeystoreClientCertificatePreviousValidationWarningArgs{...}
-type GetMtlskeystoreClientCertificatePreviousValidationWarningInput interface {
-	pulumi.Input
-
-	ToGetMtlskeystoreClientCertificatePreviousValidationWarningOutput() GetMtlskeystoreClientCertificatePreviousValidationWarningOutput
-	ToGetMtlskeystoreClientCertificatePreviousValidationWarningOutputWithContext(context.Context) GetMtlskeystoreClientCertificatePreviousValidationWarningOutput
-}
-
-type GetMtlskeystoreClientCertificatePreviousValidationWarningArgs struct {
-	// Specifies the warning details.
-	Message pulumi.StringInput `pulumi:"message"`
-	// Specifies the warning root cause.
-	Reason pulumi.StringInput `pulumi:"reason"`
-	// Specifies the warning category.
-	Type pulumi.StringInput `pulumi:"type"`
-}
-
-func (GetMtlskeystoreClientCertificatePreviousValidationWarningArgs) ElementType() reflect.Type {
-	return reflect.TypeOf((*GetMtlskeystoreClientCertificatePreviousValidationWarning)(nil)).Elem()
-}
-
-func (i GetMtlskeystoreClientCertificatePreviousValidationWarningArgs) ToGetMtlskeystoreClientCertificatePreviousValidationWarningOutput() GetMtlskeystoreClientCertificatePreviousValidationWarningOutput {
-	return i.ToGetMtlskeystoreClientCertificatePreviousValidationWarningOutputWithContext(context.Background())
-}
-
-func (i GetMtlskeystoreClientCertificatePreviousValidationWarningArgs) ToGetMtlskeystoreClientCertificatePreviousValidationWarningOutputWithContext(ctx context.Context) GetMtlskeystoreClientCertificatePreviousValidationWarningOutput {
-	return pulumi.ToOutputWithContext(ctx, i).(GetMtlskeystoreClientCertificatePreviousValidationWarningOutput)
-}
-
-// GetMtlskeystoreClientCertificatePreviousValidationWarningArrayInput is an input type that accepts GetMtlskeystoreClientCertificatePreviousValidationWarningArray and GetMtlskeystoreClientCertificatePreviousValidationWarningArrayOutput values.
-// You can construct a concrete instance of `GetMtlskeystoreClientCertificatePreviousValidationWarningArrayInput` via:
-//
-//	GetMtlskeystoreClientCertificatePreviousValidationWarningArray{ GetMtlskeystoreClientCertificatePreviousValidationWarningArgs{...} }
-type GetMtlskeystoreClientCertificatePreviousValidationWarningArrayInput interface {
-	pulumi.Input
-
-	ToGetMtlskeystoreClientCertificatePreviousValidationWarningArrayOutput() GetMtlskeystoreClientCertificatePreviousValidationWarningArrayOutput
-	ToGetMtlskeystoreClientCertificatePreviousValidationWarningArrayOutputWithContext(context.Context) GetMtlskeystoreClientCertificatePreviousValidationWarningArrayOutput
-}
-
-type GetMtlskeystoreClientCertificatePreviousValidationWarningArray []GetMtlskeystoreClientCertificatePreviousValidationWarningInput
-
-func (GetMtlskeystoreClientCertificatePreviousValidationWarningArray) ElementType() reflect.Type {
-	return reflect.TypeOf((*[]GetMtlskeystoreClientCertificatePreviousValidationWarning)(nil)).Elem()
-}
-
-func (i GetMtlskeystoreClientCertificatePreviousValidationWarningArray) ToGetMtlskeystoreClientCertificatePreviousValidationWarningArrayOutput() GetMtlskeystoreClientCertificatePreviousValidationWarningArrayOutput {
-	return i.ToGetMtlskeystoreClientCertificatePreviousValidationWarningArrayOutputWithContext(context.Background())
-}
-
-func (i GetMtlskeystoreClientCertificatePreviousValidationWarningArray) ToGetMtlskeystoreClientCertificatePreviousValidationWarningArrayOutputWithContext(ctx context.Context) GetMtlskeystoreClientCertificatePreviousValidationWarningArrayOutput {
-	return pulumi.ToOutputWithContext(ctx, i).(GetMtlskeystoreClientCertificatePreviousValidationWarningArrayOutput)
-}
-
-type GetMtlskeystoreClientCertificatePreviousValidationWarningOutput struct{ *pulumi.OutputState }
-
-func (GetMtlskeystoreClientCertificatePreviousValidationWarningOutput) ElementType() reflect.Type {
-	return reflect.TypeOf((*GetMtlskeystoreClientCertificatePreviousValidationWarning)(nil)).Elem()
-}
-
-func (o GetMtlskeystoreClientCertificatePreviousValidationWarningOutput) ToGetMtlskeystoreClientCertificatePreviousValidationWarningOutput() GetMtlskeystoreClientCertificatePreviousValidationWarningOutput {
-	return o
-}
-
-func (o GetMtlskeystoreClientCertificatePreviousValidationWarningOutput) ToGetMtlskeystoreClientCertificatePreviousValidationWarningOutputWithContext(ctx context.Context) GetMtlskeystoreClientCertificatePreviousValidationWarningOutput {
-	return o
-}
-
-// Specifies the warning details.
-func (o GetMtlskeystoreClientCertificatePreviousValidationWarningOutput) Message() pulumi.StringOutput {
-	return o.ApplyT(func(v GetMtlskeystoreClientCertificatePreviousValidationWarning) string { return v.Message }).(pulumi.StringOutput)
-}
-
-// Specifies the warning root cause.
-func (o GetMtlskeystoreClientCertificatePreviousValidationWarningOutput) Reason() pulumi.StringOutput {
-	return o.ApplyT(func(v GetMtlskeystoreClientCertificatePreviousValidationWarning) string { return v.Reason }).(pulumi.StringOutput)
-}
-
-// Specifies the warning category.
-func (o GetMtlskeystoreClientCertificatePreviousValidationWarningOutput) Type() pulumi.StringOutput {
-	return o.ApplyT(func(v GetMtlskeystoreClientCertificatePreviousValidationWarning) string { return v.Type }).(pulumi.StringOutput)
-}
-
-type GetMtlskeystoreClientCertificatePreviousValidationWarningArrayOutput struct{ *pulumi.OutputState }
-
-func (GetMtlskeystoreClientCertificatePreviousValidationWarningArrayOutput) ElementType() reflect.Type {
-	return reflect.TypeOf((*[]GetMtlskeystoreClientCertificatePreviousValidationWarning)(nil)).Elem()
-}
-
-func (o GetMtlskeystoreClientCertificatePreviousValidationWarningArrayOutput) ToGetMtlskeystoreClientCertificatePreviousValidationWarningArrayOutput() GetMtlskeystoreClientCertificatePreviousValidationWarningArrayOutput {
-	return o
-}
-
-func (o GetMtlskeystoreClientCertificatePreviousValidationWarningArrayOutput) ToGetMtlskeystoreClientCertificatePreviousValidationWarningArrayOutputWithContext(ctx context.Context) GetMtlskeystoreClientCertificatePreviousValidationWarningArrayOutput {
-	return o
-}
-
-func (o GetMtlskeystoreClientCertificatePreviousValidationWarningArrayOutput) Index(i pulumi.IntInput) GetMtlskeystoreClientCertificatePreviousValidationWarningOutput {
-	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetMtlskeystoreClientCertificatePreviousValidationWarning {
-		return vs[0].([]GetMtlskeystoreClientCertificatePreviousValidationWarning)[vs[1].(int)]
-	}).(GetMtlskeystoreClientCertificatePreviousValidationWarningOutput)
-}
-
-type GetMtlskeystoreClientCertificateVersion struct {
-	// Details of the certificate block for the client certificate version.
-	CertificateBlock GetMtlskeystoreClientCertificateVersionCertificateBlock `pulumi:"certificateBlock"`
-	// The user who uploaded the `THIRD_PARTY` client certificate version.
-	CertificateSubmittedBy string `pulumi:"certificateSubmittedBy"`
-	// An ISO 8601 timestamp indicating when the `THIRD_PARTY` signer client certificate version was uploaded.
-	CertificateSubmittedDate string `pulumi:"certificateSubmittedDate"`
-	// The user who created the client certificate version.
-	CreatedBy string `pulumi:"createdBy"`
-	// An ISO 8601 timestamp indicating the client certificate version's creation.
-	CreatedDate string `pulumi:"createdDate"`
-	// Details of the Certificate Signing Request (CSR) for the client certificate version.
-	CsrBlock GetMtlskeystoreClientCertificateVersionCsrBlock `pulumi:"csrBlock"`
-	// An ISO 8601 timestamp indicating the client certificate version's deletion request.
-	DeleteRequestedDate string `pulumi:"deleteRequestedDate"`
-	// Specifies the key elliptic curve when the key algorithm `ECDSA` is used.
-	EllipticCurve string `pulumi:"ellipticCurve"`
-	// An ISO 8601 timestamp indicating when the client certificate version expires.
-	ExpiryDate string `pulumi:"expiryDate"`
-	// An ISO 8601 timestamp indicating the client certificate version's availability.
-	IssuedDate string `pulumi:"issuedDate"`
-	// The signing entity of the client certificate version.
-	Issuer string `pulumi:"issuer"`
-	// Identifies the client certificate version's encryption algorithm. Supported values are `RSA` and `ECDSA`.
-	KeyAlgorithm string `pulumi:"keyAlgorithm"`
-	// The private key length of the client certificate version when the key algorithm `RSA` is used.
-	KeySizeInBytes string `pulumi:"keySizeInBytes"`
-	// A list of properties associated with the client certificate.
-	Properties []GetMtlskeystoreClientCertificateVersionProperty `pulumi:"properties"`
-	// An ISO 8601 timestamp indicating the client certificate version's scheduled deletion.
-	ScheduledDeleteDate string `pulumi:"scheduledDeleteDate"`
-	// Specifies the algorithm that secures the data exchange between the edge server and origin.
-	SignatureAlgorithm string `pulumi:"signatureAlgorithm"`
-	// The client certificate version status. Possible values: `AWAITING_SIGNED_CERTIFICATE`, `DEPLOYMENT_PENDING`, `DEPLOYED`, or `DELETE_PENDING`.
-	Status string `pulumi:"status"`
-	// The public key's entity stored in the client certificate version's subject public key field.
-	Subject string `pulumi:"subject"`
-	// Validation results for the client certificate version.
-	Validation GetMtlskeystoreClientCertificateVersionValidation `pulumi:"validation"`
-	// The unique identifier of the client certificate version.
-	Version int `pulumi:"version"`
-	// Unique identifier for the client certificate version. Use it to configure mutual authentication (mTLS) sessions between the origin and edge servers in Property Manager's Mutual TLS Origin Keystore behavior.
-	VersionGuid string `pulumi:"versionGuid"`
-}
-
-// GetMtlskeystoreClientCertificateVersionInput is an input type that accepts GetMtlskeystoreClientCertificateVersionArgs and GetMtlskeystoreClientCertificateVersionOutput values.
-// You can construct a concrete instance of `GetMtlskeystoreClientCertificateVersionInput` via:
-//
-//	GetMtlskeystoreClientCertificateVersionArgs{...}
-type GetMtlskeystoreClientCertificateVersionInput interface {
-	pulumi.Input
-
-	ToGetMtlskeystoreClientCertificateVersionOutput() GetMtlskeystoreClientCertificateVersionOutput
-	ToGetMtlskeystoreClientCertificateVersionOutputWithContext(context.Context) GetMtlskeystoreClientCertificateVersionOutput
-}
-
-type GetMtlskeystoreClientCertificateVersionArgs struct {
-	// Details of the certificate block for the client certificate version.
-	CertificateBlock GetMtlskeystoreClientCertificateVersionCertificateBlockInput `pulumi:"certificateBlock"`
-	// The user who uploaded the `THIRD_PARTY` client certificate version.
-	CertificateSubmittedBy pulumi.StringInput `pulumi:"certificateSubmittedBy"`
-	// An ISO 8601 timestamp indicating when the `THIRD_PARTY` signer client certificate version was uploaded.
-	CertificateSubmittedDate pulumi.StringInput `pulumi:"certificateSubmittedDate"`
-	// The user who created the client certificate version.
-	CreatedBy pulumi.StringInput `pulumi:"createdBy"`
-	// An ISO 8601 timestamp indicating the client certificate version's creation.
-	CreatedDate pulumi.StringInput `pulumi:"createdDate"`
-	// Details of the Certificate Signing Request (CSR) for the client certificate version.
-	CsrBlock GetMtlskeystoreClientCertificateVersionCsrBlockInput `pulumi:"csrBlock"`
-	// An ISO 8601 timestamp indicating the client certificate version's deletion request.
-	DeleteRequestedDate pulumi.StringInput `pulumi:"deleteRequestedDate"`
-	// Specifies the key elliptic curve when the key algorithm `ECDSA` is used.
-	EllipticCurve pulumi.StringInput `pulumi:"ellipticCurve"`
-	// An ISO 8601 timestamp indicating when the client certificate version expires.
-	ExpiryDate pulumi.StringInput `pulumi:"expiryDate"`
-	// An ISO 8601 timestamp indicating the client certificate version's availability.
-	IssuedDate pulumi.StringInput `pulumi:"issuedDate"`
-	// The signing entity of the client certificate version.
-	Issuer pulumi.StringInput `pulumi:"issuer"`
-	// Identifies the client certificate version's encryption algorithm. Supported values are `RSA` and `ECDSA`.
-	KeyAlgorithm pulumi.StringInput `pulumi:"keyAlgorithm"`
-	// The private key length of the client certificate version when the key algorithm `RSA` is used.
-	KeySizeInBytes pulumi.StringInput `pulumi:"keySizeInBytes"`
-	// A list of properties associated with the client certificate.
-	Properties GetMtlskeystoreClientCertificateVersionPropertyArrayInput `pulumi:"properties"`
-	// An ISO 8601 timestamp indicating the client certificate version's scheduled deletion.
-	ScheduledDeleteDate pulumi.StringInput `pulumi:"scheduledDeleteDate"`
-	// Specifies the algorithm that secures the data exchange between the edge server and origin.
-	SignatureAlgorithm pulumi.StringInput `pulumi:"signatureAlgorithm"`
-	// The client certificate version status. Possible values: `AWAITING_SIGNED_CERTIFICATE`, `DEPLOYMENT_PENDING`, `DEPLOYED`, or `DELETE_PENDING`.
-	Status pulumi.StringInput `pulumi:"status"`
-	// The public key's entity stored in the client certificate version's subject public key field.
-	Subject pulumi.StringInput `pulumi:"subject"`
-	// Validation results for the client certificate version.
-	Validation GetMtlskeystoreClientCertificateVersionValidationInput `pulumi:"validation"`
-	// The unique identifier of the client certificate version.
-	Version pulumi.IntInput `pulumi:"version"`
-	// Unique identifier for the client certificate version. Use it to configure mutual authentication (mTLS) sessions between the origin and edge servers in Property Manager's Mutual TLS Origin Keystore behavior.
-	VersionGuid pulumi.StringInput `pulumi:"versionGuid"`
-}
-
-func (GetMtlskeystoreClientCertificateVersionArgs) ElementType() reflect.Type {
-	return reflect.TypeOf((*GetMtlskeystoreClientCertificateVersion)(nil)).Elem()
-}
-
-func (i GetMtlskeystoreClientCertificateVersionArgs) ToGetMtlskeystoreClientCertificateVersionOutput() GetMtlskeystoreClientCertificateVersionOutput {
-	return i.ToGetMtlskeystoreClientCertificateVersionOutputWithContext(context.Background())
-}
-
-func (i GetMtlskeystoreClientCertificateVersionArgs) ToGetMtlskeystoreClientCertificateVersionOutputWithContext(ctx context.Context) GetMtlskeystoreClientCertificateVersionOutput {
-	return pulumi.ToOutputWithContext(ctx, i).(GetMtlskeystoreClientCertificateVersionOutput)
-}
-
-// GetMtlskeystoreClientCertificateVersionArrayInput is an input type that accepts GetMtlskeystoreClientCertificateVersionArray and GetMtlskeystoreClientCertificateVersionArrayOutput values.
-// You can construct a concrete instance of `GetMtlskeystoreClientCertificateVersionArrayInput` via:
-//
-//	GetMtlskeystoreClientCertificateVersionArray{ GetMtlskeystoreClientCertificateVersionArgs{...} }
-type GetMtlskeystoreClientCertificateVersionArrayInput interface {
-	pulumi.Input
-
-	ToGetMtlskeystoreClientCertificateVersionArrayOutput() GetMtlskeystoreClientCertificateVersionArrayOutput
-	ToGetMtlskeystoreClientCertificateVersionArrayOutputWithContext(context.Context) GetMtlskeystoreClientCertificateVersionArrayOutput
-}
-
-type GetMtlskeystoreClientCertificateVersionArray []GetMtlskeystoreClientCertificateVersionInput
-
-func (GetMtlskeystoreClientCertificateVersionArray) ElementType() reflect.Type {
-	return reflect.TypeOf((*[]GetMtlskeystoreClientCertificateVersion)(nil)).Elem()
-}
-
-func (i GetMtlskeystoreClientCertificateVersionArray) ToGetMtlskeystoreClientCertificateVersionArrayOutput() GetMtlskeystoreClientCertificateVersionArrayOutput {
-	return i.ToGetMtlskeystoreClientCertificateVersionArrayOutputWithContext(context.Background())
-}
-
-func (i GetMtlskeystoreClientCertificateVersionArray) ToGetMtlskeystoreClientCertificateVersionArrayOutputWithContext(ctx context.Context) GetMtlskeystoreClientCertificateVersionArrayOutput {
-	return pulumi.ToOutputWithContext(ctx, i).(GetMtlskeystoreClientCertificateVersionArrayOutput)
-}
-
-type GetMtlskeystoreClientCertificateVersionOutput struct{ *pulumi.OutputState }
-
-func (GetMtlskeystoreClientCertificateVersionOutput) ElementType() reflect.Type {
-	return reflect.TypeOf((*GetMtlskeystoreClientCertificateVersion)(nil)).Elem()
-}
-
-func (o GetMtlskeystoreClientCertificateVersionOutput) ToGetMtlskeystoreClientCertificateVersionOutput() GetMtlskeystoreClientCertificateVersionOutput {
-	return o
-}
-
-func (o GetMtlskeystoreClientCertificateVersionOutput) ToGetMtlskeystoreClientCertificateVersionOutputWithContext(ctx context.Context) GetMtlskeystoreClientCertificateVersionOutput {
-	return o
-}
-
-// Details of the certificate block for the client certificate version.
-func (o GetMtlskeystoreClientCertificateVersionOutput) CertificateBlock() GetMtlskeystoreClientCertificateVersionCertificateBlockOutput {
-	return o.ApplyT(func(v GetMtlskeystoreClientCertificateVersion) GetMtlskeystoreClientCertificateVersionCertificateBlock {
-		return v.CertificateBlock
-	}).(GetMtlskeystoreClientCertificateVersionCertificateBlockOutput)
-}
-
-// The user who uploaded the `THIRD_PARTY` client certificate version.
-func (o GetMtlskeystoreClientCertificateVersionOutput) CertificateSubmittedBy() pulumi.StringOutput {
-	return o.ApplyT(func(v GetMtlskeystoreClientCertificateVersion) string { return v.CertificateSubmittedBy }).(pulumi.StringOutput)
-}
-
-// An ISO 8601 timestamp indicating when the `THIRD_PARTY` signer client certificate version was uploaded.
-func (o GetMtlskeystoreClientCertificateVersionOutput) CertificateSubmittedDate() pulumi.StringOutput {
-	return o.ApplyT(func(v GetMtlskeystoreClientCertificateVersion) string { return v.CertificateSubmittedDate }).(pulumi.StringOutput)
-}
-
-// The user who created the client certificate version.
-func (o GetMtlskeystoreClientCertificateVersionOutput) CreatedBy() pulumi.StringOutput {
-	return o.ApplyT(func(v GetMtlskeystoreClientCertificateVersion) string { return v.CreatedBy }).(pulumi.StringOutput)
-}
-
-// An ISO 8601 timestamp indicating the client certificate version's creation.
-func (o GetMtlskeystoreClientCertificateVersionOutput) CreatedDate() pulumi.StringOutput {
-	return o.ApplyT(func(v GetMtlskeystoreClientCertificateVersion) string { return v.CreatedDate }).(pulumi.StringOutput)
-}
-
-// Details of the Certificate Signing Request (CSR) for the client certificate version.
-func (o GetMtlskeystoreClientCertificateVersionOutput) CsrBlock() GetMtlskeystoreClientCertificateVersionCsrBlockOutput {
-	return o.ApplyT(func(v GetMtlskeystoreClientCertificateVersion) GetMtlskeystoreClientCertificateVersionCsrBlock {
-		return v.CsrBlock
-	}).(GetMtlskeystoreClientCertificateVersionCsrBlockOutput)
-}
-
-// An ISO 8601 timestamp indicating the client certificate version's deletion request.
-func (o GetMtlskeystoreClientCertificateVersionOutput) DeleteRequestedDate() pulumi.StringOutput {
-	return o.ApplyT(func(v GetMtlskeystoreClientCertificateVersion) string { return v.DeleteRequestedDate }).(pulumi.StringOutput)
-}
-
-// Specifies the key elliptic curve when the key algorithm `ECDSA` is used.
-func (o GetMtlskeystoreClientCertificateVersionOutput) EllipticCurve() pulumi.StringOutput {
-	return o.ApplyT(func(v GetMtlskeystoreClientCertificateVersion) string { return v.EllipticCurve }).(pulumi.StringOutput)
-}
-
-// An ISO 8601 timestamp indicating when the client certificate version expires.
-func (o GetMtlskeystoreClientCertificateVersionOutput) ExpiryDate() pulumi.StringOutput {
-	return o.ApplyT(func(v GetMtlskeystoreClientCertificateVersion) string { return v.ExpiryDate }).(pulumi.StringOutput)
-}
-
-// An ISO 8601 timestamp indicating the client certificate version's availability.
-func (o GetMtlskeystoreClientCertificateVersionOutput) IssuedDate() pulumi.StringOutput {
-	return o.ApplyT(func(v GetMtlskeystoreClientCertificateVersion) string { return v.IssuedDate }).(pulumi.StringOutput)
-}
-
-// The signing entity of the client certificate version.
-func (o GetMtlskeystoreClientCertificateVersionOutput) Issuer() pulumi.StringOutput {
-	return o.ApplyT(func(v GetMtlskeystoreClientCertificateVersion) string { return v.Issuer }).(pulumi.StringOutput)
-}
-
-// Identifies the client certificate version's encryption algorithm. Supported values are `RSA` and `ECDSA`.
-func (o GetMtlskeystoreClientCertificateVersionOutput) KeyAlgorithm() pulumi.StringOutput {
-	return o.ApplyT(func(v GetMtlskeystoreClientCertificateVersion) string { return v.KeyAlgorithm }).(pulumi.StringOutput)
-}
-
-// The private key length of the client certificate version when the key algorithm `RSA` is used.
-func (o GetMtlskeystoreClientCertificateVersionOutput) KeySizeInBytes() pulumi.StringOutput {
-	return o.ApplyT(func(v GetMtlskeystoreClientCertificateVersion) string { return v.KeySizeInBytes }).(pulumi.StringOutput)
-}
-
-// A list of properties associated with the client certificate.
-func (o GetMtlskeystoreClientCertificateVersionOutput) Properties() GetMtlskeystoreClientCertificateVersionPropertyArrayOutput {
-	return o.ApplyT(func(v GetMtlskeystoreClientCertificateVersion) []GetMtlskeystoreClientCertificateVersionProperty {
-		return v.Properties
-	}).(GetMtlskeystoreClientCertificateVersionPropertyArrayOutput)
-}
-
-// An ISO 8601 timestamp indicating the client certificate version's scheduled deletion.
-func (o GetMtlskeystoreClientCertificateVersionOutput) ScheduledDeleteDate() pulumi.StringOutput {
-	return o.ApplyT(func(v GetMtlskeystoreClientCertificateVersion) string { return v.ScheduledDeleteDate }).(pulumi.StringOutput)
-}
-
-// Specifies the algorithm that secures the data exchange between the edge server and origin.
-func (o GetMtlskeystoreClientCertificateVersionOutput) SignatureAlgorithm() pulumi.StringOutput {
-	return o.ApplyT(func(v GetMtlskeystoreClientCertificateVersion) string { return v.SignatureAlgorithm }).(pulumi.StringOutput)
-}
-
-// The client certificate version status. Possible values: `AWAITING_SIGNED_CERTIFICATE`, `DEPLOYMENT_PENDING`, `DEPLOYED`, or `DELETE_PENDING`.
-func (o GetMtlskeystoreClientCertificateVersionOutput) Status() pulumi.StringOutput {
-	return o.ApplyT(func(v GetMtlskeystoreClientCertificateVersion) string { return v.Status }).(pulumi.StringOutput)
-}
-
-// The public key's entity stored in the client certificate version's subject public key field.
-func (o GetMtlskeystoreClientCertificateVersionOutput) Subject() pulumi.StringOutput {
-	return o.ApplyT(func(v GetMtlskeystoreClientCertificateVersion) string { return v.Subject }).(pulumi.StringOutput)
-}
-
-// Validation results for the client certificate version.
-func (o GetMtlskeystoreClientCertificateVersionOutput) Validation() GetMtlskeystoreClientCertificateVersionValidationOutput {
-	return o.ApplyT(func(v GetMtlskeystoreClientCertificateVersion) GetMtlskeystoreClientCertificateVersionValidation {
-		return v.Validation
-	}).(GetMtlskeystoreClientCertificateVersionValidationOutput)
-}
-
-// The unique identifier of the client certificate version.
-func (o GetMtlskeystoreClientCertificateVersionOutput) Version() pulumi.IntOutput {
-	return o.ApplyT(func(v GetMtlskeystoreClientCertificateVersion) int { return v.Version }).(pulumi.IntOutput)
-}
-
-// Unique identifier for the client certificate version. Use it to configure mutual authentication (mTLS) sessions between the origin and edge servers in Property Manager's Mutual TLS Origin Keystore behavior.
-func (o GetMtlskeystoreClientCertificateVersionOutput) VersionGuid() pulumi.StringOutput {
-	return o.ApplyT(func(v GetMtlskeystoreClientCertificateVersion) string { return v.VersionGuid }).(pulumi.StringOutput)
-}
-
-type GetMtlskeystoreClientCertificateVersionArrayOutput struct{ *pulumi.OutputState }
-
-func (GetMtlskeystoreClientCertificateVersionArrayOutput) ElementType() reflect.Type {
-	return reflect.TypeOf((*[]GetMtlskeystoreClientCertificateVersion)(nil)).Elem()
-}
-
-func (o GetMtlskeystoreClientCertificateVersionArrayOutput) ToGetMtlskeystoreClientCertificateVersionArrayOutput() GetMtlskeystoreClientCertificateVersionArrayOutput {
-	return o
-}
-
-func (o GetMtlskeystoreClientCertificateVersionArrayOutput) ToGetMtlskeystoreClientCertificateVersionArrayOutputWithContext(ctx context.Context) GetMtlskeystoreClientCertificateVersionArrayOutput {
-	return o
-}
-
-func (o GetMtlskeystoreClientCertificateVersionArrayOutput) Index(i pulumi.IntInput) GetMtlskeystoreClientCertificateVersionOutput {
-	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetMtlskeystoreClientCertificateVersion {
-		return vs[0].([]GetMtlskeystoreClientCertificateVersion)[vs[1].(int)]
-	}).(GetMtlskeystoreClientCertificateVersionOutput)
-}
-
-type GetMtlskeystoreClientCertificateVersionCertificateBlock struct {
-	// A text representation of the client certificate in PEM format.
-	Certificate string `pulumi:"certificate"`
-	// Identifies the CA certificate's encryption algorithm. Possible values: `RSA` or `ECDSA`.
-	KeyAlgorithm string `pulumi:"keyAlgorithm"`
-	// A text representation of the trust chain in PEM format.
-	TrustChain string `pulumi:"trustChain"`
-}
-
-// GetMtlskeystoreClientCertificateVersionCertificateBlockInput is an input type that accepts GetMtlskeystoreClientCertificateVersionCertificateBlockArgs and GetMtlskeystoreClientCertificateVersionCertificateBlockOutput values.
-// You can construct a concrete instance of `GetMtlskeystoreClientCertificateVersionCertificateBlockInput` via:
-//
-//	GetMtlskeystoreClientCertificateVersionCertificateBlockArgs{...}
-type GetMtlskeystoreClientCertificateVersionCertificateBlockInput interface {
-	pulumi.Input
-
-	ToGetMtlskeystoreClientCertificateVersionCertificateBlockOutput() GetMtlskeystoreClientCertificateVersionCertificateBlockOutput
-	ToGetMtlskeystoreClientCertificateVersionCertificateBlockOutputWithContext(context.Context) GetMtlskeystoreClientCertificateVersionCertificateBlockOutput
-}
-
-type GetMtlskeystoreClientCertificateVersionCertificateBlockArgs struct {
-	// A text representation of the client certificate in PEM format.
-	Certificate pulumi.StringInput `pulumi:"certificate"`
-	// Identifies the CA certificate's encryption algorithm. Possible values: `RSA` or `ECDSA`.
-	KeyAlgorithm pulumi.StringInput `pulumi:"keyAlgorithm"`
-	// A text representation of the trust chain in PEM format.
-	TrustChain pulumi.StringInput `pulumi:"trustChain"`
-}
-
-func (GetMtlskeystoreClientCertificateVersionCertificateBlockArgs) ElementType() reflect.Type {
-	return reflect.TypeOf((*GetMtlskeystoreClientCertificateVersionCertificateBlock)(nil)).Elem()
-}
-
-func (i GetMtlskeystoreClientCertificateVersionCertificateBlockArgs) ToGetMtlskeystoreClientCertificateVersionCertificateBlockOutput() GetMtlskeystoreClientCertificateVersionCertificateBlockOutput {
-	return i.ToGetMtlskeystoreClientCertificateVersionCertificateBlockOutputWithContext(context.Background())
-}
-
-func (i GetMtlskeystoreClientCertificateVersionCertificateBlockArgs) ToGetMtlskeystoreClientCertificateVersionCertificateBlockOutputWithContext(ctx context.Context) GetMtlskeystoreClientCertificateVersionCertificateBlockOutput {
-	return pulumi.ToOutputWithContext(ctx, i).(GetMtlskeystoreClientCertificateVersionCertificateBlockOutput)
-}
-
-type GetMtlskeystoreClientCertificateVersionCertificateBlockOutput struct{ *pulumi.OutputState }
-
-func (GetMtlskeystoreClientCertificateVersionCertificateBlockOutput) ElementType() reflect.Type {
-	return reflect.TypeOf((*GetMtlskeystoreClientCertificateVersionCertificateBlock)(nil)).Elem()
-}
-
-func (o GetMtlskeystoreClientCertificateVersionCertificateBlockOutput) ToGetMtlskeystoreClientCertificateVersionCertificateBlockOutput() GetMtlskeystoreClientCertificateVersionCertificateBlockOutput {
-	return o
-}
-
-func (o GetMtlskeystoreClientCertificateVersionCertificateBlockOutput) ToGetMtlskeystoreClientCertificateVersionCertificateBlockOutputWithContext(ctx context.Context) GetMtlskeystoreClientCertificateVersionCertificateBlockOutput {
-	return o
-}
-
-// A text representation of the client certificate in PEM format.
-func (o GetMtlskeystoreClientCertificateVersionCertificateBlockOutput) Certificate() pulumi.StringOutput {
-	return o.ApplyT(func(v GetMtlskeystoreClientCertificateVersionCertificateBlock) string { return v.Certificate }).(pulumi.StringOutput)
-}
-
-// Identifies the CA certificate's encryption algorithm. Possible values: `RSA` or `ECDSA`.
-func (o GetMtlskeystoreClientCertificateVersionCertificateBlockOutput) KeyAlgorithm() pulumi.StringOutput {
-	return o.ApplyT(func(v GetMtlskeystoreClientCertificateVersionCertificateBlock) string { return v.KeyAlgorithm }).(pulumi.StringOutput)
-}
-
-// A text representation of the trust chain in PEM format.
-func (o GetMtlskeystoreClientCertificateVersionCertificateBlockOutput) TrustChain() pulumi.StringOutput {
-	return o.ApplyT(func(v GetMtlskeystoreClientCertificateVersionCertificateBlock) string { return v.TrustChain }).(pulumi.StringOutput)
-}
-
-type GetMtlskeystoreClientCertificateVersionCsrBlock struct {
-	// Text of the certificate signing request.
-	Csr string `pulumi:"csr"`
-	// Identifies the CA certificate's encryption algorithm. Possible values: `RSA` or `ECDSA`.
-	KeyAlgorithm string `pulumi:"keyAlgorithm"`
-}
-
-// GetMtlskeystoreClientCertificateVersionCsrBlockInput is an input type that accepts GetMtlskeystoreClientCertificateVersionCsrBlockArgs and GetMtlskeystoreClientCertificateVersionCsrBlockOutput values.
-// You can construct a concrete instance of `GetMtlskeystoreClientCertificateVersionCsrBlockInput` via:
-//
-//	GetMtlskeystoreClientCertificateVersionCsrBlockArgs{...}
-type GetMtlskeystoreClientCertificateVersionCsrBlockInput interface {
-	pulumi.Input
-
-	ToGetMtlskeystoreClientCertificateVersionCsrBlockOutput() GetMtlskeystoreClientCertificateVersionCsrBlockOutput
-	ToGetMtlskeystoreClientCertificateVersionCsrBlockOutputWithContext(context.Context) GetMtlskeystoreClientCertificateVersionCsrBlockOutput
-}
-
-type GetMtlskeystoreClientCertificateVersionCsrBlockArgs struct {
-	// Text of the certificate signing request.
-	Csr pulumi.StringInput `pulumi:"csr"`
-	// Identifies the CA certificate's encryption algorithm. Possible values: `RSA` or `ECDSA`.
-	KeyAlgorithm pulumi.StringInput `pulumi:"keyAlgorithm"`
-}
-
-func (GetMtlskeystoreClientCertificateVersionCsrBlockArgs) ElementType() reflect.Type {
-	return reflect.TypeOf((*GetMtlskeystoreClientCertificateVersionCsrBlock)(nil)).Elem()
-}
-
-func (i GetMtlskeystoreClientCertificateVersionCsrBlockArgs) ToGetMtlskeystoreClientCertificateVersionCsrBlockOutput() GetMtlskeystoreClientCertificateVersionCsrBlockOutput {
-	return i.ToGetMtlskeystoreClientCertificateVersionCsrBlockOutputWithContext(context.Background())
-}
-
-func (i GetMtlskeystoreClientCertificateVersionCsrBlockArgs) ToGetMtlskeystoreClientCertificateVersionCsrBlockOutputWithContext(ctx context.Context) GetMtlskeystoreClientCertificateVersionCsrBlockOutput {
-	return pulumi.ToOutputWithContext(ctx, i).(GetMtlskeystoreClientCertificateVersionCsrBlockOutput)
-}
-
-type GetMtlskeystoreClientCertificateVersionCsrBlockOutput struct{ *pulumi.OutputState }
-
-func (GetMtlskeystoreClientCertificateVersionCsrBlockOutput) ElementType() reflect.Type {
-	return reflect.TypeOf((*GetMtlskeystoreClientCertificateVersionCsrBlock)(nil)).Elem()
-}
-
-func (o GetMtlskeystoreClientCertificateVersionCsrBlockOutput) ToGetMtlskeystoreClientCertificateVersionCsrBlockOutput() GetMtlskeystoreClientCertificateVersionCsrBlockOutput {
-	return o
-}
-
-func (o GetMtlskeystoreClientCertificateVersionCsrBlockOutput) ToGetMtlskeystoreClientCertificateVersionCsrBlockOutputWithContext(ctx context.Context) GetMtlskeystoreClientCertificateVersionCsrBlockOutput {
-	return o
-}
-
-// Text of the certificate signing request.
-func (o GetMtlskeystoreClientCertificateVersionCsrBlockOutput) Csr() pulumi.StringOutput {
-	return o.ApplyT(func(v GetMtlskeystoreClientCertificateVersionCsrBlock) string { return v.Csr }).(pulumi.StringOutput)
-}
-
-// Identifies the CA certificate's encryption algorithm. Possible values: `RSA` or `ECDSA`.
-func (o GetMtlskeystoreClientCertificateVersionCsrBlockOutput) KeyAlgorithm() pulumi.StringOutput {
-	return o.ApplyT(func(v GetMtlskeystoreClientCertificateVersionCsrBlock) string { return v.KeyAlgorithm }).(pulumi.StringOutput)
-}
-
-type GetMtlskeystoreClientCertificateVersionProperty struct {
-	// The unique identifier of the asset.
-	AssetId int `pulumi:"assetId"`
-	// The unique identifier of the group.
-	GroupId int `pulumi:"groupId"`
-	// The name of the property.
-	PropertyName string `pulumi:"propertyName"`
-	// The version of the property.
-	PropertyVersion int `pulumi:"propertyVersion"`
-}
-
-// GetMtlskeystoreClientCertificateVersionPropertyInput is an input type that accepts GetMtlskeystoreClientCertificateVersionPropertyArgs and GetMtlskeystoreClientCertificateVersionPropertyOutput values.
-// You can construct a concrete instance of `GetMtlskeystoreClientCertificateVersionPropertyInput` via:
-//
-//	GetMtlskeystoreClientCertificateVersionPropertyArgs{...}
-type GetMtlskeystoreClientCertificateVersionPropertyInput interface {
-	pulumi.Input
-
-	ToGetMtlskeystoreClientCertificateVersionPropertyOutput() GetMtlskeystoreClientCertificateVersionPropertyOutput
-	ToGetMtlskeystoreClientCertificateVersionPropertyOutputWithContext(context.Context) GetMtlskeystoreClientCertificateVersionPropertyOutput
-}
-
-type GetMtlskeystoreClientCertificateVersionPropertyArgs struct {
-	// The unique identifier of the asset.
-	AssetId pulumi.IntInput `pulumi:"assetId"`
-	// The unique identifier of the group.
-	GroupId pulumi.IntInput `pulumi:"groupId"`
-	// The name of the property.
-	PropertyName pulumi.StringInput `pulumi:"propertyName"`
-	// The version of the property.
-	PropertyVersion pulumi.IntInput `pulumi:"propertyVersion"`
-}
-
-func (GetMtlskeystoreClientCertificateVersionPropertyArgs) ElementType() reflect.Type {
-	return reflect.TypeOf((*GetMtlskeystoreClientCertificateVersionProperty)(nil)).Elem()
-}
-
-func (i GetMtlskeystoreClientCertificateVersionPropertyArgs) ToGetMtlskeystoreClientCertificateVersionPropertyOutput() GetMtlskeystoreClientCertificateVersionPropertyOutput {
-	return i.ToGetMtlskeystoreClientCertificateVersionPropertyOutputWithContext(context.Background())
-}
-
-func (i GetMtlskeystoreClientCertificateVersionPropertyArgs) ToGetMtlskeystoreClientCertificateVersionPropertyOutputWithContext(ctx context.Context) GetMtlskeystoreClientCertificateVersionPropertyOutput {
-	return pulumi.ToOutputWithContext(ctx, i).(GetMtlskeystoreClientCertificateVersionPropertyOutput)
-}
-
-// GetMtlskeystoreClientCertificateVersionPropertyArrayInput is an input type that accepts GetMtlskeystoreClientCertificateVersionPropertyArray and GetMtlskeystoreClientCertificateVersionPropertyArrayOutput values.
-// You can construct a concrete instance of `GetMtlskeystoreClientCertificateVersionPropertyArrayInput` via:
-//
-//	GetMtlskeystoreClientCertificateVersionPropertyArray{ GetMtlskeystoreClientCertificateVersionPropertyArgs{...} }
-type GetMtlskeystoreClientCertificateVersionPropertyArrayInput interface {
-	pulumi.Input
-
-	ToGetMtlskeystoreClientCertificateVersionPropertyArrayOutput() GetMtlskeystoreClientCertificateVersionPropertyArrayOutput
-	ToGetMtlskeystoreClientCertificateVersionPropertyArrayOutputWithContext(context.Context) GetMtlskeystoreClientCertificateVersionPropertyArrayOutput
-}
-
-type GetMtlskeystoreClientCertificateVersionPropertyArray []GetMtlskeystoreClientCertificateVersionPropertyInput
-
-func (GetMtlskeystoreClientCertificateVersionPropertyArray) ElementType() reflect.Type {
-	return reflect.TypeOf((*[]GetMtlskeystoreClientCertificateVersionProperty)(nil)).Elem()
-}
-
-func (i GetMtlskeystoreClientCertificateVersionPropertyArray) ToGetMtlskeystoreClientCertificateVersionPropertyArrayOutput() GetMtlskeystoreClientCertificateVersionPropertyArrayOutput {
-	return i.ToGetMtlskeystoreClientCertificateVersionPropertyArrayOutputWithContext(context.Background())
-}
-
-func (i GetMtlskeystoreClientCertificateVersionPropertyArray) ToGetMtlskeystoreClientCertificateVersionPropertyArrayOutputWithContext(ctx context.Context) GetMtlskeystoreClientCertificateVersionPropertyArrayOutput {
-	return pulumi.ToOutputWithContext(ctx, i).(GetMtlskeystoreClientCertificateVersionPropertyArrayOutput)
-}
-
-type GetMtlskeystoreClientCertificateVersionPropertyOutput struct{ *pulumi.OutputState }
-
-func (GetMtlskeystoreClientCertificateVersionPropertyOutput) ElementType() reflect.Type {
-	return reflect.TypeOf((*GetMtlskeystoreClientCertificateVersionProperty)(nil)).Elem()
-}
-
-func (o GetMtlskeystoreClientCertificateVersionPropertyOutput) ToGetMtlskeystoreClientCertificateVersionPropertyOutput() GetMtlskeystoreClientCertificateVersionPropertyOutput {
-	return o
-}
-
-func (o GetMtlskeystoreClientCertificateVersionPropertyOutput) ToGetMtlskeystoreClientCertificateVersionPropertyOutputWithContext(ctx context.Context) GetMtlskeystoreClientCertificateVersionPropertyOutput {
-	return o
-}
-
-// The unique identifier of the asset.
-func (o GetMtlskeystoreClientCertificateVersionPropertyOutput) AssetId() pulumi.IntOutput {
-	return o.ApplyT(func(v GetMtlskeystoreClientCertificateVersionProperty) int { return v.AssetId }).(pulumi.IntOutput)
-}
-
-// The unique identifier of the group.
-func (o GetMtlskeystoreClientCertificateVersionPropertyOutput) GroupId() pulumi.IntOutput {
-	return o.ApplyT(func(v GetMtlskeystoreClientCertificateVersionProperty) int { return v.GroupId }).(pulumi.IntOutput)
-}
-
-// The name of the property.
-func (o GetMtlskeystoreClientCertificateVersionPropertyOutput) PropertyName() pulumi.StringOutput {
-	return o.ApplyT(func(v GetMtlskeystoreClientCertificateVersionProperty) string { return v.PropertyName }).(pulumi.StringOutput)
-}
-
-// The version of the property.
-func (o GetMtlskeystoreClientCertificateVersionPropertyOutput) PropertyVersion() pulumi.IntOutput {
-	return o.ApplyT(func(v GetMtlskeystoreClientCertificateVersionProperty) int { return v.PropertyVersion }).(pulumi.IntOutput)
-}
-
-type GetMtlskeystoreClientCertificateVersionPropertyArrayOutput struct{ *pulumi.OutputState }
-
-func (GetMtlskeystoreClientCertificateVersionPropertyArrayOutput) ElementType() reflect.Type {
-	return reflect.TypeOf((*[]GetMtlskeystoreClientCertificateVersionProperty)(nil)).Elem()
-}
-
-func (o GetMtlskeystoreClientCertificateVersionPropertyArrayOutput) ToGetMtlskeystoreClientCertificateVersionPropertyArrayOutput() GetMtlskeystoreClientCertificateVersionPropertyArrayOutput {
-	return o
-}
-
-func (o GetMtlskeystoreClientCertificateVersionPropertyArrayOutput) ToGetMtlskeystoreClientCertificateVersionPropertyArrayOutputWithContext(ctx context.Context) GetMtlskeystoreClientCertificateVersionPropertyArrayOutput {
-	return o
-}
-
-func (o GetMtlskeystoreClientCertificateVersionPropertyArrayOutput) Index(i pulumi.IntInput) GetMtlskeystoreClientCertificateVersionPropertyOutput {
-	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetMtlskeystoreClientCertificateVersionProperty {
-		return vs[0].([]GetMtlskeystoreClientCertificateVersionProperty)[vs[1].(int)]
-	}).(GetMtlskeystoreClientCertificateVersionPropertyOutput)
-}
-
-type GetMtlskeystoreClientCertificateVersionValidation struct {
-	// Validation errors that need to be resolved for the request to succeed.
-	Errors []GetMtlskeystoreClientCertificateVersionValidationError `pulumi:"errors"`
-	// Validation warnings that can be resolved.
-	Warnings []GetMtlskeystoreClientCertificateVersionValidationWarning `pulumi:"warnings"`
-}
-
-// GetMtlskeystoreClientCertificateVersionValidationInput is an input type that accepts GetMtlskeystoreClientCertificateVersionValidationArgs and GetMtlskeystoreClientCertificateVersionValidationOutput values.
-// You can construct a concrete instance of `GetMtlskeystoreClientCertificateVersionValidationInput` via:
-//
-//	GetMtlskeystoreClientCertificateVersionValidationArgs{...}
-type GetMtlskeystoreClientCertificateVersionValidationInput interface {
-	pulumi.Input
-
-	ToGetMtlskeystoreClientCertificateVersionValidationOutput() GetMtlskeystoreClientCertificateVersionValidationOutput
-	ToGetMtlskeystoreClientCertificateVersionValidationOutputWithContext(context.Context) GetMtlskeystoreClientCertificateVersionValidationOutput
-}
-
-type GetMtlskeystoreClientCertificateVersionValidationArgs struct {
-	// Validation errors that need to be resolved for the request to succeed.
-	Errors GetMtlskeystoreClientCertificateVersionValidationErrorArrayInput `pulumi:"errors"`
-	// Validation warnings that can be resolved.
-	Warnings GetMtlskeystoreClientCertificateVersionValidationWarningArrayInput `pulumi:"warnings"`
-}
-
-func (GetMtlskeystoreClientCertificateVersionValidationArgs) ElementType() reflect.Type {
-	return reflect.TypeOf((*GetMtlskeystoreClientCertificateVersionValidation)(nil)).Elem()
-}
-
-func (i GetMtlskeystoreClientCertificateVersionValidationArgs) ToGetMtlskeystoreClientCertificateVersionValidationOutput() GetMtlskeystoreClientCertificateVersionValidationOutput {
-	return i.ToGetMtlskeystoreClientCertificateVersionValidationOutputWithContext(context.Background())
-}
-
-func (i GetMtlskeystoreClientCertificateVersionValidationArgs) ToGetMtlskeystoreClientCertificateVersionValidationOutputWithContext(ctx context.Context) GetMtlskeystoreClientCertificateVersionValidationOutput {
-	return pulumi.ToOutputWithContext(ctx, i).(GetMtlskeystoreClientCertificateVersionValidationOutput)
-}
-
-type GetMtlskeystoreClientCertificateVersionValidationOutput struct{ *pulumi.OutputState }
-
-func (GetMtlskeystoreClientCertificateVersionValidationOutput) ElementType() reflect.Type {
-	return reflect.TypeOf((*GetMtlskeystoreClientCertificateVersionValidation)(nil)).Elem()
-}
-
-func (o GetMtlskeystoreClientCertificateVersionValidationOutput) ToGetMtlskeystoreClientCertificateVersionValidationOutput() GetMtlskeystoreClientCertificateVersionValidationOutput {
-	return o
-}
-
-func (o GetMtlskeystoreClientCertificateVersionValidationOutput) ToGetMtlskeystoreClientCertificateVersionValidationOutputWithContext(ctx context.Context) GetMtlskeystoreClientCertificateVersionValidationOutput {
-	return o
-}
-
-// Validation errors that need to be resolved for the request to succeed.
-func (o GetMtlskeystoreClientCertificateVersionValidationOutput) Errors() GetMtlskeystoreClientCertificateVersionValidationErrorArrayOutput {
-	return o.ApplyT(func(v GetMtlskeystoreClientCertificateVersionValidation) []GetMtlskeystoreClientCertificateVersionValidationError {
-		return v.Errors
-	}).(GetMtlskeystoreClientCertificateVersionValidationErrorArrayOutput)
-}
-
-// Validation warnings that can be resolved.
-func (o GetMtlskeystoreClientCertificateVersionValidationOutput) Warnings() GetMtlskeystoreClientCertificateVersionValidationWarningArrayOutput {
-	return o.ApplyT(func(v GetMtlskeystoreClientCertificateVersionValidation) []GetMtlskeystoreClientCertificateVersionValidationWarning {
-		return v.Warnings
-	}).(GetMtlskeystoreClientCertificateVersionValidationWarningArrayOutput)
-}
-
-type GetMtlskeystoreClientCertificateVersionValidationError struct {
-	// Specifies the error details.
-	Message string `pulumi:"message"`
-	// Specifies the error root cause.
-	Reason string `pulumi:"reason"`
-	// Specifies the error category.
-	Type string `pulumi:"type"`
-}
-
-// GetMtlskeystoreClientCertificateVersionValidationErrorInput is an input type that accepts GetMtlskeystoreClientCertificateVersionValidationErrorArgs and GetMtlskeystoreClientCertificateVersionValidationErrorOutput values.
-// You can construct a concrete instance of `GetMtlskeystoreClientCertificateVersionValidationErrorInput` via:
-//
-//	GetMtlskeystoreClientCertificateVersionValidationErrorArgs{...}
-type GetMtlskeystoreClientCertificateVersionValidationErrorInput interface {
-	pulumi.Input
-
-	ToGetMtlskeystoreClientCertificateVersionValidationErrorOutput() GetMtlskeystoreClientCertificateVersionValidationErrorOutput
-	ToGetMtlskeystoreClientCertificateVersionValidationErrorOutputWithContext(context.Context) GetMtlskeystoreClientCertificateVersionValidationErrorOutput
-}
-
-type GetMtlskeystoreClientCertificateVersionValidationErrorArgs struct {
-	// Specifies the error details.
-	Message pulumi.StringInput `pulumi:"message"`
-	// Specifies the error root cause.
-	Reason pulumi.StringInput `pulumi:"reason"`
-	// Specifies the error category.
-	Type pulumi.StringInput `pulumi:"type"`
-}
-
-func (GetMtlskeystoreClientCertificateVersionValidationErrorArgs) ElementType() reflect.Type {
-	return reflect.TypeOf((*GetMtlskeystoreClientCertificateVersionValidationError)(nil)).Elem()
-}
-
-func (i GetMtlskeystoreClientCertificateVersionValidationErrorArgs) ToGetMtlskeystoreClientCertificateVersionValidationErrorOutput() GetMtlskeystoreClientCertificateVersionValidationErrorOutput {
-	return i.ToGetMtlskeystoreClientCertificateVersionValidationErrorOutputWithContext(context.Background())
-}
-
-func (i GetMtlskeystoreClientCertificateVersionValidationErrorArgs) ToGetMtlskeystoreClientCertificateVersionValidationErrorOutputWithContext(ctx context.Context) GetMtlskeystoreClientCertificateVersionValidationErrorOutput {
-	return pulumi.ToOutputWithContext(ctx, i).(GetMtlskeystoreClientCertificateVersionValidationErrorOutput)
-}
-
-// GetMtlskeystoreClientCertificateVersionValidationErrorArrayInput is an input type that accepts GetMtlskeystoreClientCertificateVersionValidationErrorArray and GetMtlskeystoreClientCertificateVersionValidationErrorArrayOutput values.
-// You can construct a concrete instance of `GetMtlskeystoreClientCertificateVersionValidationErrorArrayInput` via:
-//
-//	GetMtlskeystoreClientCertificateVersionValidationErrorArray{ GetMtlskeystoreClientCertificateVersionValidationErrorArgs{...} }
-type GetMtlskeystoreClientCertificateVersionValidationErrorArrayInput interface {
-	pulumi.Input
-
-	ToGetMtlskeystoreClientCertificateVersionValidationErrorArrayOutput() GetMtlskeystoreClientCertificateVersionValidationErrorArrayOutput
-	ToGetMtlskeystoreClientCertificateVersionValidationErrorArrayOutputWithContext(context.Context) GetMtlskeystoreClientCertificateVersionValidationErrorArrayOutput
-}
-
-type GetMtlskeystoreClientCertificateVersionValidationErrorArray []GetMtlskeystoreClientCertificateVersionValidationErrorInput
-
-func (GetMtlskeystoreClientCertificateVersionValidationErrorArray) ElementType() reflect.Type {
-	return reflect.TypeOf((*[]GetMtlskeystoreClientCertificateVersionValidationError)(nil)).Elem()
-}
-
-func (i GetMtlskeystoreClientCertificateVersionValidationErrorArray) ToGetMtlskeystoreClientCertificateVersionValidationErrorArrayOutput() GetMtlskeystoreClientCertificateVersionValidationErrorArrayOutput {
-	return i.ToGetMtlskeystoreClientCertificateVersionValidationErrorArrayOutputWithContext(context.Background())
-}
-
-func (i GetMtlskeystoreClientCertificateVersionValidationErrorArray) ToGetMtlskeystoreClientCertificateVersionValidationErrorArrayOutputWithContext(ctx context.Context) GetMtlskeystoreClientCertificateVersionValidationErrorArrayOutput {
-	return pulumi.ToOutputWithContext(ctx, i).(GetMtlskeystoreClientCertificateVersionValidationErrorArrayOutput)
-}
-
-type GetMtlskeystoreClientCertificateVersionValidationErrorOutput struct{ *pulumi.OutputState }
-
-func (GetMtlskeystoreClientCertificateVersionValidationErrorOutput) ElementType() reflect.Type {
-	return reflect.TypeOf((*GetMtlskeystoreClientCertificateVersionValidationError)(nil)).Elem()
-}
-
-func (o GetMtlskeystoreClientCertificateVersionValidationErrorOutput) ToGetMtlskeystoreClientCertificateVersionValidationErrorOutput() GetMtlskeystoreClientCertificateVersionValidationErrorOutput {
-	return o
-}
-
-func (o GetMtlskeystoreClientCertificateVersionValidationErrorOutput) ToGetMtlskeystoreClientCertificateVersionValidationErrorOutputWithContext(ctx context.Context) GetMtlskeystoreClientCertificateVersionValidationErrorOutput {
-	return o
-}
-
-// Specifies the error details.
-func (o GetMtlskeystoreClientCertificateVersionValidationErrorOutput) Message() pulumi.StringOutput {
-	return o.ApplyT(func(v GetMtlskeystoreClientCertificateVersionValidationError) string { return v.Message }).(pulumi.StringOutput)
-}
-
-// Specifies the error root cause.
-func (o GetMtlskeystoreClientCertificateVersionValidationErrorOutput) Reason() pulumi.StringOutput {
-	return o.ApplyT(func(v GetMtlskeystoreClientCertificateVersionValidationError) string { return v.Reason }).(pulumi.StringOutput)
-}
-
-// Specifies the error category.
-func (o GetMtlskeystoreClientCertificateVersionValidationErrorOutput) Type() pulumi.StringOutput {
-	return o.ApplyT(func(v GetMtlskeystoreClientCertificateVersionValidationError) string { return v.Type }).(pulumi.StringOutput)
-}
-
-type GetMtlskeystoreClientCertificateVersionValidationErrorArrayOutput struct{ *pulumi.OutputState }
-
-func (GetMtlskeystoreClientCertificateVersionValidationErrorArrayOutput) ElementType() reflect.Type {
-	return reflect.TypeOf((*[]GetMtlskeystoreClientCertificateVersionValidationError)(nil)).Elem()
-}
-
-func (o GetMtlskeystoreClientCertificateVersionValidationErrorArrayOutput) ToGetMtlskeystoreClientCertificateVersionValidationErrorArrayOutput() GetMtlskeystoreClientCertificateVersionValidationErrorArrayOutput {
-	return o
-}
-
-func (o GetMtlskeystoreClientCertificateVersionValidationErrorArrayOutput) ToGetMtlskeystoreClientCertificateVersionValidationErrorArrayOutputWithContext(ctx context.Context) GetMtlskeystoreClientCertificateVersionValidationErrorArrayOutput {
-	return o
-}
-
-func (o GetMtlskeystoreClientCertificateVersionValidationErrorArrayOutput) Index(i pulumi.IntInput) GetMtlskeystoreClientCertificateVersionValidationErrorOutput {
-	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetMtlskeystoreClientCertificateVersionValidationError {
-		return vs[0].([]GetMtlskeystoreClientCertificateVersionValidationError)[vs[1].(int)]
-	}).(GetMtlskeystoreClientCertificateVersionValidationErrorOutput)
-}
-
-type GetMtlskeystoreClientCertificateVersionValidationWarning struct {
-	// Specifies the warning details.
-	Message string `pulumi:"message"`
-	// Specifies the warning root cause.
-	Reason string `pulumi:"reason"`
-	// Specifies the warning category.
-	Type string `pulumi:"type"`
-}
-
-// GetMtlskeystoreClientCertificateVersionValidationWarningInput is an input type that accepts GetMtlskeystoreClientCertificateVersionValidationWarningArgs and GetMtlskeystoreClientCertificateVersionValidationWarningOutput values.
-// You can construct a concrete instance of `GetMtlskeystoreClientCertificateVersionValidationWarningInput` via:
-//
-//	GetMtlskeystoreClientCertificateVersionValidationWarningArgs{...}
-type GetMtlskeystoreClientCertificateVersionValidationWarningInput interface {
-	pulumi.Input
-
-	ToGetMtlskeystoreClientCertificateVersionValidationWarningOutput() GetMtlskeystoreClientCertificateVersionValidationWarningOutput
-	ToGetMtlskeystoreClientCertificateVersionValidationWarningOutputWithContext(context.Context) GetMtlskeystoreClientCertificateVersionValidationWarningOutput
-}
-
-type GetMtlskeystoreClientCertificateVersionValidationWarningArgs struct {
-	// Specifies the warning details.
-	Message pulumi.StringInput `pulumi:"message"`
-	// Specifies the warning root cause.
-	Reason pulumi.StringInput `pulumi:"reason"`
-	// Specifies the warning category.
-	Type pulumi.StringInput `pulumi:"type"`
-}
-
-func (GetMtlskeystoreClientCertificateVersionValidationWarningArgs) ElementType() reflect.Type {
-	return reflect.TypeOf((*GetMtlskeystoreClientCertificateVersionValidationWarning)(nil)).Elem()
-}
-
-func (i GetMtlskeystoreClientCertificateVersionValidationWarningArgs) ToGetMtlskeystoreClientCertificateVersionValidationWarningOutput() GetMtlskeystoreClientCertificateVersionValidationWarningOutput {
-	return i.ToGetMtlskeystoreClientCertificateVersionValidationWarningOutputWithContext(context.Background())
-}
-
-func (i GetMtlskeystoreClientCertificateVersionValidationWarningArgs) ToGetMtlskeystoreClientCertificateVersionValidationWarningOutputWithContext(ctx context.Context) GetMtlskeystoreClientCertificateVersionValidationWarningOutput {
-	return pulumi.ToOutputWithContext(ctx, i).(GetMtlskeystoreClientCertificateVersionValidationWarningOutput)
-}
-
-// GetMtlskeystoreClientCertificateVersionValidationWarningArrayInput is an input type that accepts GetMtlskeystoreClientCertificateVersionValidationWarningArray and GetMtlskeystoreClientCertificateVersionValidationWarningArrayOutput values.
-// You can construct a concrete instance of `GetMtlskeystoreClientCertificateVersionValidationWarningArrayInput` via:
-//
-//	GetMtlskeystoreClientCertificateVersionValidationWarningArray{ GetMtlskeystoreClientCertificateVersionValidationWarningArgs{...} }
-type GetMtlskeystoreClientCertificateVersionValidationWarningArrayInput interface {
-	pulumi.Input
-
-	ToGetMtlskeystoreClientCertificateVersionValidationWarningArrayOutput() GetMtlskeystoreClientCertificateVersionValidationWarningArrayOutput
-	ToGetMtlskeystoreClientCertificateVersionValidationWarningArrayOutputWithContext(context.Context) GetMtlskeystoreClientCertificateVersionValidationWarningArrayOutput
-}
-
-type GetMtlskeystoreClientCertificateVersionValidationWarningArray []GetMtlskeystoreClientCertificateVersionValidationWarningInput
-
-func (GetMtlskeystoreClientCertificateVersionValidationWarningArray) ElementType() reflect.Type {
-	return reflect.TypeOf((*[]GetMtlskeystoreClientCertificateVersionValidationWarning)(nil)).Elem()
-}
-
-func (i GetMtlskeystoreClientCertificateVersionValidationWarningArray) ToGetMtlskeystoreClientCertificateVersionValidationWarningArrayOutput() GetMtlskeystoreClientCertificateVersionValidationWarningArrayOutput {
-	return i.ToGetMtlskeystoreClientCertificateVersionValidationWarningArrayOutputWithContext(context.Background())
-}
-
-func (i GetMtlskeystoreClientCertificateVersionValidationWarningArray) ToGetMtlskeystoreClientCertificateVersionValidationWarningArrayOutputWithContext(ctx context.Context) GetMtlskeystoreClientCertificateVersionValidationWarningArrayOutput {
-	return pulumi.ToOutputWithContext(ctx, i).(GetMtlskeystoreClientCertificateVersionValidationWarningArrayOutput)
-}
-
-type GetMtlskeystoreClientCertificateVersionValidationWarningOutput struct{ *pulumi.OutputState }
-
-func (GetMtlskeystoreClientCertificateVersionValidationWarningOutput) ElementType() reflect.Type {
-	return reflect.TypeOf((*GetMtlskeystoreClientCertificateVersionValidationWarning)(nil)).Elem()
-}
-
-func (o GetMtlskeystoreClientCertificateVersionValidationWarningOutput) ToGetMtlskeystoreClientCertificateVersionValidationWarningOutput() GetMtlskeystoreClientCertificateVersionValidationWarningOutput {
-	return o
-}
-
-func (o GetMtlskeystoreClientCertificateVersionValidationWarningOutput) ToGetMtlskeystoreClientCertificateVersionValidationWarningOutputWithContext(ctx context.Context) GetMtlskeystoreClientCertificateVersionValidationWarningOutput {
-	return o
-}
-
-// Specifies the warning details.
-func (o GetMtlskeystoreClientCertificateVersionValidationWarningOutput) Message() pulumi.StringOutput {
-	return o.ApplyT(func(v GetMtlskeystoreClientCertificateVersionValidationWarning) string { return v.Message }).(pulumi.StringOutput)
-}
-
-// Specifies the warning root cause.
-func (o GetMtlskeystoreClientCertificateVersionValidationWarningOutput) Reason() pulumi.StringOutput {
-	return o.ApplyT(func(v GetMtlskeystoreClientCertificateVersionValidationWarning) string { return v.Reason }).(pulumi.StringOutput)
-}
-
-// Specifies the warning category.
-func (o GetMtlskeystoreClientCertificateVersionValidationWarningOutput) Type() pulumi.StringOutput {
-	return o.ApplyT(func(v GetMtlskeystoreClientCertificateVersionValidationWarning) string { return v.Type }).(pulumi.StringOutput)
-}
-
-type GetMtlskeystoreClientCertificateVersionValidationWarningArrayOutput struct{ *pulumi.OutputState }
-
-func (GetMtlskeystoreClientCertificateVersionValidationWarningArrayOutput) ElementType() reflect.Type {
-	return reflect.TypeOf((*[]GetMtlskeystoreClientCertificateVersionValidationWarning)(nil)).Elem()
-}
-
-func (o GetMtlskeystoreClientCertificateVersionValidationWarningArrayOutput) ToGetMtlskeystoreClientCertificateVersionValidationWarningArrayOutput() GetMtlskeystoreClientCertificateVersionValidationWarningArrayOutput {
-	return o
-}
-
-func (o GetMtlskeystoreClientCertificateVersionValidationWarningArrayOutput) ToGetMtlskeystoreClientCertificateVersionValidationWarningArrayOutputWithContext(ctx context.Context) GetMtlskeystoreClientCertificateVersionValidationWarningArrayOutput {
-	return o
-}
-
-func (o GetMtlskeystoreClientCertificateVersionValidationWarningArrayOutput) Index(i pulumi.IntInput) GetMtlskeystoreClientCertificateVersionValidationWarningOutput {
-	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetMtlskeystoreClientCertificateVersionValidationWarning {
-		return vs[0].([]GetMtlskeystoreClientCertificateVersionValidationWarning)[vs[1].(int)]
-	}).(GetMtlskeystoreClientCertificateVersionValidationWarningOutput)
-}
-
-type GetMtlskeystoreClientCertificatesCertificate struct {
-	// The unique identifier of the client certificate.
-	CertificateId int `pulumi:"certificateId"`
-	// The name of the client certificate.
-	CertificateName string `pulumi:"certificateName"`
-	// The user who created the CA certificate.
-	CreatedBy string `pulumi:"createdBy"`
-	// An ISO 8601 timestamp indicating the CA certificate's creation.
-	CreatedDate string `pulumi:"createdDate"`
-	// Specifies the type of network to deploy the client certificate. Possible values: `CORE`, `RUSSIA_AND_CORE`, or `CHINA_AND_CORE`.
-	Geography string `pulumi:"geography"`
-	// Identifies the CA certificate's encryption algorithm. Possible values: `RSA` or `ECDSA`.
-	KeyAlgorithm string `pulumi:"keyAlgorithm"`
-	// The email addresses to notify for client certificate-related issues.
-	NotificationEmails []string `pulumi:"notificationEmails"`
-	// Identifies the network deployment type. Possible values: `STANDARD_TLS` or `ENHANCED_TLS`.
-	SecureNetwork string `pulumi:"secureNetwork"`
-	// The signing entity of the client certificate. Possible values: `AKAMAI` or `THIRD_PARTY`.
-	Signer string `pulumi:"signer"`
-	// The CA certificate’s key value details.
-	Subject string `pulumi:"subject"`
-}
-
-// GetMtlskeystoreClientCertificatesCertificateInput is an input type that accepts GetMtlskeystoreClientCertificatesCertificateArgs and GetMtlskeystoreClientCertificatesCertificateOutput values.
-// You can construct a concrete instance of `GetMtlskeystoreClientCertificatesCertificateInput` via:
-//
-//	GetMtlskeystoreClientCertificatesCertificateArgs{...}
-type GetMtlskeystoreClientCertificatesCertificateInput interface {
-	pulumi.Input
-
-	ToGetMtlskeystoreClientCertificatesCertificateOutput() GetMtlskeystoreClientCertificatesCertificateOutput
-	ToGetMtlskeystoreClientCertificatesCertificateOutputWithContext(context.Context) GetMtlskeystoreClientCertificatesCertificateOutput
-}
-
-type GetMtlskeystoreClientCertificatesCertificateArgs struct {
-	// The unique identifier of the client certificate.
-	CertificateId pulumi.IntInput `pulumi:"certificateId"`
-	// The name of the client certificate.
-	CertificateName pulumi.StringInput `pulumi:"certificateName"`
-	// The user who created the CA certificate.
-	CreatedBy pulumi.StringInput `pulumi:"createdBy"`
-	// An ISO 8601 timestamp indicating the CA certificate's creation.
-	CreatedDate pulumi.StringInput `pulumi:"createdDate"`
-	// Specifies the type of network to deploy the client certificate. Possible values: `CORE`, `RUSSIA_AND_CORE`, or `CHINA_AND_CORE`.
-	Geography pulumi.StringInput `pulumi:"geography"`
-	// Identifies the CA certificate's encryption algorithm. Possible values: `RSA` or `ECDSA`.
-	KeyAlgorithm pulumi.StringInput `pulumi:"keyAlgorithm"`
-	// The email addresses to notify for client certificate-related issues.
-	NotificationEmails pulumi.StringArrayInput `pulumi:"notificationEmails"`
-	// Identifies the network deployment type. Possible values: `STANDARD_TLS` or `ENHANCED_TLS`.
-	SecureNetwork pulumi.StringInput `pulumi:"secureNetwork"`
-	// The signing entity of the client certificate. Possible values: `AKAMAI` or `THIRD_PARTY`.
-	Signer pulumi.StringInput `pulumi:"signer"`
-	// The CA certificate’s key value details.
-	Subject pulumi.StringInput `pulumi:"subject"`
-}
-
-func (GetMtlskeystoreClientCertificatesCertificateArgs) ElementType() reflect.Type {
-	return reflect.TypeOf((*GetMtlskeystoreClientCertificatesCertificate)(nil)).Elem()
-}
-
-func (i GetMtlskeystoreClientCertificatesCertificateArgs) ToGetMtlskeystoreClientCertificatesCertificateOutput() GetMtlskeystoreClientCertificatesCertificateOutput {
-	return i.ToGetMtlskeystoreClientCertificatesCertificateOutputWithContext(context.Background())
-}
-
-func (i GetMtlskeystoreClientCertificatesCertificateArgs) ToGetMtlskeystoreClientCertificatesCertificateOutputWithContext(ctx context.Context) GetMtlskeystoreClientCertificatesCertificateOutput {
-	return pulumi.ToOutputWithContext(ctx, i).(GetMtlskeystoreClientCertificatesCertificateOutput)
-}
-
-// GetMtlskeystoreClientCertificatesCertificateArrayInput is an input type that accepts GetMtlskeystoreClientCertificatesCertificateArray and GetMtlskeystoreClientCertificatesCertificateArrayOutput values.
-// You can construct a concrete instance of `GetMtlskeystoreClientCertificatesCertificateArrayInput` via:
-//
-//	GetMtlskeystoreClientCertificatesCertificateArray{ GetMtlskeystoreClientCertificatesCertificateArgs{...} }
-type GetMtlskeystoreClientCertificatesCertificateArrayInput interface {
-	pulumi.Input
-
-	ToGetMtlskeystoreClientCertificatesCertificateArrayOutput() GetMtlskeystoreClientCertificatesCertificateArrayOutput
-	ToGetMtlskeystoreClientCertificatesCertificateArrayOutputWithContext(context.Context) GetMtlskeystoreClientCertificatesCertificateArrayOutput
-}
-
-type GetMtlskeystoreClientCertificatesCertificateArray []GetMtlskeystoreClientCertificatesCertificateInput
-
-func (GetMtlskeystoreClientCertificatesCertificateArray) ElementType() reflect.Type {
-	return reflect.TypeOf((*[]GetMtlskeystoreClientCertificatesCertificate)(nil)).Elem()
-}
-
-func (i GetMtlskeystoreClientCertificatesCertificateArray) ToGetMtlskeystoreClientCertificatesCertificateArrayOutput() GetMtlskeystoreClientCertificatesCertificateArrayOutput {
-	return i.ToGetMtlskeystoreClientCertificatesCertificateArrayOutputWithContext(context.Background())
-}
-
-func (i GetMtlskeystoreClientCertificatesCertificateArray) ToGetMtlskeystoreClientCertificatesCertificateArrayOutputWithContext(ctx context.Context) GetMtlskeystoreClientCertificatesCertificateArrayOutput {
-	return pulumi.ToOutputWithContext(ctx, i).(GetMtlskeystoreClientCertificatesCertificateArrayOutput)
-}
-
-type GetMtlskeystoreClientCertificatesCertificateOutput struct{ *pulumi.OutputState }
-
-func (GetMtlskeystoreClientCertificatesCertificateOutput) ElementType() reflect.Type {
-	return reflect.TypeOf((*GetMtlskeystoreClientCertificatesCertificate)(nil)).Elem()
-}
-
-func (o GetMtlskeystoreClientCertificatesCertificateOutput) ToGetMtlskeystoreClientCertificatesCertificateOutput() GetMtlskeystoreClientCertificatesCertificateOutput {
-	return o
-}
-
-func (o GetMtlskeystoreClientCertificatesCertificateOutput) ToGetMtlskeystoreClientCertificatesCertificateOutputWithContext(ctx context.Context) GetMtlskeystoreClientCertificatesCertificateOutput {
-	return o
-}
-
-// The unique identifier of the client certificate.
-func (o GetMtlskeystoreClientCertificatesCertificateOutput) CertificateId() pulumi.IntOutput {
-	return o.ApplyT(func(v GetMtlskeystoreClientCertificatesCertificate) int { return v.CertificateId }).(pulumi.IntOutput)
-}
-
-// The name of the client certificate.
-func (o GetMtlskeystoreClientCertificatesCertificateOutput) CertificateName() pulumi.StringOutput {
-	return o.ApplyT(func(v GetMtlskeystoreClientCertificatesCertificate) string { return v.CertificateName }).(pulumi.StringOutput)
-}
-
-// The user who created the CA certificate.
-func (o GetMtlskeystoreClientCertificatesCertificateOutput) CreatedBy() pulumi.StringOutput {
-	return o.ApplyT(func(v GetMtlskeystoreClientCertificatesCertificate) string { return v.CreatedBy }).(pulumi.StringOutput)
-}
-
-// An ISO 8601 timestamp indicating the CA certificate's creation.
-func (o GetMtlskeystoreClientCertificatesCertificateOutput) CreatedDate() pulumi.StringOutput {
-	return o.ApplyT(func(v GetMtlskeystoreClientCertificatesCertificate) string { return v.CreatedDate }).(pulumi.StringOutput)
-}
-
-// Specifies the type of network to deploy the client certificate. Possible values: `CORE`, `RUSSIA_AND_CORE`, or `CHINA_AND_CORE`.
-func (o GetMtlskeystoreClientCertificatesCertificateOutput) Geography() pulumi.StringOutput {
-	return o.ApplyT(func(v GetMtlskeystoreClientCertificatesCertificate) string { return v.Geography }).(pulumi.StringOutput)
-}
-
-// Identifies the CA certificate's encryption algorithm. Possible values: `RSA` or `ECDSA`.
-func (o GetMtlskeystoreClientCertificatesCertificateOutput) KeyAlgorithm() pulumi.StringOutput {
-	return o.ApplyT(func(v GetMtlskeystoreClientCertificatesCertificate) string { return v.KeyAlgorithm }).(pulumi.StringOutput)
-}
-
-// The email addresses to notify for client certificate-related issues.
-func (o GetMtlskeystoreClientCertificatesCertificateOutput) NotificationEmails() pulumi.StringArrayOutput {
-	return o.ApplyT(func(v GetMtlskeystoreClientCertificatesCertificate) []string { return v.NotificationEmails }).(pulumi.StringArrayOutput)
-}
-
-// Identifies the network deployment type. Possible values: `STANDARD_TLS` or `ENHANCED_TLS`.
-func (o GetMtlskeystoreClientCertificatesCertificateOutput) SecureNetwork() pulumi.StringOutput {
-	return o.ApplyT(func(v GetMtlskeystoreClientCertificatesCertificate) string { return v.SecureNetwork }).(pulumi.StringOutput)
-}
-
-// The signing entity of the client certificate. Possible values: `AKAMAI` or `THIRD_PARTY`.
-func (o GetMtlskeystoreClientCertificatesCertificateOutput) Signer() pulumi.StringOutput {
-	return o.ApplyT(func(v GetMtlskeystoreClientCertificatesCertificate) string { return v.Signer }).(pulumi.StringOutput)
-}
-
-// The CA certificate’s key value details.
-func (o GetMtlskeystoreClientCertificatesCertificateOutput) Subject() pulumi.StringOutput {
-	return o.ApplyT(func(v GetMtlskeystoreClientCertificatesCertificate) string { return v.Subject }).(pulumi.StringOutput)
-}
-
-type GetMtlskeystoreClientCertificatesCertificateArrayOutput struct{ *pulumi.OutputState }
-
-func (GetMtlskeystoreClientCertificatesCertificateArrayOutput) ElementType() reflect.Type {
-	return reflect.TypeOf((*[]GetMtlskeystoreClientCertificatesCertificate)(nil)).Elem()
-}
-
-func (o GetMtlskeystoreClientCertificatesCertificateArrayOutput) ToGetMtlskeystoreClientCertificatesCertificateArrayOutput() GetMtlskeystoreClientCertificatesCertificateArrayOutput {
-	return o
-}
-
-func (o GetMtlskeystoreClientCertificatesCertificateArrayOutput) ToGetMtlskeystoreClientCertificatesCertificateArrayOutputWithContext(ctx context.Context) GetMtlskeystoreClientCertificatesCertificateArrayOutput {
-	return o
-}
-
-func (o GetMtlskeystoreClientCertificatesCertificateArrayOutput) Index(i pulumi.IntInput) GetMtlskeystoreClientCertificatesCertificateOutput {
-	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetMtlskeystoreClientCertificatesCertificate {
-		return vs[0].([]GetMtlskeystoreClientCertificatesCertificate)[vs[1].(int)]
-	}).(GetMtlskeystoreClientCertificatesCertificateOutput)
-}
-
-type GetMtlstruststoreCaSetActivationsActivation struct {
-	// The user who requested the activity.
-	CreatedBy string `pulumi:"createdBy"`
-	// When the activity was requested.
-	CreatedDate string `pulumi:"createdDate"`
-	// Uniquely identifies the activation.
-	Id int `pulumi:"id"`
-	// The user who completed the activity.
-	ModifiedBy string `pulumi:"modifiedBy"`
-	// When the request was last modified, or null` if not yet modified.
-	ModifiedDate string `pulumi:"modifiedDate"`
-	// Indicates the network for any activation-related activities, either 'STAGING' or 'PRODUCTION'.
-	Network string `pulumi:"network"`
-	// Status of the current activity, either 'IN_PROGRESS', 'COMPLETE', or 'FAILED'.
-	Status string `pulumi:"status"`
-	// Type of requested activity, either 'ACTIVATE', 'DEACTIVATE', or 'DELETE'.
-	Type string `pulumi:"type"`
-	// CA set version identifier.
-	Version int `pulumi:"version"`
-}
-
-// GetMtlstruststoreCaSetActivationsActivationInput is an input type that accepts GetMtlstruststoreCaSetActivationsActivationArgs and GetMtlstruststoreCaSetActivationsActivationOutput values.
-// You can construct a concrete instance of `GetMtlstruststoreCaSetActivationsActivationInput` via:
-//
-//	GetMtlstruststoreCaSetActivationsActivationArgs{...}
-type GetMtlstruststoreCaSetActivationsActivationInput interface {
-	pulumi.Input
-
-	ToGetMtlstruststoreCaSetActivationsActivationOutput() GetMtlstruststoreCaSetActivationsActivationOutput
-	ToGetMtlstruststoreCaSetActivationsActivationOutputWithContext(context.Context) GetMtlstruststoreCaSetActivationsActivationOutput
-}
-
-type GetMtlstruststoreCaSetActivationsActivationArgs struct {
-	// The user who requested the activity.
-	CreatedBy pulumi.StringInput `pulumi:"createdBy"`
-	// When the activity was requested.
-	CreatedDate pulumi.StringInput `pulumi:"createdDate"`
-	// Uniquely identifies the activation.
-	Id pulumi.IntInput `pulumi:"id"`
-	// The user who completed the activity.
-	ModifiedBy pulumi.StringInput `pulumi:"modifiedBy"`
-	// When the request was last modified, or null` if not yet modified.
-	ModifiedDate pulumi.StringInput `pulumi:"modifiedDate"`
-	// Indicates the network for any activation-related activities, either 'STAGING' or 'PRODUCTION'.
-	Network pulumi.StringInput `pulumi:"network"`
-	// Status of the current activity, either 'IN_PROGRESS', 'COMPLETE', or 'FAILED'.
-	Status pulumi.StringInput `pulumi:"status"`
-	// Type of requested activity, either 'ACTIVATE', 'DEACTIVATE', or 'DELETE'.
-	Type pulumi.StringInput `pulumi:"type"`
-	// CA set version identifier.
-	Version pulumi.IntInput `pulumi:"version"`
-}
-
-func (GetMtlstruststoreCaSetActivationsActivationArgs) ElementType() reflect.Type {
-	return reflect.TypeOf((*GetMtlstruststoreCaSetActivationsActivation)(nil)).Elem()
-}
-
-func (i GetMtlstruststoreCaSetActivationsActivationArgs) ToGetMtlstruststoreCaSetActivationsActivationOutput() GetMtlstruststoreCaSetActivationsActivationOutput {
-	return i.ToGetMtlstruststoreCaSetActivationsActivationOutputWithContext(context.Background())
-}
-
-func (i GetMtlstruststoreCaSetActivationsActivationArgs) ToGetMtlstruststoreCaSetActivationsActivationOutputWithContext(ctx context.Context) GetMtlstruststoreCaSetActivationsActivationOutput {
-	return pulumi.ToOutputWithContext(ctx, i).(GetMtlstruststoreCaSetActivationsActivationOutput)
-}
-
-// GetMtlstruststoreCaSetActivationsActivationArrayInput is an input type that accepts GetMtlstruststoreCaSetActivationsActivationArray and GetMtlstruststoreCaSetActivationsActivationArrayOutput values.
-// You can construct a concrete instance of `GetMtlstruststoreCaSetActivationsActivationArrayInput` via:
-//
-//	GetMtlstruststoreCaSetActivationsActivationArray{ GetMtlstruststoreCaSetActivationsActivationArgs{...} }
-type GetMtlstruststoreCaSetActivationsActivationArrayInput interface {
-	pulumi.Input
-
-	ToGetMtlstruststoreCaSetActivationsActivationArrayOutput() GetMtlstruststoreCaSetActivationsActivationArrayOutput
-	ToGetMtlstruststoreCaSetActivationsActivationArrayOutputWithContext(context.Context) GetMtlstruststoreCaSetActivationsActivationArrayOutput
-}
-
-type GetMtlstruststoreCaSetActivationsActivationArray []GetMtlstruststoreCaSetActivationsActivationInput
-
-func (GetMtlstruststoreCaSetActivationsActivationArray) ElementType() reflect.Type {
-	return reflect.TypeOf((*[]GetMtlstruststoreCaSetActivationsActivation)(nil)).Elem()
-}
-
-func (i GetMtlstruststoreCaSetActivationsActivationArray) ToGetMtlstruststoreCaSetActivationsActivationArrayOutput() GetMtlstruststoreCaSetActivationsActivationArrayOutput {
-	return i.ToGetMtlstruststoreCaSetActivationsActivationArrayOutputWithContext(context.Background())
-}
-
-func (i GetMtlstruststoreCaSetActivationsActivationArray) ToGetMtlstruststoreCaSetActivationsActivationArrayOutputWithContext(ctx context.Context) GetMtlstruststoreCaSetActivationsActivationArrayOutput {
-	return pulumi.ToOutputWithContext(ctx, i).(GetMtlstruststoreCaSetActivationsActivationArrayOutput)
-}
-
-type GetMtlstruststoreCaSetActivationsActivationOutput struct{ *pulumi.OutputState }
-
-func (GetMtlstruststoreCaSetActivationsActivationOutput) ElementType() reflect.Type {
-	return reflect.TypeOf((*GetMtlstruststoreCaSetActivationsActivation)(nil)).Elem()
-}
-
-func (o GetMtlstruststoreCaSetActivationsActivationOutput) ToGetMtlstruststoreCaSetActivationsActivationOutput() GetMtlstruststoreCaSetActivationsActivationOutput {
-	return o
-}
-
-func (o GetMtlstruststoreCaSetActivationsActivationOutput) ToGetMtlstruststoreCaSetActivationsActivationOutputWithContext(ctx context.Context) GetMtlstruststoreCaSetActivationsActivationOutput {
-	return o
-}
-
-// The user who requested the activity.
-func (o GetMtlstruststoreCaSetActivationsActivationOutput) CreatedBy() pulumi.StringOutput {
-	return o.ApplyT(func(v GetMtlstruststoreCaSetActivationsActivation) string { return v.CreatedBy }).(pulumi.StringOutput)
-}
-
-// When the activity was requested.
-func (o GetMtlstruststoreCaSetActivationsActivationOutput) CreatedDate() pulumi.StringOutput {
-	return o.ApplyT(func(v GetMtlstruststoreCaSetActivationsActivation) string { return v.CreatedDate }).(pulumi.StringOutput)
-}
-
-// Uniquely identifies the activation.
-func (o GetMtlstruststoreCaSetActivationsActivationOutput) Id() pulumi.IntOutput {
-	return o.ApplyT(func(v GetMtlstruststoreCaSetActivationsActivation) int { return v.Id }).(pulumi.IntOutput)
-}
-
-// The user who completed the activity.
-func (o GetMtlstruststoreCaSetActivationsActivationOutput) ModifiedBy() pulumi.StringOutput {
-	return o.ApplyT(func(v GetMtlstruststoreCaSetActivationsActivation) string { return v.ModifiedBy }).(pulumi.StringOutput)
-}
-
-// When the request was last modified, or null` if not yet modified.
-func (o GetMtlstruststoreCaSetActivationsActivationOutput) ModifiedDate() pulumi.StringOutput {
-	return o.ApplyT(func(v GetMtlstruststoreCaSetActivationsActivation) string { return v.ModifiedDate }).(pulumi.StringOutput)
-}
-
-// Indicates the network for any activation-related activities, either 'STAGING' or 'PRODUCTION'.
-func (o GetMtlstruststoreCaSetActivationsActivationOutput) Network() pulumi.StringOutput {
-	return o.ApplyT(func(v GetMtlstruststoreCaSetActivationsActivation) string { return v.Network }).(pulumi.StringOutput)
-}
-
-// Status of the current activity, either 'IN_PROGRESS', 'COMPLETE', or 'FAILED'.
-func (o GetMtlstruststoreCaSetActivationsActivationOutput) Status() pulumi.StringOutput {
-	return o.ApplyT(func(v GetMtlstruststoreCaSetActivationsActivation) string { return v.Status }).(pulumi.StringOutput)
-}
-
-// Type of requested activity, either 'ACTIVATE', 'DEACTIVATE', or 'DELETE'.
-func (o GetMtlstruststoreCaSetActivationsActivationOutput) Type() pulumi.StringOutput {
-	return o.ApplyT(func(v GetMtlstruststoreCaSetActivationsActivation) string { return v.Type }).(pulumi.StringOutput)
-}
-
-// CA set version identifier.
-func (o GetMtlstruststoreCaSetActivationsActivationOutput) Version() pulumi.IntOutput {
-	return o.ApplyT(func(v GetMtlstruststoreCaSetActivationsActivation) int { return v.Version }).(pulumi.IntOutput)
-}
-
-type GetMtlstruststoreCaSetActivationsActivationArrayOutput struct{ *pulumi.OutputState }
-
-func (GetMtlstruststoreCaSetActivationsActivationArrayOutput) ElementType() reflect.Type {
-	return reflect.TypeOf((*[]GetMtlstruststoreCaSetActivationsActivation)(nil)).Elem()
-}
-
-func (o GetMtlstruststoreCaSetActivationsActivationArrayOutput) ToGetMtlstruststoreCaSetActivationsActivationArrayOutput() GetMtlstruststoreCaSetActivationsActivationArrayOutput {
-	return o
-}
-
-func (o GetMtlstruststoreCaSetActivationsActivationArrayOutput) ToGetMtlstruststoreCaSetActivationsActivationArrayOutputWithContext(ctx context.Context) GetMtlstruststoreCaSetActivationsActivationArrayOutput {
-	return o
-}
-
-func (o GetMtlstruststoreCaSetActivationsActivationArrayOutput) Index(i pulumi.IntInput) GetMtlstruststoreCaSetActivationsActivationOutput {
-	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetMtlstruststoreCaSetActivationsActivation {
-		return vs[0].([]GetMtlstruststoreCaSetActivationsActivation)[vs[1].(int)]
-	}).(GetMtlstruststoreCaSetActivationsActivationOutput)
-}
-
-type GetMtlstruststoreCaSetActivitiesActivity struct {
-	// The user who initiated this CA set activity.
-	ActivityBy string `pulumi:"activityBy"`
-	// When this CA set activity occurred.
-	ActivityDate string `pulumi:"activityDate"`
-	// Indicates the network for any activation-related activities, either 'STAGING' or 'PRODUCTION'.
-	Network string `pulumi:"network"`
-	// The type of CA set activity. Possible values are:
-	// * `CREATE_CA_SET` - creating a CA set.
-	// * `CREATE_CA_SET_VERSION` - creating a CA set version.
-	// * `ACTIVATE_CA_SET_VERSION` - activating a CA set version.
-	// * `DEACTIVATE_CA_SET_VERSION` - deactivating a CA set version.
-	// * `DELETE_CA_SET` - soft deleting a CA set.
-	// * `DELETE_CA_SET_VERSION` - soft deleting a CA set version.
-	// * `REMOVE_CA_SET` - hard deleting a CA set.
-	// * `REMOVE_CA_SET_VERSION` - hard deleting a CA set version.
-	Type string `pulumi:"type"`
-	// The CA set's incremental version number.
-	Version int `pulumi:"version"`
-}
-
-// GetMtlstruststoreCaSetActivitiesActivityInput is an input type that accepts GetMtlstruststoreCaSetActivitiesActivityArgs and GetMtlstruststoreCaSetActivitiesActivityOutput values.
-// You can construct a concrete instance of `GetMtlstruststoreCaSetActivitiesActivityInput` via:
-//
-//	GetMtlstruststoreCaSetActivitiesActivityArgs{...}
-type GetMtlstruststoreCaSetActivitiesActivityInput interface {
-	pulumi.Input
-
-	ToGetMtlstruststoreCaSetActivitiesActivityOutput() GetMtlstruststoreCaSetActivitiesActivityOutput
-	ToGetMtlstruststoreCaSetActivitiesActivityOutputWithContext(context.Context) GetMtlstruststoreCaSetActivitiesActivityOutput
-}
-
-type GetMtlstruststoreCaSetActivitiesActivityArgs struct {
-	// The user who initiated this CA set activity.
-	ActivityBy pulumi.StringInput `pulumi:"activityBy"`
-	// When this CA set activity occurred.
-	ActivityDate pulumi.StringInput `pulumi:"activityDate"`
-	// Indicates the network for any activation-related activities, either 'STAGING' or 'PRODUCTION'.
-	Network pulumi.StringInput `pulumi:"network"`
-	// The type of CA set activity. Possible values are:
-	// * `CREATE_CA_SET` - creating a CA set.
-	// * `CREATE_CA_SET_VERSION` - creating a CA set version.
-	// * `ACTIVATE_CA_SET_VERSION` - activating a CA set version.
-	// * `DEACTIVATE_CA_SET_VERSION` - deactivating a CA set version.
-	// * `DELETE_CA_SET` - soft deleting a CA set.
-	// * `DELETE_CA_SET_VERSION` - soft deleting a CA set version.
-	// * `REMOVE_CA_SET` - hard deleting a CA set.
-	// * `REMOVE_CA_SET_VERSION` - hard deleting a CA set version.
-	Type pulumi.StringInput `pulumi:"type"`
-	// The CA set's incremental version number.
-	Version pulumi.IntInput `pulumi:"version"`
-}
-
-func (GetMtlstruststoreCaSetActivitiesActivityArgs) ElementType() reflect.Type {
-	return reflect.TypeOf((*GetMtlstruststoreCaSetActivitiesActivity)(nil)).Elem()
-}
-
-func (i GetMtlstruststoreCaSetActivitiesActivityArgs) ToGetMtlstruststoreCaSetActivitiesActivityOutput() GetMtlstruststoreCaSetActivitiesActivityOutput {
-	return i.ToGetMtlstruststoreCaSetActivitiesActivityOutputWithContext(context.Background())
-}
-
-func (i GetMtlstruststoreCaSetActivitiesActivityArgs) ToGetMtlstruststoreCaSetActivitiesActivityOutputWithContext(ctx context.Context) GetMtlstruststoreCaSetActivitiesActivityOutput {
-	return pulumi.ToOutputWithContext(ctx, i).(GetMtlstruststoreCaSetActivitiesActivityOutput)
-}
-
-// GetMtlstruststoreCaSetActivitiesActivityArrayInput is an input type that accepts GetMtlstruststoreCaSetActivitiesActivityArray and GetMtlstruststoreCaSetActivitiesActivityArrayOutput values.
-// You can construct a concrete instance of `GetMtlstruststoreCaSetActivitiesActivityArrayInput` via:
-//
-//	GetMtlstruststoreCaSetActivitiesActivityArray{ GetMtlstruststoreCaSetActivitiesActivityArgs{...} }
-type GetMtlstruststoreCaSetActivitiesActivityArrayInput interface {
-	pulumi.Input
-
-	ToGetMtlstruststoreCaSetActivitiesActivityArrayOutput() GetMtlstruststoreCaSetActivitiesActivityArrayOutput
-	ToGetMtlstruststoreCaSetActivitiesActivityArrayOutputWithContext(context.Context) GetMtlstruststoreCaSetActivitiesActivityArrayOutput
-}
-
-type GetMtlstruststoreCaSetActivitiesActivityArray []GetMtlstruststoreCaSetActivitiesActivityInput
-
-func (GetMtlstruststoreCaSetActivitiesActivityArray) ElementType() reflect.Type {
-	return reflect.TypeOf((*[]GetMtlstruststoreCaSetActivitiesActivity)(nil)).Elem()
-}
-
-func (i GetMtlstruststoreCaSetActivitiesActivityArray) ToGetMtlstruststoreCaSetActivitiesActivityArrayOutput() GetMtlstruststoreCaSetActivitiesActivityArrayOutput {
-	return i.ToGetMtlstruststoreCaSetActivitiesActivityArrayOutputWithContext(context.Background())
-}
-
-func (i GetMtlstruststoreCaSetActivitiesActivityArray) ToGetMtlstruststoreCaSetActivitiesActivityArrayOutputWithContext(ctx context.Context) GetMtlstruststoreCaSetActivitiesActivityArrayOutput {
-	return pulumi.ToOutputWithContext(ctx, i).(GetMtlstruststoreCaSetActivitiesActivityArrayOutput)
-}
-
-type GetMtlstruststoreCaSetActivitiesActivityOutput struct{ *pulumi.OutputState }
-
-func (GetMtlstruststoreCaSetActivitiesActivityOutput) ElementType() reflect.Type {
-	return reflect.TypeOf((*GetMtlstruststoreCaSetActivitiesActivity)(nil)).Elem()
-}
-
-func (o GetMtlstruststoreCaSetActivitiesActivityOutput) ToGetMtlstruststoreCaSetActivitiesActivityOutput() GetMtlstruststoreCaSetActivitiesActivityOutput {
-	return o
-}
-
-func (o GetMtlstruststoreCaSetActivitiesActivityOutput) ToGetMtlstruststoreCaSetActivitiesActivityOutputWithContext(ctx context.Context) GetMtlstruststoreCaSetActivitiesActivityOutput {
-	return o
-}
-
-// The user who initiated this CA set activity.
-func (o GetMtlstruststoreCaSetActivitiesActivityOutput) ActivityBy() pulumi.StringOutput {
-	return o.ApplyT(func(v GetMtlstruststoreCaSetActivitiesActivity) string { return v.ActivityBy }).(pulumi.StringOutput)
-}
-
-// When this CA set activity occurred.
-func (o GetMtlstruststoreCaSetActivitiesActivityOutput) ActivityDate() pulumi.StringOutput {
-	return o.ApplyT(func(v GetMtlstruststoreCaSetActivitiesActivity) string { return v.ActivityDate }).(pulumi.StringOutput)
-}
-
-// Indicates the network for any activation-related activities, either 'STAGING' or 'PRODUCTION'.
-func (o GetMtlstruststoreCaSetActivitiesActivityOutput) Network() pulumi.StringOutput {
-	return o.ApplyT(func(v GetMtlstruststoreCaSetActivitiesActivity) string { return v.Network }).(pulumi.StringOutput)
-}
-
-// The type of CA set activity. Possible values are:
-// * `CREATE_CA_SET` - creating a CA set.
-// * `CREATE_CA_SET_VERSION` - creating a CA set version.
-// * `ACTIVATE_CA_SET_VERSION` - activating a CA set version.
-// * `DEACTIVATE_CA_SET_VERSION` - deactivating a CA set version.
-// * `DELETE_CA_SET` - soft deleting a CA set.
-// * `DELETE_CA_SET_VERSION` - soft deleting a CA set version.
-// * `REMOVE_CA_SET` - hard deleting a CA set.
-// * `REMOVE_CA_SET_VERSION` - hard deleting a CA set version.
-func (o GetMtlstruststoreCaSetActivitiesActivityOutput) Type() pulumi.StringOutput {
-	return o.ApplyT(func(v GetMtlstruststoreCaSetActivitiesActivity) string { return v.Type }).(pulumi.StringOutput)
-}
-
-// The CA set's incremental version number.
-func (o GetMtlstruststoreCaSetActivitiesActivityOutput) Version() pulumi.IntOutput {
-	return o.ApplyT(func(v GetMtlstruststoreCaSetActivitiesActivity) int { return v.Version }).(pulumi.IntOutput)
-}
-
-type GetMtlstruststoreCaSetActivitiesActivityArrayOutput struct{ *pulumi.OutputState }
-
-func (GetMtlstruststoreCaSetActivitiesActivityArrayOutput) ElementType() reflect.Type {
-	return reflect.TypeOf((*[]GetMtlstruststoreCaSetActivitiesActivity)(nil)).Elem()
-}
-
-func (o GetMtlstruststoreCaSetActivitiesActivityArrayOutput) ToGetMtlstruststoreCaSetActivitiesActivityArrayOutput() GetMtlstruststoreCaSetActivitiesActivityArrayOutput {
-	return o
-}
-
-func (o GetMtlstruststoreCaSetActivitiesActivityArrayOutput) ToGetMtlstruststoreCaSetActivitiesActivityArrayOutputWithContext(ctx context.Context) GetMtlstruststoreCaSetActivitiesActivityArrayOutput {
-	return o
-}
-
-func (o GetMtlstruststoreCaSetActivitiesActivityArrayOutput) Index(i pulumi.IntInput) GetMtlstruststoreCaSetActivitiesActivityOutput {
-	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetMtlstruststoreCaSetActivitiesActivity {
-		return vs[0].([]GetMtlstruststoreCaSetActivitiesActivity)[vs[1].(int)]
-	}).(GetMtlstruststoreCaSetActivitiesActivityOutput)
-}
-
-type GetMtlstruststoreCaSetAssociationsEnrollment struct {
-	// The domain name to use for the certificate, also known as the common name.
-	Cn string `pulumi:"cn"`
-	// A unique identifier for the enrollment.
-	EnrollmentId int `pulumi:"enrollmentId"`
-	// Slots where the certificate is deployed on the production network.
-	ProductionSlots []int `pulumi:"productionSlots"`
-	// Slots where the certificate is deployed on the staging network.
-	StagingSlots []int `pulumi:"stagingSlots"`
-}
-
-// GetMtlstruststoreCaSetAssociationsEnrollmentInput is an input type that accepts GetMtlstruststoreCaSetAssociationsEnrollmentArgs and GetMtlstruststoreCaSetAssociationsEnrollmentOutput values.
-// You can construct a concrete instance of `GetMtlstruststoreCaSetAssociationsEnrollmentInput` via:
-//
-//	GetMtlstruststoreCaSetAssociationsEnrollmentArgs{...}
-type GetMtlstruststoreCaSetAssociationsEnrollmentInput interface {
-	pulumi.Input
-
-	ToGetMtlstruststoreCaSetAssociationsEnrollmentOutput() GetMtlstruststoreCaSetAssociationsEnrollmentOutput
-	ToGetMtlstruststoreCaSetAssociationsEnrollmentOutputWithContext(context.Context) GetMtlstruststoreCaSetAssociationsEnrollmentOutput
-}
-
-type GetMtlstruststoreCaSetAssociationsEnrollmentArgs struct {
-	// The domain name to use for the certificate, also known as the common name.
-	Cn pulumi.StringInput `pulumi:"cn"`
-	// A unique identifier for the enrollment.
-	EnrollmentId pulumi.IntInput `pulumi:"enrollmentId"`
-	// Slots where the certificate is deployed on the production network.
-	ProductionSlots pulumi.IntArrayInput `pulumi:"productionSlots"`
-	// Slots where the certificate is deployed on the staging network.
-	StagingSlots pulumi.IntArrayInput `pulumi:"stagingSlots"`
-}
-
-func (GetMtlstruststoreCaSetAssociationsEnrollmentArgs) ElementType() reflect.Type {
-	return reflect.TypeOf((*GetMtlstruststoreCaSetAssociationsEnrollment)(nil)).Elem()
-}
-
-func (i GetMtlstruststoreCaSetAssociationsEnrollmentArgs) ToGetMtlstruststoreCaSetAssociationsEnrollmentOutput() GetMtlstruststoreCaSetAssociationsEnrollmentOutput {
-	return i.ToGetMtlstruststoreCaSetAssociationsEnrollmentOutputWithContext(context.Background())
-}
-
-func (i GetMtlstruststoreCaSetAssociationsEnrollmentArgs) ToGetMtlstruststoreCaSetAssociationsEnrollmentOutputWithContext(ctx context.Context) GetMtlstruststoreCaSetAssociationsEnrollmentOutput {
-	return pulumi.ToOutputWithContext(ctx, i).(GetMtlstruststoreCaSetAssociationsEnrollmentOutput)
-}
-
-// GetMtlstruststoreCaSetAssociationsEnrollmentArrayInput is an input type that accepts GetMtlstruststoreCaSetAssociationsEnrollmentArray and GetMtlstruststoreCaSetAssociationsEnrollmentArrayOutput values.
-// You can construct a concrete instance of `GetMtlstruststoreCaSetAssociationsEnrollmentArrayInput` via:
-//
-//	GetMtlstruststoreCaSetAssociationsEnrollmentArray{ GetMtlstruststoreCaSetAssociationsEnrollmentArgs{...} }
-type GetMtlstruststoreCaSetAssociationsEnrollmentArrayInput interface {
-	pulumi.Input
-
-	ToGetMtlstruststoreCaSetAssociationsEnrollmentArrayOutput() GetMtlstruststoreCaSetAssociationsEnrollmentArrayOutput
-	ToGetMtlstruststoreCaSetAssociationsEnrollmentArrayOutputWithContext(context.Context) GetMtlstruststoreCaSetAssociationsEnrollmentArrayOutput
-}
-
-type GetMtlstruststoreCaSetAssociationsEnrollmentArray []GetMtlstruststoreCaSetAssociationsEnrollmentInput
-
-func (GetMtlstruststoreCaSetAssociationsEnrollmentArray) ElementType() reflect.Type {
-	return reflect.TypeOf((*[]GetMtlstruststoreCaSetAssociationsEnrollment)(nil)).Elem()
-}
-
-func (i GetMtlstruststoreCaSetAssociationsEnrollmentArray) ToGetMtlstruststoreCaSetAssociationsEnrollmentArrayOutput() GetMtlstruststoreCaSetAssociationsEnrollmentArrayOutput {
-	return i.ToGetMtlstruststoreCaSetAssociationsEnrollmentArrayOutputWithContext(context.Background())
-}
-
-func (i GetMtlstruststoreCaSetAssociationsEnrollmentArray) ToGetMtlstruststoreCaSetAssociationsEnrollmentArrayOutputWithContext(ctx context.Context) GetMtlstruststoreCaSetAssociationsEnrollmentArrayOutput {
-	return pulumi.ToOutputWithContext(ctx, i).(GetMtlstruststoreCaSetAssociationsEnrollmentArrayOutput)
-}
-
-type GetMtlstruststoreCaSetAssociationsEnrollmentOutput struct{ *pulumi.OutputState }
-
-func (GetMtlstruststoreCaSetAssociationsEnrollmentOutput) ElementType() reflect.Type {
-	return reflect.TypeOf((*GetMtlstruststoreCaSetAssociationsEnrollment)(nil)).Elem()
-}
-
-func (o GetMtlstruststoreCaSetAssociationsEnrollmentOutput) ToGetMtlstruststoreCaSetAssociationsEnrollmentOutput() GetMtlstruststoreCaSetAssociationsEnrollmentOutput {
-	return o
-}
-
-func (o GetMtlstruststoreCaSetAssociationsEnrollmentOutput) ToGetMtlstruststoreCaSetAssociationsEnrollmentOutputWithContext(ctx context.Context) GetMtlstruststoreCaSetAssociationsEnrollmentOutput {
-	return o
-}
-
-// The domain name to use for the certificate, also known as the common name.
-func (o GetMtlstruststoreCaSetAssociationsEnrollmentOutput) Cn() pulumi.StringOutput {
-	return o.ApplyT(func(v GetMtlstruststoreCaSetAssociationsEnrollment) string { return v.Cn }).(pulumi.StringOutput)
-}
-
-// A unique identifier for the enrollment.
-func (o GetMtlstruststoreCaSetAssociationsEnrollmentOutput) EnrollmentId() pulumi.IntOutput {
-	return o.ApplyT(func(v GetMtlstruststoreCaSetAssociationsEnrollment) int { return v.EnrollmentId }).(pulumi.IntOutput)
-}
-
-// Slots where the certificate is deployed on the production network.
-func (o GetMtlstruststoreCaSetAssociationsEnrollmentOutput) ProductionSlots() pulumi.IntArrayOutput {
-	return o.ApplyT(func(v GetMtlstruststoreCaSetAssociationsEnrollment) []int { return v.ProductionSlots }).(pulumi.IntArrayOutput)
-}
-
-// Slots where the certificate is deployed on the staging network.
-func (o GetMtlstruststoreCaSetAssociationsEnrollmentOutput) StagingSlots() pulumi.IntArrayOutput {
-	return o.ApplyT(func(v GetMtlstruststoreCaSetAssociationsEnrollment) []int { return v.StagingSlots }).(pulumi.IntArrayOutput)
-}
-
-type GetMtlstruststoreCaSetAssociationsEnrollmentArrayOutput struct{ *pulumi.OutputState }
-
-func (GetMtlstruststoreCaSetAssociationsEnrollmentArrayOutput) ElementType() reflect.Type {
-	return reflect.TypeOf((*[]GetMtlstruststoreCaSetAssociationsEnrollment)(nil)).Elem()
-}
-
-func (o GetMtlstruststoreCaSetAssociationsEnrollmentArrayOutput) ToGetMtlstruststoreCaSetAssociationsEnrollmentArrayOutput() GetMtlstruststoreCaSetAssociationsEnrollmentArrayOutput {
-	return o
-}
-
-func (o GetMtlstruststoreCaSetAssociationsEnrollmentArrayOutput) ToGetMtlstruststoreCaSetAssociationsEnrollmentArrayOutputWithContext(ctx context.Context) GetMtlstruststoreCaSetAssociationsEnrollmentArrayOutput {
-	return o
-}
-
-func (o GetMtlstruststoreCaSetAssociationsEnrollmentArrayOutput) Index(i pulumi.IntInput) GetMtlstruststoreCaSetAssociationsEnrollmentOutput {
-	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetMtlstruststoreCaSetAssociationsEnrollment {
-		return vs[0].([]GetMtlstruststoreCaSetAssociationsEnrollment)[vs[1].(int)]
-	}).(GetMtlstruststoreCaSetAssociationsEnrollmentOutput)
-}
-
-type GetMtlstruststoreCaSetAssociationsProperty struct {
-	// An alternative identifier for the property.
-	AssetId int `pulumi:"assetId"`
-	// Identifies the group to which the property is assigned.
-	GroupId int `pulumi:"groupId"`
-	// Contains details about associated hostnames.
-	Hostnames []GetMtlstruststoreCaSetAssociationsPropertyHostname `pulumi:"hostnames"`
-	// A unique identifier for the property.
-	PropertyId string `pulumi:"propertyId"`
-	// A unique, descriptive name for the property.
-	PropertyName string `pulumi:"propertyName"`
-}
-
-// GetMtlstruststoreCaSetAssociationsPropertyInput is an input type that accepts GetMtlstruststoreCaSetAssociationsPropertyArgs and GetMtlstruststoreCaSetAssociationsPropertyOutput values.
-// You can construct a concrete instance of `GetMtlstruststoreCaSetAssociationsPropertyInput` via:
-//
-//	GetMtlstruststoreCaSetAssociationsPropertyArgs{...}
-type GetMtlstruststoreCaSetAssociationsPropertyInput interface {
-	pulumi.Input
-
-	ToGetMtlstruststoreCaSetAssociationsPropertyOutput() GetMtlstruststoreCaSetAssociationsPropertyOutput
-	ToGetMtlstruststoreCaSetAssociationsPropertyOutputWithContext(context.Context) GetMtlstruststoreCaSetAssociationsPropertyOutput
-}
-
-type GetMtlstruststoreCaSetAssociationsPropertyArgs struct {
-	// An alternative identifier for the property.
-	AssetId pulumi.IntInput `pulumi:"assetId"`
-	// Identifies the group to which the property is assigned.
-	GroupId pulumi.IntInput `pulumi:"groupId"`
-	// Contains details about associated hostnames.
-	Hostnames GetMtlstruststoreCaSetAssociationsPropertyHostnameArrayInput `pulumi:"hostnames"`
-	// A unique identifier for the property.
-	PropertyId pulumi.StringInput `pulumi:"propertyId"`
-	// A unique, descriptive name for the property.
-	PropertyName pulumi.StringInput `pulumi:"propertyName"`
-}
-
-func (GetMtlstruststoreCaSetAssociationsPropertyArgs) ElementType() reflect.Type {
-	return reflect.TypeOf((*GetMtlstruststoreCaSetAssociationsProperty)(nil)).Elem()
-}
-
-func (i GetMtlstruststoreCaSetAssociationsPropertyArgs) ToGetMtlstruststoreCaSetAssociationsPropertyOutput() GetMtlstruststoreCaSetAssociationsPropertyOutput {
-	return i.ToGetMtlstruststoreCaSetAssociationsPropertyOutputWithContext(context.Background())
-}
-
-func (i GetMtlstruststoreCaSetAssociationsPropertyArgs) ToGetMtlstruststoreCaSetAssociationsPropertyOutputWithContext(ctx context.Context) GetMtlstruststoreCaSetAssociationsPropertyOutput {
-	return pulumi.ToOutputWithContext(ctx, i).(GetMtlstruststoreCaSetAssociationsPropertyOutput)
-}
-
-// GetMtlstruststoreCaSetAssociationsPropertyArrayInput is an input type that accepts GetMtlstruststoreCaSetAssociationsPropertyArray and GetMtlstruststoreCaSetAssociationsPropertyArrayOutput values.
-// You can construct a concrete instance of `GetMtlstruststoreCaSetAssociationsPropertyArrayInput` via:
-//
-//	GetMtlstruststoreCaSetAssociationsPropertyArray{ GetMtlstruststoreCaSetAssociationsPropertyArgs{...} }
-type GetMtlstruststoreCaSetAssociationsPropertyArrayInput interface {
-	pulumi.Input
-
-	ToGetMtlstruststoreCaSetAssociationsPropertyArrayOutput() GetMtlstruststoreCaSetAssociationsPropertyArrayOutput
-	ToGetMtlstruststoreCaSetAssociationsPropertyArrayOutputWithContext(context.Context) GetMtlstruststoreCaSetAssociationsPropertyArrayOutput
-}
-
-type GetMtlstruststoreCaSetAssociationsPropertyArray []GetMtlstruststoreCaSetAssociationsPropertyInput
-
-func (GetMtlstruststoreCaSetAssociationsPropertyArray) ElementType() reflect.Type {
-	return reflect.TypeOf((*[]GetMtlstruststoreCaSetAssociationsProperty)(nil)).Elem()
-}
-
-func (i GetMtlstruststoreCaSetAssociationsPropertyArray) ToGetMtlstruststoreCaSetAssociationsPropertyArrayOutput() GetMtlstruststoreCaSetAssociationsPropertyArrayOutput {
-	return i.ToGetMtlstruststoreCaSetAssociationsPropertyArrayOutputWithContext(context.Background())
-}
-
-func (i GetMtlstruststoreCaSetAssociationsPropertyArray) ToGetMtlstruststoreCaSetAssociationsPropertyArrayOutputWithContext(ctx context.Context) GetMtlstruststoreCaSetAssociationsPropertyArrayOutput {
-	return pulumi.ToOutputWithContext(ctx, i).(GetMtlstruststoreCaSetAssociationsPropertyArrayOutput)
-}
-
-type GetMtlstruststoreCaSetAssociationsPropertyOutput struct{ *pulumi.OutputState }
-
-func (GetMtlstruststoreCaSetAssociationsPropertyOutput) ElementType() reflect.Type {
-	return reflect.TypeOf((*GetMtlstruststoreCaSetAssociationsProperty)(nil)).Elem()
-}
-
-func (o GetMtlstruststoreCaSetAssociationsPropertyOutput) ToGetMtlstruststoreCaSetAssociationsPropertyOutput() GetMtlstruststoreCaSetAssociationsPropertyOutput {
-	return o
-}
-
-func (o GetMtlstruststoreCaSetAssociationsPropertyOutput) ToGetMtlstruststoreCaSetAssociationsPropertyOutputWithContext(ctx context.Context) GetMtlstruststoreCaSetAssociationsPropertyOutput {
-	return o
-}
-
-// An alternative identifier for the property.
-func (o GetMtlstruststoreCaSetAssociationsPropertyOutput) AssetId() pulumi.IntOutput {
-	return o.ApplyT(func(v GetMtlstruststoreCaSetAssociationsProperty) int { return v.AssetId }).(pulumi.IntOutput)
-}
-
-// Identifies the group to which the property is assigned.
-func (o GetMtlstruststoreCaSetAssociationsPropertyOutput) GroupId() pulumi.IntOutput {
-	return o.ApplyT(func(v GetMtlstruststoreCaSetAssociationsProperty) int { return v.GroupId }).(pulumi.IntOutput)
-}
-
-// Contains details about associated hostnames.
-func (o GetMtlstruststoreCaSetAssociationsPropertyOutput) Hostnames() GetMtlstruststoreCaSetAssociationsPropertyHostnameArrayOutput {
-	return o.ApplyT(func(v GetMtlstruststoreCaSetAssociationsProperty) []GetMtlstruststoreCaSetAssociationsPropertyHostname {
-		return v.Hostnames
-	}).(GetMtlstruststoreCaSetAssociationsPropertyHostnameArrayOutput)
-}
-
-// A unique identifier for the property.
-func (o GetMtlstruststoreCaSetAssociationsPropertyOutput) PropertyId() pulumi.StringOutput {
-	return o.ApplyT(func(v GetMtlstruststoreCaSetAssociationsProperty) string { return v.PropertyId }).(pulumi.StringOutput)
-}
-
-// A unique, descriptive name for the property.
-func (o GetMtlstruststoreCaSetAssociationsPropertyOutput) PropertyName() pulumi.StringOutput {
-	return o.ApplyT(func(v GetMtlstruststoreCaSetAssociationsProperty) string { return v.PropertyName }).(pulumi.StringOutput)
-}
-
-type GetMtlstruststoreCaSetAssociationsPropertyArrayOutput struct{ *pulumi.OutputState }
-
-func (GetMtlstruststoreCaSetAssociationsPropertyArrayOutput) ElementType() reflect.Type {
-	return reflect.TypeOf((*[]GetMtlstruststoreCaSetAssociationsProperty)(nil)).Elem()
-}
-
-func (o GetMtlstruststoreCaSetAssociationsPropertyArrayOutput) ToGetMtlstruststoreCaSetAssociationsPropertyArrayOutput() GetMtlstruststoreCaSetAssociationsPropertyArrayOutput {
-	return o
-}
-
-func (o GetMtlstruststoreCaSetAssociationsPropertyArrayOutput) ToGetMtlstruststoreCaSetAssociationsPropertyArrayOutputWithContext(ctx context.Context) GetMtlstruststoreCaSetAssociationsPropertyArrayOutput {
-	return o
-}
-
-func (o GetMtlstruststoreCaSetAssociationsPropertyArrayOutput) Index(i pulumi.IntInput) GetMtlstruststoreCaSetAssociationsPropertyOutput {
-	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetMtlstruststoreCaSetAssociationsProperty {
-		return vs[0].([]GetMtlstruststoreCaSetAssociationsProperty)[vs[1].(int)]
-	}).(GetMtlstruststoreCaSetAssociationsPropertyOutput)
-}
-
-type GetMtlstruststoreCaSetAssociationsPropertyHostname struct {
-	// The name of the device.
-	Hostname string `pulumi:"hostname"`
-	// The network on which CA set to hostname association is formed/removed/in progress. The values for this are 'STAGING', 'PRODUCTION'.
-	Network string `pulumi:"network"`
-	// The status of CA set to hostname association. The values for it are - 'ATTACHING', 'DETACHING', 'ATTACHED'.
-	Status string `pulumi:"status"`
-}
-
-// GetMtlstruststoreCaSetAssociationsPropertyHostnameInput is an input type that accepts GetMtlstruststoreCaSetAssociationsPropertyHostnameArgs and GetMtlstruststoreCaSetAssociationsPropertyHostnameOutput values.
-// You can construct a concrete instance of `GetMtlstruststoreCaSetAssociationsPropertyHostnameInput` via:
-//
-//	GetMtlstruststoreCaSetAssociationsPropertyHostnameArgs{...}
-type GetMtlstruststoreCaSetAssociationsPropertyHostnameInput interface {
-	pulumi.Input
-
-	ToGetMtlstruststoreCaSetAssociationsPropertyHostnameOutput() GetMtlstruststoreCaSetAssociationsPropertyHostnameOutput
-	ToGetMtlstruststoreCaSetAssociationsPropertyHostnameOutputWithContext(context.Context) GetMtlstruststoreCaSetAssociationsPropertyHostnameOutput
-}
-
-type GetMtlstruststoreCaSetAssociationsPropertyHostnameArgs struct {
-	// The name of the device.
-	Hostname pulumi.StringInput `pulumi:"hostname"`
-	// The network on which CA set to hostname association is formed/removed/in progress. The values for this are 'STAGING', 'PRODUCTION'.
-	Network pulumi.StringInput `pulumi:"network"`
-	// The status of CA set to hostname association. The values for it are - 'ATTACHING', 'DETACHING', 'ATTACHED'.
-	Status pulumi.StringInput `pulumi:"status"`
-}
-
-func (GetMtlstruststoreCaSetAssociationsPropertyHostnameArgs) ElementType() reflect.Type {
-	return reflect.TypeOf((*GetMtlstruststoreCaSetAssociationsPropertyHostname)(nil)).Elem()
-}
-
-func (i GetMtlstruststoreCaSetAssociationsPropertyHostnameArgs) ToGetMtlstruststoreCaSetAssociationsPropertyHostnameOutput() GetMtlstruststoreCaSetAssociationsPropertyHostnameOutput {
-	return i.ToGetMtlstruststoreCaSetAssociationsPropertyHostnameOutputWithContext(context.Background())
-}
-
-func (i GetMtlstruststoreCaSetAssociationsPropertyHostnameArgs) ToGetMtlstruststoreCaSetAssociationsPropertyHostnameOutputWithContext(ctx context.Context) GetMtlstruststoreCaSetAssociationsPropertyHostnameOutput {
-	return pulumi.ToOutputWithContext(ctx, i).(GetMtlstruststoreCaSetAssociationsPropertyHostnameOutput)
-}
-
-// GetMtlstruststoreCaSetAssociationsPropertyHostnameArrayInput is an input type that accepts GetMtlstruststoreCaSetAssociationsPropertyHostnameArray and GetMtlstruststoreCaSetAssociationsPropertyHostnameArrayOutput values.
-// You can construct a concrete instance of `GetMtlstruststoreCaSetAssociationsPropertyHostnameArrayInput` via:
-//
-//	GetMtlstruststoreCaSetAssociationsPropertyHostnameArray{ GetMtlstruststoreCaSetAssociationsPropertyHostnameArgs{...} }
-type GetMtlstruststoreCaSetAssociationsPropertyHostnameArrayInput interface {
-	pulumi.Input
-
-	ToGetMtlstruststoreCaSetAssociationsPropertyHostnameArrayOutput() GetMtlstruststoreCaSetAssociationsPropertyHostnameArrayOutput
-	ToGetMtlstruststoreCaSetAssociationsPropertyHostnameArrayOutputWithContext(context.Context) GetMtlstruststoreCaSetAssociationsPropertyHostnameArrayOutput
-}
-
-type GetMtlstruststoreCaSetAssociationsPropertyHostnameArray []GetMtlstruststoreCaSetAssociationsPropertyHostnameInput
-
-func (GetMtlstruststoreCaSetAssociationsPropertyHostnameArray) ElementType() reflect.Type {
-	return reflect.TypeOf((*[]GetMtlstruststoreCaSetAssociationsPropertyHostname)(nil)).Elem()
-}
-
-func (i GetMtlstruststoreCaSetAssociationsPropertyHostnameArray) ToGetMtlstruststoreCaSetAssociationsPropertyHostnameArrayOutput() GetMtlstruststoreCaSetAssociationsPropertyHostnameArrayOutput {
-	return i.ToGetMtlstruststoreCaSetAssociationsPropertyHostnameArrayOutputWithContext(context.Background())
-}
-
-func (i GetMtlstruststoreCaSetAssociationsPropertyHostnameArray) ToGetMtlstruststoreCaSetAssociationsPropertyHostnameArrayOutputWithContext(ctx context.Context) GetMtlstruststoreCaSetAssociationsPropertyHostnameArrayOutput {
-	return pulumi.ToOutputWithContext(ctx, i).(GetMtlstruststoreCaSetAssociationsPropertyHostnameArrayOutput)
-}
-
-type GetMtlstruststoreCaSetAssociationsPropertyHostnameOutput struct{ *pulumi.OutputState }
-
-func (GetMtlstruststoreCaSetAssociationsPropertyHostnameOutput) ElementType() reflect.Type {
-	return reflect.TypeOf((*GetMtlstruststoreCaSetAssociationsPropertyHostname)(nil)).Elem()
-}
-
-func (o GetMtlstruststoreCaSetAssociationsPropertyHostnameOutput) ToGetMtlstruststoreCaSetAssociationsPropertyHostnameOutput() GetMtlstruststoreCaSetAssociationsPropertyHostnameOutput {
-	return o
-}
-
-func (o GetMtlstruststoreCaSetAssociationsPropertyHostnameOutput) ToGetMtlstruststoreCaSetAssociationsPropertyHostnameOutputWithContext(ctx context.Context) GetMtlstruststoreCaSetAssociationsPropertyHostnameOutput {
-	return o
-}
-
-// The name of the device.
-func (o GetMtlstruststoreCaSetAssociationsPropertyHostnameOutput) Hostname() pulumi.StringOutput {
-	return o.ApplyT(func(v GetMtlstruststoreCaSetAssociationsPropertyHostname) string { return v.Hostname }).(pulumi.StringOutput)
-}
-
-// The network on which CA set to hostname association is formed/removed/in progress. The values for this are 'STAGING', 'PRODUCTION'.
-func (o GetMtlstruststoreCaSetAssociationsPropertyHostnameOutput) Network() pulumi.StringOutput {
-	return o.ApplyT(func(v GetMtlstruststoreCaSetAssociationsPropertyHostname) string { return v.Network }).(pulumi.StringOutput)
-}
-
-// The status of CA set to hostname association. The values for it are - 'ATTACHING', 'DETACHING', 'ATTACHED'.
-func (o GetMtlstruststoreCaSetAssociationsPropertyHostnameOutput) Status() pulumi.StringOutput {
-	return o.ApplyT(func(v GetMtlstruststoreCaSetAssociationsPropertyHostname) string { return v.Status }).(pulumi.StringOutput)
-}
-
-type GetMtlstruststoreCaSetAssociationsPropertyHostnameArrayOutput struct{ *pulumi.OutputState }
-
-func (GetMtlstruststoreCaSetAssociationsPropertyHostnameArrayOutput) ElementType() reflect.Type {
-	return reflect.TypeOf((*[]GetMtlstruststoreCaSetAssociationsPropertyHostname)(nil)).Elem()
-}
-
-func (o GetMtlstruststoreCaSetAssociationsPropertyHostnameArrayOutput) ToGetMtlstruststoreCaSetAssociationsPropertyHostnameArrayOutput() GetMtlstruststoreCaSetAssociationsPropertyHostnameArrayOutput {
-	return o
-}
-
-func (o GetMtlstruststoreCaSetAssociationsPropertyHostnameArrayOutput) ToGetMtlstruststoreCaSetAssociationsPropertyHostnameArrayOutputWithContext(ctx context.Context) GetMtlstruststoreCaSetAssociationsPropertyHostnameArrayOutput {
-	return o
-}
-
-func (o GetMtlstruststoreCaSetAssociationsPropertyHostnameArrayOutput) Index(i pulumi.IntInput) GetMtlstruststoreCaSetAssociationsPropertyHostnameOutput {
-	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetMtlstruststoreCaSetAssociationsPropertyHostname {
-		return vs[0].([]GetMtlstruststoreCaSetAssociationsPropertyHostname)[vs[1].(int)]
-	}).(GetMtlstruststoreCaSetAssociationsPropertyHostnameOutput)
-}
-
-type GetMtlstruststoreCaSetCertificate struct {
-	// The certificate in PEM format, as found in a Base64 ASCII encoded file.
-	CertificatePem string `pulumi:"certificatePem"`
-	// The user who created this CA certificate.
-	CreatedBy string `pulumi:"createdBy"`
-	// When the CA certificate was created.
-	CreatedDate string `pulumi:"createdDate"`
-	// Optional description for the certificate.
-	Description string `pulumi:"description"`
-	// The certificate's ISO 8601 formatted expiration date.
-	EndDate string `pulumi:"endDate"`
-	// The fingerprint of the certificate.
-	Fingerprint string `pulumi:"fingerprint"`
-	// The certificate's issuer.
-	Issuer string `pulumi:"issuer"`
-	// The unique serial number of the certificate.
-	SerialNumber string `pulumi:"serialNumber"`
-	// The signature algorithm of the CA certificate.
-	SignatureAlgorithm string `pulumi:"signatureAlgorithm"`
-	// The start date of the certificate.
-	StartDate string `pulumi:"startDate"`
-	// The certificate's subject field.
-	Subject string `pulumi:"subject"`
-}
-
-// GetMtlstruststoreCaSetCertificateInput is an input type that accepts GetMtlstruststoreCaSetCertificateArgs and GetMtlstruststoreCaSetCertificateOutput values.
-// You can construct a concrete instance of `GetMtlstruststoreCaSetCertificateInput` via:
-//
-//	GetMtlstruststoreCaSetCertificateArgs{...}
-type GetMtlstruststoreCaSetCertificateInput interface {
-	pulumi.Input
-
-	ToGetMtlstruststoreCaSetCertificateOutput() GetMtlstruststoreCaSetCertificateOutput
-	ToGetMtlstruststoreCaSetCertificateOutputWithContext(context.Context) GetMtlstruststoreCaSetCertificateOutput
-}
-
-type GetMtlstruststoreCaSetCertificateArgs struct {
-	// The certificate in PEM format, as found in a Base64 ASCII encoded file.
-	CertificatePem pulumi.StringInput `pulumi:"certificatePem"`
-	// The user who created this CA certificate.
-	CreatedBy pulumi.StringInput `pulumi:"createdBy"`
-	// When the CA certificate was created.
-	CreatedDate pulumi.StringInput `pulumi:"createdDate"`
-	// Optional description for the certificate.
-	Description pulumi.StringInput `pulumi:"description"`
-	// The certificate's ISO 8601 formatted expiration date.
-	EndDate pulumi.StringInput `pulumi:"endDate"`
-	// The fingerprint of the certificate.
-	Fingerprint pulumi.StringInput `pulumi:"fingerprint"`
-	// The certificate's issuer.
-	Issuer pulumi.StringInput `pulumi:"issuer"`
-	// The unique serial number of the certificate.
-	SerialNumber pulumi.StringInput `pulumi:"serialNumber"`
-	// The signature algorithm of the CA certificate.
-	SignatureAlgorithm pulumi.StringInput `pulumi:"signatureAlgorithm"`
-	// The start date of the certificate.
-	StartDate pulumi.StringInput `pulumi:"startDate"`
-	// The certificate's subject field.
-	Subject pulumi.StringInput `pulumi:"subject"`
-}
-
-func (GetMtlstruststoreCaSetCertificateArgs) ElementType() reflect.Type {
-	return reflect.TypeOf((*GetMtlstruststoreCaSetCertificate)(nil)).Elem()
-}
-
-func (i GetMtlstruststoreCaSetCertificateArgs) ToGetMtlstruststoreCaSetCertificateOutput() GetMtlstruststoreCaSetCertificateOutput {
-	return i.ToGetMtlstruststoreCaSetCertificateOutputWithContext(context.Background())
-}
-
-func (i GetMtlstruststoreCaSetCertificateArgs) ToGetMtlstruststoreCaSetCertificateOutputWithContext(ctx context.Context) GetMtlstruststoreCaSetCertificateOutput {
-	return pulumi.ToOutputWithContext(ctx, i).(GetMtlstruststoreCaSetCertificateOutput)
-}
-
-// GetMtlstruststoreCaSetCertificateArrayInput is an input type that accepts GetMtlstruststoreCaSetCertificateArray and GetMtlstruststoreCaSetCertificateArrayOutput values.
-// You can construct a concrete instance of `GetMtlstruststoreCaSetCertificateArrayInput` via:
-//
-//	GetMtlstruststoreCaSetCertificateArray{ GetMtlstruststoreCaSetCertificateArgs{...} }
-type GetMtlstruststoreCaSetCertificateArrayInput interface {
-	pulumi.Input
-
-	ToGetMtlstruststoreCaSetCertificateArrayOutput() GetMtlstruststoreCaSetCertificateArrayOutput
-	ToGetMtlstruststoreCaSetCertificateArrayOutputWithContext(context.Context) GetMtlstruststoreCaSetCertificateArrayOutput
-}
-
-type GetMtlstruststoreCaSetCertificateArray []GetMtlstruststoreCaSetCertificateInput
-
-func (GetMtlstruststoreCaSetCertificateArray) ElementType() reflect.Type {
-	return reflect.TypeOf((*[]GetMtlstruststoreCaSetCertificate)(nil)).Elem()
-}
-
-func (i GetMtlstruststoreCaSetCertificateArray) ToGetMtlstruststoreCaSetCertificateArrayOutput() GetMtlstruststoreCaSetCertificateArrayOutput {
-	return i.ToGetMtlstruststoreCaSetCertificateArrayOutputWithContext(context.Background())
-}
-
-func (i GetMtlstruststoreCaSetCertificateArray) ToGetMtlstruststoreCaSetCertificateArrayOutputWithContext(ctx context.Context) GetMtlstruststoreCaSetCertificateArrayOutput {
-	return pulumi.ToOutputWithContext(ctx, i).(GetMtlstruststoreCaSetCertificateArrayOutput)
-}
-
-type GetMtlstruststoreCaSetCertificateOutput struct{ *pulumi.OutputState }
-
-func (GetMtlstruststoreCaSetCertificateOutput) ElementType() reflect.Type {
-	return reflect.TypeOf((*GetMtlstruststoreCaSetCertificate)(nil)).Elem()
-}
-
-func (o GetMtlstruststoreCaSetCertificateOutput) ToGetMtlstruststoreCaSetCertificateOutput() GetMtlstruststoreCaSetCertificateOutput {
-	return o
-}
-
-func (o GetMtlstruststoreCaSetCertificateOutput) ToGetMtlstruststoreCaSetCertificateOutputWithContext(ctx context.Context) GetMtlstruststoreCaSetCertificateOutput {
-	return o
-}
-
-// The certificate in PEM format, as found in a Base64 ASCII encoded file.
-func (o GetMtlstruststoreCaSetCertificateOutput) CertificatePem() pulumi.StringOutput {
-	return o.ApplyT(func(v GetMtlstruststoreCaSetCertificate) string { return v.CertificatePem }).(pulumi.StringOutput)
-}
-
-// The user who created this CA certificate.
-func (o GetMtlstruststoreCaSetCertificateOutput) CreatedBy() pulumi.StringOutput {
-	return o.ApplyT(func(v GetMtlstruststoreCaSetCertificate) string { return v.CreatedBy }).(pulumi.StringOutput)
-}
-
-// When the CA certificate was created.
-func (o GetMtlstruststoreCaSetCertificateOutput) CreatedDate() pulumi.StringOutput {
-	return o.ApplyT(func(v GetMtlstruststoreCaSetCertificate) string { return v.CreatedDate }).(pulumi.StringOutput)
-}
-
-// Optional description for the certificate.
-func (o GetMtlstruststoreCaSetCertificateOutput) Description() pulumi.StringOutput {
-	return o.ApplyT(func(v GetMtlstruststoreCaSetCertificate) string { return v.Description }).(pulumi.StringOutput)
-}
-
-// The certificate's ISO 8601 formatted expiration date.
-func (o GetMtlstruststoreCaSetCertificateOutput) EndDate() pulumi.StringOutput {
-	return o.ApplyT(func(v GetMtlstruststoreCaSetCertificate) string { return v.EndDate }).(pulumi.StringOutput)
-}
-
-// The fingerprint of the certificate.
-func (o GetMtlstruststoreCaSetCertificateOutput) Fingerprint() pulumi.StringOutput {
-	return o.ApplyT(func(v GetMtlstruststoreCaSetCertificate) string { return v.Fingerprint }).(pulumi.StringOutput)
-}
-
-// The certificate's issuer.
-func (o GetMtlstruststoreCaSetCertificateOutput) Issuer() pulumi.StringOutput {
-	return o.ApplyT(func(v GetMtlstruststoreCaSetCertificate) string { return v.Issuer }).(pulumi.StringOutput)
-}
-
-// The unique serial number of the certificate.
-func (o GetMtlstruststoreCaSetCertificateOutput) SerialNumber() pulumi.StringOutput {
-	return o.ApplyT(func(v GetMtlstruststoreCaSetCertificate) string { return v.SerialNumber }).(pulumi.StringOutput)
-}
-
-// The signature algorithm of the CA certificate.
-func (o GetMtlstruststoreCaSetCertificateOutput) SignatureAlgorithm() pulumi.StringOutput {
-	return o.ApplyT(func(v GetMtlstruststoreCaSetCertificate) string { return v.SignatureAlgorithm }).(pulumi.StringOutput)
-}
-
-// The start date of the certificate.
-func (o GetMtlstruststoreCaSetCertificateOutput) StartDate() pulumi.StringOutput {
-	return o.ApplyT(func(v GetMtlstruststoreCaSetCertificate) string { return v.StartDate }).(pulumi.StringOutput)
-}
-
-// The certificate's subject field.
-func (o GetMtlstruststoreCaSetCertificateOutput) Subject() pulumi.StringOutput {
-	return o.ApplyT(func(v GetMtlstruststoreCaSetCertificate) string { return v.Subject }).(pulumi.StringOutput)
-}
-
-type GetMtlstruststoreCaSetCertificateArrayOutput struct{ *pulumi.OutputState }
-
-func (GetMtlstruststoreCaSetCertificateArrayOutput) ElementType() reflect.Type {
-	return reflect.TypeOf((*[]GetMtlstruststoreCaSetCertificate)(nil)).Elem()
-}
-
-func (o GetMtlstruststoreCaSetCertificateArrayOutput) ToGetMtlstruststoreCaSetCertificateArrayOutput() GetMtlstruststoreCaSetCertificateArrayOutput {
-	return o
-}
-
-func (o GetMtlstruststoreCaSetCertificateArrayOutput) ToGetMtlstruststoreCaSetCertificateArrayOutputWithContext(ctx context.Context) GetMtlstruststoreCaSetCertificateArrayOutput {
-	return o
-}
-
-func (o GetMtlstruststoreCaSetCertificateArrayOutput) Index(i pulumi.IntInput) GetMtlstruststoreCaSetCertificateOutput {
-	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetMtlstruststoreCaSetCertificate {
-		return vs[0].([]GetMtlstruststoreCaSetCertificate)[vs[1].(int)]
-	}).(GetMtlstruststoreCaSetCertificateOutput)
-}
-
-type GetMtlstruststoreCaSetCertificatesCertificate struct {
-	// The certificate in PEM format (Base64 ASCII encoded).
-	CertificatePem string `pulumi:"certificatePem"`
-	// The user who created this CA certificate.
-	CreatedBy string `pulumi:"createdBy"`
-	// When the CA certificate was created.
-	CreatedDate string `pulumi:"createdDate"`
-	// The description of the CA certificate.
-	Description string `pulumi:"description"`
-	// The ISO 8601 formatted expiration date of the certificate.
-	EndDate string `pulumi:"endDate"`
-	// The fingerprint of the certificate.
-	Fingerprint string `pulumi:"fingerprint"`
-	// The certificate's issuer.
-	Issuer string `pulumi:"issuer"`
-	// The unique serial number of the certificate.
-	SerialNumber string `pulumi:"serialNumber"`
-	// The signature algorithm of the CA certificate.
-	SignatureAlgorithm string `pulumi:"signatureAlgorithm"`
-	// The start date of the certificate.
-	StartDate string `pulumi:"startDate"`
-	// The subject field of the certificate.
-	Subject string `pulumi:"subject"`
-}
-
-// GetMtlstruststoreCaSetCertificatesCertificateInput is an input type that accepts GetMtlstruststoreCaSetCertificatesCertificateArgs and GetMtlstruststoreCaSetCertificatesCertificateOutput values.
-// You can construct a concrete instance of `GetMtlstruststoreCaSetCertificatesCertificateInput` via:
-//
-//	GetMtlstruststoreCaSetCertificatesCertificateArgs{...}
-type GetMtlstruststoreCaSetCertificatesCertificateInput interface {
-	pulumi.Input
-
-	ToGetMtlstruststoreCaSetCertificatesCertificateOutput() GetMtlstruststoreCaSetCertificatesCertificateOutput
-	ToGetMtlstruststoreCaSetCertificatesCertificateOutputWithContext(context.Context) GetMtlstruststoreCaSetCertificatesCertificateOutput
-}
-
-type GetMtlstruststoreCaSetCertificatesCertificateArgs struct {
-	// The certificate in PEM format (Base64 ASCII encoded).
-	CertificatePem pulumi.StringInput `pulumi:"certificatePem"`
-	// The user who created this CA certificate.
-	CreatedBy pulumi.StringInput `pulumi:"createdBy"`
-	// When the CA certificate was created.
-	CreatedDate pulumi.StringInput `pulumi:"createdDate"`
-	// The description of the CA certificate.
-	Description pulumi.StringInput `pulumi:"description"`
-	// The ISO 8601 formatted expiration date of the certificate.
-	EndDate pulumi.StringInput `pulumi:"endDate"`
-	// The fingerprint of the certificate.
-	Fingerprint pulumi.StringInput `pulumi:"fingerprint"`
-	// The certificate's issuer.
-	Issuer pulumi.StringInput `pulumi:"issuer"`
-	// The unique serial number of the certificate.
-	SerialNumber pulumi.StringInput `pulumi:"serialNumber"`
-	// The signature algorithm of the CA certificate.
-	SignatureAlgorithm pulumi.StringInput `pulumi:"signatureAlgorithm"`
-	// The start date of the certificate.
-	StartDate pulumi.StringInput `pulumi:"startDate"`
-	// The subject field of the certificate.
-	Subject pulumi.StringInput `pulumi:"subject"`
-}
-
-func (GetMtlstruststoreCaSetCertificatesCertificateArgs) ElementType() reflect.Type {
-	return reflect.TypeOf((*GetMtlstruststoreCaSetCertificatesCertificate)(nil)).Elem()
-}
-
-func (i GetMtlstruststoreCaSetCertificatesCertificateArgs) ToGetMtlstruststoreCaSetCertificatesCertificateOutput() GetMtlstruststoreCaSetCertificatesCertificateOutput {
-	return i.ToGetMtlstruststoreCaSetCertificatesCertificateOutputWithContext(context.Background())
-}
-
-func (i GetMtlstruststoreCaSetCertificatesCertificateArgs) ToGetMtlstruststoreCaSetCertificatesCertificateOutputWithContext(ctx context.Context) GetMtlstruststoreCaSetCertificatesCertificateOutput {
-	return pulumi.ToOutputWithContext(ctx, i).(GetMtlstruststoreCaSetCertificatesCertificateOutput)
-}
-
-// GetMtlstruststoreCaSetCertificatesCertificateArrayInput is an input type that accepts GetMtlstruststoreCaSetCertificatesCertificateArray and GetMtlstruststoreCaSetCertificatesCertificateArrayOutput values.
-// You can construct a concrete instance of `GetMtlstruststoreCaSetCertificatesCertificateArrayInput` via:
-//
-//	GetMtlstruststoreCaSetCertificatesCertificateArray{ GetMtlstruststoreCaSetCertificatesCertificateArgs{...} }
-type GetMtlstruststoreCaSetCertificatesCertificateArrayInput interface {
-	pulumi.Input
-
-	ToGetMtlstruststoreCaSetCertificatesCertificateArrayOutput() GetMtlstruststoreCaSetCertificatesCertificateArrayOutput
-	ToGetMtlstruststoreCaSetCertificatesCertificateArrayOutputWithContext(context.Context) GetMtlstruststoreCaSetCertificatesCertificateArrayOutput
-}
-
-type GetMtlstruststoreCaSetCertificatesCertificateArray []GetMtlstruststoreCaSetCertificatesCertificateInput
-
-func (GetMtlstruststoreCaSetCertificatesCertificateArray) ElementType() reflect.Type {
-	return reflect.TypeOf((*[]GetMtlstruststoreCaSetCertificatesCertificate)(nil)).Elem()
-}
-
-func (i GetMtlstruststoreCaSetCertificatesCertificateArray) ToGetMtlstruststoreCaSetCertificatesCertificateArrayOutput() GetMtlstruststoreCaSetCertificatesCertificateArrayOutput {
-	return i.ToGetMtlstruststoreCaSetCertificatesCertificateArrayOutputWithContext(context.Background())
-}
-
-func (i GetMtlstruststoreCaSetCertificatesCertificateArray) ToGetMtlstruststoreCaSetCertificatesCertificateArrayOutputWithContext(ctx context.Context) GetMtlstruststoreCaSetCertificatesCertificateArrayOutput {
-	return pulumi.ToOutputWithContext(ctx, i).(GetMtlstruststoreCaSetCertificatesCertificateArrayOutput)
-}
-
-type GetMtlstruststoreCaSetCertificatesCertificateOutput struct{ *pulumi.OutputState }
-
-func (GetMtlstruststoreCaSetCertificatesCertificateOutput) ElementType() reflect.Type {
-	return reflect.TypeOf((*GetMtlstruststoreCaSetCertificatesCertificate)(nil)).Elem()
-}
-
-func (o GetMtlstruststoreCaSetCertificatesCertificateOutput) ToGetMtlstruststoreCaSetCertificatesCertificateOutput() GetMtlstruststoreCaSetCertificatesCertificateOutput {
-	return o
-}
-
-func (o GetMtlstruststoreCaSetCertificatesCertificateOutput) ToGetMtlstruststoreCaSetCertificatesCertificateOutputWithContext(ctx context.Context) GetMtlstruststoreCaSetCertificatesCertificateOutput {
-	return o
-}
-
-// The certificate in PEM format (Base64 ASCII encoded).
-func (o GetMtlstruststoreCaSetCertificatesCertificateOutput) CertificatePem() pulumi.StringOutput {
-	return o.ApplyT(func(v GetMtlstruststoreCaSetCertificatesCertificate) string { return v.CertificatePem }).(pulumi.StringOutput)
-}
-
-// The user who created this CA certificate.
-func (o GetMtlstruststoreCaSetCertificatesCertificateOutput) CreatedBy() pulumi.StringOutput {
-	return o.ApplyT(func(v GetMtlstruststoreCaSetCertificatesCertificate) string { return v.CreatedBy }).(pulumi.StringOutput)
-}
-
-// When the CA certificate was created.
-func (o GetMtlstruststoreCaSetCertificatesCertificateOutput) CreatedDate() pulumi.StringOutput {
-	return o.ApplyT(func(v GetMtlstruststoreCaSetCertificatesCertificate) string { return v.CreatedDate }).(pulumi.StringOutput)
-}
-
-// The description of the CA certificate.
-func (o GetMtlstruststoreCaSetCertificatesCertificateOutput) Description() pulumi.StringOutput {
-	return o.ApplyT(func(v GetMtlstruststoreCaSetCertificatesCertificate) string { return v.Description }).(pulumi.StringOutput)
-}
-
-// The ISO 8601 formatted expiration date of the certificate.
-func (o GetMtlstruststoreCaSetCertificatesCertificateOutput) EndDate() pulumi.StringOutput {
-	return o.ApplyT(func(v GetMtlstruststoreCaSetCertificatesCertificate) string { return v.EndDate }).(pulumi.StringOutput)
-}
-
-// The fingerprint of the certificate.
-func (o GetMtlstruststoreCaSetCertificatesCertificateOutput) Fingerprint() pulumi.StringOutput {
-	return o.ApplyT(func(v GetMtlstruststoreCaSetCertificatesCertificate) string { return v.Fingerprint }).(pulumi.StringOutput)
-}
-
-// The certificate's issuer.
-func (o GetMtlstruststoreCaSetCertificatesCertificateOutput) Issuer() pulumi.StringOutput {
-	return o.ApplyT(func(v GetMtlstruststoreCaSetCertificatesCertificate) string { return v.Issuer }).(pulumi.StringOutput)
-}
-
-// The unique serial number of the certificate.
-func (o GetMtlstruststoreCaSetCertificatesCertificateOutput) SerialNumber() pulumi.StringOutput {
-	return o.ApplyT(func(v GetMtlstruststoreCaSetCertificatesCertificate) string { return v.SerialNumber }).(pulumi.StringOutput)
-}
-
-// The signature algorithm of the CA certificate.
-func (o GetMtlstruststoreCaSetCertificatesCertificateOutput) SignatureAlgorithm() pulumi.StringOutput {
-	return o.ApplyT(func(v GetMtlstruststoreCaSetCertificatesCertificate) string { return v.SignatureAlgorithm }).(pulumi.StringOutput)
-}
-
-// The start date of the certificate.
-func (o GetMtlstruststoreCaSetCertificatesCertificateOutput) StartDate() pulumi.StringOutput {
-	return o.ApplyT(func(v GetMtlstruststoreCaSetCertificatesCertificate) string { return v.StartDate }).(pulumi.StringOutput)
-}
-
-// The subject field of the certificate.
-func (o GetMtlstruststoreCaSetCertificatesCertificateOutput) Subject() pulumi.StringOutput {
-	return o.ApplyT(func(v GetMtlstruststoreCaSetCertificatesCertificate) string { return v.Subject }).(pulumi.StringOutput)
-}
-
-type GetMtlstruststoreCaSetCertificatesCertificateArrayOutput struct{ *pulumi.OutputState }
-
-func (GetMtlstruststoreCaSetCertificatesCertificateArrayOutput) ElementType() reflect.Type {
-	return reflect.TypeOf((*[]GetMtlstruststoreCaSetCertificatesCertificate)(nil)).Elem()
-}
-
-func (o GetMtlstruststoreCaSetCertificatesCertificateArrayOutput) ToGetMtlstruststoreCaSetCertificatesCertificateArrayOutput() GetMtlstruststoreCaSetCertificatesCertificateArrayOutput {
-	return o
-}
-
-func (o GetMtlstruststoreCaSetCertificatesCertificateArrayOutput) ToGetMtlstruststoreCaSetCertificatesCertificateArrayOutputWithContext(ctx context.Context) GetMtlstruststoreCaSetCertificatesCertificateArrayOutput {
-	return o
-}
-
-func (o GetMtlstruststoreCaSetCertificatesCertificateArrayOutput) Index(i pulumi.IntInput) GetMtlstruststoreCaSetCertificatesCertificateOutput {
-	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetMtlstruststoreCaSetCertificatesCertificate {
-		return vs[0].([]GetMtlstruststoreCaSetCertificatesCertificate)[vs[1].(int)]
-	}).(GetMtlstruststoreCaSetCertificatesCertificateOutput)
-}
-
-type GetMtlstruststoreCaSetVersionsVersion struct {
-	// By default, all certificates in the version need a signature algorithm of SHA-256 or better. Enabling this allows certificates with SHA-1 signatures.
-	AllowInsecureSha1 bool `pulumi:"allowInsecureSha1"`
-	// List of certificate objects in the version, with each element corresponding to one root or intermediate certificate.
-	Certificates []GetMtlstruststoreCaSetVersionsVersionCertificate `pulumi:"certificates"`
-	// The user who created the CA set version.
-	CreatedBy string `pulumi:"createdBy"`
-	// When the CA set version was created.
-	CreatedDate string `pulumi:"createdDate"`
-	// The user who last modified the CA set version.
-	ModifiedBy string `pulumi:"modifiedBy"`
-	// When the CA set version was last modified.
-	ModifiedDate string `pulumi:"modifiedDate"`
-	// The CA set version's status on the production network, either 'ACTIVE' or 'INACTIVE'.
-	ProductionStatus string `pulumi:"productionStatus"`
-	// The time when the CA set version will be permanently deleted from the system. The value is null when the CA set version is not scheduled for deletion.
-	RemovalDate string `pulumi:"removalDate"`
-	// The CA set version's status on the staging network, either 'ACTIVE' or 'INACTIVE'.
-	StagingStatus string `pulumi:"stagingStatus"`
-	// Indicates the CA set version status, 'NOT_DELETED' or 'DELETED'.
-	Status string `pulumi:"status"`
-	// Version identifier on which to perform the desired operation.
-	Version int `pulumi:"version"`
-	// Any additional description you can provide while creating or updating the CA set version.
-	VersionDescription string `pulumi:"versionDescription"`
-}
-
-// GetMtlstruststoreCaSetVersionsVersionInput is an input type that accepts GetMtlstruststoreCaSetVersionsVersionArgs and GetMtlstruststoreCaSetVersionsVersionOutput values.
-// You can construct a concrete instance of `GetMtlstruststoreCaSetVersionsVersionInput` via:
-//
-//	GetMtlstruststoreCaSetVersionsVersionArgs{...}
-type GetMtlstruststoreCaSetVersionsVersionInput interface {
-	pulumi.Input
-
-	ToGetMtlstruststoreCaSetVersionsVersionOutput() GetMtlstruststoreCaSetVersionsVersionOutput
-	ToGetMtlstruststoreCaSetVersionsVersionOutputWithContext(context.Context) GetMtlstruststoreCaSetVersionsVersionOutput
-}
-
-type GetMtlstruststoreCaSetVersionsVersionArgs struct {
-	// By default, all certificates in the version need a signature algorithm of SHA-256 or better. Enabling this allows certificates with SHA-1 signatures.
-	AllowInsecureSha1 pulumi.BoolInput `pulumi:"allowInsecureSha1"`
-	// List of certificate objects in the version, with each element corresponding to one root or intermediate certificate.
-	Certificates GetMtlstruststoreCaSetVersionsVersionCertificateArrayInput `pulumi:"certificates"`
-	// The user who created the CA set version.
-	CreatedBy pulumi.StringInput `pulumi:"createdBy"`
-	// When the CA set version was created.
-	CreatedDate pulumi.StringInput `pulumi:"createdDate"`
-	// The user who last modified the CA set version.
-	ModifiedBy pulumi.StringInput `pulumi:"modifiedBy"`
-	// When the CA set version was last modified.
-	ModifiedDate pulumi.StringInput `pulumi:"modifiedDate"`
-	// The CA set version's status on the production network, either 'ACTIVE' or 'INACTIVE'.
-	ProductionStatus pulumi.StringInput `pulumi:"productionStatus"`
-	// The time when the CA set version will be permanently deleted from the system. The value is null when the CA set version is not scheduled for deletion.
-	RemovalDate pulumi.StringInput `pulumi:"removalDate"`
-	// The CA set version's status on the staging network, either 'ACTIVE' or 'INACTIVE'.
-	StagingStatus pulumi.StringInput `pulumi:"stagingStatus"`
-	// Indicates the CA set version status, 'NOT_DELETED' or 'DELETED'.
-	Status pulumi.StringInput `pulumi:"status"`
-	// Version identifier on which to perform the desired operation.
-	Version pulumi.IntInput `pulumi:"version"`
-	// Any additional description you can provide while creating or updating the CA set version.
-	VersionDescription pulumi.StringInput `pulumi:"versionDescription"`
-}
-
-func (GetMtlstruststoreCaSetVersionsVersionArgs) ElementType() reflect.Type {
-	return reflect.TypeOf((*GetMtlstruststoreCaSetVersionsVersion)(nil)).Elem()
-}
-
-func (i GetMtlstruststoreCaSetVersionsVersionArgs) ToGetMtlstruststoreCaSetVersionsVersionOutput() GetMtlstruststoreCaSetVersionsVersionOutput {
-	return i.ToGetMtlstruststoreCaSetVersionsVersionOutputWithContext(context.Background())
-}
-
-func (i GetMtlstruststoreCaSetVersionsVersionArgs) ToGetMtlstruststoreCaSetVersionsVersionOutputWithContext(ctx context.Context) GetMtlstruststoreCaSetVersionsVersionOutput {
-	return pulumi.ToOutputWithContext(ctx, i).(GetMtlstruststoreCaSetVersionsVersionOutput)
-}
-
-// GetMtlstruststoreCaSetVersionsVersionArrayInput is an input type that accepts GetMtlstruststoreCaSetVersionsVersionArray and GetMtlstruststoreCaSetVersionsVersionArrayOutput values.
-// You can construct a concrete instance of `GetMtlstruststoreCaSetVersionsVersionArrayInput` via:
-//
-//	GetMtlstruststoreCaSetVersionsVersionArray{ GetMtlstruststoreCaSetVersionsVersionArgs{...} }
-type GetMtlstruststoreCaSetVersionsVersionArrayInput interface {
-	pulumi.Input
-
-	ToGetMtlstruststoreCaSetVersionsVersionArrayOutput() GetMtlstruststoreCaSetVersionsVersionArrayOutput
-	ToGetMtlstruststoreCaSetVersionsVersionArrayOutputWithContext(context.Context) GetMtlstruststoreCaSetVersionsVersionArrayOutput
-}
-
-type GetMtlstruststoreCaSetVersionsVersionArray []GetMtlstruststoreCaSetVersionsVersionInput
-
-func (GetMtlstruststoreCaSetVersionsVersionArray) ElementType() reflect.Type {
-	return reflect.TypeOf((*[]GetMtlstruststoreCaSetVersionsVersion)(nil)).Elem()
-}
-
-func (i GetMtlstruststoreCaSetVersionsVersionArray) ToGetMtlstruststoreCaSetVersionsVersionArrayOutput() GetMtlstruststoreCaSetVersionsVersionArrayOutput {
-	return i.ToGetMtlstruststoreCaSetVersionsVersionArrayOutputWithContext(context.Background())
-}
-
-func (i GetMtlstruststoreCaSetVersionsVersionArray) ToGetMtlstruststoreCaSetVersionsVersionArrayOutputWithContext(ctx context.Context) GetMtlstruststoreCaSetVersionsVersionArrayOutput {
-	return pulumi.ToOutputWithContext(ctx, i).(GetMtlstruststoreCaSetVersionsVersionArrayOutput)
-}
-
-type GetMtlstruststoreCaSetVersionsVersionOutput struct{ *pulumi.OutputState }
-
-func (GetMtlstruststoreCaSetVersionsVersionOutput) ElementType() reflect.Type {
-	return reflect.TypeOf((*GetMtlstruststoreCaSetVersionsVersion)(nil)).Elem()
-}
-
-func (o GetMtlstruststoreCaSetVersionsVersionOutput) ToGetMtlstruststoreCaSetVersionsVersionOutput() GetMtlstruststoreCaSetVersionsVersionOutput {
-	return o
-}
-
-func (o GetMtlstruststoreCaSetVersionsVersionOutput) ToGetMtlstruststoreCaSetVersionsVersionOutputWithContext(ctx context.Context) GetMtlstruststoreCaSetVersionsVersionOutput {
-	return o
-}
-
-// By default, all certificates in the version need a signature algorithm of SHA-256 or better. Enabling this allows certificates with SHA-1 signatures.
-func (o GetMtlstruststoreCaSetVersionsVersionOutput) AllowInsecureSha1() pulumi.BoolOutput {
-	return o.ApplyT(func(v GetMtlstruststoreCaSetVersionsVersion) bool { return v.AllowInsecureSha1 }).(pulumi.BoolOutput)
-}
-
-// List of certificate objects in the version, with each element corresponding to one root or intermediate certificate.
-func (o GetMtlstruststoreCaSetVersionsVersionOutput) Certificates() GetMtlstruststoreCaSetVersionsVersionCertificateArrayOutput {
-	return o.ApplyT(func(v GetMtlstruststoreCaSetVersionsVersion) []GetMtlstruststoreCaSetVersionsVersionCertificate {
-		return v.Certificates
-	}).(GetMtlstruststoreCaSetVersionsVersionCertificateArrayOutput)
-}
-
-// The user who created the CA set version.
-func (o GetMtlstruststoreCaSetVersionsVersionOutput) CreatedBy() pulumi.StringOutput {
-	return o.ApplyT(func(v GetMtlstruststoreCaSetVersionsVersion) string { return v.CreatedBy }).(pulumi.StringOutput)
-}
-
-// When the CA set version was created.
-func (o GetMtlstruststoreCaSetVersionsVersionOutput) CreatedDate() pulumi.StringOutput {
-	return o.ApplyT(func(v GetMtlstruststoreCaSetVersionsVersion) string { return v.CreatedDate }).(pulumi.StringOutput)
-}
-
-// The user who last modified the CA set version.
-func (o GetMtlstruststoreCaSetVersionsVersionOutput) ModifiedBy() pulumi.StringOutput {
-	return o.ApplyT(func(v GetMtlstruststoreCaSetVersionsVersion) string { return v.ModifiedBy }).(pulumi.StringOutput)
-}
-
-// When the CA set version was last modified.
-func (o GetMtlstruststoreCaSetVersionsVersionOutput) ModifiedDate() pulumi.StringOutput {
-	return o.ApplyT(func(v GetMtlstruststoreCaSetVersionsVersion) string { return v.ModifiedDate }).(pulumi.StringOutput)
-}
-
-// The CA set version's status on the production network, either 'ACTIVE' or 'INACTIVE'.
-func (o GetMtlstruststoreCaSetVersionsVersionOutput) ProductionStatus() pulumi.StringOutput {
-	return o.ApplyT(func(v GetMtlstruststoreCaSetVersionsVersion) string { return v.ProductionStatus }).(pulumi.StringOutput)
-}
-
-// The time when the CA set version will be permanently deleted from the system. The value is null when the CA set version is not scheduled for deletion.
-func (o GetMtlstruststoreCaSetVersionsVersionOutput) RemovalDate() pulumi.StringOutput {
-	return o.ApplyT(func(v GetMtlstruststoreCaSetVersionsVersion) string { return v.RemovalDate }).(pulumi.StringOutput)
-}
-
-// The CA set version's status on the staging network, either 'ACTIVE' or 'INACTIVE'.
-func (o GetMtlstruststoreCaSetVersionsVersionOutput) StagingStatus() pulumi.StringOutput {
-	return o.ApplyT(func(v GetMtlstruststoreCaSetVersionsVersion) string { return v.StagingStatus }).(pulumi.StringOutput)
-}
-
-// Indicates the CA set version status, 'NOT_DELETED' or 'DELETED'.
-func (o GetMtlstruststoreCaSetVersionsVersionOutput) Status() pulumi.StringOutput {
-	return o.ApplyT(func(v GetMtlstruststoreCaSetVersionsVersion) string { return v.Status }).(pulumi.StringOutput)
-}
-
-// Version identifier on which to perform the desired operation.
-func (o GetMtlstruststoreCaSetVersionsVersionOutput) Version() pulumi.IntOutput {
-	return o.ApplyT(func(v GetMtlstruststoreCaSetVersionsVersion) int { return v.Version }).(pulumi.IntOutput)
-}
-
-// Any additional description you can provide while creating or updating the CA set version.
-func (o GetMtlstruststoreCaSetVersionsVersionOutput) VersionDescription() pulumi.StringOutput {
-	return o.ApplyT(func(v GetMtlstruststoreCaSetVersionsVersion) string { return v.VersionDescription }).(pulumi.StringOutput)
-}
-
-type GetMtlstruststoreCaSetVersionsVersionArrayOutput struct{ *pulumi.OutputState }
-
-func (GetMtlstruststoreCaSetVersionsVersionArrayOutput) ElementType() reflect.Type {
-	return reflect.TypeOf((*[]GetMtlstruststoreCaSetVersionsVersion)(nil)).Elem()
-}
-
-func (o GetMtlstruststoreCaSetVersionsVersionArrayOutput) ToGetMtlstruststoreCaSetVersionsVersionArrayOutput() GetMtlstruststoreCaSetVersionsVersionArrayOutput {
-	return o
-}
-
-func (o GetMtlstruststoreCaSetVersionsVersionArrayOutput) ToGetMtlstruststoreCaSetVersionsVersionArrayOutputWithContext(ctx context.Context) GetMtlstruststoreCaSetVersionsVersionArrayOutput {
-	return o
-}
-
-func (o GetMtlstruststoreCaSetVersionsVersionArrayOutput) Index(i pulumi.IntInput) GetMtlstruststoreCaSetVersionsVersionOutput {
-	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetMtlstruststoreCaSetVersionsVersion {
-		return vs[0].([]GetMtlstruststoreCaSetVersionsVersion)[vs[1].(int)]
-	}).(GetMtlstruststoreCaSetVersionsVersionOutput)
-}
-
-type GetMtlstruststoreCaSetVersionsVersionCertificate struct {
-	// The certificate in PEM format, as found in a Base64 ASCII encoded file.
-	CertificatePem string `pulumi:"certificatePem"`
-	// The user who created this CA certificate.
-	CreatedBy string `pulumi:"createdBy"`
-	// When the CA certificate was created.
-	CreatedDate string `pulumi:"createdDate"`
-	// Description for the certificate.
-	Description string `pulumi:"description"`
-	// The certificate's ISO 8601 formatted expiration date.
-	EndDate string `pulumi:"endDate"`
-	// The fingerprint of the certificate.
-	Fingerprint string `pulumi:"fingerprint"`
-	// The certificate's issuer.
-	Issuer string `pulumi:"issuer"`
-	// The unique serial number of the certificate.
-	SerialNumber string `pulumi:"serialNumber"`
-	// The signature algorithm of the CA certificate.
-	SignatureAlgorithm string `pulumi:"signatureAlgorithm"`
-	// The start date of the certificate.
-	StartDate string `pulumi:"startDate"`
-	// The certificate's subject field.
-	Subject string `pulumi:"subject"`
-}
-
-// GetMtlstruststoreCaSetVersionsVersionCertificateInput is an input type that accepts GetMtlstruststoreCaSetVersionsVersionCertificateArgs and GetMtlstruststoreCaSetVersionsVersionCertificateOutput values.
-// You can construct a concrete instance of `GetMtlstruststoreCaSetVersionsVersionCertificateInput` via:
-//
-//	GetMtlstruststoreCaSetVersionsVersionCertificateArgs{...}
-type GetMtlstruststoreCaSetVersionsVersionCertificateInput interface {
-	pulumi.Input
-
-	ToGetMtlstruststoreCaSetVersionsVersionCertificateOutput() GetMtlstruststoreCaSetVersionsVersionCertificateOutput
-	ToGetMtlstruststoreCaSetVersionsVersionCertificateOutputWithContext(context.Context) GetMtlstruststoreCaSetVersionsVersionCertificateOutput
-}
-
-type GetMtlstruststoreCaSetVersionsVersionCertificateArgs struct {
-	// The certificate in PEM format, as found in a Base64 ASCII encoded file.
-	CertificatePem pulumi.StringInput `pulumi:"certificatePem"`
-	// The user who created this CA certificate.
-	CreatedBy pulumi.StringInput `pulumi:"createdBy"`
-	// When the CA certificate was created.
-	CreatedDate pulumi.StringInput `pulumi:"createdDate"`
-	// Description for the certificate.
-	Description pulumi.StringInput `pulumi:"description"`
-	// The certificate's ISO 8601 formatted expiration date.
-	EndDate pulumi.StringInput `pulumi:"endDate"`
-	// The fingerprint of the certificate.
-	Fingerprint pulumi.StringInput `pulumi:"fingerprint"`
-	// The certificate's issuer.
-	Issuer pulumi.StringInput `pulumi:"issuer"`
-	// The unique serial number of the certificate.
-	SerialNumber pulumi.StringInput `pulumi:"serialNumber"`
-	// The signature algorithm of the CA certificate.
-	SignatureAlgorithm pulumi.StringInput `pulumi:"signatureAlgorithm"`
-	// The start date of the certificate.
-	StartDate pulumi.StringInput `pulumi:"startDate"`
-	// The certificate's subject field.
-	Subject pulumi.StringInput `pulumi:"subject"`
-}
-
-func (GetMtlstruststoreCaSetVersionsVersionCertificateArgs) ElementType() reflect.Type {
-	return reflect.TypeOf((*GetMtlstruststoreCaSetVersionsVersionCertificate)(nil)).Elem()
-}
-
-func (i GetMtlstruststoreCaSetVersionsVersionCertificateArgs) ToGetMtlstruststoreCaSetVersionsVersionCertificateOutput() GetMtlstruststoreCaSetVersionsVersionCertificateOutput {
-	return i.ToGetMtlstruststoreCaSetVersionsVersionCertificateOutputWithContext(context.Background())
-}
-
-func (i GetMtlstruststoreCaSetVersionsVersionCertificateArgs) ToGetMtlstruststoreCaSetVersionsVersionCertificateOutputWithContext(ctx context.Context) GetMtlstruststoreCaSetVersionsVersionCertificateOutput {
-	return pulumi.ToOutputWithContext(ctx, i).(GetMtlstruststoreCaSetVersionsVersionCertificateOutput)
-}
-
-// GetMtlstruststoreCaSetVersionsVersionCertificateArrayInput is an input type that accepts GetMtlstruststoreCaSetVersionsVersionCertificateArray and GetMtlstruststoreCaSetVersionsVersionCertificateArrayOutput values.
-// You can construct a concrete instance of `GetMtlstruststoreCaSetVersionsVersionCertificateArrayInput` via:
-//
-//	GetMtlstruststoreCaSetVersionsVersionCertificateArray{ GetMtlstruststoreCaSetVersionsVersionCertificateArgs{...} }
-type GetMtlstruststoreCaSetVersionsVersionCertificateArrayInput interface {
-	pulumi.Input
-
-	ToGetMtlstruststoreCaSetVersionsVersionCertificateArrayOutput() GetMtlstruststoreCaSetVersionsVersionCertificateArrayOutput
-	ToGetMtlstruststoreCaSetVersionsVersionCertificateArrayOutputWithContext(context.Context) GetMtlstruststoreCaSetVersionsVersionCertificateArrayOutput
-}
-
-type GetMtlstruststoreCaSetVersionsVersionCertificateArray []GetMtlstruststoreCaSetVersionsVersionCertificateInput
-
-func (GetMtlstruststoreCaSetVersionsVersionCertificateArray) ElementType() reflect.Type {
-	return reflect.TypeOf((*[]GetMtlstruststoreCaSetVersionsVersionCertificate)(nil)).Elem()
-}
-
-func (i GetMtlstruststoreCaSetVersionsVersionCertificateArray) ToGetMtlstruststoreCaSetVersionsVersionCertificateArrayOutput() GetMtlstruststoreCaSetVersionsVersionCertificateArrayOutput {
-	return i.ToGetMtlstruststoreCaSetVersionsVersionCertificateArrayOutputWithContext(context.Background())
-}
-
-func (i GetMtlstruststoreCaSetVersionsVersionCertificateArray) ToGetMtlstruststoreCaSetVersionsVersionCertificateArrayOutputWithContext(ctx context.Context) GetMtlstruststoreCaSetVersionsVersionCertificateArrayOutput {
-	return pulumi.ToOutputWithContext(ctx, i).(GetMtlstruststoreCaSetVersionsVersionCertificateArrayOutput)
-}
-
-type GetMtlstruststoreCaSetVersionsVersionCertificateOutput struct{ *pulumi.OutputState }
-
-func (GetMtlstruststoreCaSetVersionsVersionCertificateOutput) ElementType() reflect.Type {
-	return reflect.TypeOf((*GetMtlstruststoreCaSetVersionsVersionCertificate)(nil)).Elem()
-}
-
-func (o GetMtlstruststoreCaSetVersionsVersionCertificateOutput) ToGetMtlstruststoreCaSetVersionsVersionCertificateOutput() GetMtlstruststoreCaSetVersionsVersionCertificateOutput {
-	return o
-}
-
-func (o GetMtlstruststoreCaSetVersionsVersionCertificateOutput) ToGetMtlstruststoreCaSetVersionsVersionCertificateOutputWithContext(ctx context.Context) GetMtlstruststoreCaSetVersionsVersionCertificateOutput {
-	return o
-}
-
-// The certificate in PEM format, as found in a Base64 ASCII encoded file.
-func (o GetMtlstruststoreCaSetVersionsVersionCertificateOutput) CertificatePem() pulumi.StringOutput {
-	return o.ApplyT(func(v GetMtlstruststoreCaSetVersionsVersionCertificate) string { return v.CertificatePem }).(pulumi.StringOutput)
-}
-
-// The user who created this CA certificate.
-func (o GetMtlstruststoreCaSetVersionsVersionCertificateOutput) CreatedBy() pulumi.StringOutput {
-	return o.ApplyT(func(v GetMtlstruststoreCaSetVersionsVersionCertificate) string { return v.CreatedBy }).(pulumi.StringOutput)
-}
-
-// When the CA certificate was created.
-func (o GetMtlstruststoreCaSetVersionsVersionCertificateOutput) CreatedDate() pulumi.StringOutput {
-	return o.ApplyT(func(v GetMtlstruststoreCaSetVersionsVersionCertificate) string { return v.CreatedDate }).(pulumi.StringOutput)
-}
-
-// Description for the certificate.
-func (o GetMtlstruststoreCaSetVersionsVersionCertificateOutput) Description() pulumi.StringOutput {
-	return o.ApplyT(func(v GetMtlstruststoreCaSetVersionsVersionCertificate) string { return v.Description }).(pulumi.StringOutput)
-}
-
-// The certificate's ISO 8601 formatted expiration date.
-func (o GetMtlstruststoreCaSetVersionsVersionCertificateOutput) EndDate() pulumi.StringOutput {
-	return o.ApplyT(func(v GetMtlstruststoreCaSetVersionsVersionCertificate) string { return v.EndDate }).(pulumi.StringOutput)
-}
-
-// The fingerprint of the certificate.
-func (o GetMtlstruststoreCaSetVersionsVersionCertificateOutput) Fingerprint() pulumi.StringOutput {
-	return o.ApplyT(func(v GetMtlstruststoreCaSetVersionsVersionCertificate) string { return v.Fingerprint }).(pulumi.StringOutput)
-}
-
-// The certificate's issuer.
-func (o GetMtlstruststoreCaSetVersionsVersionCertificateOutput) Issuer() pulumi.StringOutput {
-	return o.ApplyT(func(v GetMtlstruststoreCaSetVersionsVersionCertificate) string { return v.Issuer }).(pulumi.StringOutput)
-}
-
-// The unique serial number of the certificate.
-func (o GetMtlstruststoreCaSetVersionsVersionCertificateOutput) SerialNumber() pulumi.StringOutput {
-	return o.ApplyT(func(v GetMtlstruststoreCaSetVersionsVersionCertificate) string { return v.SerialNumber }).(pulumi.StringOutput)
-}
-
-// The signature algorithm of the CA certificate.
-func (o GetMtlstruststoreCaSetVersionsVersionCertificateOutput) SignatureAlgorithm() pulumi.StringOutput {
-	return o.ApplyT(func(v GetMtlstruststoreCaSetVersionsVersionCertificate) string { return v.SignatureAlgorithm }).(pulumi.StringOutput)
-}
-
-// The start date of the certificate.
-func (o GetMtlstruststoreCaSetVersionsVersionCertificateOutput) StartDate() pulumi.StringOutput {
-	return o.ApplyT(func(v GetMtlstruststoreCaSetVersionsVersionCertificate) string { return v.StartDate }).(pulumi.StringOutput)
-}
-
-// The certificate's subject field.
-func (o GetMtlstruststoreCaSetVersionsVersionCertificateOutput) Subject() pulumi.StringOutput {
-	return o.ApplyT(func(v GetMtlstruststoreCaSetVersionsVersionCertificate) string { return v.Subject }).(pulumi.StringOutput)
-}
-
-type GetMtlstruststoreCaSetVersionsVersionCertificateArrayOutput struct{ *pulumi.OutputState }
-
-func (GetMtlstruststoreCaSetVersionsVersionCertificateArrayOutput) ElementType() reflect.Type {
-	return reflect.TypeOf((*[]GetMtlstruststoreCaSetVersionsVersionCertificate)(nil)).Elem()
-}
-
-func (o GetMtlstruststoreCaSetVersionsVersionCertificateArrayOutput) ToGetMtlstruststoreCaSetVersionsVersionCertificateArrayOutput() GetMtlstruststoreCaSetVersionsVersionCertificateArrayOutput {
-	return o
-}
-
-func (o GetMtlstruststoreCaSetVersionsVersionCertificateArrayOutput) ToGetMtlstruststoreCaSetVersionsVersionCertificateArrayOutputWithContext(ctx context.Context) GetMtlstruststoreCaSetVersionsVersionCertificateArrayOutput {
-	return o
-}
-
-func (o GetMtlstruststoreCaSetVersionsVersionCertificateArrayOutput) Index(i pulumi.IntInput) GetMtlstruststoreCaSetVersionsVersionCertificateOutput {
-	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetMtlstruststoreCaSetVersionsVersionCertificate {
-		return vs[0].([]GetMtlstruststoreCaSetVersionsVersionCertificate)[vs[1].(int)]
-	}).(GetMtlstruststoreCaSetVersionsVersionCertificateOutput)
-}
-
-type GetMtlstruststoreCaSetsCaSet struct {
-	// Identifies the account the CA set belongs to.
-	AccountId string `pulumi:"accountId"`
-	// The user who created the CA set.
-	CreatedBy string `pulumi:"createdBy"`
-	// When the CA set was created.
-	CreatedDate string `pulumi:"createdDate"`
-	// The user who requested the CA set be deleted, or null if there's no request.
-	DeletedBy string `pulumi:"deletedBy"`
-	// When the CA set was deleted, or null if there's no request.
-	DeletedDate string `pulumi:"deletedDate"`
-	// Any additional comments you can add to the CA set.
-	Description string `pulumi:"description"`
-	// Identifies each CA set.
-	Id string `pulumi:"id"`
-	// The most recent version based on the updated version.
-	LatestVersion int `pulumi:"latestVersion"`
-	// The name of the CA set.
-	Name string `pulumi:"name"`
-	// The CA set version activated on the 'PRODUCTION' network.
-	ProductionVersion int `pulumi:"productionVersion"`
-	// The time when the CA set will be permanently deleted from the system. The value is null when the CA set is not scheduled for deletion.
-	RemovalDate string `pulumi:"removalDate"`
-	// The CA set version activated on the 'STAGING' network.
-	StagingVersion int `pulumi:"stagingVersion"`
-	// Indicates if the CA set was deleted, either 'NOT_DELETED', 'DELETING', or 'DELETED'.
-	Status string `pulumi:"status"`
-}
-
-// GetMtlstruststoreCaSetsCaSetInput is an input type that accepts GetMtlstruststoreCaSetsCaSetArgs and GetMtlstruststoreCaSetsCaSetOutput values.
-// You can construct a concrete instance of `GetMtlstruststoreCaSetsCaSetInput` via:
-//
-//	GetMtlstruststoreCaSetsCaSetArgs{...}
-type GetMtlstruststoreCaSetsCaSetInput interface {
-	pulumi.Input
-
-	ToGetMtlstruststoreCaSetsCaSetOutput() GetMtlstruststoreCaSetsCaSetOutput
-	ToGetMtlstruststoreCaSetsCaSetOutputWithContext(context.Context) GetMtlstruststoreCaSetsCaSetOutput
-}
-
-type GetMtlstruststoreCaSetsCaSetArgs struct {
-	// Identifies the account the CA set belongs to.
-	AccountId pulumi.StringInput `pulumi:"accountId"`
-	// The user who created the CA set.
-	CreatedBy pulumi.StringInput `pulumi:"createdBy"`
-	// When the CA set was created.
-	CreatedDate pulumi.StringInput `pulumi:"createdDate"`
-	// The user who requested the CA set be deleted, or null if there's no request.
-	DeletedBy pulumi.StringInput `pulumi:"deletedBy"`
-	// When the CA set was deleted, or null if there's no request.
-	DeletedDate pulumi.StringInput `pulumi:"deletedDate"`
-	// Any additional comments you can add to the CA set.
-	Description pulumi.StringInput `pulumi:"description"`
-	// Identifies each CA set.
-	Id pulumi.StringInput `pulumi:"id"`
-	// The most recent version based on the updated version.
-	LatestVersion pulumi.IntInput `pulumi:"latestVersion"`
-	// The name of the CA set.
-	Name pulumi.StringInput `pulumi:"name"`
-	// The CA set version activated on the 'PRODUCTION' network.
-	ProductionVersion pulumi.IntInput `pulumi:"productionVersion"`
-	// The time when the CA set will be permanently deleted from the system. The value is null when the CA set is not scheduled for deletion.
-	RemovalDate pulumi.StringInput `pulumi:"removalDate"`
-	// The CA set version activated on the 'STAGING' network.
-	StagingVersion pulumi.IntInput `pulumi:"stagingVersion"`
-	// Indicates if the CA set was deleted, either 'NOT_DELETED', 'DELETING', or 'DELETED'.
-	Status pulumi.StringInput `pulumi:"status"`
-}
-
-func (GetMtlstruststoreCaSetsCaSetArgs) ElementType() reflect.Type {
-	return reflect.TypeOf((*GetMtlstruststoreCaSetsCaSet)(nil)).Elem()
-}
-
-func (i GetMtlstruststoreCaSetsCaSetArgs) ToGetMtlstruststoreCaSetsCaSetOutput() GetMtlstruststoreCaSetsCaSetOutput {
-	return i.ToGetMtlstruststoreCaSetsCaSetOutputWithContext(context.Background())
-}
-
-func (i GetMtlstruststoreCaSetsCaSetArgs) ToGetMtlstruststoreCaSetsCaSetOutputWithContext(ctx context.Context) GetMtlstruststoreCaSetsCaSetOutput {
-	return pulumi.ToOutputWithContext(ctx, i).(GetMtlstruststoreCaSetsCaSetOutput)
-}
-
-// GetMtlstruststoreCaSetsCaSetArrayInput is an input type that accepts GetMtlstruststoreCaSetsCaSetArray and GetMtlstruststoreCaSetsCaSetArrayOutput values.
-// You can construct a concrete instance of `GetMtlstruststoreCaSetsCaSetArrayInput` via:
-//
-//	GetMtlstruststoreCaSetsCaSetArray{ GetMtlstruststoreCaSetsCaSetArgs{...} }
-type GetMtlstruststoreCaSetsCaSetArrayInput interface {
-	pulumi.Input
-
-	ToGetMtlstruststoreCaSetsCaSetArrayOutput() GetMtlstruststoreCaSetsCaSetArrayOutput
-	ToGetMtlstruststoreCaSetsCaSetArrayOutputWithContext(context.Context) GetMtlstruststoreCaSetsCaSetArrayOutput
-}
-
-type GetMtlstruststoreCaSetsCaSetArray []GetMtlstruststoreCaSetsCaSetInput
-
-func (GetMtlstruststoreCaSetsCaSetArray) ElementType() reflect.Type {
-	return reflect.TypeOf((*[]GetMtlstruststoreCaSetsCaSet)(nil)).Elem()
-}
-
-func (i GetMtlstruststoreCaSetsCaSetArray) ToGetMtlstruststoreCaSetsCaSetArrayOutput() GetMtlstruststoreCaSetsCaSetArrayOutput {
-	return i.ToGetMtlstruststoreCaSetsCaSetArrayOutputWithContext(context.Background())
-}
-
-func (i GetMtlstruststoreCaSetsCaSetArray) ToGetMtlstruststoreCaSetsCaSetArrayOutputWithContext(ctx context.Context) GetMtlstruststoreCaSetsCaSetArrayOutput {
-	return pulumi.ToOutputWithContext(ctx, i).(GetMtlstruststoreCaSetsCaSetArrayOutput)
-}
-
-type GetMtlstruststoreCaSetsCaSetOutput struct{ *pulumi.OutputState }
-
-func (GetMtlstruststoreCaSetsCaSetOutput) ElementType() reflect.Type {
-	return reflect.TypeOf((*GetMtlstruststoreCaSetsCaSet)(nil)).Elem()
-}
-
-func (o GetMtlstruststoreCaSetsCaSetOutput) ToGetMtlstruststoreCaSetsCaSetOutput() GetMtlstruststoreCaSetsCaSetOutput {
-	return o
-}
-
-func (o GetMtlstruststoreCaSetsCaSetOutput) ToGetMtlstruststoreCaSetsCaSetOutputWithContext(ctx context.Context) GetMtlstruststoreCaSetsCaSetOutput {
-	return o
-}
-
-// Identifies the account the CA set belongs to.
-func (o GetMtlstruststoreCaSetsCaSetOutput) AccountId() pulumi.StringOutput {
-	return o.ApplyT(func(v GetMtlstruststoreCaSetsCaSet) string { return v.AccountId }).(pulumi.StringOutput)
-}
-
-// The user who created the CA set.
-func (o GetMtlstruststoreCaSetsCaSetOutput) CreatedBy() pulumi.StringOutput {
-	return o.ApplyT(func(v GetMtlstruststoreCaSetsCaSet) string { return v.CreatedBy }).(pulumi.StringOutput)
-}
-
-// When the CA set was created.
-func (o GetMtlstruststoreCaSetsCaSetOutput) CreatedDate() pulumi.StringOutput {
-	return o.ApplyT(func(v GetMtlstruststoreCaSetsCaSet) string { return v.CreatedDate }).(pulumi.StringOutput)
-}
-
-// The user who requested the CA set be deleted, or null if there's no request.
-func (o GetMtlstruststoreCaSetsCaSetOutput) DeletedBy() pulumi.StringOutput {
-	return o.ApplyT(func(v GetMtlstruststoreCaSetsCaSet) string { return v.DeletedBy }).(pulumi.StringOutput)
-}
-
-// When the CA set was deleted, or null if there's no request.
-func (o GetMtlstruststoreCaSetsCaSetOutput) DeletedDate() pulumi.StringOutput {
-	return o.ApplyT(func(v GetMtlstruststoreCaSetsCaSet) string { return v.DeletedDate }).(pulumi.StringOutput)
-}
-
-// Any additional comments you can add to the CA set.
-func (o GetMtlstruststoreCaSetsCaSetOutput) Description() pulumi.StringOutput {
-	return o.ApplyT(func(v GetMtlstruststoreCaSetsCaSet) string { return v.Description }).(pulumi.StringOutput)
-}
-
-// Identifies each CA set.
-func (o GetMtlstruststoreCaSetsCaSetOutput) Id() pulumi.StringOutput {
-	return o.ApplyT(func(v GetMtlstruststoreCaSetsCaSet) string { return v.Id }).(pulumi.StringOutput)
-}
-
-// The most recent version based on the updated version.
-func (o GetMtlstruststoreCaSetsCaSetOutput) LatestVersion() pulumi.IntOutput {
-	return o.ApplyT(func(v GetMtlstruststoreCaSetsCaSet) int { return v.LatestVersion }).(pulumi.IntOutput)
-}
-
-// The name of the CA set.
-func (o GetMtlstruststoreCaSetsCaSetOutput) Name() pulumi.StringOutput {
-	return o.ApplyT(func(v GetMtlstruststoreCaSetsCaSet) string { return v.Name }).(pulumi.StringOutput)
-}
-
-// The CA set version activated on the 'PRODUCTION' network.
-func (o GetMtlstruststoreCaSetsCaSetOutput) ProductionVersion() pulumi.IntOutput {
-	return o.ApplyT(func(v GetMtlstruststoreCaSetsCaSet) int { return v.ProductionVersion }).(pulumi.IntOutput)
-}
-
-// The time when the CA set will be permanently deleted from the system. The value is null when the CA set is not scheduled for deletion.
-func (o GetMtlstruststoreCaSetsCaSetOutput) RemovalDate() pulumi.StringOutput {
-	return o.ApplyT(func(v GetMtlstruststoreCaSetsCaSet) string { return v.RemovalDate }).(pulumi.StringOutput)
-}
-
-// The CA set version activated on the 'STAGING' network.
-func (o GetMtlstruststoreCaSetsCaSetOutput) StagingVersion() pulumi.IntOutput {
-	return o.ApplyT(func(v GetMtlstruststoreCaSetsCaSet) int { return v.StagingVersion }).(pulumi.IntOutput)
-}
-
-// Indicates if the CA set was deleted, either 'NOT_DELETED', 'DELETING', or 'DELETED'.
-func (o GetMtlstruststoreCaSetsCaSetOutput) Status() pulumi.StringOutput {
-	return o.ApplyT(func(v GetMtlstruststoreCaSetsCaSet) string { return v.Status }).(pulumi.StringOutput)
-}
-
-type GetMtlstruststoreCaSetsCaSetArrayOutput struct{ *pulumi.OutputState }
-
-func (GetMtlstruststoreCaSetsCaSetArrayOutput) ElementType() reflect.Type {
-	return reflect.TypeOf((*[]GetMtlstruststoreCaSetsCaSet)(nil)).Elem()
-}
-
-func (o GetMtlstruststoreCaSetsCaSetArrayOutput) ToGetMtlstruststoreCaSetsCaSetArrayOutput() GetMtlstruststoreCaSetsCaSetArrayOutput {
-	return o
-}
-
-func (o GetMtlstruststoreCaSetsCaSetArrayOutput) ToGetMtlstruststoreCaSetsCaSetArrayOutputWithContext(ctx context.Context) GetMtlstruststoreCaSetsCaSetArrayOutput {
-	return o
-}
-
-func (o GetMtlstruststoreCaSetsCaSetArrayOutput) Index(i pulumi.IntInput) GetMtlstruststoreCaSetsCaSetOutput {
-	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetMtlstruststoreCaSetsCaSet {
-		return vs[0].([]GetMtlstruststoreCaSetsCaSet)[vs[1].(int)]
-	}).(GetMtlstruststoreCaSetsCaSetOutput)
-}
-
-type GetPropertiesProperty struct {
-	ContractId        string `pulumi:"contractId"`
-	GroupId           string `pulumi:"groupId"`
-	LatestVersion     int    `pulumi:"latestVersion"`
-	Note              string `pulumi:"note"`
-	ProductionVersion int    `pulumi:"productionVersion"`
-	PropertyId        string `pulumi:"propertyId"`
-	PropertyName      string `pulumi:"propertyName"`
-	// Specifies the type of the property.
-	PropertyType   string `pulumi:"propertyType"`
-	StagingVersion int    `pulumi:"stagingVersion"`
-}
-
-// GetPropertiesPropertyInput is an input type that accepts GetPropertiesPropertyArgs and GetPropertiesPropertyOutput values.
-// You can construct a concrete instance of `GetPropertiesPropertyInput` via:
-//
-//	GetPropertiesPropertyArgs{...}
-type GetPropertiesPropertyInput interface {
-	pulumi.Input
-
-	ToGetPropertiesPropertyOutput() GetPropertiesPropertyOutput
-	ToGetPropertiesPropertyOutputWithContext(context.Context) GetPropertiesPropertyOutput
-}
-
-type GetPropertiesPropertyArgs struct {
-	ContractId        pulumi.StringInput `pulumi:"contractId"`
-	GroupId           pulumi.StringInput `pulumi:"groupId"`
-	LatestVersion     pulumi.IntInput    `pulumi:"latestVersion"`
-	Note              pulumi.StringInput `pulumi:"note"`
-	ProductionVersion pulumi.IntInput    `pulumi:"productionVersion"`
-	PropertyId        pulumi.StringInput `pulumi:"propertyId"`
-	PropertyName      pulumi.StringInput `pulumi:"propertyName"`
-	// Specifies the type of the property.
-	PropertyType   pulumi.StringInput `pulumi:"propertyType"`
-	StagingVersion pulumi.IntInput    `pulumi:"stagingVersion"`
-}
-
-func (GetPropertiesPropertyArgs) ElementType() reflect.Type {
-	return reflect.TypeOf((*GetPropertiesProperty)(nil)).Elem()
-}
-
-func (i GetPropertiesPropertyArgs) ToGetPropertiesPropertyOutput() GetPropertiesPropertyOutput {
-	return i.ToGetPropertiesPropertyOutputWithContext(context.Background())
-}
-
-func (i GetPropertiesPropertyArgs) ToGetPropertiesPropertyOutputWithContext(ctx context.Context) GetPropertiesPropertyOutput {
-	return pulumi.ToOutputWithContext(ctx, i).(GetPropertiesPropertyOutput)
-}
-
-// GetPropertiesPropertyArrayInput is an input type that accepts GetPropertiesPropertyArray and GetPropertiesPropertyArrayOutput values.
-// You can construct a concrete instance of `GetPropertiesPropertyArrayInput` via:
-//
-//	GetPropertiesPropertyArray{ GetPropertiesPropertyArgs{...} }
-type GetPropertiesPropertyArrayInput interface {
-	pulumi.Input
-
-	ToGetPropertiesPropertyArrayOutput() GetPropertiesPropertyArrayOutput
-	ToGetPropertiesPropertyArrayOutputWithContext(context.Context) GetPropertiesPropertyArrayOutput
-}
-
-type GetPropertiesPropertyArray []GetPropertiesPropertyInput
-
-func (GetPropertiesPropertyArray) ElementType() reflect.Type {
-	return reflect.TypeOf((*[]GetPropertiesProperty)(nil)).Elem()
-}
-
-func (i GetPropertiesPropertyArray) ToGetPropertiesPropertyArrayOutput() GetPropertiesPropertyArrayOutput {
-	return i.ToGetPropertiesPropertyArrayOutputWithContext(context.Background())
-}
-
-func (i GetPropertiesPropertyArray) ToGetPropertiesPropertyArrayOutputWithContext(ctx context.Context) GetPropertiesPropertyArrayOutput {
-	return pulumi.ToOutputWithContext(ctx, i).(GetPropertiesPropertyArrayOutput)
-}
-
-type GetPropertiesPropertyOutput struct{ *pulumi.OutputState }
-
-func (GetPropertiesPropertyOutput) ElementType() reflect.Type {
-	return reflect.TypeOf((*GetPropertiesProperty)(nil)).Elem()
-}
-
-func (o GetPropertiesPropertyOutput) ToGetPropertiesPropertyOutput() GetPropertiesPropertyOutput {
-	return o
-}
-
-func (o GetPropertiesPropertyOutput) ToGetPropertiesPropertyOutputWithContext(ctx context.Context) GetPropertiesPropertyOutput {
-	return o
-}
-
-func (o GetPropertiesPropertyOutput) ContractId() pulumi.StringOutput {
-	return o.ApplyT(func(v GetPropertiesProperty) string { return v.ContractId }).(pulumi.StringOutput)
-}
-
-func (o GetPropertiesPropertyOutput) GroupId() pulumi.StringOutput {
-	return o.ApplyT(func(v GetPropertiesProperty) string { return v.GroupId }).(pulumi.StringOutput)
-}
-
-func (o GetPropertiesPropertyOutput) LatestVersion() pulumi.IntOutput {
-	return o.ApplyT(func(v GetPropertiesProperty) int { return v.LatestVersion }).(pulumi.IntOutput)
-}
-
-func (o GetPropertiesPropertyOutput) Note() pulumi.StringOutput {
-	return o.ApplyT(func(v GetPropertiesProperty) string { return v.Note }).(pulumi.StringOutput)
-}
-
-func (o GetPropertiesPropertyOutput) ProductionVersion() pulumi.IntOutput {
-	return o.ApplyT(func(v GetPropertiesProperty) int { return v.ProductionVersion }).(pulumi.IntOutput)
-}
-
-func (o GetPropertiesPropertyOutput) PropertyId() pulumi.StringOutput {
-	return o.ApplyT(func(v GetPropertiesProperty) string { return v.PropertyId }).(pulumi.StringOutput)
-}
-
-func (o GetPropertiesPropertyOutput) PropertyName() pulumi.StringOutput {
-	return o.ApplyT(func(v GetPropertiesProperty) string { return v.PropertyName }).(pulumi.StringOutput)
-}
-
-// Specifies the type of the property.
-func (o GetPropertiesPropertyOutput) PropertyType() pulumi.StringOutput {
-	return o.ApplyT(func(v GetPropertiesProperty) string { return v.PropertyType }).(pulumi.StringOutput)
-}
-
-func (o GetPropertiesPropertyOutput) StagingVersion() pulumi.IntOutput {
-	return o.ApplyT(func(v GetPropertiesProperty) int { return v.StagingVersion }).(pulumi.IntOutput)
-}
-
-type GetPropertiesPropertyArrayOutput struct{ *pulumi.OutputState }
-
-func (GetPropertiesPropertyArrayOutput) ElementType() reflect.Type {
-	return reflect.TypeOf((*[]GetPropertiesProperty)(nil)).Elem()
-}
-
-func (o GetPropertiesPropertyArrayOutput) ToGetPropertiesPropertyArrayOutput() GetPropertiesPropertyArrayOutput {
-	return o
-}
-
-func (o GetPropertiesPropertyArrayOutput) ToGetPropertiesPropertyArrayOutputWithContext(ctx context.Context) GetPropertiesPropertyArrayOutput {
-	return o
-}
-
-func (o GetPropertiesPropertyArrayOutput) Index(i pulumi.IntInput) GetPropertiesPropertyOutput {
-	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetPropertiesProperty {
-		return vs[0].([]GetPropertiesProperty)[vs[1].(int)]
-	}).(GetPropertiesPropertyOutput)
-}
-
-type GetPropertiesSearchProperty struct {
-	AccountId        string `pulumi:"accountId"`
-	AssetId          string `pulumi:"assetId"`
-	ContractId       string `pulumi:"contractId"`
-	EdgeHostname     string `pulumi:"edgeHostname"`
-	GroupId          string `pulumi:"groupId"`
-	Hostname         string `pulumi:"hostname"`
-	ProductionStatus string `pulumi:"productionStatus"`
-	PropertyId       string `pulumi:"propertyId"`
-	PropertyName     string `pulumi:"propertyName"`
-	PropertyVersion  int    `pulumi:"propertyVersion"`
-	StagingStatus    string `pulumi:"stagingStatus"`
-	UpdatedByUser    string `pulumi:"updatedByUser"`
-	UpdatedDate      string `pulumi:"updatedDate"`
-}
-
-// GetPropertiesSearchPropertyInput is an input type that accepts GetPropertiesSearchPropertyArgs and GetPropertiesSearchPropertyOutput values.
-// You can construct a concrete instance of `GetPropertiesSearchPropertyInput` via:
-//
-//	GetPropertiesSearchPropertyArgs{...}
-type GetPropertiesSearchPropertyInput interface {
-	pulumi.Input
-
-	ToGetPropertiesSearchPropertyOutput() GetPropertiesSearchPropertyOutput
-	ToGetPropertiesSearchPropertyOutputWithContext(context.Context) GetPropertiesSearchPropertyOutput
-}
-
-type GetPropertiesSearchPropertyArgs struct {
-	AccountId        pulumi.StringInput `pulumi:"accountId"`
-	AssetId          pulumi.StringInput `pulumi:"assetId"`
-	ContractId       pulumi.StringInput `pulumi:"contractId"`
-	EdgeHostname     pulumi.StringInput `pulumi:"edgeHostname"`
-	GroupId          pulumi.StringInput `pulumi:"groupId"`
-	Hostname         pulumi.StringInput `pulumi:"hostname"`
-	ProductionStatus pulumi.StringInput `pulumi:"productionStatus"`
-	PropertyId       pulumi.StringInput `pulumi:"propertyId"`
-	PropertyName     pulumi.StringInput `pulumi:"propertyName"`
-	PropertyVersion  pulumi.IntInput    `pulumi:"propertyVersion"`
-	StagingStatus    pulumi.StringInput `pulumi:"stagingStatus"`
-	UpdatedByUser    pulumi.StringInput `pulumi:"updatedByUser"`
-	UpdatedDate      pulumi.StringInput `pulumi:"updatedDate"`
-}
-
-func (GetPropertiesSearchPropertyArgs) ElementType() reflect.Type {
-	return reflect.TypeOf((*GetPropertiesSearchProperty)(nil)).Elem()
-}
-
-func (i GetPropertiesSearchPropertyArgs) ToGetPropertiesSearchPropertyOutput() GetPropertiesSearchPropertyOutput {
-	return i.ToGetPropertiesSearchPropertyOutputWithContext(context.Background())
-}
-
-func (i GetPropertiesSearchPropertyArgs) ToGetPropertiesSearchPropertyOutputWithContext(ctx context.Context) GetPropertiesSearchPropertyOutput {
-	return pulumi.ToOutputWithContext(ctx, i).(GetPropertiesSearchPropertyOutput)
-}
-
-// GetPropertiesSearchPropertyArrayInput is an input type that accepts GetPropertiesSearchPropertyArray and GetPropertiesSearchPropertyArrayOutput values.
-// You can construct a concrete instance of `GetPropertiesSearchPropertyArrayInput` via:
-//
-//	GetPropertiesSearchPropertyArray{ GetPropertiesSearchPropertyArgs{...} }
-type GetPropertiesSearchPropertyArrayInput interface {
-	pulumi.Input
-
-	ToGetPropertiesSearchPropertyArrayOutput() GetPropertiesSearchPropertyArrayOutput
-	ToGetPropertiesSearchPropertyArrayOutputWithContext(context.Context) GetPropertiesSearchPropertyArrayOutput
-}
-
-type GetPropertiesSearchPropertyArray []GetPropertiesSearchPropertyInput
-
-func (GetPropertiesSearchPropertyArray) ElementType() reflect.Type {
-	return reflect.TypeOf((*[]GetPropertiesSearchProperty)(nil)).Elem()
-}
-
-func (i GetPropertiesSearchPropertyArray) ToGetPropertiesSearchPropertyArrayOutput() GetPropertiesSearchPropertyArrayOutput {
-	return i.ToGetPropertiesSearchPropertyArrayOutputWithContext(context.Background())
-}
-
-func (i GetPropertiesSearchPropertyArray) ToGetPropertiesSearchPropertyArrayOutputWithContext(ctx context.Context) GetPropertiesSearchPropertyArrayOutput {
-	return pulumi.ToOutputWithContext(ctx, i).(GetPropertiesSearchPropertyArrayOutput)
-}
-
-type GetPropertiesSearchPropertyOutput struct{ *pulumi.OutputState }
-
-func (GetPropertiesSearchPropertyOutput) ElementType() reflect.Type {
-	return reflect.TypeOf((*GetPropertiesSearchProperty)(nil)).Elem()
-}
-
-func (o GetPropertiesSearchPropertyOutput) ToGetPropertiesSearchPropertyOutput() GetPropertiesSearchPropertyOutput {
-	return o
-}
-
-func (o GetPropertiesSearchPropertyOutput) ToGetPropertiesSearchPropertyOutputWithContext(ctx context.Context) GetPropertiesSearchPropertyOutput {
-	return o
-}
-
-func (o GetPropertiesSearchPropertyOutput) AccountId() pulumi.StringOutput {
-	return o.ApplyT(func(v GetPropertiesSearchProperty) string { return v.AccountId }).(pulumi.StringOutput)
-}
-
-func (o GetPropertiesSearchPropertyOutput) AssetId() pulumi.StringOutput {
-	return o.ApplyT(func(v GetPropertiesSearchProperty) string { return v.AssetId }).(pulumi.StringOutput)
-}
-
-func (o GetPropertiesSearchPropertyOutput) ContractId() pulumi.StringOutput {
-	return o.ApplyT(func(v GetPropertiesSearchProperty) string { return v.ContractId }).(pulumi.StringOutput)
-}
-
-func (o GetPropertiesSearchPropertyOutput) EdgeHostname() pulumi.StringOutput {
-	return o.ApplyT(func(v GetPropertiesSearchProperty) string { return v.EdgeHostname }).(pulumi.StringOutput)
-}
-
-func (o GetPropertiesSearchPropertyOutput) GroupId() pulumi.StringOutput {
-	return o.ApplyT(func(v GetPropertiesSearchProperty) string { return v.GroupId }).(pulumi.StringOutput)
-}
-
-func (o GetPropertiesSearchPropertyOutput) Hostname() pulumi.StringOutput {
-	return o.ApplyT(func(v GetPropertiesSearchProperty) string { return v.Hostname }).(pulumi.StringOutput)
-}
-
-func (o GetPropertiesSearchPropertyOutput) ProductionStatus() pulumi.StringOutput {
-	return o.ApplyT(func(v GetPropertiesSearchProperty) string { return v.ProductionStatus }).(pulumi.StringOutput)
-}
-
-func (o GetPropertiesSearchPropertyOutput) PropertyId() pulumi.StringOutput {
-	return o.ApplyT(func(v GetPropertiesSearchProperty) string { return v.PropertyId }).(pulumi.StringOutput)
-}
-
-func (o GetPropertiesSearchPropertyOutput) PropertyName() pulumi.StringOutput {
-	return o.ApplyT(func(v GetPropertiesSearchProperty) string { return v.PropertyName }).(pulumi.StringOutput)
-}
-
-func (o GetPropertiesSearchPropertyOutput) PropertyVersion() pulumi.IntOutput {
-	return o.ApplyT(func(v GetPropertiesSearchProperty) int { return v.PropertyVersion }).(pulumi.IntOutput)
-}
-
-func (o GetPropertiesSearchPropertyOutput) StagingStatus() pulumi.StringOutput {
-	return o.ApplyT(func(v GetPropertiesSearchProperty) string { return v.StagingStatus }).(pulumi.StringOutput)
-}
-
-func (o GetPropertiesSearchPropertyOutput) UpdatedByUser() pulumi.StringOutput {
-	return o.ApplyT(func(v GetPropertiesSearchProperty) string { return v.UpdatedByUser }).(pulumi.StringOutput)
-}
-
-func (o GetPropertiesSearchPropertyOutput) UpdatedDate() pulumi.StringOutput {
-	return o.ApplyT(func(v GetPropertiesSearchProperty) string { return v.UpdatedDate }).(pulumi.StringOutput)
-}
-
-type GetPropertiesSearchPropertyArrayOutput struct{ *pulumi.OutputState }
-
-func (GetPropertiesSearchPropertyArrayOutput) ElementType() reflect.Type {
-	return reflect.TypeOf((*[]GetPropertiesSearchProperty)(nil)).Elem()
-}
-
-func (o GetPropertiesSearchPropertyArrayOutput) ToGetPropertiesSearchPropertyArrayOutput() GetPropertiesSearchPropertyArrayOutput {
-	return o
-}
-
-func (o GetPropertiesSearchPropertyArrayOutput) ToGetPropertiesSearchPropertyArrayOutputWithContext(ctx context.Context) GetPropertiesSearchPropertyArrayOutput {
-	return o
-}
-
-func (o GetPropertiesSearchPropertyArrayOutput) Index(i pulumi.IntInput) GetPropertiesSearchPropertyOutput {
-	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetPropertiesSearchProperty {
-		return vs[0].([]GetPropertiesSearchProperty)[vs[1].(int)]
-	}).(GetPropertiesSearchPropertyOutput)
-}
-
-type GetPropertyAccountHostnamesHostname struct {
-	// The hostname that your end users see, indicated by the Host header in end user requests.
-	CnameFrom string `pulumi:"cnameFrom"`
-	// Identifies the prevailing contract under which you requested the data.
-	ContractId string `pulumi:"contractId"`
-	// Identifies the prevailing group under which you requested the data.
-	GroupId string `pulumi:"groupId"`
-	// Specifies the most recent version of the property.
-	LatestVersion int `pulumi:"latestVersion"`
-	// Indicates the certificate's provisioning type. Either `CPS_MANAGED` for the certificates created with the Certificate Provisioning System (CPS) API, `CCM` for the certificates created with the Cloud Certificate Manager (CCM) API, or `DEFAULT` for the Domain Validation (DV) certificates created automatically. Note that you can't specify the `DEFAULT` value if your property hostname uses the `akamaized.net` domain suffix.
-	ProductionCertType string `pulumi:"productionCertType"`
-	// The edge hostname you point the property hostname to so that you can start serving traffic through Akamai servers. This member corresponds to the edge hostname object's edgeHostnameDomain member.
-	ProductionCnameTo string `pulumi:"productionCnameTo"`
-	// Indicates the type of CNAME you used in the production network, either `EDGE_HOSTNAME` or `CUSTOM`.
-	ProductionCnameType string `pulumi:"productionCnameType"`
-	// Identifies the edge hostname you mapped your traffic to on the production network.
-	ProductionEdgeHostnameId string `pulumi:"productionEdgeHostnameId"`
-	// Identifies the product association on the network.
-	ProductionProductId string `pulumi:"productionProductId"`
-	// Unique identifier for the property.
-	PropertyId string `pulumi:"propertyId"`
-	// A unique, descriptive name for the property.
-	PropertyName string `pulumi:"propertyName"`
-	// Specifies the type of the property. Either `TRADITIONAL` for properties where you pair property hostnames with the property version, or `HOSTNAME_BUCKET` where you manage property hostnames independently of the property version.
-	PropertyType string `pulumi:"propertyType"`
-	// Indicates the certificate's provisioning type. Either `CPS_MANAGED` for the certificates created with the Certificate Provisioning System (CPS) API, `CCM` for the certificates created with the Cloud Certificate Manager (CCM) API, or `DEFAULT` for the Domain Validation (DV) certificates created automatically. Note that you can't specify the `DEFAULT` value if your property hostname uses the `akamaized.net` domain suffix.
-	StagingCertType string `pulumi:"stagingCertType"`
-	// The edge hostname you point the property hostname to so that you can start serving traffic through Akamai servers. This member corresponds to the edge hostname object's edgeHostnameDomain member.
-	StagingCnameTo string `pulumi:"stagingCnameTo"`
-	// Indicates the type of CNAME you used in the staging network, either `EDGE_HOSTNAME` or `CUSTOM`.
-	StagingCnameType string `pulumi:"stagingCnameType"`
-	// Identifies the edge hostname you mapped your traffic to on the staging network.
-	StagingEdgeHostnameId string `pulumi:"stagingEdgeHostnameId"`
-	// Identifies the product association on the network.
-	StagingProductId string `pulumi:"stagingProductId"`
-}
-
-// GetPropertyAccountHostnamesHostnameInput is an input type that accepts GetPropertyAccountHostnamesHostnameArgs and GetPropertyAccountHostnamesHostnameOutput values.
-// You can construct a concrete instance of `GetPropertyAccountHostnamesHostnameInput` via:
-//
-//	GetPropertyAccountHostnamesHostnameArgs{...}
-type GetPropertyAccountHostnamesHostnameInput interface {
-	pulumi.Input
-
-	ToGetPropertyAccountHostnamesHostnameOutput() GetPropertyAccountHostnamesHostnameOutput
-	ToGetPropertyAccountHostnamesHostnameOutputWithContext(context.Context) GetPropertyAccountHostnamesHostnameOutput
-}
-
-type GetPropertyAccountHostnamesHostnameArgs struct {
-	// The hostname that your end users see, indicated by the Host header in end user requests.
-	CnameFrom pulumi.StringInput `pulumi:"cnameFrom"`
-	// Identifies the prevailing contract under which you requested the data.
-	ContractId pulumi.StringInput `pulumi:"contractId"`
-	// Identifies the prevailing group under which you requested the data.
-	GroupId pulumi.StringInput `pulumi:"groupId"`
-	// Specifies the most recent version of the property.
-	LatestVersion pulumi.IntInput `pulumi:"latestVersion"`
-	// Indicates the certificate's provisioning type. Either `CPS_MANAGED` for the certificates created with the Certificate Provisioning System (CPS) API, `CCM` for the certificates created with the Cloud Certificate Manager (CCM) API, or `DEFAULT` for the Domain Validation (DV) certificates created automatically. Note that you can't specify the `DEFAULT` value if your property hostname uses the `akamaized.net` domain suffix.
-	ProductionCertType pulumi.StringInput `pulumi:"productionCertType"`
-	// The edge hostname you point the property hostname to so that you can start serving traffic through Akamai servers. This member corresponds to the edge hostname object's edgeHostnameDomain member.
-	ProductionCnameTo pulumi.StringInput `pulumi:"productionCnameTo"`
-	// Indicates the type of CNAME you used in the production network, either `EDGE_HOSTNAME` or `CUSTOM`.
-	ProductionCnameType pulumi.StringInput `pulumi:"productionCnameType"`
-	// Identifies the edge hostname you mapped your traffic to on the production network.
-	ProductionEdgeHostnameId pulumi.StringInput `pulumi:"productionEdgeHostnameId"`
-	// Identifies the product association on the network.
-	ProductionProductId pulumi.StringInput `pulumi:"productionProductId"`
-	// Unique identifier for the property.
-	PropertyId pulumi.StringInput `pulumi:"propertyId"`
-	// A unique, descriptive name for the property.
-	PropertyName pulumi.StringInput `pulumi:"propertyName"`
-	// Specifies the type of the property. Either `TRADITIONAL` for properties where you pair property hostnames with the property version, or `HOSTNAME_BUCKET` where you manage property hostnames independently of the property version.
-	PropertyType pulumi.StringInput `pulumi:"propertyType"`
-	// Indicates the certificate's provisioning type. Either `CPS_MANAGED` for the certificates created with the Certificate Provisioning System (CPS) API, `CCM` for the certificates created with the Cloud Certificate Manager (CCM) API, or `DEFAULT` for the Domain Validation (DV) certificates created automatically. Note that you can't specify the `DEFAULT` value if your property hostname uses the `akamaized.net` domain suffix.
-	StagingCertType pulumi.StringInput `pulumi:"stagingCertType"`
-	// The edge hostname you point the property hostname to so that you can start serving traffic through Akamai servers. This member corresponds to the edge hostname object's edgeHostnameDomain member.
-	StagingCnameTo pulumi.StringInput `pulumi:"stagingCnameTo"`
-	// Indicates the type of CNAME you used in the staging network, either `EDGE_HOSTNAME` or `CUSTOM`.
-	StagingCnameType pulumi.StringInput `pulumi:"stagingCnameType"`
-	// Identifies the edge hostname you mapped your traffic to on the staging network.
-	StagingEdgeHostnameId pulumi.StringInput `pulumi:"stagingEdgeHostnameId"`
-	// Identifies the product association on the network.
-	StagingProductId pulumi.StringInput `pulumi:"stagingProductId"`
-}
-
-func (GetPropertyAccountHostnamesHostnameArgs) ElementType() reflect.Type {
-	return reflect.TypeOf((*GetPropertyAccountHostnamesHostname)(nil)).Elem()
-}
-
-func (i GetPropertyAccountHostnamesHostnameArgs) ToGetPropertyAccountHostnamesHostnameOutput() GetPropertyAccountHostnamesHostnameOutput {
-	return i.ToGetPropertyAccountHostnamesHostnameOutputWithContext(context.Background())
-}
-
-func (i GetPropertyAccountHostnamesHostnameArgs) ToGetPropertyAccountHostnamesHostnameOutputWithContext(ctx context.Context) GetPropertyAccountHostnamesHostnameOutput {
-	return pulumi.ToOutputWithContext(ctx, i).(GetPropertyAccountHostnamesHostnameOutput)
-}
-
-// GetPropertyAccountHostnamesHostnameArrayInput is an input type that accepts GetPropertyAccountHostnamesHostnameArray and GetPropertyAccountHostnamesHostnameArrayOutput values.
-// You can construct a concrete instance of `GetPropertyAccountHostnamesHostnameArrayInput` via:
-//
-//	GetPropertyAccountHostnamesHostnameArray{ GetPropertyAccountHostnamesHostnameArgs{...} }
-type GetPropertyAccountHostnamesHostnameArrayInput interface {
-	pulumi.Input
-
-	ToGetPropertyAccountHostnamesHostnameArrayOutput() GetPropertyAccountHostnamesHostnameArrayOutput
-	ToGetPropertyAccountHostnamesHostnameArrayOutputWithContext(context.Context) GetPropertyAccountHostnamesHostnameArrayOutput
-}
-
-type GetPropertyAccountHostnamesHostnameArray []GetPropertyAccountHostnamesHostnameInput
-
-func (GetPropertyAccountHostnamesHostnameArray) ElementType() reflect.Type {
-	return reflect.TypeOf((*[]GetPropertyAccountHostnamesHostname)(nil)).Elem()
-}
-
-func (i GetPropertyAccountHostnamesHostnameArray) ToGetPropertyAccountHostnamesHostnameArrayOutput() GetPropertyAccountHostnamesHostnameArrayOutput {
-	return i.ToGetPropertyAccountHostnamesHostnameArrayOutputWithContext(context.Background())
-}
-
-func (i GetPropertyAccountHostnamesHostnameArray) ToGetPropertyAccountHostnamesHostnameArrayOutputWithContext(ctx context.Context) GetPropertyAccountHostnamesHostnameArrayOutput {
-	return pulumi.ToOutputWithContext(ctx, i).(GetPropertyAccountHostnamesHostnameArrayOutput)
-}
-
-type GetPropertyAccountHostnamesHostnameOutput struct{ *pulumi.OutputState }
-
-func (GetPropertyAccountHostnamesHostnameOutput) ElementType() reflect.Type {
-	return reflect.TypeOf((*GetPropertyAccountHostnamesHostname)(nil)).Elem()
-}
-
-func (o GetPropertyAccountHostnamesHostnameOutput) ToGetPropertyAccountHostnamesHostnameOutput() GetPropertyAccountHostnamesHostnameOutput {
-	return o
-}
-
-func (o GetPropertyAccountHostnamesHostnameOutput) ToGetPropertyAccountHostnamesHostnameOutputWithContext(ctx context.Context) GetPropertyAccountHostnamesHostnameOutput {
-	return o
-}
-
-// The hostname that your end users see, indicated by the Host header in end user requests.
-func (o GetPropertyAccountHostnamesHostnameOutput) CnameFrom() pulumi.StringOutput {
-	return o.ApplyT(func(v GetPropertyAccountHostnamesHostname) string { return v.CnameFrom }).(pulumi.StringOutput)
-}
-
-// Identifies the prevailing contract under which you requested the data.
-func (o GetPropertyAccountHostnamesHostnameOutput) ContractId() pulumi.StringOutput {
-	return o.ApplyT(func(v GetPropertyAccountHostnamesHostname) string { return v.ContractId }).(pulumi.StringOutput)
-}
-
-// Identifies the prevailing group under which you requested the data.
-func (o GetPropertyAccountHostnamesHostnameOutput) GroupId() pulumi.StringOutput {
-	return o.ApplyT(func(v GetPropertyAccountHostnamesHostname) string { return v.GroupId }).(pulumi.StringOutput)
-}
-
-// Specifies the most recent version of the property.
-func (o GetPropertyAccountHostnamesHostnameOutput) LatestVersion() pulumi.IntOutput {
-	return o.ApplyT(func(v GetPropertyAccountHostnamesHostname) int { return v.LatestVersion }).(pulumi.IntOutput)
-}
-
-// Indicates the certificate's provisioning type. Either `CPS_MANAGED` for the certificates created with the Certificate Provisioning System (CPS) API, `CCM` for the certificates created with the Cloud Certificate Manager (CCM) API, or `DEFAULT` for the Domain Validation (DV) certificates created automatically. Note that you can't specify the `DEFAULT` value if your property hostname uses the `akamaized.net` domain suffix.
-func (o GetPropertyAccountHostnamesHostnameOutput) ProductionCertType() pulumi.StringOutput {
-	return o.ApplyT(func(v GetPropertyAccountHostnamesHostname) string { return v.ProductionCertType }).(pulumi.StringOutput)
-}
-
-// The edge hostname you point the property hostname to so that you can start serving traffic through Akamai servers. This member corresponds to the edge hostname object's edgeHostnameDomain member.
-func (o GetPropertyAccountHostnamesHostnameOutput) ProductionCnameTo() pulumi.StringOutput {
-	return o.ApplyT(func(v GetPropertyAccountHostnamesHostname) string { return v.ProductionCnameTo }).(pulumi.StringOutput)
-}
-
-// Indicates the type of CNAME you used in the production network, either `EDGE_HOSTNAME` or `CUSTOM`.
-func (o GetPropertyAccountHostnamesHostnameOutput) ProductionCnameType() pulumi.StringOutput {
-	return o.ApplyT(func(v GetPropertyAccountHostnamesHostname) string { return v.ProductionCnameType }).(pulumi.StringOutput)
-}
-
-// Identifies the edge hostname you mapped your traffic to on the production network.
-func (o GetPropertyAccountHostnamesHostnameOutput) ProductionEdgeHostnameId() pulumi.StringOutput {
-	return o.ApplyT(func(v GetPropertyAccountHostnamesHostname) string { return v.ProductionEdgeHostnameId }).(pulumi.StringOutput)
-}
-
-// Identifies the product association on the network.
-func (o GetPropertyAccountHostnamesHostnameOutput) ProductionProductId() pulumi.StringOutput {
-	return o.ApplyT(func(v GetPropertyAccountHostnamesHostname) string { return v.ProductionProductId }).(pulumi.StringOutput)
-}
-
-// Unique identifier for the property.
-func (o GetPropertyAccountHostnamesHostnameOutput) PropertyId() pulumi.StringOutput {
-	return o.ApplyT(func(v GetPropertyAccountHostnamesHostname) string { return v.PropertyId }).(pulumi.StringOutput)
-}
-
-// A unique, descriptive name for the property.
-func (o GetPropertyAccountHostnamesHostnameOutput) PropertyName() pulumi.StringOutput {
-	return o.ApplyT(func(v GetPropertyAccountHostnamesHostname) string { return v.PropertyName }).(pulumi.StringOutput)
-}
-
-// Specifies the type of the property. Either `TRADITIONAL` for properties where you pair property hostnames with the property version, or `HOSTNAME_BUCKET` where you manage property hostnames independently of the property version.
-func (o GetPropertyAccountHostnamesHostnameOutput) PropertyType() pulumi.StringOutput {
-	return o.ApplyT(func(v GetPropertyAccountHostnamesHostname) string { return v.PropertyType }).(pulumi.StringOutput)
-}
-
-// Indicates the certificate's provisioning type. Either `CPS_MANAGED` for the certificates created with the Certificate Provisioning System (CPS) API, `CCM` for the certificates created with the Cloud Certificate Manager (CCM) API, or `DEFAULT` for the Domain Validation (DV) certificates created automatically. Note that you can't specify the `DEFAULT` value if your property hostname uses the `akamaized.net` domain suffix.
-func (o GetPropertyAccountHostnamesHostnameOutput) StagingCertType() pulumi.StringOutput {
-	return o.ApplyT(func(v GetPropertyAccountHostnamesHostname) string { return v.StagingCertType }).(pulumi.StringOutput)
-}
-
-// The edge hostname you point the property hostname to so that you can start serving traffic through Akamai servers. This member corresponds to the edge hostname object's edgeHostnameDomain member.
-func (o GetPropertyAccountHostnamesHostnameOutput) StagingCnameTo() pulumi.StringOutput {
-	return o.ApplyT(func(v GetPropertyAccountHostnamesHostname) string { return v.StagingCnameTo }).(pulumi.StringOutput)
-}
-
-// Indicates the type of CNAME you used in the staging network, either `EDGE_HOSTNAME` or `CUSTOM`.
-func (o GetPropertyAccountHostnamesHostnameOutput) StagingCnameType() pulumi.StringOutput {
-	return o.ApplyT(func(v GetPropertyAccountHostnamesHostname) string { return v.StagingCnameType }).(pulumi.StringOutput)
-}
-
-// Identifies the edge hostname you mapped your traffic to on the staging network.
-func (o GetPropertyAccountHostnamesHostnameOutput) StagingEdgeHostnameId() pulumi.StringOutput {
-	return o.ApplyT(func(v GetPropertyAccountHostnamesHostname) string { return v.StagingEdgeHostnameId }).(pulumi.StringOutput)
-}
-
-// Identifies the product association on the network.
-func (o GetPropertyAccountHostnamesHostnameOutput) StagingProductId() pulumi.StringOutput {
-	return o.ApplyT(func(v GetPropertyAccountHostnamesHostname) string { return v.StagingProductId }).(pulumi.StringOutput)
-}
-
-type GetPropertyAccountHostnamesHostnameArrayOutput struct{ *pulumi.OutputState }
-
-func (GetPropertyAccountHostnamesHostnameArrayOutput) ElementType() reflect.Type {
-	return reflect.TypeOf((*[]GetPropertyAccountHostnamesHostname)(nil)).Elem()
-}
-
-func (o GetPropertyAccountHostnamesHostnameArrayOutput) ToGetPropertyAccountHostnamesHostnameArrayOutput() GetPropertyAccountHostnamesHostnameArrayOutput {
-	return o
-}
-
-func (o GetPropertyAccountHostnamesHostnameArrayOutput) ToGetPropertyAccountHostnamesHostnameArrayOutputWithContext(ctx context.Context) GetPropertyAccountHostnamesHostnameArrayOutput {
-	return o
-}
-
-func (o GetPropertyAccountHostnamesHostnameArrayOutput) Index(i pulumi.IntInput) GetPropertyAccountHostnamesHostnameOutput {
-	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetPropertyAccountHostnamesHostname {
-		return vs[0].([]GetPropertyAccountHostnamesHostname)[vs[1].(int)]
-	}).(GetPropertyAccountHostnamesHostnameOutput)
-}
-
 func init() {
 	pulumi.RegisterInputType(reflect.TypeOf((*AppSecIPGeoAsnControlsInput)(nil)).Elem(), AppSecIPGeoAsnControlsArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*AppSecIPGeoAsnControlsPtrInput)(nil)).Elem(), AppSecIPGeoAsnControlsArgs{})
@@ -77519,8 +80246,38 @@ func init() {
 	pulumi.RegisterInputType(reflect.TypeOf((*CloudAccessKeyNetworkConfigurationPtrInput)(nil)).Elem(), CloudAccessKeyNetworkConfigurationArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*CloudAccessKeyTimeoutsInput)(nil)).Elem(), CloudAccessKeyTimeoutsArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*CloudAccessKeyTimeoutsPtrInput)(nil)).Elem(), CloudAccessKeyTimeoutsArgs{})
-	pulumi.RegisterInputType(reflect.TypeOf((*CloudcertificatesCertificateSubjectInput)(nil)).Elem(), CloudcertificatesCertificateSubjectArgs{})
-	pulumi.RegisterInputType(reflect.TypeOf((*CloudcertificatesCertificateSubjectPtrInput)(nil)).Elem(), CloudcertificatesCertificateSubjectArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*CloudcertificatesActivationProductionInput)(nil)).Elem(), CloudcertificatesActivationProductionArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*CloudcertificatesActivationProductionPtrInput)(nil)).Elem(), CloudcertificatesActivationProductionArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*CloudcertificatesActivationStagingInput)(nil)).Elem(), CloudcertificatesActivationStagingArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*CloudcertificatesActivationStagingPtrInput)(nil)).Elem(), CloudcertificatesActivationStagingArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*CloudcertificatesActivationTimeoutsInput)(nil)).Elem(), CloudcertificatesActivationTimeoutsArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*CloudcertificatesActivationTimeoutsPtrInput)(nil)).Elem(), CloudcertificatesActivationTimeoutsArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*CloudcertificatesLineageCurrentProductionInput)(nil)).Elem(), CloudcertificatesLineageCurrentProductionArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*CloudcertificatesLineageCurrentProductionPtrInput)(nil)).Elem(), CloudcertificatesLineageCurrentProductionArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*CloudcertificatesLineageCurrentProductionAlgorithmsInput)(nil)).Elem(), CloudcertificatesLineageCurrentProductionAlgorithmsArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*CloudcertificatesLineageCurrentProductionAlgorithmsMapInput)(nil)).Elem(), CloudcertificatesLineageCurrentProductionAlgorithmsMap{})
+	pulumi.RegisterInputType(reflect.TypeOf((*CloudcertificatesLineageCurrentStagingInput)(nil)).Elem(), CloudcertificatesLineageCurrentStagingArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*CloudcertificatesLineageCurrentStagingPtrInput)(nil)).Elem(), CloudcertificatesLineageCurrentStagingArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*CloudcertificatesLineageCurrentStagingAlgorithmsInput)(nil)).Elem(), CloudcertificatesLineageCurrentStagingAlgorithmsArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*CloudcertificatesLineageCurrentStagingAlgorithmsMapInput)(nil)).Elem(), CloudcertificatesLineageCurrentStagingAlgorithmsMap{})
+	pulumi.RegisterInputType(reflect.TypeOf((*CloudcertificatesLineageHeadInput)(nil)).Elem(), CloudcertificatesLineageHeadArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*CloudcertificatesLineageHeadPtrInput)(nil)).Elem(), CloudcertificatesLineageHeadArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*CloudcertificatesLineageHeadAlgorithmsInput)(nil)).Elem(), CloudcertificatesLineageHeadAlgorithmsArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*CloudcertificatesLineageHeadAlgorithmsMapInput)(nil)).Elem(), CloudcertificatesLineageHeadAlgorithmsMap{})
+	pulumi.RegisterInputType(reflect.TypeOf((*CloudcertificatesLineagePreviousProductionInput)(nil)).Elem(), CloudcertificatesLineagePreviousProductionArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*CloudcertificatesLineagePreviousProductionPtrInput)(nil)).Elem(), CloudcertificatesLineagePreviousProductionArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*CloudcertificatesLineagePreviousProductionAlgorithmsInput)(nil)).Elem(), CloudcertificatesLineagePreviousProductionAlgorithmsArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*CloudcertificatesLineagePreviousProductionAlgorithmsMapInput)(nil)).Elem(), CloudcertificatesLineagePreviousProductionAlgorithmsMap{})
+	pulumi.RegisterInputType(reflect.TypeOf((*CloudcertificatesLineageSigningTargetInput)(nil)).Elem(), CloudcertificatesLineageSigningTargetArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*CloudcertificatesLineageSigningTargetPtrInput)(nil)).Elem(), CloudcertificatesLineageSigningTargetArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*CloudcertificatesLineageSigningTargetAlgorithmsInput)(nil)).Elem(), CloudcertificatesLineageSigningTargetAlgorithmsArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*CloudcertificatesLineageSigningTargetAlgorithmsMapInput)(nil)).Elem(), CloudcertificatesLineageSigningTargetAlgorithmsMap{})
+	pulumi.RegisterInputType(reflect.TypeOf((*CloudcertificatesLineageSubjectInput)(nil)).Elem(), CloudcertificatesLineageSubjectArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*CloudcertificatesLineageSubjectPtrInput)(nil)).Elem(), CloudcertificatesLineageSubjectArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*CloudcertificatesUploadAlgorithmsInput)(nil)).Elem(), CloudcertificatesUploadAlgorithmsArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*CloudcertificatesUploadAlgorithmsMapInput)(nil)).Elem(), CloudcertificatesUploadAlgorithmsMap{})
+	pulumi.RegisterInputType(reflect.TypeOf((*CloudcertificatesUploadTimeoutsInput)(nil)).Elem(), CloudcertificatesUploadTimeoutsArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*CloudcertificatesUploadTimeoutsPtrInput)(nil)).Elem(), CloudcertificatesUploadTimeoutsArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*CloudletsApplicationLoadBalancerActivationTimeoutsInput)(nil)).Elem(), CloudletsApplicationLoadBalancerActivationTimeoutsArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*CloudletsApplicationLoadBalancerActivationTimeoutsPtrInput)(nil)).Elem(), CloudletsApplicationLoadBalancerActivationTimeoutsArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*CloudletsApplicationLoadBalancerDataCenterInput)(nil)).Elem(), CloudletsApplicationLoadBalancerDataCenterArgs{})
@@ -77867,14 +80624,52 @@ func init() {
 	pulumi.RegisterInputType(reflect.TypeOf((*GetCloudaccessKeysAccessKeyGroupInput)(nil)).Elem(), GetCloudaccessKeysAccessKeyGroupArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetCloudaccessKeysAccessKeyGroupArrayInput)(nil)).Elem(), GetCloudaccessKeysAccessKeyGroupArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetCloudaccessKeysAccessKeyNetworkConfigurationInput)(nil)).Elem(), GetCloudaccessKeysAccessKeyNetworkConfigurationArgs{})
-	pulumi.RegisterInputType(reflect.TypeOf((*GetCloudcertificatesCertificateBindingInput)(nil)).Elem(), GetCloudcertificatesCertificateBindingArgs{})
-	pulumi.RegisterInputType(reflect.TypeOf((*GetCloudcertificatesCertificateBindingArrayInput)(nil)).Elem(), GetCloudcertificatesCertificateBindingArray{})
-	pulumi.RegisterInputType(reflect.TypeOf((*GetCloudcertificatesCertificateSubjectInput)(nil)).Elem(), GetCloudcertificatesCertificateSubjectArgs{})
-	pulumi.RegisterInputType(reflect.TypeOf((*GetCloudcertificatesCertificatesCertificateInput)(nil)).Elem(), GetCloudcertificatesCertificatesCertificateArgs{})
-	pulumi.RegisterInputType(reflect.TypeOf((*GetCloudcertificatesCertificatesCertificateArrayInput)(nil)).Elem(), GetCloudcertificatesCertificatesCertificateArray{})
-	pulumi.RegisterInputType(reflect.TypeOf((*GetCloudcertificatesCertificatesCertificateSubjectInput)(nil)).Elem(), GetCloudcertificatesCertificatesCertificateSubjectArgs{})
-	pulumi.RegisterInputType(reflect.TypeOf((*GetCloudcertificatesHostnameBindingsBindingInput)(nil)).Elem(), GetCloudcertificatesHostnameBindingsBindingArgs{})
-	pulumi.RegisterInputType(reflect.TypeOf((*GetCloudcertificatesHostnameBindingsBindingArrayInput)(nil)).Elem(), GetCloudcertificatesHostnameBindingsBindingArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetCloudcertificatesActivationsActivationInput)(nil)).Elem(), GetCloudcertificatesActivationsActivationArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetCloudcertificatesActivationsActivationArrayInput)(nil)).Elem(), GetCloudcertificatesActivationsActivationArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetCloudcertificatesActivityActivityInput)(nil)).Elem(), GetCloudcertificatesActivityActivityArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetCloudcertificatesActivityActivityArrayInput)(nil)).Elem(), GetCloudcertificatesActivityActivityArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetCloudcertificatesArchivedGenerationsGenerationInput)(nil)).Elem(), GetCloudcertificatesArchivedGenerationsGenerationArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetCloudcertificatesArchivedGenerationsGenerationArrayInput)(nil)).Elem(), GetCloudcertificatesArchivedGenerationsGenerationArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetCloudcertificatesArchivedGenerationsGenerationAlgorithmsInput)(nil)).Elem(), GetCloudcertificatesArchivedGenerationsGenerationAlgorithmsArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetCloudcertificatesArchivedGenerationsGenerationAlgorithmsMapInput)(nil)).Elem(), GetCloudcertificatesArchivedGenerationsGenerationAlgorithmsMap{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetCloudcertificatesBindingsBindingInput)(nil)).Elem(), GetCloudcertificatesBindingsBindingArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetCloudcertificatesBindingsBindingArrayInput)(nil)).Elem(), GetCloudcertificatesBindingsBindingArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetCloudcertificatesGenerationAlgorithmsInput)(nil)).Elem(), GetCloudcertificatesGenerationAlgorithmsArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetCloudcertificatesGenerationAlgorithmsMapInput)(nil)).Elem(), GetCloudcertificatesGenerationAlgorithmsMap{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetCloudcertificatesLineageCurrentProductionInput)(nil)).Elem(), GetCloudcertificatesLineageCurrentProductionArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetCloudcertificatesLineageCurrentProductionAlgorithmsInput)(nil)).Elem(), GetCloudcertificatesLineageCurrentProductionAlgorithmsArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetCloudcertificatesLineageCurrentProductionAlgorithmsMapInput)(nil)).Elem(), GetCloudcertificatesLineageCurrentProductionAlgorithmsMap{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetCloudcertificatesLineageCurrentStagingInput)(nil)).Elem(), GetCloudcertificatesLineageCurrentStagingArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetCloudcertificatesLineageCurrentStagingAlgorithmsInput)(nil)).Elem(), GetCloudcertificatesLineageCurrentStagingAlgorithmsArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetCloudcertificatesLineageCurrentStagingAlgorithmsMapInput)(nil)).Elem(), GetCloudcertificatesLineageCurrentStagingAlgorithmsMap{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetCloudcertificatesLineageHeadInput)(nil)).Elem(), GetCloudcertificatesLineageHeadArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetCloudcertificatesLineageHeadAlgorithmsInput)(nil)).Elem(), GetCloudcertificatesLineageHeadAlgorithmsArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetCloudcertificatesLineageHeadAlgorithmsMapInput)(nil)).Elem(), GetCloudcertificatesLineageHeadAlgorithmsMap{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetCloudcertificatesLineagePreviousProductionInput)(nil)).Elem(), GetCloudcertificatesLineagePreviousProductionArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetCloudcertificatesLineagePreviousProductionAlgorithmsInput)(nil)).Elem(), GetCloudcertificatesLineagePreviousProductionAlgorithmsArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetCloudcertificatesLineagePreviousProductionAlgorithmsMapInput)(nil)).Elem(), GetCloudcertificatesLineagePreviousProductionAlgorithmsMap{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetCloudcertificatesLineageSigningTargetInput)(nil)).Elem(), GetCloudcertificatesLineageSigningTargetArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetCloudcertificatesLineageSigningTargetAlgorithmsInput)(nil)).Elem(), GetCloudcertificatesLineageSigningTargetAlgorithmsArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetCloudcertificatesLineageSigningTargetAlgorithmsMapInput)(nil)).Elem(), GetCloudcertificatesLineageSigningTargetAlgorithmsMap{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetCloudcertificatesLineageSubjectInput)(nil)).Elem(), GetCloudcertificatesLineageSubjectArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetCloudcertificatesLineagesLineageInput)(nil)).Elem(), GetCloudcertificatesLineagesLineageArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetCloudcertificatesLineagesLineageArrayInput)(nil)).Elem(), GetCloudcertificatesLineagesLineageArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetCloudcertificatesLineagesLineageCurrentProductionInput)(nil)).Elem(), GetCloudcertificatesLineagesLineageCurrentProductionArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetCloudcertificatesLineagesLineageCurrentProductionAlgorithmsInput)(nil)).Elem(), GetCloudcertificatesLineagesLineageCurrentProductionAlgorithmsArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetCloudcertificatesLineagesLineageCurrentProductionAlgorithmsMapInput)(nil)).Elem(), GetCloudcertificatesLineagesLineageCurrentProductionAlgorithmsMap{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetCloudcertificatesLineagesLineageCurrentStagingInput)(nil)).Elem(), GetCloudcertificatesLineagesLineageCurrentStagingArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetCloudcertificatesLineagesLineageCurrentStagingAlgorithmsInput)(nil)).Elem(), GetCloudcertificatesLineagesLineageCurrentStagingAlgorithmsArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetCloudcertificatesLineagesLineageCurrentStagingAlgorithmsMapInput)(nil)).Elem(), GetCloudcertificatesLineagesLineageCurrentStagingAlgorithmsMap{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetCloudcertificatesLineagesLineageHeadInput)(nil)).Elem(), GetCloudcertificatesLineagesLineageHeadArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetCloudcertificatesLineagesLineageHeadAlgorithmsInput)(nil)).Elem(), GetCloudcertificatesLineagesLineageHeadAlgorithmsArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetCloudcertificatesLineagesLineageHeadAlgorithmsMapInput)(nil)).Elem(), GetCloudcertificatesLineagesLineageHeadAlgorithmsMap{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetCloudcertificatesLineagesLineagePreviousProductionInput)(nil)).Elem(), GetCloudcertificatesLineagesLineagePreviousProductionArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetCloudcertificatesLineagesLineagePreviousProductionAlgorithmsInput)(nil)).Elem(), GetCloudcertificatesLineagesLineagePreviousProductionAlgorithmsArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetCloudcertificatesLineagesLineagePreviousProductionAlgorithmsMapInput)(nil)).Elem(), GetCloudcertificatesLineagesLineagePreviousProductionAlgorithmsMap{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetCloudcertificatesLineagesLineageSigningTargetInput)(nil)).Elem(), GetCloudcertificatesLineagesLineageSigningTargetArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetCloudcertificatesLineagesLineageSigningTargetAlgorithmsInput)(nil)).Elem(), GetCloudcertificatesLineagesLineageSigningTargetAlgorithmsArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetCloudcertificatesLineagesLineageSigningTargetAlgorithmsMapInput)(nil)).Elem(), GetCloudcertificatesLineagesLineageSigningTargetAlgorithmsMap{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetCloudcertificatesLineagesLineageSubjectInput)(nil)).Elem(), GetCloudcertificatesLineagesLineageSubjectArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetCloudletsApiPrioritizationMatchRuleMatchRuleInput)(nil)).Elem(), GetCloudletsApiPrioritizationMatchRuleMatchRuleArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetCloudletsApiPrioritizationMatchRuleMatchRuleArrayInput)(nil)).Elem(), GetCloudletsApiPrioritizationMatchRuleMatchRuleArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetCloudletsApiPrioritizationMatchRuleMatchRuleMatchInput)(nil)).Elem(), GetCloudletsApiPrioritizationMatchRuleMatchRuleMatchArgs{})
@@ -78365,73 +81160,6 @@ func init() {
 	pulumi.RegisterInputType(reflect.TypeOf((*GetImagingPolicyVideoPolicyInput)(nil)).Elem(), GetImagingPolicyVideoPolicyArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetImagingPolicyVideoPolicyBreakpointsInput)(nil)).Elem(), GetImagingPolicyVideoPolicyBreakpointsArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetImagingPolicyVideoPolicyBreakpointsPtrInput)(nil)).Elem(), GetImagingPolicyVideoPolicyBreakpointsArgs{})
-	pulumi.RegisterInputType(reflect.TypeOf((*GetImagingPolicyVideoPolicyOutputTypeInput)(nil)).Elem(), GetImagingPolicyVideoPolicyOutputTypeArgs{})
-	pulumi.RegisterInputType(reflect.TypeOf((*GetImagingPolicyVideoPolicyOutputTypePtrInput)(nil)).Elem(), GetImagingPolicyVideoPolicyOutputTypeArgs{})
-	pulumi.RegisterInputType(reflect.TypeOf((*GetImagingPolicyVideoPolicyVariableInput)(nil)).Elem(), GetImagingPolicyVideoPolicyVariableArgs{})
-	pulumi.RegisterInputType(reflect.TypeOf((*GetImagingPolicyVideoPolicyVariableArrayInput)(nil)).Elem(), GetImagingPolicyVideoPolicyVariableArray{})
-	pulumi.RegisterInputType(reflect.TypeOf((*GetImagingPolicyVideoPolicyVariableEnumOptionInput)(nil)).Elem(), GetImagingPolicyVideoPolicyVariableEnumOptionArgs{})
-	pulumi.RegisterInputType(reflect.TypeOf((*GetImagingPolicyVideoPolicyVariableEnumOptionArrayInput)(nil)).Elem(), GetImagingPolicyVideoPolicyVariableEnumOptionArray{})
-	pulumi.RegisterInputType(reflect.TypeOf((*GetMtlskeystoreAccountCaCertificatesCertificateInput)(nil)).Elem(), GetMtlskeystoreAccountCaCertificatesCertificateArgs{})
-	pulumi.RegisterInputType(reflect.TypeOf((*GetMtlskeystoreAccountCaCertificatesCertificateArrayInput)(nil)).Elem(), GetMtlskeystoreAccountCaCertificatesCertificateArray{})
-	pulumi.RegisterInputType(reflect.TypeOf((*GetMtlskeystoreClientCertificateCurrentInput)(nil)).Elem(), GetMtlskeystoreClientCertificateCurrentArgs{})
-	pulumi.RegisterInputType(reflect.TypeOf((*GetMtlskeystoreClientCertificateCurrentCertificateBlockInput)(nil)).Elem(), GetMtlskeystoreClientCertificateCurrentCertificateBlockArgs{})
-	pulumi.RegisterInputType(reflect.TypeOf((*GetMtlskeystoreClientCertificateCurrentCsrBlockInput)(nil)).Elem(), GetMtlskeystoreClientCertificateCurrentCsrBlockArgs{})
-	pulumi.RegisterInputType(reflect.TypeOf((*GetMtlskeystoreClientCertificateCurrentPropertyInput)(nil)).Elem(), GetMtlskeystoreClientCertificateCurrentPropertyArgs{})
-	pulumi.RegisterInputType(reflect.TypeOf((*GetMtlskeystoreClientCertificateCurrentPropertyArrayInput)(nil)).Elem(), GetMtlskeystoreClientCertificateCurrentPropertyArray{})
-	pulumi.RegisterInputType(reflect.TypeOf((*GetMtlskeystoreClientCertificateCurrentValidationInput)(nil)).Elem(), GetMtlskeystoreClientCertificateCurrentValidationArgs{})
-	pulumi.RegisterInputType(reflect.TypeOf((*GetMtlskeystoreClientCertificateCurrentValidationErrorInput)(nil)).Elem(), GetMtlskeystoreClientCertificateCurrentValidationErrorArgs{})
-	pulumi.RegisterInputType(reflect.TypeOf((*GetMtlskeystoreClientCertificateCurrentValidationErrorArrayInput)(nil)).Elem(), GetMtlskeystoreClientCertificateCurrentValidationErrorArray{})
-	pulumi.RegisterInputType(reflect.TypeOf((*GetMtlskeystoreClientCertificateCurrentValidationWarningInput)(nil)).Elem(), GetMtlskeystoreClientCertificateCurrentValidationWarningArgs{})
-	pulumi.RegisterInputType(reflect.TypeOf((*GetMtlskeystoreClientCertificateCurrentValidationWarningArrayInput)(nil)).Elem(), GetMtlskeystoreClientCertificateCurrentValidationWarningArray{})
-	pulumi.RegisterInputType(reflect.TypeOf((*GetMtlskeystoreClientCertificatePreviousInput)(nil)).Elem(), GetMtlskeystoreClientCertificatePreviousArgs{})
-	pulumi.RegisterInputType(reflect.TypeOf((*GetMtlskeystoreClientCertificatePreviousCertificateBlockInput)(nil)).Elem(), GetMtlskeystoreClientCertificatePreviousCertificateBlockArgs{})
-	pulumi.RegisterInputType(reflect.TypeOf((*GetMtlskeystoreClientCertificatePreviousCsrBlockInput)(nil)).Elem(), GetMtlskeystoreClientCertificatePreviousCsrBlockArgs{})
-	pulumi.RegisterInputType(reflect.TypeOf((*GetMtlskeystoreClientCertificatePreviousPropertyInput)(nil)).Elem(), GetMtlskeystoreClientCertificatePreviousPropertyArgs{})
-	pulumi.RegisterInputType(reflect.TypeOf((*GetMtlskeystoreClientCertificatePreviousPropertyArrayInput)(nil)).Elem(), GetMtlskeystoreClientCertificatePreviousPropertyArray{})
-	pulumi.RegisterInputType(reflect.TypeOf((*GetMtlskeystoreClientCertificatePreviousValidationInput)(nil)).Elem(), GetMtlskeystoreClientCertificatePreviousValidationArgs{})
-	pulumi.RegisterInputType(reflect.TypeOf((*GetMtlskeystoreClientCertificatePreviousValidationErrorInput)(nil)).Elem(), GetMtlskeystoreClientCertificatePreviousValidationErrorArgs{})
-	pulumi.RegisterInputType(reflect.TypeOf((*GetMtlskeystoreClientCertificatePreviousValidationErrorArrayInput)(nil)).Elem(), GetMtlskeystoreClientCertificatePreviousValidationErrorArray{})
-	pulumi.RegisterInputType(reflect.TypeOf((*GetMtlskeystoreClientCertificatePreviousValidationWarningInput)(nil)).Elem(), GetMtlskeystoreClientCertificatePreviousValidationWarningArgs{})
-	pulumi.RegisterInputType(reflect.TypeOf((*GetMtlskeystoreClientCertificatePreviousValidationWarningArrayInput)(nil)).Elem(), GetMtlskeystoreClientCertificatePreviousValidationWarningArray{})
-	pulumi.RegisterInputType(reflect.TypeOf((*GetMtlskeystoreClientCertificateVersionInput)(nil)).Elem(), GetMtlskeystoreClientCertificateVersionArgs{})
-	pulumi.RegisterInputType(reflect.TypeOf((*GetMtlskeystoreClientCertificateVersionArrayInput)(nil)).Elem(), GetMtlskeystoreClientCertificateVersionArray{})
-	pulumi.RegisterInputType(reflect.TypeOf((*GetMtlskeystoreClientCertificateVersionCertificateBlockInput)(nil)).Elem(), GetMtlskeystoreClientCertificateVersionCertificateBlockArgs{})
-	pulumi.RegisterInputType(reflect.TypeOf((*GetMtlskeystoreClientCertificateVersionCsrBlockInput)(nil)).Elem(), GetMtlskeystoreClientCertificateVersionCsrBlockArgs{})
-	pulumi.RegisterInputType(reflect.TypeOf((*GetMtlskeystoreClientCertificateVersionPropertyInput)(nil)).Elem(), GetMtlskeystoreClientCertificateVersionPropertyArgs{})
-	pulumi.RegisterInputType(reflect.TypeOf((*GetMtlskeystoreClientCertificateVersionPropertyArrayInput)(nil)).Elem(), GetMtlskeystoreClientCertificateVersionPropertyArray{})
-	pulumi.RegisterInputType(reflect.TypeOf((*GetMtlskeystoreClientCertificateVersionValidationInput)(nil)).Elem(), GetMtlskeystoreClientCertificateVersionValidationArgs{})
-	pulumi.RegisterInputType(reflect.TypeOf((*GetMtlskeystoreClientCertificateVersionValidationErrorInput)(nil)).Elem(), GetMtlskeystoreClientCertificateVersionValidationErrorArgs{})
-	pulumi.RegisterInputType(reflect.TypeOf((*GetMtlskeystoreClientCertificateVersionValidationErrorArrayInput)(nil)).Elem(), GetMtlskeystoreClientCertificateVersionValidationErrorArray{})
-	pulumi.RegisterInputType(reflect.TypeOf((*GetMtlskeystoreClientCertificateVersionValidationWarningInput)(nil)).Elem(), GetMtlskeystoreClientCertificateVersionValidationWarningArgs{})
-	pulumi.RegisterInputType(reflect.TypeOf((*GetMtlskeystoreClientCertificateVersionValidationWarningArrayInput)(nil)).Elem(), GetMtlskeystoreClientCertificateVersionValidationWarningArray{})
-	pulumi.RegisterInputType(reflect.TypeOf((*GetMtlskeystoreClientCertificatesCertificateInput)(nil)).Elem(), GetMtlskeystoreClientCertificatesCertificateArgs{})
-	pulumi.RegisterInputType(reflect.TypeOf((*GetMtlskeystoreClientCertificatesCertificateArrayInput)(nil)).Elem(), GetMtlskeystoreClientCertificatesCertificateArray{})
-	pulumi.RegisterInputType(reflect.TypeOf((*GetMtlstruststoreCaSetActivationsActivationInput)(nil)).Elem(), GetMtlstruststoreCaSetActivationsActivationArgs{})
-	pulumi.RegisterInputType(reflect.TypeOf((*GetMtlstruststoreCaSetActivationsActivationArrayInput)(nil)).Elem(), GetMtlstruststoreCaSetActivationsActivationArray{})
-	pulumi.RegisterInputType(reflect.TypeOf((*GetMtlstruststoreCaSetActivitiesActivityInput)(nil)).Elem(), GetMtlstruststoreCaSetActivitiesActivityArgs{})
-	pulumi.RegisterInputType(reflect.TypeOf((*GetMtlstruststoreCaSetActivitiesActivityArrayInput)(nil)).Elem(), GetMtlstruststoreCaSetActivitiesActivityArray{})
-	pulumi.RegisterInputType(reflect.TypeOf((*GetMtlstruststoreCaSetAssociationsEnrollmentInput)(nil)).Elem(), GetMtlstruststoreCaSetAssociationsEnrollmentArgs{})
-	pulumi.RegisterInputType(reflect.TypeOf((*GetMtlstruststoreCaSetAssociationsEnrollmentArrayInput)(nil)).Elem(), GetMtlstruststoreCaSetAssociationsEnrollmentArray{})
-	pulumi.RegisterInputType(reflect.TypeOf((*GetMtlstruststoreCaSetAssociationsPropertyInput)(nil)).Elem(), GetMtlstruststoreCaSetAssociationsPropertyArgs{})
-	pulumi.RegisterInputType(reflect.TypeOf((*GetMtlstruststoreCaSetAssociationsPropertyArrayInput)(nil)).Elem(), GetMtlstruststoreCaSetAssociationsPropertyArray{})
-	pulumi.RegisterInputType(reflect.TypeOf((*GetMtlstruststoreCaSetAssociationsPropertyHostnameInput)(nil)).Elem(), GetMtlstruststoreCaSetAssociationsPropertyHostnameArgs{})
-	pulumi.RegisterInputType(reflect.TypeOf((*GetMtlstruststoreCaSetAssociationsPropertyHostnameArrayInput)(nil)).Elem(), GetMtlstruststoreCaSetAssociationsPropertyHostnameArray{})
-	pulumi.RegisterInputType(reflect.TypeOf((*GetMtlstruststoreCaSetCertificateInput)(nil)).Elem(), GetMtlstruststoreCaSetCertificateArgs{})
-	pulumi.RegisterInputType(reflect.TypeOf((*GetMtlstruststoreCaSetCertificateArrayInput)(nil)).Elem(), GetMtlstruststoreCaSetCertificateArray{})
-	pulumi.RegisterInputType(reflect.TypeOf((*GetMtlstruststoreCaSetCertificatesCertificateInput)(nil)).Elem(), GetMtlstruststoreCaSetCertificatesCertificateArgs{})
-	pulumi.RegisterInputType(reflect.TypeOf((*GetMtlstruststoreCaSetCertificatesCertificateArrayInput)(nil)).Elem(), GetMtlstruststoreCaSetCertificatesCertificateArray{})
-	pulumi.RegisterInputType(reflect.TypeOf((*GetMtlstruststoreCaSetVersionsVersionInput)(nil)).Elem(), GetMtlstruststoreCaSetVersionsVersionArgs{})
-	pulumi.RegisterInputType(reflect.TypeOf((*GetMtlstruststoreCaSetVersionsVersionArrayInput)(nil)).Elem(), GetMtlstruststoreCaSetVersionsVersionArray{})
-	pulumi.RegisterInputType(reflect.TypeOf((*GetMtlstruststoreCaSetVersionsVersionCertificateInput)(nil)).Elem(), GetMtlstruststoreCaSetVersionsVersionCertificateArgs{})
-	pulumi.RegisterInputType(reflect.TypeOf((*GetMtlstruststoreCaSetVersionsVersionCertificateArrayInput)(nil)).Elem(), GetMtlstruststoreCaSetVersionsVersionCertificateArray{})
-	pulumi.RegisterInputType(reflect.TypeOf((*GetMtlstruststoreCaSetsCaSetInput)(nil)).Elem(), GetMtlstruststoreCaSetsCaSetArgs{})
-	pulumi.RegisterInputType(reflect.TypeOf((*GetMtlstruststoreCaSetsCaSetArrayInput)(nil)).Elem(), GetMtlstruststoreCaSetsCaSetArray{})
-	pulumi.RegisterInputType(reflect.TypeOf((*GetPropertiesPropertyInput)(nil)).Elem(), GetPropertiesPropertyArgs{})
-	pulumi.RegisterInputType(reflect.TypeOf((*GetPropertiesPropertyArrayInput)(nil)).Elem(), GetPropertiesPropertyArray{})
-	pulumi.RegisterInputType(reflect.TypeOf((*GetPropertiesSearchPropertyInput)(nil)).Elem(), GetPropertiesSearchPropertyArgs{})
-	pulumi.RegisterInputType(reflect.TypeOf((*GetPropertiesSearchPropertyArrayInput)(nil)).Elem(), GetPropertiesSearchPropertyArray{})
-	pulumi.RegisterInputType(reflect.TypeOf((*GetPropertyAccountHostnamesHostnameInput)(nil)).Elem(), GetPropertyAccountHostnamesHostnameArgs{})
-	pulumi.RegisterInputType(reflect.TypeOf((*GetPropertyAccountHostnamesHostnameArrayInput)(nil)).Elem(), GetPropertyAccountHostnamesHostnameArray{})
 	pulumi.RegisterOutputType(AppSecIPGeoAsnControlsOutput{})
 	pulumi.RegisterOutputType(AppSecIPGeoAsnControlsPtrOutput{})
 	pulumi.RegisterOutputType(AppSecIPGeoGeoControlsOutput{})
@@ -78470,8 +81198,38 @@ func init() {
 	pulumi.RegisterOutputType(CloudAccessKeyNetworkConfigurationPtrOutput{})
 	pulumi.RegisterOutputType(CloudAccessKeyTimeoutsOutput{})
 	pulumi.RegisterOutputType(CloudAccessKeyTimeoutsPtrOutput{})
-	pulumi.RegisterOutputType(CloudcertificatesCertificateSubjectOutput{})
-	pulumi.RegisterOutputType(CloudcertificatesCertificateSubjectPtrOutput{})
+	pulumi.RegisterOutputType(CloudcertificatesActivationProductionOutput{})
+	pulumi.RegisterOutputType(CloudcertificatesActivationProductionPtrOutput{})
+	pulumi.RegisterOutputType(CloudcertificatesActivationStagingOutput{})
+	pulumi.RegisterOutputType(CloudcertificatesActivationStagingPtrOutput{})
+	pulumi.RegisterOutputType(CloudcertificatesActivationTimeoutsOutput{})
+	pulumi.RegisterOutputType(CloudcertificatesActivationTimeoutsPtrOutput{})
+	pulumi.RegisterOutputType(CloudcertificatesLineageCurrentProductionOutput{})
+	pulumi.RegisterOutputType(CloudcertificatesLineageCurrentProductionPtrOutput{})
+	pulumi.RegisterOutputType(CloudcertificatesLineageCurrentProductionAlgorithmsOutput{})
+	pulumi.RegisterOutputType(CloudcertificatesLineageCurrentProductionAlgorithmsMapOutput{})
+	pulumi.RegisterOutputType(CloudcertificatesLineageCurrentStagingOutput{})
+	pulumi.RegisterOutputType(CloudcertificatesLineageCurrentStagingPtrOutput{})
+	pulumi.RegisterOutputType(CloudcertificatesLineageCurrentStagingAlgorithmsOutput{})
+	pulumi.RegisterOutputType(CloudcertificatesLineageCurrentStagingAlgorithmsMapOutput{})
+	pulumi.RegisterOutputType(CloudcertificatesLineageHeadOutput{})
+	pulumi.RegisterOutputType(CloudcertificatesLineageHeadPtrOutput{})
+	pulumi.RegisterOutputType(CloudcertificatesLineageHeadAlgorithmsOutput{})
+	pulumi.RegisterOutputType(CloudcertificatesLineageHeadAlgorithmsMapOutput{})
+	pulumi.RegisterOutputType(CloudcertificatesLineagePreviousProductionOutput{})
+	pulumi.RegisterOutputType(CloudcertificatesLineagePreviousProductionPtrOutput{})
+	pulumi.RegisterOutputType(CloudcertificatesLineagePreviousProductionAlgorithmsOutput{})
+	pulumi.RegisterOutputType(CloudcertificatesLineagePreviousProductionAlgorithmsMapOutput{})
+	pulumi.RegisterOutputType(CloudcertificatesLineageSigningTargetOutput{})
+	pulumi.RegisterOutputType(CloudcertificatesLineageSigningTargetPtrOutput{})
+	pulumi.RegisterOutputType(CloudcertificatesLineageSigningTargetAlgorithmsOutput{})
+	pulumi.RegisterOutputType(CloudcertificatesLineageSigningTargetAlgorithmsMapOutput{})
+	pulumi.RegisterOutputType(CloudcertificatesLineageSubjectOutput{})
+	pulumi.RegisterOutputType(CloudcertificatesLineageSubjectPtrOutput{})
+	pulumi.RegisterOutputType(CloudcertificatesUploadAlgorithmsOutput{})
+	pulumi.RegisterOutputType(CloudcertificatesUploadAlgorithmsMapOutput{})
+	pulumi.RegisterOutputType(CloudcertificatesUploadTimeoutsOutput{})
+	pulumi.RegisterOutputType(CloudcertificatesUploadTimeoutsPtrOutput{})
 	pulumi.RegisterOutputType(CloudletsApplicationLoadBalancerActivationTimeoutsOutput{})
 	pulumi.RegisterOutputType(CloudletsApplicationLoadBalancerActivationTimeoutsPtrOutput{})
 	pulumi.RegisterOutputType(CloudletsApplicationLoadBalancerDataCenterOutput{})
@@ -78818,14 +81576,52 @@ func init() {
 	pulumi.RegisterOutputType(GetCloudaccessKeysAccessKeyGroupOutput{})
 	pulumi.RegisterOutputType(GetCloudaccessKeysAccessKeyGroupArrayOutput{})
 	pulumi.RegisterOutputType(GetCloudaccessKeysAccessKeyNetworkConfigurationOutput{})
-	pulumi.RegisterOutputType(GetCloudcertificatesCertificateBindingOutput{})
-	pulumi.RegisterOutputType(GetCloudcertificatesCertificateBindingArrayOutput{})
-	pulumi.RegisterOutputType(GetCloudcertificatesCertificateSubjectOutput{})
-	pulumi.RegisterOutputType(GetCloudcertificatesCertificatesCertificateOutput{})
-	pulumi.RegisterOutputType(GetCloudcertificatesCertificatesCertificateArrayOutput{})
-	pulumi.RegisterOutputType(GetCloudcertificatesCertificatesCertificateSubjectOutput{})
-	pulumi.RegisterOutputType(GetCloudcertificatesHostnameBindingsBindingOutput{})
-	pulumi.RegisterOutputType(GetCloudcertificatesHostnameBindingsBindingArrayOutput{})
+	pulumi.RegisterOutputType(GetCloudcertificatesActivationsActivationOutput{})
+	pulumi.RegisterOutputType(GetCloudcertificatesActivationsActivationArrayOutput{})
+	pulumi.RegisterOutputType(GetCloudcertificatesActivityActivityOutput{})
+	pulumi.RegisterOutputType(GetCloudcertificatesActivityActivityArrayOutput{})
+	pulumi.RegisterOutputType(GetCloudcertificatesArchivedGenerationsGenerationOutput{})
+	pulumi.RegisterOutputType(GetCloudcertificatesArchivedGenerationsGenerationArrayOutput{})
+	pulumi.RegisterOutputType(GetCloudcertificatesArchivedGenerationsGenerationAlgorithmsOutput{})
+	pulumi.RegisterOutputType(GetCloudcertificatesArchivedGenerationsGenerationAlgorithmsMapOutput{})
+	pulumi.RegisterOutputType(GetCloudcertificatesBindingsBindingOutput{})
+	pulumi.RegisterOutputType(GetCloudcertificatesBindingsBindingArrayOutput{})
+	pulumi.RegisterOutputType(GetCloudcertificatesGenerationAlgorithmsOutput{})
+	pulumi.RegisterOutputType(GetCloudcertificatesGenerationAlgorithmsMapOutput{})
+	pulumi.RegisterOutputType(GetCloudcertificatesLineageCurrentProductionOutput{})
+	pulumi.RegisterOutputType(GetCloudcertificatesLineageCurrentProductionAlgorithmsOutput{})
+	pulumi.RegisterOutputType(GetCloudcertificatesLineageCurrentProductionAlgorithmsMapOutput{})
+	pulumi.RegisterOutputType(GetCloudcertificatesLineageCurrentStagingOutput{})
+	pulumi.RegisterOutputType(GetCloudcertificatesLineageCurrentStagingAlgorithmsOutput{})
+	pulumi.RegisterOutputType(GetCloudcertificatesLineageCurrentStagingAlgorithmsMapOutput{})
+	pulumi.RegisterOutputType(GetCloudcertificatesLineageHeadOutput{})
+	pulumi.RegisterOutputType(GetCloudcertificatesLineageHeadAlgorithmsOutput{})
+	pulumi.RegisterOutputType(GetCloudcertificatesLineageHeadAlgorithmsMapOutput{})
+	pulumi.RegisterOutputType(GetCloudcertificatesLineagePreviousProductionOutput{})
+	pulumi.RegisterOutputType(GetCloudcertificatesLineagePreviousProductionAlgorithmsOutput{})
+	pulumi.RegisterOutputType(GetCloudcertificatesLineagePreviousProductionAlgorithmsMapOutput{})
+	pulumi.RegisterOutputType(GetCloudcertificatesLineageSigningTargetOutput{})
+	pulumi.RegisterOutputType(GetCloudcertificatesLineageSigningTargetAlgorithmsOutput{})
+	pulumi.RegisterOutputType(GetCloudcertificatesLineageSigningTargetAlgorithmsMapOutput{})
+	pulumi.RegisterOutputType(GetCloudcertificatesLineageSubjectOutput{})
+	pulumi.RegisterOutputType(GetCloudcertificatesLineagesLineageOutput{})
+	pulumi.RegisterOutputType(GetCloudcertificatesLineagesLineageArrayOutput{})
+	pulumi.RegisterOutputType(GetCloudcertificatesLineagesLineageCurrentProductionOutput{})
+	pulumi.RegisterOutputType(GetCloudcertificatesLineagesLineageCurrentProductionAlgorithmsOutput{})
+	pulumi.RegisterOutputType(GetCloudcertificatesLineagesLineageCurrentProductionAlgorithmsMapOutput{})
+	pulumi.RegisterOutputType(GetCloudcertificatesLineagesLineageCurrentStagingOutput{})
+	pulumi.RegisterOutputType(GetCloudcertificatesLineagesLineageCurrentStagingAlgorithmsOutput{})
+	pulumi.RegisterOutputType(GetCloudcertificatesLineagesLineageCurrentStagingAlgorithmsMapOutput{})
+	pulumi.RegisterOutputType(GetCloudcertificatesLineagesLineageHeadOutput{})
+	pulumi.RegisterOutputType(GetCloudcertificatesLineagesLineageHeadAlgorithmsOutput{})
+	pulumi.RegisterOutputType(GetCloudcertificatesLineagesLineageHeadAlgorithmsMapOutput{})
+	pulumi.RegisterOutputType(GetCloudcertificatesLineagesLineagePreviousProductionOutput{})
+	pulumi.RegisterOutputType(GetCloudcertificatesLineagesLineagePreviousProductionAlgorithmsOutput{})
+	pulumi.RegisterOutputType(GetCloudcertificatesLineagesLineagePreviousProductionAlgorithmsMapOutput{})
+	pulumi.RegisterOutputType(GetCloudcertificatesLineagesLineageSigningTargetOutput{})
+	pulumi.RegisterOutputType(GetCloudcertificatesLineagesLineageSigningTargetAlgorithmsOutput{})
+	pulumi.RegisterOutputType(GetCloudcertificatesLineagesLineageSigningTargetAlgorithmsMapOutput{})
+	pulumi.RegisterOutputType(GetCloudcertificatesLineagesLineageSubjectOutput{})
 	pulumi.RegisterOutputType(GetCloudletsApiPrioritizationMatchRuleMatchRuleOutput{})
 	pulumi.RegisterOutputType(GetCloudletsApiPrioritizationMatchRuleMatchRuleArrayOutput{})
 	pulumi.RegisterOutputType(GetCloudletsApiPrioritizationMatchRuleMatchRuleMatchOutput{})
@@ -79316,71 +82112,4 @@ func init() {
 	pulumi.RegisterOutputType(GetImagingPolicyVideoPolicyOutput{})
 	pulumi.RegisterOutputType(GetImagingPolicyVideoPolicyBreakpointsOutput{})
 	pulumi.RegisterOutputType(GetImagingPolicyVideoPolicyBreakpointsPtrOutput{})
-	pulumi.RegisterOutputType(GetImagingPolicyVideoPolicyOutputTypeOutput{})
-	pulumi.RegisterOutputType(GetImagingPolicyVideoPolicyOutputTypePtrOutput{})
-	pulumi.RegisterOutputType(GetImagingPolicyVideoPolicyVariableOutput{})
-	pulumi.RegisterOutputType(GetImagingPolicyVideoPolicyVariableArrayOutput{})
-	pulumi.RegisterOutputType(GetImagingPolicyVideoPolicyVariableEnumOptionOutput{})
-	pulumi.RegisterOutputType(GetImagingPolicyVideoPolicyVariableEnumOptionArrayOutput{})
-	pulumi.RegisterOutputType(GetMtlskeystoreAccountCaCertificatesCertificateOutput{})
-	pulumi.RegisterOutputType(GetMtlskeystoreAccountCaCertificatesCertificateArrayOutput{})
-	pulumi.RegisterOutputType(GetMtlskeystoreClientCertificateCurrentOutput{})
-	pulumi.RegisterOutputType(GetMtlskeystoreClientCertificateCurrentCertificateBlockOutput{})
-	pulumi.RegisterOutputType(GetMtlskeystoreClientCertificateCurrentCsrBlockOutput{})
-	pulumi.RegisterOutputType(GetMtlskeystoreClientCertificateCurrentPropertyOutput{})
-	pulumi.RegisterOutputType(GetMtlskeystoreClientCertificateCurrentPropertyArrayOutput{})
-	pulumi.RegisterOutputType(GetMtlskeystoreClientCertificateCurrentValidationOutput{})
-	pulumi.RegisterOutputType(GetMtlskeystoreClientCertificateCurrentValidationErrorOutput{})
-	pulumi.RegisterOutputType(GetMtlskeystoreClientCertificateCurrentValidationErrorArrayOutput{})
-	pulumi.RegisterOutputType(GetMtlskeystoreClientCertificateCurrentValidationWarningOutput{})
-	pulumi.RegisterOutputType(GetMtlskeystoreClientCertificateCurrentValidationWarningArrayOutput{})
-	pulumi.RegisterOutputType(GetMtlskeystoreClientCertificatePreviousOutput{})
-	pulumi.RegisterOutputType(GetMtlskeystoreClientCertificatePreviousCertificateBlockOutput{})
-	pulumi.RegisterOutputType(GetMtlskeystoreClientCertificatePreviousCsrBlockOutput{})
-	pulumi.RegisterOutputType(GetMtlskeystoreClientCertificatePreviousPropertyOutput{})
-	pulumi.RegisterOutputType(GetMtlskeystoreClientCertificatePreviousPropertyArrayOutput{})
-	pulumi.RegisterOutputType(GetMtlskeystoreClientCertificatePreviousValidationOutput{})
-	pulumi.RegisterOutputType(GetMtlskeystoreClientCertificatePreviousValidationErrorOutput{})
-	pulumi.RegisterOutputType(GetMtlskeystoreClientCertificatePreviousValidationErrorArrayOutput{})
-	pulumi.RegisterOutputType(GetMtlskeystoreClientCertificatePreviousValidationWarningOutput{})
-	pulumi.RegisterOutputType(GetMtlskeystoreClientCertificatePreviousValidationWarningArrayOutput{})
-	pulumi.RegisterOutputType(GetMtlskeystoreClientCertificateVersionOutput{})
-	pulumi.RegisterOutputType(GetMtlskeystoreClientCertificateVersionArrayOutput{})
-	pulumi.RegisterOutputType(GetMtlskeystoreClientCertificateVersionCertificateBlockOutput{})
-	pulumi.RegisterOutputType(GetMtlskeystoreClientCertificateVersionCsrBlockOutput{})
-	pulumi.RegisterOutputType(GetMtlskeystoreClientCertificateVersionPropertyOutput{})
-	pulumi.RegisterOutputType(GetMtlskeystoreClientCertificateVersionPropertyArrayOutput{})
-	pulumi.RegisterOutputType(GetMtlskeystoreClientCertificateVersionValidationOutput{})
-	pulumi.RegisterOutputType(GetMtlskeystoreClientCertificateVersionValidationErrorOutput{})
-	pulumi.RegisterOutputType(GetMtlskeystoreClientCertificateVersionValidationErrorArrayOutput{})
-	pulumi.RegisterOutputType(GetMtlskeystoreClientCertificateVersionValidationWarningOutput{})
-	pulumi.RegisterOutputType(GetMtlskeystoreClientCertificateVersionValidationWarningArrayOutput{})
-	pulumi.RegisterOutputType(GetMtlskeystoreClientCertificatesCertificateOutput{})
-	pulumi.RegisterOutputType(GetMtlskeystoreClientCertificatesCertificateArrayOutput{})
-	pulumi.RegisterOutputType(GetMtlstruststoreCaSetActivationsActivationOutput{})
-	pulumi.RegisterOutputType(GetMtlstruststoreCaSetActivationsActivationArrayOutput{})
-	pulumi.RegisterOutputType(GetMtlstruststoreCaSetActivitiesActivityOutput{})
-	pulumi.RegisterOutputType(GetMtlstruststoreCaSetActivitiesActivityArrayOutput{})
-	pulumi.RegisterOutputType(GetMtlstruststoreCaSetAssociationsEnrollmentOutput{})
-	pulumi.RegisterOutputType(GetMtlstruststoreCaSetAssociationsEnrollmentArrayOutput{})
-	pulumi.RegisterOutputType(GetMtlstruststoreCaSetAssociationsPropertyOutput{})
-	pulumi.RegisterOutputType(GetMtlstruststoreCaSetAssociationsPropertyArrayOutput{})
-	pulumi.RegisterOutputType(GetMtlstruststoreCaSetAssociationsPropertyHostnameOutput{})
-	pulumi.RegisterOutputType(GetMtlstruststoreCaSetAssociationsPropertyHostnameArrayOutput{})
-	pulumi.RegisterOutputType(GetMtlstruststoreCaSetCertificateOutput{})
-	pulumi.RegisterOutputType(GetMtlstruststoreCaSetCertificateArrayOutput{})
-	pulumi.RegisterOutputType(GetMtlstruststoreCaSetCertificatesCertificateOutput{})
-	pulumi.RegisterOutputType(GetMtlstruststoreCaSetCertificatesCertificateArrayOutput{})
-	pulumi.RegisterOutputType(GetMtlstruststoreCaSetVersionsVersionOutput{})
-	pulumi.RegisterOutputType(GetMtlstruststoreCaSetVersionsVersionArrayOutput{})
-	pulumi.RegisterOutputType(GetMtlstruststoreCaSetVersionsVersionCertificateOutput{})
-	pulumi.RegisterOutputType(GetMtlstruststoreCaSetVersionsVersionCertificateArrayOutput{})
-	pulumi.RegisterOutputType(GetMtlstruststoreCaSetsCaSetOutput{})
-	pulumi.RegisterOutputType(GetMtlstruststoreCaSetsCaSetArrayOutput{})
-	pulumi.RegisterOutputType(GetPropertiesPropertyOutput{})
-	pulumi.RegisterOutputType(GetPropertiesPropertyArrayOutput{})
-	pulumi.RegisterOutputType(GetPropertiesSearchPropertyOutput{})
-	pulumi.RegisterOutputType(GetPropertiesSearchPropertyArrayOutput{})
-	pulumi.RegisterOutputType(GetPropertyAccountHostnamesHostnameOutput{})
-	pulumi.RegisterOutputType(GetPropertyAccountHostnamesHostnameArrayOutput{})
 }

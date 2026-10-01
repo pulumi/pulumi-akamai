@@ -406,27 +406,708 @@ export interface CloudAccessKeyTimeouts {
     update?: pulumi.Input<string | undefined>;
 }
 
-export interface CloudcertificatesCertificateSubject {
+export interface CloudcertificatesActivationProduction {
     /**
-     * Fully qualified domain name (FQDN) or other name associated with the subject. If specified, this value must also be included in the SANs list.
+     * The time the activation request was created.
+     */
+    activationCreatedTime?: pulumi.Input<string | undefined>;
+    /**
+     * Unique identifier of the activation request.
+     */
+    activationId?: pulumi.Input<number | undefined>;
+    /**
+     * The time the activation request was last modified.
+     */
+    activationModifiedTime?: pulumi.Input<string | undefined>;
+    /**
+     * The status of the activation request: `INIT`, `PENDING`, `IN_PROGRESS`, `COMPLETE`, `PARTIAL_SUCCESS`, `FAILED`, or `ABORTED`.
+     */
+    activationStatus?: pulumi.Input<string | undefined>;
+    /**
+     * The type of the activation operation. Always `PROMOTE` for this resource.
+     */
+    activationType?: pulumi.Input<string | undefined>;
+    /**
+     * The user who created the activation request.
+     */
+    createdBy?: pulumi.Input<string | undefined>;
+    /**
+     * Error type information when the activation failed, or null otherwise.
+     */
+    errorTypes?: pulumi.Input<string | undefined>;
+    /**
+     * Unique identifier of the generation actually tracked as active on the PRODUCTION network.
+     */
+    generationId?: pulumi.Input<number | undefined>;
+    /**
+     * The number of hostnames still in progress for this activation, or null if not yet known.
+     */
+    inProgressHostnameCount?: pulumi.Input<number | undefined>;
+    /**
+     * The user who last modified the activation request.
+     */
+    modifiedBy?: pulumi.Input<string | undefined>;
+    /**
+     * The activation request that pre-empted (superseded) this one, or null if this activation was not pre-empted.
+     */
+    preEmptedBy?: pulumi.Input<number | undefined>;
+    /**
+     * The total number of hostnames being deployed as part of this activation, or null if not yet known.
+     */
+    totalHostnameCount?: pulumi.Input<number | undefined>;
+}
+
+export interface CloudcertificatesActivationStaging {
+    /**
+     * The time the activation request was created.
+     */
+    activationCreatedTime?: pulumi.Input<string | undefined>;
+    /**
+     * Unique identifier of the activation request.
+     */
+    activationId?: pulumi.Input<number | undefined>;
+    /**
+     * The time the activation request was last modified.
+     */
+    activationModifiedTime?: pulumi.Input<string | undefined>;
+    /**
+     * The status of the activation request: `INIT`, `PENDING`, `IN_PROGRESS`, `COMPLETE`, `PARTIAL_SUCCESS`, `FAILED`, or `ABORTED`.
+     */
+    activationStatus?: pulumi.Input<string | undefined>;
+    /**
+     * The type of the activation operation. Always `PROMOTE` for this resource.
+     */
+    activationType?: pulumi.Input<string | undefined>;
+    /**
+     * The user who created the activation request.
+     */
+    createdBy?: pulumi.Input<string | undefined>;
+    /**
+     * Error type information when the activation failed, or null otherwise.
+     */
+    errorTypes?: pulumi.Input<string | undefined>;
+    /**
+     * Unique identifier of the generation actually tracked as active on the STAGING network.
+     */
+    generationId?: pulumi.Input<number | undefined>;
+    /**
+     * The number of hostnames still in progress for this activation, or null if not yet known.
+     */
+    inProgressHostnameCount?: pulumi.Input<number | undefined>;
+    /**
+     * The user who last modified the activation request.
+     */
+    modifiedBy?: pulumi.Input<string | undefined>;
+    /**
+     * The activation request that pre-empted (superseded) this one, or null if this activation was not pre-empted.
+     */
+    preEmptedBy?: pulumi.Input<number | undefined>;
+    /**
+     * The total number of hostnames being deployed as part of this activation, or null if not yet known.
+     */
+    totalHostnameCount?: pulumi.Input<number | undefined>;
+}
+
+export interface CloudcertificatesActivationTimeouts {
+    /**
+     * Optional configurable timeout for waiting for a newly created activation to reach a terminal status. By default it's 30m with a 15s polling interval.
+     */
+    create?: pulumi.Input<string | undefined>;
+    /**
+     * Optional configurable timeout for waiting for a network's changed activation to reach a terminal status. By default it's 30m with a 15s polling interval.
+     */
+    update?: pulumi.Input<string | undefined>;
+}
+
+export interface CloudcertificatesLineageCurrentProduction {
+    /**
+     * Per key-type (RSA or ECDSA) certificate details for this generation, keyed by key_type.
+     */
+    algorithms?: pulumi.Input<{[key: string]: pulumi.Input<inputs.CloudcertificatesLineageCurrentProductionAlgorithms>} | undefined>;
+    /**
+     * Time the generation was first promoted to production, in RFC3339 format. Null if never promoted.
+     */
+    firstPromotedToProductionTime?: pulumi.Input<string | undefined>;
+    /**
+     * Username of the person who created this generation.
+     */
+    generationCreatedBy?: pulumi.Input<string | undefined>;
+    /**
+     * Time the generation was created, in RFC3339 format.
+     */
+    generationCreatedTime?: pulumi.Input<string | undefined>;
+    /**
+     * Unique identifier of this generation.
+     */
+    generationId?: pulumi.Input<number | undefined>;
+    /**
+     * Username of the person who last modified this generation.
+     */
+    generationModifiedBy?: pulumi.Input<string | undefined>;
+    /**
+     * Time the generation was last modified, in RFC3339 format. Null if never modified since creation.
+     */
+    generationModifiedTime?: pulumi.Input<string | undefined>;
+    /**
+     * Status of this generation.
+     */
+    generationStatus?: pulumi.Input<string | undefined>;
+}
+
+export interface CloudcertificatesLineageCurrentProductionAlgorithms {
+    /**
+     * Username of the person who created the algorithm instance.
+     */
+    algorithmInstanceCreatedBy?: pulumi.Input<string | undefined>;
+    /**
+     * Time the algorithm instance was created, in RFC3339 format.
+     */
+    algorithmInstanceCreatedTime?: pulumi.Input<string | undefined>;
+    /**
+     * Unique identifier of the algorithm instance.
+     */
+    algorithmInstanceId?: pulumi.Input<number | undefined>;
+    /**
+     * Username of the person who last modified the algorithm instance. Null if never modified.
+     */
+    algorithmInstanceModifiedBy?: pulumi.Input<string | undefined>;
+    /**
+     * Time the algorithm instance was last modified, in RFC3339 format. Null if never modified.
+     */
+    algorithmInstanceModifiedTime?: pulumi.Input<string | undefined>;
+    /**
+     * Status of the certificate for this key type: `CSR_READY`, `CERT_UPLOAD_PROCESSING`, `READY_FOR_USE`, or `ABANDONED`.
+     */
+    certificateStatus?: pulumi.Input<string | undefined>;
+    /**
+     * Date when the CSR expires, in RFC3339 format.
+     */
+    csrExpirationDate?: pulumi.Input<string | undefined>;
+    /**
+     * PEM-encoded certificate signing request.
+     */
+    csrPem?: pulumi.Input<string | undefined>;
+    /**
+     * Issuer field of the signed certificate. Null until a certificate is uploaded.
+     */
+    signedCertificateIssuer?: pulumi.Input<string | undefined>;
+    /**
+     * Expiration date of the signed certificate, in RFC3339 format. Null until a certificate is uploaded.
+     */
+    signedCertificateNotValidAfterDate?: pulumi.Input<string | undefined>;
+    /**
+     * Start of validity of the signed certificate, in RFC3339 format. Null until a certificate is uploaded.
+     */
+    signedCertificateNotValidBeforeDate?: pulumi.Input<string | undefined>;
+    /**
+     * PEM-encoded signed certificate. Null until a certificate is uploaded.
+     */
+    signedCertificatePem?: pulumi.Input<string | undefined>;
+    /**
+     * Serial number of the signed certificate in hex format. Null until a certificate is uploaded.
+     */
+    signedCertificateSerialNumber?: pulumi.Input<string | undefined>;
+    /**
+     * SHA-256 fingerprint of the signed certificate. Null until a certificate is uploaded.
+     */
+    signedCertificateSha256Fingerprint?: pulumi.Input<string | undefined>;
+    /**
+     * PEM-encoded trust chain uploaded alongside the signed certificate. Null if none was uploaded.
+     */
+    trustChainPem?: pulumi.Input<string | undefined>;
+}
+
+export interface CloudcertificatesLineageCurrentStaging {
+    /**
+     * Per key-type (RSA or ECDSA) certificate details for this generation, keyed by key_type.
+     */
+    algorithms?: pulumi.Input<{[key: string]: pulumi.Input<inputs.CloudcertificatesLineageCurrentStagingAlgorithms>} | undefined>;
+    /**
+     * Time the generation was first promoted to production, in RFC3339 format. Null if never promoted.
+     */
+    firstPromotedToProductionTime?: pulumi.Input<string | undefined>;
+    /**
+     * Username of the person who created this generation.
+     */
+    generationCreatedBy?: pulumi.Input<string | undefined>;
+    /**
+     * Time the generation was created, in RFC3339 format.
+     */
+    generationCreatedTime?: pulumi.Input<string | undefined>;
+    /**
+     * Unique identifier of this generation.
+     */
+    generationId?: pulumi.Input<number | undefined>;
+    /**
+     * Username of the person who last modified this generation.
+     */
+    generationModifiedBy?: pulumi.Input<string | undefined>;
+    /**
+     * Time the generation was last modified, in RFC3339 format. Null if never modified since creation.
+     */
+    generationModifiedTime?: pulumi.Input<string | undefined>;
+    /**
+     * Status of this generation.
+     */
+    generationStatus?: pulumi.Input<string | undefined>;
+}
+
+export interface CloudcertificatesLineageCurrentStagingAlgorithms {
+    /**
+     * Username of the person who created the algorithm instance.
+     */
+    algorithmInstanceCreatedBy?: pulumi.Input<string | undefined>;
+    /**
+     * Time the algorithm instance was created, in RFC3339 format.
+     */
+    algorithmInstanceCreatedTime?: pulumi.Input<string | undefined>;
+    /**
+     * Unique identifier of the algorithm instance.
+     */
+    algorithmInstanceId?: pulumi.Input<number | undefined>;
+    /**
+     * Username of the person who last modified the algorithm instance. Null if never modified.
+     */
+    algorithmInstanceModifiedBy?: pulumi.Input<string | undefined>;
+    /**
+     * Time the algorithm instance was last modified, in RFC3339 format. Null if never modified.
+     */
+    algorithmInstanceModifiedTime?: pulumi.Input<string | undefined>;
+    /**
+     * Status of the certificate for this key type: `CSR_READY`, `CERT_UPLOAD_PROCESSING`, `READY_FOR_USE`, or `ABANDONED`.
+     */
+    certificateStatus?: pulumi.Input<string | undefined>;
+    /**
+     * Date when the CSR expires, in RFC3339 format.
+     */
+    csrExpirationDate?: pulumi.Input<string | undefined>;
+    /**
+     * PEM-encoded certificate signing request.
+     */
+    csrPem?: pulumi.Input<string | undefined>;
+    /**
+     * Issuer field of the signed certificate. Null until a certificate is uploaded.
+     */
+    signedCertificateIssuer?: pulumi.Input<string | undefined>;
+    /**
+     * Expiration date of the signed certificate, in RFC3339 format. Null until a certificate is uploaded.
+     */
+    signedCertificateNotValidAfterDate?: pulumi.Input<string | undefined>;
+    /**
+     * Start of validity of the signed certificate, in RFC3339 format. Null until a certificate is uploaded.
+     */
+    signedCertificateNotValidBeforeDate?: pulumi.Input<string | undefined>;
+    /**
+     * PEM-encoded signed certificate. Null until a certificate is uploaded.
+     */
+    signedCertificatePem?: pulumi.Input<string | undefined>;
+    /**
+     * Serial number of the signed certificate in hex format. Null until a certificate is uploaded.
+     */
+    signedCertificateSerialNumber?: pulumi.Input<string | undefined>;
+    /**
+     * SHA-256 fingerprint of the signed certificate. Null until a certificate is uploaded.
+     */
+    signedCertificateSha256Fingerprint?: pulumi.Input<string | undefined>;
+    /**
+     * PEM-encoded trust chain uploaded alongside the signed certificate. Null if none was uploaded.
+     */
+    trustChainPem?: pulumi.Input<string | undefined>;
+}
+
+export interface CloudcertificatesLineageHead {
+    /**
+     * Per key-type (RSA or ECDSA) certificate details for this generation, keyed by key_type.
+     */
+    algorithms?: pulumi.Input<{[key: string]: pulumi.Input<inputs.CloudcertificatesLineageHeadAlgorithms>} | undefined>;
+    /**
+     * Time the generation was first promoted to production, in RFC3339 format. Null if never promoted.
+     */
+    firstPromotedToProductionTime?: pulumi.Input<string | undefined>;
+    /**
+     * Username of the person who created this generation.
+     */
+    generationCreatedBy?: pulumi.Input<string | undefined>;
+    /**
+     * Time the generation was created, in RFC3339 format.
+     */
+    generationCreatedTime?: pulumi.Input<string | undefined>;
+    /**
+     * Unique identifier of this generation.
+     */
+    generationId?: pulumi.Input<number | undefined>;
+    /**
+     * Username of the person who last modified this generation.
+     */
+    generationModifiedBy?: pulumi.Input<string | undefined>;
+    /**
+     * Time the generation was last modified, in RFC3339 format. Null if never modified since creation.
+     */
+    generationModifiedTime?: pulumi.Input<string | undefined>;
+    /**
+     * Status of this generation.
+     */
+    generationStatus?: pulumi.Input<string | undefined>;
+}
+
+export interface CloudcertificatesLineageHeadAlgorithms {
+    /**
+     * Username of the person who created the algorithm instance.
+     */
+    algorithmInstanceCreatedBy?: pulumi.Input<string | undefined>;
+    /**
+     * Time the algorithm instance was created, in RFC3339 format.
+     */
+    algorithmInstanceCreatedTime?: pulumi.Input<string | undefined>;
+    /**
+     * Unique identifier of the algorithm instance.
+     */
+    algorithmInstanceId?: pulumi.Input<number | undefined>;
+    /**
+     * Username of the person who last modified the algorithm instance. Null if never modified.
+     */
+    algorithmInstanceModifiedBy?: pulumi.Input<string | undefined>;
+    /**
+     * Time the algorithm instance was last modified, in RFC3339 format. Null if never modified.
+     */
+    algorithmInstanceModifiedTime?: pulumi.Input<string | undefined>;
+    /**
+     * Status of the certificate for this key type: `CSR_READY`, `CERT_UPLOAD_PROCESSING`, `READY_FOR_USE`, or `ABANDONED`.
+     */
+    certificateStatus?: pulumi.Input<string | undefined>;
+    /**
+     * Date when the CSR expires, in RFC3339 format.
+     */
+    csrExpirationDate?: pulumi.Input<string | undefined>;
+    /**
+     * PEM-encoded certificate signing request.
+     */
+    csrPem?: pulumi.Input<string | undefined>;
+    /**
+     * Issuer field of the signed certificate. Null until a certificate is uploaded.
+     */
+    signedCertificateIssuer?: pulumi.Input<string | undefined>;
+    /**
+     * Expiration date of the signed certificate, in RFC3339 format. Null until a certificate is uploaded.
+     */
+    signedCertificateNotValidAfterDate?: pulumi.Input<string | undefined>;
+    /**
+     * Start of validity of the signed certificate, in RFC3339 format. Null until a certificate is uploaded.
+     */
+    signedCertificateNotValidBeforeDate?: pulumi.Input<string | undefined>;
+    /**
+     * PEM-encoded signed certificate. Null until a certificate is uploaded.
+     */
+    signedCertificatePem?: pulumi.Input<string | undefined>;
+    /**
+     * Serial number of the signed certificate in hex format. Null until a certificate is uploaded.
+     */
+    signedCertificateSerialNumber?: pulumi.Input<string | undefined>;
+    /**
+     * SHA-256 fingerprint of the signed certificate. Null until a certificate is uploaded.
+     */
+    signedCertificateSha256Fingerprint?: pulumi.Input<string | undefined>;
+    /**
+     * PEM-encoded trust chain uploaded alongside the signed certificate. Null if none was uploaded.
+     */
+    trustChainPem?: pulumi.Input<string | undefined>;
+}
+
+export interface CloudcertificatesLineagePreviousProduction {
+    /**
+     * Per key-type (RSA or ECDSA) certificate details for this generation, keyed by key_type.
+     */
+    algorithms?: pulumi.Input<{[key: string]: pulumi.Input<inputs.CloudcertificatesLineagePreviousProductionAlgorithms>} | undefined>;
+    /**
+     * Time the generation was first promoted to production, in RFC3339 format. Null if never promoted.
+     */
+    firstPromotedToProductionTime?: pulumi.Input<string | undefined>;
+    /**
+     * Username of the person who created this generation.
+     */
+    generationCreatedBy?: pulumi.Input<string | undefined>;
+    /**
+     * Time the generation was created, in RFC3339 format.
+     */
+    generationCreatedTime?: pulumi.Input<string | undefined>;
+    /**
+     * Unique identifier of this generation.
+     */
+    generationId?: pulumi.Input<number | undefined>;
+    /**
+     * Username of the person who last modified this generation.
+     */
+    generationModifiedBy?: pulumi.Input<string | undefined>;
+    /**
+     * Time the generation was last modified, in RFC3339 format. Null if never modified since creation.
+     */
+    generationModifiedTime?: pulumi.Input<string | undefined>;
+    /**
+     * Status of this generation.
+     */
+    generationStatus?: pulumi.Input<string | undefined>;
+}
+
+export interface CloudcertificatesLineagePreviousProductionAlgorithms {
+    /**
+     * Username of the person who created the algorithm instance.
+     */
+    algorithmInstanceCreatedBy?: pulumi.Input<string | undefined>;
+    /**
+     * Time the algorithm instance was created, in RFC3339 format.
+     */
+    algorithmInstanceCreatedTime?: pulumi.Input<string | undefined>;
+    /**
+     * Unique identifier of the algorithm instance.
+     */
+    algorithmInstanceId?: pulumi.Input<number | undefined>;
+    /**
+     * Username of the person who last modified the algorithm instance. Null if never modified.
+     */
+    algorithmInstanceModifiedBy?: pulumi.Input<string | undefined>;
+    /**
+     * Time the algorithm instance was last modified, in RFC3339 format. Null if never modified.
+     */
+    algorithmInstanceModifiedTime?: pulumi.Input<string | undefined>;
+    /**
+     * Status of the certificate for this key type: `CSR_READY`, `CERT_UPLOAD_PROCESSING`, `READY_FOR_USE`, or `ABANDONED`.
+     */
+    certificateStatus?: pulumi.Input<string | undefined>;
+    /**
+     * Date when the CSR expires, in RFC3339 format.
+     */
+    csrExpirationDate?: pulumi.Input<string | undefined>;
+    /**
+     * PEM-encoded certificate signing request.
+     */
+    csrPem?: pulumi.Input<string | undefined>;
+    /**
+     * Issuer field of the signed certificate. Null until a certificate is uploaded.
+     */
+    signedCertificateIssuer?: pulumi.Input<string | undefined>;
+    /**
+     * Expiration date of the signed certificate, in RFC3339 format. Null until a certificate is uploaded.
+     */
+    signedCertificateNotValidAfterDate?: pulumi.Input<string | undefined>;
+    /**
+     * Start of validity of the signed certificate, in RFC3339 format. Null until a certificate is uploaded.
+     */
+    signedCertificateNotValidBeforeDate?: pulumi.Input<string | undefined>;
+    /**
+     * PEM-encoded signed certificate. Null until a certificate is uploaded.
+     */
+    signedCertificatePem?: pulumi.Input<string | undefined>;
+    /**
+     * Serial number of the signed certificate in hex format. Null until a certificate is uploaded.
+     */
+    signedCertificateSerialNumber?: pulumi.Input<string | undefined>;
+    /**
+     * SHA-256 fingerprint of the signed certificate. Null until a certificate is uploaded.
+     */
+    signedCertificateSha256Fingerprint?: pulumi.Input<string | undefined>;
+    /**
+     * PEM-encoded trust chain uploaded alongside the signed certificate. Null if none was uploaded.
+     */
+    trustChainPem?: pulumi.Input<string | undefined>;
+}
+
+export interface CloudcertificatesLineageSigningTarget {
+    /**
+     * Per key-type (RSA or ECDSA) certificate details for this generation, keyed by key_type.
+     */
+    algorithms?: pulumi.Input<{[key: string]: pulumi.Input<inputs.CloudcertificatesLineageSigningTargetAlgorithms>} | undefined>;
+    /**
+     * Time the generation was first promoted to production, in RFC3339 format. Null if never promoted.
+     */
+    firstPromotedToProductionTime?: pulumi.Input<string | undefined>;
+    /**
+     * Username of the person who created this generation.
+     */
+    generationCreatedBy?: pulumi.Input<string | undefined>;
+    /**
+     * Time the generation was created, in RFC3339 format.
+     */
+    generationCreatedTime?: pulumi.Input<string | undefined>;
+    /**
+     * Unique identifier of this generation.
+     */
+    generationId?: pulumi.Input<number | undefined>;
+    /**
+     * Username of the person who last modified this generation.
+     */
+    generationModifiedBy?: pulumi.Input<string | undefined>;
+    /**
+     * Time the generation was last modified, in RFC3339 format. Null if never modified since creation.
+     */
+    generationModifiedTime?: pulumi.Input<string | undefined>;
+    /**
+     * Status of this generation.
+     */
+    generationStatus?: pulumi.Input<string | undefined>;
+}
+
+export interface CloudcertificatesLineageSigningTargetAlgorithms {
+    /**
+     * Username of the person who created the algorithm instance.
+     */
+    algorithmInstanceCreatedBy?: pulumi.Input<string | undefined>;
+    /**
+     * Time the algorithm instance was created, in RFC3339 format.
+     */
+    algorithmInstanceCreatedTime?: pulumi.Input<string | undefined>;
+    /**
+     * Unique identifier of the algorithm instance.
+     */
+    algorithmInstanceId?: pulumi.Input<number | undefined>;
+    /**
+     * Username of the person who last modified the algorithm instance. Null if never modified.
+     */
+    algorithmInstanceModifiedBy?: pulumi.Input<string | undefined>;
+    /**
+     * Time the algorithm instance was last modified, in RFC3339 format. Null if never modified.
+     */
+    algorithmInstanceModifiedTime?: pulumi.Input<string | undefined>;
+    /**
+     * Status of the certificate for this key type: `CSR_READY`, `CERT_UPLOAD_PROCESSING`, `READY_FOR_USE`, or `ABANDONED`.
+     */
+    certificateStatus?: pulumi.Input<string | undefined>;
+    /**
+     * Date when the CSR expires, in RFC3339 format.
+     */
+    csrExpirationDate?: pulumi.Input<string | undefined>;
+    /**
+     * PEM-encoded certificate signing request.
+     */
+    csrPem?: pulumi.Input<string | undefined>;
+    /**
+     * Issuer field of the signed certificate. Null until a certificate is uploaded.
+     */
+    signedCertificateIssuer?: pulumi.Input<string | undefined>;
+    /**
+     * Expiration date of the signed certificate, in RFC3339 format. Null until a certificate is uploaded.
+     */
+    signedCertificateNotValidAfterDate?: pulumi.Input<string | undefined>;
+    /**
+     * Start of validity of the signed certificate, in RFC3339 format. Null until a certificate is uploaded.
+     */
+    signedCertificateNotValidBeforeDate?: pulumi.Input<string | undefined>;
+    /**
+     * PEM-encoded signed certificate. Null until a certificate is uploaded.
+     */
+    signedCertificatePem?: pulumi.Input<string | undefined>;
+    /**
+     * Serial number of the signed certificate in hex format. Null until a certificate is uploaded.
+     */
+    signedCertificateSerialNumber?: pulumi.Input<string | undefined>;
+    /**
+     * SHA-256 fingerprint of the signed certificate. Null until a certificate is uploaded.
+     */
+    signedCertificateSha256Fingerprint?: pulumi.Input<string | undefined>;
+    /**
+     * PEM-encoded trust chain uploaded alongside the signed certificate. Null if none was uploaded.
+     */
+    trustChainPem?: pulumi.Input<string | undefined>;
+}
+
+export interface CloudcertificatesLineageSubject {
+    /**
+     * Common name (CN).
      */
     commonName?: pulumi.Input<string | undefined>;
     /**
-     * Two-letter ISO 3166 country code.
+     * Two-letter ISO 3166 country code (C).
      */
     country?: pulumi.Input<string | undefined>;
     /**
-     * City or locality name.
+     * Locality or city name (L).
      */
     locality?: pulumi.Input<string | undefined>;
     /**
-     * Legal name of the organization.
+     * Organization (O).
      */
     organization?: pulumi.Input<string | undefined>;
     /**
-     * Full name of the state or province.
+     * Organizational unit (OU).
+     */
+    organizationalUnit?: pulumi.Input<string | undefined>;
+    /**
+     * State or province name (ST).
      */
     state?: pulumi.Input<string | undefined>;
+}
+
+export interface CloudcertificatesUploadAlgorithms {
+    /**
+     * Username of the person who created the algorithm instance.
+     */
+    algorithmInstanceCreatedBy?: pulumi.Input<string | undefined>;
+    /**
+     * Time the algorithm instance was created, in RFC3339 format.
+     */
+    algorithmInstanceCreatedTime?: pulumi.Input<string | undefined>;
+    /**
+     * Unique identifier of the algorithm instance.
+     */
+    algorithmInstanceId?: pulumi.Input<number | undefined>;
+    /**
+     * Username of the person who last modified the algorithm instance. Null if never modified.
+     */
+    algorithmInstanceModifiedBy?: pulumi.Input<string | undefined>;
+    /**
+     * Time the algorithm instance was last modified, in RFC3339 format. Null if never modified.
+     */
+    algorithmInstanceModifiedTime?: pulumi.Input<string | undefined>;
+    /**
+     * Status of the certificate for this key type: `CSR_READY`, `CERT_UPLOAD_PROCESSING`, `READY_FOR_USE`, or `ABANDONED`.
+     */
+    certificateStatus?: pulumi.Input<string | undefined>;
+    /**
+     * Date when the CSR expires, in RFC3339 format.
+     */
+    csrExpirationDate?: pulumi.Input<string | undefined>;
+    /**
+     * PEM-encoded certificate signing request.
+     */
+    csrPem?: pulumi.Input<string | undefined>;
+    /**
+     * Issuer field of the signed certificate. Null until a certificate is uploaded.
+     */
+    signedCertificateIssuer?: pulumi.Input<string | undefined>;
+    /**
+     * Expiration date of the signed certificate, in RFC3339 format. Null until a certificate is uploaded.
+     */
+    signedCertificateNotValidAfterDate?: pulumi.Input<string | undefined>;
+    /**
+     * Start of validity of the signed certificate, in RFC3339 format. Null until a certificate is uploaded.
+     */
+    signedCertificateNotValidBeforeDate?: pulumi.Input<string | undefined>;
+    /**
+     * PEM-encoded signed certificate to upload for this key type.
+     */
+    signedCertificatePem: pulumi.Input<string>;
+    /**
+     * Serial number of the signed certificate in hex format. Null until a certificate is uploaded.
+     */
+    signedCertificateSerialNumber?: pulumi.Input<string | undefined>;
+    /**
+     * SHA-256 fingerprint of the signed certificate. Null until a certificate is uploaded.
+     */
+    signedCertificateSha256Fingerprint?: pulumi.Input<string | undefined>;
+    /**
+     * Optional PEM-encoded trust chain to upload alongside the signed certificate.
+     */
+    trustChainPem?: pulumi.Input<string | undefined>;
+}
+
+export interface CloudcertificatesUploadTimeouts {
+    /**
+     * Optional configurable timeout for polling until the uploaded certificate(s) finish processing server-side. By default it's 2m.
+     */
+    create?: pulumi.Input<string | undefined>;
+    /**
+     * Optional configurable timeout for polling until the uploaded certificate(s) finish processing server-side. By default it's 2m.
+     */
+    update?: pulumi.Input<string | undefined>;
 }
 
 export interface CloudletsApplicationLoadBalancerActivationTimeouts {
@@ -12954,11 +13635,27 @@ export interface PropertyDomainownershipValidationTimeouts {
 
 export interface PropertyHostname {
     /**
+     * The certificate lineage ID of the Cloud Certificate Manager (CCM) certificate to bind to the hostname. It cannot be used together with `ccmCertificates`.
+     */
+    ccmCertId?: pulumi.Input<string | undefined>;
+    /**
+     * The link to the Cloud Certificate Manager (CCM) certificate lineage bound to the hostname.
+     */
+    ccmCertLink?: pulumi.Input<string | undefined>;
+    /**
      * Deployment status for the RSA and ECDSA certificates created with Cloud Certificate Manager (CCM).
+     *
+     * @deprecated Will be replaced by ccm_cert_statuses.
+     */
+    ccmCertStatus?: pulumi.Input<pulumi.Input<inputs.PropertyHostnameCcmCertStatus>[] | undefined>;
+    /**
+     * The deployment statuses of the Cloud Certificate Manager (CCM) certificate lineage bound to the hostname, organized by key type and network.
      */
     ccmCertStatuses?: pulumi.Input<pulumi.Input<inputs.PropertyHostnameCcmCertStatus>[] | undefined>;
     /**
      * Certificate identifiers and links for the CCM-managed certificates.
+     *
+     * @deprecated Use ccmCertId instead.
      */
     ccmCertificates?: pulumi.Input<inputs.PropertyHostnameCcmCertificates | undefined>;
     certProvisioningType: pulumi.Input<string>;
@@ -12994,21 +13691,17 @@ export interface PropertyHostnameBucketHostnames {
 
 export interface PropertyHostnameCcmCertStatus {
     /**
-     * Status of the ECDSA certificate on production network.
+     * The key algorithm type of the certificate, either `RSA` or `ECDSA`.
      */
-    ecdsaProductionStatus?: pulumi.Input<string | undefined>;
+    keyType?: pulumi.Input<string | undefined>;
     /**
-     * Status of the ECDSA certificate on staging network.
+     * The network the status applies to, either `STAGING` or `PRODUCTION`.
      */
-    ecdsaStagingStatus?: pulumi.Input<string | undefined>;
+    network?: pulumi.Input<string | undefined>;
     /**
-     * Status of the RSA certificate on production network.
+     * The deployment status of the certificate on the given network.
      */
-    rsaProductionStatus?: pulumi.Input<string | undefined>;
-    /**
-     * Status of the RSA certificate on staging network.
-     */
-    rsaStagingStatus?: pulumi.Input<string | undefined>;
+    status?: pulumi.Input<string | undefined>;
 }
 
 export interface PropertyHostnameCcmCertificates {

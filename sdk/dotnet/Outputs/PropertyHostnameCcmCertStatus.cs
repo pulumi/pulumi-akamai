@@ -14,36 +14,29 @@ namespace Pulumi.Akamai.Outputs
     public sealed class PropertyHostnameCcmCertStatus
     {
         /// <summary>
-        /// Status of the ECDSA certificate on production network.
+        /// The key algorithm type of the certificate, either `RSA` or `ECDSA`.
         /// </summary>
-        public readonly string? EcdsaProductionStatus;
+        public readonly string? KeyType;
         /// <summary>
-        /// Status of the ECDSA certificate on staging network.
+        /// The network the status applies to, either `STAGING` or `PRODUCTION`.
         /// </summary>
-        public readonly string? EcdsaStagingStatus;
+        public readonly string? Network;
         /// <summary>
-        /// Status of the RSA certificate on production network.
+        /// The deployment status of the certificate on the given network.
         /// </summary>
-        public readonly string? RsaProductionStatus;
-        /// <summary>
-        /// Status of the RSA certificate on staging network.
-        /// </summary>
-        public readonly string? RsaStagingStatus;
+        public readonly string? Status;
 
         [OutputConstructor]
         private PropertyHostnameCcmCertStatus(
-            string? ecdsaProductionStatus,
+            string? keyType,
 
-            string? ecdsaStagingStatus,
+            string? network,
 
-            string? rsaProductionStatus,
-
-            string? rsaStagingStatus)
+            string? status)
         {
-            EcdsaProductionStatus = ecdsaProductionStatus;
-            EcdsaStagingStatus = ecdsaStagingStatus;
-            RsaProductionStatus = rsaProductionStatus;
-            RsaStagingStatus = rsaStagingStatus;
+            KeyType = keyType;
+            Network = network;
+            Status = status;
         }
     }
 }

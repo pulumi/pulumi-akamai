@@ -495,15 +495,20 @@ export type CloudAccessKey = import("./cloudAccessKey").CloudAccessKey;
 export const CloudAccessKey: typeof import("./cloudAccessKey").CloudAccessKey = null as any;
 utilities.lazyLoad(exports, ["CloudAccessKey"], () => require("./cloudAccessKey"));
 
-export { CloudcertificatesCertificateArgs, CloudcertificatesCertificateState } from "./cloudcertificatesCertificate";
-export type CloudcertificatesCertificate = import("./cloudcertificatesCertificate").CloudcertificatesCertificate;
-export const CloudcertificatesCertificate: typeof import("./cloudcertificatesCertificate").CloudcertificatesCertificate = null as any;
-utilities.lazyLoad(exports, ["CloudcertificatesCertificate"], () => require("./cloudcertificatesCertificate"));
+export { CloudcertificatesActivationArgs, CloudcertificatesActivationState } from "./cloudcertificatesActivation";
+export type CloudcertificatesActivation = import("./cloudcertificatesActivation").CloudcertificatesActivation;
+export const CloudcertificatesActivation: typeof import("./cloudcertificatesActivation").CloudcertificatesActivation = null as any;
+utilities.lazyLoad(exports, ["CloudcertificatesActivation"], () => require("./cloudcertificatesActivation"));
 
-export { CloudcertificatesUploadSignedCertificateArgs, CloudcertificatesUploadSignedCertificateState } from "./cloudcertificatesUploadSignedCertificate";
-export type CloudcertificatesUploadSignedCertificate = import("./cloudcertificatesUploadSignedCertificate").CloudcertificatesUploadSignedCertificate;
-export const CloudcertificatesUploadSignedCertificate: typeof import("./cloudcertificatesUploadSignedCertificate").CloudcertificatesUploadSignedCertificate = null as any;
-utilities.lazyLoad(exports, ["CloudcertificatesUploadSignedCertificate"], () => require("./cloudcertificatesUploadSignedCertificate"));
+export { CloudcertificatesLineageArgs, CloudcertificatesLineageState } from "./cloudcertificatesLineage";
+export type CloudcertificatesLineage = import("./cloudcertificatesLineage").CloudcertificatesLineage;
+export const CloudcertificatesLineage: typeof import("./cloudcertificatesLineage").CloudcertificatesLineage = null as any;
+utilities.lazyLoad(exports, ["CloudcertificatesLineage"], () => require("./cloudcertificatesLineage"));
+
+export { CloudcertificatesUploadArgs, CloudcertificatesUploadState } from "./cloudcertificatesUpload";
+export type CloudcertificatesUpload = import("./cloudcertificatesUpload").CloudcertificatesUpload;
+export const CloudcertificatesUpload: typeof import("./cloudcertificatesUpload").CloudcertificatesUpload = null as any;
+utilities.lazyLoad(exports, ["CloudcertificatesUpload"], () => require("./cloudcertificatesUpload"));
 
 export { CloudletsApplicationLoadBalancerArgs, CloudletsApplicationLoadBalancerState } from "./cloudletsApplicationLoadBalancer";
 export type CloudletsApplicationLoadBalancer = import("./cloudletsApplicationLoadBalancer").CloudletsApplicationLoadBalancer;
@@ -1165,20 +1170,45 @@ export const getCloudaccessKeys: typeof import("./getCloudaccessKeys").getClouda
 export const getCloudaccessKeysOutput: typeof import("./getCloudaccessKeys").getCloudaccessKeysOutput = null as any;
 utilities.lazyLoad(exports, ["getCloudaccessKeys","getCloudaccessKeysOutput"], () => require("./getCloudaccessKeys"));
 
-export { GetCloudcertificatesCertificateArgs, GetCloudcertificatesCertificateResult, GetCloudcertificatesCertificateOutputArgs } from "./getCloudcertificatesCertificate";
-export const getCloudcertificatesCertificate: typeof import("./getCloudcertificatesCertificate").getCloudcertificatesCertificate = null as any;
-export const getCloudcertificatesCertificateOutput: typeof import("./getCloudcertificatesCertificate").getCloudcertificatesCertificateOutput = null as any;
-utilities.lazyLoad(exports, ["getCloudcertificatesCertificate","getCloudcertificatesCertificateOutput"], () => require("./getCloudcertificatesCertificate"));
+export { GetCloudcertificatesActivationStatusArgs, GetCloudcertificatesActivationStatusResult, GetCloudcertificatesActivationStatusOutputArgs } from "./getCloudcertificatesActivationStatus";
+export const getCloudcertificatesActivationStatus: typeof import("./getCloudcertificatesActivationStatus").getCloudcertificatesActivationStatus = null as any;
+export const getCloudcertificatesActivationStatusOutput: typeof import("./getCloudcertificatesActivationStatus").getCloudcertificatesActivationStatusOutput = null as any;
+utilities.lazyLoad(exports, ["getCloudcertificatesActivationStatus","getCloudcertificatesActivationStatusOutput"], () => require("./getCloudcertificatesActivationStatus"));
 
-export { GetCloudcertificatesCertificatesArgs, GetCloudcertificatesCertificatesResult, GetCloudcertificatesCertificatesOutputArgs } from "./getCloudcertificatesCertificates";
-export const getCloudcertificatesCertificates: typeof import("./getCloudcertificatesCertificates").getCloudcertificatesCertificates = null as any;
-export const getCloudcertificatesCertificatesOutput: typeof import("./getCloudcertificatesCertificates").getCloudcertificatesCertificatesOutput = null as any;
-utilities.lazyLoad(exports, ["getCloudcertificatesCertificates","getCloudcertificatesCertificatesOutput"], () => require("./getCloudcertificatesCertificates"));
+export { GetCloudcertificatesActivationsArgs, GetCloudcertificatesActivationsResult, GetCloudcertificatesActivationsOutputArgs } from "./getCloudcertificatesActivations";
+export const getCloudcertificatesActivations: typeof import("./getCloudcertificatesActivations").getCloudcertificatesActivations = null as any;
+export const getCloudcertificatesActivationsOutput: typeof import("./getCloudcertificatesActivations").getCloudcertificatesActivationsOutput = null as any;
+utilities.lazyLoad(exports, ["getCloudcertificatesActivations","getCloudcertificatesActivationsOutput"], () => require("./getCloudcertificatesActivations"));
 
-export { GetCloudcertificatesHostnameBindingsArgs, GetCloudcertificatesHostnameBindingsResult, GetCloudcertificatesHostnameBindingsOutputArgs } from "./getCloudcertificatesHostnameBindings";
-export const getCloudcertificatesHostnameBindings: typeof import("./getCloudcertificatesHostnameBindings").getCloudcertificatesHostnameBindings = null as any;
-export const getCloudcertificatesHostnameBindingsOutput: typeof import("./getCloudcertificatesHostnameBindings").getCloudcertificatesHostnameBindingsOutput = null as any;
-utilities.lazyLoad(exports, ["getCloudcertificatesHostnameBindings","getCloudcertificatesHostnameBindingsOutput"], () => require("./getCloudcertificatesHostnameBindings"));
+export { GetCloudcertificatesActivityArgs, GetCloudcertificatesActivityResult, GetCloudcertificatesActivityOutputArgs } from "./getCloudcertificatesActivity";
+export const getCloudcertificatesActivity: typeof import("./getCloudcertificatesActivity").getCloudcertificatesActivity = null as any;
+export const getCloudcertificatesActivityOutput: typeof import("./getCloudcertificatesActivity").getCloudcertificatesActivityOutput = null as any;
+utilities.lazyLoad(exports, ["getCloudcertificatesActivity","getCloudcertificatesActivityOutput"], () => require("./getCloudcertificatesActivity"));
+
+export { GetCloudcertificatesArchivedGenerationsArgs, GetCloudcertificatesArchivedGenerationsResult, GetCloudcertificatesArchivedGenerationsOutputArgs } from "./getCloudcertificatesArchivedGenerations";
+export const getCloudcertificatesArchivedGenerations: typeof import("./getCloudcertificatesArchivedGenerations").getCloudcertificatesArchivedGenerations = null as any;
+export const getCloudcertificatesArchivedGenerationsOutput: typeof import("./getCloudcertificatesArchivedGenerations").getCloudcertificatesArchivedGenerationsOutput = null as any;
+utilities.lazyLoad(exports, ["getCloudcertificatesArchivedGenerations","getCloudcertificatesArchivedGenerationsOutput"], () => require("./getCloudcertificatesArchivedGenerations"));
+
+export { GetCloudcertificatesBindingsArgs, GetCloudcertificatesBindingsResult, GetCloudcertificatesBindingsOutputArgs } from "./getCloudcertificatesBindings";
+export const getCloudcertificatesBindings: typeof import("./getCloudcertificatesBindings").getCloudcertificatesBindings = null as any;
+export const getCloudcertificatesBindingsOutput: typeof import("./getCloudcertificatesBindings").getCloudcertificatesBindingsOutput = null as any;
+utilities.lazyLoad(exports, ["getCloudcertificatesBindings","getCloudcertificatesBindingsOutput"], () => require("./getCloudcertificatesBindings"));
+
+export { GetCloudcertificatesGenerationArgs, GetCloudcertificatesGenerationResult, GetCloudcertificatesGenerationOutputArgs } from "./getCloudcertificatesGeneration";
+export const getCloudcertificatesGeneration: typeof import("./getCloudcertificatesGeneration").getCloudcertificatesGeneration = null as any;
+export const getCloudcertificatesGenerationOutput: typeof import("./getCloudcertificatesGeneration").getCloudcertificatesGenerationOutput = null as any;
+utilities.lazyLoad(exports, ["getCloudcertificatesGeneration","getCloudcertificatesGenerationOutput"], () => require("./getCloudcertificatesGeneration"));
+
+export { GetCloudcertificatesLineageArgs, GetCloudcertificatesLineageResult, GetCloudcertificatesLineageOutputArgs } from "./getCloudcertificatesLineage";
+export const getCloudcertificatesLineage: typeof import("./getCloudcertificatesLineage").getCloudcertificatesLineage = null as any;
+export const getCloudcertificatesLineageOutput: typeof import("./getCloudcertificatesLineage").getCloudcertificatesLineageOutput = null as any;
+utilities.lazyLoad(exports, ["getCloudcertificatesLineage","getCloudcertificatesLineageOutput"], () => require("./getCloudcertificatesLineage"));
+
+export { GetCloudcertificatesLineagesArgs, GetCloudcertificatesLineagesResult, GetCloudcertificatesLineagesOutputArgs } from "./getCloudcertificatesLineages";
+export const getCloudcertificatesLineages: typeof import("./getCloudcertificatesLineages").getCloudcertificatesLineages = null as any;
+export const getCloudcertificatesLineagesOutput: typeof import("./getCloudcertificatesLineages").getCloudcertificatesLineagesOutput = null as any;
+utilities.lazyLoad(exports, ["getCloudcertificatesLineages","getCloudcertificatesLineagesOutput"], () => require("./getCloudcertificatesLineages"));
 
 export { GetCloudletsApiPrioritizationMatchRuleArgs, GetCloudletsApiPrioritizationMatchRuleResult, GetCloudletsApiPrioritizationMatchRuleOutputArgs } from "./getCloudletsApiPrioritizationMatchRule";
 export const getCloudletsApiPrioritizationMatchRule: typeof import("./getCloudletsApiPrioritizationMatchRule").getCloudletsApiPrioritizationMatchRule = null as any;
@@ -2133,10 +2163,12 @@ const _module = {
                 return new ClientlistList(name, <any>undefined, { urn })
             case "akamai:index/cloudAccessKey:CloudAccessKey":
                 return new CloudAccessKey(name, <any>undefined, { urn })
-            case "akamai:index/cloudcertificatesCertificate:CloudcertificatesCertificate":
-                return new CloudcertificatesCertificate(name, <any>undefined, { urn })
-            case "akamai:index/cloudcertificatesUploadSignedCertificate:CloudcertificatesUploadSignedCertificate":
-                return new CloudcertificatesUploadSignedCertificate(name, <any>undefined, { urn })
+            case "akamai:index/cloudcertificatesActivation:CloudcertificatesActivation":
+                return new CloudcertificatesActivation(name, <any>undefined, { urn })
+            case "akamai:index/cloudcertificatesLineage:CloudcertificatesLineage":
+                return new CloudcertificatesLineage(name, <any>undefined, { urn })
+            case "akamai:index/cloudcertificatesUpload:CloudcertificatesUpload":
+                return new CloudcertificatesUpload(name, <any>undefined, { urn })
             case "akamai:index/cloudletsApplicationLoadBalancer:CloudletsApplicationLoadBalancer":
                 return new CloudletsApplicationLoadBalancer(name, <any>undefined, { urn })
             case "akamai:index/cloudletsApplicationLoadBalancerActivation:CloudletsApplicationLoadBalancerActivation":
@@ -2350,8 +2382,9 @@ pulumi.runtime.registerResourceModule("akamai", "index/botmanTransactionalEndpoi
 pulumi.runtime.registerResourceModule("akamai", "index/clientlistActivation", _module)
 pulumi.runtime.registerResourceModule("akamai", "index/clientlistList", _module)
 pulumi.runtime.registerResourceModule("akamai", "index/cloudAccessKey", _module)
-pulumi.runtime.registerResourceModule("akamai", "index/cloudcertificatesCertificate", _module)
-pulumi.runtime.registerResourceModule("akamai", "index/cloudcertificatesUploadSignedCertificate", _module)
+pulumi.runtime.registerResourceModule("akamai", "index/cloudcertificatesActivation", _module)
+pulumi.runtime.registerResourceModule("akamai", "index/cloudcertificatesLineage", _module)
+pulumi.runtime.registerResourceModule("akamai", "index/cloudcertificatesUpload", _module)
 pulumi.runtime.registerResourceModule("akamai", "index/cloudletsApplicationLoadBalancer", _module)
 pulumi.runtime.registerResourceModule("akamai", "index/cloudletsApplicationLoadBalancerActivation", _module)
 pulumi.runtime.registerResourceModule("akamai", "index/cloudletsPolicy", _module)

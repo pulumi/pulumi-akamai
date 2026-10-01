@@ -14,7 +14,19 @@ namespace Pulumi.Akamai.Outputs
     public sealed class PropertyHostname
     {
         /// <summary>
+        /// The certificate lineage ID of the Cloud Certificate Manager (CCM) certificate to bind to the hostname. It cannot be used together with `CcmCertificates`.
+        /// </summary>
+        public readonly string? CcmCertId;
+        /// <summary>
+        /// The link to the Cloud Certificate Manager (CCM) certificate lineage bound to the hostname.
+        /// </summary>
+        public readonly string? CcmCertLink;
+        /// <summary>
         /// Deployment status for the RSA and ECDSA certificates created with Cloud Certificate Manager (CCM).
+        /// </summary>
+        public readonly ImmutableArray<Outputs.PropertyHostnameCcmCertStatus> CcmCertStatus;
+        /// <summary>
+        /// The deployment statuses of the Cloud Certificate Manager (CCM) certificate lineage bound to the hostname, organized by key type and network.
         /// </summary>
         public readonly ImmutableArray<Outputs.PropertyHostnameCcmCertStatus> CcmCertStatuses;
         /// <summary>
@@ -38,6 +50,12 @@ namespace Pulumi.Akamai.Outputs
 
         [OutputConstructor]
         private PropertyHostname(
+            string? ccmCertId,
+
+            string? ccmCertLink,
+
+            ImmutableArray<Outputs.PropertyHostnameCcmCertStatus> ccmCertStatus,
+
             ImmutableArray<Outputs.PropertyHostnameCcmCertStatus> ccmCertStatuses,
 
             Outputs.PropertyHostnameCcmCertificates? ccmCertificates,
@@ -58,6 +76,9 @@ namespace Pulumi.Akamai.Outputs
 
             Outputs.PropertyHostnameTlsConfiguration? tlsConfiguration)
         {
+            CcmCertId = ccmCertId;
+            CcmCertLink = ccmCertLink;
+            CcmCertStatus = ccmCertStatus;
             CcmCertStatuses = ccmCertStatuses;
             CcmCertificates = ccmCertificates;
             CertProvisioningType = certProvisioningType;
