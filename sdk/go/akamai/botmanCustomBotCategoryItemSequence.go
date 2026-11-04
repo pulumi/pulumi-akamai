@@ -83,6 +83,12 @@ func (BotmanCustomBotCategoryItemSequenceState) ElementType() reflect.Type {
 	return reflect.TypeOf((*botmanCustomBotCategoryItemSequenceState)(nil)).Elem()
 }
 
+// BotmanCustomBotCategoryItemSequenceExists checks whether an existing BotmanCustomBotCategoryItemSequence resource with the given ID exists.
+func BotmanCustomBotCategoryItemSequenceExists(ctx *pulumi.Context,
+	id pulumi.StringInput, state *BotmanCustomBotCategoryItemSequenceState, opts ...pulumi.ResourceOption) pulumi.BoolOutput {
+	return ctx.ExistsResource("akamai:index/botmanCustomBotCategoryItemSequence:BotmanCustomBotCategoryItemSequence", id, state, "", opts...)
+}
+
 type botmanCustomBotCategoryItemSequenceArgs struct {
 	// Unique identifiers of bots in this category, sorted in preferred order
 	BotIds []string `pulumi:"botIds"`

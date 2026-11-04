@@ -89,6 +89,12 @@ func (BotmanContentProtectionJavascriptInjectionRuleState) ElementType() reflect
 	return reflect.TypeOf((*botmanContentProtectionJavascriptInjectionRuleState)(nil)).Elem()
 }
 
+// BotmanContentProtectionJavascriptInjectionRuleExists checks whether an existing BotmanContentProtectionJavascriptInjectionRule resource with the given ID exists.
+func BotmanContentProtectionJavascriptInjectionRuleExists(ctx *pulumi.Context,
+	id pulumi.StringInput, state *BotmanContentProtectionJavascriptInjectionRuleState, opts ...pulumi.ResourceOption) pulumi.BoolOutput {
+	return ctx.ExistsResource("akamai:index/botmanContentProtectionJavascriptInjectionRule:BotmanContentProtectionJavascriptInjectionRule", id, state, "", opts...)
+}
+
 type botmanContentProtectionJavascriptInjectionRuleArgs struct {
 	// Unique identifier of the security configuration
 	ConfigId int `pulumi:"configId"`

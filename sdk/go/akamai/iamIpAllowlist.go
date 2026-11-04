@@ -65,6 +65,12 @@ func (IamIpAllowlistState) ElementType() reflect.Type {
 	return reflect.TypeOf((*iamIpAllowlistState)(nil)).Elem()
 }
 
+// IamIpAllowlistExists checks whether an existing IamIpAllowlist resource with the given ID exists.
+func IamIpAllowlistExists(ctx *pulumi.Context,
+	id pulumi.StringInput, state *IamIpAllowlistState, opts ...pulumi.ResourceOption) pulumi.BoolOutput {
+	return ctx.ExistsResource("akamai:index/iamIpAllowlist:IamIpAllowlist", id, state, "", opts...)
+}
+
 type iamIpAllowlistArgs struct {
 	// Whether to enable or disable the allowlist.
 	Enable bool `pulumi:"enable"`

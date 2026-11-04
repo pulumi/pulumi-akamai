@@ -101,6 +101,12 @@ func (AppSecActivationsState) ElementType() reflect.Type {
 	return reflect.TypeOf((*appSecActivationsState)(nil)).Elem()
 }
 
+// AppSecActivationsExists checks whether an existing AppSecActivations resource with the given ID exists.
+func AppSecActivationsExists(ctx *pulumi.Context,
+	id pulumi.StringInput, state *AppSecActivationsState, opts ...pulumi.ResourceOption) pulumi.BoolOutput {
+	return ctx.ExistsResource("akamai:index/appSecActivations:AppSecActivations", id, state, "", opts...)
+}
+
 type appSecActivationsArgs struct {
 	// Unique identifier of the security configuration to be activated
 	ConfigId int `pulumi:"configId"`

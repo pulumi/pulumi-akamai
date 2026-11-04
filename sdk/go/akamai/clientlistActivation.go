@@ -107,6 +107,12 @@ func (ClientlistActivationState) ElementType() reflect.Type {
 	return reflect.TypeOf((*clientlistActivationState)(nil)).Elem()
 }
 
+// ClientlistActivationExists checks whether an existing ClientlistActivation resource with the given ID exists.
+func ClientlistActivationExists(ctx *pulumi.Context,
+	id pulumi.StringInput, state *ClientlistActivationState, opts ...pulumi.ResourceOption) pulumi.BoolOutput {
+	return ctx.ExistsResource("akamai:index/clientlistActivation:ClientlistActivation", id, state, "", opts...)
+}
+
 type clientlistActivationArgs struct {
 	// A brief description for the activation.
 	Comments *string `pulumi:"comments"`

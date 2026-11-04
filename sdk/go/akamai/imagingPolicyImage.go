@@ -104,6 +104,12 @@ func (ImagingPolicyImageState) ElementType() reflect.Type {
 	return reflect.TypeOf((*imagingPolicyImageState)(nil)).Elem()
 }
 
+// ImagingPolicyImageExists checks whether an existing ImagingPolicyImage resource with the given ID exists.
+func ImagingPolicyImageExists(ctx *pulumi.Context,
+	id pulumi.StringInput, state *ImagingPolicyImageState, opts ...pulumi.ResourceOption) pulumi.BoolOutput {
+	return ctx.ExistsResource("akamai:index/imagingPolicyImage:ImagingPolicyImage", id, state, "", opts...)
+}
+
 type imagingPolicyImageArgs struct {
 	// With this flag set to false, the user can perform modifications on staging without affecting the version already saved to production. With this flag set to true, the policy will be saved on the production network. It is possible to change it back to false only when there are any changes to the policy qualifying it for the new version.
 	ActivateOnProduction *bool `pulumi:"activateOnProduction"`

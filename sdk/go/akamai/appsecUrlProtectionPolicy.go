@@ -140,6 +140,12 @@ func (AppsecUrlProtectionPolicyState) ElementType() reflect.Type {
 	return reflect.TypeOf((*appsecUrlProtectionPolicyState)(nil)).Elem()
 }
 
+// AppsecUrlProtectionPolicyExists checks whether an existing AppsecUrlProtectionPolicy resource with the given ID exists.
+func AppsecUrlProtectionPolicyExists(ctx *pulumi.Context,
+	id pulumi.StringInput, state *AppsecUrlProtectionPolicyState, opts ...pulumi.ResourceOption) pulumi.BoolOutput {
+	return ctx.ExistsResource("akamai:index/appsecUrlProtectionPolicy:AppsecUrlProtectionPolicy", id, state, "", opts...)
+}
+
 type appsecUrlProtectionPolicyArgs struct {
 	// List of API definitions associated with the URL protection policy
 	ApiDefinitions []AppsecUrlProtectionPolicyApiDefinition `pulumi:"apiDefinitions"`

@@ -86,6 +86,12 @@ func (CpCodeState) ElementType() reflect.Type {
 	return reflect.TypeOf((*cpCodeState)(nil)).Elem()
 }
 
+// CpCodeExists checks whether an existing CpCode resource with the given ID exists.
+func CpCodeExists(ctx *pulumi.Context,
+	id pulumi.StringInput, state *CpCodeState, opts ...pulumi.ResourceOption) pulumi.BoolOutput {
+	return ctx.ExistsResource("akamai:index/cpCode:CpCode", id, state, "", opts...)
+}
+
 type cpCodeArgs struct {
 	ContractId string  `pulumi:"contractId"`
 	GroupId    string  `pulumi:"groupId"`

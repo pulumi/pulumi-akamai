@@ -89,6 +89,12 @@ func (AppSecApiConstraintsProtectionState) ElementType() reflect.Type {
 	return reflect.TypeOf((*appSecApiConstraintsProtectionState)(nil)).Elem()
 }
 
+// AppSecApiConstraintsProtectionExists checks whether an existing AppSecApiConstraintsProtection resource with the given ID exists.
+func AppSecApiConstraintsProtectionExists(ctx *pulumi.Context,
+	id pulumi.StringInput, state *AppSecApiConstraintsProtectionState, opts ...pulumi.ResourceOption) pulumi.BoolOutput {
+	return ctx.ExistsResource("akamai:index/appSecApiConstraintsProtection:AppSecApiConstraintsProtection", id, state, "", opts...)
+}
+
 type appSecApiConstraintsProtectionArgs struct {
 	// Unique identifier of the security configuration
 	ConfigId int `pulumi:"configId"`

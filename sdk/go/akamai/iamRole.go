@@ -86,6 +86,12 @@ func (IamRoleState) ElementType() reflect.Type {
 	return reflect.TypeOf((*iamRoleState)(nil)).Elem()
 }
 
+// IamRoleExists checks whether an existing IamRole resource with the given ID exists.
+func IamRoleExists(ctx *pulumi.Context,
+	id pulumi.StringInput, state *IamRoleState, opts ...pulumi.ResourceOption) pulumi.BoolOutput {
+	return ctx.ExistsResource("akamai:index/iamRole:IamRole", id, state, "", opts...)
+}
+
 type iamRoleArgs struct {
 	// The description for a role.
 	Description string `pulumi:"description"`

@@ -68,6 +68,12 @@ func (NetworkListSubscriptionState) ElementType() reflect.Type {
 	return reflect.TypeOf((*networkListSubscriptionState)(nil)).Elem()
 }
 
+// NetworkListSubscriptionExists checks whether an existing NetworkListSubscription resource with the given ID exists.
+func NetworkListSubscriptionExists(ctx *pulumi.Context,
+	id pulumi.StringInput, state *NetworkListSubscriptionState, opts ...pulumi.ResourceOption) pulumi.BoolOutput {
+	return ctx.ExistsResource("akamai:index/networkListSubscription:NetworkListSubscription", id, state, "", opts...)
+}
+
 type networkListSubscriptionArgs struct {
 	NetworkLists []string `pulumi:"networkLists"`
 	Recipients   []string `pulumi:"recipients"`

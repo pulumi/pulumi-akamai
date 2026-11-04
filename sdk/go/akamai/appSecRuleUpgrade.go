@@ -98,6 +98,12 @@ func (AppSecRuleUpgradeState) ElementType() reflect.Type {
 	return reflect.TypeOf((*appSecRuleUpgradeState)(nil)).Elem()
 }
 
+// AppSecRuleUpgradeExists checks whether an existing AppSecRuleUpgrade resource with the given ID exists.
+func AppSecRuleUpgradeExists(ctx *pulumi.Context,
+	id pulumi.StringInput, state *AppSecRuleUpgradeState, opts ...pulumi.ResourceOption) pulumi.BoolOutput {
+	return ctx.ExistsResource("akamai:index/appSecRuleUpgrade:AppSecRuleUpgrade", id, state, "", opts...)
+}
+
 type appSecRuleUpgradeArgs struct {
 	// Unique identifier of the security configuration
 	ConfigId int `pulumi:"configId"`

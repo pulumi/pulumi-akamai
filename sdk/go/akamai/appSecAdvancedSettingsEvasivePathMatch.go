@@ -80,6 +80,12 @@ func (AppSecAdvancedSettingsEvasivePathMatchState) ElementType() reflect.Type {
 	return reflect.TypeOf((*appSecAdvancedSettingsEvasivePathMatchState)(nil)).Elem()
 }
 
+// AppSecAdvancedSettingsEvasivePathMatchExists checks whether an existing AppSecAdvancedSettingsEvasivePathMatch resource with the given ID exists.
+func AppSecAdvancedSettingsEvasivePathMatchExists(ctx *pulumi.Context,
+	id pulumi.StringInput, state *AppSecAdvancedSettingsEvasivePathMatchState, opts ...pulumi.ResourceOption) pulumi.BoolOutput {
+	return ctx.ExistsResource("akamai:index/appSecAdvancedSettingsEvasivePathMatch:AppSecAdvancedSettingsEvasivePathMatch", id, state, "", opts...)
+}
+
 type appSecAdvancedSettingsEvasivePathMatchArgs struct {
 	// Unique identifier of the security configuration
 	ConfigId int `pulumi:"configId"`

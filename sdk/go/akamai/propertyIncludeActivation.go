@@ -140,6 +140,12 @@ func (PropertyIncludeActivationState) ElementType() reflect.Type {
 	return reflect.TypeOf((*propertyIncludeActivationState)(nil)).Elem()
 }
 
+// PropertyIncludeActivationExists checks whether an existing PropertyIncludeActivation resource with the given ID exists.
+func PropertyIncludeActivationExists(ctx *pulumi.Context,
+	id pulumi.StringInput, state *PropertyIncludeActivationState, opts ...pulumi.ResourceOption) pulumi.BoolOutput {
+	return ctx.ExistsResource("akamai:index/propertyIncludeActivation:PropertyIncludeActivation", id, state, "", opts...)
+}
+
 type propertyIncludeActivationArgs struct {
 	// Automatically acknowledge all rule warnings for activation and continue
 	AutoAcknowledgeRuleWarnings *bool `pulumi:"autoAcknowledgeRuleWarnings"`

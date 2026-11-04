@@ -68,6 +68,12 @@ func (PropertyDomainownershipValidationState) ElementType() reflect.Type {
 	return reflect.TypeOf((*propertyDomainownershipValidationState)(nil)).Elem()
 }
 
+// PropertyDomainownershipValidationExists checks whether an existing PropertyDomainownershipValidation resource with the given ID exists.
+func PropertyDomainownershipValidationExists(ctx *pulumi.Context,
+	id pulumi.StringInput, state *PropertyDomainownershipValidationState, opts ...pulumi.ResourceOption) pulumi.BoolOutput {
+	return ctx.ExistsResource("akamai:index/propertyDomainownershipValidation:PropertyDomainownershipValidation", id, state, "", opts...)
+}
+
 type propertyDomainownershipValidationArgs struct {
 	// List of domains to be validated.
 	Domains  []PropertyDomainownershipValidationDomain  `pulumi:"domains"`

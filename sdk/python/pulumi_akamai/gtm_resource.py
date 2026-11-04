@@ -544,6 +544,42 @@ class GtmResource(pulumi.CustomResource):
         __props__.__dict__["wait_on_complete"] = wait_on_complete
         return GtmResource(resource_name, opts=opts, __props__=__props__)
 
+    @staticmethod
+    def exists(id: pulumi.Input[str],
+            opts: Optional[pulumi.ResourceOptions] = None,
+            aggregation_type: pulumi.Input[Optional[_builtins.str]] = None,
+            constrained_property: pulumi.Input[Optional[_builtins.str]] = None,
+            decay_rate: pulumi.Input[Optional[_builtins.float]] = None,
+            description: pulumi.Input[Optional[_builtins.str]] = None,
+            domain: pulumi.Input[Optional[_builtins.str]] = None,
+            host_header: pulumi.Input[Optional[_builtins.str]] = None,
+            leader_string: pulumi.Input[Optional[_builtins.str]] = None,
+            least_squares_decay: pulumi.Input[Optional[_builtins.float]] = None,
+            load_imbalance_percentage: pulumi.Input[Optional[_builtins.float]] = None,
+            max_u_multiplicative_increment: pulumi.Input[Optional[_builtins.float]] = None,
+            name: pulumi.Input[Optional[_builtins.str]] = None,
+            resource_instances: pulumi.Input[Optional[Sequence[pulumi.Input[Union['GtmResourceResourceInstanceArgs', 'GtmResourceResourceInstanceArgsDict', 'outputs.GtmResourceResourceInstance']]]]] = None,
+            type: pulumi.Input[Optional[_builtins.str]] = None,
+            upper_bound: pulumi.Input[Optional[_builtins.int]] = None,
+            wait_on_complete: pulumi.Input[Optional[_builtins.bool]] = None) -> pulumi.Output[bool]:
+        __props__: dict = {}
+        __props__["aggregationType"] = aggregation_type
+        __props__["constrainedProperty"] = constrained_property
+        __props__["decayRate"] = decay_rate
+        __props__["description"] = description
+        __props__["domain"] = domain
+        __props__["hostHeader"] = host_header
+        __props__["leaderString"] = leader_string
+        __props__["leastSquaresDecay"] = least_squares_decay
+        __props__["loadImbalancePercentage"] = load_imbalance_percentage
+        __props__["maxUMultiplicativeIncrement"] = max_u_multiplicative_increment
+        __props__["name"] = name
+        __props__["resourceInstances"] = resource_instances
+        __props__["type"] = type
+        __props__["upperBound"] = upper_bound
+        __props__["waitOnComplete"] = wait_on_complete
+        return pulumi.runtime.exists_resource(None, 'akamai:index/gtmResource:GtmResource', id, __props__, opts or pulumi.ResourceOptions())
+
     @_builtins.property
     @pulumi.getter(name="aggregationType")
     def aggregation_type(self) -> pulumi.Output[_builtins.str]:

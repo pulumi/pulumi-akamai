@@ -264,6 +264,20 @@ class AppsecWafRuleset(pulumi.CustomResource):
         __props__.__dict__["security_policy_id"] = security_policy_id
         return AppsecWafRuleset(resource_name, opts=opts, __props__=__props__)
 
+    @staticmethod
+    def exists(id: pulumi.Input[str],
+            opts: Optional[pulumi.ResourceOptions] = None,
+            attack_groups: pulumi.Input[Optional[Sequence[pulumi.Input[Union['AppsecWafRulesetAttackGroupArgs', 'AppsecWafRulesetAttackGroupArgsDict', 'outputs.AppsecWafRulesetAttackGroup']]]]] = None,
+            config_id: pulumi.Input[Optional[_builtins.int]] = None,
+            rules: pulumi.Input[Optional[Sequence[pulumi.Input[Union['AppsecWafRulesetRuleArgs', 'AppsecWafRulesetRuleArgsDict', 'outputs.AppsecWafRulesetRule']]]]] = None,
+            security_policy_id: pulumi.Input[Optional[_builtins.str]] = None) -> pulumi.Output[bool]:
+        __props__: dict = {}
+        __props__["attackGroups"] = attack_groups
+        __props__["configId"] = config_id
+        __props__["rules"] = rules
+        __props__["securityPolicyId"] = security_policy_id
+        return pulumi.runtime.exists_resource(None, 'akamai:index/appsecWafRuleset:AppsecWafRuleset', id, __props__, opts or pulumi.ResourceOptions())
+
     @_builtins.property
     @pulumi.getter(name="attackGroups")
     def attack_groups(self) -> pulumi.Output[Optional[Sequence['outputs.AppsecWafRulesetAttackGroup']]]:

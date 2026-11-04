@@ -98,6 +98,12 @@ func (AppsecWafAiRulesState) ElementType() reflect.Type {
 	return reflect.TypeOf((*appsecWafAiRulesState)(nil)).Elem()
 }
 
+// AppsecWafAiRulesExists checks whether an existing AppsecWafAiRules resource with the given ID exists.
+func AppsecWafAiRulesExists(ctx *pulumi.Context,
+	id pulumi.StringInput, state *AppsecWafAiRulesState, opts ...pulumi.ResourceOption) pulumi.BoolOutput {
+	return ctx.ExistsResource("akamai:index/appsecWafAiRules:AppsecWafAiRules", id, state, "", opts...)
+}
+
 type appsecWafAiRulesArgs struct {
 	// Action to set for the AI rule specified by rule_id. Valid values: alert, deny, deny_custom_<custom_deny_id>, none. Mutually exclusive with ai_rule_status.
 	Action *string `pulumi:"action"`

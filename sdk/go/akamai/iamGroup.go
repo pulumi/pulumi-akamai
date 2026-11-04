@@ -77,6 +77,12 @@ func (IamGroupState) ElementType() reflect.Type {
 	return reflect.TypeOf((*iamGroupState)(nil)).Elem()
 }
 
+// IamGroupExists checks whether an existing IamGroup resource with the given ID exists.
+func IamGroupExists(ctx *pulumi.Context,
+	id pulumi.StringInput, state *IamGroupState, opts ...pulumi.ResourceOption) pulumi.BoolOutput {
+	return ctx.ExistsResource("akamai:index/iamGroup:IamGroup", id, state, "", opts...)
+}
+
 type iamGroupArgs struct {
 	// Human readable name for a group.
 	Name *string `pulumi:"name"`

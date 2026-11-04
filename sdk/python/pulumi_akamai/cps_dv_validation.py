@@ -283,6 +283,22 @@ class CpsDvValidation(pulumi.CustomResource):
         __props__.__dict__["timeouts"] = timeouts
         return CpsDvValidation(resource_name, opts=opts, __props__=__props__)
 
+    @staticmethod
+    def exists(id: pulumi.Input[str],
+            opts: Optional[pulumi.ResourceOptions] = None,
+            acknowledge_post_verification_warnings: pulumi.Input[Optional[_builtins.bool]] = None,
+            enrollment_id: pulumi.Input[Optional[_builtins.int]] = None,
+            sans: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+            status: pulumi.Input[Optional[_builtins.str]] = None,
+            timeouts: pulumi.Input[Optional[Union['CpsDvValidationTimeoutsArgs', 'CpsDvValidationTimeoutsArgsDict', 'outputs.CpsDvValidationTimeouts']]] = None) -> pulumi.Output[bool]:
+        __props__: dict = {}
+        __props__["acknowledgePostVerificationWarnings"] = acknowledge_post_verification_warnings
+        __props__["enrollmentId"] = enrollment_id
+        __props__["sans"] = sans
+        __props__["status"] = status
+        __props__["timeouts"] = timeouts
+        return pulumi.runtime.exists_resource(None, 'akamai:index/cpsDvValidation:CpsDvValidation', id, __props__, opts or pulumi.ResourceOptions())
+
     @_builtins.property
     @pulumi.getter(name="acknowledgePostVerificationWarnings")
     def acknowledge_post_verification_warnings(self) -> pulumi.Output[Optional[_builtins.bool]]:

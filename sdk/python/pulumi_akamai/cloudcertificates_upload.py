@@ -394,6 +394,34 @@ class CloudcertificatesUpload(pulumi.CustomResource):
         __props__.__dict__["timeouts"] = timeouts
         return CloudcertificatesUpload(resource_name, opts=opts, __props__=__props__)
 
+    @staticmethod
+    def exists(id: pulumi.Input[str],
+            opts: Optional[pulumi.ResourceOptions] = None,
+            acknowledge_warnings: pulumi.Input[Optional[_builtins.bool]] = None,
+            algorithms: pulumi.Input[Optional[Mapping[str, pulumi.Input[Union['CloudcertificatesUploadAlgorithmsArgs', 'CloudcertificatesUploadAlgorithmsArgsDict', 'outputs.CloudcertificatesUploadAlgorithms']]]]] = None,
+            first_promoted_to_production_at: pulumi.Input[Optional[_builtins.str]] = None,
+            generation_created_by: pulumi.Input[Optional[_builtins.str]] = None,
+            generation_created_time: pulumi.Input[Optional[_builtins.str]] = None,
+            generation_id: pulumi.Input[Optional[_builtins.int]] = None,
+            generation_modified_by: pulumi.Input[Optional[_builtins.str]] = None,
+            generation_modified_time: pulumi.Input[Optional[_builtins.str]] = None,
+            generation_status: pulumi.Input[Optional[_builtins.str]] = None,
+            lineage_id: pulumi.Input[Optional[_builtins.int]] = None,
+            timeouts: pulumi.Input[Optional[Union['CloudcertificatesUploadTimeoutsArgs', 'CloudcertificatesUploadTimeoutsArgsDict', 'outputs.CloudcertificatesUploadTimeouts']]] = None) -> pulumi.Output[bool]:
+        __props__: dict = {}
+        __props__["acknowledgeWarnings"] = acknowledge_warnings
+        __props__["algorithms"] = algorithms
+        __props__["firstPromotedToProductionAt"] = first_promoted_to_production_at
+        __props__["generationCreatedBy"] = generation_created_by
+        __props__["generationCreatedTime"] = generation_created_time
+        __props__["generationId"] = generation_id
+        __props__["generationModifiedBy"] = generation_modified_by
+        __props__["generationModifiedTime"] = generation_modified_time
+        __props__["generationStatus"] = generation_status
+        __props__["lineageId"] = lineage_id
+        __props__["timeouts"] = timeouts
+        return pulumi.runtime.exists_resource(None, 'akamai:index/cloudcertificatesUpload:CloudcertificatesUpload', id, __props__, opts or pulumi.ResourceOptions())
+
     @_builtins.property
     @pulumi.getter(name="acknowledgeWarnings")
     def acknowledge_warnings(self) -> pulumi.Output[_builtins.bool]:

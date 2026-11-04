@@ -83,6 +83,12 @@ func (AppSecSecurityPolicyRenameState) ElementType() reflect.Type {
 	return reflect.TypeOf((*appSecSecurityPolicyRenameState)(nil)).Elem()
 }
 
+// AppSecSecurityPolicyRenameExists checks whether an existing AppSecSecurityPolicyRename resource with the given ID exists.
+func AppSecSecurityPolicyRenameExists(ctx *pulumi.Context,
+	id pulumi.StringInput, state *AppSecSecurityPolicyRenameState, opts ...pulumi.ResourceOption) pulumi.BoolOutput {
+	return ctx.ExistsResource("akamai:index/appSecSecurityPolicyRename:AppSecSecurityPolicyRename", id, state, "", opts...)
+}
+
 type appSecSecurityPolicyRenameArgs struct {
 	// Unique identifier of the security configuration
 	ConfigId int `pulumi:"configId"`

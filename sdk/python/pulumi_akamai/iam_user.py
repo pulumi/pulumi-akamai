@@ -1071,6 +1071,66 @@ class IamUser(pulumi.CustomResource):
         __props__.__dict__["zip_code"] = zip_code
         return IamUser(resource_name, opts=opts, __props__=__props__)
 
+    @staticmethod
+    def exists(id: pulumi.Input[str],
+            opts: Optional[pulumi.ResourceOptions] = None,
+            address: pulumi.Input[Optional[_builtins.str]] = None,
+            auth_grants_json: pulumi.Input[Optional[_builtins.str]] = None,
+            city: pulumi.Input[Optional[_builtins.str]] = None,
+            contact_type: pulumi.Input[Optional[_builtins.str]] = None,
+            country: pulumi.Input[Optional[_builtins.str]] = None,
+            email: pulumi.Input[Optional[_builtins.str]] = None,
+            email_update_pending: pulumi.Input[Optional[_builtins.bool]] = None,
+            enable_mfa: pulumi.Input[Optional[_builtins.bool]] = None,
+            enable_tfa: pulumi.Input[Optional[_builtins.bool]] = None,
+            first_name: pulumi.Input[Optional[_builtins.str]] = None,
+            job_title: pulumi.Input[Optional[_builtins.str]] = None,
+            last_login: pulumi.Input[Optional[_builtins.str]] = None,
+            last_name: pulumi.Input[Optional[_builtins.str]] = None,
+            lock: pulumi.Input[Optional[_builtins.bool]] = None,
+            mobile_phone: pulumi.Input[Optional[_builtins.str]] = None,
+            password: pulumi.Input[Optional[_builtins.str]] = None,
+            password_expired_after: pulumi.Input[Optional[_builtins.str]] = None,
+            phone: pulumi.Input[Optional[_builtins.str]] = None,
+            preferred_language: pulumi.Input[Optional[_builtins.str]] = None,
+            secondary_email: pulumi.Input[Optional[_builtins.str]] = None,
+            session_timeout: pulumi.Input[Optional[_builtins.int]] = None,
+            state: pulumi.Input[Optional[_builtins.str]] = None,
+            tfa_configured: pulumi.Input[Optional[_builtins.bool]] = None,
+            time_zone: pulumi.Input[Optional[_builtins.str]] = None,
+            user_name: pulumi.Input[Optional[_builtins.str]] = None,
+            user_notifications: pulumi.Input[Optional[Union['IamUserUserNotificationsArgs', 'IamUserUserNotificationsArgsDict', 'outputs.IamUserUserNotifications']]] = None,
+            zip_code: pulumi.Input[Optional[_builtins.str]] = None) -> pulumi.Output[bool]:
+        __props__: dict = {}
+        __props__["address"] = address
+        __props__["authGrantsJson"] = auth_grants_json
+        __props__["city"] = city
+        __props__["contactType"] = contact_type
+        __props__["country"] = country
+        __props__["email"] = email
+        __props__["emailUpdatePending"] = email_update_pending
+        __props__["enableMfa"] = enable_mfa
+        __props__["enableTfa"] = enable_tfa
+        __props__["firstName"] = first_name
+        __props__["jobTitle"] = job_title
+        __props__["lastLogin"] = last_login
+        __props__["lastName"] = last_name
+        __props__["lock"] = lock
+        __props__["mobilePhone"] = mobile_phone
+        __props__["password"] = password
+        __props__["passwordExpiredAfter"] = password_expired_after
+        __props__["phone"] = phone
+        __props__["preferredLanguage"] = preferred_language
+        __props__["secondaryEmail"] = secondary_email
+        __props__["sessionTimeout"] = session_timeout
+        __props__["state"] = state
+        __props__["tfaConfigured"] = tfa_configured
+        __props__["timeZone"] = time_zone
+        __props__["userName"] = user_name
+        __props__["userNotifications"] = user_notifications
+        __props__["zipCode"] = zip_code
+        return pulumi.runtime.exists_resource(None, 'akamai:index/iamUser:IamUser', id, __props__, opts or pulumi.ResourceOptions())
+
     @_builtins.property
     @pulumi.getter
     def address(self) -> pulumi.Output[_builtins.str]:

@@ -335,6 +335,28 @@ class MtlstruststoreCaSetActivation(pulumi.CustomResource):
         __props__.__dict__["version"] = version
         return MtlstruststoreCaSetActivation(resource_name, opts=opts, __props__=__props__)
 
+    @staticmethod
+    def exists(id: pulumi.Input[str],
+            opts: Optional[pulumi.ResourceOptions] = None,
+            ca_set_id: pulumi.Input[Optional[_builtins.str]] = None,
+            created_by: pulumi.Input[Optional[_builtins.str]] = None,
+            created_date: pulumi.Input[Optional[_builtins.str]] = None,
+            modified_by: pulumi.Input[Optional[_builtins.str]] = None,
+            modified_date: pulumi.Input[Optional[_builtins.str]] = None,
+            network: pulumi.Input[Optional[_builtins.str]] = None,
+            timeouts: pulumi.Input[Optional[Union['MtlstruststoreCaSetActivationTimeoutsArgs', 'MtlstruststoreCaSetActivationTimeoutsArgsDict', 'outputs.MtlstruststoreCaSetActivationTimeouts']]] = None,
+            version: pulumi.Input[Optional[_builtins.int]] = None) -> pulumi.Output[bool]:
+        __props__: dict = {}
+        __props__["caSetId"] = ca_set_id
+        __props__["createdBy"] = created_by
+        __props__["createdDate"] = created_date
+        __props__["modifiedBy"] = modified_by
+        __props__["modifiedDate"] = modified_date
+        __props__["network"] = network
+        __props__["timeouts"] = timeouts
+        __props__["version"] = version
+        return pulumi.runtime.exists_resource(None, 'akamai:index/mtlstruststoreCaSetActivation:MtlstruststoreCaSetActivation', id, __props__, opts or pulumi.ResourceOptions())
+
     @_builtins.property
     @pulumi.getter(name="caSetId")
     def ca_set_id(self) -> pulumi.Output[_builtins.str]:

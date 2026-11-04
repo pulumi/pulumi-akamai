@@ -74,6 +74,12 @@ func (BotmanBotAnalyticsSettingsState) ElementType() reflect.Type {
 	return reflect.TypeOf((*botmanBotAnalyticsSettingsState)(nil)).Elem()
 }
 
+// BotmanBotAnalyticsSettingsExists checks whether an existing BotmanBotAnalyticsSettings resource with the given ID exists.
+func BotmanBotAnalyticsSettingsExists(ctx *pulumi.Context,
+	id pulumi.StringInput, state *BotmanBotAnalyticsSettingsState, opts ...pulumi.ResourceOption) pulumi.BoolOutput {
+	return ctx.ExistsResource("akamai:index/botmanBotAnalyticsSettings:BotmanBotAnalyticsSettings", id, state, "", opts...)
+}
+
 type botmanBotAnalyticsSettingsArgs struct {
 	// JSON-formatted bot analytics settings.
 	BotAnalyticsSettings string `pulumi:"botAnalyticsSettings"`

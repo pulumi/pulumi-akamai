@@ -80,6 +80,12 @@ func (AppSecAdvancedSettingsPragmaHeaderState) ElementType() reflect.Type {
 	return reflect.TypeOf((*appSecAdvancedSettingsPragmaHeaderState)(nil)).Elem()
 }
 
+// AppSecAdvancedSettingsPragmaHeaderExists checks whether an existing AppSecAdvancedSettingsPragmaHeader resource with the given ID exists.
+func AppSecAdvancedSettingsPragmaHeaderExists(ctx *pulumi.Context,
+	id pulumi.StringInput, state *AppSecAdvancedSettingsPragmaHeaderState, opts ...pulumi.ResourceOption) pulumi.BoolOutput {
+	return ctx.ExistsResource("akamai:index/appSecAdvancedSettingsPragmaHeader:AppSecAdvancedSettingsPragmaHeader", id, state, "", opts...)
+}
+
 type appSecAdvancedSettingsPragmaHeaderArgs struct {
 	// Unique identifier of the security configuration
 	ConfigId int `pulumi:"configId"`

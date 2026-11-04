@@ -531,6 +531,44 @@ class MtlstruststoreCaSet(pulumi.CustomResource):
         __props__.__dict__["version_modified_date"] = version_modified_date
         return MtlstruststoreCaSet(resource_name, opts=opts, __props__=__props__)
 
+    @staticmethod
+    def exists(id: pulumi.Input[str],
+            opts: Optional[pulumi.ResourceOptions] = None,
+            account_id: pulumi.Input[Optional[_builtins.str]] = None,
+            allow_insecure_sha1: pulumi.Input[Optional[_builtins.bool]] = None,
+            certificates: pulumi.Input[Optional[Sequence[pulumi.Input[Union['MtlstruststoreCaSetCertificateArgs', 'MtlstruststoreCaSetCertificateArgsDict', 'outputs.MtlstruststoreCaSetCertificate']]]]] = None,
+            created_by: pulumi.Input[Optional[_builtins.str]] = None,
+            created_date: pulumi.Input[Optional[_builtins.str]] = None,
+            description: pulumi.Input[Optional[_builtins.str]] = None,
+            latest_version: pulumi.Input[Optional[_builtins.int]] = None,
+            name: pulumi.Input[Optional[_builtins.str]] = None,
+            production_version: pulumi.Input[Optional[_builtins.int]] = None,
+            staging_version: pulumi.Input[Optional[_builtins.int]] = None,
+            timeouts: pulumi.Input[Optional[Union['MtlstruststoreCaSetTimeoutsArgs', 'MtlstruststoreCaSetTimeoutsArgsDict', 'outputs.MtlstruststoreCaSetTimeouts']]] = None,
+            version_created_by: pulumi.Input[Optional[_builtins.str]] = None,
+            version_created_date: pulumi.Input[Optional[_builtins.str]] = None,
+            version_description: pulumi.Input[Optional[_builtins.str]] = None,
+            version_modified_by: pulumi.Input[Optional[_builtins.str]] = None,
+            version_modified_date: pulumi.Input[Optional[_builtins.str]] = None) -> pulumi.Output[bool]:
+        __props__: dict = {}
+        __props__["accountId"] = account_id
+        __props__["allowInsecureSha1"] = allow_insecure_sha1
+        __props__["certificates"] = certificates
+        __props__["createdBy"] = created_by
+        __props__["createdDate"] = created_date
+        __props__["description"] = description
+        __props__["latestVersion"] = latest_version
+        __props__["name"] = name
+        __props__["productionVersion"] = production_version
+        __props__["stagingVersion"] = staging_version
+        __props__["timeouts"] = timeouts
+        __props__["versionCreatedBy"] = version_created_by
+        __props__["versionCreatedDate"] = version_created_date
+        __props__["versionDescription"] = version_description
+        __props__["versionModifiedBy"] = version_modified_by
+        __props__["versionModifiedDate"] = version_modified_date
+        return pulumi.runtime.exists_resource(None, 'akamai:index/mtlstruststoreCaSet:MtlstruststoreCaSet', id, __props__, opts or pulumi.ResourceOptions())
+
     @_builtins.property
     @pulumi.getter(name="accountId")
     def account_id(self) -> pulumi.Output[_builtins.str]:

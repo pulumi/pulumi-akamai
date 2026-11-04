@@ -116,6 +116,12 @@ func (AppSecSiemSettingsState) ElementType() reflect.Type {
 	return reflect.TypeOf((*appSecSiemSettingsState)(nil)).Elem()
 }
 
+// AppSecSiemSettingsExists checks whether an existing AppSecSiemSettings resource with the given ID exists.
+func AppSecSiemSettingsExists(ctx *pulumi.Context,
+	id pulumi.StringInput, state *AppSecSiemSettingsState, opts ...pulumi.ResourceOption) pulumi.BoolOutput {
+	return ctx.ExistsResource("akamai:index/appSecSiemSettings:AppSecSiemSettings", id, state, "", opts...)
+}
+
 type appSecSiemSettingsArgs struct {
 	// Unique identifier of the security configuration
 	ConfigId int `pulumi:"configId"`

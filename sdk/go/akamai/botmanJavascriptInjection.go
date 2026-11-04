@@ -74,6 +74,12 @@ func (BotmanJavascriptInjectionState) ElementType() reflect.Type {
 	return reflect.TypeOf((*botmanJavascriptInjectionState)(nil)).Elem()
 }
 
+// BotmanJavascriptInjectionExists checks whether an existing BotmanJavascriptInjection resource with the given ID exists.
+func BotmanJavascriptInjectionExists(ctx *pulumi.Context,
+	id pulumi.StringInput, state *BotmanJavascriptInjectionState, opts ...pulumi.ResourceOption) pulumi.BoolOutput {
+	return ctx.ExistsResource("akamai:index/botmanJavascriptInjection:BotmanJavascriptInjection", id, state, "", opts...)
+}
+
 type botmanJavascriptInjectionArgs struct {
 	ConfigId            int    `pulumi:"configId"`
 	JavascriptInjection string `pulumi:"javascriptInjection"`

@@ -179,6 +179,12 @@ func (GtmPropertyState) ElementType() reflect.Type {
 	return reflect.TypeOf((*gtmPropertyState)(nil)).Elem()
 }
 
+// GtmPropertyExists checks whether an existing GtmProperty resource with the given ID exists.
+func GtmPropertyExists(ctx *pulumi.Context,
+	id pulumi.StringInput, state *GtmPropertyState, opts ...pulumi.ResourceOption) pulumi.BoolOutput {
+	return ctx.ExistsResource("akamai:index/gtmProperty:GtmProperty", id, state, "", opts...)
+}
+
 type gtmPropertyArgs struct {
 	BackupCname                    *string                                    `pulumi:"backupCname"`
 	BackupIp                       *string                                    `pulumi:"backupIp"`

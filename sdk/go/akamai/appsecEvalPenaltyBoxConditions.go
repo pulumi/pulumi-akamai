@@ -83,6 +83,12 @@ func (AppsecEvalPenaltyBoxConditionsState) ElementType() reflect.Type {
 	return reflect.TypeOf((*appsecEvalPenaltyBoxConditionsState)(nil)).Elem()
 }
 
+// AppsecEvalPenaltyBoxConditionsExists checks whether an existing AppsecEvalPenaltyBoxConditions resource with the given ID exists.
+func AppsecEvalPenaltyBoxConditionsExists(ctx *pulumi.Context,
+	id pulumi.StringInput, state *AppsecEvalPenaltyBoxConditionsState, opts ...pulumi.ResourceOption) pulumi.BoolOutput {
+	return ctx.ExistsResource("akamai:index/appsecEvalPenaltyBoxConditions:AppsecEvalPenaltyBoxConditions", id, state, "", opts...)
+}
+
 type appsecEvalPenaltyBoxConditionsArgs struct {
 	// Unique identifier of the security configuration
 	ConfigId int `pulumi:"configId"`

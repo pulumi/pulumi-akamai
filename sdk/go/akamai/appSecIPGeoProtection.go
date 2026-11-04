@@ -89,6 +89,12 @@ func (AppSecIPGeoProtectionState) ElementType() reflect.Type {
 	return reflect.TypeOf((*appSecIPGeoProtectionState)(nil)).Elem()
 }
 
+// AppSecIPGeoProtectionExists checks whether an existing AppSecIPGeoProtection resource with the given ID exists.
+func AppSecIPGeoProtectionExists(ctx *pulumi.Context,
+	id pulumi.StringInput, state *AppSecIPGeoProtectionState, opts ...pulumi.ResourceOption) pulumi.BoolOutput {
+	return ctx.ExistsResource("akamai:index/appSecIPGeoProtection:AppSecIPGeoProtection", id, state, "", opts...)
+}
+
 type appSecIPGeoProtectionArgs struct {
 	// Unique identifier of the security configuration
 	ConfigId int `pulumi:"configId"`

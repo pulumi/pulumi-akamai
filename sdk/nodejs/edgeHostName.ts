@@ -20,6 +20,17 @@ export class EdgeHostName extends pulumi.CustomResource {
         return new EdgeHostName(name, <any>state, { ...opts, id: id });
     }
 
+    /**
+     * Check whether an existing EdgeHostName resource with the given ID exists.
+     *
+     * @param id The _unique_ provider ID of the resource to check.
+     * @param state Any extra arguments used during the lookup.
+     * @param opts Optional settings to control the behavior of the CustomResource.
+     */
+    public static exists(id: pulumi.Input<string>, state?: EdgeHostNameState, opts?: pulumi.CustomResourceOptions): pulumi.Output<boolean> {
+        return pulumi.runtime.existsResource("akamai:index/edgeHostName:EdgeHostName", id, <any>state || {}, { ...opts }, undefined);
+    }
+
     /** @internal */
     public static readonly __pulumiType = 'akamai:index/edgeHostName:EdgeHostName';
 

@@ -125,6 +125,12 @@ func (NetworkListState) ElementType() reflect.Type {
 	return reflect.TypeOf((*networkListState)(nil)).Elem()
 }
 
+// NetworkListExists checks whether an existing NetworkList resource with the given ID exists.
+func NetworkListExists(ctx *pulumi.Context,
+	id pulumi.StringInput, state *NetworkListState, opts ...pulumi.ResourceOption) pulumi.BoolOutput {
+	return ctx.ExistsResource("akamai:index/networkList:NetworkList", id, state, "", opts...)
+}
+
 type networkListArgs struct {
 	// contract ID
 	ContractId *string `pulumi:"contractId"`

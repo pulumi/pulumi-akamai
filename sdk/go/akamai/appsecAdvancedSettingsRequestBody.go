@@ -86,6 +86,12 @@ func (AppsecAdvancedSettingsRequestBodyState) ElementType() reflect.Type {
 	return reflect.TypeOf((*appsecAdvancedSettingsRequestBodyState)(nil)).Elem()
 }
 
+// AppsecAdvancedSettingsRequestBodyExists checks whether an existing AppsecAdvancedSettingsRequestBody resource with the given ID exists.
+func AppsecAdvancedSettingsRequestBodyExists(ctx *pulumi.Context,
+	id pulumi.StringInput, state *AppsecAdvancedSettingsRequestBodyState, opts ...pulumi.ResourceOption) pulumi.BoolOutput {
+	return ctx.ExistsResource("akamai:index/appsecAdvancedSettingsRequestBody:AppsecAdvancedSettingsRequestBody", id, state, "", opts...)
+}
+
 type appsecAdvancedSettingsRequestBodyArgs struct {
 	// Unique identifier of the security configuration
 	ConfigId int `pulumi:"configId"`

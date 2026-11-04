@@ -116,6 +116,12 @@ func (EdgeWorkerState) ElementType() reflect.Type {
 	return reflect.TypeOf((*edgeWorkerState)(nil)).Elem()
 }
 
+// EdgeWorkerExists checks whether an existing EdgeWorker resource with the given ID exists.
+func EdgeWorkerExists(ctx *pulumi.Context,
+	id pulumi.StringInput, state *EdgeWorkerState, opts ...pulumi.ResourceOption) pulumi.BoolOutput {
+	return ctx.ExistsResource("akamai:index/edgeWorker:EdgeWorker", id, state, "", opts...)
+}
+
 type edgeWorkerArgs struct {
 	// Defines the group association for the EdgeWorker
 	GroupId int `pulumi:"groupId"`

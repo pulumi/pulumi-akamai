@@ -128,6 +128,12 @@ func (CloudletsPolicyState) ElementType() reflect.Type {
 	return reflect.TypeOf((*cloudletsPolicyState)(nil)).Elem()
 }
 
+// CloudletsPolicyExists checks whether an existing CloudletsPolicy resource with the given ID exists.
+func CloudletsPolicyExists(ctx *pulumi.Context,
+	id pulumi.StringInput, state *CloudletsPolicyState, opts ...pulumi.ResourceOption) pulumi.BoolOutput {
+	return ctx.ExistsResource("akamai:index/cloudletsPolicy:CloudletsPolicy", id, state, "", opts...)
+}
+
 type cloudletsPolicyArgs struct {
 	// Code for the type of Cloudlet (ALB, AP, AS, CD, ER, FR, IG, or VP).
 	CloudletCode string `pulumi:"cloudletCode"`

@@ -95,6 +95,12 @@ func (CloudletsApplicationLoadBalancerActivationState) ElementType() reflect.Typ
 	return reflect.TypeOf((*cloudletsApplicationLoadBalancerActivationState)(nil)).Elem()
 }
 
+// CloudletsApplicationLoadBalancerActivationExists checks whether an existing CloudletsApplicationLoadBalancerActivation resource with the given ID exists.
+func CloudletsApplicationLoadBalancerActivationExists(ctx *pulumi.Context,
+	id pulumi.StringInput, state *CloudletsApplicationLoadBalancerActivationState, opts ...pulumi.ResourceOption) pulumi.BoolOutput {
+	return ctx.ExistsResource("akamai:index/cloudletsApplicationLoadBalancerActivation:CloudletsApplicationLoadBalancerActivation", id, state, "", opts...)
+}
+
 type cloudletsApplicationLoadBalancerActivationArgs struct {
 	// The network you want to activate the application load balancer version on (options are Staging and Production)
 	Network string `pulumi:"network"`

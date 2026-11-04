@@ -92,6 +92,12 @@ func (AppSecReputationProfileActionState) ElementType() reflect.Type {
 	return reflect.TypeOf((*appSecReputationProfileActionState)(nil)).Elem()
 }
 
+// AppSecReputationProfileActionExists checks whether an existing AppSecReputationProfileAction resource with the given ID exists.
+func AppSecReputationProfileActionExists(ctx *pulumi.Context,
+	id pulumi.StringInput, state *AppSecReputationProfileActionState, opts ...pulumi.ResourceOption) pulumi.BoolOutput {
+	return ctx.ExistsResource("akamai:index/appSecReputationProfileAction:AppSecReputationProfileAction", id, state, "", opts...)
+}
+
 type appSecReputationProfileActionArgs struct {
 	// Action to be taken when the reputation profile is triggered
 	Action string `pulumi:"action"`

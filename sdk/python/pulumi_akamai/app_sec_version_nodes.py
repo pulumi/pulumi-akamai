@@ -204,6 +204,18 @@ class AppSecVersionNodes(pulumi.CustomResource):
         __props__.__dict__["version_notes"] = version_notes
         return AppSecVersionNodes(resource_name, opts=opts, __props__=__props__)
 
+    @staticmethod
+    def exists(id: pulumi.Input[str],
+            opts: Optional[pulumi.ResourceOptions] = None,
+            config_id: pulumi.Input[Optional[_builtins.int]] = None,
+            output_text: pulumi.Input[Optional[_builtins.str]] = None,
+            version_notes: pulumi.Input[Optional[_builtins.str]] = None) -> pulumi.Output[bool]:
+        __props__: dict = {}
+        __props__["configId"] = config_id
+        __props__["outputText"] = output_text
+        __props__["versionNotes"] = version_notes
+        return pulumi.runtime.exists_resource(None, 'akamai:index/appSecVersionNodes:AppSecVersionNodes', id, __props__, opts or pulumi.ResourceOptions())
+
     @_builtins.property
     @pulumi.getter(name="configId")
     def config_id(self) -> pulumi.Output[_builtins.int]:

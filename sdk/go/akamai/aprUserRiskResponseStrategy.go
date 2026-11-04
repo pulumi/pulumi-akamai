@@ -71,6 +71,12 @@ func (AprUserRiskResponseStrategyState) ElementType() reflect.Type {
 	return reflect.TypeOf((*aprUserRiskResponseStrategyState)(nil)).Elem()
 }
 
+// AprUserRiskResponseStrategyExists checks whether an existing AprUserRiskResponseStrategy resource with the given ID exists.
+func AprUserRiskResponseStrategyExists(ctx *pulumi.Context,
+	id pulumi.StringInput, state *AprUserRiskResponseStrategyState, opts ...pulumi.ResourceOption) pulumi.BoolOutput {
+	return ctx.ExistsResource("akamai:index/aprUserRiskResponseStrategy:AprUserRiskResponseStrategy", id, state, "", opts...)
+}
+
 type aprUserRiskResponseStrategyArgs struct {
 	// Identifies a security configuration.
 	ConfigId                 int    `pulumi:"configId"`

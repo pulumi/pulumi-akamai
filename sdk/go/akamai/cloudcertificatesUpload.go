@@ -125,6 +125,12 @@ func (CloudcertificatesUploadState) ElementType() reflect.Type {
 	return reflect.TypeOf((*cloudcertificatesUploadState)(nil)).Elem()
 }
 
+// CloudcertificatesUploadExists checks whether an existing CloudcertificatesUpload resource with the given ID exists.
+func CloudcertificatesUploadExists(ctx *pulumi.Context,
+	id pulumi.StringInput, state *CloudcertificatesUploadState, opts ...pulumi.ResourceOption) pulumi.BoolOutput {
+	return ctx.ExistsResource("akamai:index/cloudcertificatesUpload:CloudcertificatesUpload", id, state, "", opts...)
+}
+
 type cloudcertificatesUploadArgs struct {
 	// Whether to automatically acknowledge non-fatal warnings when uploading or completing a certificate - whichever operation this resource actually performs, depending on whether the lineage already has a head generation. It's a plain request flag, not a durable property of an already-uploaded certificate, so changing it never forces a replace or re-upload. Defaults to `false`.
 	AcknowledgeWarnings *bool `pulumi:"acknowledgeWarnings"`

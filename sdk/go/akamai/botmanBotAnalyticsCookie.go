@@ -68,6 +68,12 @@ func (BotmanBotAnalyticsCookieState) ElementType() reflect.Type {
 	return reflect.TypeOf((*botmanBotAnalyticsCookieState)(nil)).Elem()
 }
 
+// BotmanBotAnalyticsCookieExists checks whether an existing BotmanBotAnalyticsCookie resource with the given ID exists.
+func BotmanBotAnalyticsCookieExists(ctx *pulumi.Context,
+	id pulumi.StringInput, state *BotmanBotAnalyticsCookieState, opts ...pulumi.ResourceOption) pulumi.BoolOutput {
+	return ctx.ExistsResource("akamai:index/botmanBotAnalyticsCookie:BotmanBotAnalyticsCookie", id, state, "", opts...)
+}
+
 type botmanBotAnalyticsCookieArgs struct {
 	BotAnalyticsCookie string `pulumi:"botAnalyticsCookie"`
 	ConfigId           int    `pulumi:"configId"`

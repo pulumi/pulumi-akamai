@@ -113,6 +113,12 @@ func (PropertyDomainownershipLateValidationState) ElementType() reflect.Type {
 	return reflect.TypeOf((*propertyDomainownershipLateValidationState)(nil)).Elem()
 }
 
+// PropertyDomainownershipLateValidationExists checks whether an existing PropertyDomainownershipLateValidation resource with the given ID exists.
+func PropertyDomainownershipLateValidationExists(ctx *pulumi.Context,
+	id pulumi.StringInput, state *PropertyDomainownershipLateValidationState, opts ...pulumi.ResourceOption) pulumi.BoolOutput {
+	return ctx.ExistsResource("akamai:index/propertyDomainownershipLateValidation:PropertyDomainownershipLateValidation", id, state, "", opts...)
+}
+
 type propertyDomainownershipLateValidationArgs struct {
 	// Contract ID of the Property.
 	ContractId string `pulumi:"contractId"`

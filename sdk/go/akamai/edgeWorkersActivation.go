@@ -107,6 +107,12 @@ func (EdgeWorkersActivationState) ElementType() reflect.Type {
 	return reflect.TypeOf((*edgeWorkersActivationState)(nil)).Elem()
 }
 
+// EdgeWorkersActivationExists checks whether an existing EdgeWorkersActivation resource with the given ID exists.
+func EdgeWorkersActivationExists(ctx *pulumi.Context,
+	id pulumi.StringInput, state *EdgeWorkersActivationState, opts ...pulumi.ResourceOption) pulumi.BoolOutput {
+	return ctx.ExistsResource("akamai:index/edgeWorkersActivation:EdgeWorkersActivation", id, state, "", opts...)
+}
+
 type edgeWorkersActivationArgs struct {
 	// Automatically pin the initial revision during parent EdgeWorker activation.
 	AutoPin *bool `pulumi:"autoPin"`

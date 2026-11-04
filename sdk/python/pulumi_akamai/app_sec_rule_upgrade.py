@@ -283,6 +283,24 @@ class AppSecRuleUpgrade(pulumi.CustomResource):
         __props__.__dict__["upgrade_mode"] = upgrade_mode
         return AppSecRuleUpgrade(resource_name, opts=opts, __props__=__props__)
 
+    @staticmethod
+    def exists(id: pulumi.Input[str],
+            opts: Optional[pulumi.ResourceOptions] = None,
+            config_id: pulumi.Input[Optional[_builtins.int]] = None,
+            current_ruleset: pulumi.Input[Optional[_builtins.str]] = None,
+            eval_status: pulumi.Input[Optional[_builtins.str]] = None,
+            mode: pulumi.Input[Optional[_builtins.str]] = None,
+            security_policy_id: pulumi.Input[Optional[_builtins.str]] = None,
+            upgrade_mode: pulumi.Input[Optional[_builtins.str]] = None) -> pulumi.Output[bool]:
+        __props__: dict = {}
+        __props__["configId"] = config_id
+        __props__["currentRuleset"] = current_ruleset
+        __props__["evalStatus"] = eval_status
+        __props__["mode"] = mode
+        __props__["securityPolicyId"] = security_policy_id
+        __props__["upgradeMode"] = upgrade_mode
+        return pulumi.runtime.exists_resource(None, 'akamai:index/appSecRuleUpgrade:AppSecRuleUpgrade', id, __props__, opts or pulumi.ResourceOptions())
+
     @_builtins.property
     @pulumi.getter(name="configId")
     def config_id(self) -> pulumi.Output[_builtins.int]:

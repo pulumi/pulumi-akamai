@@ -442,6 +442,32 @@ class ClientlistList(pulumi.CustomResource):
         __props__.__dict__["version"] = version
         return ClientlistList(resource_name, opts=opts, __props__=__props__)
 
+    @staticmethod
+    def exists(id: pulumi.Input[str],
+            opts: Optional[pulumi.ResourceOptions] = None,
+            contract_id: pulumi.Input[Optional[_builtins.str]] = None,
+            group_id: pulumi.Input[Optional[_builtins.int]] = None,
+            items: pulumi.Input[Optional[Sequence[pulumi.Input[Union['ClientlistListItemArgs', 'ClientlistListItemArgsDict', 'outputs.ClientlistListItem']]]]] = None,
+            items_count: pulumi.Input[Optional[_builtins.int]] = None,
+            list_id: pulumi.Input[Optional[_builtins.str]] = None,
+            name: pulumi.Input[Optional[_builtins.str]] = None,
+            notes: pulumi.Input[Optional[_builtins.str]] = None,
+            tags: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+            type: pulumi.Input[Optional[_builtins.str]] = None,
+            version: pulumi.Input[Optional[_builtins.int]] = None) -> pulumi.Output[bool]:
+        __props__: dict = {}
+        __props__["contractId"] = contract_id
+        __props__["groupId"] = group_id
+        __props__["items"] = items
+        __props__["itemsCount"] = items_count
+        __props__["listId"] = list_id
+        __props__["name"] = name
+        __props__["notes"] = notes
+        __props__["tags"] = tags
+        __props__["type"] = type
+        __props__["version"] = version
+        return pulumi.runtime.exists_resource(None, 'akamai:index/clientlistList:ClientlistList', id, __props__, opts or pulumi.ResourceOptions())
+
     @_builtins.property
     @pulumi.getter(name="contractId")
     def contract_id(self) -> pulumi.Output[_builtins.str]:

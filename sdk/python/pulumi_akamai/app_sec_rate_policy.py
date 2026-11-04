@@ -204,6 +204,18 @@ class AppSecRatePolicy(pulumi.CustomResource):
         __props__.__dict__["rate_policy_id"] = rate_policy_id
         return AppSecRatePolicy(resource_name, opts=opts, __props__=__props__)
 
+    @staticmethod
+    def exists(id: pulumi.Input[str],
+            opts: Optional[pulumi.ResourceOptions] = None,
+            config_id: pulumi.Input[Optional[_builtins.int]] = None,
+            rate_policy: pulumi.Input[Optional[_builtins.str]] = None,
+            rate_policy_id: pulumi.Input[Optional[_builtins.int]] = None) -> pulumi.Output[bool]:
+        __props__: dict = {}
+        __props__["configId"] = config_id
+        __props__["ratePolicy"] = rate_policy
+        __props__["ratePolicyId"] = rate_policy_id
+        return pulumi.runtime.exists_resource(None, 'akamai:index/appSecRatePolicy:AppSecRatePolicy', id, __props__, opts or pulumi.ResourceOptions())
+
     @_builtins.property
     @pulumi.getter(name="configId")
     def config_id(self) -> pulumi.Output[_builtins.int]:

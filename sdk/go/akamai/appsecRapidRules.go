@@ -92,6 +92,12 @@ func (AppsecRapidRulesState) ElementType() reflect.Type {
 	return reflect.TypeOf((*appsecRapidRulesState)(nil)).Elem()
 }
 
+// AppsecRapidRulesExists checks whether an existing AppsecRapidRules resource with the given ID exists.
+func AppsecRapidRulesExists(ctx *pulumi.Context,
+	id pulumi.StringInput, state *AppsecRapidRulesState, opts ...pulumi.ResourceOption) pulumi.BoolOutput {
+	return ctx.ExistsResource("akamai:index/appsecRapidRules:AppsecRapidRules", id, state, "", opts...)
+}
+
 type appsecRapidRulesArgs struct {
 	// Unique identifier of the security configuration
 	ConfigId int `pulumi:"configId"`

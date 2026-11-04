@@ -92,6 +92,12 @@ func (AppSecCustomRuleActionState) ElementType() reflect.Type {
 	return reflect.TypeOf((*appSecCustomRuleActionState)(nil)).Elem()
 }
 
+// AppSecCustomRuleActionExists checks whether an existing AppSecCustomRuleAction resource with the given ID exists.
+func AppSecCustomRuleActionExists(ctx *pulumi.Context,
+	id pulumi.StringInput, state *AppSecCustomRuleActionState, opts ...pulumi.ResourceOption) pulumi.BoolOutput {
+	return ctx.ExistsResource("akamai:index/appSecCustomRuleAction:AppSecCustomRuleAction", id, state, "", opts...)
+}
+
 type appSecCustomRuleActionArgs struct {
 	// Unique identifier of the security configuration
 	ConfigId int `pulumi:"configId"`

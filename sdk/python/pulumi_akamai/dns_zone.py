@@ -553,6 +553,44 @@ class DnsZone(pulumi.CustomResource):
         __props__.__dict__["zone"] = zone
         return DnsZone(resource_name, opts=opts, __props__=__props__)
 
+    @staticmethod
+    def exists(id: pulumi.Input[str],
+            opts: Optional[pulumi.ResourceOptions] = None,
+            activation_state: pulumi.Input[Optional[_builtins.str]] = None,
+            alias_count: pulumi.Input[Optional[_builtins.int]] = None,
+            comment: pulumi.Input[Optional[_builtins.str]] = None,
+            contract: pulumi.Input[Optional[_builtins.str]] = None,
+            end_customer_id: pulumi.Input[Optional[_builtins.str]] = None,
+            group: pulumi.Input[Optional[_builtins.str]] = None,
+            masters: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+            multi_provider_dnssec: pulumi.Input[Optional[Union['DnsZoneMultiProviderDnssecArgs', 'DnsZoneMultiProviderDnssecArgsDict', 'outputs.DnsZoneMultiProviderDnssec']]] = None,
+            outbound_zone_transfer: pulumi.Input[Optional[Union['DnsZoneOutboundZoneTransferArgs', 'DnsZoneOutboundZoneTransferArgsDict', 'outputs.DnsZoneOutboundZoneTransfer']]] = None,
+            sign_and_serve: pulumi.Input[Optional[_builtins.bool]] = None,
+            sign_and_serve_algorithm: pulumi.Input[Optional[_builtins.str]] = None,
+            target: pulumi.Input[Optional[_builtins.str]] = None,
+            tsig_key: pulumi.Input[Optional[Union['DnsZoneTsigKeyArgs', 'DnsZoneTsigKeyArgsDict', 'outputs.DnsZoneTsigKey']]] = None,
+            type: pulumi.Input[Optional[_builtins.str]] = None,
+            version_id: pulumi.Input[Optional[_builtins.str]] = None,
+            zone: pulumi.Input[Optional[_builtins.str]] = None) -> pulumi.Output[bool]:
+        __props__: dict = {}
+        __props__["activationState"] = activation_state
+        __props__["aliasCount"] = alias_count
+        __props__["comment"] = comment
+        __props__["contract"] = contract
+        __props__["endCustomerId"] = end_customer_id
+        __props__["group"] = group
+        __props__["masters"] = masters
+        __props__["multiProviderDnssec"] = multi_provider_dnssec
+        __props__["outboundZoneTransfer"] = outbound_zone_transfer
+        __props__["signAndServe"] = sign_and_serve
+        __props__["signAndServeAlgorithm"] = sign_and_serve_algorithm
+        __props__["target"] = target
+        __props__["tsigKey"] = tsig_key
+        __props__["type"] = type
+        __props__["versionId"] = version_id
+        __props__["zone"] = zone
+        return pulumi.runtime.exists_resource(None, 'akamai:index/dnsZone:DnsZone', id, __props__, opts or pulumi.ResourceOptions())
+
     @_builtins.property
     @pulumi.getter(name="activationState")
     def activation_state(self) -> pulumi.Output[_builtins.str]:

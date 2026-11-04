@@ -98,6 +98,12 @@ func (EdgekvGroupItemsState) ElementType() reflect.Type {
 	return reflect.TypeOf((*edgekvGroupItemsState)(nil)).Elem()
 }
 
+// EdgekvGroupItemsExists checks whether an existing EdgekvGroupItems resource with the given ID exists.
+func EdgekvGroupItemsExists(ctx *pulumi.Context,
+	id pulumi.StringInput, state *EdgekvGroupItemsState, opts ...pulumi.ResourceOption) pulumi.BoolOutput {
+	return ctx.ExistsResource("akamai:index/edgekvGroupItems:EdgekvGroupItems", id, state, "", opts...)
+}
+
 type edgekvGroupItemsArgs struct {
 	// The name of the EdgeKV group.
 	GroupName string `pulumi:"groupName"`

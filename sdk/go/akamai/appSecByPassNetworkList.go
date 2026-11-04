@@ -83,6 +83,12 @@ func (AppSecByPassNetworkListState) ElementType() reflect.Type {
 	return reflect.TypeOf((*appSecByPassNetworkListState)(nil)).Elem()
 }
 
+// AppSecByPassNetworkListExists checks whether an existing AppSecByPassNetworkList resource with the given ID exists.
+func AppSecByPassNetworkListExists(ctx *pulumi.Context,
+	id pulumi.StringInput, state *AppSecByPassNetworkListState, opts ...pulumi.ResourceOption) pulumi.BoolOutput {
+	return ctx.ExistsResource("akamai:index/appSecByPassNetworkList:AppSecByPassNetworkList", id, state, "", opts...)
+}
+
 type appSecByPassNetworkListArgs struct {
 	// List of network list IDs that compose the bypass list
 	BypassNetworkLists []string `pulumi:"bypassNetworkLists"`

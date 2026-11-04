@@ -74,6 +74,12 @@ func (BotmanRecategorizedAkamaiDefinedBotState) ElementType() reflect.Type {
 	return reflect.TypeOf((*botmanRecategorizedAkamaiDefinedBotState)(nil)).Elem()
 }
 
+// BotmanRecategorizedAkamaiDefinedBotExists checks whether an existing BotmanRecategorizedAkamaiDefinedBot resource with the given ID exists.
+func BotmanRecategorizedAkamaiDefinedBotExists(ctx *pulumi.Context,
+	id pulumi.StringInput, state *BotmanRecategorizedAkamaiDefinedBotState, opts ...pulumi.ResourceOption) pulumi.BoolOutput {
+	return ctx.ExistsResource("akamai:index/botmanRecategorizedAkamaiDefinedBot:BotmanRecategorizedAkamaiDefinedBot", id, state, "", opts...)
+}
+
 type botmanRecategorizedAkamaiDefinedBotArgs struct {
 	BotId      string `pulumi:"botId"`
 	CategoryId string `pulumi:"categoryId"`

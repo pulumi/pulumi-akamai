@@ -113,6 +113,12 @@ func (AppSecEvalState) ElementType() reflect.Type {
 	return reflect.TypeOf((*appSecEvalState)(nil)).Elem()
 }
 
+// AppSecEvalExists checks whether an existing AppSecEval resource with the given ID exists.
+func AppSecEvalExists(ctx *pulumi.Context,
+	id pulumi.StringInput, state *AppSecEvalState, opts ...pulumi.ResourceOption) pulumi.BoolOutput {
+	return ctx.ExistsResource("akamai:index/appSecEval:AppSecEval", id, state, "", opts...)
+}
+
 type appSecEvalArgs struct {
 	// Unique identifier of the security configuration
 	ConfigId int `pulumi:"configId"`

@@ -98,6 +98,12 @@ func (AppsecUrlProtectionActionState) ElementType() reflect.Type {
 	return reflect.TypeOf((*appsecUrlProtectionActionState)(nil)).Elem()
 }
 
+// AppsecUrlProtectionActionExists checks whether an existing AppsecUrlProtectionAction resource with the given ID exists.
+func AppsecUrlProtectionActionExists(ctx *pulumi.Context,
+	id pulumi.StringInput, state *AppsecUrlProtectionActionState, opts ...pulumi.ResourceOption) pulumi.BoolOutput {
+	return ctx.ExistsResource("akamai:index/appsecUrlProtectionAction:AppsecUrlProtectionAction", id, state, "", opts...)
+}
+
 type appsecUrlProtectionActionArgs struct {
 	// Unique identifier of the security configuration
 	ConfigId int `pulumi:"configId"`

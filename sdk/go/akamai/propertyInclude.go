@@ -146,6 +146,12 @@ func (PropertyIncludeState) ElementType() reflect.Type {
 	return reflect.TypeOf((*propertyIncludeState)(nil)).Elem()
 }
 
+// PropertyIncludeExists checks whether an existing PropertyInclude resource with the given ID exists.
+func PropertyIncludeExists(ctx *pulumi.Context,
+	id pulumi.StringInput, state *PropertyIncludeState, opts ...pulumi.ResourceOption) pulumi.BoolOutput {
+	return ctx.ExistsResource("akamai:index/propertyInclude:PropertyInclude", id, state, "", opts...)
+}
+
 type propertyIncludeArgs struct {
 	// Identifies the contract to which the include is assigned
 	ContractId string `pulumi:"contractId"`

@@ -65,6 +65,12 @@ func (PropertyDomainownershipDomainsState) ElementType() reflect.Type {
 	return reflect.TypeOf((*propertyDomainownershipDomainsState)(nil)).Elem()
 }
 
+// PropertyDomainownershipDomainsExists checks whether an existing PropertyDomainownershipDomains resource with the given ID exists.
+func PropertyDomainownershipDomainsExists(ctx *pulumi.Context,
+	id pulumi.StringInput, state *PropertyDomainownershipDomainsState, opts ...pulumi.ResourceOption) pulumi.BoolOutput {
+	return ctx.ExistsResource("akamai:index/propertyDomainownershipDomains:PropertyDomainownershipDomains", id, state, "", opts...)
+}
+
 type propertyDomainownershipDomainsArgs struct {
 	// List of domains.
 	Domains []PropertyDomainownershipDomainsDomain `pulumi:"domains"`

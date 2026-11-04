@@ -74,7 +74,7 @@ namespace Pulumi.Akamai.Outputs
         /// </summary>
         public readonly bool ValueCaseSensitive;
         /// <summary>
-        /// Whether the provided parameter `Value` is a wildcard. This only applies to the `requestHeaderMatch and `uriQueryMatch` condition `Type`.
+        /// Whether the provided parameter `Value` is a wildcard. This only applies to the ` requestHeaderMatch and  `uriQueryMatch`condition`Type`.
         /// </summary>
         public readonly bool ValueWildcard;
 

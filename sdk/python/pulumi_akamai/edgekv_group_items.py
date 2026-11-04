@@ -305,6 +305,22 @@ class EdgekvGroupItems(pulumi.CustomResource):
         __props__.__dict__["timeouts"] = timeouts
         return EdgekvGroupItems(resource_name, opts=opts, __props__=__props__)
 
+    @staticmethod
+    def exists(id: pulumi.Input[str],
+            opts: Optional[pulumi.ResourceOptions] = None,
+            group_name: pulumi.Input[Optional[_builtins.str]] = None,
+            items: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+            namespace_name: pulumi.Input[Optional[_builtins.str]] = None,
+            network: pulumi.Input[Optional[_builtins.str]] = None,
+            timeouts: pulumi.Input[Optional[Union['EdgekvGroupItemsTimeoutsArgs', 'EdgekvGroupItemsTimeoutsArgsDict', 'outputs.EdgekvGroupItemsTimeouts']]] = None) -> pulumi.Output[bool]:
+        __props__: dict = {}
+        __props__["groupName"] = group_name
+        __props__["items"] = items
+        __props__["namespaceName"] = namespace_name
+        __props__["network"] = network
+        __props__["timeouts"] = timeouts
+        return pulumi.runtime.exists_resource(None, 'akamai:index/edgekvGroupItems:EdgekvGroupItems', id, __props__, opts or pulumi.ResourceOptions())
+
     @_builtins.property
     @pulumi.getter(name="groupName")
     def group_name(self) -> pulumi.Output[_builtins.str]:

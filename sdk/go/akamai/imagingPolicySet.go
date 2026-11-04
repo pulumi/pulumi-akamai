@@ -89,6 +89,12 @@ func (ImagingPolicySetState) ElementType() reflect.Type {
 	return reflect.TypeOf((*imagingPolicySetState)(nil)).Elem()
 }
 
+// ImagingPolicySetExists checks whether an existing ImagingPolicySet resource with the given ID exists.
+func ImagingPolicySetExists(ctx *pulumi.Context,
+	id pulumi.StringInput, state *ImagingPolicySetState, opts ...pulumi.ResourceOption) pulumi.BoolOutput {
+	return ctx.ExistsResource("akamai:index/imagingPolicySet:ImagingPolicySet", id, state, "", opts...)
+}
+
 type imagingPolicySetArgs struct {
 	// The unique identifier for the Akamai Contract containing the Policy Set(s)
 	ContractId string `pulumi:"contractId"`

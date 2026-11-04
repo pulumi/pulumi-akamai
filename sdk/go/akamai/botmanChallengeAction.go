@@ -71,6 +71,12 @@ func (BotmanChallengeActionState) ElementType() reflect.Type {
 	return reflect.TypeOf((*botmanChallengeActionState)(nil)).Elem()
 }
 
+// BotmanChallengeActionExists checks whether an existing BotmanChallengeAction resource with the given ID exists.
+func BotmanChallengeActionExists(ctx *pulumi.Context,
+	id pulumi.StringInput, state *BotmanChallengeActionState, opts ...pulumi.ResourceOption) pulumi.BoolOutput {
+	return ctx.ExistsResource("akamai:index/botmanChallengeAction:BotmanChallengeAction", id, state, "", opts...)
+}
+
 type botmanChallengeActionArgs struct {
 	ChallengeAction string `pulumi:"challengeAction"`
 	ConfigId        int    `pulumi:"configId"`

@@ -25,7 +25,7 @@ namespace Pulumi.Akamai.Inputs
         public string DomainName { get; set; } = null!;
 
         /// <summary>
-        /// The domain's validation status. Possible values are: 
+        /// The domain's validation status. Possible values are:
         /// * `REQUEST_ACCEPTED` - When you successfully submit the domain for validation.
         /// * `VALIDATION_IN_PROGRESS` - When the DOM background jobs are trying to validate the domain.
         /// * `VALIDATED` - When the validation is completed successfully. Akamai recognizes you as the domain owner.
@@ -54,7 +54,7 @@ namespace Pulumi.Akamai.Inputs
         public string ValidationLevel { get; set; } = null!;
 
         /// <summary>
-        /// The method used to validate the domain. Possible values are: 
+        /// The method used to validate the domain. Possible values are:
         /// * `DNS_CNAME` - For this method, Akamai generates a `CnameRecord` that you copy as the `Target` to a `CNAME` record of your DNS configuration. The record's name needs to be in the `_acme-challenge.domain-name` format.
         /// * `DNS_TXT` - For this method, Akamai generates a `TxtRecord` with a token `Value` that you copy as the `Target` to a `TXT` record of your DNS configuration. The record's name needs to be in the `_akamai-{host|wildcard|domain}-challenge.domainName` format based on the validation scope.
         /// * `HTTP` - Applies only to domains with the `HOST` validation scope. For this method, you create the file containing a token and place it on your HTTP server in the location specified by the `validation_challenge.http_file.path` or use a redirect to the `validation_challenge.http_redirect.to` with the token.
@@ -77,7 +77,7 @@ namespace Pulumi.Akamai.Inputs
         public string ValidationRequestedDate { get; set; } = null!;
 
         /// <summary>
-        /// Your domain's validation scope. Possible values are: 
+        /// Your domain's validation scope. Possible values are:
         /// * `HOST` - The scope is only the exactly specified domain.
         /// * `WILDCARD` - The scope covers any hostname within one subdomain level.
         /// * `DOMAIN` - The scope covers any hostnames under the domain, regardless of the level of subdomains.

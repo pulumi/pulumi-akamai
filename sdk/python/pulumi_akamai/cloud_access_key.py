@@ -489,6 +489,32 @@ class CloudAccessKey(pulumi.CustomResource):
         __props__.__dict__["timeouts"] = timeouts
         return CloudAccessKey(resource_name, opts=opts, __props__=__props__)
 
+    @staticmethod
+    def exists(id: pulumi.Input[str],
+            opts: Optional[pulumi.ResourceOptions] = None,
+            access_key_name: pulumi.Input[Optional[_builtins.str]] = None,
+            access_key_uid: pulumi.Input[Optional[_builtins.int]] = None,
+            authentication_method: pulumi.Input[Optional[_builtins.str]] = None,
+            contract_id: pulumi.Input[Optional[_builtins.str]] = None,
+            credentials_a: pulumi.Input[Optional[Union['CloudAccessKeyCredentialsAArgs', 'CloudAccessKeyCredentialsAArgsDict', 'outputs.CloudAccessKeyCredentialsA']]] = None,
+            credentials_b: pulumi.Input[Optional[Union['CloudAccessKeyCredentialsBArgs', 'CloudAccessKeyCredentialsBArgsDict', 'outputs.CloudAccessKeyCredentialsB']]] = None,
+            group_id: pulumi.Input[Optional[_builtins.int]] = None,
+            network_configuration: pulumi.Input[Optional[Union['CloudAccessKeyNetworkConfigurationArgs', 'CloudAccessKeyNetworkConfigurationArgsDict', 'outputs.CloudAccessKeyNetworkConfiguration']]] = None,
+            primary_guid: pulumi.Input[Optional[_builtins.str]] = None,
+            timeouts: pulumi.Input[Optional[Union['CloudAccessKeyTimeoutsArgs', 'CloudAccessKeyTimeoutsArgsDict', 'outputs.CloudAccessKeyTimeouts']]] = None) -> pulumi.Output[bool]:
+        __props__: dict = {}
+        __props__["accessKeyName"] = access_key_name
+        __props__["accessKeyUid"] = access_key_uid
+        __props__["authenticationMethod"] = authentication_method
+        __props__["contractId"] = contract_id
+        __props__["credentialsA"] = credentials_a
+        __props__["credentialsB"] = credentials_b
+        __props__["groupId"] = group_id
+        __props__["networkConfiguration"] = network_configuration
+        __props__["primaryGuid"] = primary_guid
+        __props__["timeouts"] = timeouts
+        return pulumi.runtime.exists_resource(None, 'akamai:index/cloudAccessKey:CloudAccessKey', id, __props__, opts or pulumi.ResourceOptions())
+
     @_builtins.property
     @pulumi.getter(name="accessKeyName")
     def access_key_name(self) -> pulumi.Output[_builtins.str]:

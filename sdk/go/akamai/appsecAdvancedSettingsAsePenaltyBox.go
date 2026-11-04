@@ -83,6 +83,12 @@ func (AppsecAdvancedSettingsAsePenaltyBoxState) ElementType() reflect.Type {
 	return reflect.TypeOf((*appsecAdvancedSettingsAsePenaltyBoxState)(nil)).Elem()
 }
 
+// AppsecAdvancedSettingsAsePenaltyBoxExists checks whether an existing AppsecAdvancedSettingsAsePenaltyBox resource with the given ID exists.
+func AppsecAdvancedSettingsAsePenaltyBoxExists(ctx *pulumi.Context,
+	id pulumi.StringInput, state *AppsecAdvancedSettingsAsePenaltyBoxState, opts ...pulumi.ResourceOption) pulumi.BoolOutput {
+	return ctx.ExistsResource("akamai:index/appsecAdvancedSettingsAsePenaltyBox:AppsecAdvancedSettingsAsePenaltyBox", id, state, "", opts...)
+}
+
 type appsecAdvancedSettingsAsePenaltyBoxArgs struct {
 	// Block duration for ASE Penalty Box in minutes.
 	BlockDuration int `pulumi:"blockDuration"`

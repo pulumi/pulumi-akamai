@@ -253,6 +253,22 @@ class GtmCidrmap(pulumi.CustomResource):
         __props__.__dict__["wait_on_complete"] = wait_on_complete
         return GtmCidrmap(resource_name, opts=opts, __props__=__props__)
 
+    @staticmethod
+    def exists(id: pulumi.Input[str],
+            opts: Optional[pulumi.ResourceOptions] = None,
+            assignments: pulumi.Input[Optional[Sequence[pulumi.Input[Union['GtmCidrmapAssignmentArgs', 'GtmCidrmapAssignmentArgsDict', 'outputs.GtmCidrmapAssignment']]]]] = None,
+            default_datacenter: pulumi.Input[Optional[Union['GtmCidrmapDefaultDatacenterArgs', 'GtmCidrmapDefaultDatacenterArgsDict', 'outputs.GtmCidrmapDefaultDatacenter']]] = None,
+            domain: pulumi.Input[Optional[_builtins.str]] = None,
+            name: pulumi.Input[Optional[_builtins.str]] = None,
+            wait_on_complete: pulumi.Input[Optional[_builtins.bool]] = None) -> pulumi.Output[bool]:
+        __props__: dict = {}
+        __props__["assignments"] = assignments
+        __props__["defaultDatacenter"] = default_datacenter
+        __props__["domain"] = domain
+        __props__["name"] = name
+        __props__["waitOnComplete"] = wait_on_complete
+        return pulumi.runtime.exists_resource(None, 'akamai:index/gtmCidrmap:GtmCidrmap', id, __props__, opts or pulumi.ResourceOptions())
+
     @_builtins.property
     @pulumi.getter
     def assignments(self) -> pulumi.Output[Optional[Sequence['outputs.GtmCidrmapAssignment']]]:

@@ -14,7 +14,7 @@ namespace Pulumi.Akamai.Outputs
     public sealed class GetPropertyHostnameAuditHistoryHistoryResult
     {
         /// <summary>
-        /// The type of action performed to the property hostname. Possible values are: 
+        /// The type of action performed to the property hostname. Possible values are:
         /// * `ACTIVATE` - When the hostname is currently serving traffic.
         /// * `DEACTIVATE` - When the hostname isn't serving traffic.
         /// * `ADD` - When the user requested to add the hostname to a property.
@@ -26,7 +26,7 @@ namespace Pulumi.Akamai.Outputs
         /// </summary>
         public readonly string Action;
         /// <summary>
-        /// The type of certificate used in the property hostname. Possible values are: 
+        /// The type of certificate used in the property hostname. Possible values are:
         /// * `CPS_MANAGED` - For certificates you create with the Certificate Provisioning System API (CPS).
         /// * `DEFAULT` - For Default Domain Validation (DV) certificates deployed automatically.
         /// * `CCM` - For the third party certificates created with the Cloud Certificate Manager.
@@ -49,7 +49,7 @@ namespace Pulumi.Akamai.Outputs
         /// </summary>
         public readonly string GroupId;
         /// <summary>
-        /// The network of activated hostnames. Possible values are: 
+        /// The network of activated hostnames. Possible values are:
         /// * `STAGING` - Staging network.
         /// * `PRODUCTION` - Production network.
         /// </summary>

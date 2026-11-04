@@ -304,6 +304,22 @@ class AppSecRatePolicyAction(pulumi.CustomResource):
         __props__.__dict__["security_policy_id"] = security_policy_id
         return AppSecRatePolicyAction(resource_name, opts=opts, __props__=__props__)
 
+    @staticmethod
+    def exists(id: pulumi.Input[str],
+            opts: Optional[pulumi.ResourceOptions] = None,
+            config_id: pulumi.Input[Optional[_builtins.int]] = None,
+            ipv4_action: pulumi.Input[Optional[_builtins.str]] = None,
+            ipv6_action: pulumi.Input[Optional[_builtins.str]] = None,
+            rate_policy_id: pulumi.Input[Optional[_builtins.int]] = None,
+            security_policy_id: pulumi.Input[Optional[_builtins.str]] = None) -> pulumi.Output[bool]:
+        __props__: dict = {}
+        __props__["configId"] = config_id
+        __props__["ipv4Action"] = ipv4_action
+        __props__["ipv6Action"] = ipv6_action
+        __props__["ratePolicyId"] = rate_policy_id
+        __props__["securityPolicyId"] = security_policy_id
+        return pulumi.runtime.exists_resource(None, 'akamai:index/appSecRatePolicyAction:AppSecRatePolicyAction', id, __props__, opts or pulumi.ResourceOptions())
+
     @_builtins.property
     @pulumi.getter(name="configId")
     def config_id(self) -> pulumi.Output[_builtins.int]:

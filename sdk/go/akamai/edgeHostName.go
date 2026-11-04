@@ -122,6 +122,12 @@ func (EdgeHostNameState) ElementType() reflect.Type {
 	return reflect.TypeOf((*edgeHostNameState)(nil)).Elem()
 }
 
+// EdgeHostNameExists checks whether an existing EdgeHostName resource with the given ID exists.
+func EdgeHostNameExists(ctx *pulumi.Context,
+	id pulumi.StringInput, state *EdgeHostNameState, opts ...pulumi.ResourceOption) pulumi.BoolOutput {
+	return ctx.ExistsResource("akamai:index/edgeHostName:EdgeHostName", id, state, "", opts...)
+}
+
 type edgeHostNameArgs struct {
 	Certificate  *int   `pulumi:"certificate"`
 	ContractId   string `pulumi:"contractId"`

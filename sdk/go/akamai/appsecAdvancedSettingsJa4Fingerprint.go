@@ -71,6 +71,12 @@ func (AppsecAdvancedSettingsJa4FingerprintState) ElementType() reflect.Type {
 	return reflect.TypeOf((*appsecAdvancedSettingsJa4FingerprintState)(nil)).Elem()
 }
 
+// AppsecAdvancedSettingsJa4FingerprintExists checks whether an existing AppsecAdvancedSettingsJa4Fingerprint resource with the given ID exists.
+func AppsecAdvancedSettingsJa4FingerprintExists(ctx *pulumi.Context,
+	id pulumi.StringInput, state *AppsecAdvancedSettingsJa4FingerprintState, opts ...pulumi.ResourceOption) pulumi.BoolOutput {
+	return ctx.ExistsResource("akamai:index/appsecAdvancedSettingsJa4Fingerprint:AppsecAdvancedSettingsJa4Fingerprint", id, state, "", opts...)
+}
+
 type appsecAdvancedSettingsJa4FingerprintArgs struct {
 	// Unique identifier of the security configuration
 	ConfigId int `pulumi:"configId"`

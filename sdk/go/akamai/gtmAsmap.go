@@ -83,6 +83,12 @@ func (GtmAsmapState) ElementType() reflect.Type {
 	return reflect.TypeOf((*gtmAsmapState)(nil)).Elem()
 }
 
+// GtmAsmapExists checks whether an existing GtmAsmap resource with the given ID exists.
+func GtmAsmapExists(ctx *pulumi.Context,
+	id pulumi.StringInput, state *GtmAsmapState, opts ...pulumi.ResourceOption) pulumi.BoolOutput {
+	return ctx.ExistsResource("akamai:index/gtmAsmap:GtmAsmap", id, state, "", opts...)
+}
+
 type gtmAsmapArgs struct {
 	Assignments       []GtmAsmapAssignment      `pulumi:"assignments"`
 	DefaultDatacenter GtmAsmapDefaultDatacenter `pulumi:"defaultDatacenter"`

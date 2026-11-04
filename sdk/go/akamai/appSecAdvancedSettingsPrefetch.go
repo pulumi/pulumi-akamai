@@ -101,6 +101,12 @@ func (AppSecAdvancedSettingsPrefetchState) ElementType() reflect.Type {
 	return reflect.TypeOf((*appSecAdvancedSettingsPrefetchState)(nil)).Elem()
 }
 
+// AppSecAdvancedSettingsPrefetchExists checks whether an existing AppSecAdvancedSettingsPrefetch resource with the given ID exists.
+func AppSecAdvancedSettingsPrefetchExists(ctx *pulumi.Context,
+	id pulumi.StringInput, state *AppSecAdvancedSettingsPrefetchState, opts ...pulumi.ResourceOption) pulumi.BoolOutput {
+	return ctx.ExistsResource("akamai:index/appSecAdvancedSettingsPrefetch:AppSecAdvancedSettingsPrefetch", id, state, "", opts...)
+}
+
 type appSecAdvancedSettingsPrefetchArgs struct {
 	// Whether to enable prefetch requests for all file extensions
 	AllExtensions bool `pulumi:"allExtensions"`

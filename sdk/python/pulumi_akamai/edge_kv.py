@@ -303,6 +303,22 @@ class EdgeKv(pulumi.CustomResource):
         __props__.__dict__["retention_in_seconds"] = retention_in_seconds
         return EdgeKv(resource_name, opts=opts, __props__=__props__)
 
+    @staticmethod
+    def exists(id: pulumi.Input[str],
+            opts: Optional[pulumi.ResourceOptions] = None,
+            geo_location: pulumi.Input[Optional[_builtins.str]] = None,
+            group_id: pulumi.Input[Optional[_builtins.int]] = None,
+            namespace_name: pulumi.Input[Optional[_builtins.str]] = None,
+            network: pulumi.Input[Optional[_builtins.str]] = None,
+            retention_in_seconds: pulumi.Input[Optional[_builtins.int]] = None) -> pulumi.Output[bool]:
+        __props__: dict = {}
+        __props__["geoLocation"] = geo_location
+        __props__["groupId"] = group_id
+        __props__["namespaceName"] = namespace_name
+        __props__["network"] = network
+        __props__["retentionInSeconds"] = retention_in_seconds
+        return pulumi.runtime.exists_resource(None, 'akamai:index/edgeKv:EdgeKv', id, __props__, opts or pulumi.ResourceOptions())
+
     @_builtins.property
     @pulumi.getter(name="geoLocation")
     def geo_location(self) -> pulumi.Output[Optional[_builtins.str]]:

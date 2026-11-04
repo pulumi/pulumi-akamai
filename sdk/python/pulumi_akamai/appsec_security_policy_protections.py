@@ -584,6 +584,36 @@ class AppsecSecurityPolicyProtections(pulumi.CustomResource):
         __props__.__dict__["security_policy_id"] = security_policy_id
         return AppsecSecurityPolicyProtections(resource_name, opts=opts, __props__=__props__)
 
+    @staticmethod
+    def exists(id: pulumi.Input[str],
+            opts: Optional[pulumi.ResourceOptions] = None,
+            apply_account_protection_controls: pulumi.Input[Optional[_builtins.bool]] = None,
+            apply_api_constraints: pulumi.Input[Optional[_builtins.bool]] = None,
+            apply_application_layer_controls: pulumi.Input[Optional[_builtins.bool]] = None,
+            apply_botman_controls: pulumi.Input[Optional[_builtins.bool]] = None,
+            apply_malware_controls: pulumi.Input[Optional[_builtins.bool]] = None,
+            apply_network_layer_controls: pulumi.Input[Optional[_builtins.bool]] = None,
+            apply_rate_controls: pulumi.Input[Optional[_builtins.bool]] = None,
+            apply_reputation_controls: pulumi.Input[Optional[_builtins.bool]] = None,
+            apply_slow_post_controls: pulumi.Input[Optional[_builtins.bool]] = None,
+            apply_url_protection_controls: pulumi.Input[Optional[_builtins.bool]] = None,
+            config_id: pulumi.Input[Optional[_builtins.int]] = None,
+            security_policy_id: pulumi.Input[Optional[_builtins.str]] = None) -> pulumi.Output[bool]:
+        __props__: dict = {}
+        __props__["applyAccountProtectionControls"] = apply_account_protection_controls
+        __props__["applyApiConstraints"] = apply_api_constraints
+        __props__["applyApplicationLayerControls"] = apply_application_layer_controls
+        __props__["applyBotmanControls"] = apply_botman_controls
+        __props__["applyMalwareControls"] = apply_malware_controls
+        __props__["applyNetworkLayerControls"] = apply_network_layer_controls
+        __props__["applyRateControls"] = apply_rate_controls
+        __props__["applyReputationControls"] = apply_reputation_controls
+        __props__["applySlowPostControls"] = apply_slow_post_controls
+        __props__["applyUrlProtectionControls"] = apply_url_protection_controls
+        __props__["configId"] = config_id
+        __props__["securityPolicyId"] = security_policy_id
+        return pulumi.runtime.exists_resource(None, 'akamai:index/appsecSecurityPolicyProtections:AppsecSecurityPolicyProtections', id, __props__, opts or pulumi.ResourceOptions())
+
     @_builtins.property
     @pulumi.getter(name="applyAccountProtectionControls")
     def apply_account_protection_controls(self) -> pulumi.Output[_builtins.bool]:

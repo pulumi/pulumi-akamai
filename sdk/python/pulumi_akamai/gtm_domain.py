@@ -905,6 +905,84 @@ class GtmDomain(pulumi.CustomResource):
         __props__.__dict__["wait_on_complete"] = wait_on_complete
         return GtmDomain(resource_name, opts=opts, __props__=__props__)
 
+    @staticmethod
+    def exists(id: pulumi.Input[str],
+            opts: Optional[pulumi.ResourceOptions] = None,
+            cname_coalescing_enabled: pulumi.Input[Optional[_builtins.bool]] = None,
+            comment: pulumi.Input[Optional[_builtins.str]] = None,
+            contract: pulumi.Input[Optional[_builtins.str]] = None,
+            default_error_penalty: pulumi.Input[Optional[_builtins.int]] = None,
+            default_health_max: pulumi.Input[Optional[_builtins.float]] = None,
+            default_health_multiplier: pulumi.Input[Optional[_builtins.float]] = None,
+            default_health_threshold: pulumi.Input[Optional[_builtins.float]] = None,
+            default_max_unreachable_penalty: pulumi.Input[Optional[_builtins.int]] = None,
+            default_ssl_client_certificate: pulumi.Input[Optional[_builtins.str]] = None,
+            default_ssl_client_private_key: pulumi.Input[Optional[_builtins.str]] = None,
+            default_timeout_penalty: pulumi.Input[Optional[_builtins.int]] = None,
+            default_unreachable_threshold: pulumi.Input[Optional[_builtins.float]] = None,
+            email_notification_lists: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+            end_user_mapping_enabled: pulumi.Input[Optional[_builtins.bool]] = None,
+            group: pulumi.Input[Optional[_builtins.str]] = None,
+            load_feedback: pulumi.Input[Optional[_builtins.bool]] = None,
+            load_imbalance_percentage: pulumi.Input[Optional[_builtins.float]] = None,
+            map_update_interval: pulumi.Input[Optional[_builtins.int]] = None,
+            max_properties: pulumi.Input[Optional[_builtins.int]] = None,
+            max_resources: pulumi.Input[Optional[_builtins.int]] = None,
+            max_test_timeout: pulumi.Input[Optional[_builtins.float]] = None,
+            max_ttl: pulumi.Input[Optional[_builtins.int]] = None,
+            min_pingable_region_fraction: pulumi.Input[Optional[_builtins.float]] = None,
+            min_test_interval: pulumi.Input[Optional[_builtins.int]] = None,
+            min_ttl: pulumi.Input[Optional[_builtins.int]] = None,
+            name: pulumi.Input[Optional[_builtins.str]] = None,
+            ping_interval: pulumi.Input[Optional[_builtins.int]] = None,
+            ping_packet_size: pulumi.Input[Optional[_builtins.int]] = None,
+            round_robin_prefix: pulumi.Input[Optional[_builtins.str]] = None,
+            servermonitor_liveness_count: pulumi.Input[Optional[_builtins.int]] = None,
+            servermonitor_load_count: pulumi.Input[Optional[_builtins.int]] = None,
+            servermonitor_pool: pulumi.Input[Optional[_builtins.str]] = None,
+            sign_and_serve: pulumi.Input[Optional[_builtins.bool]] = None,
+            sign_and_serve_algorithm: pulumi.Input[Optional[_builtins.str]] = None,
+            type: pulumi.Input[Optional[_builtins.str]] = None,
+            wait_on_complete: pulumi.Input[Optional[_builtins.bool]] = None) -> pulumi.Output[bool]:
+        __props__: dict = {}
+        __props__["cnameCoalescingEnabled"] = cname_coalescing_enabled
+        __props__["comment"] = comment
+        __props__["contract"] = contract
+        __props__["defaultErrorPenalty"] = default_error_penalty
+        __props__["defaultHealthMax"] = default_health_max
+        __props__["defaultHealthMultiplier"] = default_health_multiplier
+        __props__["defaultHealthThreshold"] = default_health_threshold
+        __props__["defaultMaxUnreachablePenalty"] = default_max_unreachable_penalty
+        __props__["defaultSslClientCertificate"] = default_ssl_client_certificate
+        __props__["defaultSslClientPrivateKey"] = default_ssl_client_private_key
+        __props__["defaultTimeoutPenalty"] = default_timeout_penalty
+        __props__["defaultUnreachableThreshold"] = default_unreachable_threshold
+        __props__["emailNotificationLists"] = email_notification_lists
+        __props__["endUserMappingEnabled"] = end_user_mapping_enabled
+        __props__["group"] = group
+        __props__["loadFeedback"] = load_feedback
+        __props__["loadImbalancePercentage"] = load_imbalance_percentage
+        __props__["mapUpdateInterval"] = map_update_interval
+        __props__["maxProperties"] = max_properties
+        __props__["maxResources"] = max_resources
+        __props__["maxTestTimeout"] = max_test_timeout
+        __props__["maxTtl"] = max_ttl
+        __props__["minPingableRegionFraction"] = min_pingable_region_fraction
+        __props__["minTestInterval"] = min_test_interval
+        __props__["minTtl"] = min_ttl
+        __props__["name"] = name
+        __props__["pingInterval"] = ping_interval
+        __props__["pingPacketSize"] = ping_packet_size
+        __props__["roundRobinPrefix"] = round_robin_prefix
+        __props__["servermonitorLivenessCount"] = servermonitor_liveness_count
+        __props__["servermonitorLoadCount"] = servermonitor_load_count
+        __props__["servermonitorPool"] = servermonitor_pool
+        __props__["signAndServe"] = sign_and_serve
+        __props__["signAndServeAlgorithm"] = sign_and_serve_algorithm
+        __props__["type"] = type
+        __props__["waitOnComplete"] = wait_on_complete
+        return pulumi.runtime.exists_resource(None, 'akamai:index/gtmDomain:GtmDomain', id, __props__, opts or pulumi.ResourceOptions())
+
     @_builtins.property
     @pulumi.getter(name="cnameCoalescingEnabled")
     def cname_coalescing_enabled(self) -> pulumi.Output[Optional[_builtins.bool]]:

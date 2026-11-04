@@ -542,6 +542,38 @@ class PropertyActivation(pulumi.CustomResource):
         __props__.__dict__["warnings"] = warnings
         return PropertyActivation(resource_name, opts=opts, __props__=__props__)
 
+    @staticmethod
+    def exists(id: pulumi.Input[str],
+            opts: Optional[pulumi.ResourceOptions] = None,
+            activation_id: pulumi.Input[Optional[_builtins.str]] = None,
+            auto_acknowledge_rule_warnings: pulumi.Input[Optional[_builtins.bool]] = None,
+            compliance_record: pulumi.Input[Optional[Union['PropertyActivationComplianceRecordArgs', 'PropertyActivationComplianceRecordArgsDict', 'outputs.PropertyActivationComplianceRecord']]] = None,
+            contacts: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+            errors: pulumi.Input[Optional[_builtins.str]] = None,
+            network: pulumi.Input[Optional[_builtins.str]] = None,
+            note: pulumi.Input[Optional[_builtins.str]] = None,
+            property_id: pulumi.Input[Optional[_builtins.str]] = None,
+            rule_errors: pulumi.Input[Optional[Sequence[pulumi.Input[Union['PropertyActivationRuleErrorArgs', 'PropertyActivationRuleErrorArgsDict', 'outputs.PropertyActivationRuleError']]]]] = None,
+            status: pulumi.Input[Optional[_builtins.str]] = None,
+            timeouts: pulumi.Input[Optional[Union['PropertyActivationTimeoutsArgs', 'PropertyActivationTimeoutsArgsDict', 'outputs.PropertyActivationTimeouts']]] = None,
+            version: pulumi.Input[Optional[_builtins.int]] = None,
+            warnings: pulumi.Input[Optional[_builtins.str]] = None) -> pulumi.Output[bool]:
+        __props__: dict = {}
+        __props__["activationId"] = activation_id
+        __props__["autoAcknowledgeRuleWarnings"] = auto_acknowledge_rule_warnings
+        __props__["complianceRecord"] = compliance_record
+        __props__["contacts"] = contacts
+        __props__["errors"] = errors
+        __props__["network"] = network
+        __props__["note"] = note
+        __props__["propertyId"] = property_id
+        __props__["ruleErrors"] = rule_errors
+        __props__["status"] = status
+        __props__["timeouts"] = timeouts
+        __props__["version"] = version
+        __props__["warnings"] = warnings
+        return pulumi.runtime.exists_resource(None, 'akamai:index/propertyActivation:PropertyActivation', id, __props__, opts or pulumi.ResourceOptions())
+
     @_builtins.property
     @pulumi.getter(name="activationId")
     def activation_id(self) -> pulumi.Output[_builtins.str]:

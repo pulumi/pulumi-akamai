@@ -246,6 +246,20 @@ class ReportinggroupsGroup(pulumi.CustomResource):
         __props__.__dict__["reporting_group_name"] = reporting_group_name
         return ReportinggroupsGroup(resource_name, opts=opts, __props__=__props__)
 
+    @staticmethod
+    def exists(id: pulumi.Input[str],
+            opts: Optional[pulumi.ResourceOptions] = None,
+            access_group: pulumi.Input[Optional[Union['ReportinggroupsGroupAccessGroupArgs', 'ReportinggroupsGroupAccessGroupArgsDict', 'outputs.ReportinggroupsGroupAccessGroup']]] = None,
+            contract: pulumi.Input[Optional[Union['ReportinggroupsGroupContractArgs', 'ReportinggroupsGroupContractArgsDict', 'outputs.ReportinggroupsGroupContract']]] = None,
+            reporting_group_id: pulumi.Input[Optional[_builtins.int]] = None,
+            reporting_group_name: pulumi.Input[Optional[_builtins.str]] = None) -> pulumi.Output[bool]:
+        __props__: dict = {}
+        __props__["accessGroup"] = access_group
+        __props__["contract"] = contract
+        __props__["reportingGroupId"] = reporting_group_id
+        __props__["reportingGroupName"] = reporting_group_name
+        return pulumi.runtime.exists_resource(None, 'akamai:index/reportinggroupsGroup:ReportinggroupsGroup', id, __props__, opts or pulumi.ResourceOptions())
+
     @_builtins.property
     @pulumi.getter(name="accessGroup")
     def access_group(self) -> pulumi.Output['outputs.ReportinggroupsGroupAccessGroup']:

@@ -173,6 +173,12 @@ func (MtlskeystoreClientCertificateAkamaiState) ElementType() reflect.Type {
 	return reflect.TypeOf((*mtlskeystoreClientCertificateAkamaiState)(nil)).Elem()
 }
 
+// MtlskeystoreClientCertificateAkamaiExists checks whether an existing MtlskeystoreClientCertificateAkamai resource with the given ID exists.
+func MtlskeystoreClientCertificateAkamaiExists(ctx *pulumi.Context,
+	id pulumi.StringInput, state *MtlskeystoreClientCertificateAkamaiState, opts ...pulumi.ResourceOption) pulumi.BoolOutput {
+	return ctx.ExistsResource("akamai:index/mtlskeystoreClientCertificateAkamai:MtlskeystoreClientCertificateAkamai", id, state, "", opts...)
+}
+
 type mtlskeystoreClientCertificateAkamaiArgs struct {
 	// The name of the client certificate. Must be between 1 and 64 characters.
 	CertificateName string `pulumi:"certificateName"`

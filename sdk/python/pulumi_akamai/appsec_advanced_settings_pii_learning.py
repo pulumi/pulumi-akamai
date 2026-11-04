@@ -184,6 +184,16 @@ class AppsecAdvancedSettingsPiiLearning(pulumi.CustomResource):
         __props__.__dict__["enable_pii_learning"] = enable_pii_learning
         return AppsecAdvancedSettingsPiiLearning(resource_name, opts=opts, __props__=__props__)
 
+    @staticmethod
+    def exists(id: pulumi.Input[str],
+            opts: Optional[pulumi.ResourceOptions] = None,
+            config_id: pulumi.Input[Optional[_builtins.int]] = None,
+            enable_pii_learning: pulumi.Input[Optional[_builtins.bool]] = None) -> pulumi.Output[bool]:
+        __props__: dict = {}
+        __props__["configId"] = config_id
+        __props__["enablePiiLearning"] = enable_pii_learning
+        return pulumi.runtime.exists_resource(None, 'akamai:index/appsecAdvancedSettingsPiiLearning:AppsecAdvancedSettingsPiiLearning', id, __props__, opts or pulumi.ResourceOptions())
+
     @_builtins.property
     @pulumi.getter(name="configId")
     def config_id(self) -> pulumi.Output[_builtins.int]:

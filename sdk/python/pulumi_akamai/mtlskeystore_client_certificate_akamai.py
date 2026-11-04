@@ -651,6 +651,46 @@ class MtlskeystoreClientCertificateAkamai(pulumi.CustomResource):
         __props__.__dict__["versions"] = versions
         return MtlskeystoreClientCertificateAkamai(resource_name, opts=opts, __props__=__props__)
 
+    @staticmethod
+    def exists(id: pulumi.Input[str],
+            opts: Optional[pulumi.ResourceOptions] = None,
+            certificate_id: pulumi.Input[Optional[_builtins.int]] = None,
+            certificate_name: pulumi.Input[Optional[_builtins.str]] = None,
+            contract_id: pulumi.Input[Optional[_builtins.str]] = None,
+            created_by: pulumi.Input[Optional[_builtins.str]] = None,
+            created_date: pulumi.Input[Optional[_builtins.str]] = None,
+            current_guid: pulumi.Input[Optional[_builtins.str]] = None,
+            geography: pulumi.Input[Optional[_builtins.str]] = None,
+            group_id: pulumi.Input[Optional[_builtins.int]] = None,
+            key_algorithm: pulumi.Input[Optional[_builtins.str]] = None,
+            notification_emails: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+            preferred_ca: pulumi.Input[Optional[_builtins.str]] = None,
+            previous_guid: pulumi.Input[Optional[_builtins.str]] = None,
+            revoked_versions: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.int]]]] = None,
+            secure_network: pulumi.Input[Optional[_builtins.str]] = None,
+            subject: pulumi.Input[Optional[_builtins.str]] = None,
+            timeouts: pulumi.Input[Optional[Union['MtlskeystoreClientCertificateAkamaiTimeoutsArgs', 'MtlskeystoreClientCertificateAkamaiTimeoutsArgsDict', 'outputs.MtlskeystoreClientCertificateAkamaiTimeouts']]] = None,
+            versions: pulumi.Input[Optional[Sequence[pulumi.Input[Union['MtlskeystoreClientCertificateAkamaiVersionArgs', 'MtlskeystoreClientCertificateAkamaiVersionArgsDict', 'outputs.MtlskeystoreClientCertificateAkamaiVersion']]]]] = None) -> pulumi.Output[bool]:
+        __props__: dict = {}
+        __props__["certificateId"] = certificate_id
+        __props__["certificateName"] = certificate_name
+        __props__["contractId"] = contract_id
+        __props__["createdBy"] = created_by
+        __props__["createdDate"] = created_date
+        __props__["currentGuid"] = current_guid
+        __props__["geography"] = geography
+        __props__["groupId"] = group_id
+        __props__["keyAlgorithm"] = key_algorithm
+        __props__["notificationEmails"] = notification_emails
+        __props__["preferredCa"] = preferred_ca
+        __props__["previousGuid"] = previous_guid
+        __props__["revokedVersions"] = revoked_versions
+        __props__["secureNetwork"] = secure_network
+        __props__["subject"] = subject
+        __props__["timeouts"] = timeouts
+        __props__["versions"] = versions
+        return pulumi.runtime.exists_resource(None, 'akamai:index/mtlskeystoreClientCertificateAkamai:MtlskeystoreClientCertificateAkamai', id, __props__, opts or pulumi.ResourceOptions())
+
     @_builtins.property
     @pulumi.getter(name="certificateId")
     def certificate_id(self) -> pulumi.Output[_builtins.int]:

@@ -323,6 +323,24 @@ class ImagingPolicyVideo(pulumi.CustomResource):
         __props__.__dict__["version"] = version
         return ImagingPolicyVideo(resource_name, opts=opts, __props__=__props__)
 
+    @staticmethod
+    def exists(id: pulumi.Input[str],
+            opts: Optional[pulumi.ResourceOptions] = None,
+            activate_on_production: pulumi.Input[Optional[_builtins.bool]] = None,
+            contract_id: pulumi.Input[Optional[_builtins.str]] = None,
+            json: pulumi.Input[Optional[_builtins.str]] = None,
+            policy_id: pulumi.Input[Optional[_builtins.str]] = None,
+            policyset_id: pulumi.Input[Optional[_builtins.str]] = None,
+            version: pulumi.Input[Optional[_builtins.int]] = None) -> pulumi.Output[bool]:
+        __props__: dict = {}
+        __props__["activateOnProduction"] = activate_on_production
+        __props__["contractId"] = contract_id
+        __props__["json"] = json
+        __props__["policyId"] = policy_id
+        __props__["policysetId"] = policyset_id
+        __props__["version"] = version
+        return pulumi.runtime.exists_resource(None, 'akamai:index/imagingPolicyVideo:ImagingPolicyVideo', id, __props__, opts or pulumi.ResourceOptions())
+
     @_builtins.property
     @pulumi.getter(name="activateOnProduction")
     def activate_on_production(self) -> pulumi.Output[Optional[_builtins.bool]]:

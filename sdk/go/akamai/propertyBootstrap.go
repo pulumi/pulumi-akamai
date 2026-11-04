@@ -101,6 +101,12 @@ func (PropertyBootstrapState) ElementType() reflect.Type {
 	return reflect.TypeOf((*propertyBootstrapState)(nil)).Elem()
 }
 
+// PropertyBootstrapExists checks whether an existing PropertyBootstrap resource with the given ID exists.
+func PropertyBootstrapExists(ctx *pulumi.Context,
+	id pulumi.StringInput, state *PropertyBootstrapState, opts ...pulumi.ResourceOption) pulumi.BoolOutput {
+	return ctx.ExistsResource("akamai:index/propertyBootstrap:PropertyBootstrap", id, state, "", opts...)
+}
+
 type propertyBootstrapArgs struct {
 	// Contract ID to be assigned to the Property
 	ContractId string `pulumi:"contractId"`

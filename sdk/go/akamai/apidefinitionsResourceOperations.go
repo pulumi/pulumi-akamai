@@ -80,6 +80,12 @@ func (ApidefinitionsResourceOperationsState) ElementType() reflect.Type {
 	return reflect.TypeOf((*apidefinitionsResourceOperationsState)(nil)).Elem()
 }
 
+// ApidefinitionsResourceOperationsExists checks whether an existing ApidefinitionsResourceOperations resource with the given ID exists.
+func ApidefinitionsResourceOperationsExists(ctx *pulumi.Context,
+	id pulumi.StringInput, state *ApidefinitionsResourceOperationsState, opts ...pulumi.ResourceOption) pulumi.BoolOutput {
+	return ctx.ExistsResource("akamai:index/apidefinitionsResourceOperations:ApidefinitionsResourceOperations", id, state, "", opts...)
+}
+
 type apidefinitionsResourceOperationsArgs struct {
 	// The unique identifier for the endpoint
 	ApiId int `pulumi:"apiId"`

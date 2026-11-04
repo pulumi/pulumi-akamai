@@ -68,6 +68,12 @@ func (BotmanTransactionalEndpointProtectionState) ElementType() reflect.Type {
 	return reflect.TypeOf((*botmanTransactionalEndpointProtectionState)(nil)).Elem()
 }
 
+// BotmanTransactionalEndpointProtectionExists checks whether an existing BotmanTransactionalEndpointProtection resource with the given ID exists.
+func BotmanTransactionalEndpointProtectionExists(ctx *pulumi.Context,
+	id pulumi.StringInput, state *BotmanTransactionalEndpointProtectionState, opts ...pulumi.ResourceOption) pulumi.BoolOutput {
+	return ctx.ExistsResource("akamai:index/botmanTransactionalEndpointProtection:BotmanTransactionalEndpointProtection", id, state, "", opts...)
+}
+
 type botmanTransactionalEndpointProtectionArgs struct {
 	ConfigId                        int    `pulumi:"configId"`
 	TransactionalEndpointProtection string `pulumi:"transactionalEndpointProtection"`

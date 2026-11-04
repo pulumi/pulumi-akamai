@@ -98,6 +98,12 @@ func (EdgeKvState) ElementType() reflect.Type {
 	return reflect.TypeOf((*edgeKvState)(nil)).Elem()
 }
 
+// EdgeKvExists checks whether an existing EdgeKv resource with the given ID exists.
+func EdgeKvExists(ctx *pulumi.Context,
+	id pulumi.StringInput, state *EdgeKvState, opts ...pulumi.ResourceOption) pulumi.BoolOutput {
+	return ctx.ExistsResource("akamai:index/edgeKv:EdgeKv", id, state, "", opts...)
+}
+
 type edgeKvArgs struct {
 	// Storage location for data.
 	GeoLocation *string `pulumi:"geoLocation"`

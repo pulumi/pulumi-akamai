@@ -372,6 +372,28 @@ class CloudletsApplicationLoadBalancer(pulumi.CustomResource):
         __props__.__dict__["warnings"] = warnings
         return CloudletsApplicationLoadBalancer(resource_name, opts=opts, __props__=__props__)
 
+    @staticmethod
+    def exists(id: pulumi.Input[str],
+            opts: Optional[pulumi.ResourceOptions] = None,
+            balancing_type: pulumi.Input[Optional[_builtins.str]] = None,
+            data_centers: pulumi.Input[Optional[Sequence[pulumi.Input[Union['CloudletsApplicationLoadBalancerDataCenterArgs', 'CloudletsApplicationLoadBalancerDataCenterArgsDict', 'outputs.CloudletsApplicationLoadBalancerDataCenter']]]]] = None,
+            description: pulumi.Input[Optional[_builtins.str]] = None,
+            liveness_settings: pulumi.Input[Optional[Union['CloudletsApplicationLoadBalancerLivenessSettingsArgs', 'CloudletsApplicationLoadBalancerLivenessSettingsArgsDict', 'outputs.CloudletsApplicationLoadBalancerLivenessSettings']]] = None,
+            origin_description: pulumi.Input[Optional[_builtins.str]] = None,
+            origin_id: pulumi.Input[Optional[_builtins.str]] = None,
+            version: pulumi.Input[Optional[_builtins.int]] = None,
+            warnings: pulumi.Input[Optional[_builtins.str]] = None) -> pulumi.Output[bool]:
+        __props__: dict = {}
+        __props__["balancingType"] = balancing_type
+        __props__["dataCenters"] = data_centers
+        __props__["description"] = description
+        __props__["livenessSettings"] = liveness_settings
+        __props__["originDescription"] = origin_description
+        __props__["originId"] = origin_id
+        __props__["version"] = version
+        __props__["warnings"] = warnings
+        return pulumi.runtime.exists_resource(None, 'akamai:index/cloudletsApplicationLoadBalancer:CloudletsApplicationLoadBalancer', id, __props__, opts or pulumi.ResourceOptions())
+
     @_builtins.property
     @pulumi.getter(name="balancingType")
     def balancing_type(self) -> pulumi.Output[Optional[_builtins.str]]:

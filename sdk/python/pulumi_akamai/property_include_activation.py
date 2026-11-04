@@ -522,6 +522,34 @@ class PropertyIncludeActivation(pulumi.CustomResource):
         __props__.__dict__["version"] = version
         return PropertyIncludeActivation(resource_name, opts=opts, __props__=__props__)
 
+    @staticmethod
+    def exists(id: pulumi.Input[str],
+            opts: Optional[pulumi.ResourceOptions] = None,
+            auto_acknowledge_rule_warnings: pulumi.Input[Optional[_builtins.bool]] = None,
+            compliance_record: pulumi.Input[Optional[Union['PropertyIncludeActivationComplianceRecordArgs', 'PropertyIncludeActivationComplianceRecordArgsDict', 'outputs.PropertyIncludeActivationComplianceRecord']]] = None,
+            contract_id: pulumi.Input[Optional[_builtins.str]] = None,
+            group_id: pulumi.Input[Optional[_builtins.str]] = None,
+            include_id: pulumi.Input[Optional[_builtins.str]] = None,
+            network: pulumi.Input[Optional[_builtins.str]] = None,
+            note: pulumi.Input[Optional[_builtins.str]] = None,
+            notify_emails: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+            timeouts: pulumi.Input[Optional[Union['PropertyIncludeActivationTimeoutsArgs', 'PropertyIncludeActivationTimeoutsArgsDict', 'outputs.PropertyIncludeActivationTimeouts']]] = None,
+            validations: pulumi.Input[Optional[_builtins.str]] = None,
+            version: pulumi.Input[Optional[_builtins.int]] = None) -> pulumi.Output[bool]:
+        __props__: dict = {}
+        __props__["autoAcknowledgeRuleWarnings"] = auto_acknowledge_rule_warnings
+        __props__["complianceRecord"] = compliance_record
+        __props__["contractId"] = contract_id
+        __props__["groupId"] = group_id
+        __props__["includeId"] = include_id
+        __props__["network"] = network
+        __props__["note"] = note
+        __props__["notifyEmails"] = notify_emails
+        __props__["timeouts"] = timeouts
+        __props__["validations"] = validations
+        __props__["version"] = version
+        return pulumi.runtime.exists_resource(None, 'akamai:index/propertyIncludeActivation:PropertyIncludeActivation', id, __props__, opts or pulumi.ResourceOptions())
+
     @_builtins.property
     @pulumi.getter(name="autoAcknowledgeRuleWarnings")
     def auto_acknowledge_rule_warnings(self) -> pulumi.Output[Optional[_builtins.bool]]:

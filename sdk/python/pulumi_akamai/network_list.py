@@ -440,6 +440,32 @@ class NetworkList(pulumi.CustomResource):
         __props__.__dict__["uniqueid"] = uniqueid
         return NetworkList(resource_name, opts=opts, __props__=__props__)
 
+    @staticmethod
+    def exists(id: pulumi.Input[str],
+            opts: Optional[pulumi.ResourceOptions] = None,
+            contract_id: pulumi.Input[Optional[_builtins.str]] = None,
+            description: pulumi.Input[Optional[_builtins.str]] = None,
+            group_id: pulumi.Input[Optional[_builtins.int]] = None,
+            lists: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+            mode: pulumi.Input[Optional[_builtins.str]] = None,
+            name: pulumi.Input[Optional[_builtins.str]] = None,
+            network_list_id: pulumi.Input[Optional[_builtins.str]] = None,
+            sync_point: pulumi.Input[Optional[_builtins.int]] = None,
+            type: pulumi.Input[Optional[_builtins.str]] = None,
+            uniqueid: pulumi.Input[Optional[_builtins.str]] = None) -> pulumi.Output[bool]:
+        __props__: dict = {}
+        __props__["contractId"] = contract_id
+        __props__["description"] = description
+        __props__["groupId"] = group_id
+        __props__["lists"] = lists
+        __props__["mode"] = mode
+        __props__["name"] = name
+        __props__["networkListId"] = network_list_id
+        __props__["syncPoint"] = sync_point
+        __props__["type"] = type
+        __props__["uniqueid"] = uniqueid
+        return pulumi.runtime.exists_resource(None, 'akamai:index/networkList:NetworkList', id, __props__, opts or pulumi.ResourceOptions())
+
     @_builtins.property
     @pulumi.getter(name="contractId")
     def contract_id(self) -> pulumi.Output[Optional[_builtins.str]]:

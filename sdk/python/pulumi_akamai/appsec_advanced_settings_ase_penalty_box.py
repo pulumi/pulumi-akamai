@@ -226,6 +226,18 @@ class AppsecAdvancedSettingsAsePenaltyBox(pulumi.CustomResource):
         __props__.__dict__["qualification_exclusions"] = qualification_exclusions
         return AppsecAdvancedSettingsAsePenaltyBox(resource_name, opts=opts, __props__=__props__)
 
+    @staticmethod
+    def exists(id: pulumi.Input[str],
+            opts: Optional[pulumi.ResourceOptions] = None,
+            block_duration: pulumi.Input[Optional[_builtins.int]] = None,
+            config_id: pulumi.Input[Optional[_builtins.int]] = None,
+            qualification_exclusions: pulumi.Input[Optional[Union['AppsecAdvancedSettingsAsePenaltyBoxQualificationExclusionsArgs', 'AppsecAdvancedSettingsAsePenaltyBoxQualificationExclusionsArgsDict', 'outputs.AppsecAdvancedSettingsAsePenaltyBoxQualificationExclusions']]] = None) -> pulumi.Output[bool]:
+        __props__: dict = {}
+        __props__["blockDuration"] = block_duration
+        __props__["configId"] = config_id
+        __props__["qualificationExclusions"] = qualification_exclusions
+        return pulumi.runtime.exists_resource(None, 'akamai:index/appsecAdvancedSettingsAsePenaltyBox:AppsecAdvancedSettingsAsePenaltyBox', id, __props__, opts or pulumi.ResourceOptions())
+
     @_builtins.property
     @pulumi.getter(name="blockDuration")
     def block_duration(self) -> pulumi.Output[_builtins.int]:

@@ -83,6 +83,12 @@ func (AppSecThreatIntelState) ElementType() reflect.Type {
 	return reflect.TypeOf((*appSecThreatIntelState)(nil)).Elem()
 }
 
+// AppSecThreatIntelExists checks whether an existing AppSecThreatIntel resource with the given ID exists.
+func AppSecThreatIntelExists(ctx *pulumi.Context,
+	id pulumi.StringInput, state *AppSecThreatIntelState, opts ...pulumi.ResourceOption) pulumi.BoolOutput {
+	return ctx.ExistsResource("akamai:index/appSecThreatIntel:AppSecThreatIntel", id, state, "", opts...)
+}
+
 type appSecThreatIntelArgs struct {
 	// Unique identifier of the security configuration
 	ConfigId int `pulumi:"configId"`

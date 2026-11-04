@@ -353,6 +353,24 @@ class PropertyDomainownershipLateValidation(pulumi.CustomResource):
         __props__.__dict__["version"] = version
         return PropertyDomainownershipLateValidation(resource_name, opts=opts, __props__=__props__)
 
+    @staticmethod
+    def exists(id: pulumi.Input[str],
+            opts: Optional[pulumi.ResourceOptions] = None,
+            contract_id: pulumi.Input[Optional[_builtins.str]] = None,
+            group_id: pulumi.Input[Optional[_builtins.str]] = None,
+            property_id: pulumi.Input[Optional[_builtins.str]] = None,
+            timeouts: pulumi.Input[Optional[Union['PropertyDomainownershipLateValidationTimeoutsArgs', 'PropertyDomainownershipLateValidationTimeoutsArgsDict', 'outputs.PropertyDomainownershipLateValidationTimeouts']]] = None,
+            validation_method: pulumi.Input[Optional[_builtins.str]] = None,
+            version: pulumi.Input[Optional[_builtins.int]] = None) -> pulumi.Output[bool]:
+        __props__: dict = {}
+        __props__["contractId"] = contract_id
+        __props__["groupId"] = group_id
+        __props__["propertyId"] = property_id
+        __props__["timeouts"] = timeouts
+        __props__["validationMethod"] = validation_method
+        __props__["version"] = version
+        return pulumi.runtime.exists_resource(None, 'akamai:index/propertyDomainownershipLateValidation:PropertyDomainownershipLateValidation', id, __props__, opts or pulumi.ResourceOptions())
+
     @_builtins.property
     @pulumi.getter(name="contractId")
     def contract_id(self) -> pulumi.Output[_builtins.str]:

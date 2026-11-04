@@ -71,6 +71,12 @@ func (BotmanConditionalActionState) ElementType() reflect.Type {
 	return reflect.TypeOf((*botmanConditionalActionState)(nil)).Elem()
 }
 
+// BotmanConditionalActionExists checks whether an existing BotmanConditionalAction resource with the given ID exists.
+func BotmanConditionalActionExists(ctx *pulumi.Context,
+	id pulumi.StringInput, state *BotmanConditionalActionState, opts ...pulumi.ResourceOption) pulumi.BoolOutput {
+	return ctx.ExistsResource("akamai:index/botmanConditionalAction:BotmanConditionalAction", id, state, "", opts...)
+}
+
 type botmanConditionalActionArgs struct {
 	ConditionalAction string `pulumi:"conditionalAction"`
 	ConfigId          int    `pulumi:"configId"`

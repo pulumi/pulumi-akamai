@@ -71,6 +71,12 @@ func (BotmanServeAlternateActionState) ElementType() reflect.Type {
 	return reflect.TypeOf((*botmanServeAlternateActionState)(nil)).Elem()
 }
 
+// BotmanServeAlternateActionExists checks whether an existing BotmanServeAlternateAction resource with the given ID exists.
+func BotmanServeAlternateActionExists(ctx *pulumi.Context,
+	id pulumi.StringInput, state *BotmanServeAlternateActionState, opts ...pulumi.ResourceOption) pulumi.BoolOutput {
+	return ctx.ExistsResource("akamai:index/botmanServeAlternateAction:BotmanServeAlternateAction", id, state, "", opts...)
+}
+
 type botmanServeAlternateActionArgs struct {
 	ConfigId             int    `pulumi:"configId"`
 	ServeAlternateAction string `pulumi:"serveAlternateAction"`

@@ -322,6 +322,24 @@ class PropertyBootstrap(pulumi.CustomResource):
         __props__.__dict__["use_hostname_bucket"] = use_hostname_bucket
         return PropertyBootstrap(resource_name, opts=opts, __props__=__props__)
 
+    @staticmethod
+    def exists(id: pulumi.Input[str],
+            opts: Optional[pulumi.ResourceOptions] = None,
+            asset_id: pulumi.Input[Optional[_builtins.str]] = None,
+            contract_id: pulumi.Input[Optional[_builtins.str]] = None,
+            group_id: pulumi.Input[Optional[_builtins.str]] = None,
+            name: pulumi.Input[Optional[_builtins.str]] = None,
+            product_id: pulumi.Input[Optional[_builtins.str]] = None,
+            use_hostname_bucket: pulumi.Input[Optional[_builtins.bool]] = None) -> pulumi.Output[bool]:
+        __props__: dict = {}
+        __props__["assetId"] = asset_id
+        __props__["contractId"] = contract_id
+        __props__["groupId"] = group_id
+        __props__["name"] = name
+        __props__["productId"] = product_id
+        __props__["useHostnameBucket"] = use_hostname_bucket
+        return pulumi.runtime.exists_resource(None, 'akamai:index/propertyBootstrap:PropertyBootstrap', id, __props__, opts or pulumi.ResourceOptions())
+
     @_builtins.property
     @pulumi.getter(name="assetId")
     def asset_id(self) -> pulumi.Output[_builtins.str]:

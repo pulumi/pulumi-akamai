@@ -68,6 +68,12 @@ func (BotmanClientSideSecurityState) ElementType() reflect.Type {
 	return reflect.TypeOf((*botmanClientSideSecurityState)(nil)).Elem()
 }
 
+// BotmanClientSideSecurityExists checks whether an existing BotmanClientSideSecurity resource with the given ID exists.
+func BotmanClientSideSecurityExists(ctx *pulumi.Context,
+	id pulumi.StringInput, state *BotmanClientSideSecurityState, opts ...pulumi.ResourceOption) pulumi.BoolOutput {
+	return ctx.ExistsResource("akamai:index/botmanClientSideSecurity:BotmanClientSideSecurity", id, state, "", opts...)
+}
+
 type botmanClientSideSecurityArgs struct {
 	ClientSideSecurity string `pulumi:"clientSideSecurity"`
 	ConfigId           int    `pulumi:"configId"`

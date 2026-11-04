@@ -146,6 +146,12 @@ func (CloudAccessKeyState) ElementType() reflect.Type {
 	return reflect.TypeOf((*cloudAccessKeyState)(nil)).Elem()
 }
 
+// CloudAccessKeyExists checks whether an existing CloudAccessKey resource with the given ID exists.
+func CloudAccessKeyExists(ctx *pulumi.Context,
+	id pulumi.StringInput, state *CloudAccessKeyState, opts ...pulumi.ResourceOption) pulumi.BoolOutput {
+	return ctx.ExistsResource("akamai:index/cloudAccessKey:CloudAccessKey", id, state, "", opts...)
+}
+
 type cloudAccessKeyArgs struct {
 	// Name of the access key.
 	AccessKeyName string `pulumi:"accessKeyName"`

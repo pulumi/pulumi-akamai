@@ -68,6 +68,12 @@ func (BotmanChallengeInjectionRulesState) ElementType() reflect.Type {
 	return reflect.TypeOf((*botmanChallengeInjectionRulesState)(nil)).Elem()
 }
 
+// BotmanChallengeInjectionRulesExists checks whether an existing BotmanChallengeInjectionRules resource with the given ID exists.
+func BotmanChallengeInjectionRulesExists(ctx *pulumi.Context,
+	id pulumi.StringInput, state *BotmanChallengeInjectionRulesState, opts ...pulumi.ResourceOption) pulumi.BoolOutput {
+	return ctx.ExistsResource("akamai:index/botmanChallengeInjectionRules:BotmanChallengeInjectionRules", id, state, "", opts...)
+}
+
 type botmanChallengeInjectionRulesArgs struct {
 	ChallengeInjectionRules string `pulumi:"challengeInjectionRules"`
 	ConfigId                int    `pulumi:"configId"`

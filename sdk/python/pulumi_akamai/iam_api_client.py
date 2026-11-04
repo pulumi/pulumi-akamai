@@ -751,6 +751,52 @@ class IamApiClient(pulumi.CustomResource):
         __props__.__dict__["purge_options"] = purge_options
         return IamApiClient(resource_name, opts=opts, __props__=__props__)
 
+    @staticmethod
+    def exists(id: pulumi.Input[str],
+            opts: Optional[pulumi.ResourceOptions] = None,
+            access_token: pulumi.Input[Optional[_builtins.str]] = None,
+            actions: pulumi.Input[Optional[Union['IamApiClientActionsArgs', 'IamApiClientActionsArgsDict', 'outputs.IamApiClientActions']]] = None,
+            active_credential_count: pulumi.Input[Optional[_builtins.int]] = None,
+            allow_account_switch: pulumi.Input[Optional[_builtins.bool]] = None,
+            api_access: pulumi.Input[Optional[Union['IamApiClientApiAccessArgs', 'IamApiClientApiAccessArgsDict', 'outputs.IamApiClientApiAccess']]] = None,
+            authorized_users: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+            base_url: pulumi.Input[Optional[_builtins.str]] = None,
+            can_auto_create_credential: pulumi.Input[Optional[_builtins.bool]] = None,
+            client_description: pulumi.Input[Optional[_builtins.str]] = None,
+            client_id: pulumi.Input[Optional[_builtins.str]] = None,
+            client_name: pulumi.Input[Optional[_builtins.str]] = None,
+            client_type: pulumi.Input[Optional[_builtins.str]] = None,
+            created_by: pulumi.Input[Optional[_builtins.str]] = None,
+            created_date: pulumi.Input[Optional[_builtins.str]] = None,
+            credential: pulumi.Input[Optional[Union['IamApiClientCredentialArgs', 'IamApiClientCredentialArgsDict', 'outputs.IamApiClientCredential']]] = None,
+            group_access: pulumi.Input[Optional[Union['IamApiClientGroupAccessArgs', 'IamApiClientGroupAccessArgsDict', 'outputs.IamApiClientGroupAccess']]] = None,
+            ip_acl: pulumi.Input[Optional[Union['IamApiClientIpAclArgs', 'IamApiClientIpAclArgsDict', 'outputs.IamApiClientIpAcl']]] = None,
+            lock: pulumi.Input[Optional[_builtins.bool]] = None,
+            notification_emails: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+            purge_options: pulumi.Input[Optional[Union['IamApiClientPurgeOptionsArgs', 'IamApiClientPurgeOptionsArgsDict', 'outputs.IamApiClientPurgeOptions']]] = None) -> pulumi.Output[bool]:
+        __props__: dict = {}
+        __props__["accessToken"] = access_token
+        __props__["actions"] = actions
+        __props__["activeCredentialCount"] = active_credential_count
+        __props__["allowAccountSwitch"] = allow_account_switch
+        __props__["apiAccess"] = api_access
+        __props__["authorizedUsers"] = authorized_users
+        __props__["baseUrl"] = base_url
+        __props__["canAutoCreateCredential"] = can_auto_create_credential
+        __props__["clientDescription"] = client_description
+        __props__["clientId"] = client_id
+        __props__["clientName"] = client_name
+        __props__["clientType"] = client_type
+        __props__["createdBy"] = created_by
+        __props__["createdDate"] = created_date
+        __props__["credential"] = credential
+        __props__["groupAccess"] = group_access
+        __props__["ipAcl"] = ip_acl
+        __props__["lock"] = lock
+        __props__["notificationEmails"] = notification_emails
+        __props__["purgeOptions"] = purge_options
+        return pulumi.runtime.exists_resource(None, 'akamai:index/iamApiClient:IamApiClient', id, __props__, opts or pulumi.ResourceOptions())
+
     @_builtins.property
     @pulumi.getter(name="accessToken")
     def access_token(self) -> pulumi.Output[_builtins.str]:

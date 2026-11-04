@@ -89,6 +89,12 @@ func (AprProtectedOperationsState) ElementType() reflect.Type {
 	return reflect.TypeOf((*aprProtectedOperationsState)(nil)).Elem()
 }
 
+// AprProtectedOperationsExists checks whether an existing AprProtectedOperations resource with the given ID exists.
+func AprProtectedOperationsExists(ctx *pulumi.Context,
+	id pulumi.StringInput, state *AprProtectedOperationsState, opts ...pulumi.ResourceOption) pulumi.BoolOutput {
+	return ctx.ExistsResource("akamai:index/aprProtectedOperations:AprProtectedOperations", id, state, "", opts...)
+}
+
 type aprProtectedOperationsArgs struct {
 	// Identifies a security configuration.
 	ConfigId int `pulumi:"configId"`

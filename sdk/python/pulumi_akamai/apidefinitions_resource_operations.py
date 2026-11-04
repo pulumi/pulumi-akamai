@@ -204,6 +204,18 @@ class ApidefinitionsResourceOperations(pulumi.CustomResource):
         __props__.__dict__["version"] = version
         return ApidefinitionsResourceOperations(resource_name, opts=opts, __props__=__props__)
 
+    @staticmethod
+    def exists(id: pulumi.Input[str],
+            opts: Optional[pulumi.ResourceOptions] = None,
+            api_id: pulumi.Input[Optional[_builtins.int]] = None,
+            resource_operations: pulumi.Input[Optional[_builtins.str]] = None,
+            version: pulumi.Input[Optional[_builtins.int]] = None) -> pulumi.Output[bool]:
+        __props__: dict = {}
+        __props__["apiId"] = api_id
+        __props__["resourceOperations"] = resource_operations
+        __props__["version"] = version
+        return pulumi.runtime.exists_resource(None, 'akamai:index/apidefinitionsResourceOperations:ApidefinitionsResourceOperations', id, __props__, opts or pulumi.ResourceOptions())
+
     @_builtins.property
     @pulumi.getter(name="apiId")
     def api_id(self) -> pulumi.Output[_builtins.int]:

@@ -177,6 +177,18 @@ class BotmanServeAlternateAction(pulumi.CustomResource):
         __props__.__dict__["serve_alternate_action"] = serve_alternate_action
         return BotmanServeAlternateAction(resource_name, opts=opts, __props__=__props__)
 
+    @staticmethod
+    def exists(id: pulumi.Input[str],
+            opts: Optional[pulumi.ResourceOptions] = None,
+            action_id: pulumi.Input[Optional[_builtins.str]] = None,
+            config_id: pulumi.Input[Optional[_builtins.int]] = None,
+            serve_alternate_action: pulumi.Input[Optional[_builtins.str]] = None) -> pulumi.Output[bool]:
+        __props__: dict = {}
+        __props__["actionId"] = action_id
+        __props__["configId"] = config_id
+        __props__["serveAlternateAction"] = serve_alternate_action
+        return pulumi.runtime.exists_resource(None, 'akamai:index/botmanServeAlternateAction:BotmanServeAlternateAction', id, __props__, opts or pulumi.ResourceOptions())
+
     @_builtins.property
     @pulumi.getter(name="actionId")
     def action_id(self) -> pulumi.Output[_builtins.str]:

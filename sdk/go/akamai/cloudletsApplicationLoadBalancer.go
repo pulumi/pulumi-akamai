@@ -107,6 +107,12 @@ func (CloudletsApplicationLoadBalancerState) ElementType() reflect.Type {
 	return reflect.TypeOf((*cloudletsApplicationLoadBalancerState)(nil)).Elem()
 }
 
+// CloudletsApplicationLoadBalancerExists checks whether an existing CloudletsApplicationLoadBalancer resource with the given ID exists.
+func CloudletsApplicationLoadBalancerExists(ctx *pulumi.Context,
+	id pulumi.StringInput, state *CloudletsApplicationLoadBalancerState, opts ...pulumi.ResourceOption) pulumi.BoolOutput {
+	return ctx.ExistsResource("akamai:index/cloudletsApplicationLoadBalancer:CloudletsApplicationLoadBalancer", id, state, "", opts...)
+}
+
 type cloudletsApplicationLoadBalancerArgs struct {
 	// The type of load balancing being performed. Options include WEIGHTED and PERFORMANCE
 	BalancingType *string `pulumi:"balancingType"`
