@@ -322,6 +322,24 @@ class NetworkListActivations(pulumi.CustomResource):
         __props__.__dict__["sync_point"] = sync_point
         return NetworkListActivations(resource_name, opts=opts, __props__=__props__)
 
+    @staticmethod
+    def exists(id: pulumi.Input[str],
+            opts: Optional[pulumi.ResourceOptions] = None,
+            network: pulumi.Input[Optional[_builtins.str]] = None,
+            network_list_id: pulumi.Input[Optional[_builtins.str]] = None,
+            notes: pulumi.Input[Optional[_builtins.str]] = None,
+            notification_emails: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+            status: pulumi.Input[Optional[_builtins.str]] = None,
+            sync_point: pulumi.Input[Optional[_builtins.int]] = None) -> pulumi.Output[bool]:
+        __props__: dict = {}
+        __props__["network"] = network
+        __props__["networkListId"] = network_list_id
+        __props__["notes"] = notes
+        __props__["notificationEmails"] = notification_emails
+        __props__["status"] = status
+        __props__["syncPoint"] = sync_point
+        return pulumi.runtime.exists_resource(None, 'akamai:index/networkListActivations:NetworkListActivations', id, __props__, opts or pulumi.ResourceOptions())
+
     @_builtins.property
     @pulumi.getter
     def network(self) -> pulumi.Output[Optional[_builtins.str]]:

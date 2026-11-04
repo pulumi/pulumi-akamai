@@ -116,6 +116,12 @@ func (AppSecConfigurationState) ElementType() reflect.Type {
 	return reflect.TypeOf((*appSecConfigurationState)(nil)).Elem()
 }
 
+// AppSecConfigurationExists checks whether an existing AppSecConfiguration resource with the given ID exists.
+func AppSecConfigurationExists(ctx *pulumi.Context,
+	id pulumi.StringInput, state *AppSecConfigurationState, opts ...pulumi.ResourceOption) pulumi.BoolOutput {
+	return ctx.ExistsResource("akamai:index/appSecConfiguration:AppSecConfiguration", id, state, "", opts...)
+}
+
 type appSecConfigurationArgs struct {
 	// Unique identifier of the Akamai contract associated with the new configuration
 	ContractId string `pulumi:"contractId"`

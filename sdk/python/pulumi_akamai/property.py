@@ -626,6 +626,46 @@ class Property(pulumi.CustomResource):
         __props__.__dict__["version_notes"] = version_notes
         return Property(resource_name, opts=opts, __props__=__props__)
 
+    @staticmethod
+    def exists(id: pulumi.Input[str],
+            opts: Optional[pulumi.ResourceOptions] = None,
+            asset_id: pulumi.Input[Optional[_builtins.str]] = None,
+            contract_id: pulumi.Input[Optional[_builtins.str]] = None,
+            group_id: pulumi.Input[Optional[_builtins.str]] = None,
+            hostnames: pulumi.Input[Optional[Sequence[pulumi.Input[Union['PropertyHostnameArgs', 'PropertyHostnameArgsDict', 'outputs.PropertyHostname']]]]] = None,
+            latest_version: pulumi.Input[Optional[_builtins.int]] = None,
+            name: pulumi.Input[Optional[_builtins.str]] = None,
+            product_id: pulumi.Input[Optional[_builtins.str]] = None,
+            production_version: pulumi.Input[Optional[_builtins.int]] = None,
+            property_id: pulumi.Input[Optional[_builtins.str]] = None,
+            read_version: pulumi.Input[Optional[_builtins.int]] = None,
+            rule_errors: pulumi.Input[Optional[Sequence[pulumi.Input[Union['PropertyRuleErrorArgs', 'PropertyRuleErrorArgsDict', 'outputs.PropertyRuleError']]]]] = None,
+            rule_format: pulumi.Input[Optional[_builtins.str]] = None,
+            rule_warnings: pulumi.Input[Optional[Sequence[pulumi.Input[Union['PropertyRuleWarningArgs', 'PropertyRuleWarningArgsDict', 'outputs.PropertyRuleWarning']]]]] = None,
+            rules: pulumi.Input[Optional[_builtins.str]] = None,
+            staging_version: pulumi.Input[Optional[_builtins.int]] = None,
+            use_hostname_bucket: pulumi.Input[Optional[_builtins.bool]] = None,
+            version_notes: pulumi.Input[Optional[_builtins.str]] = None) -> pulumi.Output[bool]:
+        __props__: dict = {}
+        __props__["assetId"] = asset_id
+        __props__["contractId"] = contract_id
+        __props__["groupId"] = group_id
+        __props__["hostnames"] = hostnames
+        __props__["latestVersion"] = latest_version
+        __props__["name"] = name
+        __props__["productId"] = product_id
+        __props__["productionVersion"] = production_version
+        __props__["propertyId"] = property_id
+        __props__["readVersion"] = read_version
+        __props__["ruleErrors"] = rule_errors
+        __props__["ruleFormat"] = rule_format
+        __props__["ruleWarnings"] = rule_warnings
+        __props__["rules"] = rules
+        __props__["stagingVersion"] = staging_version
+        __props__["useHostnameBucket"] = use_hostname_bucket
+        __props__["versionNotes"] = version_notes
+        return pulumi.runtime.exists_resource(None, 'akamai:index/property:Property', id, __props__, opts or pulumi.ResourceOptions())
+
     @_builtins.property
     @pulumi.getter(name="assetId")
     def asset_id(self) -> pulumi.Output[_builtins.str]:

@@ -285,6 +285,22 @@ class CloudletsApplicationLoadBalancerActivation(pulumi.CustomResource):
         __props__.__dict__["version"] = version
         return CloudletsApplicationLoadBalancerActivation(resource_name, opts=opts, __props__=__props__)
 
+    @staticmethod
+    def exists(id: pulumi.Input[str],
+            opts: Optional[pulumi.ResourceOptions] = None,
+            network: pulumi.Input[Optional[_builtins.str]] = None,
+            origin_id: pulumi.Input[Optional[_builtins.str]] = None,
+            status: pulumi.Input[Optional[_builtins.str]] = None,
+            timeouts: pulumi.Input[Optional[Union['CloudletsApplicationLoadBalancerActivationTimeoutsArgs', 'CloudletsApplicationLoadBalancerActivationTimeoutsArgsDict', 'outputs.CloudletsApplicationLoadBalancerActivationTimeouts']]] = None,
+            version: pulumi.Input[Optional[_builtins.int]] = None) -> pulumi.Output[bool]:
+        __props__: dict = {}
+        __props__["network"] = network
+        __props__["originId"] = origin_id
+        __props__["status"] = status
+        __props__["timeouts"] = timeouts
+        __props__["version"] = version
+        return pulumi.runtime.exists_resource(None, 'akamai:index/cloudletsApplicationLoadBalancerActivation:CloudletsApplicationLoadBalancerActivation', id, __props__, opts or pulumi.ResourceOptions())
+
     @_builtins.property
     @pulumi.getter
     def network(self) -> pulumi.Output[_builtins.str]:

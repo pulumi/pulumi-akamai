@@ -89,6 +89,12 @@ func (AppSecApiRequestConstraintsState) ElementType() reflect.Type {
 	return reflect.TypeOf((*appSecApiRequestConstraintsState)(nil)).Elem()
 }
 
+// AppSecApiRequestConstraintsExists checks whether an existing AppSecApiRequestConstraints resource with the given ID exists.
+func AppSecApiRequestConstraintsExists(ctx *pulumi.Context,
+	id pulumi.StringInput, state *AppSecApiRequestConstraintsState, opts ...pulumi.ResourceOption) pulumi.BoolOutput {
+	return ctx.ExistsResource("akamai:index/appSecApiRequestConstraints:AppSecApiRequestConstraints", id, state, "", opts...)
+}
+
 type appSecApiRequestConstraintsArgs struct {
 	// Action to be taken when the API request constraint is triggered
 	Action string `pulumi:"action"`

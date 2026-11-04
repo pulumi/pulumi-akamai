@@ -344,6 +344,26 @@ class CloudletsPolicyActivation(pulumi.CustomResource):
         __props__.__dict__["version"] = version
         return CloudletsPolicyActivation(resource_name, opts=opts, __props__=__props__)
 
+    @staticmethod
+    def exists(id: pulumi.Input[str],
+            opts: Optional[pulumi.ResourceOptions] = None,
+            associated_properties: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+            is_shared: pulumi.Input[Optional[_builtins.bool]] = None,
+            network: pulumi.Input[Optional[_builtins.str]] = None,
+            policy_id: pulumi.Input[Optional[_builtins.int]] = None,
+            status: pulumi.Input[Optional[_builtins.str]] = None,
+            timeouts: pulumi.Input[Optional[Union['CloudletsPolicyActivationTimeoutsArgs', 'CloudletsPolicyActivationTimeoutsArgsDict', 'outputs.CloudletsPolicyActivationTimeouts']]] = None,
+            version: pulumi.Input[Optional[_builtins.int]] = None) -> pulumi.Output[bool]:
+        __props__: dict = {}
+        __props__["associatedProperties"] = associated_properties
+        __props__["isShared"] = is_shared
+        __props__["network"] = network
+        __props__["policyId"] = policy_id
+        __props__["status"] = status
+        __props__["timeouts"] = timeouts
+        __props__["version"] = version
+        return pulumi.runtime.exists_resource(None, 'akamai:index/cloudletsPolicyActivation:CloudletsPolicyActivation', id, __props__, opts or pulumi.ResourceOptions())
+
     @_builtins.property
     @pulumi.getter(name="associatedProperties")
     def associated_properties(self) -> pulumi.Output[Optional[Sequence[_builtins.str]]]:

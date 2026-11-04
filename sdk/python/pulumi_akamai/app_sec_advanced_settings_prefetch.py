@@ -304,6 +304,22 @@ class AppSecAdvancedSettingsPrefetch(pulumi.CustomResource):
         __props__.__dict__["extensions"] = extensions
         return AppSecAdvancedSettingsPrefetch(resource_name, opts=opts, __props__=__props__)
 
+    @staticmethod
+    def exists(id: pulumi.Input[str],
+            opts: Optional[pulumi.ResourceOptions] = None,
+            all_extensions: pulumi.Input[Optional[_builtins.bool]] = None,
+            config_id: pulumi.Input[Optional[_builtins.int]] = None,
+            enable_app_layer: pulumi.Input[Optional[_builtins.bool]] = None,
+            enable_rate_controls: pulumi.Input[Optional[_builtins.bool]] = None,
+            extensions: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None) -> pulumi.Output[bool]:
+        __props__: dict = {}
+        __props__["allExtensions"] = all_extensions
+        __props__["configId"] = config_id
+        __props__["enableAppLayer"] = enable_app_layer
+        __props__["enableRateControls"] = enable_rate_controls
+        __props__["extensions"] = extensions
+        return pulumi.runtime.exists_resource(None, 'akamai:index/appSecAdvancedSettingsPrefetch:AppSecAdvancedSettingsPrefetch', id, __props__, opts or pulumi.ResourceOptions())
+
     @_builtins.property
     @pulumi.getter(name="allExtensions")
     def all_extensions(self) -> pulumi.Output[_builtins.bool]:

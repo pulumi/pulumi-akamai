@@ -74,6 +74,12 @@ func (BotmanBotManagementSettingsState) ElementType() reflect.Type {
 	return reflect.TypeOf((*botmanBotManagementSettingsState)(nil)).Elem()
 }
 
+// BotmanBotManagementSettingsExists checks whether an existing BotmanBotManagementSettings resource with the given ID exists.
+func BotmanBotManagementSettingsExists(ctx *pulumi.Context,
+	id pulumi.StringInput, state *BotmanBotManagementSettingsState, opts ...pulumi.ResourceOption) pulumi.BoolOutput {
+	return ctx.ExistsResource("akamai:index/botmanBotManagementSettings:BotmanBotManagementSettings", id, state, "", opts...)
+}
+
 type botmanBotManagementSettingsArgs struct {
 	BotManagementSettings string `pulumi:"botManagementSettings"`
 	ConfigId              int    `pulumi:"configId"`

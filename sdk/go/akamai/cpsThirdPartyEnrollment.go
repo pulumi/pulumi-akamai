@@ -188,6 +188,12 @@ func (CpsThirdPartyEnrollmentState) ElementType() reflect.Type {
 	return reflect.TypeOf((*cpsThirdPartyEnrollmentState)(nil)).Elem()
 }
 
+// CpsThirdPartyEnrollmentExists checks whether an existing CpsThirdPartyEnrollment resource with the given ID exists.
+func CpsThirdPartyEnrollmentExists(ctx *pulumi.Context,
+	id pulumi.StringInput, state *CpsThirdPartyEnrollmentState, opts ...pulumi.ResourceOption) pulumi.BoolOutput {
+	return ctx.ExistsResource("akamai:index/cpsThirdPartyEnrollment:CpsThirdPartyEnrollment", id, state, "", opts...)
+}
+
 type cpsThirdPartyEnrollmentArgs struct {
 	// Whether acknowledge warnings before certificate verification. Default is false
 	AcknowledgePreVerificationWarnings *bool `pulumi:"acknowledgePreVerificationWarnings"`

@@ -604,6 +604,54 @@ class GtmDatacenter(pulumi.CustomResource):
         __props__.__dict__["wait_on_complete"] = wait_on_complete
         return GtmDatacenter(resource_name, opts=opts, __props__=__props__)
 
+    @staticmethod
+    def exists(id: pulumi.Input[str],
+            opts: Optional[pulumi.ResourceOptions] = None,
+            city: pulumi.Input[Optional[_builtins.str]] = None,
+            clone_of: pulumi.Input[Optional[_builtins.int]] = None,
+            cloud_server_host_header_override: pulumi.Input[Optional[_builtins.bool]] = None,
+            cloud_server_targeting: pulumi.Input[Optional[_builtins.bool]] = None,
+            continent: pulumi.Input[Optional[_builtins.str]] = None,
+            country: pulumi.Input[Optional[_builtins.str]] = None,
+            datacenter_id: pulumi.Input[Optional[_builtins.int]] = None,
+            default_load_object: pulumi.Input[Optional[Union['GtmDatacenterDefaultLoadObjectArgs', 'GtmDatacenterDefaultLoadObjectArgsDict', 'outputs.GtmDatacenterDefaultLoadObject']]] = None,
+            domain: pulumi.Input[Optional[_builtins.str]] = None,
+            latitude: pulumi.Input[Optional[_builtins.float]] = None,
+            longitude: pulumi.Input[Optional[_builtins.float]] = None,
+            nickname: pulumi.Input[Optional[_builtins.str]] = None,
+            ping_interval: pulumi.Input[Optional[_builtins.int]] = None,
+            ping_packet_size: pulumi.Input[Optional[_builtins.int]] = None,
+            score_penalty: pulumi.Input[Optional[_builtins.int]] = None,
+            servermonitor_liveness_count: pulumi.Input[Optional[_builtins.int]] = None,
+            servermonitor_load_count: pulumi.Input[Optional[_builtins.int]] = None,
+            servermonitor_pool: pulumi.Input[Optional[_builtins.str]] = None,
+            state_or_province: pulumi.Input[Optional[_builtins.str]] = None,
+            virtual: pulumi.Input[Optional[_builtins.bool]] = None,
+            wait_on_complete: pulumi.Input[Optional[_builtins.bool]] = None) -> pulumi.Output[bool]:
+        __props__: dict = {}
+        __props__["city"] = city
+        __props__["cloneOf"] = clone_of
+        __props__["cloudServerHostHeaderOverride"] = cloud_server_host_header_override
+        __props__["cloudServerTargeting"] = cloud_server_targeting
+        __props__["continent"] = continent
+        __props__["country"] = country
+        __props__["datacenterId"] = datacenter_id
+        __props__["defaultLoadObject"] = default_load_object
+        __props__["domain"] = domain
+        __props__["latitude"] = latitude
+        __props__["longitude"] = longitude
+        __props__["nickname"] = nickname
+        __props__["pingInterval"] = ping_interval
+        __props__["pingPacketSize"] = ping_packet_size
+        __props__["scorePenalty"] = score_penalty
+        __props__["servermonitorLivenessCount"] = servermonitor_liveness_count
+        __props__["servermonitorLoadCount"] = servermonitor_load_count
+        __props__["servermonitorPool"] = servermonitor_pool
+        __props__["stateOrProvince"] = state_or_province
+        __props__["virtual"] = virtual
+        __props__["waitOnComplete"] = wait_on_complete
+        return pulumi.runtime.exists_resource(None, 'akamai:index/gtmDatacenter:GtmDatacenter', id, __props__, opts or pulumi.ResourceOptions())
+
     @_builtins.property
     @pulumi.getter
     def city(self) -> pulumi.Output[Optional[_builtins.str]]:

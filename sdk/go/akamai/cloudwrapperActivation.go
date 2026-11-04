@@ -77,6 +77,12 @@ func (CloudwrapperActivationState) ElementType() reflect.Type {
 	return reflect.TypeOf((*cloudwrapperActivationState)(nil)).Elem()
 }
 
+// CloudwrapperActivationExists checks whether an existing CloudwrapperActivation resource with the given ID exists.
+func CloudwrapperActivationExists(ctx *pulumi.Context,
+	id pulumi.StringInput, state *CloudwrapperActivationState, opts ...pulumi.ResourceOption) pulumi.BoolOutput {
+	return ctx.ExistsResource("akamai:index/cloudwrapperActivation:CloudwrapperActivation", id, state, "", opts...)
+}
+
 type cloudwrapperActivationArgs struct {
 	// The configuration you want to activate.
 	ConfigId int `pulumi:"configId"`

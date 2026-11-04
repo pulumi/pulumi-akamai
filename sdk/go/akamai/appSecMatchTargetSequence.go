@@ -71,6 +71,12 @@ func (AppSecMatchTargetSequenceState) ElementType() reflect.Type {
 	return reflect.TypeOf((*appSecMatchTargetSequenceState)(nil)).Elem()
 }
 
+// AppSecMatchTargetSequenceExists checks whether an existing AppSecMatchTargetSequence resource with the given ID exists.
+func AppSecMatchTargetSequenceExists(ctx *pulumi.Context,
+	id pulumi.StringInput, state *AppSecMatchTargetSequenceState, opts ...pulumi.ResourceOption) pulumi.BoolOutput {
+	return ctx.ExistsResource("akamai:index/appSecMatchTargetSequence:AppSecMatchTargetSequence", id, state, "", opts...)
+}
+
 type appSecMatchTargetSequenceArgs struct {
 	// Unique identifier of the security configuration
 	ConfigId int `pulumi:"configId"`

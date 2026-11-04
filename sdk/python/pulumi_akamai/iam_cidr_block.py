@@ -345,6 +345,30 @@ class IamCidrBlock(pulumi.CustomResource):
         __props__.__dict__["modified_date"] = modified_date
         return IamCidrBlock(resource_name, opts=opts, __props__=__props__)
 
+    @staticmethod
+    def exists(id: pulumi.Input[str],
+            opts: Optional[pulumi.ResourceOptions] = None,
+            actions: pulumi.Input[Optional[Union['IamCidrBlockActionsArgs', 'IamCidrBlockActionsArgsDict', 'outputs.IamCidrBlockActions']]] = None,
+            cidr_block: pulumi.Input[Optional[_builtins.str]] = None,
+            cidr_block_id: pulumi.Input[Optional[_builtins.int]] = None,
+            comments: pulumi.Input[Optional[_builtins.str]] = None,
+            created_by: pulumi.Input[Optional[_builtins.str]] = None,
+            created_date: pulumi.Input[Optional[_builtins.str]] = None,
+            enabled: pulumi.Input[Optional[_builtins.bool]] = None,
+            modified_by: pulumi.Input[Optional[_builtins.str]] = None,
+            modified_date: pulumi.Input[Optional[_builtins.str]] = None) -> pulumi.Output[bool]:
+        __props__: dict = {}
+        __props__["actions"] = actions
+        __props__["cidrBlock"] = cidr_block
+        __props__["cidrBlockId"] = cidr_block_id
+        __props__["comments"] = comments
+        __props__["createdBy"] = created_by
+        __props__["createdDate"] = created_date
+        __props__["enabled"] = enabled
+        __props__["modifiedBy"] = modified_by
+        __props__["modifiedDate"] = modified_date
+        return pulumi.runtime.exists_resource(None, 'akamai:index/iamCidrBlock:IamCidrBlock', id, __props__, opts or pulumi.ResourceOptions())
+
     @_builtins.property
     @pulumi.getter
     def actions(self) -> pulumi.Output['outputs.IamCidrBlockActions']:

@@ -92,6 +92,12 @@ func (CloudcertificatesActivationState) ElementType() reflect.Type {
 	return reflect.TypeOf((*cloudcertificatesActivationState)(nil)).Elem()
 }
 
+// CloudcertificatesActivationExists checks whether an existing CloudcertificatesActivation resource with the given ID exists.
+func CloudcertificatesActivationExists(ctx *pulumi.Context,
+	id pulumi.StringInput, state *CloudcertificatesActivationState, opts ...pulumi.ResourceOption) pulumi.BoolOutput {
+	return ctx.ExistsResource("akamai:index/cloudcertificatesActivation:CloudcertificatesActivation", id, state, "", opts...)
+}
+
 type cloudcertificatesActivationArgs struct {
 	// Unique identifier of the lineage whose head generation to promote.
 	LineageId int `pulumi:"lineageId"`

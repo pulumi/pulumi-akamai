@@ -113,6 +113,12 @@ func (AppSecWafModeState) ElementType() reflect.Type {
 	return reflect.TypeOf((*appSecWafModeState)(nil)).Elem()
 }
 
+// AppSecWafModeExists checks whether an existing AppSecWafMode resource with the given ID exists.
+func AppSecWafModeExists(ctx *pulumi.Context,
+	id pulumi.StringInput, state *AppSecWafModeState, opts ...pulumi.ResourceOption) pulumi.BoolOutput {
+	return ctx.ExistsResource("akamai:index/appSecWafMode:AppSecWafMode", id, state, "", opts...)
+}
+
 type appSecWafModeArgs struct {
 	// Unique identifier of the security configuration
 	ConfigId int `pulumi:"configId"`

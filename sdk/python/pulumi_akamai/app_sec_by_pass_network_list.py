@@ -224,6 +224,18 @@ class AppSecByPassNetworkList(pulumi.CustomResource):
         __props__.__dict__["security_policy_id"] = security_policy_id
         return AppSecByPassNetworkList(resource_name, opts=opts, __props__=__props__)
 
+    @staticmethod
+    def exists(id: pulumi.Input[str],
+            opts: Optional[pulumi.ResourceOptions] = None,
+            bypass_network_lists: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+            config_id: pulumi.Input[Optional[_builtins.int]] = None,
+            security_policy_id: pulumi.Input[Optional[_builtins.str]] = None) -> pulumi.Output[bool]:
+        __props__: dict = {}
+        __props__["bypassNetworkLists"] = bypass_network_lists
+        __props__["configId"] = config_id
+        __props__["securityPolicyId"] = security_policy_id
+        return pulumi.runtime.exists_resource(None, 'akamai:index/appSecByPassNetworkList:AppSecByPassNetworkList', id, __props__, opts or pulumi.ResourceOptions())
+
     @_builtins.property
     @pulumi.getter(name="bypassNetworkLists")
     def bypass_network_lists(self) -> pulumi.Output[Sequence[_builtins.str]]:

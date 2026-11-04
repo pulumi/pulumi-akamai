@@ -71,6 +71,12 @@ func (BotmanCustomBotCategoryState) ElementType() reflect.Type {
 	return reflect.TypeOf((*botmanCustomBotCategoryState)(nil)).Elem()
 }
 
+// BotmanCustomBotCategoryExists checks whether an existing BotmanCustomBotCategory resource with the given ID exists.
+func BotmanCustomBotCategoryExists(ctx *pulumi.Context,
+	id pulumi.StringInput, state *BotmanCustomBotCategoryState, opts ...pulumi.ResourceOption) pulumi.BoolOutput {
+	return ctx.ExistsResource("akamai:index/botmanCustomBotCategory:BotmanCustomBotCategory", id, state, "", opts...)
+}
+
 type botmanCustomBotCategoryArgs struct {
 	ConfigId          int    `pulumi:"configId"`
 	CustomBotCategory string `pulumi:"customBotCategory"`

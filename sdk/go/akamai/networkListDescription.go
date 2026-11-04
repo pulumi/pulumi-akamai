@@ -71,6 +71,12 @@ func (NetworkListDescriptionState) ElementType() reflect.Type {
 	return reflect.TypeOf((*networkListDescriptionState)(nil)).Elem()
 }
 
+// NetworkListDescriptionExists checks whether an existing NetworkListDescription resource with the given ID exists.
+func NetworkListDescriptionExists(ctx *pulumi.Context,
+	id pulumi.StringInput, state *NetworkListDescriptionState, opts ...pulumi.ResourceOption) pulumi.BoolOutput {
+	return ctx.ExistsResource("akamai:index/networkListDescription:NetworkListDescription", id, state, "", opts...)
+}
+
 type networkListDescriptionArgs struct {
 	Description   string  `pulumi:"description"`
 	Name          *string `pulumi:"name"`

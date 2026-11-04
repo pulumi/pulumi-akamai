@@ -116,6 +116,12 @@ func (IamCidrBlockState) ElementType() reflect.Type {
 	return reflect.TypeOf((*iamCidrBlockState)(nil)).Elem()
 }
 
+// IamCidrBlockExists checks whether an existing IamCidrBlock resource with the given ID exists.
+func IamCidrBlockExists(ctx *pulumi.Context,
+	id pulumi.StringInput, state *IamCidrBlockState, opts ...pulumi.ResourceOption) pulumi.BoolOutput {
+	return ctx.ExistsResource("akamai:index/iamCidrBlock:IamCidrBlock", id, state, "", opts...)
+}
+
 type iamCidrBlockArgs struct {
 	// The value of an IP address or IP address range.
 	CidrBlock string `pulumi:"cidrBlock"`

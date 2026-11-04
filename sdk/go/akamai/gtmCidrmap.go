@@ -83,6 +83,12 @@ func (GtmCidrmapState) ElementType() reflect.Type {
 	return reflect.TypeOf((*gtmCidrmapState)(nil)).Elem()
 }
 
+// GtmCidrmapExists checks whether an existing GtmCidrmap resource with the given ID exists.
+func GtmCidrmapExists(ctx *pulumi.Context,
+	id pulumi.StringInput, state *GtmCidrmapState, opts ...pulumi.ResourceOption) pulumi.BoolOutput {
+	return ctx.ExistsResource("akamai:index/gtmCidrmap:GtmCidrmap", id, state, "", opts...)
+}
+
 type gtmCidrmapArgs struct {
 	Assignments       []GtmCidrmapAssignment      `pulumi:"assignments"`
 	DefaultDatacenter GtmCidrmapDefaultDatacenter `pulumi:"defaultDatacenter"`

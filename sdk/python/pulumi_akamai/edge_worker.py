@@ -383,6 +383,30 @@ class EdgeWorker(pulumi.CustomResource):
         __props__.__dict__["warnings"] = warnings
         return EdgeWorker(resource_name, opts=opts, __props__=__props__)
 
+    @staticmethod
+    def exists(id: pulumi.Input[str],
+            opts: Optional[pulumi.ResourceOptions] = None,
+            edgeworker_id: pulumi.Input[Optional[_builtins.int]] = None,
+            group_id: pulumi.Input[Optional[_builtins.int]] = None,
+            local_bundle: pulumi.Input[Optional[_builtins.str]] = None,
+            local_bundle_hash: pulumi.Input[Optional[_builtins.str]] = None,
+            name: pulumi.Input[Optional[_builtins.str]] = None,
+            resource_tier_id: pulumi.Input[Optional[_builtins.int]] = None,
+            timeouts: pulumi.Input[Optional[Union['EdgeWorkerTimeoutsArgs', 'EdgeWorkerTimeoutsArgsDict', 'outputs.EdgeWorkerTimeouts']]] = None,
+            version: pulumi.Input[Optional[_builtins.str]] = None,
+            warnings: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None) -> pulumi.Output[bool]:
+        __props__: dict = {}
+        __props__["edgeworkerId"] = edgeworker_id
+        __props__["groupId"] = group_id
+        __props__["localBundle"] = local_bundle
+        __props__["localBundleHash"] = local_bundle_hash
+        __props__["name"] = name
+        __props__["resourceTierId"] = resource_tier_id
+        __props__["timeouts"] = timeouts
+        __props__["version"] = version
+        __props__["warnings"] = warnings
+        return pulumi.runtime.exists_resource(None, 'akamai:index/edgeWorker:EdgeWorker', id, __props__, opts or pulumi.ResourceOptions())
+
     @_builtins.property
     @pulumi.getter(name="edgeworkerId")
     def edgeworker_id(self) -> pulumi.Output[_builtins.int]:

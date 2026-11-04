@@ -71,6 +71,12 @@ func (BotmanCustomDenyActionState) ElementType() reflect.Type {
 	return reflect.TypeOf((*botmanCustomDenyActionState)(nil)).Elem()
 }
 
+// BotmanCustomDenyActionExists checks whether an existing BotmanCustomDenyAction resource with the given ID exists.
+func BotmanCustomDenyActionExists(ctx *pulumi.Context,
+	id pulumi.StringInput, state *BotmanCustomDenyActionState, opts ...pulumi.ResourceOption) pulumi.BoolOutput {
+	return ctx.ExistsResource("akamai:index/botmanCustomDenyAction:BotmanCustomDenyAction", id, state, "", opts...)
+}
+
 type botmanCustomDenyActionArgs struct {
 	ConfigId         int    `pulumi:"configId"`
 	CustomDenyAction string `pulumi:"customDenyAction"`

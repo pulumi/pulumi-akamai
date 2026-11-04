@@ -472,6 +472,32 @@ class CloudwrapperConfiguration(pulumi.CustomResource):
         __props__.__dict__["timeouts"] = timeouts
         return CloudwrapperConfiguration(resource_name, opts=opts, __props__=__props__)
 
+    @staticmethod
+    def exists(id: pulumi.Input[str],
+            opts: Optional[pulumi.ResourceOptions] = None,
+            capacity_alerts_threshold: pulumi.Input[Optional[_builtins.int]] = None,
+            comments: pulumi.Input[Optional[_builtins.str]] = None,
+            config_name: pulumi.Input[Optional[_builtins.str]] = None,
+            contract_id: pulumi.Input[Optional[_builtins.str]] = None,
+            locations: pulumi.Input[Optional[Sequence[pulumi.Input[Union['CloudwrapperConfigurationLocationArgs', 'CloudwrapperConfigurationLocationArgsDict', 'outputs.CloudwrapperConfigurationLocation']]]]] = None,
+            notification_emails: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+            property_ids: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+            retain_idle_objects: pulumi.Input[Optional[_builtins.bool]] = None,
+            revision: pulumi.Input[Optional[_builtins.str]] = None,
+            timeouts: pulumi.Input[Optional[Union['CloudwrapperConfigurationTimeoutsArgs', 'CloudwrapperConfigurationTimeoutsArgsDict', 'outputs.CloudwrapperConfigurationTimeouts']]] = None) -> pulumi.Output[bool]:
+        __props__: dict = {}
+        __props__["capacityAlertsThreshold"] = capacity_alerts_threshold
+        __props__["comments"] = comments
+        __props__["configName"] = config_name
+        __props__["contractId"] = contract_id
+        __props__["locations"] = locations
+        __props__["notificationEmails"] = notification_emails
+        __props__["propertyIds"] = property_ids
+        __props__["retainIdleObjects"] = retain_idle_objects
+        __props__["revision"] = revision
+        __props__["timeouts"] = timeouts
+        return pulumi.runtime.exists_resource(None, 'akamai:index/cloudwrapperConfiguration:CloudwrapperConfiguration', id, __props__, opts or pulumi.ResourceOptions())
+
     @_builtins.property
     @pulumi.getter(name="capacityAlertsThreshold")
     def capacity_alerts_threshold(self) -> pulumi.Output[Optional[_builtins.int]]:

@@ -110,6 +110,12 @@ func (MtlstruststoreCaSetActivationState) ElementType() reflect.Type {
 	return reflect.TypeOf((*mtlstruststoreCaSetActivationState)(nil)).Elem()
 }
 
+// MtlstruststoreCaSetActivationExists checks whether an existing MtlstruststoreCaSetActivation resource with the given ID exists.
+func MtlstruststoreCaSetActivationExists(ctx *pulumi.Context,
+	id pulumi.StringInput, state *MtlstruststoreCaSetActivationState, opts ...pulumi.ResourceOption) pulumi.BoolOutput {
+	return ctx.ExistsResource("akamai:index/mtlstruststoreCaSetActivation:MtlstruststoreCaSetActivation", id, state, "", opts...)
+}
+
 type mtlstruststoreCaSetActivationArgs struct {
 	// Uniquely Identifies a CA set.
 	CaSetId string `pulumi:"caSetId"`

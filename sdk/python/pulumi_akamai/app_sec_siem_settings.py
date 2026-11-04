@@ -422,6 +422,28 @@ class AppSecSiemSettings(pulumi.CustomResource):
         __props__.__dict__["siem_id"] = siem_id
         return AppSecSiemSettings(resource_name, opts=opts, __props__=__props__)
 
+    @staticmethod
+    def exists(id: pulumi.Input[str],
+            opts: Optional[pulumi.ResourceOptions] = None,
+            config_id: pulumi.Input[Optional[_builtins.int]] = None,
+            enable_botman_siem: pulumi.Input[Optional[_builtins.bool]] = None,
+            enable_for_all_policies: pulumi.Input[Optional[_builtins.bool]] = None,
+            enable_siem: pulumi.Input[Optional[_builtins.bool]] = None,
+            exceptions: pulumi.Input[Optional[Union['AppSecSiemSettingsExceptionsArgs', 'AppSecSiemSettingsExceptionsArgsDict', 'outputs.AppSecSiemSettingsExceptions']]] = None,
+            include_ja4_fingerprint_to_siem: pulumi.Input[Optional[_builtins.bool]] = None,
+            security_policy_ids: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+            siem_id: pulumi.Input[Optional[_builtins.int]] = None) -> pulumi.Output[bool]:
+        __props__: dict = {}
+        __props__["configId"] = config_id
+        __props__["enableBotmanSiem"] = enable_botman_siem
+        __props__["enableForAllPolicies"] = enable_for_all_policies
+        __props__["enableSiem"] = enable_siem
+        __props__["exceptions"] = exceptions
+        __props__["includeJa4FingerprintToSiem"] = include_ja4_fingerprint_to_siem
+        __props__["securityPolicyIds"] = security_policy_ids
+        __props__["siemId"] = siem_id
+        return pulumi.runtime.exists_resource(None, 'akamai:index/appSecSiemSettings:AppSecSiemSettings', id, __props__, opts or pulumi.ResourceOptions())
+
     @_builtins.property
     @pulumi.getter(name="configId")
     def config_id(self) -> pulumi.Output[_builtins.int]:

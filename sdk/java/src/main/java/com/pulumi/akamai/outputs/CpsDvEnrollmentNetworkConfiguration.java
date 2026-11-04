@@ -23,11 +23,10 @@ public final class CpsDvEnrollmentNetworkConfiguration {
     /**
      * @return Enable CPS to direct traffic using all the SANs listed in the SANs parameter when enrollment is created.
      * 
-     * @deprecated
-     * Use enableForAllSans instead.
+     * @deprecated Use enableForAllSans instead.
      * 
      */
-    @Deprecated /* Use enableForAllSans instead. */
+    @Deprecated
     private @Nullable Boolean cloneDnsNames;
     /**
      * @return TLS versions which are disallowed
@@ -81,11 +80,10 @@ public final class CpsDvEnrollmentNetworkConfiguration {
     /**
      * @return Enable CPS to direct traffic using all the SANs listed in the SANs parameter when enrollment is created.
      * 
-     * @deprecated
-     * Use enableForAllSans instead.
+     * @deprecated Use enableForAllSans instead.
      * 
      */
-    @Deprecated /* Use enableForAllSans instead. */
+    @Deprecated
     public Optional<Boolean> cloneDnsNames() {
         return Optional.ofNullable(this.cloneDnsNames);
     }

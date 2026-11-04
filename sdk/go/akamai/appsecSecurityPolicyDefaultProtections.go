@@ -89,6 +89,12 @@ func (AppsecSecurityPolicyDefaultProtectionsState) ElementType() reflect.Type {
 	return reflect.TypeOf((*appsecSecurityPolicyDefaultProtectionsState)(nil)).Elem()
 }
 
+// AppsecSecurityPolicyDefaultProtectionsExists checks whether an existing AppsecSecurityPolicyDefaultProtections resource with the given ID exists.
+func AppsecSecurityPolicyDefaultProtectionsExists(ctx *pulumi.Context,
+	id pulumi.StringInput, state *AppsecSecurityPolicyDefaultProtectionsState, opts ...pulumi.ResourceOption) pulumi.BoolOutput {
+	return ctx.ExistsResource("akamai:index/appsecSecurityPolicyDefaultProtections:AppsecSecurityPolicyDefaultProtections", id, state, "", opts...)
+}
+
 type appsecSecurityPolicyDefaultProtectionsArgs struct {
 	// Unique identifier of the security configuration
 	ConfigId int `pulumi:"configId"`

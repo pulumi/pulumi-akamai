@@ -152,6 +152,12 @@ func (MtlstruststoreCaSetState) ElementType() reflect.Type {
 	return reflect.TypeOf((*mtlstruststoreCaSetState)(nil)).Elem()
 }
 
+// MtlstruststoreCaSetExists checks whether an existing MtlstruststoreCaSet resource with the given ID exists.
+func MtlstruststoreCaSetExists(ctx *pulumi.Context,
+	id pulumi.StringInput, state *MtlstruststoreCaSetState, opts ...pulumi.ResourceOption) pulumi.BoolOutput {
+	return ctx.ExistsResource("akamai:index/mtlstruststoreCaSet:MtlstruststoreCaSet", id, state, "", opts...)
+}
+
 type mtlstruststoreCaSetArgs struct {
 	// Allows certificates with SHA-1 signatures if enabled.
 	AllowInsecureSha1 *bool `pulumi:"allowInsecureSha1"`

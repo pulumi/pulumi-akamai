@@ -192,6 +192,18 @@ class BotmanBotManagementSettings(pulumi.CustomResource):
         __props__.__dict__["security_policy_id"] = security_policy_id
         return BotmanBotManagementSettings(resource_name, opts=opts, __props__=__props__)
 
+    @staticmethod
+    def exists(id: pulumi.Input[str],
+            opts: Optional[pulumi.ResourceOptions] = None,
+            bot_management_settings: pulumi.Input[Optional[_builtins.str]] = None,
+            config_id: pulumi.Input[Optional[_builtins.int]] = None,
+            security_policy_id: pulumi.Input[Optional[_builtins.str]] = None) -> pulumi.Output[bool]:
+        __props__: dict = {}
+        __props__["botManagementSettings"] = bot_management_settings
+        __props__["configId"] = config_id
+        __props__["securityPolicyId"] = security_policy_id
+        return pulumi.runtime.exists_resource(None, 'akamai:index/botmanBotManagementSettings:BotmanBotManagementSettings', id, __props__, opts or pulumi.ResourceOptions())
+
     @_builtins.property
     @pulumi.getter(name="botManagementSettings")
     def bot_management_settings(self) -> pulumi.Output[_builtins.str]:

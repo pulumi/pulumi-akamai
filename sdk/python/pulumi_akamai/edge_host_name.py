@@ -481,6 +481,34 @@ class EdgeHostName(pulumi.CustomResource):
         __props__.__dict__["use_cases"] = use_cases
         return EdgeHostName(resource_name, opts=opts, __props__=__props__)
 
+    @staticmethod
+    def exists(id: pulumi.Input[str],
+            opts: Optional[pulumi.ResourceOptions] = None,
+            certificate: pulumi.Input[Optional[_builtins.int]] = None,
+            contract_id: pulumi.Input[Optional[_builtins.str]] = None,
+            edge_hostname: pulumi.Input[Optional[_builtins.str]] = None,
+            group_id: pulumi.Input[Optional[_builtins.str]] = None,
+            https_service_binding: pulumi.Input[Optional[_builtins.str]] = None,
+            ip_behavior: pulumi.Input[Optional[_builtins.str]] = None,
+            product_id: pulumi.Input[Optional[_builtins.str]] = None,
+            status_update_emails: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+            timeouts: pulumi.Input[Optional[Union['EdgeHostNameTimeoutsArgs', 'EdgeHostNameTimeoutsArgsDict', 'outputs.EdgeHostNameTimeouts']]] = None,
+            ttl: pulumi.Input[Optional[_builtins.int]] = None,
+            use_cases: pulumi.Input[Optional[_builtins.str]] = None) -> pulumi.Output[bool]:
+        __props__: dict = {}
+        __props__["certificate"] = certificate
+        __props__["contractId"] = contract_id
+        __props__["edgeHostname"] = edge_hostname
+        __props__["groupId"] = group_id
+        __props__["httpsServiceBinding"] = https_service_binding
+        __props__["ipBehavior"] = ip_behavior
+        __props__["productId"] = product_id
+        __props__["statusUpdateEmails"] = status_update_emails
+        __props__["timeouts"] = timeouts
+        __props__["ttl"] = ttl
+        __props__["useCases"] = use_cases
+        return pulumi.runtime.exists_resource(None, 'akamai:index/edgeHostName:EdgeHostName', id, __props__, opts or pulumi.ResourceOptions())
+
     @_builtins.property
     @pulumi.getter
     def certificate(self) -> pulumi.Output[Optional[_builtins.int]]:

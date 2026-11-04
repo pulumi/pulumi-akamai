@@ -98,6 +98,12 @@ func (AppSecAttackGroupState) ElementType() reflect.Type {
 	return reflect.TypeOf((*appSecAttackGroupState)(nil)).Elem()
 }
 
+// AppSecAttackGroupExists checks whether an existing AppSecAttackGroup resource with the given ID exists.
+func AppSecAttackGroupExists(ctx *pulumi.Context,
+	id pulumi.StringInput, state *AppSecAttackGroupState, opts ...pulumi.ResourceOption) pulumi.BoolOutput {
+	return ctx.ExistsResource("akamai:index/appSecAttackGroup:AppSecAttackGroup", id, state, "", opts...)
+}
+
 type appSecAttackGroupArgs struct {
 	// Unique name of the attack group to be modified
 	AttackGroup string `pulumi:"attackGroup"`

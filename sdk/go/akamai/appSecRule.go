@@ -95,6 +95,12 @@ func (AppSecRuleState) ElementType() reflect.Type {
 	return reflect.TypeOf((*appSecRuleState)(nil)).Elem()
 }
 
+// AppSecRuleExists checks whether an existing AppSecRule resource with the given ID exists.
+func AppSecRuleExists(ctx *pulumi.Context,
+	id pulumi.StringInput, state *AppSecRuleState, opts ...pulumi.ResourceOption) pulumi.BoolOutput {
+	return ctx.ExistsResource("akamai:index/appSecRule:AppSecRule", id, state, "", opts...)
+}
+
 type appSecRuleArgs struct {
 	// JSON-formatted condition and exception information for the rule
 	ConditionException *string `pulumi:"conditionException"`

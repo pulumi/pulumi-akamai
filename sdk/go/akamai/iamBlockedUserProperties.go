@@ -83,6 +83,12 @@ func (IamBlockedUserPropertiesState) ElementType() reflect.Type {
 	return reflect.TypeOf((*iamBlockedUserPropertiesState)(nil)).Elem()
 }
 
+// IamBlockedUserPropertiesExists checks whether an existing IamBlockedUserProperties resource with the given ID exists.
+func IamBlockedUserPropertiesExists(ctx *pulumi.Context,
+	id pulumi.StringInput, state *IamBlockedUserPropertiesState, opts ...pulumi.ResourceOption) pulumi.BoolOutput {
+	return ctx.ExistsResource("akamai:index/iamBlockedUserProperties:IamBlockedUserProperties", id, state, "", opts...)
+}
+
 type iamBlockedUserPropertiesArgs struct {
 	// List of properties to block for a user.
 	BlockedProperties []int `pulumi:"blockedProperties"`

@@ -80,6 +80,12 @@ func (AprGeneralSettingsState) ElementType() reflect.Type {
 	return reflect.TypeOf((*aprGeneralSettingsState)(nil)).Elem()
 }
 
+// AprGeneralSettingsExists checks whether an existing AprGeneralSettings resource with the given ID exists.
+func AprGeneralSettingsExists(ctx *pulumi.Context,
+	id pulumi.StringInput, state *AprGeneralSettingsState, opts ...pulumi.ResourceOption) pulumi.BoolOutput {
+	return ctx.ExistsResource("akamai:index/aprGeneralSettings:AprGeneralSettings", id, state, "", opts...)
+}
+
 type aprGeneralSettingsArgs struct {
 	// Identifies a security configuration.
 	ConfigId        int    `pulumi:"configId"`

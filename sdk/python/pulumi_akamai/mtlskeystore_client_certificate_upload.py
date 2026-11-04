@@ -392,6 +392,28 @@ class MtlskeystoreClientCertificateUpload(pulumi.CustomResource):
         __props__.__dict__["wait_for_deployment"] = wait_for_deployment
         return MtlskeystoreClientCertificateUpload(resource_name, opts=opts, __props__=__props__)
 
+    @staticmethod
+    def exists(id: pulumi.Input[str],
+            opts: Optional[pulumi.ResourceOptions] = None,
+            auto_acknowledge_warnings: pulumi.Input[Optional[_builtins.bool]] = None,
+            client_certificate_id: pulumi.Input[Optional[_builtins.int]] = None,
+            signed_certificate: pulumi.Input[Optional[_builtins.str]] = None,
+            timeouts: pulumi.Input[Optional[Union['MtlskeystoreClientCertificateUploadTimeoutsArgs', 'MtlskeystoreClientCertificateUploadTimeoutsArgsDict', 'outputs.MtlskeystoreClientCertificateUploadTimeouts']]] = None,
+            trust_chain: pulumi.Input[Optional[_builtins.str]] = None,
+            version_guid: pulumi.Input[Optional[_builtins.str]] = None,
+            version_number: pulumi.Input[Optional[_builtins.int]] = None,
+            wait_for_deployment: pulumi.Input[Optional[_builtins.bool]] = None) -> pulumi.Output[bool]:
+        __props__: dict = {}
+        __props__["autoAcknowledgeWarnings"] = auto_acknowledge_warnings
+        __props__["clientCertificateId"] = client_certificate_id
+        __props__["signedCertificate"] = signed_certificate
+        __props__["timeouts"] = timeouts
+        __props__["trustChain"] = trust_chain
+        __props__["versionGuid"] = version_guid
+        __props__["versionNumber"] = version_number
+        __props__["waitForDeployment"] = wait_for_deployment
+        return pulumi.runtime.exists_resource(None, 'akamai:index/mtlskeystoreClientCertificateUpload:MtlskeystoreClientCertificateUpload', id, __props__, opts or pulumi.ResourceOptions())
+
     @_builtins.property
     @pulumi.getter(name="autoAcknowledgeWarnings")
     def auto_acknowledge_warnings(self) -> pulumi.Output[_builtins.bool]:

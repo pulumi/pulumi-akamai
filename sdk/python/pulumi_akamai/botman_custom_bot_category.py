@@ -177,6 +177,18 @@ class BotmanCustomBotCategory(pulumi.CustomResource):
         __props__.__dict__["custom_bot_category"] = custom_bot_category
         return BotmanCustomBotCategory(resource_name, opts=opts, __props__=__props__)
 
+    @staticmethod
+    def exists(id: pulumi.Input[str],
+            opts: Optional[pulumi.ResourceOptions] = None,
+            category_id: pulumi.Input[Optional[_builtins.str]] = None,
+            config_id: pulumi.Input[Optional[_builtins.int]] = None,
+            custom_bot_category: pulumi.Input[Optional[_builtins.str]] = None) -> pulumi.Output[bool]:
+        __props__: dict = {}
+        __props__["categoryId"] = category_id
+        __props__["configId"] = config_id
+        __props__["customBotCategory"] = custom_bot_category
+        return pulumi.runtime.exists_resource(None, 'akamai:index/botmanCustomBotCategory:BotmanCustomBotCategory', id, __props__, opts or pulumi.ResourceOptions())
+
     @_builtins.property
     @pulumi.getter(name="categoryId")
     def category_id(self) -> pulumi.Output[_builtins.str]:

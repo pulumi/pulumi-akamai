@@ -239,6 +239,12 @@ func (DatastreamState) ElementType() reflect.Type {
 	return reflect.TypeOf((*datastreamState)(nil)).Elem()
 }
 
+// DatastreamExists checks whether an existing Datastream resource with the given ID exists.
+func DatastreamExists(ctx *pulumi.Context,
+	id pulumi.StringInput, state *DatastreamState, opts ...pulumi.ResourceOption) pulumi.BoolOutput {
+	return ctx.ExistsResource("akamai:index/datastream:Datastream", id, state, "", opts...)
+}
+
 type datastreamArgs struct {
 	// Defining if stream should be active or not
 	Active bool `pulumi:"active"`

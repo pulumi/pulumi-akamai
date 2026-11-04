@@ -179,6 +179,12 @@ func (GtmDomainState) ElementType() reflect.Type {
 	return reflect.TypeOf((*gtmDomainState)(nil)).Elem()
 }
 
+// GtmDomainExists checks whether an existing GtmDomain resource with the given ID exists.
+func GtmDomainExists(ctx *pulumi.Context,
+	id pulumi.StringInput, state *GtmDomainState, opts ...pulumi.ResourceOption) pulumi.BoolOutput {
+	return ctx.ExistsResource("akamai:index/gtmDomain:GtmDomain", id, state, "", opts...)
+}
+
 type gtmDomainArgs struct {
 	CnameCoalescingEnabled      *bool    `pulumi:"cnameCoalescingEnabled"`
 	Comment                     *string  `pulumi:"comment"`

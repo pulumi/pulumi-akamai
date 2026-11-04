@@ -55,22 +55,20 @@ public final class PropertyHostnameArgs extends com.pulumi.resources.ResourceArg
     /**
      * Deployment status for the RSA and ECDSA certificates created with Cloud Certificate Manager (CCM).
      * 
-     * @deprecated
-     * Will be replaced by ccm_cert_statuses.
+     * @deprecated Will be replaced by ccm_cert_statuses.
      * 
      */
-    @Deprecated /* Will be replaced by ccm_cert_statuses. */
+    @Deprecated
     @Import(name="ccmCertStatus")
     private @Nullable Output<List<PropertyHostnameCcmCertStatusArgs>> ccmCertStatus;
 
     /**
      * @return Deployment status for the RSA and ECDSA certificates created with Cloud Certificate Manager (CCM).
      * 
-     * @deprecated
-     * Will be replaced by ccm_cert_statuses.
+     * @deprecated Will be replaced by ccm_cert_statuses.
      * 
      */
-    @Deprecated /* Will be replaced by ccm_cert_statuses. */
+    @Deprecated
     public Optional<Output<List<PropertyHostnameCcmCertStatusArgs>>> ccmCertStatus() {
         return Optional.ofNullable(this.ccmCertStatus);
     }
@@ -93,22 +91,20 @@ public final class PropertyHostnameArgs extends com.pulumi.resources.ResourceArg
     /**
      * Certificate identifiers and links for the CCM-managed certificates.
      * 
-     * @deprecated
-     * Use ccmCertId instead.
+     * @deprecated Use ccmCertId instead.
      * 
      */
-    @Deprecated /* Use ccmCertId instead. */
+    @Deprecated
     @Import(name="ccmCertificates")
     private @Nullable Output<PropertyHostnameCcmCertificatesArgs> ccmCertificates;
 
     /**
      * @return Certificate identifiers and links for the CCM-managed certificates.
      * 
-     * @deprecated
-     * Use ccmCertId instead.
+     * @deprecated Use ccmCertId instead.
      * 
      */
-    @Deprecated /* Use ccmCertId instead. */
+    @Deprecated
     public Optional<Output<PropertyHostnameCcmCertificatesArgs>> ccmCertificates() {
         return Optional.ofNullable(this.ccmCertificates);
     }
@@ -268,11 +264,10 @@ public final class PropertyHostnameArgs extends com.pulumi.resources.ResourceArg
          * 
          * @return builder
          * 
-         * @deprecated
-         * Will be replaced by ccm_cert_statuses.
+         * @deprecated Will be replaced by ccm_cert_statuses.
          * 
          */
-        @Deprecated /* Will be replaced by ccm_cert_statuses. */
+        @Deprecated
         public Builder ccmCertStatus(@Nullable Output<List<PropertyHostnameCcmCertStatusArgs>> ccmCertStatus) {
             $.ccmCertStatus = ccmCertStatus;
             return this;
@@ -283,11 +278,10 @@ public final class PropertyHostnameArgs extends com.pulumi.resources.ResourceArg
          * 
          * @return builder
          * 
-         * @deprecated
-         * Will be replaced by ccm_cert_statuses.
+         * @deprecated Will be replaced by ccm_cert_statuses.
          * 
          */
-        @Deprecated /* Will be replaced by ccm_cert_statuses. */
+        @Deprecated
         public Builder ccmCertStatus(List<PropertyHostnameCcmCertStatusArgs> ccmCertStatus) {
             return ccmCertStatus(Output.of(ccmCertStatus));
         }
@@ -297,11 +291,10 @@ public final class PropertyHostnameArgs extends com.pulumi.resources.ResourceArg
          * 
          * @return builder
          * 
-         * @deprecated
-         * Will be replaced by ccm_cert_statuses.
+         * @deprecated Will be replaced by ccm_cert_statuses.
          * 
          */
-        @Deprecated /* Will be replaced by ccm_cert_statuses. */
+        @Deprecated
         public Builder ccmCertStatus(PropertyHostnameCcmCertStatusArgs... ccmCertStatus) {
             return ccmCertStatus(List.of(ccmCertStatus));
         }
@@ -342,11 +335,10 @@ public final class PropertyHostnameArgs extends com.pulumi.resources.ResourceArg
          * 
          * @return builder
          * 
-         * @deprecated
-         * Use ccmCertId instead.
+         * @deprecated Use ccmCertId instead.
          * 
          */
-        @Deprecated /* Use ccmCertId instead. */
+        @Deprecated
         public Builder ccmCertificates(@Nullable Output<PropertyHostnameCcmCertificatesArgs> ccmCertificates) {
             $.ccmCertificates = ccmCertificates;
             return this;
@@ -357,11 +349,10 @@ public final class PropertyHostnameArgs extends com.pulumi.resources.ResourceArg
          * 
          * @return builder
          * 
-         * @deprecated
-         * Use ccmCertId instead.
+         * @deprecated Use ccmCertId instead.
          * 
          */
-        @Deprecated /* Use ccmCertId instead. */
+        @Deprecated
         public Builder ccmCertificates(PropertyHostnameCcmCertificatesArgs ccmCertificates) {
             return ccmCertificates(Output.of(ccmCertificates));
         }

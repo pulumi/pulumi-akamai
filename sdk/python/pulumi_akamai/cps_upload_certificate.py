@@ -497,6 +497,32 @@ class CpsUploadCertificate(pulumi.CustomResource):
         __props__.__dict__["wait_for_deployment"] = wait_for_deployment
         return CpsUploadCertificate(resource_name, opts=opts, __props__=__props__)
 
+    @staticmethod
+    def exists(id: pulumi.Input[str],
+            opts: Optional[pulumi.ResourceOptions] = None,
+            acknowledge_change_management: pulumi.Input[Optional[_builtins.bool]] = None,
+            acknowledge_post_verification_warnings: pulumi.Input[Optional[_builtins.bool]] = None,
+            auto_approve_warnings: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+            certificate_ecdsa_pem: pulumi.Input[Optional[_builtins.str]] = None,
+            certificate_rsa_pem: pulumi.Input[Optional[_builtins.str]] = None,
+            enrollment_id: pulumi.Input[Optional[_builtins.int]] = None,
+            timeouts: pulumi.Input[Optional[Union['CpsUploadCertificateTimeoutsArgs', 'CpsUploadCertificateTimeoutsArgsDict', 'outputs.CpsUploadCertificateTimeouts']]] = None,
+            trust_chain_ecdsa_pem: pulumi.Input[Optional[_builtins.str]] = None,
+            trust_chain_rsa_pem: pulumi.Input[Optional[_builtins.str]] = None,
+            wait_for_deployment: pulumi.Input[Optional[_builtins.bool]] = None) -> pulumi.Output[bool]:
+        __props__: dict = {}
+        __props__["acknowledgeChangeManagement"] = acknowledge_change_management
+        __props__["acknowledgePostVerificationWarnings"] = acknowledge_post_verification_warnings
+        __props__["autoApproveWarnings"] = auto_approve_warnings
+        __props__["certificateEcdsaPem"] = certificate_ecdsa_pem
+        __props__["certificateRsaPem"] = certificate_rsa_pem
+        __props__["enrollmentId"] = enrollment_id
+        __props__["timeouts"] = timeouts
+        __props__["trustChainEcdsaPem"] = trust_chain_ecdsa_pem
+        __props__["trustChainRsaPem"] = trust_chain_rsa_pem
+        __props__["waitForDeployment"] = wait_for_deployment
+        return pulumi.runtime.exists_resource(None, 'akamai:index/cpsUploadCertificate:CpsUploadCertificate', id, __props__, opts or pulumi.ResourceOptions())
+
     @_builtins.property
     @pulumi.getter(name="acknowledgeChangeManagement")
     def acknowledge_change_management(self) -> pulumi.Output[Optional[_builtins.bool]]:

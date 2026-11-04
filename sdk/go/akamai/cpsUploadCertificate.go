@@ -119,6 +119,12 @@ func (CpsUploadCertificateState) ElementType() reflect.Type {
 	return reflect.TypeOf((*cpsUploadCertificateState)(nil)).Elem()
 }
 
+// CpsUploadCertificateExists checks whether an existing CpsUploadCertificate resource with the given ID exists.
+func CpsUploadCertificateExists(ctx *pulumi.Context,
+	id pulumi.StringInput, state *CpsUploadCertificateState, opts ...pulumi.ResourceOption) pulumi.BoolOutput {
+	return ctx.ExistsResource("akamai:index/cpsUploadCertificate:CpsUploadCertificate", id, state, "", opts...)
+}
+
 type cpsUploadCertificateArgs struct {
 	// Whether to acknowledge change management
 	AcknowledgeChangeManagement *bool `pulumi:"acknowledgeChangeManagement"`

@@ -520,6 +520,38 @@ class AppsecUrlProtectionPolicy(pulumi.CustomResource):
         __props__.__dict__["url_protection_policy_id"] = url_protection_policy_id
         return AppsecUrlProtectionPolicy(resource_name, opts=opts, __props__=__props__)
 
+    @staticmethod
+    def exists(id: pulumi.Input[str],
+            opts: Optional[pulumi.ResourceOptions] = None,
+            api_definitions: pulumi.Input[Optional[Sequence[pulumi.Input[Union['AppsecUrlProtectionPolicyApiDefinitionArgs', 'AppsecUrlProtectionPolicyApiDefinitionArgsDict', 'outputs.AppsecUrlProtectionPolicyApiDefinition']]]]] = None,
+            bypass_conditions: pulumi.Input[Optional[Sequence[pulumi.Input[Union['AppsecUrlProtectionPolicyBypassConditionArgs', 'AppsecUrlProtectionPolicyBypassConditionArgsDict', 'outputs.AppsecUrlProtectionPolicyBypassCondition']]]]] = None,
+            config_id: pulumi.Input[Optional[_builtins.int]] = None,
+            create_date: pulumi.Input[Optional[_builtins.str]] = None,
+            created_by: pulumi.Input[Optional[_builtins.str]] = None,
+            description: pulumi.Input[Optional[_builtins.str]] = None,
+            hostname_paths: pulumi.Input[Optional[Sequence[pulumi.Input[Union['AppsecUrlProtectionPolicyHostnamePathArgs', 'AppsecUrlProtectionPolicyHostnamePathArgsDict', 'outputs.AppsecUrlProtectionPolicyHostnamePath']]]]] = None,
+            intelligent_load_shedding: pulumi.Input[Optional[Union['AppsecUrlProtectionPolicyIntelligentLoadSheddingArgs', 'AppsecUrlProtectionPolicyIntelligentLoadSheddingArgsDict', 'outputs.AppsecUrlProtectionPolicyIntelligentLoadShedding']]] = None,
+            max_rate_threshold: pulumi.Input[Optional[_builtins.int]] = None,
+            name: pulumi.Input[Optional[_builtins.str]] = None,
+            update_date: pulumi.Input[Optional[_builtins.str]] = None,
+            updated_by: pulumi.Input[Optional[_builtins.str]] = None,
+            url_protection_policy_id: pulumi.Input[Optional[_builtins.int]] = None) -> pulumi.Output[bool]:
+        __props__: dict = {}
+        __props__["apiDefinitions"] = api_definitions
+        __props__["bypassConditions"] = bypass_conditions
+        __props__["configId"] = config_id
+        __props__["createDate"] = create_date
+        __props__["createdBy"] = created_by
+        __props__["description"] = description
+        __props__["hostnamePaths"] = hostname_paths
+        __props__["intelligentLoadShedding"] = intelligent_load_shedding
+        __props__["maxRateThreshold"] = max_rate_threshold
+        __props__["name"] = name
+        __props__["updateDate"] = update_date
+        __props__["updatedBy"] = updated_by
+        __props__["urlProtectionPolicyId"] = url_protection_policy_id
+        return pulumi.runtime.exists_resource(None, 'akamai:index/appsecUrlProtectionPolicy:AppsecUrlProtectionPolicy', id, __props__, opts or pulumi.ResourceOptions())
+
     @_builtins.property
     @pulumi.getter(name="apiDefinitions")
     def api_definitions(self) -> pulumi.Output[Optional[Sequence['outputs.AppsecUrlProtectionPolicyApiDefinition']]]:

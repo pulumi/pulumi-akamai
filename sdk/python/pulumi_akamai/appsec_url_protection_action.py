@@ -303,6 +303,22 @@ class AppsecUrlProtectionAction(pulumi.CustomResource):
         __props__.__dict__["url_protection_policy_id"] = url_protection_policy_id
         return AppsecUrlProtectionAction(resource_name, opts=opts, __props__=__props__)
 
+    @staticmethod
+    def exists(id: pulumi.Input[str],
+            opts: Optional[pulumi.ResourceOptions] = None,
+            config_id: pulumi.Input[Optional[_builtins.int]] = None,
+            load_shedding_action: pulumi.Input[Optional[_builtins.str]] = None,
+            max_rate_threshold_action: pulumi.Input[Optional[_builtins.str]] = None,
+            security_policy_id: pulumi.Input[Optional[_builtins.str]] = None,
+            url_protection_policy_id: pulumi.Input[Optional[_builtins.int]] = None) -> pulumi.Output[bool]:
+        __props__: dict = {}
+        __props__["configId"] = config_id
+        __props__["loadSheddingAction"] = load_shedding_action
+        __props__["maxRateThresholdAction"] = max_rate_threshold_action
+        __props__["securityPolicyId"] = security_policy_id
+        __props__["urlProtectionPolicyId"] = url_protection_policy_id
+        return pulumi.runtime.exists_resource(None, 'akamai:index/appsecUrlProtectionAction:AppsecUrlProtectionAction', id, __props__, opts or pulumi.ResourceOptions())
+
     @_builtins.property
     @pulumi.getter(name="configId")
     def config_id(self) -> pulumi.Output[_builtins.int]:

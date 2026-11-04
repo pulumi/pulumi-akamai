@@ -131,6 +131,12 @@ func (PropertyHostnameBucketState) ElementType() reflect.Type {
 	return reflect.TypeOf((*propertyHostnameBucketState)(nil)).Elem()
 }
 
+// PropertyHostnameBucketExists checks whether an existing PropertyHostnameBucket resource with the given ID exists.
+func PropertyHostnameBucketExists(ctx *pulumi.Context,
+	id pulumi.StringInput, state *PropertyHostnameBucketState, opts ...pulumi.ResourceOption) pulumi.BoolOutput {
+	return ctx.ExistsResource("akamai:index/propertyHostnameBucket:PropertyHostnameBucket", id, state, "", opts...)
+}
+
 type propertyHostnameBucketArgs struct {
 	// The unique identifier for the contract. Provide it if resolving the property without 'contract_id' and 'group_id' is not possible
 	ContractId *string `pulumi:"contractId"`

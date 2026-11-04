@@ -119,6 +119,12 @@ func (AppSecIPGeoState) ElementType() reflect.Type {
 	return reflect.TypeOf((*appSecIPGeoState)(nil)).Elem()
 }
 
+// AppSecIPGeoExists checks whether an existing AppSecIPGeo resource with the given ID exists.
+func AppSecIPGeoExists(ctx *pulumi.Context,
+	id pulumi.StringInput, state *AppSecIPGeoState, opts ...pulumi.ResourceOption) pulumi.BoolOutput {
+	return ctx.ExistsResource("akamai:index/appSecIPGeo:AppSecIPGeo", id, state, "", opts...)
+}
+
 type appSecIPGeoArgs struct {
 	// An Object containing List of ASN network lists to be blocked with specified action
 	AsnControls *AppSecIPGeoAsnControls `pulumi:"asnControls"`

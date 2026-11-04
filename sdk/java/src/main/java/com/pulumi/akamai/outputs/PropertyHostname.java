@@ -31,11 +31,10 @@ public final class PropertyHostname {
     /**
      * @return Deployment status for the RSA and ECDSA certificates created with Cloud Certificate Manager (CCM).
      * 
-     * @deprecated
-     * Will be replaced by ccm_cert_statuses.
+     * @deprecated Will be replaced by ccm_cert_statuses.
      * 
      */
-    @Deprecated /* Will be replaced by ccm_cert_statuses. */
+    @Deprecated
     private @Nullable List<PropertyHostnameCcmCertStatus> ccmCertStatus;
     /**
      * @return The deployment statuses of the Cloud Certificate Manager (CCM) certificate lineage bound to the hostname, organized by key type and network.
@@ -45,11 +44,10 @@ public final class PropertyHostname {
     /**
      * @return Certificate identifiers and links for the CCM-managed certificates.
      * 
-     * @deprecated
-     * Use ccmCertId instead.
+     * @deprecated Use ccmCertId instead.
      * 
      */
-    @Deprecated /* Use ccmCertId instead. */
+    @Deprecated
     private @Nullable PropertyHostnameCcmCertificates ccmCertificates;
     private String certProvisioningType;
     private @Nullable List<PropertyHostnameCertStatus> certStatuses;
@@ -86,11 +84,10 @@ public final class PropertyHostname {
     /**
      * @return Deployment status for the RSA and ECDSA certificates created with Cloud Certificate Manager (CCM).
      * 
-     * @deprecated
-     * Will be replaced by ccm_cert_statuses.
+     * @deprecated Will be replaced by ccm_cert_statuses.
      * 
      */
-    @Deprecated /* Will be replaced by ccm_cert_statuses. */
+    @Deprecated
     public List<PropertyHostnameCcmCertStatus> ccmCertStatus() {
         return this.ccmCertStatus == null ? List.of() : this.ccmCertStatus;
     }
@@ -104,11 +101,10 @@ public final class PropertyHostname {
     /**
      * @return Certificate identifiers and links for the CCM-managed certificates.
      * 
-     * @deprecated
-     * Use ccmCertId instead.
+     * @deprecated Use ccmCertId instead.
      * 
      */
-    @Deprecated /* Use ccmCertId instead. */
+    @Deprecated
     public Optional<PropertyHostnameCcmCertificates> ccmCertificates() {
         return Optional.ofNullable(this.ccmCertificates);
     }

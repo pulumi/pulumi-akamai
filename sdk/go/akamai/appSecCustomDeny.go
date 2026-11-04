@@ -80,6 +80,12 @@ func (AppSecCustomDenyState) ElementType() reflect.Type {
 	return reflect.TypeOf((*appSecCustomDenyState)(nil)).Elem()
 }
 
+// AppSecCustomDenyExists checks whether an existing AppSecCustomDeny resource with the given ID exists.
+func AppSecCustomDenyExists(ctx *pulumi.Context,
+	id pulumi.StringInput, state *AppSecCustomDenyState, opts ...pulumi.ResourceOption) pulumi.BoolOutput {
+	return ctx.ExistsResource("akamai:index/appSecCustomDeny:AppSecCustomDeny", id, state, "", opts...)
+}
+
 type appSecCustomDenyArgs struct {
 	// Unique identifier of the security configuration
 	ConfigId int `pulumi:"configId"`

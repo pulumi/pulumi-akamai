@@ -80,6 +80,12 @@ func (AppSecAdvancedSettingsLoggingState) ElementType() reflect.Type {
 	return reflect.TypeOf((*appSecAdvancedSettingsLoggingState)(nil)).Elem()
 }
 
+// AppSecAdvancedSettingsLoggingExists checks whether an existing AppSecAdvancedSettingsLogging resource with the given ID exists.
+func AppSecAdvancedSettingsLoggingExists(ctx *pulumi.Context,
+	id pulumi.StringInput, state *AppSecAdvancedSettingsLoggingState, opts ...pulumi.ResourceOption) pulumi.BoolOutput {
+	return ctx.ExistsResource("akamai:index/appSecAdvancedSettingsLogging:AppSecAdvancedSettingsLogging", id, state, "", opts...)
+}
+
 type appSecAdvancedSettingsLoggingArgs struct {
 	// Unique identifier of the security configuration
 	ConfigId int `pulumi:"configId"`

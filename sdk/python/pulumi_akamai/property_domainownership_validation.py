@@ -175,6 +175,16 @@ class PropertyDomainownershipValidation(pulumi.CustomResource):
         __props__.__dict__["timeouts"] = timeouts
         return PropertyDomainownershipValidation(resource_name, opts=opts, __props__=__props__)
 
+    @staticmethod
+    def exists(id: pulumi.Input[str],
+            opts: Optional[pulumi.ResourceOptions] = None,
+            domains: pulumi.Input[Optional[Sequence[pulumi.Input[Union['PropertyDomainownershipValidationDomainArgs', 'PropertyDomainownershipValidationDomainArgsDict', 'outputs.PropertyDomainownershipValidationDomain']]]]] = None,
+            timeouts: pulumi.Input[Optional[Union['PropertyDomainownershipValidationTimeoutsArgs', 'PropertyDomainownershipValidationTimeoutsArgsDict', 'outputs.PropertyDomainownershipValidationTimeouts']]] = None) -> pulumi.Output[bool]:
+        __props__: dict = {}
+        __props__["domains"] = domains
+        __props__["timeouts"] = timeouts
+        return pulumi.runtime.exists_resource(None, 'akamai:index/propertyDomainownershipValidation:PropertyDomainownershipValidation', id, __props__, opts or pulumi.ResourceOptions())
+
     @_builtins.property
     @pulumi.getter
     def domains(self) -> pulumi.Output[Sequence['outputs.PropertyDomainownershipValidationDomain']]:

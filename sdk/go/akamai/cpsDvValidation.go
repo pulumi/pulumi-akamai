@@ -89,6 +89,12 @@ func (CpsDvValidationState) ElementType() reflect.Type {
 	return reflect.TypeOf((*cpsDvValidationState)(nil)).Elem()
 }
 
+// CpsDvValidationExists checks whether an existing CpsDvValidation resource with the given ID exists.
+func CpsDvValidationExists(ctx *pulumi.Context,
+	id pulumi.StringInput, state *CpsDvValidationState, opts ...pulumi.ResourceOption) pulumi.BoolOutput {
+	return ctx.ExistsResource("akamai:index/cpsDvValidation:CpsDvValidation", id, state, "", opts...)
+}
+
 type cpsDvValidationArgs struct {
 	// Whether to acknowledge all post-verification warnings
 	AcknowledgePostVerificationWarnings *bool `pulumi:"acknowledgePostVerificationWarnings"`

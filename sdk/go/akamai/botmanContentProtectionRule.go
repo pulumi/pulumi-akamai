@@ -89,6 +89,12 @@ func (BotmanContentProtectionRuleState) ElementType() reflect.Type {
 	return reflect.TypeOf((*botmanContentProtectionRuleState)(nil)).Elem()
 }
 
+// BotmanContentProtectionRuleExists checks whether an existing BotmanContentProtectionRule resource with the given ID exists.
+func BotmanContentProtectionRuleExists(ctx *pulumi.Context,
+	id pulumi.StringInput, state *BotmanContentProtectionRuleState, opts ...pulumi.ResourceOption) pulumi.BoolOutput {
+	return ctx.ExistsResource("akamai:index/botmanContentProtectionRule:BotmanContentProtectionRule", id, state, "", opts...)
+}
+
 type botmanContentProtectionRuleArgs struct {
 	// Unique identifier of the security configuration
 	ConfigId int `pulumi:"configId"`

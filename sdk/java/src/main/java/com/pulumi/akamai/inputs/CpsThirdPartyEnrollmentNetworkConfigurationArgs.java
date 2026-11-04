@@ -37,22 +37,20 @@ public final class CpsThirdPartyEnrollmentNetworkConfigurationArgs extends com.p
     /**
      * Enable CPS to direct traffic using all the SANs listed in the SANs parameter when enrollment is created.
      * 
-     * @deprecated
-     * Use enableForAllSans instead.
+     * @deprecated Use enableForAllSans instead.
      * 
      */
-    @Deprecated /* Use enableForAllSans instead. */
+    @Deprecated
     @Import(name="cloneDnsNames")
     private @Nullable Output<Boolean> cloneDnsNames;
 
     /**
      * @return Enable CPS to direct traffic using all the SANs listed in the SANs parameter when enrollment is created.
      * 
-     * @deprecated
-     * Use enableForAllSans instead.
+     * @deprecated Use enableForAllSans instead.
      * 
      */
-    @Deprecated /* Use enableForAllSans instead. */
+    @Deprecated
     public Optional<Output<Boolean>> cloneDnsNames() {
         return Optional.ofNullable(this.cloneDnsNames);
     }
@@ -236,11 +234,10 @@ public final class CpsThirdPartyEnrollmentNetworkConfigurationArgs extends com.p
          * 
          * @return builder
          * 
-         * @deprecated
-         * Use enableForAllSans instead.
+         * @deprecated Use enableForAllSans instead.
          * 
          */
-        @Deprecated /* Use enableForAllSans instead. */
+        @Deprecated
         public Builder cloneDnsNames(@Nullable Output<Boolean> cloneDnsNames) {
             $.cloneDnsNames = cloneDnsNames;
             return this;
@@ -251,11 +248,10 @@ public final class CpsThirdPartyEnrollmentNetworkConfigurationArgs extends com.p
          * 
          * @return builder
          * 
-         * @deprecated
-         * Use enableForAllSans instead.
+         * @deprecated Use enableForAllSans instead.
          * 
          */
-        @Deprecated /* Use enableForAllSans instead. */
+        @Deprecated
         public Builder cloneDnsNames(Boolean cloneDnsNames) {
             return cloneDnsNames(Output.of(cloneDnsNames));
         }

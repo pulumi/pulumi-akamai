@@ -293,6 +293,24 @@ class CloudcertificatesActivation(pulumi.CustomResource):
         __props__.__dict__["timeouts"] = timeouts
         return CloudcertificatesActivation(resource_name, opts=opts, __props__=__props__)
 
+    @staticmethod
+    def exists(id: pulumi.Input[str],
+            opts: Optional[pulumi.ResourceOptions] = None,
+            lineage_id: pulumi.Input[Optional[_builtins.int]] = None,
+            production: pulumi.Input[Optional[Union['CloudcertificatesActivationProductionArgs', 'CloudcertificatesActivationProductionArgsDict', 'outputs.CloudcertificatesActivationProduction']]] = None,
+            production_generation_id: pulumi.Input[Optional[_builtins.int]] = None,
+            staging: pulumi.Input[Optional[Union['CloudcertificatesActivationStagingArgs', 'CloudcertificatesActivationStagingArgsDict', 'outputs.CloudcertificatesActivationStaging']]] = None,
+            staging_generation_id: pulumi.Input[Optional[_builtins.int]] = None,
+            timeouts: pulumi.Input[Optional[Union['CloudcertificatesActivationTimeoutsArgs', 'CloudcertificatesActivationTimeoutsArgsDict', 'outputs.CloudcertificatesActivationTimeouts']]] = None) -> pulumi.Output[bool]:
+        __props__: dict = {}
+        __props__["lineageId"] = lineage_id
+        __props__["production"] = production
+        __props__["productionGenerationId"] = production_generation_id
+        __props__["staging"] = staging
+        __props__["stagingGenerationId"] = staging_generation_id
+        __props__["timeouts"] = timeouts
+        return pulumi.runtime.exists_resource(None, 'akamai:index/cloudcertificatesActivation:CloudcertificatesActivation', id, __props__, opts or pulumi.ResourceOptions())
+
     @_builtins.property
     @pulumi.getter(name="lineageId")
     def lineage_id(self) -> pulumi.Output[_builtins.int]:

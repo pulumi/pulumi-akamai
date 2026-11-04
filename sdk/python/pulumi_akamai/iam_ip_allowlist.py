@@ -144,6 +144,14 @@ class IamIpAllowlist(pulumi.CustomResource):
         __props__.__dict__["enable"] = enable
         return IamIpAllowlist(resource_name, opts=opts, __props__=__props__)
 
+    @staticmethod
+    def exists(id: pulumi.Input[str],
+            opts: Optional[pulumi.ResourceOptions] = None,
+            enable: pulumi.Input[Optional[_builtins.bool]] = None) -> pulumi.Output[bool]:
+        __props__: dict = {}
+        __props__["enable"] = enable
+        return pulumi.runtime.exists_resource(None, 'akamai:index/iamIpAllowlist:IamIpAllowlist', id, __props__, opts or pulumi.ResourceOptions())
+
     @_builtins.property
     @pulumi.getter
     def enable(self) -> pulumi.Output[_builtins.bool]:

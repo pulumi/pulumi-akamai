@@ -363,6 +363,26 @@ class EdgeWorkersActivation(pulumi.CustomResource):
         __props__.__dict__["version"] = version
         return EdgeWorkersActivation(resource_name, opts=opts, __props__=__props__)
 
+    @staticmethod
+    def exists(id: pulumi.Input[str],
+            opts: Optional[pulumi.ResourceOptions] = None,
+            activation_id: pulumi.Input[Optional[_builtins.int]] = None,
+            auto_pin: pulumi.Input[Optional[_builtins.bool]] = None,
+            edgeworker_id: pulumi.Input[Optional[_builtins.int]] = None,
+            network: pulumi.Input[Optional[_builtins.str]] = None,
+            note: pulumi.Input[Optional[_builtins.str]] = None,
+            timeouts: pulumi.Input[Optional[Union['EdgeWorkersActivationTimeoutsArgs', 'EdgeWorkersActivationTimeoutsArgsDict', 'outputs.EdgeWorkersActivationTimeouts']]] = None,
+            version: pulumi.Input[Optional[_builtins.str]] = None) -> pulumi.Output[bool]:
+        __props__: dict = {}
+        __props__["activationId"] = activation_id
+        __props__["autoPin"] = auto_pin
+        __props__["edgeworkerId"] = edgeworker_id
+        __props__["network"] = network
+        __props__["note"] = note
+        __props__["timeouts"] = timeouts
+        __props__["version"] = version
+        return pulumi.runtime.exists_resource(None, 'akamai:index/edgeWorkersActivation:EdgeWorkersActivation', id, __props__, opts or pulumi.ResourceOptions())
+
     @_builtins.property
     @pulumi.getter(name="activationId")
     def activation_id(self) -> pulumi.Output[_builtins.int]:

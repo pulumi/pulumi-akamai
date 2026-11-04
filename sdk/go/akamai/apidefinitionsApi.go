@@ -101,6 +101,12 @@ func (ApidefinitionsApiState) ElementType() reflect.Type {
 	return reflect.TypeOf((*apidefinitionsApiState)(nil)).Elem()
 }
 
+// ApidefinitionsApiExists checks whether an existing ApidefinitionsApi resource with the given ID exists.
+func ApidefinitionsApiExists(ctx *pulumi.Context,
+	id pulumi.StringInput, state *ApidefinitionsApiState, opts ...pulumi.ResourceOption) pulumi.BoolOutput {
+	return ctx.ExistsResource("akamai:index/apidefinitionsApi:ApidefinitionsApi", id, state, "", opts...)
+}
+
 type apidefinitionsApiArgs struct {
 	// JSON-formatted information about the API configuration
 	Api string `pulumi:"api"`

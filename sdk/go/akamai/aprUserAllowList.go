@@ -68,6 +68,12 @@ func (AprUserAllowListState) ElementType() reflect.Type {
 	return reflect.TypeOf((*aprUserAllowListState)(nil)).Elem()
 }
 
+// AprUserAllowListExists checks whether an existing AprUserAllowList resource with the given ID exists.
+func AprUserAllowListExists(ctx *pulumi.Context,
+	id pulumi.StringInput, state *AprUserAllowListState, opts ...pulumi.ResourceOption) pulumi.BoolOutput {
+	return ctx.ExistsResource("akamai:index/aprUserAllowList:AprUserAllowList", id, state, "", opts...)
+}
+
 type aprUserAllowListArgs struct {
 	// Identifies a security configuration.
 	ConfigId      int     `pulumi:"configId"`

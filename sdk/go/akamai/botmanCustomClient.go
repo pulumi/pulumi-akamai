@@ -71,6 +71,12 @@ func (BotmanCustomClientState) ElementType() reflect.Type {
 	return reflect.TypeOf((*botmanCustomClientState)(nil)).Elem()
 }
 
+// BotmanCustomClientExists checks whether an existing BotmanCustomClient resource with the given ID exists.
+func BotmanCustomClientExists(ctx *pulumi.Context,
+	id pulumi.StringInput, state *BotmanCustomClientState, opts ...pulumi.ResourceOption) pulumi.BoolOutput {
+	return ctx.ExistsResource("akamai:index/botmanCustomClient:BotmanCustomClient", id, state, "", opts...)
+}
+
 type botmanCustomClientArgs struct {
 	ConfigId     int    `pulumi:"configId"`
 	CustomClient string `pulumi:"customClient"`

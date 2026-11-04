@@ -107,6 +107,12 @@ func (CloudletsPolicyActivationState) ElementType() reflect.Type {
 	return reflect.TypeOf((*cloudletsPolicyActivationState)(nil)).Elem()
 }
 
+// CloudletsPolicyActivationExists checks whether an existing CloudletsPolicyActivation resource with the given ID exists.
+func CloudletsPolicyActivationExists(ctx *pulumi.Context,
+	id pulumi.StringInput, state *CloudletsPolicyActivationState, opts ...pulumi.ResourceOption) pulumi.BoolOutput {
+	return ctx.ExistsResource("akamai:index/cloudletsPolicyActivation:CloudletsPolicyActivation", id, state, "", opts...)
+}
+
 type cloudletsPolicyActivationArgs struct {
 	// Set of property IDs to link to this Cloudlets policy. It is required for non-shared policies
 	AssociatedProperties []string `pulumi:"associatedProperties"`

@@ -167,6 +167,12 @@ func (PropertyState) ElementType() reflect.Type {
 	return reflect.TypeOf((*propertyState)(nil)).Elem()
 }
 
+// PropertyExists checks whether an existing Property resource with the given ID exists.
+func PropertyExists(ctx *pulumi.Context,
+	id pulumi.StringInput, state *PropertyState, opts ...pulumi.ResourceOption) pulumi.BoolOutput {
+	return ctx.ExistsResource("akamai:index/property:Property", id, state, "", opts...)
+}
+
 type propertyArgs struct {
 	// Contract ID to be assigned to the Property
 	ContractId string `pulumi:"contractId"`

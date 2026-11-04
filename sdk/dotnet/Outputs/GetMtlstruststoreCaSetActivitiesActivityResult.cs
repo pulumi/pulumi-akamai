@@ -26,7 +26,7 @@ namespace Pulumi.Akamai.Outputs
         /// </summary>
         public readonly string Network;
         /// <summary>
-        /// The type of CA set activity. Possible values are: 
+        /// The type of CA set activity. Possible values are:
         /// * `CREATE_CA_SET` - creating a CA set.
         /// * `CREATE_CA_SET_VERSION` - creating a CA set version.
         /// * `ACTIVATE_CA_SET_VERSION` - activating a CA set version.

@@ -460,6 +460,30 @@ class AppSecIPGeo(pulumi.CustomResource):
         __props__.__dict__["ukraine_geo_control_action"] = ukraine_geo_control_action
         return AppSecIPGeo(resource_name, opts=opts, __props__=__props__)
 
+    @staticmethod
+    def exists(id: pulumi.Input[str],
+            opts: Optional[pulumi.ResourceOptions] = None,
+            asn_controls: pulumi.Input[Optional[Union['AppSecIPGeoAsnControlsArgs', 'AppSecIPGeoAsnControlsArgsDict', 'outputs.AppSecIPGeoAsnControls']]] = None,
+            block_action: pulumi.Input[Optional[_builtins.str]] = None,
+            config_id: pulumi.Input[Optional[_builtins.int]] = None,
+            exception_ip_network_lists: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+            geo_controls: pulumi.Input[Optional[Union['AppSecIPGeoGeoControlsArgs', 'AppSecIPGeoGeoControlsArgsDict', 'outputs.AppSecIPGeoGeoControls']]] = None,
+            ip_controls: pulumi.Input[Optional[Union['AppSecIPGeoIpControlsArgs', 'AppSecIPGeoIpControlsArgsDict', 'outputs.AppSecIPGeoIpControls']]] = None,
+            mode: pulumi.Input[Optional[_builtins.str]] = None,
+            security_policy_id: pulumi.Input[Optional[_builtins.str]] = None,
+            ukraine_geo_control_action: pulumi.Input[Optional[_builtins.str]] = None) -> pulumi.Output[bool]:
+        __props__: dict = {}
+        __props__["asnControls"] = asn_controls
+        __props__["blockAction"] = block_action
+        __props__["configId"] = config_id
+        __props__["exceptionIpNetworkLists"] = exception_ip_network_lists
+        __props__["geoControls"] = geo_controls
+        __props__["ipControls"] = ip_controls
+        __props__["mode"] = mode
+        __props__["securityPolicyId"] = security_policy_id
+        __props__["ukraineGeoControlAction"] = ukraine_geo_control_action
+        return pulumi.runtime.exists_resource(None, 'akamai:index/appSecIPGeo:AppSecIPGeo', id, __props__, opts or pulumi.ResourceOptions())
+
     @_builtins.property
     @pulumi.getter(name="asnControls")
     def asn_controls(self) -> pulumi.Output[Optional['outputs.AppSecIPGeoAsnControls']]:

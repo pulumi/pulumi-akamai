@@ -204,6 +204,18 @@ class AppSecCustomDeny(pulumi.CustomResource):
         __props__.__dict__["custom_deny_id"] = custom_deny_id
         return AppSecCustomDeny(resource_name, opts=opts, __props__=__props__)
 
+    @staticmethod
+    def exists(id: pulumi.Input[str],
+            opts: Optional[pulumi.ResourceOptions] = None,
+            config_id: pulumi.Input[Optional[_builtins.int]] = None,
+            custom_deny: pulumi.Input[Optional[_builtins.str]] = None,
+            custom_deny_id: pulumi.Input[Optional[_builtins.str]] = None) -> pulumi.Output[bool]:
+        __props__: dict = {}
+        __props__["configId"] = config_id
+        __props__["customDeny"] = custom_deny
+        __props__["customDenyId"] = custom_deny_id
+        return pulumi.runtime.exists_resource(None, 'akamai:index/appSecCustomDeny:AppSecCustomDeny', id, __props__, opts or pulumi.ResourceOptions())
+
     @_builtins.property
     @pulumi.getter(name="configId")
     def config_id(self) -> pulumi.Output[_builtins.int]:

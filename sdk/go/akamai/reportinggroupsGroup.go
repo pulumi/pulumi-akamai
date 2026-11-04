@@ -89,6 +89,12 @@ func (ReportinggroupsGroupState) ElementType() reflect.Type {
 	return reflect.TypeOf((*reportinggroupsGroupState)(nil)).Elem()
 }
 
+// ReportinggroupsGroupExists checks whether an existing ReportinggroupsGroup resource with the given ID exists.
+func ReportinggroupsGroupExists(ctx *pulumi.Context,
+	id pulumi.StringInput, state *ReportinggroupsGroupState, opts ...pulumi.ResourceOption) pulumi.BoolOutput {
+	return ctx.ExistsResource("akamai:index/reportinggroupsGroup:ReportinggroupsGroup", id, state, "", opts...)
+}
+
 type reportinggroupsGroupArgs struct {
 	// The access control group that controls access to specific CP codes.
 	AccessGroup ReportinggroupsGroupAccessGroup `pulumi:"accessGroup"`

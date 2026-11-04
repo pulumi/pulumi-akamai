@@ -80,6 +80,12 @@ func (AppsecAdvancedSettingsAttackPayloadLoggingState) ElementType() reflect.Typ
 	return reflect.TypeOf((*appsecAdvancedSettingsAttackPayloadLoggingState)(nil)).Elem()
 }
 
+// AppsecAdvancedSettingsAttackPayloadLoggingExists checks whether an existing AppsecAdvancedSettingsAttackPayloadLogging resource with the given ID exists.
+func AppsecAdvancedSettingsAttackPayloadLoggingExists(ctx *pulumi.Context,
+	id pulumi.StringInput, state *AppsecAdvancedSettingsAttackPayloadLoggingState, opts ...pulumi.ResourceOption) pulumi.BoolOutput {
+	return ctx.ExistsResource("akamai:index/appsecAdvancedSettingsAttackPayloadLogging:AppsecAdvancedSettingsAttackPayloadLogging", id, state, "", opts...)
+}
+
 type appsecAdvancedSettingsAttackPayloadLoggingArgs struct {
 	// Whether to enable, disable, or update attack payload logging settings
 	AttackPayloadLogging string `pulumi:"attackPayloadLogging"`

@@ -92,6 +92,12 @@ func (AppSecReputationProfileAnalysisState) ElementType() reflect.Type {
 	return reflect.TypeOf((*appSecReputationProfileAnalysisState)(nil)).Elem()
 }
 
+// AppSecReputationProfileAnalysisExists checks whether an existing AppSecReputationProfileAnalysis resource with the given ID exists.
+func AppSecReputationProfileAnalysisExists(ctx *pulumi.Context,
+	id pulumi.StringInput, state *AppSecReputationProfileAnalysisState, opts ...pulumi.ResourceOption) pulumi.BoolOutput {
+	return ctx.ExistsResource("akamai:index/appSecReputationProfileAnalysis:AppSecReputationProfileAnalysis", id, state, "", opts...)
+}
+
 type appSecReputationProfileAnalysisArgs struct {
 	// Unique identifier of the security configuration
 	ConfigId int `pulumi:"configId"`

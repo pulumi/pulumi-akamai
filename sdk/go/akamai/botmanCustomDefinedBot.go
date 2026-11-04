@@ -71,6 +71,12 @@ func (BotmanCustomDefinedBotState) ElementType() reflect.Type {
 	return reflect.TypeOf((*botmanCustomDefinedBotState)(nil)).Elem()
 }
 
+// BotmanCustomDefinedBotExists checks whether an existing BotmanCustomDefinedBot resource with the given ID exists.
+func BotmanCustomDefinedBotExists(ctx *pulumi.Context,
+	id pulumi.StringInput, state *BotmanCustomDefinedBotState, opts ...pulumi.ResourceOption) pulumi.BoolOutput {
+	return ctx.ExistsResource("akamai:index/botmanCustomDefinedBot:BotmanCustomDefinedBot", id, state, "", opts...)
+}
+
 type botmanCustomDefinedBotArgs struct {
 	ConfigId         int    `pulumi:"configId"`
 	CustomDefinedBot string `pulumi:"customDefinedBot"`

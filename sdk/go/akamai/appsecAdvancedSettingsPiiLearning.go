@@ -74,6 +74,12 @@ func (AppsecAdvancedSettingsPiiLearningState) ElementType() reflect.Type {
 	return reflect.TypeOf((*appsecAdvancedSettingsPiiLearningState)(nil)).Elem()
 }
 
+// AppsecAdvancedSettingsPiiLearningExists checks whether an existing AppsecAdvancedSettingsPiiLearning resource with the given ID exists.
+func AppsecAdvancedSettingsPiiLearningExists(ctx *pulumi.Context,
+	id pulumi.StringInput, state *AppsecAdvancedSettingsPiiLearningState, opts ...pulumi.ResourceOption) pulumi.BoolOutput {
+	return ctx.ExistsResource("akamai:index/appsecAdvancedSettingsPiiLearning:AppsecAdvancedSettingsPiiLearning", id, state, "", opts...)
+}
+
 type appsecAdvancedSettingsPiiLearningArgs struct {
 	// Unique identifier of the security configuration
 	ConfigId int `pulumi:"configId"`

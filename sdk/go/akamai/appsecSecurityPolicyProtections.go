@@ -164,6 +164,12 @@ func (AppsecSecurityPolicyProtectionsState) ElementType() reflect.Type {
 	return reflect.TypeOf((*appsecSecurityPolicyProtectionsState)(nil)).Elem()
 }
 
+// AppsecSecurityPolicyProtectionsExists checks whether an existing AppsecSecurityPolicyProtections resource with the given ID exists.
+func AppsecSecurityPolicyProtectionsExists(ctx *pulumi.Context,
+	id pulumi.StringInput, state *AppsecSecurityPolicyProtectionsState, opts ...pulumi.ResourceOption) pulumi.BoolOutput {
+	return ctx.ExistsResource("akamai:index/appsecSecurityPolicyProtections:AppsecSecurityPolicyProtections", id, state, "", opts...)
+}
+
 type appsecSecurityPolicyProtectionsArgs struct {
 	// Whether to enable account protection controls.
 	ApplyAccountProtectionControls bool `pulumi:"applyAccountProtectionControls"`

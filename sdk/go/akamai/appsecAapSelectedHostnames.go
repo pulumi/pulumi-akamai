@@ -86,6 +86,12 @@ func (AppsecAapSelectedHostnamesState) ElementType() reflect.Type {
 	return reflect.TypeOf((*appsecAapSelectedHostnamesState)(nil)).Elem()
 }
 
+// AppsecAapSelectedHostnamesExists checks whether an existing AppsecAapSelectedHostnames resource with the given ID exists.
+func AppsecAapSelectedHostnamesExists(ctx *pulumi.Context,
+	id pulumi.StringInput, state *AppsecAapSelectedHostnamesState, opts ...pulumi.ResourceOption) pulumi.BoolOutput {
+	return ctx.ExistsResource("akamai:index/appsecAapSelectedHostnames:AppsecAapSelectedHostnames", id, state, "", opts...)
+}
+
 type appsecAapSelectedHostnamesArgs struct {
 	// Unique identifier of the security configuration
 	ConfigId int `pulumi:"configId"`

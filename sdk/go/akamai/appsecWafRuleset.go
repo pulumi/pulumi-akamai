@@ -86,6 +86,12 @@ func (AppsecWafRulesetState) ElementType() reflect.Type {
 	return reflect.TypeOf((*appsecWafRulesetState)(nil)).Elem()
 }
 
+// AppsecWafRulesetExists checks whether an existing AppsecWafRuleset resource with the given ID exists.
+func AppsecWafRulesetExists(ctx *pulumi.Context,
+	id pulumi.StringInput, state *AppsecWafRulesetState, opts ...pulumi.ResourceOption) pulumi.BoolOutput {
+	return ctx.ExistsResource("akamai:index/appsecWafRuleset:AppsecWafRuleset", id, state, "", opts...)
+}
+
 type appsecWafRulesetArgs struct {
 	// List of attack group objects including action and condition exceptions
 	AttackGroups []AppsecWafRulesetAttackGroup `pulumi:"attackGroups"`

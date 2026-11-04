@@ -501,6 +501,38 @@ class PropertyInclude(pulumi.CustomResource):
         __props__.__dict__["type"] = type
         return PropertyInclude(resource_name, opts=opts, __props__=__props__)
 
+    @staticmethod
+    def exists(id: pulumi.Input[str],
+            opts: Optional[pulumi.ResourceOptions] = None,
+            asset_id: pulumi.Input[Optional[_builtins.str]] = None,
+            contract_id: pulumi.Input[Optional[_builtins.str]] = None,
+            group_id: pulumi.Input[Optional[_builtins.str]] = None,
+            latest_version: pulumi.Input[Optional[_builtins.int]] = None,
+            name: pulumi.Input[Optional[_builtins.str]] = None,
+            product_id: pulumi.Input[Optional[_builtins.str]] = None,
+            production_version: pulumi.Input[Optional[_builtins.str]] = None,
+            rule_errors: pulumi.Input[Optional[_builtins.str]] = None,
+            rule_format: pulumi.Input[Optional[_builtins.str]] = None,
+            rule_warnings: pulumi.Input[Optional[_builtins.str]] = None,
+            rules: pulumi.Input[Optional[_builtins.str]] = None,
+            staging_version: pulumi.Input[Optional[_builtins.str]] = None,
+            type: pulumi.Input[Optional[_builtins.str]] = None) -> pulumi.Output[bool]:
+        __props__: dict = {}
+        __props__["assetId"] = asset_id
+        __props__["contractId"] = contract_id
+        __props__["groupId"] = group_id
+        __props__["latestVersion"] = latest_version
+        __props__["name"] = name
+        __props__["productId"] = product_id
+        __props__["productionVersion"] = production_version
+        __props__["ruleErrors"] = rule_errors
+        __props__["ruleFormat"] = rule_format
+        __props__["ruleWarnings"] = rule_warnings
+        __props__["rules"] = rules
+        __props__["stagingVersion"] = staging_version
+        __props__["type"] = type
+        return pulumi.runtime.exists_resource(None, 'akamai:index/propertyInclude:PropertyInclude', id, __props__, opts or pulumi.ResourceOptions())
+
     @_builtins.property
     @pulumi.getter(name="assetId")
     def asset_id(self) -> pulumi.Output[_builtins.str]:

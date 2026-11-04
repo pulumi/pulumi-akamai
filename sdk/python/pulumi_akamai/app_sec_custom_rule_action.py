@@ -264,6 +264,20 @@ class AppSecCustomRuleAction(pulumi.CustomResource):
         __props__.__dict__["security_policy_id"] = security_policy_id
         return AppSecCustomRuleAction(resource_name, opts=opts, __props__=__props__)
 
+    @staticmethod
+    def exists(id: pulumi.Input[str],
+            opts: Optional[pulumi.ResourceOptions] = None,
+            config_id: pulumi.Input[Optional[_builtins.int]] = None,
+            custom_rule_action: pulumi.Input[Optional[_builtins.str]] = None,
+            custom_rule_id: pulumi.Input[Optional[_builtins.int]] = None,
+            security_policy_id: pulumi.Input[Optional[_builtins.str]] = None) -> pulumi.Output[bool]:
+        __props__: dict = {}
+        __props__["configId"] = config_id
+        __props__["customRuleAction"] = custom_rule_action
+        __props__["customRuleId"] = custom_rule_id
+        __props__["securityPolicyId"] = security_policy_id
+        return pulumi.runtime.exists_resource(None, 'akamai:index/appSecCustomRuleAction:AppSecCustomRuleAction', id, __props__, opts or pulumi.ResourceOptions())
+
     @_builtins.property
     @pulumi.getter(name="configId")
     def config_id(self) -> pulumi.Output[_builtins.int]:

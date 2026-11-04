@@ -264,6 +264,20 @@ class AppsecAdvancedSettingsUrlEvasionDefense(pulumi.CustomResource):
         __props__.__dict__["status"] = status
         return AppsecAdvancedSettingsUrlEvasionDefense(resource_name, opts=opts, __props__=__props__)
 
+    @staticmethod
+    def exists(id: pulumi.Input[str],
+            opts: Optional[pulumi.ResourceOptions] = None,
+            bypass_lists: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+            config_id: pulumi.Input[Optional[_builtins.int]] = None,
+            rules: pulumi.Input[Optional[Sequence[pulumi.Input[Union['AppsecAdvancedSettingsUrlEvasionDefenseRuleArgs', 'AppsecAdvancedSettingsUrlEvasionDefenseRuleArgsDict', 'outputs.AppsecAdvancedSettingsUrlEvasionDefenseRule']]]]] = None,
+            status: pulumi.Input[Optional[_builtins.str]] = None) -> pulumi.Output[bool]:
+        __props__: dict = {}
+        __props__["bypassLists"] = bypass_lists
+        __props__["configId"] = config_id
+        __props__["rules"] = rules
+        __props__["status"] = status
+        return pulumi.runtime.exists_resource(None, 'akamai:index/appsecAdvancedSettingsUrlEvasionDefense:AppsecAdvancedSettingsUrlEvasionDefense', id, __props__, opts or pulumi.ResourceOptions())
+
     @_builtins.property
     @pulumi.getter(name="bypassLists")
     def bypass_lists(self) -> pulumi.Output[Optional[Sequence[_builtins.str]]]:

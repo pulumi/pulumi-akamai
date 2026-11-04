@@ -80,6 +80,12 @@ func (AppSecVersionNodesState) ElementType() reflect.Type {
 	return reflect.TypeOf((*appSecVersionNodesState)(nil)).Elem()
 }
 
+// AppSecVersionNodesExists checks whether an existing AppSecVersionNodes resource with the given ID exists.
+func AppSecVersionNodesExists(ctx *pulumi.Context,
+	id pulumi.StringInput, state *AppSecVersionNodesState, opts ...pulumi.ResourceOption) pulumi.BoolOutput {
+	return ctx.ExistsResource("akamai:index/appSecVersionNodes:AppSecVersionNodes", id, state, "", opts...)
+}
+
 type appSecVersionNodesArgs struct {
 	// Unique identifier of the security configuration
 	ConfigId int `pulumi:"configId"`

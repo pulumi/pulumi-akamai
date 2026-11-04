@@ -116,6 +116,12 @@ func (GtmResourceState) ElementType() reflect.Type {
 	return reflect.TypeOf((*gtmResourceState)(nil)).Elem()
 }
 
+// GtmResourceExists checks whether an existing GtmResource resource with the given ID exists.
+func GtmResourceExists(ctx *pulumi.Context,
+	id pulumi.StringInput, state *GtmResourceState, opts ...pulumi.ResourceOption) pulumi.BoolOutput {
+	return ctx.ExistsResource("akamai:index/gtmResource:GtmResource", id, state, "", opts...)
+}
+
 type gtmResourceArgs struct {
 	AggregationType             string                        `pulumi:"aggregationType"`
 	ConstrainedProperty         *string                       `pulumi:"constrainedProperty"`

@@ -203,6 +203,12 @@ func (CpsDvEnrollmentState) ElementType() reflect.Type {
 	return reflect.TypeOf((*cpsDvEnrollmentState)(nil)).Elem()
 }
 
+// CpsDvEnrollmentExists checks whether an existing CpsDvEnrollment resource with the given ID exists.
+func CpsDvEnrollmentExists(ctx *pulumi.Context,
+	id pulumi.StringInput, state *CpsDvEnrollmentState, opts ...pulumi.ResourceOption) pulumi.BoolOutput {
+	return ctx.ExistsResource("akamai:index/cpsDvEnrollment:CpsDvEnrollment", id, state, "", opts...)
+}
+
 type cpsDvEnrollmentArgs struct {
 	// Whether acknowledge warnings before certificate verification. Default is false
 	AcknowledgePreVerificationWarnings *bool `pulumi:"acknowledgePreVerificationWarnings"`

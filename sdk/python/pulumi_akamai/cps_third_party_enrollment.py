@@ -816,6 +816,48 @@ class CpsThirdPartyEnrollment(pulumi.CustomResource):
         __props__.__dict__["timeouts"] = timeouts
         return CpsThirdPartyEnrollment(resource_name, opts=opts, __props__=__props__)
 
+    @staticmethod
+    def exists(id: pulumi.Input[str],
+            opts: Optional[pulumi.ResourceOptions] = None,
+            acknowledge_pre_verification_warnings: pulumi.Input[Optional[_builtins.bool]] = None,
+            admin_contact: pulumi.Input[Optional[Union['CpsThirdPartyEnrollmentAdminContactArgs', 'CpsThirdPartyEnrollmentAdminContactArgsDict', 'outputs.CpsThirdPartyEnrollmentAdminContact']]] = None,
+            allow_duplicate_common_name: pulumi.Input[Optional[_builtins.bool]] = None,
+            auto_approve_warnings: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+            certificate_chain_type: pulumi.Input[Optional[_builtins.str]] = None,
+            change_management: pulumi.Input[Optional[_builtins.bool]] = None,
+            common_name: pulumi.Input[Optional[_builtins.str]] = None,
+            contract_id: pulumi.Input[Optional[_builtins.str]] = None,
+            csr: pulumi.Input[Optional[Union['CpsThirdPartyEnrollmentCsrArgs', 'CpsThirdPartyEnrollmentCsrArgsDict', 'outputs.CpsThirdPartyEnrollmentCsr']]] = None,
+            exclude_sans: pulumi.Input[Optional[_builtins.bool]] = None,
+            network_configuration: pulumi.Input[Optional[Union['CpsThirdPartyEnrollmentNetworkConfigurationArgs', 'CpsThirdPartyEnrollmentNetworkConfigurationArgsDict', 'outputs.CpsThirdPartyEnrollmentNetworkConfiguration']]] = None,
+            organization: pulumi.Input[Optional[Union['CpsThirdPartyEnrollmentOrganizationArgs', 'CpsThirdPartyEnrollmentOrganizationArgsDict', 'outputs.CpsThirdPartyEnrollmentOrganization']]] = None,
+            sans: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+            secure_network: pulumi.Input[Optional[_builtins.str]] = None,
+            signature_algorithm: pulumi.Input[Optional[_builtins.str]] = None,
+            sni_only: pulumi.Input[Optional[_builtins.bool]] = None,
+            tech_contact: pulumi.Input[Optional[Union['CpsThirdPartyEnrollmentTechContactArgs', 'CpsThirdPartyEnrollmentTechContactArgsDict', 'outputs.CpsThirdPartyEnrollmentTechContact']]] = None,
+            timeouts: pulumi.Input[Optional[Union['CpsThirdPartyEnrollmentTimeoutsArgs', 'CpsThirdPartyEnrollmentTimeoutsArgsDict', 'outputs.CpsThirdPartyEnrollmentTimeouts']]] = None) -> pulumi.Output[bool]:
+        __props__: dict = {}
+        __props__["acknowledgePreVerificationWarnings"] = acknowledge_pre_verification_warnings
+        __props__["adminContact"] = admin_contact
+        __props__["allowDuplicateCommonName"] = allow_duplicate_common_name
+        __props__["autoApproveWarnings"] = auto_approve_warnings
+        __props__["certificateChainType"] = certificate_chain_type
+        __props__["changeManagement"] = change_management
+        __props__["commonName"] = common_name
+        __props__["contractId"] = contract_id
+        __props__["csr"] = csr
+        __props__["excludeSans"] = exclude_sans
+        __props__["networkConfiguration"] = network_configuration
+        __props__["organization"] = organization
+        __props__["sans"] = sans
+        __props__["secureNetwork"] = secure_network
+        __props__["signatureAlgorithm"] = signature_algorithm
+        __props__["sniOnly"] = sni_only
+        __props__["techContact"] = tech_contact
+        __props__["timeouts"] = timeouts
+        return pulumi.runtime.exists_resource(None, 'akamai:index/cpsThirdPartyEnrollment:CpsThirdPartyEnrollment', id, __props__, opts or pulumi.ResourceOptions())
+
     @_builtins.property
     @pulumi.getter(name="acknowledgePreVerificationWarnings")
     def acknowledge_pre_verification_warnings(self) -> pulumi.Output[Optional[_builtins.bool]]:

@@ -74,6 +74,12 @@ func (BotmanBotCategoryExceptionState) ElementType() reflect.Type {
 	return reflect.TypeOf((*botmanBotCategoryExceptionState)(nil)).Elem()
 }
 
+// BotmanBotCategoryExceptionExists checks whether an existing BotmanBotCategoryException resource with the given ID exists.
+func BotmanBotCategoryExceptionExists(ctx *pulumi.Context,
+	id pulumi.StringInput, state *BotmanBotCategoryExceptionState, opts ...pulumi.ResourceOption) pulumi.BoolOutput {
+	return ctx.ExistsResource("akamai:index/botmanBotCategoryException:BotmanBotCategoryException", id, state, "", opts...)
+}
+
 type botmanBotCategoryExceptionArgs struct {
 	BotCategoryException string `pulumi:"botCategoryException"`
 	ConfigId             int    `pulumi:"configId"`

@@ -86,6 +86,12 @@ func (AppsecAdvancedSettingsUrlEvasionDefenseState) ElementType() reflect.Type {
 	return reflect.TypeOf((*appsecAdvancedSettingsUrlEvasionDefenseState)(nil)).Elem()
 }
 
+// AppsecAdvancedSettingsUrlEvasionDefenseExists checks whether an existing AppsecAdvancedSettingsUrlEvasionDefense resource with the given ID exists.
+func AppsecAdvancedSettingsUrlEvasionDefenseExists(ctx *pulumi.Context,
+	id pulumi.StringInput, state *AppsecAdvancedSettingsUrlEvasionDefenseState, opts ...pulumi.ResourceOption) pulumi.BoolOutput {
+	return ctx.ExistsResource("akamai:index/appsecAdvancedSettingsUrlEvasionDefense:AppsecAdvancedSettingsUrlEvasionDefense", id, state, "", opts...)
+}
+
 type appsecAdvancedSettingsUrlEvasionDefenseArgs struct {
 	// Client list identifiers for trusted clients who are exempt from URL evasion mitigation rules.
 	BypassLists []string `pulumi:"bypassLists"`

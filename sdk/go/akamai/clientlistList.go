@@ -125,6 +125,12 @@ func (ClientlistListState) ElementType() reflect.Type {
 	return reflect.TypeOf((*clientlistListState)(nil)).Elem()
 }
 
+// ClientlistListExists checks whether an existing ClientlistList resource with the given ID exists.
+func ClientlistListExists(ctx *pulumi.Context,
+	id pulumi.StringInput, state *ClientlistListState, opts ...pulumi.ResourceOption) pulumi.BoolOutput {
+	return ctx.ExistsResource("akamai:index/clientlistList:ClientlistList", id, state, "", opts...)
+}
+
 type clientlistListArgs struct {
 	// Contract ID for which client list is assigned.
 	ContractId string `pulumi:"contractId"`

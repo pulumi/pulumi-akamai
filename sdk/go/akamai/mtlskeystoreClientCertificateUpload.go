@@ -110,6 +110,12 @@ func (MtlskeystoreClientCertificateUploadState) ElementType() reflect.Type {
 	return reflect.TypeOf((*mtlskeystoreClientCertificateUploadState)(nil)).Elem()
 }
 
+// MtlskeystoreClientCertificateUploadExists checks whether an existing MtlskeystoreClientCertificateUpload resource with the given ID exists.
+func MtlskeystoreClientCertificateUploadExists(ctx *pulumi.Context,
+	id pulumi.StringInput, state *MtlskeystoreClientCertificateUploadState, opts ...pulumi.ResourceOption) pulumi.BoolOutput {
+	return ctx.ExistsResource("akamai:index/mtlskeystoreClientCertificateUpload:MtlskeystoreClientCertificateUpload", id, state, "", opts...)
+}
+
 type mtlskeystoreClientCertificateUploadArgs struct {
 	// If set to true, all warnings will be acknowledged automatically. Defaults to `false`.
 	AutoAcknowledgeWarnings *bool `pulumi:"autoAcknowledgeWarnings"`

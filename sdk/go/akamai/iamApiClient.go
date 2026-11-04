@@ -196,6 +196,12 @@ func (IamApiClientState) ElementType() reflect.Type {
 	return reflect.TypeOf((*iamApiClientState)(nil)).Elem()
 }
 
+// IamApiClientExists checks whether an existing IamApiClient resource with the given ID exists.
+func IamApiClientExists(ctx *pulumi.Context,
+	id pulumi.StringInput, state *IamApiClientState, opts ...pulumi.ResourceOption) pulumi.BoolOutput {
+	return ctx.ExistsResource("akamai:index/iamApiClient:IamApiClient", id, state, "", opts...)
+}
+
 type iamApiClientArgs struct {
 	// Enables the API client to manage more than one account.
 	AllowAccountSwitch *bool `pulumi:"allowAccountSwitch"`

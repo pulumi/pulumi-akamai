@@ -68,6 +68,12 @@ func (BotmanCustomClientSequenceState) ElementType() reflect.Type {
 	return reflect.TypeOf((*botmanCustomClientSequenceState)(nil)).Elem()
 }
 
+// BotmanCustomClientSequenceExists checks whether an existing BotmanCustomClientSequence resource with the given ID exists.
+func BotmanCustomClientSequenceExists(ctx *pulumi.Context,
+	id pulumi.StringInput, state *BotmanCustomClientSequenceState, opts ...pulumi.ResourceOption) pulumi.BoolOutput {
+	return ctx.ExistsResource("akamai:index/botmanCustomClientSequence:BotmanCustomClientSequence", id, state, "", opts...)
+}
+
 type botmanCustomClientSequenceArgs struct {
 	ConfigId        int      `pulumi:"configId"`
 	CustomClientIds []string `pulumi:"customClientIds"`

@@ -68,6 +68,12 @@ func (BotmanCustomCodeState) ElementType() reflect.Type {
 	return reflect.TypeOf((*botmanCustomCodeState)(nil)).Elem()
 }
 
+// BotmanCustomCodeExists checks whether an existing BotmanCustomCode resource with the given ID exists.
+func BotmanCustomCodeExists(ctx *pulumi.Context,
+	id pulumi.StringInput, state *BotmanCustomCodeState, opts ...pulumi.ResourceOption) pulumi.BoolOutput {
+	return ctx.ExistsResource("akamai:index/botmanCustomCode:BotmanCustomCode", id, state, "", opts...)
+}
+
 type botmanCustomCodeArgs struct {
 	ConfigId   int    `pulumi:"configId"`
 	CustomCode string `pulumi:"customCode"`

@@ -149,6 +149,12 @@ func (PropertyActivationState) ElementType() reflect.Type {
 	return reflect.TypeOf((*propertyActivationState)(nil)).Elem()
 }
 
+// PropertyActivationExists checks whether an existing PropertyActivation resource with the given ID exists.
+func PropertyActivationExists(ctx *pulumi.Context,
+	id pulumi.StringInput, state *PropertyActivationState, opts ...pulumi.ResourceOption) pulumi.BoolOutput {
+	return ctx.ExistsResource("akamai:index/propertyActivation:PropertyActivation", id, state, "", opts...)
+}
+
 type propertyActivationArgs struct {
 	// The ID given to the activation event while it's in progress.
 	ActivationId *string `pulumi:"activationId"`

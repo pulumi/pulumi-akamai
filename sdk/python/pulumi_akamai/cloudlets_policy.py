@@ -480,6 +480,34 @@ class CloudletsPolicy(pulumi.CustomResource):
         __props__.__dict__["warnings"] = warnings
         return CloudletsPolicy(resource_name, opts=opts, __props__=__props__)
 
+    @staticmethod
+    def exists(id: pulumi.Input[str],
+            opts: Optional[pulumi.ResourceOptions] = None,
+            cloudlet_code: pulumi.Input[Optional[_builtins.str]] = None,
+            cloudlet_id: pulumi.Input[Optional[_builtins.int]] = None,
+            description: pulumi.Input[Optional[_builtins.str]] = None,
+            group_id: pulumi.Input[Optional[_builtins.str]] = None,
+            is_shared: pulumi.Input[Optional[_builtins.bool]] = None,
+            match_rule_format: pulumi.Input[Optional[_builtins.str]] = None,
+            match_rules: pulumi.Input[Optional[_builtins.str]] = None,
+            name: pulumi.Input[Optional[_builtins.str]] = None,
+            timeouts: pulumi.Input[Optional[Union['CloudletsPolicyTimeoutsArgs', 'CloudletsPolicyTimeoutsArgsDict', 'outputs.CloudletsPolicyTimeouts']]] = None,
+            version: pulumi.Input[Optional[_builtins.int]] = None,
+            warnings: pulumi.Input[Optional[_builtins.str]] = None) -> pulumi.Output[bool]:
+        __props__: dict = {}
+        __props__["cloudletCode"] = cloudlet_code
+        __props__["cloudletId"] = cloudlet_id
+        __props__["description"] = description
+        __props__["groupId"] = group_id
+        __props__["isShared"] = is_shared
+        __props__["matchRuleFormat"] = match_rule_format
+        __props__["matchRules"] = match_rules
+        __props__["name"] = name
+        __props__["timeouts"] = timeouts
+        __props__["version"] = version
+        __props__["warnings"] = warnings
+        return pulumi.runtime.exists_resource(None, 'akamai:index/cloudletsPolicy:CloudletsPolicy', id, __props__, opts or pulumi.ResourceOptions())
+
     @_builtins.property
     @pulumi.getter(name="cloudletCode")
     def cloudlet_code(self) -> pulumi.Output[_builtins.str]:

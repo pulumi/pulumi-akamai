@@ -197,6 +197,12 @@ func (CloudcertificatesLineageState) ElementType() reflect.Type {
 	return reflect.TypeOf((*cloudcertificatesLineageState)(nil)).Elem()
 }
 
+// CloudcertificatesLineageExists checks whether an existing CloudcertificatesLineage resource with the given ID exists.
+func CloudcertificatesLineageExists(ctx *pulumi.Context,
+	id pulumi.StringInput, state *CloudcertificatesLineageState, opts ...pulumi.ResourceOption) pulumi.BoolOutput {
+	return ctx.ExistsResource("akamai:index/cloudcertificatesLineage:CloudcertificatesLineage", id, state, "", opts...)
+}
+
 type cloudcertificatesLineageArgs struct {
 	// Akamai contract ID to associate with this lineage.
 	ContractId string `pulumi:"contractId"`

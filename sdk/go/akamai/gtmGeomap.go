@@ -83,6 +83,12 @@ func (GtmGeomapState) ElementType() reflect.Type {
 	return reflect.TypeOf((*gtmGeomapState)(nil)).Elem()
 }
 
+// GtmGeomapExists checks whether an existing GtmGeomap resource with the given ID exists.
+func GtmGeomapExists(ctx *pulumi.Context,
+	id pulumi.StringInput, state *GtmGeomapState, opts ...pulumi.ResourceOption) pulumi.BoolOutput {
+	return ctx.ExistsResource("akamai:index/gtmGeomap:GtmGeomap", id, state, "", opts...)
+}
+
 type gtmGeomapArgs struct {
 	Assignments       []GtmGeomapAssignment      `pulumi:"assignments"`
 	DefaultDatacenter GtmGeomapDefaultDatacenter `pulumi:"defaultDatacenter"`

@@ -500,6 +500,34 @@ class PropertyHostnameBucket(pulumi.CustomResource):
         __props__.__dict__["timeout_for_activation"] = timeout_for_activation
         return PropertyHostnameBucket(resource_name, opts=opts, __props__=__props__)
 
+    @staticmethod
+    def exists(id: pulumi.Input[str],
+            opts: Optional[pulumi.ResourceOptions] = None,
+            activation_id: pulumi.Input[Optional[_builtins.str]] = None,
+            contract_id: pulumi.Input[Optional[_builtins.str]] = None,
+            group_id: pulumi.Input[Optional[_builtins.str]] = None,
+            hostname_count: pulumi.Input[Optional[_builtins.int]] = None,
+            hostnames: pulumi.Input[Optional[Mapping[str, pulumi.Input[Union['PropertyHostnameBucketHostnamesArgs', 'PropertyHostnameBucketHostnamesArgsDict', 'outputs.PropertyHostnameBucketHostnames']]]]] = None,
+            network: pulumi.Input[Optional[_builtins.str]] = None,
+            note: pulumi.Input[Optional[_builtins.str]] = None,
+            notify_emails: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+            pending_default_certs: pulumi.Input[Optional[_builtins.int]] = None,
+            property_id: pulumi.Input[Optional[_builtins.str]] = None,
+            timeout_for_activation: pulumi.Input[Optional[_builtins.int]] = None) -> pulumi.Output[bool]:
+        __props__: dict = {}
+        __props__["activationId"] = activation_id
+        __props__["contractId"] = contract_id
+        __props__["groupId"] = group_id
+        __props__["hostnameCount"] = hostname_count
+        __props__["hostnames"] = hostnames
+        __props__["network"] = network
+        __props__["note"] = note
+        __props__["notifyEmails"] = notify_emails
+        __props__["pendingDefaultCerts"] = pending_default_certs
+        __props__["propertyId"] = property_id
+        __props__["timeoutForActivation"] = timeout_for_activation
+        return pulumi.runtime.exists_resource(None, 'akamai:index/propertyHostnameBucket:PropertyHostnameBucket', id, __props__, opts or pulumi.ResourceOptions())
+
     @_builtins.property
     @pulumi.getter(name="activationId")
     def activation_id(self) -> pulumi.Output[_builtins.str]:

@@ -128,6 +128,12 @@ func (CloudwrapperConfigurationState) ElementType() reflect.Type {
 	return reflect.TypeOf((*cloudwrapperConfigurationState)(nil)).Elem()
 }
 
+// CloudwrapperConfigurationExists checks whether an existing CloudwrapperConfiguration resource with the given ID exists.
+func CloudwrapperConfigurationExists(ctx *pulumi.Context,
+	id pulumi.StringInput, state *CloudwrapperConfigurationState, opts ...pulumi.ResourceOption) pulumi.BoolOutput {
+	return ctx.ExistsResource("akamai:index/cloudwrapperConfiguration:CloudwrapperConfiguration", id, state, "", opts...)
+}
+
 type cloudwrapperConfigurationArgs struct {
 	// Capacity Alerts enablement information for the configuration. The Alert Threshold should be between 50 and 100.
 	CapacityAlertsThreshold *int `pulumi:"capacityAlertsThreshold"`

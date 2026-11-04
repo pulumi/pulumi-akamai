@@ -18,6 +18,17 @@ export class AppSecEvalRule extends pulumi.CustomResource {
         return new AppSecEvalRule(name, <any>state, { ...opts, id: id });
     }
 
+    /**
+     * Check whether an existing AppSecEvalRule resource with the given ID exists.
+     *
+     * @param id The _unique_ provider ID of the resource to check.
+     * @param state Any extra arguments used during the lookup.
+     * @param opts Optional settings to control the behavior of the CustomResource.
+     */
+    public static exists(id: pulumi.Input<string>, state?: AppSecEvalRuleState, opts?: pulumi.CustomResourceOptions): pulumi.Output<boolean> {
+        return pulumi.runtime.existsResource("akamai:index/appSecEvalRule:AppSecEvalRule", id, <any>state || {}, { ...opts }, undefined);
+    }
+
     /** @internal */
     public static readonly __pulumiType = 'akamai:index/appSecEvalRule:AppSecEvalRule';
 

@@ -244,6 +244,20 @@ class AppSecWafProtection(pulumi.CustomResource):
         __props__.__dict__["security_policy_id"] = security_policy_id
         return AppSecWafProtection(resource_name, opts=opts, __props__=__props__)
 
+    @staticmethod
+    def exists(id: pulumi.Input[str],
+            opts: Optional[pulumi.ResourceOptions] = None,
+            config_id: pulumi.Input[Optional[_builtins.int]] = None,
+            enabled: pulumi.Input[Optional[_builtins.bool]] = None,
+            output_text: pulumi.Input[Optional[_builtins.str]] = None,
+            security_policy_id: pulumi.Input[Optional[_builtins.str]] = None) -> pulumi.Output[bool]:
+        __props__: dict = {}
+        __props__["configId"] = config_id
+        __props__["enabled"] = enabled
+        __props__["outputText"] = output_text
+        __props__["securityPolicyId"] = security_policy_id
+        return pulumi.runtime.exists_resource(None, 'akamai:index/appSecWafProtection:AppSecWafProtection', id, __props__, opts or pulumi.ResourceOptions())
+
     @_builtins.property
     @pulumi.getter(name="configId")
     def config_id(self) -> pulumi.Output[_builtins.int]:

@@ -80,6 +80,12 @@ func (BotmanCustomBotCategoryActionState) ElementType() reflect.Type {
 	return reflect.TypeOf((*botmanCustomBotCategoryActionState)(nil)).Elem()
 }
 
+// BotmanCustomBotCategoryActionExists checks whether an existing BotmanCustomBotCategoryAction resource with the given ID exists.
+func BotmanCustomBotCategoryActionExists(ctx *pulumi.Context,
+	id pulumi.StringInput, state *BotmanCustomBotCategoryActionState, opts ...pulumi.ResourceOption) pulumi.BoolOutput {
+	return ctx.ExistsResource("akamai:index/botmanCustomBotCategoryAction:BotmanCustomBotCategoryAction", id, state, "", opts...)
+}
+
 type botmanCustomBotCategoryActionArgs struct {
 	CategoryId              string `pulumi:"categoryId"`
 	ConfigId                int    `pulumi:"configId"`

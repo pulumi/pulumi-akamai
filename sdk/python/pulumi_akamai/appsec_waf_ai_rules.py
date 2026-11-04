@@ -321,6 +321,24 @@ class AppsecWafAiRules(pulumi.CustomResource):
         __props__.__dict__["security_policy_id"] = security_policy_id
         return AppsecWafAiRules(resource_name, opts=opts, __props__=__props__)
 
+    @staticmethod
+    def exists(id: pulumi.Input[str],
+            opts: Optional[pulumi.ResourceOptions] = None,
+            action: pulumi.Input[Optional[_builtins.str]] = None,
+            ai_rule_status: pulumi.Input[Optional[_builtins.str]] = None,
+            config_id: pulumi.Input[Optional[_builtins.int]] = None,
+            rule_description: pulumi.Input[Optional[_builtins.str]] = None,
+            rule_id: pulumi.Input[Optional[_builtins.int]] = None,
+            security_policy_id: pulumi.Input[Optional[_builtins.str]] = None) -> pulumi.Output[bool]:
+        __props__: dict = {}
+        __props__["action"] = action
+        __props__["aiRuleStatus"] = ai_rule_status
+        __props__["configId"] = config_id
+        __props__["ruleDescription"] = rule_description
+        __props__["ruleId"] = rule_id
+        __props__["securityPolicyId"] = security_policy_id
+        return pulumi.runtime.exists_resource(None, 'akamai:index/appsecWafAiRules:AppsecWafAiRules', id, __props__, opts or pulumi.ResourceOptions())
+
     @_builtins.property
     @pulumi.getter
     def action(self) -> pulumi.Output[Optional[_builtins.str]]:

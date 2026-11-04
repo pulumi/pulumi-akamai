@@ -401,6 +401,28 @@ class AppSecConfiguration(pulumi.CustomResource):
         __props__.__dict__["name"] = name
         return AppSecConfiguration(resource_name, opts=opts, __props__=__props__)
 
+    @staticmethod
+    def exists(id: pulumi.Input[str],
+            opts: Optional[pulumi.ResourceOptions] = None,
+            config_id: pulumi.Input[Optional[_builtins.int]] = None,
+            contract_id: pulumi.Input[Optional[_builtins.str]] = None,
+            create_from_config_id: pulumi.Input[Optional[_builtins.int]] = None,
+            create_from_version: pulumi.Input[Optional[_builtins.int]] = None,
+            description: pulumi.Input[Optional[_builtins.str]] = None,
+            group_id: pulumi.Input[Optional[_builtins.str]] = None,
+            host_names: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+            name: pulumi.Input[Optional[_builtins.str]] = None) -> pulumi.Output[bool]:
+        __props__: dict = {}
+        __props__["configId"] = config_id
+        __props__["contractId"] = contract_id
+        __props__["createFromConfigId"] = create_from_config_id
+        __props__["createFromVersion"] = create_from_version
+        __props__["description"] = description
+        __props__["groupId"] = group_id
+        __props__["hostNames"] = host_names
+        __props__["name"] = name
+        return pulumi.runtime.exists_resource(None, 'akamai:index/appSecConfiguration:AppSecConfiguration', id, __props__, opts or pulumi.ResourceOptions())
+
     @_builtins.property
     @pulumi.getter(name="configId")
     def config_id(self) -> pulumi.Output[_builtins.int]:

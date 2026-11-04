@@ -101,6 +101,12 @@ func (AppSecSlowPostState) ElementType() reflect.Type {
 	return reflect.TypeOf((*appSecSlowPostState)(nil)).Elem()
 }
 
+// AppSecSlowPostExists checks whether an existing AppSecSlowPost resource with the given ID exists.
+func AppSecSlowPostExists(ctx *pulumi.Context,
+	id pulumi.StringInput, state *AppSecSlowPostState, opts ...pulumi.ResourceOption) pulumi.BoolOutput {
+	return ctx.ExistsResource("akamai:index/appSecSlowPost:AppSecSlowPost", id, state, "", opts...)
+}
+
 type appSecSlowPostArgs struct {
 	// Unique identifier of the security configuration
 	ConfigId int `pulumi:"configId"`

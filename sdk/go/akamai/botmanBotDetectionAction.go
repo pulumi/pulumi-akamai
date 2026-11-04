@@ -80,6 +80,12 @@ func (BotmanBotDetectionActionState) ElementType() reflect.Type {
 	return reflect.TypeOf((*botmanBotDetectionActionState)(nil)).Elem()
 }
 
+// BotmanBotDetectionActionExists checks whether an existing BotmanBotDetectionAction resource with the given ID exists.
+func BotmanBotDetectionActionExists(ctx *pulumi.Context,
+	id pulumi.StringInput, state *BotmanBotDetectionActionState, opts ...pulumi.ResourceOption) pulumi.BoolOutput {
+	return ctx.ExistsResource("akamai:index/botmanBotDetectionAction:BotmanBotDetectionAction", id, state, "", opts...)
+}
+
 type botmanBotDetectionActionArgs struct {
 	BotDetectionAction string `pulumi:"botDetectionAction"`
 	ConfigId           int    `pulumi:"configId"`

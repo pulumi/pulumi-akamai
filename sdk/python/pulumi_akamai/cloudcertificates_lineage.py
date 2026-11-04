@@ -702,6 +702,54 @@ class CloudcertificatesLineage(pulumi.CustomResource):
         __props__.__dict__["subject"] = subject
         return CloudcertificatesLineage(resource_name, opts=opts, __props__=__props__)
 
+    @staticmethod
+    def exists(id: pulumi.Input[str],
+            opts: Optional[pulumi.ResourceOptions] = None,
+            account_id: pulumi.Input[Optional[_builtins.str]] = None,
+            contract_id: pulumi.Input[Optional[_builtins.str]] = None,
+            current_production: pulumi.Input[Optional[Union['CloudcertificatesLineageCurrentProductionArgs', 'CloudcertificatesLineageCurrentProductionArgsDict', 'outputs.CloudcertificatesLineageCurrentProduction']]] = None,
+            current_staging: pulumi.Input[Optional[Union['CloudcertificatesLineageCurrentStagingArgs', 'CloudcertificatesLineageCurrentStagingArgsDict', 'outputs.CloudcertificatesLineageCurrentStaging']]] = None,
+            geo_class: pulumi.Input[Optional[_builtins.str]] = None,
+            group_id: pulumi.Input[Optional[_builtins.int]] = None,
+            head: pulumi.Input[Optional[Union['CloudcertificatesLineageHeadArgs', 'CloudcertificatesLineageHeadArgsDict', 'outputs.CloudcertificatesLineageHead']]] = None,
+            key_specs: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+            lineage_created_by: pulumi.Input[Optional[_builtins.str]] = None,
+            lineage_created_time: pulumi.Input[Optional[_builtins.str]] = None,
+            lineage_id: pulumi.Input[Optional[_builtins.int]] = None,
+            lineage_modified_by: pulumi.Input[Optional[_builtins.str]] = None,
+            lineage_modified_time: pulumi.Input[Optional[_builtins.str]] = None,
+            lineage_name: pulumi.Input[Optional[_builtins.str]] = None,
+            lineage_type: pulumi.Input[Optional[_builtins.str]] = None,
+            previous_production: pulumi.Input[Optional[Union['CloudcertificatesLineagePreviousProductionArgs', 'CloudcertificatesLineagePreviousProductionArgsDict', 'outputs.CloudcertificatesLineagePreviousProduction']]] = None,
+            sans: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+            secure_network: pulumi.Input[Optional[_builtins.str]] = None,
+            signing_target: pulumi.Input[Optional[Union['CloudcertificatesLineageSigningTargetArgs', 'CloudcertificatesLineageSigningTargetArgsDict', 'outputs.CloudcertificatesLineageSigningTarget']]] = None,
+            stack_mode: pulumi.Input[Optional[_builtins.str]] = None,
+            subject: pulumi.Input[Optional[Union['CloudcertificatesLineageSubjectArgs', 'CloudcertificatesLineageSubjectArgsDict', 'outputs.CloudcertificatesLineageSubject']]] = None) -> pulumi.Output[bool]:
+        __props__: dict = {}
+        __props__["accountId"] = account_id
+        __props__["contractId"] = contract_id
+        __props__["currentProduction"] = current_production
+        __props__["currentStaging"] = current_staging
+        __props__["geoClass"] = geo_class
+        __props__["groupId"] = group_id
+        __props__["head"] = head
+        __props__["keySpecs"] = key_specs
+        __props__["lineageCreatedBy"] = lineage_created_by
+        __props__["lineageCreatedTime"] = lineage_created_time
+        __props__["lineageId"] = lineage_id
+        __props__["lineageModifiedBy"] = lineage_modified_by
+        __props__["lineageModifiedTime"] = lineage_modified_time
+        __props__["lineageName"] = lineage_name
+        __props__["lineageType"] = lineage_type
+        __props__["previousProduction"] = previous_production
+        __props__["sans"] = sans
+        __props__["secureNetwork"] = secure_network
+        __props__["signingTarget"] = signing_target
+        __props__["stackMode"] = stack_mode
+        __props__["subject"] = subject
+        return pulumi.runtime.exists_resource(None, 'akamai:index/cloudcertificatesLineage:CloudcertificatesLineage', id, __props__, opts or pulumi.ResourceOptions())
+
     @_builtins.property
     @pulumi.getter(name="accountId")
     def account_id(self) -> pulumi.Output[_builtins.str]:

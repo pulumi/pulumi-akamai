@@ -101,6 +101,12 @@ func (NetworkListActivationsState) ElementType() reflect.Type {
 	return reflect.TypeOf((*networkListActivationsState)(nil)).Elem()
 }
 
+// NetworkListActivationsExists checks whether an existing NetworkListActivations resource with the given ID exists.
+func NetworkListActivationsExists(ctx *pulumi.Context,
+	id pulumi.StringInput, state *NetworkListActivationsState, opts ...pulumi.ResourceOption) pulumi.BoolOutput {
+	return ctx.ExistsResource("akamai:index/networkListActivations:NetworkListActivations", id, state, "", opts...)
+}
+
 type networkListActivationsArgs struct {
 	// The Akamai network on which the list is activated: STAGING or PRODUCTION
 	Network *string `pulumi:"network"`
